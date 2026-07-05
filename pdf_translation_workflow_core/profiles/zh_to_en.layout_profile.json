@@ -1,0 +1,116 @@
+{
+  "profile_id": "zh_to_en",
+  "source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "layout_strategy": "target_language_reflow_before_font_shrink",
+  "principles": [
+    "Use the Chinese source PDF as the only runtime layout anchor.",
+    "English target text often expands and needs Western word wrapping, so expand paragraph frames before shrinking font size.",
+    "Do not use official English reference pages during generation; use them only after the run for offline comparison."
+  ],
+  "policy_overrides": {
+    "language_pair_profile": "zh_to_en",
+    "target_language_reflow": {
+      "enabled": true,
+      "region_kinds": ["body", "body_flow", "table_note", "footnote"],
+      "disable_page_type_guesses": ["chart_or_dashboard"],
+      "min_width_page_ratio": 0.68,
+      "right_margin_page_ratio": 0.08,
+      "bottom_margin_page_ratio": 0.11,
+      "height_expand_ratio": 1.35,
+      "min_height_page_ratio": 0.08,
+      "max_bottom_page_ratio": 0.89,
+      "source": "language_pair_profile_open_rule",
+      "reason": "For zh->en, same-source bbox fitting over-shrinks body text. Expand current-page text frames within the same page band before shrink."
+    },
+    "flow_grouping": {
+      "body": {
+        "enabled": true,
+        "min_region_count": 2,
+        "min_region_width_page_ratio": 0.42,
+        "max_x0_delta_pt": 18.0,
+        "max_width_delta_ratio": 0.26,
+        "max_vertical_gap_pt": 40.0,
+        "paragraph_gap_pt": 18.0,
+        "include_line_preserve_body": true,
+        "paragraph_separator": "\n\n",
+        "line_joiner_en": " ",
+        "line_joiner_zh": ""
+      }
+    },
+    "font_profiles": {
+      "body": {
+        "source_scale": 1.18,
+        "min_pt": 7.4,
+        "max_pt": 10.2,
+        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8]
+      },
+      "body_flow": {
+        "source_scale": 1.24,
+        "min_pt": 8.0,
+        "max_pt": 10.8,
+        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8]
+      },
+      "table_note": {
+        "source_scale": 1.0,
+        "min_pt": 6.2,
+        "max_pt": 8.0,
+        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8, 0.76]
+      },
+      "footnote": {
+        "source_scale": 0.92,
+        "min_pt": 5.6,
+        "max_pt": 7.2,
+        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76]
+      },
+      "heading": {
+        "source_scale": 1.0,
+        "min_pt": 8.0,
+        "max_pt": 24.0,
+        "shrink_scales": [1.0, 0.94, 0.88, 0.82]
+      },
+      "short_label": {
+        "source_scale": 1.0,
+        "min_pt": 6.0,
+        "max_pt": 12.0,
+        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76]
+      },
+      "table_cell": {
+        "source_scale": 0.9,
+        "min_pt": 4.2,
+        "max_pt": 7.2,
+        "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68]
+      },
+      "legend": {
+        "source_scale": 0.94,
+        "min_pt": 4.8,
+        "max_pt": 8.0,
+        "shrink_scales": [1.0, 0.92, 0.84, 0.76]
+      }
+    },
+    "fallback": {
+      "min_insert_pt": 5.8,
+      "fallback_insert_font_pt": 5.8,
+      "point_fit_font_pt": 5.4,
+      "fallback_max_chars": 120,
+      "point_fit_max_chars": 80
+    }
+  },
+  "prompt_overlay": {
+    "D2_translation": [
+      "Translate into natural English suitable for an annual report.",
+      "Do not copy Chinese punctuation rhythm into English; use Western word wrapping and concise paragraphs.",
+      "Provide compact English variants for chart labels, table cells, legends, and side navigation."
+    ],
+    "D4_layout_plan": [
+      "For paragraph body copy, prefer expanding text frames within the current page band before shrinking font size.",
+      "Do not accept tiny English body text merely because it fits the Chinese source bbox.",
+      "Preserve graphics, tables, side navigation anchors, and section bands while recomputing body paragraph frames."
+    ],
+    "D7_quality_gate": [
+      "Fail if English body font is visually much smaller than annual-report body text or if excessive blank space remains after over-compression.",
+      "Judge official English only after the run as offline comparison, not as runtime evidence."
+    ]
+  }
+}

@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from _common import read_json, rel, resolve_workspace_path, write_json  # noqa: E402
+from _common import read_json, rel, resolve_workspace_path, sha256_file, write_json  # noqa: E402
 
 
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
@@ -78,11 +78,49 @@ def collect_units(extraction: dict[str, Any], source_language: str) -> list[dict
     return units
 
 
-def build_policy(extraction_path: Path, translations_path: Path | None = None) -> dict[str, Any]:
+def deep_merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
+    for key, value in override.items():
+        if isinstance(value, dict) and isinstance(base.get(key), dict):
+            deep_merge(base[key], value)
+        else:
+            base[key] = value
+    return base
+
+
+def load_language_profile(profile_path: Path | None) -> dict[str, Any]:
+    if profile_path is None:
+        return {}
+    profile = read_json(profile_path)
+    if not isinstance(profile, dict):
+        raise ValueError("language profile must be a JSON object")
+    return profile
+
+
+def build_policy(extraction_path: Path, translations_path: Path | None = None, language_profile_path: Path | None = None) -> dict[str, Any]:
     extraction = read_json(extraction_path)
     translations = read_json(translations_path) if translations_path is not None else {}
-    source_language = normalize_language(translations.get("source_language"), "en")
-    target_language = normalize_language(translations.get("target_language"), "zh")
+    language_profile = load_language_profile(language_profile_path)
+    source_language = normalize_language(
+        translations.get("source_language") or language_profile.get("source_language"),
+        "en",
+    )
+    target_language = normalize_language(
+        translations.get("target_language") or language_profile.get("target_language"),
+        "zh",
+    )
+    target_text_field = (
+        translations.get("target_text_field")
+        or language_profile.get("target_text_field")
+        or ("translation_zh" if target_language == "zh" else "translation_en")
+    )
+    if language_profile:
+        profile_source = normalize_language(language_profile.get("source_language"), source_language)
+        profile_target = normalize_language(language_profile.get("target_language"), target_language)
+        if profile_source != source_language or profile_target != target_language:
+            raise ValueError(
+                f"language profile does not match translations: profile={profile_source}->{profile_target}; "
+                f"translations={source_language}->{target_language}"
+            )
     units = collect_units(extraction, source_language)
     if not units:
         raise ValueError("layout policy requires at least one extractable source text unit")
@@ -114,7 +152,11 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None) -
         "policy_source": "auto_from_current_extraction_statistics",
         "source_language": source_language,
         "target_language": target_language,
-        "target_text_field": translations.get("target_text_field") or ("translation_zh" if target_language == "zh" else "translation_en"),
+        "target_text_field": target_text_field,
+        "language_pair_profile": language_profile.get("profile_id") or f"{source_language}_to_{target_language}",
+        "language_profile_json": None if language_profile_path is None else rel(language_profile_path),
+        "language_profile_sha256": None if language_profile_path is None else sha256_file(language_profile_path),
+        "layout_strategy": language_profile.get("layout_strategy") or "source_anchor_preserving_region_reflow",
         "source_extraction": rel(extraction_path),
         "semantic_translations": None if translations_path is None else rel(translations_path),
         "statistics": {
@@ -307,6 +349,9 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None) -
             "parameters_are_current_run_policy": True,
         },
     }
+    overrides = language_profile.get("policy_overrides")
+    if isinstance(overrides, dict):
+        deep_merge(policy, overrides)
     return policy
 
 
@@ -314,11 +359,13 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--source-extraction", required=True)
     parser.add_argument("--semantic-translations", default=None)
+    parser.add_argument("--language-profile", default=None)
     parser.add_argument("--out", required=True)
     args = parser.parse_args()
     policy = build_policy(
         resolve_workspace_path(args.source_extraction),
         resolve_workspace_path(args.semantic_translations) if args.semantic_translations else None,
+        resolve_workspace_path(args.language_profile) if args.language_profile else None,
     )
     write_json(Path(args.out), policy)
     print(args.out)

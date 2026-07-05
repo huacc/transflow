@@ -1,0 +1,74 @@
+{
+  "profile_id": "en_to_zh",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "layout_strategy": "source_anchor_preserving_compact_cjk_reflow",
+  "principles": [
+    "Use the English source PDF as the only runtime layout anchor.",
+    "Chinese target text is usually more compact, so preserve source bands and graphics before changing frames.",
+    "Do not use official Chinese reference pages during generation; use them only after the run for offline comparison."
+  ],
+  "policy_overrides": {
+    "language_pair_profile": "en_to_zh",
+    "target_language_reflow": {
+      "enabled": false,
+      "reason": "Chinese generally fits inside English source frames; expand only through ordinary region padding unless D4 records a run-local exception."
+    },
+    "flow_grouping": {
+      "body": {
+        "enabled": true,
+        "min_region_count": 4,
+        "paragraph_separator": "\n\n",
+        "line_joiner_zh": "",
+        "line_joiner_en": " "
+      }
+    },
+    "font_profiles": {
+      "body": {
+        "source_scale": 0.96,
+        "min_pt": 5.2,
+        "max_pt": 9.4,
+        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8, 0.76, 0.7, 0.64]
+      },
+      "body_flow": {
+        "source_scale": 0.98,
+        "min_pt": 5.4,
+        "max_pt": 9.8,
+        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8, 0.76, 0.7, 0.64]
+      },
+      "footnote": {
+        "source_scale": 0.82,
+        "min_pt": 4.0,
+        "max_pt": 6.0,
+        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.7]
+      },
+      "table_cell": {
+        "source_scale": 0.84,
+        "min_pt": 3.8,
+        "max_pt": 6.8,
+        "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.6]
+      }
+    },
+    "fallback": {
+      "min_insert_pt": 3.8,
+      "fallback_insert_font_pt": 3.8
+    }
+  },
+  "prompt_overlay": {
+    "D2_translation": [
+      "Translate into concise natural Chinese.",
+      "Prefer compact display variants for chart labels, table cells, legends, and vertical navigation.",
+      "Preserve numbers, currencies, percentages, years, and footnote markers."
+    ],
+    "D4_layout_plan": [
+      "Default to preserving source page bands, chart/table geometry, and navigation anchors.",
+      "Use Chinese compact variants before shrinking below the minimum body font band.",
+      "Do not derive any rule from the official Chinese reference PDF during runtime."
+    ],
+    "D7_quality_gate": [
+      "Judge Chinese visual quality by source-vs-output rhythm first and only use official Chinese after the run as offline comparison.",
+      "Fail if Chinese glyphs are too small, fragmented, or visually unlike a human annual-report layout."
+    ]
+  }
+}
