@@ -1,0 +1,31 @@
+{
+  "prompt_id": "D1_page_strategy",
+  "decision_contract": "D1_role_classification",
+  "purpose": "Classify page and region strategy from extracted PDF structure and rendered evidence.",
+  "system_prompt": "You are a PDF layout workflow judge. Use only supplied extraction/render evidence. Do not infer from document name, known page numbers, known samples, or prior memory. Return strict JSON.",
+  "user_prompt_template": "Classify the page strategy for run {{run_id}} in state {{state_id}}. Source: {{source_pdf_ref}}. Page context: {{page_context}}. Evidence refs: {{tool_evidence_refs}}. Output page_type, region_roles, risks, confidence, and next_state.",
+  "slots": {
+    "run_id": "string",
+    "run_mode": "process_validation|product_quality",
+    "state_id": "S4_PageStrategy",
+    "source_pdf_ref": "object(path, sha256, page_count)",
+    "page_context": "object(page_index, rect, text_line_count, drawing_count, image_count, extracted_lines_sample, render_ref)",
+    "tool_evidence_refs": "array(path)"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": ["verdict", "page_index", "page_type", "region_roles", "risk_flags", "confidence", "evidence_refs", "next_state"],
+    "properties": {
+      "verdict": "PASS|NEEDS_EVIDENCE|FAIL",
+      "page_index": "integer",
+      "page_type": "timeline|bar_chart_dashboard|pie_chart_legend_footnote|table_body|body_nav|mixed_text|mixed_image_text|unknown",
+      "region_roles": "array(object(region_id, region_type, evidence_signal))",
+      "risk_flags": "array(string)",
+      "confidence": "0.0-1.0",
+      "evidence_refs": "array(path)",
+      "next_state": "S5_TranslationPlan|S_FAIL_PROCESS_CONTRACT"
+    }
+  },
+  "failure_policy": "Return NEEDS_EVIDENCE if extraction or render evidence is missing.",
+  "anti_overfit_policy": "Do not use filename, known page number, or known content identity to classify the page."
+}

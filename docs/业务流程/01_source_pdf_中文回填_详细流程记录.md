@@ -2769,3 +2769,637 @@ product_quality_verdict=FAIL
 terminal_state=S_FAIL_QUALITY
 next_state=Lx_RepairLoop
 ```
+
+## 33. 2026-07-05 侧栏字体方向纠偏：横排整体旋转 vs 逐字竖排
+
+### 33.1 用户反馈修正
+
+用户指出：问题不是简单的“有没有旋转”，而是字体方向不同。
+
+| 对比对象 | 字体方向语义 |
+|---|---|
+| 源文侧栏 | 横排标签整体旋转后放入竖向侧栏 |
+| 错误译文 | 中文字符按竖排/逐字堆叠，看起来不是横排标签整体旋转 |
+
+因此旧维度 `sidebar_orientation` 太粗，必须拆成：
+
+```json
+[
+  "sidebar_orientation_group_consistency",
+  "sidebar_glyph_orientation"
+]
+```
+
+### 33.2 状态迁移
+
+该问题仍属于 `Lx_RepairLoop` 内的质量修复，不新增顶层状态：
+
+```text
+S8_VerifyProductQuality
+  -> Lx_RepairLoop(loop_iteration=n, failure_class=sidebar_glyph_orientation_fail)
+  -> S6_LayoutPlan(update draw_modes.vertical_nav=rotated_horizontal_text_image)
+  -> S7_GenerateCandidate
+  -> S8_VerifyProductQuality(back-rotated crop glyph check)
+```
+
+### 33.3 工具和契约变更
+
+| 文件 | 变更 |
+|---|---|
+| `pdf_translation_workflow_core\tools\planners\build_layout_policy.py` | `draw_modes.vertical_nav.mode` 改为 `rotated_horizontal_text_image`，并记录 `writing_mode=horizontal_line_rotated_as_unit`、`glyph_orientation=rotate_glyphs_with_line` |
+| `pdf_translation_workflow_core\tools\generators\generate_semantic_backfill.py` | 新增 `insert_rotated_horizontal_text_image`，将中文先按横排标签生成透明图，再整体旋转贴回源 bbox |
+| `pdf_translation_workflow_core\tools\renderers\render_source_output_crop.py` | 新增 `--backrotate-output-degrees` 和 `--backrotate-output-out`，用于生成候选侧栏反向旋转证据 |
+| `pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py` | 新增 `sidebar_orientation_group_consistency`、`sidebar_glyph_orientation` 视觉维度 gate |
+| `pdf_translation_workflow_core\prompts\templates\D5_D7_quality_gate.prompt.json` | 要求 D7 对侧栏提供 back-rotated output crop，并判断其是否为可读横排中文 |
+
+### 33.4 判定规则
+
+`sidebar_glyph_orientation` 的工程化判定：
+
+1. 用 `render_source_output_crop.py` 裁剪源文侧栏与候选侧栏；
+2. 对候选侧栏裁剪执行反向旋转，例如 `--backrotate-output-degrees -90`；
+3. 如果反向旋转后是可读的横排中文标签，则 `sidebar_glyph_orientation=PASS`；
+4. 如果反向旋转后仍是逐字竖排、乱码、问号、不可读文本或方向不一致，则 `sidebar_glyph_orientation=FAIL`；
+5. 该判断必须记录到 `visual_adjudication.json`，并由 `evaluate_pdf_quality.py` 读入质量门禁。
+
+### 33.5 round05 验证输出
+
+本地验证输出：
+
+```text
+docs\output\round05\R1_01_source_single_timeline_round05_sidebar_glyph_orientation_candidate.pdf
+docs\output\round05\R2_AIA_pages_08_09_24_25_round05_sidebar_glyph_orientation_candidate.pdf
+```
+
+关键证据：
+
+```text
+docs\reports\round05_sidebar_glyph_orientation_validation\compare\R2_page04_sidebar_source_vs_round05.png
+docs\reports\round05_sidebar_glyph_orientation_validation\compare\R2_page04_sidebar_round05_backrotated.png
+docs\reports\round05_sidebar_glyph_orientation_validation\R2\visual_adjudication.json
+docs\reports\round05_sidebar_glyph_orientation_validation\R2\product_quality_gates.json
+```
+
+round05 R2 质量门禁摘要：
+
+```json
+{
+  "product_quality_verdict": "FAIL",
+  "blocking_failure_count": 1,
+  "failed_gate": "visual_similarity",
+  "sidebar_orientation_group_consistency": "pass",
+  "sidebar_glyph_orientation": "pass"
+}
+```
+
+诚实结论：
+
+- 用户指出的“字体方向”问题在 round05 的 R2 侧栏证据中已按当前机制修复；
+- 该修复不能推出整个 PDF 已美观通过；
+- 当前产品质量仍是 `FAIL`，因为 `visual_similarity` 仍未通过；
+- 下一轮外部 Codex 验证必须检查 back-rotated crop，而不能只看 `draw_mode` 字段。
+
+## 34. 2026-07-05 新增状态、工具、契约、提示词的设计增量归档
+
+### 34.1 为什么需要补充这一节
+
+第 33 节记录的是一个具体缺陷：侧栏中文不应逐字竖排，而应是横排标签整体旋转。
+但为修复这个缺陷，实际新增或强化了多个工程对象：
+
+```text
+质量维度 -> 失败分类 -> 状态机循环 -> 布局策略 -> 生成器执行路径 -> 裁剪证据 -> 质量门禁
+```
+
+因此本节把这些新增对象合并成设计增量，避免后续执行者只看到局部修复，而不知道应该如何完整调用工具和记录裁决。
+
+### 34.2 本次新增的状态机影响范围
+
+本次没有新增顶层状态，也没有改变主流程顺序。新增的是 `S8_VerifyProductQuality` 失败后的 `Lx_RepairLoop` 内部失败分类和修复原子。
+
+| 项 | 设计结论 |
+|---|---|
+| 顶层状态是否新增 | 否 |
+| 主流程是否改序 | 否 |
+| 新增 loop 失败分类 | `sidebar_glyph_orientation_fail`、`side_nav_group_consistency_fail` |
+| 新增修复原子 | `rotated_horizontal_text_image_draw_mode`、`backrotated_crop_glyph_check` |
+| 进入条件 | D7 或人工视觉裁决发现侧栏为逐字竖排、字形方向不一致、反向旋转后不可横读 |
+| 退出条件 | 反向旋转裁剪图中，候选侧栏标签可横向阅读，且同一侧栏组保持一致 writing mode |
+
+状态迁移模板：
+
+```text
+S8_VerifyProductQuality
+  -> Lx_RepairLoop(loop_iteration=n, failure_class=sidebar_glyph_orientation_fail)
+  -> S6_LayoutPlan(repair_atom=rotated_horizontal_text_image_draw_mode)
+  -> S7_GenerateCandidate(generator_path=rotated_horizontal_text_image)
+  -> S8_VerifyProductQuality(evidence=source_output_crop + backrotated_output_crop)
+```
+
+### 34.3 新增或强化的工具职责
+
+| 工具 | 新增职责 | 输入契约 | 输出契约 | 不能做什么 |
+|---|---|---|---|---|
+| `tools\planners\build_layout_policy.py` | 在结构检测到窄侧栏导航时，输出 `draw_modes.vertical_nav.mode=rotated_horizontal_text_image` | 源 PDF 几何统计、区域分类结果、字体分位数、D4 策略要求 | `layout_policy.json`，包含 `writing_mode=horizontal_line_rotated_as_unit`、`glyph_orientation=rotate_glyphs_with_line`、`rotation_degrees=90` | 不能按样本文件名、页码、具体文本硬编码侧栏策略 |
+| `tools\generators\generate_semantic_backfill.py` | 执行横排中文透明图生成，并将整张文本图整体旋转后贴回 bbox | `layout_policy.json`、翻译单元、英文擦除后的底图、字体文件、源 bbox | 候选 PDF、`candidate_generation_evidence.json`，插入记录中包含 `status=rotated_horizontal_image_fit` 或失败状态 | 不能用逐字竖排中文替代整体旋转；不能只因为 `rotate=90` 就判定合格 |
+| `tools\renderers\render_source_output_crop.py` | 为侧栏生成源/候选对比裁剪，并额外输出反向旋转候选图 | 源 PDF、候选 PDF、页码、侧栏 bbox、`--backrotate-output-degrees`、`--backrotate-output-out` | contact sheet PNG、manifest JSON、`backrotated_output` PNG | 不能只输出整页截图后让人工猜测字形方向 |
+| `tools\validators\evaluate_pdf_quality.py` | 把 D7 视觉裁决中的侧栏维度转成阻塞 gate | `candidate_generation_evidence.json`、`visual_adjudication.json`、源/候选 PDF | `product_quality_gates.json`，包含 `sidebar_orientation_group_consistency` 和 `sidebar_glyph_orientation` | 不能在缺少侧栏裁剪证据时自动判 PASS |
+
+### 34.4 新增质量维度与裁决数据结构
+
+新增的 D7 维度必须写入 `visual_adjudication.json`：
+
+```json
+{
+  "dimensions": [
+    {
+      "dimension": "sidebar_orientation_group_consistency",
+      "status": "PASS|FAIL|PASS_WITH_WARN",
+      "evidence": "same side-nav group uses one writing mode; source/output comparison named"
+    },
+    {
+      "dimension": "sidebar_glyph_orientation",
+      "status": "PASS|FAIL|PASS_WITH_WARN",
+      "evidence": "back-rotated output crop is or is not readable horizontal Chinese"
+    }
+  ]
+}
+```
+
+`sidebar_orientation_group_consistency` 判断同一侧栏组是否采用一致 writing mode。
+`sidebar_glyph_orientation` 判断候选侧栏在反向旋转后是否能作为横排中文阅读。
+
+这两个维度不替代 `visual_similarity`。它们只解决侧栏字形方向和侧栏组一致性问题；正文密度、字号比例、段落节奏、页边空白仍由 `visual_similarity`、`font_hierarchy_ratio`、`paragraph_density` 等 gate 继续裁决。
+
+### 34.5 大模型裁决提示词的新增槽位
+
+D4 布局计划提示词必须包含以下输入槽位：
+
+```text
+source_geometry
+baseline_layout_policy
+font_capabilities
+vertical_nav side_nav_group writing mode
+rotated_horizontal_text_image draw mode
+anti_overfit constraints
+```
+
+D4 输出必须包含：
+
+```json
+{
+  "draw_modes": {
+    "vertical_nav": {
+      "mode": "rotated_horizontal_text_image",
+      "render_backend": "PIL_transparent_png",
+      "writing_mode": "horizontal_line_rotated_as_unit",
+      "glyph_orientation": "rotate_glyphs_with_line",
+      "rotation_degrees": 90,
+      "single_line": true,
+      "center_on_source_bbox": true
+    }
+  }
+}
+```
+
+D7 质量裁决提示词必须包含以下输入槽位：
+
+```text
+quality_gate_summary
+visual_metrics
+render_refs
+comparison_refs
+backrotated_output_crop
+candidate_generation_evidence
+```
+
+D7 输出必须包含：
+
+```text
+gate findings
+blocking status
+repair hints
+next_state
+sidebar_orientation_group_consistency
+sidebar_glyph_orientation
+visual_similarity
+```
+
+如果 D7 没有看到 `backrotated_output_crop`，则不得把 `sidebar_glyph_orientation` 判为 `PASS`。
+
+### 34.6 报告与审计要求
+
+每次触发该 repair atom，报告中必须记录：
+
+| 审计项 | 必填内容 |
+|---|---|
+| 失败来源 | 哪个截图、裁剪图、人工反馈或 D7 维度触发 `sidebar_glyph_orientation_fail` |
+| 状态迁移 | 从 `S8` 到 `Lx_RepairLoop` 再回到 `S6/S7/S8` 的完整链路 |
+| 工具调用 | `build_layout_policy.py`、`generate_semantic_backfill.py`、`render_source_output_crop.py`、`evaluate_pdf_quality.py` 的输入输出路径 |
+| 裁决输入 | 源/候选侧栏裁剪图、反向旋转候选裁剪图、生成证据 JSON |
+| 裁决输出 | `visual_adjudication.json` 中两个侧栏维度的状态和原因 |
+| 质量结论 | 明确区分“侧栏字形方向通过”和“整体产品质量通过” |
+
+### 34.7 反过拟合边界
+
+该设计不能依赖：
+
+```text
+样本文件名
+固定页码
+固定坐标
+固定中文词条
+固定英文词条
+固定颜色值
+已知文档身份
+```
+
+允许依赖：
+
+```text
+区域几何形态
+窄高比
+侧栏组相邻关系
+源文文字方向证据
+候选反向旋转后的可读性
+source-vs-output 对比证据
+```
+
+样本 PDF、round05 产物和截图只能作为回归证据，不能进入核心工具的判断条件。
+
+### 34.8 当前设计增量的验收状态
+
+截至本节写入时：
+
+```json
+{
+  "sidebar_orientation_group_consistency": "implemented_and_documented",
+  "sidebar_glyph_orientation": "implemented_and_documented",
+  "rotated_horizontal_text_image": "implemented_and_documented",
+  "backrotated_output_crop": "implemented_and_documented",
+  "overall_product_quality": "not_accepted",
+  "remaining_blocker": "visual_similarity"
+}
+```
+
+因此后续 round10 或外部 Codex 验证的目标不是重新发明侧栏机制，而是检查：
+
+1. 是否按本节调用工具和记录证据；
+2. 是否能在没有上下文侵入的情况下复现相同状态迁移；
+3. 是否还能继续修复 `visual_similarity` 下的正文密度、字号比例、段落节奏和空白问题。
+
+## 35. round10 引擎执行调度表
+
+### 35.1 设计目的
+
+round10 的新 Codex 会把本文档当成执行引擎规格，而不是只当成背景说明。
+因此本节给出状态到工具的直接调度关系。
+
+执行原则：
+
+```text
+状态先行
+工具由状态触发
+大模型只做明确裁决
+裁决必须落 JSON
+JSON 决定 next_state
+每次 loop 必须记录 loop_iteration
+```
+
+### 35.2 运行目录与产物约定
+
+round10 应使用独立工作目录，例如：
+
+```text
+spikes\round10\
+```
+
+目录结构必须至少包含：
+
+```text
+spikes\round10\
+  pdf_translation_workflow_core\
+  docs\
+    业务流程\
+    input\
+    output\
+    reports\
+    测试提示词\
+  state_trace.json
+  operation_log.jsonl
+```
+
+`pdf_translation_workflow_core` 是执行工具和契约目录。
+`docs\业务流程\01_source_pdf_中文回填_详细流程记录.md` 是流程解释和审计规格。
+`state_trace.json` 是状态迁移机器可读记录。
+`operation_log.jsonl` 是逐步操作流水。
+
+### 35.3 状态-工具-提示词调度矩阵
+
+| 状态 | 准入条件 | 必须调用的工具 | 是否调用大模型 | 必须产物 | next_state 规则 |
+|---|---|---|---|---|---|
+| `S0_Request` | 用户给出输入 PDF、run 目标、输出目录 | 无；只记录 run header | 否 | `run_request.json` | 输入齐全 -> `S1_ContractLoad`；输入缺失 -> 请求用户补齐 |
+| `S1_ContractLoad` | round 工作目录存在 | 读取 `docs\业务流程\01_source_pdf_中文回填_详细流程记录.md`、`pdf_translation_workflow_core\contracts\*.md`、`pdf_translation_workflow_core\prompts\*.json` | 否 | `contract_load_record.json` | 核心文件齐全 -> `S2_ToolProbe`；缺文件 -> `S_FAIL_PROCESS_CONTRACT` |
+| `S2_ToolProbe` | 契约已加载 | `tools\probes\tool_probe.py` | 否 | `tool_probe.json` | 必需工具/字体可用 -> `S3_SourceExtract`；不可用且无替代 -> `S_FAIL_TOOLING` |
+| `S3_SourceExtract` | 工具探测通过 | `tools\probes\extract_pdf_structure.py`、`tools\renderers\render_pdf.py` | 否 | `source_extraction.json`、`source_render_manifest.json`、源 PNG | 所有目标页有结构和渲染 -> `S4_PageStrategy`；提取失败 -> `S_FAIL_TOOLING` |
+| `S4_PageStrategy` | 源结构可用 | 无硬性工具；可读 `source_extraction.json` 和源 PNG | 是，使用 `D1_page_strategy.prompt.json` | `page_strategy.json`、D1 裁决记录 | 页面类型和区域角色明确 -> `S5_TranslationPlan`；裁决缺字段 -> `S_FAIL_PROCESS_CONTRACT` |
+| `S5_TranslationPlan` | 页面策略完成 | `tools\validators\validate_semantic_translations.py` 用于校验已生成译文 | 是，使用 `D2_translation.prompt.json` | `docs\input\semantic_translations\*.translations.json`、`semantic_translation_validation.json` | 语义译文完整 -> `S6_LayoutPlan`；placeholder 或覆盖不足 -> `S_FAIL_CAPABILITY` |
+| `S6_LayoutPlan` | 译文通过校验 | `tools\planners\build_layout_policy.py` | 是，使用 `D4_layout_plan.prompt.json` 修订或确认策略 | `layout_policy.json`、`layout_plan.json`、D4 裁决记录 | policy 完整且可追溯 -> `S7_GenerateCandidate`；缺 policy 或过拟合 -> `S_FAIL_PROCESS_CONTRACT` |
+| `S7_GenerateCandidate` | layout policy 和译文都存在 | product_quality 用 `tools\generators\generate_semantic_backfill.py`；占位验证才可用 `generate_backfill_candidate.py` | 否 | 候选 PDF、`candidate_generation_evidence.json`、候选渲染 PNG | 真实中文回填候选生成 -> `S8_VerifyProductQuality`；生成器失败 -> `S_FAIL_TOOLING` |
+| `S8_VerifyProductQuality` | 候选 PDF 存在 | `tools\renderers\render_pdf.py`、`tools\renderers\render_source_output_crop.py`、`tools\validators\evaluate_pdf_quality.py` | 是，使用 `D5_D7_quality_gate.prompt.json` | `product_quality_gates.json`、`visual_adjudication.json`、裁剪证据 PNG | 全部阻塞 gate 通过 -> `S9_VerifyProcessContract`；可修复失败 -> `Lx_RepairLoop`；不可修复 -> `S_FAIL_QUALITY` |
+| `Lx_RepairLoop` | S8 给出阻塞且可修复失败 | 由 failure_class 选择工具；通常回到 `build_layout_policy.py` 或生成器 | 是，使用 `D8_repair_selection.prompt.json` | `repair_plan.json`、loop 记录、变更记录 | repair_plan 选定 -> 回到 `S6` 或 `S7`；无修复方案 -> `S_FAIL_QUALITY` |
+| `Ax_AdaptiveChange` | 工具/契约/提示词不足以表达失败或修复 | `collect_change_manifest.py` 可用于前后清单；实际改动用补丁 | 可调用，用于裁决为什么要改方法论 | `adaptive_change_record.json`、前后 manifest、变更说明 | 设计/工具补齐 -> 返回触发状态；无法补齐 -> `S_FAIL_CAPABILITY` |
+| `S9_VerifyProcessContract` | 产品 gate 完成或过程验证目标完成 | `tools\validators\validate_process_artifacts.py`、`tools\validators\scan_core_overfit.py`、可选 `run_state_machine_selftest.py` | 是，使用 `D9_final_acceptance.prompt.json` | `process_validation.json`、`anti_overfit_scan.json`、`final_acceptance.json`、`audit_report.md` | 产品质量通过 -> `S_DONE_PRODUCT_ACCEPTED`；仅过程通过 -> `S_DONE_PROCESS_VALIDATED`；否则按失败类型终止 |
+
+### 35.4 `run_state_machine_selftest.py` 的定位
+
+`tools\run_state_machine_selftest.py` 不是完整执行器，不能替代 Codex 执行状态机。
+
+它的职责是：
+
+```text
+检查流程包完整性
+检查状态机关键契约是否存在
+生成或验证最小过程证据
+暴露明显缺文档、缺工具、缺 gate 的问题
+```
+
+它不能负责：
+
+```text
+真实语义翻译
+视觉审美裁决
+手工查看源/候选渲染图
+根据视觉失败修改布局策略
+替 Codex 选择 repair atom
+```
+
+因此 round10 的执行主体仍是新 Codex；selftest 只是 `S9` 或前置健康检查工具。
+
+### 35.5 大模型裁决点
+
+只有以下状态允许把判断交给大模型：
+
+| 裁决 ID | 所属状态 | 提示词模板 | 输入槽位 | 输出维度 |
+|---|---|---|---|---|
+| `D1_page_strategy` | `S4_PageStrategy` | `D1_page_strategy.prompt.json` | 源结构、源渲染、页上下文 | 页面类型、区域角色、图表/表格/正文/侧栏分类 |
+| `D2_translation` | `S5_TranslationPlan` | `D2_translation.prompt.json` | 翻译单元、术语策略、源文本 | 真实中文译文、术语一致性、语义覆盖 |
+| `D4_layout_plan` | `S6_LayoutPlan` | `D4_layout_plan.prompt.json` | page_strategy、source_geometry、baseline_layout_policy、font_capabilities | reflow/line_preserve/vertical_nav 策略、字体比例、fallback 风险 |
+| `D5_D7_quality_gate` | `S8_VerifyProductQuality` | `D5_D7_quality_gate.prompt.json` | quality_gate_summary、visual_metrics、render_refs、comparison_refs、backrotated_output_crop | gate findings、blocking status、repair hints、next_state |
+| `D8_repair_selection` | `Lx_RepairLoop` | `D8_repair_selection.prompt.json` | failed_findings、repair_atom_catalog、prior_loop_summary | repair_atom、目标状态、预期验证 |
+| `D9_final_acceptance` | `S9_VerifyProcessContract` | `D9_final_acceptance.prompt.json` | state_trace、process_validation、product_quality_summary、anti_overfit_evidence | final verdict、残留风险、终态 |
+
+禁止把以下事项交给大模型“凭感觉”决定：
+
+```text
+文件是否存在
+JSON 是否可解析
+候选 PDF 是否生成
+页数是否一致
+是否有英文残留
+是否调用了指定工具
+状态 trace 是否缺项
+```
+
+这些必须由工具或文件系统证据决定。
+
+### 35.6 提示词模板边界
+
+round10 不能新生成一套判断提示词，也不能把裁决维度换成新口径。
+
+允许做的事：
+
+```text
+使用现有 prompt templates
+把当前 run 的文件路径、页码、裁剪图、metrics、gate summary 填入模板槽位
+因 round 目录不同调整 artifact path
+因输入 PDF 不同调整 source_context 和 page_context
+因工具输出字段顺序不同做 JSON 读取适配
+把轻微适配记录到 operation_log.jsonl
+```
+
+不允许做的事：
+
+```text
+新写一个替代 D4/D7/D8/D9 的判断提示词
+删除既有必填维度
+把 blocking gate 改成非 blocking
+把 placeholder 译文当作 product_quality 通过
+绕过 backrotated_output_crop 直接判 sidebar_glyph_orientation=PASS
+把样本页码、固定坐标、固定文本写入提示词作为规则
+```
+
+如果现有提示词模板无法表达必须的判断，只能进入 `Ax_AdaptiveChange`：
+
+```text
+Sx_current_state
+  -> Ax_AdaptiveChange(change_type=prompt|contract|tool)
+  -> write adaptive_change_record.json
+  -> record before/after manifest
+  -> return to triggering state
+```
+
+`Ax_AdaptiveChange` 不是静默修改。它必须说明：
+
+```json
+{
+  "why_existing_prompt_insufficient": "...",
+  "changed_files": ["..."],
+  "changed_dimensions": [],
+  "backward_compatibility": "existing required dimensions preserved",
+  "verification_after_change": ["JSON parse", "state trace update", "quality gate rerun"]
+}
+```
+
+如果只是路径、run_id、页码、artifact 名称、当前 metrics 槽位不同，不允许进入 `Ax_AdaptiveChange`，只能作为正常填槽位处理。
+
+### 35.7 loop 执行算法
+
+`Lx_RepairLoop` 是组合状态，不是线性 `L1/L2/L3` 状态。
+
+伪代码：
+
+```text
+while product_quality_verdict != PASS:
+  read product_quality_gates.json
+  read visual_adjudication.json
+  pick first blocking failure by severity
+  map failure_class to repair_atom from contracts\page_type_repair_matrix.md
+  write repair_plan.json
+  append loop_iteration to state_trace.json
+  apply the smallest needed doc/tool/policy change
+  regenerate candidate if product artifact changed
+  rerun S8 gates
+  if same failure repeats and no new repair exists:
+    terminal_state = S_FAIL_QUALITY
+    break
+```
+
+每次循环必须记录：
+
+```json
+{
+  "loop_iteration": 1,
+  "entered_from_state": "S8_VerifyProductQuality",
+  "failure_class": "sidebar_glyph_orientation_fail",
+  "failed_gate_ids": ["sidebar_glyph_orientation"],
+  "repair_atom": "rotated_horizontal_text_image_draw_mode",
+  "tools": [
+    "tools/planners/build_layout_policy.py",
+    "tools/generators/generate_semantic_backfill.py",
+    "tools/renderers/render_source_output_crop.py",
+    "tools/validators/evaluate_pdf_quality.py"
+  ],
+  "verification_to_run": [
+    "render candidate page",
+    "crop side navigation",
+    "backrotate output crop",
+    "evaluate product quality gates"
+  ],
+  "next_state": "S6_LayoutPlan"
+}
+```
+
+### 35.8 失败分类到修复原子的调度表
+
+| failure_class | 主要证据 | repair_atom | 回到状态 | 必跑验证 |
+|---|---|---|---|---|
+| `line_fragmentation` | 中文正文短行、继承英文窄 bbox | `body_flow_region_reflow` | `S6_LayoutPlan` | 整页渲染、段落行宽对比、`visual_similarity` |
+| `paragraph_rhythm_mismatch` | 段间空隙远大于源文 | `paragraph_gap_rebalance` | `S6_LayoutPlan` | 段落间距裁剪、page_metrics |
+| `paragraph_density_mismatch` | 文本面积比例明显偏低或偏高 | `font_size_and_region_density_rebalance` | `S6_LayoutPlan` | text_area_ratio、font_size_ratio |
+| `font_hierarchy_ratio_mismatch` | 注释/正文/标题字号比例失真 | `font_hierarchy_profile_repair` | `S6_LayoutPlan` | font_hierarchy_ratio |
+| `sidebar_glyph_orientation_fail` | 反向旋转后不是横排可读中文 | `rotated_horizontal_text_image_draw_mode` | `S6_LayoutPlan` | source/output crop、backrotated crop、侧栏 gate |
+| `side_nav_group_consistency_fail` | 同一侧栏组 writing mode 不一致 | `side_nav_group_writing_mode_policy` | `S6_LayoutPlan` | 侧栏组裁剪和 D7 裁决 |
+| `footnote_readability` | 注释过小、行距过密、无法阅读 | `footnote_font_profile_repair` | `S6_LayoutPlan` | footnote crop、font hierarchy |
+| `text_fit_overflow` | 生成证据出现 overflow/fallback | `region_fit_repair` | `S6_LayoutPlan` | `candidate_generation_evidence.fit_warning_count=0` |
+| `visual_similarity_fail` | 整体视觉仍不接近源文 | `visual_similarity_targeted_repair` | `S6_LayoutPlan` | source-vs-output 全页对比和 D7 |
+| `table_integrity_fail` | 表格线、列、数字、标签破坏 | `table_region_preserve_or_reflow_repair` | `S6_LayoutPlan` | 表格裁剪、数字残留和布局裁决 |
+
+### 35.9 round10 最小合格审计包
+
+round10 即使最终质量失败，也必须产出以下文件：
+
+```text
+state_trace.json
+operation_log.jsonl
+docs\reports\round10_execution_audit.md
+docs\reports\*\tool_probe.json
+docs\reports\*\source_extraction.json
+docs\reports\*\page_strategy.json
+docs\input\semantic_translations\*.translations.json
+docs\reports\*\semantic_translation_validation.json
+docs\reports\*\layout_policy.json
+docs\reports\*\candidate_generation_evidence.json
+docs\reports\*\product_quality_gates.json
+docs\reports\*\visual_adjudication.json
+docs\reports\*\anti_overfit_scan.json
+```
+
+如果触发侧栏修复，还必须产出：
+
+```text
+docs\reports\*\compare\*_sidebar_source_vs_output.png
+docs\reports\*\compare\*_sidebar_backrotated_output.png
+```
+
+如果触发 adaptive change，还必须产出：
+
+```text
+docs\reports\*\adaptive_change_record.json
+docs\reports\*\change_manifest_before.json
+docs\reports\*\change_manifest_after.json
+```
+
+### 35.10 round10 终态判定
+
+| 条件 | 终态 |
+|---|---|
+| 所有产品质量阻塞 gate 通过，且过程契约通过 | `S_DONE_PRODUCT_ACCEPTED` |
+| 任务只要求验证流程，产品质量失败已被诚实记录，过程契约通过 | `S_DONE_PROCESS_VALIDATED` |
+| 语义译文缺失、placeholder、覆盖不足 | `S_FAIL_CAPABILITY` |
+| 工具缺失、字体缺失、PDF 不能读写且无替代 | `S_FAIL_TOOLING` |
+| 状态 trace、审计文件、关键契约缺失 | `S_FAIL_PROCESS_CONTRACT` |
+| 产品质量 gate 失败且没有可继续修复的 repair atom | `S_FAIL_QUALITY` |
+
+终态报告必须同时写：
+
+```text
+process_contract_verdict
+product_quality_verdict
+terminal_state
+blocking_failure_count
+requires_design_revision
+```
+
+## 36. 当前完备性与反过拟合结论
+
+### 36.1 当前已补齐的设计对象
+
+截至本节写入，以下对象已经在核心目录和本文档中同步：
+
+| 对象 | 文件 | 状态 |
+|---|---|---|
+| 状态机调度 | `pdf_translation_workflow_core\contracts\state_machine.md`、本文第 35 节 | 已补充 S9 anti-overfit 证据和 round10 调度表 |
+| 工具契约 | `pdf_translation_workflow_core\contracts\tool_contracts.md`、`pdf_translation_workflow_core\tools\README.md` | 已补充 `scan_core_overfit.py`、侧栏反向旋转裁剪、生成器职责 |
+| 提示词绑定 | `pdf_translation_workflow_core\prompts\prompt_tool_bindings.json` | 已补充模板不可重造、只可槽位适配、S9 必跑 anti-overfit scan |
+| D9 终验提示词 | `pdf_translation_workflow_core\prompts\templates\D9_final_acceptance.prompt.json` | 已要求输入 `anti_overfit_scan.json` |
+| 语义翻译契约 | `pdf_translation_workflow_core\contracts\semantic_translation_contract.md` | 已去掉样本化路径和样本术语示例 |
+| 自检线束 | `pdf_translation_workflow_core\tools\run_state_machine_selftest.py` | 已去掉历史 round 文案，并把 process doc 改为参数/动态发现 |
+| 反过拟合扫描 | `pdf_translation_workflow_core\tools\validators\scan_core_overfit.py` | 新增；用于证明生产 `tools/contracts/prompts` 没有样本 token 阻塞命中 |
+
+### 36.2 当前反过拟合扫描结果
+
+当前扫描命令：
+
+```text
+python pdf_translation_workflow_core\tools\validators\scan_core_overfit.py --root pdf_translation_workflow_core --out docs\reports\anti_overfit_scan_current.json
+```
+
+当前结果：
+
+```json
+{
+  "verdict": "PASS",
+  "blocking_hit_count": 0,
+  "warning_hit_count": 0,
+  "evidence_only_hit_count": 40,
+  "scanner_dictionary_hit_count": 11
+}
+```
+
+解释：
+
+- `blocking_hit_count=0` 表示生产 `tools/contracts/prompts` 当前没有命中已知样本文件名、样本文本、固定页码或固定术语规则；
+- `evidence_only_hit_count=40` 来自 `regression` 目录，属于回归样本锚点，不参与生产工具分支；
+- `scanner_dictionary_hit_count=11` 是扫描器自己的可疑词典，不是业务逻辑；
+- 该扫描只能证明“未发现已知样本 token 过拟合”，不能证明工具对所有未知 PDF 都能达到高质量视觉排版。
+
+### 36.3 对“换一页 PDF 是否还能用”的诚实边界
+
+可以认为当前设计比前几轮更泛化，因为：
+
+```text
+页面策略来自当前源 PDF 提取结果
+布局策略来自当前 run 的几何统计和 D4 裁决
+生成器消费 layout_policy.json 而不是隐藏样本参数
+质量裁决依赖 source-vs-output 当前渲染证据
+侧栏字形方向依赖当前裁剪和反向旋转证据
+反过拟合扫描阻止样本事实进入生产工具/契约/提示词
+```
+
+但不能承诺“任意换一页 PDF 都高质量一次通过”，原因是：
+
+```text
+未知 PDF 可能有新的版式类型
+图片内文字如果未授权 OCR 仍是 visual_only 边界
+复杂表格/图表可能需要新的 repair atom
+字体缺失可能导致 S_FAIL_TOOLING
+视觉审美仍需要 D7 对当前 source-vs-output 证据裁决
+```
+
+因此 round10 的正确目标不是证明“所有 PDF 都能完美”，而是证明：
+
+1. 新 Codex 能按本文档状态机调度；
+2. 不新造提示词，只填现有模板槽位；
+3. 不把样本事实写入生产工具；
+4. 遇到新失败时进入 `Lx_RepairLoop` 或 `Ax_AdaptiveChange` 并留下审计；
+5. 终态能诚实区分 `process_contract_verdict` 和 `product_quality_verdict`。
