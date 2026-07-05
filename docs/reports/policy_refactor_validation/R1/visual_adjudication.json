@@ -1,0 +1,20 @@
+{
+  "tool": "codex_view_image_visual_adjudication",
+  "adjudication_provider": "current_codex_session_visual_review",
+  "external_openai_api_call": false,
+  "verdict": "FAIL",
+  "reason": "Policy-driven layout now preserves the large white heading on the red banner and has no fit warnings, but final product-quality acceptance is not claimed because body text density and multi-column rhythm still require a formal source-vs-output visual pass.",
+  "input_artifacts": [
+    "docs/reports/policy_refactor_validation/compare/R1_full_compare_v3.png",
+    "docs/reports/policy_refactor_validation/R1/product_quality_gates.json",
+    "docs/reports/policy_refactor_validation/R1/candidate_generation_evidence.json",
+    "docs/reports/policy_refactor_validation/R1/layout_policy.json"
+  ],
+  "dimensions": [
+    {"dimension": "policy_externalization", "status": "PASS", "evidence": "candidate_generation_evidence includes layout_policy_json and layout_policy_sha256"},
+    {"dimension": "heading_color_and_scale", "status": "PASS", "evidence": "heading uses source-derived white text color and policy-derived heading max from current document max font"},
+    {"dimension": "text_fit", "status": "PASS", "evidence": "fit_warning_count=0"},
+    {"dimension": "visual_similarity", "status": "FAIL", "evidence": "final source-vs-output visual acceptance has not passed; body rhythm remains visibly different from source"}
+  ],
+  "next_state": "Lx_RepairLoop"
+}

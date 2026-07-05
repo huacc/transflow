@@ -1,0 +1,126 @@
+{
+  "version": "2026-07-05",
+  "purpose": "Bind backend model prompt packages to workflow states, tool outputs, slots, and next tool actions.",
+  "principle": "A prompt is useful only when its slots are filled by concrete tool evidence and its JSON output drives the next state or repair tool.",
+  "bindings": [
+    {
+      "state": "S2_ToolProbe",
+      "tool_first": ["tools/probes/tool_probe.py"],
+      "model_prompt": null,
+      "produces": ["tool_probe.json"],
+      "next_state_on_pass": "S3_SourceExtract",
+      "next_state_on_fail": "S_FAIL_TOOLING"
+    },
+    {
+      "state": "S3_SourceExtract",
+      "tool_first": ["tools/probes/extract_pdf_structure.py", "tools/renderers/render_pdf.py"],
+      "model_prompt": null,
+      "produces": ["source_extraction.json", "source_render_manifest.json", "source_previews/*.png"],
+      "next_state_on_pass": "S4_PageStrategy",
+      "next_state_on_fail": "S_FAIL_PROCESS_CONTRACT"
+    },
+    {
+      "state": "S4_PageStrategy",
+      "tool_first": [],
+      "model_prompt": "templates/D1_page_strategy.prompt.json",
+      "slot_bindings": {
+        "source_pdf_ref": "regression_manifest input + sha256/page_count",
+        "page_context": "source_extraction.json pages[*] + source_render_manifest.json",
+        "tool_evidence_refs": ["source_extraction.json", "source_render_manifest.json"]
+      },
+      "produces": ["page_strategy.json"],
+      "next_state_from_model": ["S5_TranslationPlan", "S_FAIL_PROCESS_CONTRACT"]
+    },
+    {
+      "state": "S5_TranslationPlan",
+      "tool_first": ["tools/validators/validate_semantic_translations.py in product_quality after D2 output is materialized"],
+      "model_prompt": "templates/D2_translation.prompt.json",
+      "slot_bindings": {
+        "translation_units": "source_extraction.json text_lines grouped by region/page strategy",
+        "terminology_policy": "contracts/decision_contracts.md + run-specific glossary if present"
+      },
+      "produces": ["docs/input/semantic_translations/<regression_id>.translations.json", "semantic_translation_validation.json"],
+      "product_quality_requirement": "semantic translations must identify a non-placeholder translation_provider, translation_quality=semantic_translation, one output per source unit, and semantic_coverage=full_semantic_translation",
+      "next_state_from_model": ["S6_LayoutPlan", "S_FAIL_PROCESS_CONTRACT"]
+    },
+    {
+      "state": "S6_LayoutPlan",
+      "tool_first": ["tools/planners/build_layout_policy.py"],
+      "model_prompt": "templates/D4_layout_plan.prompt.json",
+      "slot_bindings": {
+        "page_strategy": "page_strategy.json",
+        "translated_units": "translations.json units",
+        "source_geometry": "source_extraction.json bboxes + avoid regions",
+        "font_capabilities": "tool_probe.json fonts",
+        "baseline_layout_policy": "layout_policy.json produced by build_layout_policy.py"
+      },
+      "produces": ["layout_policy.json", "layout_plan.json"],
+      "required_decisions": [
+        "policy numeric values must come from current-run extraction statistics, explicit D4 judgement, or user feedback evidence",
+        "for each multi-line body/footnote/heading block choose region_reflow unless there is a recorded D4 reason",
+        "for aligned wide body paragraphs choose body_flow only when current-run x/width statistics prove one continuous article column",
+        "for wide Note/Notes blocks after tables choose table_note and preserve the source-relative note/body font hierarchy",
+        "for narrow vertical navigation choose draw_modes.vertical_nav=rotated_text instead of stacked character text",
+        "for compact table labels, chart ticks, legends, or vertical navigation choose line_preserve",
+        "record any visual_only image-text regions as OCR/tooling boundaries",
+        "if compact labels need shorter Chinese, require layout_variants in semantic translations rather than generator hardcoded replacements"
+      ],
+      "next_state_from_model": ["S7_GenerateCandidate", "S_FAIL_PROCESS_CONTRACT"]
+    },
+    {
+      "state": "S7_GenerateCandidate",
+      "tool_first": ["tools/generators/generate_backfill_candidate.py for backfill_candidate_validation", "tools/generators/generate_semantic_backfill.py for product_quality"],
+      "model_prompt": null,
+      "slot_bindings": {
+        "required_generator_inputs": ["source_pdf", "source_extraction.json", "layout_policy.json", "semantic_translations.json in product_quality"],
+        "required_generator_outputs": ["candidate.pdf", "translations.json", "layout_plan.json", "candidate_generation_evidence.json"]
+      },
+      "produces": ["candidate.pdf", "translations.json", "layout_plan.json", "candidate_generation_evidence.json"],
+      "mode_scope": "backfill_candidate_validation|product_quality",
+      "current_gap": "The semantic generator consumes validated translations, redacts source text per unit, and reflows paragraph/footnote blocks into Chinese regions. Product-quality may still fail visual gates, but line-by-line English bbox copying and placeholder semantic failure must not occur.",
+      "next_state_on_pass": "S8_VerifyProductQuality",
+      "next_state_on_fail": "S_FAIL_TOOLING|S_FAIL_CAPABILITY"
+    },
+    {
+      "state": "S8_VerifyProductQuality",
+      "tool_first": ["tools/renderers/render_pdf.py", "tools/validators/evaluate_pdf_quality.py"],
+      "model_prompt": "templates/D5_D7_quality_gate.prompt.json",
+      "slot_bindings": {
+        "quality_gate_summary": "product_quality_gates.json",
+        "visual_metrics": "product_quality_gates.json page_metrics including source/output font_hierarchy and ratio deltas",
+        "render_refs": ["source_render_manifest.json", "candidate_render_manifest.json"],
+        "comparison_refs": ["source-vs-output crop contact sheets from tools/renderers/render_source_output_crop.py when visual failures are suspected"],
+        "tool_evidence_refs": ["product_quality_gates.json", "source/candidate previews", "source-vs-output crop manifests"]
+      },
+      "produces": ["quality_findings.json"],
+      "failure_classes": ["line_fragmentation", "paragraph_rhythm_mismatch", "paragraph_density_mismatch", "font_hierarchy_ratio_mismatch", "sidebar_orientation_fail", "footnote_readability", "text_fit_overflow", "visual_similarity_fail", "table_integrity_fail"],
+      "next_state_from_model": ["S9_VerifyProcessContract", "Lx_RepairLoop", "S_FAIL_QUALITY", "S_FAIL_PROCESS_CONTRACT"]
+    },
+    {
+      "state": "Lx_RepairLoop",
+      "tool_first": [],
+      "model_prompt": "templates/D8_repair_selection.prompt.json",
+      "slot_bindings": {
+        "failed_findings": "quality_findings.json blocking findings",
+        "page_strategy": "page_strategy.json",
+        "repair_atom_catalog": "contracts/page_type_repair_matrix.md",
+        "prior_loop_summary": "state_trace.json previous loop entries"
+      },
+      "produces": ["repair_plan.json"],
+      "next_state_from_model": ["S7_GenerateCandidate", "S_FAIL_QUALITY", "S_FAIL_PROCESS_CONTRACT"]
+    },
+    {
+      "state": "S9_VerifyProcessContract",
+      "tool_first": ["tools/validators/validate_process_artifacts.py"],
+      "model_prompt": "templates/D9_final_acceptance.prompt.json",
+      "slot_bindings": {
+        "state_trace_summary": "state_trace.json",
+        "process_validation_summary": "process_validation.json",
+        "product_quality_summary": "product_quality_gates.json + quality_findings.json",
+        "anti_overfit_evidence": "operation_log.jsonl + source code/static scan results"
+      },
+      "produces": ["final_acceptance.json", "audit_report.md"],
+      "next_state_from_model": ["S_DONE_PROCESS_VALIDATED", "S_DONE_PRODUCT_ACCEPTED", "S_FAIL_PROCESS_CONTRACT", "S_FAIL_QUALITY", "S_FAIL_TOOLING", "S_FAIL_CAPABILITY"]
+    }
+  ]
+}

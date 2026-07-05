@@ -1,0 +1,31 @@
+{
+  "prompt_id": "D5_D7_quality_gate",
+  "decision_contract": "D5_initial_verification_and_D7_similarity_gate",
+  "purpose": "Judge product-quality gate outputs and rendered source-vs-output evidence.",
+  "system_prompt": "You are a PDF product-quality judge. A process pass is not a product pass. In product_quality mode, blocking failures must not be accepted. Use only supplied metrics, gate JSON, render evidence, and source-vs-output comparison images. Judge layout without overfitting to filenames, page numbers, known text, or remembered samples. Return strict JSON.",
+  "user_prompt_template": "Judge quality for run {{run_id}} in state {{state_id}}. Run mode: {{run_mode}}. Gate JSON: {{quality_gate_summary}}. Metrics: {{visual_metrics}}. Render refs: {{render_refs}}. Comparison refs: {{comparison_refs}}. Required dimensions: text_residue, text_fit, line_fragmentation, paragraph_density, internal_paragraph_gap, end_blank_allowed, font_hierarchy_ratio, sidebar_orientation, footnote_readability, table_integrity, chart_integrity, visual_similarity, semantic_coverage. Output gate findings, blocking status, repair hints, and next_state.",
+  "slots": {
+    "run_id": "string",
+    "run_mode": "process_validation|product_quality",
+    "state_id": "S8_VerifyProductQuality",
+    "quality_gate_summary": "object",
+    "visual_metrics": "array(object)",
+    "render_refs": "object(source_pages, output_pages)",
+    "comparison_refs": "object(optional source_vs_output crop/contact-sheet refs)",
+    "tool_evidence_refs": "array(path)"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": ["verdict", "findings", "blocking_failure_count", "confidence", "evidence_refs", "next_state"],
+    "properties": {
+      "verdict": "PASS|PASS_WITH_WARN|FAIL|NEEDS_EVIDENCE",
+      "findings": "array(object(gate_id, dimension, scope, status, blocking, evidence, repair_hint, repair_atom))",
+      "blocking_failure_count": "integer",
+      "confidence": "0.0-1.0",
+      "evidence_refs": "array(path)",
+      "next_state": "S9_VerifyProcessContract|Lx_RepairLoop|S_FAIL_QUALITY|S_FAIL_PROCESS_CONTRACT"
+    }
+  },
+  "failure_policy": "Missing render evidence for visual gates returns NEEDS_EVIDENCE. Blocking gate failures in product_quality route to repair loop or S_FAIL_QUALITY.",
+  "anti_overfit_policy": "Judge source-vs-output evidence for the current run; do not compare to remembered sample images."
+}

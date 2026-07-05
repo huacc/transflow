@@ -1,0 +1,4095 @@
+{
+  "translation_provider": "codex_gpt5_manual_semantic_translation",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "prompt_artifacts": [
+    {
+      "prompt_instance": "docs/reports/translation_prompts/R2_AIA_pages_08_09_24_25/prompt_instance.json",
+      "slot_values": "docs/reports/translation_prompts/R2_AIA_pages_08_09_24_25/slot_values.json",
+      "model_output": "docs/reports/translation_prompts/R2_AIA_pages_08_09_24_25/model_output.json",
+      "decision_record": "docs/reports/translation_prompts/R2_AIA_pages_08_09_24_25/decision_record.json"
+    }
+  ],
+  "unit_count": 209,
+  "units": [
+    {
+      "unit_id": "p0_b0_l0",
+      "page_index": 0,
+      "source_text": "| AIA GROUP LIMITED",
+      "translation_zh": "| 友邦保险控股有限公司",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        49.89,
+        813.344,
+        121.962,
+        821.296
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b1_l0",
+      "page_index": 0,
+      "source_text": "OVERVIEW",
+      "translation_zh": "概览",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        26.931,
+        105.505,
+        36.019
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b2_l0",
+      "page_index": 0,
+      "source_text": "VALUE OF NEW BUSINESS(2)(8)",
+      "translation_zh": "新业务价值(2)(8)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        86.835,
+        159.64,
+        207.874,
+        170.261
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b13_l0",
+      "page_index": 0,
+      "source_text": "US$",
+      "translation_zh": "美元",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        72.274,
+        179.968,
+        81.954,
+        185.558
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b13_l1",
+      "page_index": 0,
+      "source_text": "millions",
+      "translation_zh": "百万",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        72.274,
+        184.968,
+        88.199,
+        190.559
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b19_l0",
+      "page_index": 0,
+      "source_text": "YoY (AER)",
+      "translation_zh": "按年增长（实际汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        161.026,
+        329.239,
+        186.015,
+        336.981
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "AER",
+          "target": "实际汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b19_l1",
+      "page_index": 0,
+      "source_text": "YoY (CER)",
+      "translation_zh": "按年增长（固定汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        109.17,
+        329.148,
+        133.623,
+        336.89
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "CER",
+          "target": "固定汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b20_l0",
+      "page_index": 0,
+      "source_text": "TOTAL ASSETS AND",
+      "translation_zh": "总资产及",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        394.866,
+        366.908,
+        480.813,
+        377.529
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b20_l1",
+      "page_index": 0,
+      "source_text": "TOTAL LIABILITIES",
+      "translation_zh": "总负债",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        394.866,
+        377.909,
+        471.463,
+        388.53
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b21_l0",
+      "page_index": 0,
+      "source_text": "ANNUALISED NEW",
+      "translation_zh": "年化新",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        240.85,
+        148.641,
+        320.847,
+        159.262
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b21_l1",
+      "page_index": 0,
+      "source_text": "PREMIUMS(3)(8)",
+      "translation_zh": "保费(3)(8)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        240.85,
+        159.641,
+        301.379,
+        170.262
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b30_l0",
+      "page_index": 0,
+      "source_text": "US$",
+      "translation_zh": "美元",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        226.291,
+        179.957,
+        235.971,
+        185.547
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b30_l1",
+      "page_index": 0,
+      "source_text": "millions",
+      "translation_zh": "百万",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        226.291,
+        184.957,
+        242.217,
+        190.547
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b36_l0",
+      "page_index": 0,
+      "source_text": "YoY (AER)",
+      "translation_zh": "按年增长（实际汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        314.649,
+        329.239,
+        339.638,
+        336.981
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "AER",
+          "target": "实际汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b36_l1",
+      "page_index": 0,
+      "source_text": "YoY (CER)",
+      "translation_zh": "按年增长（固定汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        262.793,
+        329.148,
+        287.246,
+        336.89
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "CER",
+          "target": "固定汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b37_l0",
+      "page_index": 0,
+      "source_text": "OPERATING PROFIT AFTER",
+      "translation_zh": "税后营运利润",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        394.866,
+        148.64,
+        507.808,
+        159.261
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b37_l1",
+      "page_index": 0,
+      "source_text": "TAX(4)",
+      "translation_zh": "扣税后(4)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        394.866,
+        159.641,
+        419.073,
+        170.262
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b45_l0",
+      "page_index": 0,
+      "source_text": "US$",
+      "translation_zh": "美元",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        380.306,
+        179.962,
+        389.986,
+        185.553
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b45_l1",
+      "page_index": 0,
+      "source_text": "millions",
+      "translation_zh": "百万",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        380.306,
+        184.963,
+        396.231,
+        190.553
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b50_l0",
+      "page_index": 0,
+      "source_text": "YoY (AER)",
+      "translation_zh": "按年增长（实际汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        469.625,
+        329.239,
+        494.615,
+        336.981
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "AER",
+          "target": "实际汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b50_l1",
+      "page_index": 0,
+      "source_text": "YoY (CER)",
+      "translation_zh": "按年增长（固定汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        417.77,
+        329.148,
+        442.223,
+        336.89
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "CER",
+          "target": "固定汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b51_l0",
+      "page_index": 0,
+      "source_text": "TOTAL WEIGHTED PREMIUM",
+      "translation_zh": "总加权保费",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        86.835,
+        366.908,
+        205.524,
+        377.529
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b51_l1",
+      "page_index": 0,
+      "source_text": "INCOME(5)",
+      "translation_zh": "收入(5)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        86.835,
+        377.909,
+        128.408,
+        388.53
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b60_l0",
+      "page_index": 0,
+      "source_text": "US$",
+      "translation_zh": "美元",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        69.475,
+        398.236,
+        79.155,
+        403.827
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b60_l1",
+      "page_index": 0,
+      "source_text": "millions",
+      "translation_zh": "百万",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        69.475,
+        403.237,
+        85.401,
+        408.827
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b65_l0",
+      "page_index": 0,
+      "source_text": "YoY (AER)",
+      "translation_zh": "按年增长（实际汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        161.027,
+        547.507,
+        186.016,
+        555.249
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "AER",
+          "target": "实际汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b65_l1",
+      "page_index": 0,
+      "source_text": "YoY (CER)",
+      "translation_zh": "按年增长（固定汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        109.171,
+        547.416,
+        133.624,
+        555.158
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "CER",
+          "target": "固定汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b66_l0",
+      "page_index": 0,
+      "source_text": "EV EQUITY(6)",
+      "translation_zh": "内含价值权益(6)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        240.85,
+        377.892,
+        292.893,
+        388.513
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "EV",
+          "target": "内含价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b75_l0",
+      "page_index": 0,
+      "source_text": "US$",
+      "translation_zh": "美元",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        223.49,
+        398.239,
+        233.17,
+        403.829
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b75_l1",
+      "page_index": 0,
+      "source_text": "millions",
+      "translation_zh": "百万",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        223.49,
+        403.24,
+        239.415,
+        408.83
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b80_l0",
+      "page_index": 0,
+      "source_text": "YoY (AER)",
+      "translation_zh": "按年增长（实际汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        316.476,
+        547.507,
+        341.465,
+        555.249
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "AER",
+          "target": "实际汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b80_l1",
+      "page_index": 0,
+      "source_text": "YoY (CER)",
+      "translation_zh": "按年增长（固定汇率）",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        264.62,
+        547.416,
+        289.073,
+        555.158
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "CER",
+          "target": "固定汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p0_b81_l0",
+      "page_index": 0,
+      "source_text": "US$",
+      "translation_zh": "美元",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        384.091,
+        398.236,
+        393.772,
+        403.827
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b81_l1",
+      "page_index": 0,
+      "source_text": "billions",
+      "translation_zh": "十亿",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        384.091,
+        403.237,
+        398.652,
+        408.827
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b97_l0",
+      "page_index": 0,
+      "source_text": "TOTAL LIABILITIES",
+      "translation_zh": "总负债",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        448.07,
+        547.351,
+        499.513,
+        556.199
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b97_l2",
+      "page_index": 0,
+      "source_text": "TOTAL ASSETS",
+      "translation_zh": "总资产",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        394.581,
+        547.351,
+        434.96,
+        556.199
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p0_b98_l0",
+      "page_index": 0,
+      "source_text": "2019 RESULTS AT-A-GLANCE(1)",
+      "translation_zh": "2019年业绩一览(1)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        59.818,
+        279.464,
+        77.562
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b0_l0",
+      "page_index": 1,
+      "source_text": "ANNUAL REPORT 2019 | 005",
+      "translation_zh": "2019年年报 | 005",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        463.809,
+        813.344,
+        560.837,
+        821.296
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b1_l0",
+      "page_index": 1,
+      "source_text": "OVERVIEW",
+      "translation_zh": "概览",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.194,
+        90.515,
+        582.146,
+        127.753
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b1_l1",
+      "page_index": 1,
+      "source_text": "FINANCIAL AND OPERATING REVIEW",
+      "translation_zh": "财务及营运回顾",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.194,
+        185.187,
+        582.146,
+        310.88
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "EV",
+          "target": "内含价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p1_b1_l2",
+      "page_index": 1,
+      "source_text": "CORPORATE GOVERNANCE",
+      "translation_zh": "企业管治",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.194,
+        368.07,
+        582.146,
+        459.644
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b1_l3",
+      "page_index": 1,
+      "source_text": "FINANCIAL STATEMENTS",
+      "translation_zh": "财务报表",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.194,
+        515.935,
+        582.146,
+        600.911
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b1_l4",
+      "page_index": 1,
+      "source_text": "ADDITIONAL INFORMATION",
+      "translation_zh": "其他资料",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.194,
+        658.104,
+        582.146,
+        750.704
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b2_l0",
+      "page_index": 1,
+      "source_text": "VALUE OF NEW BUSINESS(2)(7)",
+      "translation_zh": "新业务价值(2)(7)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        159.615,
+        203.621,
+        170.236
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b3_l0",
+      "page_index": 1,
+      "source_text": "TOTAL WEIGHTED PREMIUM",
+      "translation_zh": "总加权保费",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        263.386,
+        366.908,
+        382.075,
+        377.529
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b3_l1",
+      "page_index": 1,
+      "source_text": "INCOME(5)",
+      "translation_zh": "收入(5)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        263.386,
+        377.909,
+        304.959,
+        388.53
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b4_l0",
+      "page_index": 1,
+      "source_text": "ANNUALISED NEW",
+      "translation_zh": "年化新",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        263.386,
+        148.641,
+        345.285,
+        159.262
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b4_l1",
+      "page_index": 1,
+      "source_text": "PREMIUMS(3)",
+      "translation_zh": "保费(3)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        263.386,
+        159.641,
+        316.913,
+        170.262
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b5_l0",
+      "page_index": 1,
+      "source_text": "OPERATING PROFIT AFTER",
+      "translation_zh": "税后营运利润",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        366.908,
+        192.312,
+        377.529
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b5_l1",
+      "page_index": 1,
+      "source_text": "TAX(4)",
+      "translation_zh": "扣税后(4)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        377.909,
+        103.577,
+        388.53
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b6_l0",
+      "page_index": 1,
+      "source_text": "Notes:",
+      "translation_zh": "附注：",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        577.155,
+        98.683,
+        584.918
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b6_l1",
+      "page_index": 1,
+      "source_text": "(1)\t The financial information from 2017 to 2019 is presented on the",
+      "translation_zh": "(1) 2017年至2019年的财务资料按",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        585.156,
+        291.918,
+        592.919
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b6_l2",
+      "page_index": 1,
+      "source_text": "31 December financial year-end basis. The financial information",
+      "translation_zh": "12月31日财政年度结束基准列示。财务资料",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        593.157,
+        289.783,
+        600.92
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b6_l3",
+      "page_index": 1,
+      "source_text": "from 2015 to 2016 is presented on the 30 November financial",
+      "translation_zh": "2015年至2016年的资料按11月30日财政",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        601.158,
+        282.943,
+        608.921
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b6_l4",
+      "page_index": 1,
+      "source_text": "year-end basis. For clarity, the growth rates are presented on the",
+      "translation_zh": "年度结束基准列示。为清晰起见，增长率按",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        609.159,
+        292.807,
+        616.922
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b6_l5",
+      "page_index": 1,
+      "source_text": "31 December financial year-end basis.",
+      "translation_zh": "12月31日财政年度结束基准列示。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        617.16,
+        210.242,
+        624.923
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b7_l0",
+      "page_index": 1,
+      "source_text": "(2)\t Value of new business (VONB) is the present value, measured at the",
+      "translation_zh": "(2) 新业务价值是以销售时点计量的",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        633.162,
+        301.306,
+        640.925
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b7_l1",
+      "page_index": 1,
+      "source_text": "point of sale, of projected after-tax statutory profits emerging in the",
+      "translation_zh": "未来新售业务产生的预计税后法定利润的现值，",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        641.163,
+        299.787,
+        648.926
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b7_l2",
+      "page_index": 1,
+      "source_text": "future from new business sold in the period less the cost of holding",
+      "translation_zh": "减去为支持该业务而持有",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        649.164,
+        299.067,
+        656.927
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b7_l3",
+      "page_index": 1,
+      "source_text": "the required capital in excess of regulatory reserves to support this",
+      "translation_zh": "超出监管准备金要求的所需资本成本",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        657.165,
+        298.224,
+        664.928
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b7_l4",
+      "page_index": 1,
+      "source_text": "business.",
+      "translation_zh": "的金额。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        665.166,
+        121.832,
+        672.929
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b8_l0",
+      "page_index": 1,
+      "source_text": "(3)\t Annualised new premiums (ANP) is a measure of new business",
+      "translation_zh": "(3) 年化新保费是新业务",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        681.168,
+        287.011,
+        688.931
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b8_l1",
+      "page_index": 1,
+      "source_text": "activity that is calculated as the sum of 100 per cent of annualised",
+      "translation_zh": "活动指标，按年化首年保费的100%",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        689.169,
+        296.666,
+        696.932
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b8_l2",
+      "page_index": 1,
+      "source_text": "first year premiums and 10 per cent of single premiums, before",
+      "translation_zh": "加一次性保费的10%计算，均为",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        697.17,
+        286.367,
+        704.933
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b8_l3",
+      "page_index": 1,
+      "source_text": "reinsurance ceded.",
+      "translation_zh": "扣除分出再保险前。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        705.171,
+        151.33,
+        712.934
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b9_l0",
+      "page_index": 1,
+      "source_text": "(4)\t Operating profit after tax (OPAT) is shown after non-controlling",
+      "translation_zh": "(4) 税后营运利润已扣除非控股",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        721.173,
+        286.514,
+        728.936
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b9_l1",
+      "page_index": 1,
+      "source_text": "interests.",
+      "translation_zh": "权益后列示。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        729.174,
+        121.3,
+        736.937
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b10_l0",
+      "page_index": 1,
+      "source_text": "(5)\t Total weighted premium income (TWPI) consists of 100 per cent of",
+      "translation_zh": "(5) 总加权保费收入包括续期保费的100%、",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        745.176,
+        298.757,
+        752.939
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "TWPI",
+          "target": "总加权保费收入",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b10_l1",
+      "page_index": 1,
+      "source_text": "renewal premiums, 100 per cent of first year premiums and 10 per",
+      "translation_zh": "首年保费的100%以及一次性保费的10%",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        753.177,
+        296.643,
+        760.94
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b10_l2",
+      "page_index": 1,
+      "source_text": "cent of single premiums, before reinsurance ceded.",
+      "translation_zh": "均为扣除分出再保险前。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        93.545,
+        761.178,
+        248.777,
+        768.941
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b11_l0",
+      "page_index": 1,
+      "source_text": "(6)\t Embedded value (EV) is an actuarially determined estimate of the",
+      "translation_zh": "(6) 内含价值是对",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        310.398,
+        585.163,
+        525.587,
+        592.926
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "EV",
+          "target": "内含价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b11_l1",
+      "page_index": 1,
+      "source_text": "economic value of a life insurance business based on a particular",
+      "translation_zh": "人寿保险业务经济价值的精算估计，基于特定",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        593.164,
+        524.089,
+        600.927
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b11_l2",
+      "page_index": 1,
+      "source_text": "set of assumptions as to future experience, excluding any economic",
+      "translation_zh": "未来经验假设，不包括归属于未来新",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        601.165,
+        531.143,
+        608.928
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b11_l3",
+      "page_index": 1,
+      "source_text": "value attributable to future new business. EV Equity is the total of",
+      "translation_zh": "业务的任何经济价值。内含价值权益为",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        609.166,
+        524.53,
+        616.929
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "EV",
+          "target": "内含价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b11_l4",
+      "page_index": 1,
+      "source_text": "embedded value, goodwill and other intangible assets.",
+      "translation_zh": "内含价值、商誉和其他无形资产的合计。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        617.167,
+        489.29,
+        624.93
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b12_l0",
+      "page_index": 1,
+      "source_text": "(7)\t Based on local statutory basis, before unallocated Group Office",
+      "translation_zh": "(7) 按当地法定基准，未扣除未分配集团办公室",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        310.398,
+        633.169,
+        516.927,
+        640.932
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b12_l1",
+      "page_index": 1,
+      "source_text": "expenses and deduction of the amount attributable to non-controlling",
+      "translation_zh": "费用以及非控股",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        641.17,
+        531.856,
+        648.933
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b12_l2",
+      "page_index": 1,
+      "source_text": "interests, VONB by segment includes pension business.",
+      "translation_zh": "权益应占金额，分部新业务价值包括养老金业务。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        649.171,
+        492.454,
+        656.934
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l0",
+      "page_index": 1,
+      "source_text": "(8)\t In 2019, ANP and VONB for Other Markets include 49 per cent of",
+      "translation_zh": "(8) 2019,年其他市场的年化新保费和新业务价值包括49%",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        310.398,
+        665.173,
+        524.171,
+        672.936
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l1",
+      "page_index": 1,
+      "source_text": "the results from our joint venture in India, Tata AIA Life Insurance",
+      "translation_zh": "来自我们印度合资企业塔塔友邦人寿保险",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        673.174,
+        523.541,
+        680.937
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l2",
+      "page_index": 1,
+      "source_text": "Company Limited (Tata AIA Life), to reflect our shareholding. ANP",
+      "translation_zh": "有限公司（塔塔友邦人寿）的业绩，以反映我们的持股。年化新保费",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        681.175,
+        524.899,
+        688.938
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l3",
+      "page_index": 1,
+      "source_text": "and VONB for 2018 and before have not been restated and do not",
+      "translation_zh": "以及2018年及以前的新业务价值未重列，且不",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        689.176,
+        524.564,
+        696.939
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l4",
+      "page_index": 1,
+      "source_text": "include any contribution from Tata AIA Life. The total reported",
+      "translation_zh": "包括塔塔友邦人寿的任何贡献。集团在2019年报告的",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        697.177,
+        515.211,
+        704.94
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l5",
+      "page_index": 1,
+      "source_text": "VONB for the Group in 2019 excludes the VONB attributable to",
+      "translation_zh": "集团2019年新业务价值总额不包括归属于",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        705.178,
+        516.114,
+        712.941
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l6",
+      "page_index": 1,
+      "source_text": "non-controlling interests. VONB for 2018 and before have not been",
+      "translation_zh": "非控股权益的新业务价值。2018年及以前的新业务价值未",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        713.179,
+        528.848,
+        720.942
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l7",
+      "page_index": 1,
+      "source_text": "restated and are reported before deducting the amount attributable",
+      "translation_zh": "重列，并在扣除归属于",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        721.18,
+        530.605,
+        728.943
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l8",
+      "page_index": 1,
+      "source_text": "to non-controlling interests, as previously disclosed. The IFRS",
+      "translation_zh": "非控股权益金额前列报，如此前披露。国际财务报告准则",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        729.181,
+        512.658,
+        736.944
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "IFRS",
+          "target": "国际财务报告准则",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l9",
+      "page_index": 1,
+      "source_text": "results of Tata AIA Life are accounted for using the equity method.",
+      "translation_zh": "下塔塔友邦人寿业绩采用权益法入账。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        737.182,
+        526.376,
+        744.945
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l10",
+      "page_index": 1,
+      "source_text": "The results of Tata AIA Life are accounted for on a one quarter lag",
+      "translation_zh": "塔塔友邦人寿的业绩在友邦保险合并业绩中按滞后一个季度",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        745.183,
+        525.138,
+        752.946
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l11",
+      "page_index": 1,
+      "source_text": "basis in AIA’s consolidated results. For clarity, TWPI does not include",
+      "translation_zh": "基准入账。为清晰起见，总加权保费收入不包括",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        753.184,
+        534.419,
+        760.947
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "TWPI",
+          "target": "总加权保费收入",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b13_l12",
+      "page_index": 1,
+      "source_text": "any contribution from Tata AIA Life.",
+      "translation_zh": "塔塔友邦人寿的任何贡献。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        324.573,
+        761.185,
+        431.463,
+        768.948
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p1_b14_l0",
+      "page_index": 1,
+      "source_text": "2019 BREAKDOWN BY MARKET SEGMENT",
+      "translation_zh": "2019年按市场分部细分",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        59.818,
+        377.746,
+        77.562
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b34_l0",
+      "page_index": 1,
+      "source_text": "Hong Kong",
+      "translation_zh": "香港",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        450.539,
+        197.074,
+        495.775,
+        206.5
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b34_l1",
+      "page_index": 1,
+      "source_text": "Mainland China",
+      "translation_zh": "中国内地",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        450.539,
+        209.074,
+        511.117,
+        218.5
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b34_l2",
+      "page_index": 1,
+      "source_text": "Thailand",
+      "translation_zh": "泰国",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        450.539,
+        221.074,
+        487.237,
+        230.5
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b34_l3",
+      "page_index": 1,
+      "source_text": "Singapore",
+      "translation_zh": "新加坡",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        450.539,
+        233.074,
+        492.51,
+        242.5
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b34_l4",
+      "page_index": 1,
+      "source_text": "Malaysia",
+      "translation_zh": "马来西亚",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        450.539,
+        245.074,
+        487.38,
+        254.5
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p1_b34_l5",
+      "page_index": 1,
+      "source_text": "Other Markets (8)",
+      "translation_zh": "其他市场(8)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        450.539,
+        257.074,
+        513.642,
+        266.5
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b0_l0",
+      "page_index": 2,
+      "source_text": "| AIA GROUP LIMITED",
+      "translation_zh": "| 友邦保险控股有限公司",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        49.89,
+        813.344,
+        121.962,
+        821.296
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b1_l0",
+      "page_index": 2,
+      "source_text": "FINANCIAL AND OPERATING REVIEW",
+      "translation_zh": "财务及营运回顾",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        26.942,
+        208.661,
+        36.03
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "EV",
+          "target": "内含价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b1_l1",
+      "page_index": 2,
+      "source_text": "FINANCIAL REVIEW",
+      "translation_zh": "财务回顾",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        38.35,
+        139.923,
+        47.294
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "EV",
+          "target": "内含价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b1_l2",
+      "page_index": 2,
+      "source_text": "FINANCIAL AND OPERATING REVIEW",
+      "translation_zh": "财务及营运回顾",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        26.942,
+        208.661,
+        36.03
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "EV",
+          "target": "内含价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b2_l0",
+      "page_index": 2,
+      "source_text": "NEW BUSINESS PERFORMANCE",
+      "translation_zh": "新业务表现",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        91.769,
+        209.194,
+        107.253
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b3_l0",
+      "page_index": 2,
+      "source_text": "VONB, ANP and Margin by Segment",
+      "translation_zh": "按分部列示的新业务价值、年化新保费及利润率",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        119.732,
+        210.685,
+        130.353
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b4_l2",
+      "page_index": 2,
+      "source_text": "VONB Change",
+      "translation_zh": "新业务价值变动",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        448.712,
+        138.255,
+        503.846,
+        148.317
+      ],
+      "text_role": "label",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l0",
+      "page_index": 2,
+      "source_text": "US$ millions, unless otherwise stated",
+      "translation_zh": "百万美元，除非另有说明",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.032,
+        165.691,
+        179.318,
+        173.517
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p2_b5_l1",
+      "page_index": 2,
+      "source_text": "VONB",
+      "translation_zh": "新业务价值",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        210.657,
+        164.314,
+        232.816,
+        173.817
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l2",
+      "page_index": 2,
+      "source_text": "VONB",
+      "translation_zh": "新业务价值",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        249.969,
+        153.816,
+        274.084,
+        163.319
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l3",
+      "page_index": 2,
+      "source_text": "Margin",
+      "translation_zh": "利润率",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        246.178,
+        164.314,
+        272.129,
+        173.817
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l4",
+      "page_index": 2,
+      "source_text": "ANP",
+      "translation_zh": "年化新保费",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        295.529,
+        164.314,
+        312.07,
+        173.817
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l5",
+      "page_index": 2,
+      "source_text": "VONB",
+      "translation_zh": "新业务价值",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        329.81,
+        164.39,
+        351.876,
+        173.817
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l6",
+      "page_index": 2,
+      "source_text": "VONB",
+      "translation_zh": "新业务价值",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        369.122,
+        153.893,
+        393.143,
+        163.319
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l7",
+      "page_index": 2,
+      "source_text": "Margin",
+      "translation_zh": "利润率",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        365.535,
+        164.39,
+        391.188,
+        173.817
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l8",
+      "page_index": 2,
+      "source_text": "ANP",
+      "translation_zh": "年化新保费",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        414.759,
+        164.39,
+        431.13,
+        173.817
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l9",
+      "page_index": 2,
+      "source_text": "YoY",
+      "translation_zh": "按年",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        457.361,
+        153.816,
+        472.635,
+        163.319
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l10",
+      "page_index": 2,
+      "source_text": "CER",
+      "translation_zh": "固定汇率",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        455.278,
+        164.314,
+        470.765,
+        173.817
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "CER",
+          "target": "固定汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l11",
+      "page_index": 2,
+      "source_text": "YoY",
+      "translation_zh": "按年",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        497.319,
+        153.893,
+        512.194,
+        163.319
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b5_l12",
+      "page_index": 2,
+      "source_text": "AER",
+      "translation_zh": "实际汇率",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        494.778,
+        164.39,
+        510.324,
+        173.817
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [
+        {
+          "source": "AER",
+          "target": "实际汇率",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b6_l0",
+      "page_index": 2,
+      "source_text": "Hong Kong",
+      "translation_zh": "香港",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.035,
+        181.169,
+        108.665,
+        190.596
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b7_l0",
+      "page_index": 2,
+      "source_text": "Thailand",
+      "translation_zh": "泰国",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.044,
+        196.189,
+        99.893,
+        205.615
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b8_l0",
+      "page_index": 2,
+      "source_text": "Singapore",
+      "translation_zh": "新加坡",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.052,
+        211.208,
+        105.121,
+        220.635
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b9_l0",
+      "page_index": 2,
+      "source_text": "Malaysia",
+      "translation_zh": "马来西亚",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.061,
+        226.228,
+        100.021,
+        235.654
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b10_l0",
+      "page_index": 2,
+      "source_text": "Mainland China",
+      "translation_zh": "中国内地",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.069,
+        241.247,
+        124.985,
+        250.674
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b11_l0",
+      "page_index": 2,
+      "source_text": "Other Markets(1)",
+      "translation_zh": "其他市场(1)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.077,
+        256.267,
+        126.317,
+        265.693
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b12_l0",
+      "page_index": 2,
+      "source_text": "Subtotal",
+      "translation_zh": "小计",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.043,
+        271.133,
+        99.399,
+        280.789
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l0",
+      "page_index": 2,
+      "source_text": "Adjustment to reflect",
+      "translation_zh": "反映以下项目的调整",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.052,
+        286.305,
+        146.974,
+        295.732
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l1",
+      "page_index": 2,
+      "source_text": "consolidated reserving and",
+      "translation_zh": "合并准备金及",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.052,
+        296.803,
+        177.557,
+        306.229
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l2",
+      "page_index": 2,
+      "source_text": "capital requirements",
+      "translation_zh": "资本要求",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.052,
+        307.3,
+        152.015,
+        316.727
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l4",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        257.041,
+        307.224,
+        272.145,
+        316.727
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l5",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        296.727,
+        307.224,
+        311.832,
+        316.727
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l7",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        376.194,
+        307.3,
+        391.205,
+        316.727
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l8",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        415.88,
+        307.3,
+        430.891,
+        316.727
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l9",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        455.601,
+        307.224,
+        470.705,
+        316.727
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b13_l10",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        495.253,
+        307.3,
+        510.264,
+        316.727
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b14_l0",
+      "page_index": 2,
+      "source_text": "After-tax value of unallocated",
+      "translation_zh": "未分配项目的税后价值",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.06,
+        322.32,
+        176.129,
+        331.746
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b14_l1",
+      "page_index": 2,
+      "source_text": "Group Office expenses",
+      "translation_zh": "集团办公室费用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.06,
+        332.817,
+        158.602,
+        342.244
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b14_l3",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        257.049,
+        332.741,
+        272.154,
+        342.244
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b14_l4",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        296.736,
+        332.741,
+        311.84,
+        342.244
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b14_l6",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        376.202,
+        332.817,
+        391.213,
+        342.244
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b14_l7",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        415.889,
+        332.817,
+        430.9,
+        342.244
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b14_l8",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        455.609,
+        332.741,
+        470.714,
+        342.244
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b14_l9",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        495.262,
+        332.817,
+        510.273,
+        342.244
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b15_l0",
+      "page_index": 2,
+      "source_text": "Total before",
+      "translation_zh": "未计以下项目前合计",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.069,
+        347.684,
+        113.442,
+        357.34
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b15_l1",
+      "page_index": 2,
+      "source_text": "non-controlling interests",
+      "translation_zh": "非控股权益",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.069,
+        358.181,
+        169.559,
+        367.837
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b16_l0",
+      "page_index": 2,
+      "source_text": "Non-controlling interests(1)",
+      "translation_zh": "非控股权益(1)",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.077,
+        373.354,
+        165.477,
+        382.78
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b16_l2",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        257.024,
+        373.289,
+        272.128,
+        382.792
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b16_l3",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        296.71,
+        373.289,
+        311.815,
+        382.792
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b16_l5",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        376.177,
+        373.365,
+        391.188,
+        382.792
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b16_l6",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        415.863,
+        373.365,
+        430.874,
+        382.792
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b16_l7",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        455.584,
+        373.289,
+        470.688,
+        382.792
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b16_l8",
+      "page_index": 2,
+      "source_text": "n/m",
+      "translation_zh": "不适用",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        495.236,
+        373.365,
+        510.247,
+        382.792
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b17_l0",
+      "page_index": 2,
+      "source_text": "Total",
+      "translation_zh": "合计",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        68.043,
+        388.232,
+        86.25,
+        397.888
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b18_l0",
+      "page_index": 2,
+      "source_text": "Note:",
+      "translation_zh": "附注：",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        408.837,
+        77.72,
+        416.6
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p2_b18_l1",
+      "page_index": 2,
+      "source_text": "(1)\t In 2019, ANP and VONB for Other Markets include 49 per cent of the results from Tata AIA Life Insurance Company Limited (Tata AIA Life) to reflect our",
+      "translation_zh": "(1) 2019,年其他市场的年化新保费和新业务价值包括塔塔友邦人寿保险有限公司（塔塔友邦人寿）49%的业绩，以反映我们的",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        416.839,
+        517.572,
+        424.602
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b18_l2",
+      "page_index": 2,
+      "source_text": "shareholding. The contribution to ANP and VONB amount to US$182 million and US$38 million respectively. The total reported VONB for the Group in 2019",
+      "translation_zh": "持股。其对年化新保费和新业务价值的贡献分别为182百万美元和38百万美元。集团2019年报告的新业务价值总额",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        76.537,
+        424.84,
+        517.547,
+        432.603
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b18_l3",
+      "page_index": 2,
+      "source_text": "excludes the VONB attributable to non-controlling interests of US$32 million. For 2018, neither ANP nor VONB have been restated and they do not include",
+      "translation_zh": "不包括非控股权益应占的32百万美元新业务价值。对于2018,年年化新保费和新业务价值均未重列，也不包括",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        76.537,
+        432.841,
+        517.564,
+        440.604
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b18_l4",
+      "page_index": 2,
+      "source_text": "any contribution from Tata AIA Life or deduct the amount attributable to non-controlling interests. As disclosed in our Annual Report 2018, the VONB",
+      "translation_zh": "塔塔友邦人寿的任何贡献，也未扣除归属于非控股权益的金额。如2018,年年报所披露，新业务价值",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        76.537,
+        440.842,
+        517.517,
+        448.605
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b18_l5",
+      "page_index": 2,
+      "source_text": "attributable to non-controlling interests for 2018 is US$27 million.",
+      "translation_zh": "中归属于非控股权益的2018年金额为27百万美元。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        76.537,
+        448.843,
+        265.488,
+        456.606
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p2_b19_l0",
+      "page_index": 2,
+      "source_text": "VONB grew by 6 per cent to US$4,154 million in 2019 as very strong growth in Mainland China and Other",
+      "translation_zh": "2019年新业务价值增长6%，达到4,154百万美元，因中国内地和其他",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        480.065,
+        518.155,
+        490.6
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b19_l1",
+      "page_index": 2,
+      "source_text": "Markets was largely offset by a 5 per cent decline in Hong Kong where the social unrest in the second half of",
+      "translation_zh": "市场非常强劲的增长，大部分被香港5%的下降所抵消，后者因下半年社会事件",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        493.565,
+        518.163,
+        504.1
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b19_l2",
+      "page_index": 2,
+      "source_text": "2019 drove a substantial decline in the Mainland Chinese visitor customer segment.",
+      "translation_zh": "2019年导致中国内地访客客户分部大幅下降。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        507.064,
+        407.317,
+        517.6
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p2_b20_l0",
+      "page_index": 2,
+      "source_text": "ANP increased by 2 per cent to US$6,585 million and VONB margin increased by 3.0 pps to 62.9 per cent.",
+      "translation_zh": "年化新保费增长2%至6,585百万美元，新业务价值利润率上升3.0个百分点至62.9%。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        534.063,
+        518.029,
+        544.599
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b20_l1",
+      "page_index": 2,
+      "source_text": "PVNBP margin increased to 11 per cent from 10 per cent in 2018. Despite the lower interest rate environment in",
+      "translation_zh": "按现值计算的新业务保费利润率由2018.年的10%升至11%。尽管利率环境在",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        547.562,
+        518.031,
+        558.098
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b20_l2",
+      "page_index": 2,
+      "source_text": "the second half of 2019, both VONB margin and PVNBP margin improved in 2019, supported by the enhanced",
+      "translation_zh": "2019,年下半年走低，新业务价值利润率和按现值计算的新业务保费利润率均在2019,年改善，受益于",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        561.062,
+        518.087,
+        571.598
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b20_l3",
+      "page_index": 2,
+      "source_text": "profitability in our long-term savings and protection products in Hong Kong and the positive effect of a tax rule",
+      "translation_zh": "香港长期储蓄和保障产品盈利能力提升，以及税务规则的积极影响",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        574.562,
+        518.088,
+        585.097
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b20_l4",
+      "page_index": 2,
+      "source_text": "change that increased the tax deductibility of commissions in Mainland China.",
+      "translation_zh": "该变更提高了中国内地佣金的税前扣除比例。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        588.061,
+        383.709,
+        598.597
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p2_b21_l0",
+      "page_index": 2,
+      "source_text": "Agency distribution accounted for 74 per cent of the Group’s total VONB. The consistent execution of our",
+      "translation_zh": "代理分销占集团新业务价值总额的74%。我们持续执行",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        615.06,
+        518.141,
+        625.596
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b21_l1",
+      "page_index": 2,
+      "source_text": "Premier Agency strategy helped generate 11 per cent VONB growth to US$3,243 million and a 5 per cent",
+      "translation_zh": "卓越代理策略，推动新业务价值增长11%至3,243百万美元，并使活跃代理人数增加5%",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        628.56,
+        518.089,
+        639.095
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b21_l2",
+      "page_index": 2,
+      "source_text": "increase in the number of active agents. Partnership distribution VONB reduced by 1 per cent to US$1,142",
+      "translation_zh": "活跃代理人数增加。伙伴分销新业务价值下降1%至1,142",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        642.059,
+        518.034,
+        652.595
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b21_l3",
+      "page_index": 2,
+      "source_text": "million. Strong growth from our bancassurance channel was offset by the significant decline in new business",
+      "translation_zh": "百万美元。银行保险渠道的强劲增长被新业务显著下降所抵消",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        655.559,
+        518.153,
+        666.094
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b21_l4",
+      "page_index": 2,
+      "source_text": "from the Hong Kong retail IFA channel in the second half of 2019, reflecting the reduction in visitor arrivals and",
+      "translation_zh": "来自香港零售独立财务顾问渠道的新业务在2019,年下半年下降，反映访港旅客减少和",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        669.058,
+        518.107,
+        679.594
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p2_b21_l5",
+      "page_index": 2,
+      "source_text": "increased competition.",
+      "translation_zh": "竞争加剧。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        682.558,
+        156.137,
+        693.093
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p3_b0_l0",
+      "page_index": 3,
+      "source_text": "ANNUAL REPORT 2019 | 021",
+      "translation_zh": "2019年年报 | 021",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        463.809,
+        813.344,
+        560.549,
+        821.296
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p3_b1_l0",
+      "page_index": 3,
+      "source_text": "OVERVIEW",
+      "translation_zh": "概览",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.172,
+        90.515,
+        582.124,
+        127.753
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p3_b1_l1",
+      "page_index": 3,
+      "source_text": "FINANCIAL AND OPERATING REVIEW",
+      "translation_zh": "财务及营运回顾",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.172,
+        185.187,
+        582.124,
+        310.88
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "EV",
+          "target": "内含价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b1_l2",
+      "page_index": 3,
+      "source_text": "CORPORATE GOVERNANCE",
+      "translation_zh": "企业管治",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.172,
+        368.07,
+        582.124,
+        459.644
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b1_l3",
+      "page_index": 3,
+      "source_text": "FINANCIAL STATEMENTS",
+      "translation_zh": "财务报表",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.172,
+        515.935,
+        582.124,
+        600.911
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b1_l4",
+      "page_index": 3,
+      "source_text": "ADDITIONAL INFORMATION",
+      "translation_zh": "其他资料",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        574.172,
+        658.104,
+        582.124,
+        750.704
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b2_l0",
+      "page_index": 3,
+      "source_text": "Excluding Hong Kong, the Group’s total VONB grew strongly at 16 per cent compared to 2018. Also excluding",
+      "translation_zh": "不包括香港，集团总新业务价值较2018.年强劲增长16%。同时不包括",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        95.723,
+        535.062,
+        106.258
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b2_l1",
+      "page_index": 3,
+      "source_text": "Hong Kong, VONB from the Group’s agency distribution grew at 16 per cent and VONB from partnership",
+      "translation_zh": "香港，集团代理分销的新业务价值增长16%，伙伴",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        109.222,
+        535.048,
+        119.758
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b2_l2",
+      "page_index": 3,
+      "source_text": "distribution increased by 19 per cent.",
+      "translation_zh": "分销增长19%。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        122.722,
+        233.033,
+        133.257
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b3_l0",
+      "page_index": 3,
+      "source_text": "Hong Kong reported a 5 per cent reduction in VONB in 2019. Double-digit growth in VONB from our domestic",
+      "translation_zh": "香港2019.年报告新业务价值下降5%。本地客户",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        149.721,
+        535.105,
+        160.256
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b3_l1",
+      "page_index": 3,
+      "source_text": "customer segment was more than offset by a substantial decline in VONB from the Mainland Chinese visitor",
+      "translation_zh": "分部的新业务价值实现双位数增长，但被中国内地访客",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        163.22,
+        535.143,
+        173.756
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b3_l2",
+      "page_index": 3,
+      "source_text": "customer segment, which broadly tracked the reduction in visitor arrivals from Mainland China, as reported by",
+      "translation_zh": "客户分部新业务价值大幅下滑所抵消，该下滑大致跟随",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        176.72,
+        535.132,
+        187.255
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b3_l3",
+      "page_index": 3,
+      "source_text": "the Hong Kong Tourism Board, in the second half of 2019. VONB margin increased by 4.1 pps to 66.1 per cent,",
+      "translation_zh": "香港旅游发展局报告的2019.年下半年中国内地访港旅客减少。新业务价值利润率上升4.1个百分点至66.1%，",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        190.219,
+        535.059,
+        200.755
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b3_l4",
+      "page_index": 3,
+      "source_text": "mainly driven by enhanced profitability in our long-term savings and protection products.",
+      "translation_zh": "主要由长期储蓄和保障产品盈利能力提升推动。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        203.719,
+        446.403,
+        214.254
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b4_l0",
+      "page_index": 3,
+      "source_text": "Mainland China delivered very strong VONB growth of 27 per cent to US$1,167 million. Our Premier Agency",
+      "translation_zh": "中国内地新业务价值强劲增长27%至1,167百万美元。我们的卓越代理",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        230.718,
+        535.053,
+        241.253
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b4_l1",
+      "page_index": 3,
+      "source_text": "strategy supported double-digit growth in active agents and further improvements in productivity. VONB margin",
+      "translation_zh": "策略支持活跃代理人数实现双位数增长，并进一步提升生产力。新业务价值利润率",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        244.217,
+        535.123,
+        254.753
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b4_l2",
+      "page_index": 3,
+      "source_text": "increased by 3.1 pps to 93.5 per cent, as the positive effect of the tax rule change previously mentioned was",
+      "translation_zh": "上升3.1个百分点至93.5%，此前提到的税务规则变更的积极影响",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        257.717,
+        535.126,
+        268.252
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b4_l3",
+      "page_index": 3,
+      "source_text": "partly offset by the impact of enhanced policyholder benefits within our protection products.",
+      "translation_zh": "部分被保障产品中提升保单持有人利益的影响所抵消。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        271.216,
+        460.177,
+        281.752
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b5_l0",
+      "page_index": 3,
+      "source_text": "Thailand continued to benefit from strong progress in both our Financial Adviser (FA) programme and our",
+      "translation_zh": "泰国继续受益于财务顾问计划及",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        298.215,
+        535.157,
+        308.751
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b5_l1",
+      "page_index": 3,
+      "source_text": "exclusive partnership with Bangkok Bank Public Company Limited (Bangkok Bank), and reported overall VONB",
+      "translation_zh": "与盘谷银行大众有限公司（盘谷银行）的独家合作伙伴关系，并报告整体新业务价值",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        311.715,
+        535.057,
+        322.25
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b5_l2",
+      "page_index": 3,
+      "source_text": "growth of 6 per cent to US$494 million in 2019. VONB margin decreased to 67.7 per cent mainly as a result of",
+      "translation_zh": "2019.年增长6%至494百万美元。新业务价值利润率降至67.7%，主要由于",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        325.214,
+        535.057,
+        335.75
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b5_l3",
+      "page_index": 3,
+      "source_text": "a higher proportion of bancassurance business.",
+      "translation_zh": "银行保险业务占比提高。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        338.714,
+        274.975,
+        349.249
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b6_l0",
+      "page_index": 3,
+      "source_text": "VONB in Singapore remained stable at US$352 million in 2019 as growth in regular premium sales was offset",
+      "translation_zh": "2019年新加坡新业务价值保持稳定，为352百万美元，定期保费销售增长被",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        365.713,
+        535.048,
+        376.248
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b6_l1",
+      "page_index": 3,
+      "source_text": "by lower single premium sales in our partnership distribution channel.",
+      "translation_zh": "伙伴分销渠道较低的一次性保费销售所抵消。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        379.212,
+        368.18,
+        389.748
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b7_l0",
+      "page_index": 3,
+      "source_text": "Malaysia achieved VONB growth of 7 per cent to US$258 million in 2019, supported by increased sales in both",
+      "translation_zh": "马来西亚2019,年新业务价值增长7%至258百万美元，受代理和",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        406.211,
+        535.106,
+        416.747
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b7_l1",
+      "page_index": 3,
+      "source_text": "agency and in-branch bancassurance channels.",
+      "translation_zh": "分行银行保险渠道销售增加支持。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        419.711,
+        276.164,
+        430.246
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b8_l0",
+      "page_index": 3,
+      "source_text": "Other Markets reported very strong VONB growth of 27 per cent to US$535 million led by Australia, the",
+      "translation_zh": "其他市场新业务价值强劲增长27%至535百万美元，主要由澳大利亚、",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        446.71,
+        535.149,
+        457.245
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b8_l1",
+      "page_index": 3,
+      "source_text": "Philippines and Vietnam.",
+      "translation_zh": "菲律宾和越南带动。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        460.209,
+        182.027,
+        470.745
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "low"
+    },
+    {
+      "unit_id": "p3_b9_l0",
+      "page_index": 3,
+      "source_text": "The VONB results for the Group in 2019 are reported after a deduction of US$273 million for the consolidation",
+      "translation_zh": "集团2019年新业务价值结果已扣除273百万美元，用于合并",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        487.208,
+        535.132,
+        497.744
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b9_l1",
+      "page_index": 3,
+      "source_text": "reserving and capital requirements over and above local statutory requirements, the present value of unallocated",
+      "translation_zh": "超过当地法定要求的准备金和资本要求、未分配项目的现值",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        500.708,
+        535.125,
+        511.243
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b9_l2",
+      "page_index": 3,
+      "source_text": "Group Office expenses and VONB attributable to non-controlling interests.",
+      "translation_zh": "集团办公室费用以及非控股权益应占的新业务价值。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        514.207,
+        383.807,
+        524.743
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    },
+    {
+      "unit_id": "p3_b10_l0",
+      "page_index": 3,
+      "source_text": "In 2019, ANP and VONB for Other Markets include 49 per cent of the results from Tata AIA Life to reflect our",
+      "translation_zh": "2019,年其他市场的年化新保费和新业务价值包括塔塔友邦人寿49%的业绩，以反映我们的",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        541.206,
+        535.081,
+        551.742
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b10_l1",
+      "page_index": 3,
+      "source_text": "shareholding. The contribution to ANP and VONB amount to US$182 million and US$38 million respectively.",
+      "translation_zh": "持股。其对年化新保费和新业务价值的贡献分别为182百万美元和38百万美元。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        554.706,
+        535.143,
+        565.241
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b10_l2",
+      "page_index": 3,
+      "source_text": "The total reported VONB for the Group in 2019 excludes the VONB attributable to non-controlling interests of",
+      "translation_zh": "集团2019年报告的新业务价值总额不包括非控股权益应占的",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        568.205,
+        535.114,
+        578.741
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b10_l3",
+      "page_index": 3,
+      "source_text": "US$32 million. For 2018, neither ANP nor VONB have been restated and they do not include any contribution",
+      "translation_zh": "32百万美元。对于2018,年年化新保费和新业务价值均未重列，也不包括任何",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        581.705,
+        535.096,
+        592.24
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        },
+        {
+          "source": "ANP",
+          "target": "年化新保费",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b10_l4",
+      "page_index": 3,
+      "source_text": "from Tata AIA Life or deduct the amount attributable to non-controlling interests. As disclosed in our Annual",
+      "translation_zh": "来自塔塔友邦人寿的贡献，也未扣除归属于非控股权益的金额。如我们的年度",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        595.204,
+        535.076,
+        605.74
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "AIA",
+          "target": "友邦保险",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "high"
+    },
+    {
+      "unit_id": "p3_b10_l5",
+      "page_index": 3,
+      "source_text": "Report 2018, the VONB attributable to non-controlling interests for 2018 is US$27 million.",
+      "translation_zh": "报告2018,披露，2018年非控股权益应占新业务价值为27百万美元。",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        608.704,
+        450.48,
+        619.239
+      ],
+      "text_role": "body",
+      "term_decisions": [
+        {
+          "source": "VONB",
+          "target": "新业务价值",
+          "reason": "financial report terminology"
+        }
+      ],
+      "layout_risk": "medium"
+    }
+  ]
+}

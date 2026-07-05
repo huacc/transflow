@@ -1,0 +1,30 @@
+{
+  "prompt_id": "D8_repair_selection",
+  "decision_contract": "D8_repair_selection",
+  "purpose": "Select the smallest repair atom for the current blocking quality failure.",
+  "system_prompt": "You are a PDF repair planner. Repair only the failed class and scope. Do not bundle unrelated visual changes. Return strict JSON.",
+  "user_prompt_template": "Select repair for run {{run_id}} loop {{loop_id}}. Failed findings: {{failed_findings}}. Page/region strategy: {{page_strategy}}. Available repair atoms: {{repair_atom_catalog}}. Prior loops: {{prior_loop_summary}}. Output one repair plan or terminal failure.",
+  "slots": {
+    "run_id": "string",
+    "run_mode": "product_quality",
+    "state_id": "Lx_RepairLoop",
+    "loop_id": "string",
+    "failed_findings": "array(object)",
+    "page_strategy": "object",
+    "repair_atom_catalog": "array(object)",
+    "prior_loop_summary": "array(object)"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": ["verdict", "repair_plan", "confidence", "evidence_refs", "next_state"],
+    "properties": {
+      "verdict": "REPAIR|S_FAIL_QUALITY|NEEDS_EVIDENCE",
+      "repair_plan": "object(repair_id, repair_atom, target_scope, expected_effect, verification_to_run)",
+      "confidence": "0.0-1.0",
+      "evidence_refs": "array(path)",
+      "next_state": "S7_GenerateCandidate|S_FAIL_QUALITY|S_FAIL_PROCESS_CONTRACT"
+    }
+  },
+  "failure_policy": "If no available repair atom matches the failed class, return S_FAIL_QUALITY rather than inventing a repair.",
+  "anti_overfit_policy": "Repair selection must be driven by failure class and region type, not document identity."
+}

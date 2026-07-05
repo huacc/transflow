@@ -1,0 +1,30 @@
+{
+  "tool": "codex_view_image_visual_adjudication",
+  "adjudication_provider": "current_codex_session_visual_review",
+  "external_openai_api_call": false,
+  "verdict": "FAIL",
+  "reason": "Round1 keeps policy-driven layout and fit success on the timeline page, but final product-quality acceptance is still not claimed without a full source-vs-output visual pass.",
+  "input_artifacts": [
+    "docs/reports/round1_aesthetic_refinement/R1/candidate_generation_evidence.json",
+    "docs/reports/round1_aesthetic_refinement/R1/layout_policy.json",
+    "docs/reports/round1_aesthetic_refinement/R1/product_quality_gates.json"
+  ],
+  "dimensions": [
+    {
+      "dimension": "text_fit",
+      "status": "PASS",
+      "evidence": "candidate_generation_evidence.fit_warning_count=0."
+    },
+    {
+      "dimension": "policy_externalization",
+      "status": "PASS",
+      "evidence": "candidate_generation_evidence includes layout_policy_json and layout_policy_sha256."
+    },
+    {
+      "dimension": "visual_similarity",
+      "status": "FAIL",
+      "evidence": "No final visual PASS is claimed for this regression in round1."
+    }
+  ],
+  "next_state": "Lx_RepairLoop"
+}

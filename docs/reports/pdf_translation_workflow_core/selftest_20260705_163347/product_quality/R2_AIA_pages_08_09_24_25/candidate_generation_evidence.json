@@ -1,0 +1,9 @@
+{
+  "tool": "generate_minimal_candidate",
+  "strategy": "copy_source_as_candidate_for_gate_exercise",
+  "not_a_translation_engine": true,
+  "input_pdf": "测试数据/AIA_2020_Annual_Report_en_pages_08_09_24_25.pdf",
+  "output_pdf": "docs/reports/pdf_translation_workflow_core/selftest_20260705_163347/product_quality/R2_AIA_pages_08_09_24_25/outputs/candidate.pdf",
+  "output_sha256": "bfefe232f0b8ab3497c06672d74c45ea7cbea3edb84a7dd14ea7fab1b10f8c85",
+  "expected_quality": "fail_text_residue_in_product_quality_mode"
+}

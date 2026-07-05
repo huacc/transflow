@@ -1,0 +1,567 @@
+{
+  "source": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\01_source.pdf",
+  "output_pdf": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\output\\01_source.zh.pdf",
+  "output_render": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\output\\01_source.zh.page_01.png",
+  "state_transitions": [
+    {
+      "from": "S4_vector_backfill_allowed",
+      "to": "S5_remove_source_text",
+      "reason": "redaction probe preserved images, red/gray backgrounds, and vector art"
+    },
+    {
+      "from": "S5_remove_source_text",
+      "to": "S6_insert_chinese_title",
+      "reason": "source text objects were removed and page background remained editable"
+    },
+    {
+      "from": "S6_insert_chinese_title",
+      "to": "S7_insert_timeline_items",
+      "reason": "title Chinese text fit the red panel without changing panel geometry"
+    },
+    {
+      "from": "S7_insert_timeline_items",
+      "to": "S8_cover_visual_english_logo",
+      "reason": "MDRT logo text remained after text redaction because it is vector art, not extractable text"
+    },
+    {
+      "from": "S8_cover_visual_english_logo",
+      "to": "S9_save_and_render",
+      "reason": "all planned extractable text and the visible MDRT vector text had replacement actions"
+    },
+    {
+      "from": "S9_save_and_render",
+      "to": "S10_machine_extract_check",
+      "reason": "output PDF and rendered PNG were written"
+    }
+  ],
+  "redactions": [
+    {
+      "bbox": [
+        101.177,
+        293.662,
+        194.302,
+        511.208
+      ]
+    },
+    {
+      "bbox": [
+        101.177,
+        514.24,
+        193.728,
+        612.448
+      ]
+    },
+    {
+      "bbox": [
+        101.177,
+        615.48,
+        188.856,
+        694.087
+      ]
+    },
+    {
+      "bbox": [
+        204.484,
+        293.662,
+        297.035,
+        607.345
+      ]
+    },
+    {
+      "bbox": [
+        307.791,
+        293.662,
+        389.887,
+        348.334
+      ]
+    },
+    {
+      "bbox": [
+        307.791,
+        351.366,
+        398.903,
+        449.574
+      ]
+    },
+    {
+      "bbox": [
+        307.791,
+        452.606,
+        399.863,
+        570.413
+      ]
+    },
+    {
+      "bbox": [
+        307.791,
+        573.445,
+        401.111,
+        634.317
+      ]
+    },
+    {
+      "bbox": [
+        34.5,
+        81.042,
+        284.85,
+        193.212
+      ]
+    },
+    {
+      "bbox": [
+        411.098,
+        294.266,
+        502.874,
+        329.338
+      ]
+    },
+    {
+      "bbox": [
+        411.098,
+        394.776,
+        504.69,
+        429.848
+      ]
+    },
+    {
+      "bbox": [
+        411.098,
+        432.88,
+        504.674,
+        588.025
+      ]
+    }
+  ],
+  "insertions": [
+    {
+      "id": "title_1",
+      "kind": "title_line",
+      "text": "自1919年以来",
+      "x": 36,
+      "y": 84,
+      "size": 27
+    },
+    {
+      "id": "title_2",
+      "kind": "title_line",
+      "text": "推动亚洲经济",
+      "x": 36,
+      "y": 119,
+      "size": 27
+    },
+    {
+      "id": "title_3",
+      "kind": "title_line",
+      "text": "与社会发展",
+      "x": 36,
+      "y": 154,
+      "size": 27
+    },
+    {
+      "id": "1919",
+      "kind": "timeline_item",
+      "x": 102.7,
+      "y": 295.2,
+      "w": 91,
+      "year": "1919",
+      "body": "友邦保险在亚洲奠定企业根基：集团创始人康纳利·范德·斯塔尔先生在上海创办保险代理机构。",
+      "body_lines": [
+        "友邦保险在亚洲奠定企",
+        "业根基：集团创始人康",
+        "纳利·范德·斯塔尔先生",
+        "在上海创办保险代理机",
+        "构。"
+      ],
+      "bottom": 360.2,
+      "fits": true
+    },
+    {
+      "id": "1921",
+      "kind": "timeline_item",
+      "x": 115.0,
+      "y": 381.5,
+      "w": 78,
+      "year": "1921",
+      "body": "康纳利·范德·斯塔尔先生在上海创办亚洲人寿保险公司，这是他的首家人寿保险企业。",
+      "body_lines": [
+        "康纳利·范德·斯塔尔",
+        "先生在上海创办亚洲",
+        "人寿保险公司，这是",
+        "他的首家人寿保险企",
+        "业。"
+      ],
+      "bottom": 446.5,
+      "fits": true
+    },
+    {
+      "id": "1931",
+      "kind": "timeline_item",
+      "x": 102.7,
+      "y": 448.2,
+      "w": 91,
+      "year": "1931",
+      "body": "康纳利·范德·斯塔尔先生在上海创办国际保险有限公司，简称国际保险公司。",
+      "body_lines": [
+        "康纳利·范德·斯塔",
+        "尔先生在上海创",
+        "办国际保险有限",
+        "公司，简称国际",
+        "保险公司。"
+      ],
+      "bottom": 513.2,
+      "fits": true
+    },
+    {
+      "id": "intasco_branches",
+      "kind": "timeline_item",
+      "x": 102.7,
+      "y": 515.7,
+      "w": 91,
+      "body": "国际保险有限公司在香港和新加坡设立分支办事处。",
+      "body_lines": [
+        "国际保险有限公司在香",
+        "港和新加坡设立分支办",
+        "事处。"
+      ],
+      "bottom": 546.9,
+      "fits": true
+    },
+    {
+      "id": "1947",
+      "kind": "timeline_item",
+      "x": 102.7,
+      "y": 549.5,
+      "w": 91,
+      "year": "1947",
+      "body": "菲律宾美国人寿及综合保险公司，即友邦菲律宾，在菲律宾成立。",
+      "body_lines": [
+        "菲律宾美国人寿及综",
+        "合保险公司，即友邦",
+        "菲律宾，在菲律宾成",
+        "立。"
+      ],
+      "bottom": 604.1,
+      "fits": true
+    },
+    {
+      "id": "intasco_hq",
+      "kind": "timeline_item",
+      "x": 102.7,
+      "y": 617.0,
+      "w": 91,
+      "body": "国际保险公司将总部迁至香港。",
+      "body_lines": [
+        "国际保险公司将总部迁至香",
+        "港。"
+      ],
+      "bottom": 637.8,
+      "fits": true
+    },
+    {
+      "id": "1948",
+      "kind": "timeline_item",
+      "x": 102.7,
+      "y": 640.9,
+      "w": 91,
+      "year": "1948",
+      "body": "国际保险有限公司更名为美国国际保险有限公司。",
+      "body_lines": [
+        "国际保险有限公司更名为美",
+        "国国际保险有限公司。"
+      ],
+      "bottom": 674.7,
+      "fits": true
+    },
+    {
+      "id": "1992",
+      "kind": "timeline_item",
+      "x": 206.0,
+      "y": 295.2,
+      "w": 91,
+      "year": "1992",
+      "body": "我们通过设于上海的分公司重新建立在中国的业务布局，成为国内首家获准经营的人寿保险外资企业。",
+      "body_lines": [
+        "我们通过设于上海",
+        "的分公司重新建立",
+        "在中国的业务布局，",
+        "成为国内首家获准",
+        "经营的人寿保险外",
+        "资企业。"
+      ],
+      "bottom": 370.6,
+      "fits": true
+    },
+    {
+      "id": "1998",
+      "kind": "timeline_item",
+      "x": 206.0,
+      "y": 381.5,
+      "w": 91,
+      "year": "1998",
+      "body": "我们庆祝重返位于上海外滩的昔日总部大楼。",
+      "body_lines": [
+        "我们庆祝重返位于上海外滩",
+        "的昔日总部大楼。"
+      ],
+      "bottom": 415.3,
+      "fits": true
+    },
+    {
+      "id": "2009",
+      "kind": "timeline_item",
+      "x": 206.0,
+      "y": 438.4,
+      "w": 91,
+      "year": "2009",
+      "body": "我们完成由美国国际集团2008年流动性危机推动的重组，由此为公司公开上市完成定位与准备。",
+      "body_lines": [
+        "我们完成由美国国际集团",
+        "2008年流动性危机推动的重",
+        "组，由此为公司公开上市完",
+        "成定位与准备。"
+      ],
+      "bottom": 493.0,
+      "fits": true
+    },
+    {
+      "id": "2010",
+      "kind": "timeline_item",
+      "x": 206.0,
+      "y": 524.8,
+      "w": 91,
+      "year": "2010",
+      "body": "友邦保险控股有限公司成功在香港联合交易所主板上市，是当时全球第三大的首次公开募股项目。",
+      "body_lines": [
+        "友邦保险控股有限",
+        "公司成功在香港联",
+        "合交易所主板上市，",
+        "是当时全球第三大",
+        "的首次公开募股项",
+        "目。"
+      ],
+      "bottom": 600.2,
+      "fits": true
+    },
+    {
+      "id": "2011",
+      "kind": "timeline_item",
+      "x": 309.3,
+      "y": 295.2,
+      "w": 91,
+      "year": "2011",
+      "body": "友邦保险控股有限公司成为恒生指数的成份股。",
+      "body_lines": [
+        "友邦保险控股有限公司成为",
+        "恒生指数的成份股。"
+      ],
+      "bottom": 329.0,
+      "fits": true
+    },
+    {
+      "id": "adr",
+      "kind": "timeline_item",
+      "x": 309.3,
+      "y": 352.9,
+      "w": 91,
+      "body": "我们推出一项由公司赞助的一级美国存托凭证计划。",
+      "body_lines": [
+        "我们推出一项由公司赞助的",
+        "一级美国存托凭证计划。"
+      ],
+      "bottom": 373.7,
+      "fits": true
+    },
+    {
+      "id": "2013",
+      "kind": "timeline_item",
+      "x": 309.3,
+      "y": 396.4,
+      "w": 91,
+      "year": "2013",
+      "body": "友邦保险完成对友邦保险与荷兰国际集团马来西亚业务的全面整合。",
+      "body_lines": [
+        "友邦保险完成对友邦",
+        "保险与荷兰国际集团",
+        "马来西亚业务的全面",
+        "整合。"
+      ],
+      "bottom": 451.0,
+      "fits": true
+    },
+    {
+      "id": "sri_lanka",
+      "kind": "timeline_item",
+      "x": 309.3,
+      "y": 454.1,
+      "w": 91,
+      "body": "我们通过收购斯里兰卡英杰华保险业务，在斯里兰卡开展业务。",
+      "body_lines": [
+        "我们通过收购斯里",
+        "兰卡英杰华保险业",
+        "务，在斯里兰卡开",
+        "展业务。"
+      ],
+      "bottom": 495.7,
+      "fits": true
+    },
+    {
+      "id": "2014",
+      "kind": "timeline_item",
+      "x": 309.3,
+      "y": 497.6,
+      "w": 91,
+      "year": "2014",
+      "body": "友邦保险与花旗银行建立一项具有里程碑意义、长期且独家的银保合作伙伴关系，覆盖亚太11个市场。",
+      "body_lines": [
+        "友邦保险与花旗银",
+        "行建立一项具有里",
+        "程碑意义、长期且",
+        "独家的银保合作伙",
+        "伴关系，覆盖亚太11",
+        "个市场。"
+      ],
+      "bottom": 573.0,
+      "fits": true
+    },
+    {
+      "id": "tottenham",
+      "kind": "timeline_item",
+      "x": 309.3,
+      "y": 574.9,
+      "w": 91,
+      "body": "友邦保险成为托特纳姆热刺足球俱乐部官方球衣合作伙伴，推广运动作为健康生活的重要元素。",
+      "body_lines": [
+        "友邦保险成为托特",
+        "纳姆热刺足球俱乐",
+        "部官方球衣合作伙",
+        "伴，推广运动作为",
+        "健康生活的重要元",
+        "素。"
+      ],
+      "bottom": 637.3,
+      "fits": true
+    },
+    {
+      "id": "2015",
+      "kind": "timeline_item",
+      "x": 412.6,
+      "y": 295.8,
+      "w": 91,
+      "year": "2015",
+      "body": "友邦保险成为全球第一的百万圆桌公司。",
+      "body_lines": [
+        "友邦保险成为全球第一的百",
+        "万圆桌公司。"
+      ],
+      "bottom": 329.6,
+      "fits": true
+    },
+    {
+      "id": "2016",
+      "kind": "timeline_item",
+      "x": 412.6,
+      "y": 396.3,
+      "w": 91,
+      "year": "2016",
+      "body": "友邦领导力中心在曼谷启用。",
+      "body_lines": [
+        "友邦领导力中心在曼谷启",
+        "用。"
+      ],
+      "bottom": 430.1,
+      "fits": true
+    },
+    {
+      "id": "tata",
+      "kind": "timeline_item",
+      "x": 412.6,
+      "y": 434.4,
+      "w": 91,
+      "body": "我们将友邦保险集团在印度合资企业塔塔友邦人寿保险有限公司的持股比例由26%提高至49%。",
+      "body_lines": [
+        "我们将友邦保险集团在印度",
+        "合资企业塔塔友邦人寿保险",
+        "有限公司的持股比例由26%",
+        "提高至49%。"
+      ],
+      "bottom": 476.0,
+      "fits": true
+    },
+    {
+      "id": "2017",
+      "kind": "timeline_item",
+      "x": 412.6,
+      "y": 497.5,
+      "w": 91,
+      "year": "2017",
+      "body": "友邦保险呈献香港摩天轮和友邦健康活力公园。",
+      "body_lines": [
+        "友邦保险呈献香港摩",
+        "天轮和友邦健康活力",
+        "公园。"
+      ],
+      "bottom": 541.7,
+      "fits": true
+    },
+    {
+      "id": "2018",
+      "kind": "timeline_item",
+      "x": 412.6,
+      "y": 544.7,
+      "w": 91,
+      "year": "2018",
+      "body": "友邦保险推出全新品牌承诺：更健康、更长久、更美好的人生。",
+      "body_lines": [
+        "友邦保险推出全新",
+        "品牌承诺：更健康、",
+        "更长久、更美好的",
+        "人生。"
+      ],
+      "bottom": 588.9,
+      "fits": true
+    }
+  ],
+  "visual_overlays": [
+    {
+      "id": "mdrt_vector_logo_text",
+      "action": "cover_vector_text_and_insert_chinese",
+      "cover_bbox": [
+        411.0,
+        368.0,
+        477.0,
+        394.0
+      ],
+      "replacement": "百万圆桌®",
+      "reason": "The letters MDRT remained visible but were not returned by PDF text extraction."
+    }
+  ],
+  "fit_warnings": [],
+  "post_save_text_extract": "自1919年以来\n推动亚洲经济\n与社会发展\n1919\n友邦保险在亚洲奠定企\n业根基：集团创始人康\n纳利·范德·斯塔尔先生\n在上海创办保险代理机\n构。\n1921\n康纳利·范德·斯塔尔\n先生在上海创办亚洲\n人寿保险公司，这是\n他的首家人寿保险企\n业。\n1931\n康纳利·范德·斯塔\n尔先生在上海创\n办国际保险有限\n公司，简称国际\n保险公司。\n国际保险有限公司在香\n港和新加坡设立分支办\n事处。\n1947\n菲律宾美国人寿及综\n合保险公司，即友邦\n菲律宾，在菲律宾成\n立。\n国际保险公司将总部迁至香\n港。\n1948\n国际保险有限公司更名为美\n国国际保险有限公司。\n1992\n我们通过设于上海\n的分公司重新建立\n在中国的业务布局，\n成为国内首家获准\n经营的人寿保险外\n资企业。\n1998\n我们庆祝重返位于上海外滩\n的昔日总部大楼。\n2009\n我们完成由美国国际集团\n2008年流动性危机推动的重\n组，由此为公司公开上市完\n成定位与准备。\n2010\n友邦保险控股有限\n公司成功在香港联\n合交易所主板上市，\n是当时全球第三大\n的首次公开募股项\n目。\n2011\n友邦保险控股有限公司成为\n恒生指数的成份股。\n我们推出一项由公司赞助的\n一级美国存托凭证计划。\n2013\n友邦保险完成对友邦\n保险与荷兰国际集团\n马来西亚业务的全面\n整合。\n我们通过收购斯里\n兰卡英杰华保险业\n务，在斯里兰卡开\n展业务。\n2014\n友邦保险与花旗银\n行建立一项具有里\n程碑意义、长期且\n独家的银保合作伙\n伴关系，覆盖亚太11\n个市场。\n友邦保险成为托特\n纳姆热刺足球俱乐\n部官方球衣合作伙\n伴，推广运动作为\n健康生活的重要元\n素。\n2015\n友邦保险成为全球第一的百\n万圆桌公司。\n2016\n友邦领导力中心在曼谷启\n用。\n我们将友邦保险集团在印度\n合资企业塔塔友邦人寿保险\n有限公司的持股比例由26%\n提高至49%。\n2017\n友邦保险呈献香港摩\n天轮和友邦健康活力\n公园。\n2018\n友邦保险推出全新\n品牌承诺：更健康、\n更长久、更美好的\n百万圆桌®\n",
+  "contains_ascii_letters_after_text_extract": false,
+  "visual_similarity_ratios": {
+    "col1": {
+      "line_count_ratio": 0.861,
+      "y_span_ratio": 0.953,
+      "area_ratio": 0.754,
+      "median_gap_delta": 0.6
+    },
+    "col2": {
+      "line_count_ratio": 0.759,
+      "y_span_ratio": 0.979,
+      "area_ratio": 0.721,
+      "median_gap_delta": 0.6
+    },
+    "col3": {
+      "line_count_ratio": 0.871,
+      "y_span_ratio": 1.011,
+      "area_ratio": 0.756,
+      "median_gap_delta": 0.6
+    },
+    "col4": {
+      "line_count_ratio": 0.95,
+      "y_span_ratio": 1.005,
+      "area_ratio": 0.912,
+      "median_gap_delta": 1.97
+    }
+  }
+}

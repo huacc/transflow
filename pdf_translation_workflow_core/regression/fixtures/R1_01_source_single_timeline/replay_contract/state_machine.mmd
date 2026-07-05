@@ -1,0 +1,19 @@
+stateDiagram-v2
+  [*] --> S0_Request
+  S0_Request --> S1_ToolProbe
+  S1_ToolProbe --> S1_PathFailure: Chinese absolute path encoded incorrectly
+  S1_PathFailure --> S2_SourceExtract: switch to Path.cwd()
+  S1_ToolProbe --> S2_SourceExtract
+  S2_SourceExtract --> S3_SourceRender
+  S3_SourceRender --> S4_RedactionProbe
+  S4_RedactionProbe --> S5_GenerateDraft: background/images preserved
+  S5_GenerateDraft --> L1_TextResidueCheck
+  L1_TextResidueCheck --> L2_TextResidueRepair: Aviva/NDB residue
+  L2_TextResidueRepair --> L3_AestheticReject: user rejects visual similarity
+  L3_AestheticReject --> L4_PunctuationRepair: orphan punctuation
+  L4_PunctuationRepair --> L5_SourceLineCountRepair: Image #1 gap
+  L5_SourceLineCountRepair --> L6_ReadabilityRepair: over-narrow lines
+  L6_ReadabilityRepair --> L7_CollisionRepair: 1919 image collision
+  L7_CollisionRepair --> L8_TypographyRepair: body density too tight
+  L8_TypographyRepair --> L9_VisualOccupancyRepair: column area ratios too low
+  L9_VisualOccupancyRepair --> S_DONE: all thresholds pass
