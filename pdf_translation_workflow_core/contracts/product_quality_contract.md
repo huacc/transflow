@@ -4,7 +4,7 @@
 
 This contract is mandatory in `product_quality` mode.
 
-A run cannot claim product success because text extraction shows zero ASCII English. Visual quality and layout integrity must also pass.
+A run cannot claim product success merely because source-language residue appears to be gone. Visual quality and layout integrity must also pass.
 
 ## Product Gates
 
@@ -14,10 +14,11 @@ A run cannot claim product success because text extraction shows zero ASCII Engl
 | page_geometry | PyMuPDF page rects | none | yes |
 | text_residue | PyMuPDF text + regex | D5 | yes |
 | text_fit | insertion return codes, bbox checks | D5 | yes |
+| source_anchor_order | generation evidence proves a target-language region does not cross visible untranslated source separators | D5/D7 | yes |
 | clipping | output PNG and bbox checks | D5 | yes |
 | collision | bbox intersections and PNG review | D5/D7 | yes |
 | visual_similarity | metrics + PNG review | D7 | yes |
-| line_fragmentation | Chinese line length and region width usage compared with source role | D7 | yes for paragraph/footnote pages |
+| line_fragmentation | target-language line length and region width usage compared with source role | D7 | yes for paragraph/footnote pages |
 | paragraph_density | active paragraph text area and line density compared with source | D7 | yes for body-text pages |
 | internal_paragraph_gap | gap between active paragraphs, separated from end-of-article blank space | D7 | yes for body-text pages |
 | font_hierarchy_ratio | source-relative font scale between note/body/table/title roles | D7 | yes |
@@ -49,8 +50,9 @@ At minimum:
 | `small_to_body_ratio_delta` | output small/body ratio minus source small/body ratio | fail/warn when role hierarchy changes visibly |
 | `blank_area_delta` | output blank area - source blank area | fail if visible holes emerge |
 | `background_delta` | sampled fill color difference | fail if visible redaction blocks |
-| `fragmentation_ratio` | output median line width / source median line width in the same region role | fail if Chinese paragraphs are broken into visibly short lines without a source-layout reason |
+| `fragmentation_ratio` | output median line width / source median line width in the same region role | fail if target-language paragraphs are broken into visibly short lines without a source-layout reason |
 | `region_reflow_ratio` | inserted region count / inserted unit count | warn if paragraph pages are near 1.0, because that usually means line-by-line copy layout |
+| `source_line_index_gap` | line-index jump inside one inserted region for one source block | fail if gap > 1 and no explicit ignorable separator evidence exists |
 
 Thresholds must be page-type and region-type specific. A table cell cannot use the same thresholds as a body paragraph.
 
@@ -77,7 +79,9 @@ The workflow cannot proceed to `S_DONE_PRODUCT_ACCEPTED` until every blocking qu
 
 If the run uses `deterministic_placeholder`, the correct terminal state is `S_FAIL_CAPABILITY` or `S_FAIL_QUALITY`; it cannot be counted as a product-quality attempt that is merely awaiting visual repair.
 
-If `docs\input\semantic_translations\<regression_id>.translations.json` is missing or fails validation, the correct terminal state is `S_FAIL_CAPABILITY` before candidate generation.
+If `docs\input\semantic_translations\<case_id>.translations.json` is missing or fails validation, the correct terminal state is `S_FAIL_CAPABILITY` before candidate generation.
+
+Semantic preflight must fail on pseudo translations that describe the source line instead of translating it. Forbidden examples include `This line reports...`, `This line describes...`, `本行说明...`, `本行列示...`, `当前页的财务报告、治理或业务信息`, `保留数值与标记...`, and equivalent metadata/instruction leakage. These failures are `S_FAIL_CAPABILITY`, not layout repair candidates.
 
 ## Automation Coverage Boundary
 
@@ -105,6 +109,8 @@ python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
   "verdict": "PASS|FAIL|PASS_WITH_WARN",
   "dimensions": [
     {"dimension": "line_fragmentation", "status": "PASS|FAIL|PASS_WITH_WARN"},
+    {"dimension": "source_anchor_order", "status": "PASS|FAIL|PASS_WITH_WARN"},
+    {"dimension": "region_crosses_untranslated_separator", "status": "PASS|FAIL|PASS_WITH_WARN"},
     {"dimension": "paragraph_density", "status": "PASS|FAIL|PASS_WITH_WARN"},
     {"dimension": "internal_paragraph_gap", "status": "PASS|FAIL|PASS_WITH_WARN"},
     {"dimension": "end_blank_allowed", "status": "PASS|FAIL|PASS_WITH_WARN"},
@@ -126,11 +132,12 @@ Current blocking automation coverage:
 |---|---:|---|
 | `page_count` | yes | PyMuPDF page count |
 | `page_geometry` | yes | page rectangle equality |
-| `text_residue` | yes | extractable ASCII token residue |
+| `text_residue` | yes | source-language residue: ASCII tokens for zh targets, CJK characters for en targets |
 | `backfill_generation` | yes if generation evidence is supplied | candidate must not be source-copy only |
+| `source_anchor_order` | yes if generation evidence is supplied | blocks when one inserted target-language region crosses skipped source lines inside the same block |
 | `translation_authenticity` | yes if generation evidence is supplied | deterministic placeholder providers fail |
 | `semantic_coverage` | partial/yes if generation evidence is supplied | placeholder translations fail product-quality success |
-| `semantic_translation_preflight` | yes | `validate_semantic_translations.py` must pass before semantic candidate generation |
+| `semantic_translation_preflight` | yes | `validate_semantic_translations.py` must pass before semantic candidate generation; it blocks placeholders and line-category pseudo translations |
 | `text_fit` | partial/yes if generation evidence is supplied | `fit_warning_count > 0` blocks acceptance; bbox/PNG repair still needs richer validation |
 | `line_fragmentation` | partial/no | must be reviewed from source-vs-output PNGs until promoted into a deterministic validator |
 | `paragraph_rhythm` | partial/no | page metrics help, but human/model visual adjudication must record the finding |
@@ -151,26 +158,32 @@ Therefore an automated `PASS` from `evaluate_pdf_quality.py` is only a partial g
 
 ## Region-Reflow Product Rule
 
-For paragraph-like text, table notes, footnotes, and multi-line headings, product quality requires region-level Chinese reflow:
+For paragraph-like text, table notes, footnotes, and multi-line headings, product quality requires region-level target-language reflow:
 
 ```text
-source English lines -> one semantic Chinese region, unless the region is a compact label, legend, vertical navigation, or chart/table tick.
+source-language lines -> one semantic target-language region, unless the region is a compact label, legend, vertical navigation, or chart/table tick.
 ```
 
 For long aligned body paragraphs on the same article column, product quality may require `body_flow`:
 
 ```text
-multiple source paragraph regions -> one flowing Chinese article region, with paragraph separators, only when current-run x/width statistics prove a continuous body column.
+multiple source paragraph regions -> one flowing target-language article region, with paragraph separators, only when current-run x/width statistics prove a continuous body column.
 ```
 
+Within `body_flow`, adjacent source regions are joined as same-paragraph continuations when their y-gap is below `flow_grouping.body.paragraph_gap_pt`; only larger gaps use `paragraph_separator`. This prevents artificial blank lines between every source-wrapped line.
+
+On dense table/chart pages, compact labels and cell text should be `table_cell` and excluded from `body_flow` unless D4 records a page-local exception.
+
 For wide `Note:` / `Notes:` blocks near tables, product quality requires `table_note` instead of `body_flow`; the note/body font hierarchy must remain close to the source.
+
+Region-level reflow must preserve visible source anchors. If the source block contains a visible line that is not a translation unit, such as a year, numeric heading, bullet-only label, or separator label, that line is a hard boundary. Target-language text before the boundary must remain before it, and target-language text after the boundary must remain after it.
 
 Failure signal:
 
 ```json
 {
   "failure_class": "line_fragmentation",
-  "symptom": "Chinese paragraph inherits original English line bboxes and wraps after only a few Chinese words",
+  "symptom": "target-language paragraph inherits original source line bboxes and wraps after only a few words",
   "required_repair_atom": "region_reflow",
   "next_state": "Lx_RepairLoop"
 }
@@ -180,7 +193,7 @@ Passing evidence must include:
 
 ```json
 {
-  "strategy": "redact_extractable_ascii_lines_and_insert_semantic_chinese_regions",
+  "strategy": "redact_extractable_<source_language>_lines_and_insert_semantic_<target_language>_regions",
   "layout_policy_json": "docs/reports/.../layout_policy.json",
   "layout_policy_sha256": "...",
   "redacted_line_count": 209,

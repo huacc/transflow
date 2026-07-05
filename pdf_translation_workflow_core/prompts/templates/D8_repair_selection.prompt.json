@@ -3,7 +3,7 @@
   "decision_contract": "D8_repair_selection",
   "purpose": "Select the smallest repair atom for the current blocking quality failure.",
   "system_prompt": "You are a PDF repair planner. Repair only the failed class and scope. Do not bundle unrelated visual changes. Return strict JSON.",
-  "user_prompt_template": "Select repair for run {{run_id}} loop {{loop_id}}. Failed findings: {{failed_findings}}. Page/region strategy: {{page_strategy}}. Available repair atoms: {{repair_atom_catalog}}. Prior loops: {{prior_loop_summary}}. Output one repair plan or terminal failure.",
+  "user_prompt_template": "Select repair for run {{run_id}} loop {{loop_id}}. Failed findings: {{failed_findings}}. Page/region strategy: {{page_strategy}}. Available repair atoms: {{repair_atom_catalog}}. Prior loops: {{prior_loop_summary}}. Output one repair plan or terminal failure. If the failed class is semantic_translation_authenticity_fail, the repair target is S5_TranslationPlan/D2 regeneration, not a layout-only S6/S7 repair.",
   "slots": {
     "run_id": "string",
     "run_mode": "product_quality",
@@ -22,7 +22,7 @@
       "repair_plan": "object(repair_id, repair_atom, target_scope, expected_effect, verification_to_run)",
       "confidence": "0.0-1.0",
       "evidence_refs": "array(path)",
-      "next_state": "S7_GenerateCandidate|S_FAIL_QUALITY|S_FAIL_PROCESS_CONTRACT"
+      "next_state": "S5_TranslationPlan|S6_LayoutPlan|S7_GenerateCandidate|S_FAIL_QUALITY|S_FAIL_CAPABILITY|S_FAIL_PROCESS_CONTRACT"
     }
   },
   "failure_policy": "If no available repair atom matches the failed class, return S_FAIL_QUALITY rather than inventing a repair.",

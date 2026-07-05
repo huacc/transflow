@@ -1,0 +1,128 @@
+{
+  "tool": "scan_core_overfit",
+  "root": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\round12\\pdf_translation_workflow_core",
+  "verdict": "PASS",
+  "blocking_hit_count": 0,
+  "warning_hit_count": 0,
+  "evidence_only_hit_count": 4,
+  "scanner_dictionary_hit_count": 11,
+  "blocking_hits": [],
+  "all_hits": [
+    {
+      "path": "regression\\regression_manifest.json",
+      "line": 11,
+      "token": "AIA_2020",
+      "classification": "evidence_only",
+      "text": "\"path\": \"input/AIA_2020_Annual_Report_en_pages_081_152_214_220_231.pdf\","
+    },
+    {
+      "path": "regression\\regression_manifest.json",
+      "line": 92,
+      "token": "AIA_2020",
+      "classification": "evidence_only",
+      "text": "\"path\": \"input/AIA_2020_Annual_Report_zh_pages_034_036_144_228_261.pdf\","
+    },
+    {
+      "path": "regression\\regression_matrix.md",
+      "line": 7,
+      "token": "AIA_2020",
+      "classification": "evidence_only",
+      "text": "| `R12_EN_random_5pages` | `input/AIA_2020_Annual_Report_en_pages_081_152_214_220_231.pdf` | en -> zh | [81, 152, 214, 220, 231] |"
+    },
+    {
+      "path": "regression\\regression_matrix.md",
+      "line": 8,
+      "token": "AIA_2020",
+      "classification": "evidence_only",
+      "text": "| `R12_ZH_random_5pages` | `input/AIA_2020_Annual_Report_zh_pages_034_036_144_228_261.pdf` | zh -> en | [34, 36, 144, 228, 261] |"
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 13,
+      "token": "AIA_2020",
+      "classification": "scanner_dictionary",
+      "text": "\"AIA_2020\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 14,
+      "token": "R2_AIA",
+      "classification": "scanner_dictionary",
+      "text": "\"R2_AIA\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 15,
+      "token": "01_source",
+      "classification": "scanner_dictionary",
+      "text": "\"01_source\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 16,
+      "token": "pages_08_09_24_25",
+      "classification": "scanner_dictionary",
+      "text": "\"pages_08_09_24_25\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 17,
+      "token": "1921",
+      "classification": "scanner_dictionary",
+      "text": "\"1921\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 18,
+      "token": "1931",
+      "classification": "scanner_dictionary",
+      "text": "\"1931\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 19,
+      "token": "VONB",
+      "classification": "scanner_dictionary",
+      "text": "\"VONB\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 20,
+      "token": "ANP",
+      "classification": "scanner_dictionary",
+      "text": "\"ANP\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 21,
+      "token": "Hong Kong",
+      "classification": "scanner_dictionary",
+      "text": "\"Hong Kong\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 22,
+      "token": "Mainland China",
+      "classification": "scanner_dictionary",
+      "text": "\"Mainland China\","
+    },
+    {
+      "path": "tools\\validators\\scan_core_overfit.py",
+      "line": 23,
+      "token": "Tata AIA",
+      "classification": "scanner_dictionary",
+      "text": "\"Tata AIA\","
+    }
+  ],
+  "policy": {
+    "blocking_dirs": [
+      "contracts",
+      "prompts",
+      "tools"
+    ],
+    "evidence_dirs": [
+      "regression"
+    ],
+    "rule": "Sample-specific tokens are allowed only in regression evidence. Hits in tools/contracts/prompts fail anti-overfit validation."
+  }
+}

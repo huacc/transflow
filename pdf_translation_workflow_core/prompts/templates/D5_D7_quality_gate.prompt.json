@@ -3,7 +3,7 @@
   "decision_contract": "D5_initial_verification_and_D7_similarity_gate",
   "purpose": "Judge product-quality gate outputs and rendered source-vs-output evidence.",
   "system_prompt": "You are a PDF product-quality judge. A process pass is not a product pass. In product_quality mode, blocking failures must not be accepted. Use only supplied metrics, gate JSON, render evidence, and source-vs-output comparison images. Judge layout without overfitting to filenames, page numbers, known text, or remembered samples. Return strict JSON.",
-  "user_prompt_template": "Judge quality for run {{run_id}} in state {{state_id}}. Run mode: {{run_mode}}. Gate JSON: {{quality_gate_summary}}. Metrics: {{visual_metrics}}. Render refs: {{render_refs}}. Comparison refs: {{comparison_refs}}. Required dimensions: text_residue, text_fit, line_fragmentation, paragraph_density, internal_paragraph_gap, end_blank_allowed, font_hierarchy_ratio, sidebar_orientation, sidebar_orientation_group_consistency, sidebar_glyph_orientation, footnote_readability, table_integrity, chart_integrity, visual_similarity, semantic_coverage. For rotated side navigation, require a back-rotated output crop; it must become readable horizontal Chinese to pass sidebar_glyph_orientation. Output gate findings, blocking status, repair hints, and next_state.",
+  "user_prompt_template": "Judge quality for run {{run_id}} in state {{state_id}}. Run mode: {{run_mode}}. Gate JSON: {{quality_gate_summary}}. Metrics: {{visual_metrics}}. Render refs: {{render_refs}}. Comparison refs: {{comparison_refs}}. Required dimensions: text_residue, text_fit, source_anchor_order, region_crosses_untranslated_separator, line_fragmentation, paragraph_density, internal_paragraph_gap, end_blank_allowed, font_hierarchy_ratio, sidebar_orientation, sidebar_orientation_group_consistency, sidebar_glyph_orientation, footnote_readability, table_integrity, chart_integrity, visual_similarity, semantic_coverage, semantic_translation_authenticity. Check that visible source headings, years, bullets, and separator labels remain hard anchors: target-language text after an anchor must not be reflowed above it. If the candidate contains line-category pseudo translations such as 'This line reports...' or '本行说明...', classify that as semantic_translation_authenticity failure and route to S_FAIL_CAPABILITY or S5 repair, not as a layout-only issue. For rotated side navigation, require a back-rotated output crop; it must become readable horizontal target-language text to pass sidebar_glyph_orientation. Output gate findings, blocking status, repair hints, and next_state.",
   "slots": {
     "run_id": "string",
     "run_mode": "process_validation|product_quality",
@@ -23,7 +23,7 @@
       "blocking_failure_count": "integer",
       "confidence": "0.0-1.0",
       "evidence_refs": "array(path)",
-      "next_state": "S9_VerifyProcessContract|Lx_RepairLoop|S_FAIL_QUALITY|S_FAIL_PROCESS_CONTRACT"
+      "next_state": "S9_VerifyProcessContract|Lx_RepairLoop|S5_TranslationPlan|S_FAIL_QUALITY|S_FAIL_CAPABILITY|S_FAIL_PROCESS_CONTRACT"
     }
   },
   "failure_policy": "Missing render evidence for visual gates returns NEEDS_EVIDENCE. Blocking gate failures in product_quality route to repair loop or S_FAIL_QUALITY.",

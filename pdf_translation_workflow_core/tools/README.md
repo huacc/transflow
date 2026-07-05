@@ -22,28 +22,30 @@ This directory classifies tool roles. It is not a dump for sample-specific scrip
 | `renderers\render_pdf.py` | renderer | input PDF, output directory, prefix, zoom, manifest path | per-page PNG files and render manifest | missing images or render exception | provides source/output visual evidence |
 | `renderers\render_source_output_crop.py` | renderer | source PDF, output PDF, page index, crop rectangle, output PNG, manifest path | source-vs-output crop contact sheet plus manifest | invalid page/crop or render exception | provides focused visual evidence for D7 dimensions such as font hierarchy, paragraph gaps, and sidebar orientation |
 | `generators\generate_backfill_candidate.py` | generator | input PDF, source extraction JSON, output PDF, translations/layout/evidence JSON paths | low-fidelity Chinese backfill PDF plus translations/layout/evidence JSON | missing input/font/output failure | backfill-candidate generator; proves real backfill mechanics but not semantic quality |
-| `generators\generate_semantic_backfill.py` | generator | input PDF, source extraction JSON, semantic translations JSON, layout policy JSON, output PDF, translations/layout/evidence JSON paths | semantic Chinese backfill PDF plus translations/layout/evidence JSON | missing/invalid semantic translations, missing policy, font/output failure | product-quality candidate generator; redacts source lines and executes explicit region-reflow policy; never falls back to placeholder text |
+| `generators\generate_semantic_backfill.py` | generator | input PDF, source extraction JSON, semantic translations JSON, layout policy JSON, output PDF, translations/layout/evidence JSON paths | semantic target-language backfill PDF plus translations/layout/evidence JSON | missing/invalid semantic translations, missing policy, font/output failure | product-quality candidate generator; redacts source-language lines and executes explicit region-reflow policy; never falls back to placeholder text |
 | `generators\generate_minimal_candidate.py` | generator | input PDF, output PDF, evidence JSON path | candidate PDF plus evidence JSON | missing/unreadable input | debug-only smoke stub; copies source to prove quality gates can fail |
 | `validators\evaluate_pdf_quality.py` | validator | source PDF, candidate PDF, output JSON, optional generation evidence, optional visual adjudication JSON | blocking gate verdict plus structural metrics | PDF open or metric exception | automated partial product gate; records visual gate result when adjudication artifact is supplied |
-| `validators\validate_semantic_translations.py` | validator | source extraction JSON, semantic translations JSON, output JSON | translation coverage/authenticity verdict | missing units, placeholder text, token preservation failure | blocks product-quality generation before candidate PDF creation |
+| `validators\validate_semantic_translations.py` | validator | source extraction JSON, semantic translations JSON, output JSON | translation coverage/authenticity verdict | missing units, placeholder text, pseudo-translation text, token preservation failure | blocks product-quality generation before candidate PDF creation |
 | `validators\validate_process_artifacts.py` | validator | run directory, output JSON | state/operation/decision/evidence contract verdict | missing required trace artifacts | process-contract gate |
-| `validators\scan_core_overfit.py` | validator | core root directory, output JSON | anti-overfit scan verdict with blocking/warning/evidence-only hits | sample-specific token found in tools/contracts/prompts | proves sample facts are confined to regression evidence rather than production logic |
-| `run_state_machine_selftest.py` | selftest harness | regression manifest | per-regression run folders and summary JSON | nonzero child tool or missing artifacts | probes state transitions and gate wiring; it is not the round execution engine |
+| `validators\scan_core_overfit.py` | validator | core root directory, run-local token file outside core, output JSON | anti-overfit scan verdict with blocking/warning hits | sample-specific token found in tools/contracts/prompts | proves sample facts did not enter reusable core logic |
 
 ## Known Automation Boundary
 
-`evaluate_pdf_quality.py` is not a complete visual judge. It currently blocks on page count, page geometry, extractable ASCII residue, generation authenticity when evidence is supplied, semantic translation preflight, text-fit warnings, placeholder semantic coverage, and visual adjudication failures when supplied. It records text-density and font-hierarchy metrics for review. Line fragmentation, paragraph density, internal paragraph gaps, sidebar orientation, table-cell damage, chart-label readability, redaction patch visibility, and perceived typographic rhythm still require PNG review plus a recorded model/human adjudication until those checks are promoted into deterministic validators.
+`evaluate_pdf_quality.py` is not a complete visual judge. It currently blocks on page count, page geometry, source-language text residue based on target language, generation authenticity when evidence is supplied, source anchor order, semantic translation preflight, text-fit warnings, placeholder semantic coverage, and visual adjudication failures when supplied. It records text-density and font-hierarchy metrics for review. Line fragmentation, paragraph density, internal paragraph gaps, sidebar orientation, table-cell damage, chart-label readability, redaction patch visibility, and perceived typographic rhythm still require PNG review plus a recorded model/human adjudication until those checks are promoted into deterministic validators.
 
 `generate_semantic_backfill.py` evidence must be read carefully:
 
 - `inserted_unit_count` proves all source text units were covered.
-- `inserted_region_count` is allowed to be lower than `inserted_unit_count` because multi-line English blocks should be reflowed into fewer Chinese regions.
+- `inserted_region_count` is allowed to be lower than `inserted_unit_count` because multi-line source-language blocks should be reflowed into fewer target-language regions.
 - `fit_warning_count` must be `0` for product-quality acceptance.
-- `strategy` should be `redact_extractable_ascii_lines_and_insert_semantic_chinese_regions`.
+- `source_block_ids` and `source_line_indexes` must prove that a reflow region did not cross visible untranslated anchors inside one source block.
+- `strategy` should be `redact_extractable_<source_language>_lines_and_insert_semantic_<target_language>_regions`.
 - `layout_policy_json`, `layout_policy_sha256`, `layout_policy_version`, and `layout_policy_source` prove layout parameters came from an explicit run-local policy instead of hidden constants in the generator.
-- `layout_plan.json` region kinds must distinguish `body`, `body_flow`, `table_note`, `footnote`, `vertical_nav`, `compact_label`, and `heading` when those roles exist.
-- `vertical_nav` slots should use `draw_mode=rotated_horizontal_text_image`; this means horizontal Chinese is rendered as one label and then rotated, which is different from stacked one-character vertical Chinese.
-- For side navigation, `render_source_output_crop.py` may emit a back-rotated output crop. If the back-rotated crop is not readable horizontal Chinese, `sidebar_glyph_orientation` must fail.
+- `layout_plan.json` region kinds must distinguish `body`, `body_flow`, `table_cell`, `table_note`, `legend`, `footnote`, `vertical_nav`, `compact_label`, and `heading` when those roles exist.
+- `body_flow` text must use policy-controlled y-gap joining. Same-paragraph source-wrapped lines should use the language-specific line joiner, while only larger paragraph gaps use `paragraph_separator`.
+- Dense table/chart pages should keep compact labels as `table_cell`/`legend` preserve-line regions instead of merging them into `body_flow`.
+- `vertical_nav` slots should use `draw_mode=rotated_horizontal_text_image`; this means horizontal target-language text is rendered as one label and then rotated, which is different from stacked one-character vertical writing.
+- For side navigation, `render_source_output_crop.py` may emit a back-rotated output crop. If the back-rotated crop is not readable horizontal target-language text, `sidebar_glyph_orientation` must fail.
 
 ## Tool Promotion Rule
 
@@ -58,7 +60,7 @@ It must not depend on:
 - exact sample colors;
 - known document identity.
 
-Sample-specific scripts belong under the run directory, for example `spikes\round03\tmp\pdfs`.
+Sample-specific scripts, historical replay harnesses, and offline bilingual-reference tools belong outside this core directory, for example under `docs\offline_reference_evaluation` or a run-specific report directory.
 
 ## Required Tool Header
 

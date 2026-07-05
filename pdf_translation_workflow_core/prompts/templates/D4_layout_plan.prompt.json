@@ -1,9 +1,9 @@
 {
   "prompt_id": "D4_layout_plan",
   "decision_contract": "D4_layout_plan",
-  "purpose": "Plan a run-local Chinese backfill layout policy from source bboxes, page strategy, translated units, and baseline geometry statistics.",
-  "system_prompt": "You are a PDF layout policy planner. Preserve source visual rhythm while adapting Chinese text. Use observed bboxes, region roles, current-run statistics, and font capabilities only. Do not hardcode filenames, known page numbers, exact sample text, fixed coordinates, or remembered sample-specific values. Return strict JSON.",
-  "user_prompt_template": "Create or revise layout policy for run {{run_id}} in state {{state_id}}. Page strategy: {{page_strategy}}. Translation units: {{translated_units}}. Source geometry: {{source_geometry}}. Font capabilities: {{font_capabilities}}. Baseline policy from tool: {{baseline_layout_policy}}. Required decisions: region classification thresholds, region_reflow vs line_preserve kinds, body_flow grouping, table_note detection, vertical_nav side_nav_group writing mode, rotated_horizontal_text_image draw mode, font hierarchy ratios across table_note/footnote/body/heading, layout text variant fields, font profiles, shrink scales, fallback policy, and fit risks. Output a complete layout_policy JSON or explicit policy_overrides with evidence.",
+  "purpose": "Plan a run-local target-language backfill layout policy from source bboxes, page strategy, translated units, and baseline geometry statistics.",
+  "system_prompt": "You are a PDF layout policy planner. Preserve source visual rhythm while adapting target-language text. Use observed bboxes, region roles, current-run statistics, translation direction, and font capabilities only. Do not hardcode filenames, known page numbers, exact sample text, fixed coordinates, or remembered sample-specific values. Return strict JSON.",
+  "user_prompt_template": "Create or revise layout policy for run {{run_id}} in state {{state_id}}. Page strategy: {{page_strategy}}. Translation units: {{translated_units}}. Source geometry: {{source_geometry}}. Font capabilities: {{font_capabilities}}. Baseline policy from tool: {{baseline_layout_policy}}. Required decisions: region classification thresholds, region_reflow vs line_preserve kinds, source_separator_policy for visible untranslated anchors, body_flow grouping including whether single-line body regions may join body_flow for expansion directions, table_note detection, table_cell detection for dense table/chart pages, legend label handling, vertical_nav side_nav_group writing mode, rotated_horizontal_text_image draw mode, font hierarchy ratios across table_cell/table_note/footnote/body/heading, layout text variant fields, font profiles, shrink scales, fallback policy, and fit risks. Output a complete layout_policy JSON or explicit policy_overrides with evidence.",
   "slots": {
     "run_id": "string",
     "run_mode": "process_validation|product_quality",
@@ -19,7 +19,7 @@
     "required": ["verdict", "layout_policy", "policy_decisions", "global_risks", "confidence", "evidence_refs", "next_state"],
     "properties": {
       "verdict": "PASS|NEEDS_EVIDENCE|FAIL",
-      "layout_policy": "object(policy_version, policy_source, classification_rules including table_note and vertical_nav, region_expansion, reflow, flow_grouping, draw_modes including vertical_nav.rotated_horizontal_text_image, layout_text_variants, font_profiles including table_note/body/body_flow, fallback, anti_overfit)",
+      "layout_policy": "object(policy_version, policy_source, classification_rules including table_note, table_cell, legend, and vertical_nav, region_expansion, reflow, source_separator_policy, flow_grouping, draw_modes including vertical_nav.rotated_horizontal_text_image, layout_text_variants, font_profiles including table_cell/table_note/body/body_flow, fallback, anti_overfit)",
       "policy_decisions": "array(object(decision_id, dimension, input_evidence, selected_value, rejected_alternatives, reason, affected_region_kinds))",
       "global_risks": "array(string)",
       "confidence": "0.0-1.0",

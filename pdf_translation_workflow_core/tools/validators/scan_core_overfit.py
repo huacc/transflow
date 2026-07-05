@@ -9,25 +9,7 @@ from typing import Any
 TEXT_SUFFIXES = {".py", ".md", ".json", ".txt", ".yaml", ".yml"}
 SKIP_DIRS = {"__pycache__", ".git"}
 
-SUSPECT_TOKENS = [
-    "AIA_2020",
-    "R2_AIA",
-    "01_source",
-    "pages_08_09_24_25",
-    "1921",
-    "1931",
-    "VONB",
-    "ANP",
-    "Hong Kong",
-    "Mainland China",
-    "Tata AIA",
-    "\u8d22\u52a1\u53ca\u8425\u8fd0\u56de\u987e",
-    "\u4f01\u4e1a\u7ba1\u6cbb",
-    "\u8d22\u52a1\u62a5\u8868",
-]
-
 BLOCKING_DIRS = {"tools", "contracts", "prompts"}
-EVIDENCE_DIRS = {"regression"}
 
 
 def rel(path: Path, root: Path) -> str:
@@ -51,18 +33,36 @@ def iter_files(root: Path) -> list[Path]:
     return sorted(files)
 
 
+def load_tokens(token_file: Path | None, inline_tokens: list[str]) -> list[str]:
+    tokens: list[str] = []
+    if token_file:
+        raw = json.loads(token_file.read_text(encoding="utf-8"))
+        if isinstance(raw, list):
+            tokens.extend(str(item) for item in raw)
+        elif isinstance(raw, dict) and isinstance(raw.get("tokens"), list):
+            tokens.extend(str(item) for item in raw["tokens"])
+        else:
+            raise ValueError("token file must be a JSON list or an object with a tokens list")
+    tokens.extend(inline_tokens)
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for token in tokens:
+        normalized = token.strip()
+        if not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        deduped.append(normalized)
+    return deduped
+
+
 def classify_hit(path: Path, root: Path) -> str:
-    if path.name == "scan_core_overfit.py":
-        return "scanner_dictionary"
     parts = set(path.relative_to(root).parts)
-    if parts & EVIDENCE_DIRS:
-        return "evidence_only"
     if parts & BLOCKING_DIRS:
         return "blocking"
     return "warning"
 
 
-def scan(root: Path) -> dict[str, Any]:
+def scan(root: Path, tokens: list[str]) -> dict[str, Any]:
     hits: list[dict[str, Any]] = []
     for path in iter_files(root):
         try:
@@ -70,7 +70,7 @@ def scan(root: Path) -> dict[str, Any]:
         except UnicodeDecodeError:
             lines = path.read_text(encoding="utf-8", errors="ignore").splitlines()
         for line_number, line in enumerate(lines, 1):
-            for token in SUSPECT_TOKENS:
+            for token in tokens:
                 if token in line:
                     hits.append(
                         {
@@ -86,16 +86,14 @@ def scan(root: Path) -> dict[str, Any]:
         "tool": "scan_core_overfit",
         "root": str(root),
         "verdict": "FAIL" if blocking else "PASS",
+        "token_count": len(tokens),
         "blocking_hit_count": len(blocking),
         "warning_hit_count": sum(1 for hit in hits if hit["classification"] == "warning"),
-        "evidence_only_hit_count": sum(1 for hit in hits if hit["classification"] == "evidence_only"),
-        "scanner_dictionary_hit_count": sum(1 for hit in hits if hit["classification"] == "scanner_dictionary"),
         "blocking_hits": blocking,
         "all_hits": hits,
         "policy": {
             "blocking_dirs": sorted(BLOCKING_DIRS),
-            "evidence_dirs": sorted(EVIDENCE_DIRS),
-            "rule": "Sample-specific tokens are allowed only in regression evidence. Hits in tools/contracts/prompts fail anti-overfit validation.",
+            "rule": "Sample-specific tokens must be supplied from a run-local token file outside the core. Hits in tools/contracts/prompts fail anti-overfit validation.",
         },
     }
 
@@ -104,10 +102,16 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", default="pdf_translation_workflow_core")
     parser.add_argument("--out", required=True)
+    parser.add_argument("--token-file", help="JSON list, or object with tokens list, stored outside the core directory")
+    parser.add_argument("--token", action="append", default=[], help="Additional sample-sensitive token to scan for")
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
-    result = scan(root)
+    token_file = Path(args.token_file).resolve() if args.token_file else None
+    if token_file and root in token_file.parents:
+        raise ValueError("token-file must live outside the scanned core directory")
+    tokens = load_tokens(token_file, args.token)
+    result = scan(root, tokens)
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")

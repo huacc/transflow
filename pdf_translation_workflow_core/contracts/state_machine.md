@@ -11,7 +11,7 @@
 | `S4_PageStrategy` | Classify page types and region roles | page strategy records | D1/D3 decisions recorded |
 | `S5_TranslationPlan` | Build translation units and terminology policy | TranslationUnit records; semantic translations JSON in product-quality mode | D2 decisions recorded |
 | `S6_LayoutPlan` | Build or revise explicit region-aware layout policy | `layout_policy.json`, optional LayoutSlot/RegionSlot plan | D4 decisions recorded, including policy source, reflow-vs-preserve-line decisions, font profiles, and fallback policy |
-| `S7_GenerateCandidate` | Generate a candidate PDF with a real backfill attempt if feasible | candidate PDF, candidate PNGs, generation evidence, translations/layout artifacts, semantic translation validation, or explicit generation failure | Candidate contains backfilled Chinese or explicit failure |
+| `S7_GenerateCandidate` | Generate a candidate PDF with a real backfill attempt if feasible | candidate PDF, candidate PNGs, generation evidence, translations/layout artifacts, semantic translation validation, or explicit generation failure | Candidate contains backfilled target-language text or explicit failure |
 | `S8_VerifyProductQuality` | Evaluate machine and visual quality gates | quality gates JSON | D5/D7 decisions recorded |
 | `Lx_RepairLoop` | Repair one documented failure class at a time | repair decision, patch record, verification result | Failure fixed, deferred, or terminal |
 | `Ax_AdaptiveChange` | Modify round-local docs/tools when the package is insufficient | change log, before/after manifests, verification result | Change recorded and verified |
@@ -148,9 +148,9 @@ Minimum acceptable candidate evidence for `product_quality`:
   "translation_provider": "semantic_provider_name",
   "translation_quality": "semantic_translation",
   "semantic_coverage": "full_semantic_translation",
-  "input_semantic_translations": "docs/input/semantic_translations/<regression_id>.translations.json",
+  "input_semantic_translations": "docs/input/semantic_translations/<case_id>.translations.json",
   "semantic_translation_validation": "PASS",
-  "strategy": "redact_extractable_ascii_lines_and_insert_semantic_chinese_regions",
+  "strategy": "redact_extractable_<source_language>_lines_and_insert_semantic_<target_language>_regions",
   "layout_policy_json": "...",
   "layout_policy_sha256": "...",
   "layout_policy_version": "...",
@@ -164,7 +164,7 @@ Minimum acceptable candidate evidence for `product_quality`:
 }
 ```
 
-If semantic translations are missing, invalid, or placeholder-like, `product_quality` must fail at `S_FAIL_CAPABILITY` before creating a product candidate.
+If semantic translations are missing, invalid, placeholder-like, or metadata-style pseudo translations, `product_quality` must fail at `S_FAIL_CAPABILITY` before creating a product candidate. Examples of pseudo translations include `This line reports...`, `This line describes...`, `本行说明...`, `本行列示...`, and leaked preservation instructions such as `保留数值与标记...`.
 
 ## Layout Reflow State Rule
 
@@ -174,21 +174,37 @@ Every extracted text group must receive one of these layout modes through policy
 
 | Layout mode | Use when | Required next tool behavior |
 |---|---|---|
-| `region_reflow` | body paragraphs, footnote blocks, multi-line headings, or any multi-line semantic block whose Chinese should use the full region width | redact original lines individually; insert one Chinese textbox across the union region |
-| `region_flow` | aligned wide body paragraph regions that form one continuous article column and otherwise create large internal blank gaps | redact original lines individually; insert one flowing Chinese article textbox with paragraph separators; blank space after the final paragraph is allowed |
+| `region_reflow` | body paragraphs, footnote blocks, multi-line headings, or any multi-line semantic block whose target-language text should use the full region width | redact original lines individually; insert one target-language textbox across the union region |
+| `region_flow` | aligned wide body paragraph regions that form one continuous article column and otherwise create large internal blank gaps | redact original lines individually; insert one flowing target-language article textbox with paragraph separators; blank space after the final paragraph is allowed |
 | `table_note` | wide `Note:` / `Notes:` blocks near tables, especially when source font is smaller than body text | keep note/body font hierarchy and do not merge into body_flow |
-| `rotated_horizontal_text_image` | narrow side navigation labels whose source text is a horizontal label rotated as one unit | render horizontal Chinese as one label image, rotate the whole label, insert it into the source slot, and verify with a back-rotated crop |
+| `table_cell` | compact labels or cells on dense table/chart pages | preserve line/cell geometry, use D2-supplied compact variants, and do not merge into body_flow |
+| `rotated_horizontal_text_image` | narrow side navigation labels whose source text is a horizontal label rotated as one unit | render horizontal target-language text as one label image, rotate the whole label, insert it into the source slot, and verify with a back-rotated crop |
 | `line_preserve` | single-line labels, chart ticks, compact table labels, legends, vertical navigation, or text whose source layout is intentionally fragmented | redact and insert per unit |
 | `visual_only` | embedded image text that is not extractable and no OCR path is authorized | do not pretend it was translated; record OCR/tooling boundary |
 
 The transition from `S6_LayoutPlan` to `S7_GenerateCandidate` is invalid if `layout_policy.json` is missing, if paragraph-like blocks are all marked `line_preserve` without a recorded D4 justification, or if policy numeric values cannot be traced to current-run statistics, visual adjudication, or explicit user feedback evidence.
 
-If `S8_VerifyProductQuality` observes short Chinese lines caused by inherited English bboxes, the failure class is:
+`region_reflow` and `region_flow` must not cross visible source anchors. A visible source line that is not a translation unit, such as a year, numeric heading, bullet-only label, or separator label, splits the region. The generator must express this through `source_separator_policy` and generation evidence fields `source_block_ids` / `source_line_indexes`.
+
+Inside `region_flow`, same-paragraph continuations and new paragraphs must be distinguished by current-run y-gap evidence. The policy fields `flow_grouping.body.paragraph_gap_pt`, `line_joiner_en`, `line_joiner_zh`, and `paragraph_separator` define this behavior. Fixed `\n\n` insertion between every merged source line is invalid because it creates artificial paragraph gaps.
+
+If `S8_VerifyProductQuality` observes short target-language lines caused by inherited source bboxes, the failure class is:
 
 ```json
 {
   "failure_class": "line_fragmentation",
   "repair_atom": "region_reflow",
+  "from": "S8_VerifyProductQuality",
+  "to": "Lx_RepairLoop"
+}
+```
+
+If `S8_VerifyProductQuality` observes translated text moved across a visible source anchor, or `evaluate_pdf_quality.py` reports `source_anchor_order=fail`, the failure class is:
+
+```json
+{
+  "failure_class": "source_anchor_order_mismatch",
+  "repair_atom": "split_region_at_source_separator",
   "from": "S8_VerifyProductQuality",
   "to": "Lx_RepairLoop"
 }
@@ -216,7 +232,7 @@ If `S8_VerifyProductQuality` observes notes, footnotes, body copy, headings, or 
 }
 ```
 
-If `S8_VerifyProductQuality` observes side navigation inserted as stacked Chinese characters when the source uses rotated horizontal text, or observes inconsistent writing mode inside the same navigation group, the failure class is:
+If `S8_VerifyProductQuality` observes side navigation inserted as stacked target-language characters when the source uses rotated horizontal text, or observes inconsistent writing mode inside the same navigation group, the failure class is:
 
 ```json
 {

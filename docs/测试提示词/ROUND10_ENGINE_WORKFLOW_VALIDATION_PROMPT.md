@@ -250,6 +250,8 @@ docs\reports\<regression_id>\layout_policy.revised.json
 
 The generator must consume the final policy file used for generation.
 
+The final policy must include `source_separator_policy`. Visible untranslated anchors such as years, numeric headings, bullets, or separator labels must split reflow regions; Chinese text after such an anchor must not be inserted above it.
+
 ### S7 Semantic Candidate Generation
 
 Use product-quality semantic generation only:
@@ -289,6 +291,8 @@ python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
   --out docs\reports\<regression_id>\product_quality_gates.json `
   --generation-evidence docs\reports\<regression_id>\candidate_generation_evidence.json
 ```
+
+The `source_anchor_order` gate is blocking. If it fails, classify the failure as `source_anchor_order_mismatch`, select repair atom `split_region_at_source_separator`, and enter `Lx_RepairLoop` unless the round is already terminal.
 
 If a visual gate is suspected or required, create focused source-vs-output crops using:
 

@@ -1,0 +1,2621 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "FAIL",
+  "translation_provider": "codex_gpt5_semantic_translation",
+  "source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [],
+  "coverage": {
+    "source_unit_count": 252,
+    "translated_unit_count": 252,
+    "matched_unit_count": 252,
+    "missing_unit_ids": [],
+    "invalid_unit_count": 199
+  },
+  "invalid_units": [
+    {
+      "unit_id": "p0_b0_l0",
+      "page_index": 0,
+      "source_text": "| 友邦保險控股有限公司",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l0",
+      "page_index": 0,
+      "source_text": "集團企業中心所持有的營運資金包括債務及股本證券、存款和現金及現金等價物。營運資金增長至2019年12月",
+      "translation_en": "This line describes a movement in operating capital, operating, group",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b4_l0",
+      "page_index": 0,
+      "source_text": "31日的134.71億美元。",
+      "translation_en": "This line reports US dollar amount",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b5_l0",
+      "page_index": 0,
+      "source_text": "來自業務單位的匯款淨額增加9.77億美元至37.30億美元，其中大部分增加來自泰國及中國內地。在監管變動於",
+      "translation_en": "This line describes a movement in remittances, net amount, increase, US dollar amount",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b6_l0",
+      "page_index": 0,
+      "source_text": "2018年獲批後，及如早前於2018年報所述，由於2018年各項所需監管批文的時間安排，而於2019年1月額外匯付",
+      "translation_en": "This line reports the period or annual-report context for annual report",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b7_l0",
+      "page_index": 0,
+      "source_text": "的3.19億美元，泰國的匯款於2019年增至10.37億美元。來自中國內地的匯款增加接近一倍，反映出業務規模不",
+      "translation_en": "This line describes a movement in remittances, increase, US dollar amount",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b8_l0",
+      "page_index": 0,
+      "source_text": "斷擴大及累計保留盈利的一次性調動。如早前所述，在2018年收購Sovereign後來自新西蘭的特別匯款，說明了",
+      "translation_en": "This line reports the period or annual-report context for remittances, acquisition, earnings",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b9_l0",
+      "page_index": 0,
+      "source_text": "較低的2019年其他市場匯款。",
+      "translation_en": "This line reports the period or annual-report context for remittances",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b10_l0",
+      "page_index": 0,
+      "source_text": "借貸因發行中期票據的所得款項淨額13.01億美元，扣除於到期日贖回的中期票據5.00億美元而增加7.97億美元。",
+      "translation_en": "This line describes a movement in net amount, increase, US dollar amount, medium term notes",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b11_l0",
+      "page_index": 0,
+      "source_text": "此營運資金的總增長乃於派付股息19.61億美元及於2019年初步支付有關收購CMLA的總款項3.44億美元後錄報。",
+      "translation_en": "This line describes a movement in operating capital, US dollar amount, dividends, acquisition, operating",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b12_l0",
+      "page_index": 0,
+      "source_text": "營運資金變動概述如下：",
+      "translation_en": "This line reports operating capital, operating",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b13_l1",
+      "page_index": 0,
+      "source_text": "2019年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b13_l2",
+      "page_index": 0,
+      "source_text": "2018年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b22_l0",
+      "page_index": 0,
+      "source_text": "其他市場",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b23_l0",
+      "page_index": 0,
+      "source_text": "匯付予集團企業中心的匯款淨額",
+      "translation_en": "This line reports remittances, net amount, group",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b24_l0",
+      "page_index": 0,
+      "source_text": "初次支付收購CMLA款項(1)",
+      "translation_en": "This line reports acquisition; preserved figures and markers: (1)",
+      "reasons": [
+        "meta_line_description_en",
+        "preservation_instruction_leaked_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en",
+        "layout_variant_preservation_instruction_leaked_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b25_l0",
+      "page_index": 0,
+      "source_text": "支付收購Sovereign款項",
+      "translation_en": "This line reports acquisition",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b26_l0",
+      "page_index": 0,
+      "source_text": "借貸增加",
+      "translation_en": "This line describes a movement in increase",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b27_l0",
+      "page_index": 0,
+      "source_text": "注入僱員股票信託的股份",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b28_l0",
+      "page_index": 0,
+      "source_text": "派付股息",
+      "translation_en": "This line reports dividends",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b29_l0",
+      "page_index": 0,
+      "source_text": "債務證券的市值變動及其他事項",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b30_l0",
+      "page_index": 0,
+      "source_text": "期末營運資金",
+      "translation_en": "This line reports operating capital, operating",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p0_b31_l1",
+      "page_index": 0,
+      "source_text": "(1) 指早前所公佈的初次支付款項5.00億澳元。",
+      "translation_en": "This line reports financial report line item; preserved figures and markers: (1)",
+      "reasons": [
+        "meta_line_description_en",
+        "preservation_instruction_leaked_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en",
+        "layout_variant_preservation_instruction_leaked_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b0_l0",
+      "page_index": 1,
+      "source_text": "| 友邦保險控股有限公司",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b2_l0",
+      "page_index": 1,
+      "source_text": "股東權益變動",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b3_l1",
+      "page_index": 1,
+      "source_text": "2019年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b3_l2",
+      "page_index": 1,
+      "source_text": "2018年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b4_l0",
+      "page_index": 1,
+      "source_text": "期初股東權益",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b5_l0",
+      "page_index": 1,
+      "source_text": "採納國際財務報告準則第16號的期初調整",
+      "translation_en": "This line reports financial",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b6_l0",
+      "page_index": 1,
+      "source_text": "純利",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b7_l0",
+      "page_index": 1,
+      "source_text": "資產的公平值收益／",
+      "translation_en": "This line reports assets",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b7_l1",
+      "page_index": 1,
+      "source_text": "（虧損）",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b8_l0",
+      "page_index": 1,
+      "source_text": "注入僱員股票信託的股份",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b9_l0",
+      "page_index": 1,
+      "source_text": "股息",
+      "translation_en": "This line reports dividends",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b10_l0",
+      "page_index": 1,
+      "source_text": "持作自用物業重估收益",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b11_l0",
+      "page_index": 1,
+      "source_text": "外幣換算調整",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b12_l0",
+      "page_index": 1,
+      "source_text": "其他資本變動",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b13_l0",
+      "page_index": 1,
+      "source_text": "股東權益變動總額",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b14_l0",
+      "page_index": 1,
+      "source_text": "期末股東權益",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b15_l0",
+      "page_index": 1,
+      "source_text": "總投資",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b16_l1",
+      "page_index": 1,
+      "source_text": "於2019年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b16_l2",
+      "page_index": 1,
+      "source_text": "12月31日",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b16_l3",
+      "page_index": 1,
+      "source_text": "佔總額比重",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b16_l4",
+      "page_index": 1,
+      "source_text": "於2018年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b16_l5",
+      "page_index": 1,
+      "source_text": "12月31日",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b16_l6",
+      "page_index": 1,
+      "source_text": "佔總額比重",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b17_l0",
+      "page_index": 1,
+      "source_text": "保單持有人及股東總計",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b18_l0",
+      "page_index": 1,
+      "source_text": "單位連結式合約及合併投資基金總計",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b19_l0",
+      "page_index": 1,
+      "source_text": "總投資",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b20_l0",
+      "page_index": 1,
+      "source_text": "如下所示，投資組合於年內保持穩定：",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b21_l0",
+      "page_index": 1,
+      "source_text": "單位連結式合約及合併投資基金",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b22_l1",
+      "page_index": 1,
+      "source_text": "於2019年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b22_l2",
+      "page_index": 1,
+      "source_text": "12月31日",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b22_l3",
+      "page_index": 1,
+      "source_text": "佔總額比重",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b22_l4",
+      "page_index": 1,
+      "source_text": "於2018年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b22_l5",
+      "page_index": 1,
+      "source_text": "12月31日",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b22_l6",
+      "page_index": 1,
+      "source_text": "佔總額比重",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b23_l0",
+      "page_index": 1,
+      "source_text": "單位連結式合約及合併投資基金",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b24_l0",
+      "page_index": 1,
+      "source_text": "債務證券",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b25_l0",
+      "page_index": 1,
+      "source_text": "貸款及存款",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b26_l0",
+      "page_index": 1,
+      "source_text": "股本證券",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b27_l0",
+      "page_index": 1,
+      "source_text": "現金及現金等價物",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b28_l0",
+      "page_index": 1,
+      "source_text": "衍生金融工具",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p1_b29_l0",
+      "page_index": 1,
+      "source_text": "單位連結式合約及合併投資基金總計",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b2_l0",
+      "page_index": 2,
+      "source_text": "1. 公司資料",
+      "translation_en": "This line reports financial report line item; preserved figures and markers: 1",
+      "reasons": [
+        "meta_line_description_en",
+        "preservation_instruction_leaked_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en",
+        "layout_variant_preservation_instruction_leaked_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b3_l0",
+      "page_index": 2,
+      "source_text": "友邦保險控股有限公司（「本公司」）於2009年8月24日在香港註冊成立為有限公司，其註冊辦事處地址為香港中環干諾道中1",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b4_l0",
+      "page_index": 2,
+      "source_text": "號友邦金融中心35樓。",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b5_l0",
+      "page_index": 2,
+      "source_text": "友邦保險控股有限公司於香港聯合交易所有限公司主板上市（股份代號為「1299」）；其美國預託證券（一級）於場外交易市場",
+      "translation_en": "This line reports insurance; preserved figures and markers: 1299",
+      "reasons": [
+        "meta_line_description_en",
+        "preservation_instruction_leaked_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en",
+        "layout_variant_preservation_instruction_leaked_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b6_l0",
+      "page_index": 2,
+      "source_text": "進行買賣（交易編號為「AAGIY」）。",
+      "translation_en": "This line reports financial report reference involving AAGIY",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b7_l0",
+      "page_index": 2,
+      "source_text": "友邦保險控股有限公司及其附屬公司（統稱「友邦保險」或「本集團」）是以提供壽險為主的金融服務供應商，業務遍及亞太",
+      "translation_en": "This line reports insurance, group",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b8_l0",
+      "page_index": 2,
+      "source_text": "區18個市場。本集團的主要業務為在亞洲區承保壽險業務、提供人壽、意外及醫療保險和儲蓄計劃，以及向其客戶分銷相關",
+      "translation_en": "This line reports insurance, group",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b9_l0",
+      "page_index": 2,
+      "source_text": "投資及其他金融服務產品。",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b10_l0",
+      "page_index": 2,
+      "source_text": "2. 主要會計政策",
+      "translation_en": "This line identifies a statement, note, or accounting-policy item for accounting policies; preserved figures and markers: 2",
+      "reasons": [
+        "preservation_instruction_leaked_en",
+        "layout_variant_preservation_instruction_leaked_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b11_l0",
+      "page_index": 2,
+      "source_text": "2.1 編製基準及合規聲明",
+      "translation_en": "This line reports financial report line item; preserved figures and markers: 2.1",
+      "reasons": [
+        "meta_line_description_en",
+        "preservation_instruction_leaked_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en",
+        "layout_variant_preservation_instruction_leaked_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b15_l0",
+      "page_index": 2,
+      "source_text": "視為引用相應的香港財務報告準則、香港會計準則及香港（國際財務報告詮釋委員會）的詮釋（視情況而定）。因此，當中並",
+      "translation_en": "This line reports financial",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b19_l0",
+      "page_index": 2,
+      "source_text": "具、持作自用物業以及投資物業（均以公平值列賬）的重估作出修訂。",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p2_b23_l0",
+      "page_index": 2,
+      "source_text": "| 友邦保險控股有限公司",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b1_l0",
+      "page_index": 3,
+      "source_text": "27. 保險合約負債（續）",
+      "translation_en": "This line reports liabilities, insurance; preserved figures and markers: 27",
+      "reasons": [
+        "meta_line_description_en",
+        "preservation_instruction_leaked_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en",
+        "layout_variant_preservation_instruction_leaked_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b2_l0",
+      "page_index": 3,
+      "source_text": "方法及假設",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b4_l0",
+      "page_index": 3,
+      "source_text": "而言，儘管股東應佔年內／期內溢利並不直接受保單持有人所承擔投資風險的投資（例如單位連結式合約）所賺取的投資收",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b5_l0",
+      "page_index": 3,
+      "source_text": "入影響，惟本集團透過管理有關投資所賺取的投資管理費存在二次影響。區分直接及間接風險的目的並非為顯示對各項目的",
+      "translation_en": "This line reports group",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b6_l0",
+      "page_index": 3,
+      "source_text": "相對敏感度。倘直接風險被列作「淨中性」，此乃由於所面臨的市場及信貸風險被保險合約負債的相應變動抵銷。",
+      "translation_en": "This line reports liabilities, insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b7_l0",
+      "page_index": 3,
+      "source_text": "市場及信貸風險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b8_l0",
+      "page_index": 3,
+      "source_text": "直接風險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b9_l0",
+      "page_index": 3,
+      "source_text": "合約種類",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b9_l1",
+      "page_index": 3,
+      "source_text": "保險及投資合約負債",
+      "translation_en": "This line reports liabilities, insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b9_l2",
+      "page_index": 3,
+      "source_text": "相關投資組合涉及的風險間接風險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b9_l3",
+      "page_index": 3,
+      "source_text": "重大保險及失效風險",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b10_l0",
+      "page_index": 3,
+      "source_text": "具酌情分紅",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b10_l1",
+      "page_index": 3,
+      "source_text": "特點的傳統",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b10_l2",
+      "page_index": 3,
+      "source_text": "分紅壽險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b11_l0",
+      "page_index": 3,
+      "source_text": "分紅基金",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b11_l1",
+      "page_index": 3,
+      "source_text": "• 淨中性，惟保險公司",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b11_l3",
+      "page_index": 3,
+      "source_text": "外",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b11_l4",
+      "page_index": 3,
+      "source_text": "• 保證",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b12_l0",
+      "page_index": 3,
+      "source_text": "• 淨中性，惟保險公",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b12_l2",
+      "page_index": 3,
+      "source_text": "現除外",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b12_l3",
+      "page_index": 3,
+      "source_text": "• 保證",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b13_l1",
+      "page_index": 3,
+      "source_text": "紅利變得平穩",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b13_l2",
+      "page_index": 3,
+      "source_text": "• 日後持續派付紅利的",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b13_l3",
+      "page_index": 3,
+      "source_text": "影響",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b13_l4",
+      "page_index": 3,
+      "source_text": "• 死亡率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b14_l0",
+      "page_index": 3,
+      "source_text": "其他分紅",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b14_l1",
+      "page_index": 3,
+      "source_text": "業務",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b14_l2",
+      "page_index": 3,
+      "source_text": "• 淨中性，惟保險公司",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b14_l4",
+      "page_index": 3,
+      "source_text": "外",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b14_l5",
+      "page_index": 3,
+      "source_text": "• 保證",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b15_l0",
+      "page_index": 3,
+      "source_text": "• 淨中性，惟保險公",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b15_l2",
+      "page_index": 3,
+      "source_text": "現除外",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b15_l3",
+      "page_index": 3,
+      "source_text": "• 保證",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b16_l1",
+      "page_index": 3,
+      "source_text": "紅利變得平穩",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b16_l2",
+      "page_index": 3,
+      "source_text": "• 日後持續派付紅利的",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b16_l3",
+      "page_index": 3,
+      "source_text": "影響",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b16_l4",
+      "page_index": 3,
+      "source_text": "• 死亡率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b16_l5",
+      "page_index": 3,
+      "source_text": "• 傷病率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b17_l0",
+      "page_index": 3,
+      "source_text": "傳統非分紅",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b17_l1",
+      "page_index": 3,
+      "source_text": "壽險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b17_l2",
+      "page_index": 3,
+      "source_text": "• 保證",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b17_l3",
+      "page_index": 3,
+      "source_text": "• 資產負債錯配風險",
+      "translation_en": "This line reports assets, liabilities",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b17_l5",
+      "page_index": 3,
+      "source_text": "• 資產負債錯配風險",
+      "translation_en": "This line reports assets, liabilities",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b17_l6",
+      "page_index": 3,
+      "source_text": "• 信貸風險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b18_l0",
+      "page_index": 3,
+      "source_text": "• 不適用",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b18_l1",
+      "page_index": 3,
+      "source_text": "• 死亡率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b18_l2",
+      "page_index": 3,
+      "source_text": "• 續保率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b18_l3",
+      "page_index": 3,
+      "source_text": "• 傷病率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b19_l0",
+      "page_index": 3,
+      "source_text": "意外及醫療",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b19_l1",
+      "page_index": 3,
+      "source_text": "• 資產負債錯配風險",
+      "translation_en": "This line reports assets, liabilities",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b19_l3",
+      "page_index": 3,
+      "source_text": "• 信貸風險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b19_l4",
+      "page_index": 3,
+      "source_text": "• 資產負債錯配風險",
+      "translation_en": "This line reports assets, liabilities",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b20_l0",
+      "page_index": 3,
+      "source_text": "• 不適用",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b20_l1",
+      "page_index": 3,
+      "source_text": "• 傷病率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b20_l2",
+      "page_index": 3,
+      "source_text": "• 續保率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b21_l0",
+      "page_index": 3,
+      "source_text": "退休金",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b21_l1",
+      "page_index": 3,
+      "source_text": "• 淨中性",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b21_l2",
+      "page_index": 3,
+      "source_text": "• 資產負債錯配風險",
+      "translation_en": "This line reports assets, liabilities",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b21_l3",
+      "page_index": 3,
+      "source_text": "• 淨中性",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b21_l4",
+      "page_index": 3,
+      "source_text": "• 資產負債錯配風險",
+      "translation_en": "This line reports assets, liabilities",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b21_l6",
+      "page_index": 3,
+      "source_text": "費",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b21_l7",
+      "page_index": 3,
+      "source_text": "• 續保率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b22_l0",
+      "page_index": 3,
+      "source_text": "單位連結式",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b22_l1",
+      "page_index": 3,
+      "source_text": "• 淨中性",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b22_l2",
+      "page_index": 3,
+      "source_text": "• 淨中性",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b22_l4",
+      "page_index": 3,
+      "source_text": "費",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b22_l5",
+      "page_index": 3,
+      "source_text": "• 續保率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b22_l6",
+      "page_index": 3,
+      "source_text": "• 死亡率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b23_l0",
+      "page_index": 3,
+      "source_text": "萬能壽險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b23_l1",
+      "page_index": 3,
+      "source_text": "• 保證",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b23_l2",
+      "page_index": 3,
+      "source_text": "• 資產負債錯配風險",
+      "translation_en": "This line reports assets, liabilities",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b23_l4",
+      "page_index": 3,
+      "source_text": "• 信貸風險",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b23_l5",
+      "page_index": 3,
+      "source_text": "• 資產負債錯配風險",
+      "translation_en": "This line reports assets, liabilities",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b24_l0",
+      "page_index": 3,
+      "source_text": "• 保單持有人的收益率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b24_l1",
+      "page_index": 3,
+      "source_text": "及結算利率之差",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b24_l2",
+      "page_index": 3,
+      "source_text": "• 死亡率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b24_l3",
+      "page_index": 3,
+      "source_text": "• 續保率",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b24_l4",
+      "page_index": 3,
+      "source_text": "• 提款",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b26_l0",
+      "page_index": 3,
+      "source_text": "向非分紅業務的保險及投資合約持有人收取的費用情況下面臨費用風險。本集團精算估值模型運用的開支假設假定業務量維",
+      "translation_en": "This line reports expenses, insurance, group",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b27_l0",
+      "page_index": 3,
+      "source_text": "持持續水平。",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p3_b28_l0",
+      "page_index": 3,
+      "source_text": "| 友邦保險控股有限公司",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b1_l0",
+      "page_index": 4,
+      "source_text": "48. 曆年制基礎的財務補充資料",
+      "translation_en": "This line reports financial; preserved figures and markers: 48",
+      "reasons": [
+        "meta_line_description_en",
+        "preservation_instruction_leaked_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en",
+        "layout_variant_preservation_instruction_leaked_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b2_l0",
+      "page_index": 4,
+      "source_text": "於2018年2月，董事會已議決本公司財政年度結算日由2018年起從11月30日更改為12月31日。據此，上一份合併財務報表涵",
+      "translation_en": "This line reports the period or annual-report context for statements, financial",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b3_l0",
+      "page_index": 4,
+      "source_text": "蓋2017年12月1日至2018年12月31日的13個月期間。為配合此更改並提高財務資料的可比性，本公司自願披露下列涵蓋截至",
+      "translation_en": "This line reports the period or annual-report context for financial",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b4_l0",
+      "page_index": 4,
+      "source_text": "2019年12月31日止年度當前期間及截至2018年12月31日止十二個月期間過往年度的財務資料。",
+      "translation_en": "This line reports the period or annual-report context for financial",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b5_l0",
+      "page_index": 4,
+      "source_text": "編製下列財務補充資料所採納的會計政策與本2019年合併財務報表附註2所載列者一致。",
+      "translation_en": "This line reports the period or annual-report context for notes, accounting policies, statements, financial",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b7_l0",
+      "page_index": 4,
+      "source_text": "百萬美元",
+      "translation_en": "This line reports US$ millions",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b8_l0",
+      "page_index": 4,
+      "source_text": "截至2019年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b8_l1",
+      "page_index": 4,
+      "source_text": "12月31日",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b8_l2",
+      "page_index": 4,
+      "source_text": "止年度",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b9_l0",
+      "page_index": 4,
+      "source_text": "截至2018年",
+      "translation_en": "This line reports the period or annual-report context for financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b9_l1",
+      "page_index": 4,
+      "source_text": "12月31日",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b9_l2",
+      "page_index": 4,
+      "source_text": "止十二個月",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b10_l0",
+      "page_index": 4,
+      "source_text": "收益",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b11_l0",
+      "page_index": 4,
+      "source_text": "保費及收費收入",
+      "translation_en": "This line reports income",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b12_l0",
+      "page_index": 4,
+      "source_text": "分保至再保險公司的保費",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b13_l0",
+      "page_index": 4,
+      "source_text": "淨保費及收費收入",
+      "translation_en": "This line reports income",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b14_l0",
+      "page_index": 4,
+      "source_text": "投資回報",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b15_l0",
+      "page_index": 4,
+      "source_text": "其他營運收益",
+      "translation_en": "This line reports operating",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b16_l0",
+      "page_index": 4,
+      "source_text": "總收益",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b17_l0",
+      "page_index": 4,
+      "source_text": "開支",
+      "translation_en": "This line reports expenses",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b18_l0",
+      "page_index": 4,
+      "source_text": "保險及投資合約給付",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b19_l0",
+      "page_index": 4,
+      "source_text": "分保保險及投資合約給付",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b20_l0",
+      "page_index": 4,
+      "source_text": "淨保險及投資合約給付",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b21_l0",
+      "page_index": 4,
+      "source_text": "佣金及其他承保開支",
+      "translation_en": "This line reports expenses",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b22_l0",
+      "page_index": 4,
+      "source_text": "營運開支",
+      "translation_en": "This line reports expenses, operating",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b23_l0",
+      "page_index": 4,
+      "source_text": "財務費用",
+      "translation_en": "This line reports financial",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b24_l0",
+      "page_index": 4,
+      "source_text": "其他開支",
+      "translation_en": "This line reports expenses",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b25_l0",
+      "page_index": 4,
+      "source_text": "總開支",
+      "translation_en": "This line reports expenses",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b26_l0",
+      "page_index": 4,
+      "source_text": "分佔聯營公司及合資公司虧損前溢利",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b27_l0",
+      "page_index": 4,
+      "source_text": "分佔聯營公司及合資公司虧損",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b28_l0",
+      "page_index": 4,
+      "source_text": "稅前溢利",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b29_l0",
+      "page_index": 4,
+      "source_text": "保單持有人回報應佔所得稅（開支）／收入",
+      "translation_en": "This line reports income, expenses",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b30_l0",
+      "page_index": 4,
+      "source_text": "稅前股東應佔溢利",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b31_l0",
+      "page_index": 4,
+      "source_text": "稅項開支",
+      "translation_en": "This line reports tax, expenses",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b32_l0",
+      "page_index": 4,
+      "source_text": "保單持有人回報應佔稅項",
+      "translation_en": "This line reports tax",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b33_l0",
+      "page_index": 4,
+      "source_text": "股東溢利應佔稅項開支",
+      "translation_en": "This line reports tax, expenses",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b34_l0",
+      "page_index": 4,
+      "source_text": "純利",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b35_l0",
+      "page_index": 4,
+      "source_text": "下列人士應佔純利：",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b36_l0",
+      "page_index": 4,
+      "source_text": "友邦保險控股有限公司股東",
+      "translation_en": "This line reports insurance",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b37_l0",
+      "page_index": 4,
+      "source_text": "非控股權益",
+      "translation_en": "This line reports financial report line item",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    },
+    {
+      "unit_id": "p4_b41_l0",
+      "page_index": 4,
+      "source_text": "2019年報 |",
+      "translation_en": "This line reports the period or annual-report context for annual report",
+      "reasons": [
+        "meta_line_description_en",
+        "layout_variant_meta_line_description_en:compact_label_en",
+        "layout_variant_meta_line_description_en:short_label_en",
+        "layout_variant_meta_line_description_en:compact_en",
+        "layout_variant_meta_line_description_en:display_en"
+      ]
+    }
+  ],
+  "warnings": [],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\round12\\docs\\reports\\R12_ZH_random_5pages\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\round12\\docs\\reports\\R12_ZH_random_5pages\\semantic_translations.generated.json"
+}

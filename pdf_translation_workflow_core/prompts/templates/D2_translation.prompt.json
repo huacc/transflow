@@ -1,14 +1,17 @@
 {
   "prompt_id": "D2_translation",
   "decision_contract": "D2_translation",
-  "purpose": "Translate extracted English text units into Chinese with terminology and semantic coverage records.",
-  "system_prompt": "You are a financial-report translation engine. Translate only supplied source units. Preserve typed tokens such as years, percentages, currency amounts, dates, footnote markers, and table semantics. If a constrained label needs shorter display text, put the shorter Chinese text in layout_variants; do not expect the PDF generator to invent abbreviations. Return strict JSON and do not omit units silently.",
-  "user_prompt_template": "Translate units for run {{run_id}} in state {{state_id}}. Run mode: {{run_mode}}. Source PDF: {{source_pdf_ref}}. Translation units: {{translation_units}}. Terminology policy: {{terminology_policy}}. Output one record per source unit. Do not output placeholders. Preserve typed tokens in preserve_tokens. For compact labels or table headers, optionally output layout_variants such as compact_label_zh or short_label_zh, but variants must remain Chinese and semantically tied to translation_zh.",
+  "purpose": "Translate extracted source-language text units into the declared target language with terminology and semantic coverage records.",
+  "system_prompt": "You are a financial-report translation engine. Translate only supplied source units from source_language to target_language. Preserve typed tokens such as years, percentages, currency amounts, dates, footnote markers, and table semantics. The target text must translate the actual source meaning, names, entities, relationships, and numeric claims. Do not describe the line category, do not summarize as metadata, and do not emit boilerplate such as 'This line reports...', 'This line describes...', '本行说明...', '本行列示...', or '保留数值与标记...'. If a constrained label needs shorter display text, put the shorter target-language text in layout_variants; do not expect the PDF generator to invent abbreviations. Return strict JSON and do not omit units silently.",
+  "user_prompt_template": "Translate units for run {{run_id}} in state {{state_id}}. Run mode: {{run_mode}}. Source PDF: {{source_pdf_ref}}. Source language: {{source_language}}. Target language: {{target_language}}. Target text field: {{target_text_field}}. Translation units: {{translation_units}}. Terminology policy: {{terminology_policy}}. Output one record per source unit. Do not output placeholders or meta descriptions. Forbidden target patterns include 'This line reports/describes/lists...', '本行说明/列示/报告...', '当前页的财务报告、治理或业务信息', and any instruction text like 'preserve figures/markers' or '保留数值与标记'. Preserve typed tokens in preserve_tokens but do not mention the preservation instruction in the translation. Put the full semantic target text in {{target_text_field}} and translation_target_text. For compact labels, legends, side navigation, or table headers, optionally output layout_variants using target-language suffixes such as compact_label_zh/compact_label_en, short_label_zh/short_label_en, table_cell_zh/table_cell_en, and legend_zh/legend_en; variants must remain semantically tied to the full target text.",
   "slots": {
     "run_id": "string",
     "run_mode": "process_validation|product_quality",
     "state_id": "S5_TranslationPlan",
     "source_pdf_ref": "object(path, sha256, page_count)",
+    "source_language": "zh|en|other language code",
+    "target_language": "zh|en|other language code",
+    "target_text_field": "translation_zh|translation_en|translation_target_text",
     "translation_units": "array(object(unit_id, page_index, region_id, source_text, bbox, text_role))",
     "terminology_policy": "object"
   },
@@ -20,7 +23,7 @@
       "translation_provider": "model/provider identifier; deterministic_placeholder is forbidden in product_quality",
       "translation_quality": "semantic_translation",
       "semantic_coverage": "full_semantic_translation",
-      "units": "array(object(unit_id, page_index, source_text, translation_zh, preserve_tokens, term_decisions, layout_risk, optional layout_variants object(compact_label_zh, short_label_zh, compact_zh, display_zh)))",
+      "units": "array(object(unit_id, page_index, source_text, translation_target_text, target field named by target_text_field such as translation_zh or translation_en, preserve_tokens, term_decisions, layout_risk, optional layout_variants object(compact_label_zh, short_label_zh, table_cell_zh, legend_zh, compact_zh, display_zh, compact_label_en, short_label_en, table_cell_en, legend_en, compact_en, display_en)))",
       "coverage": "object(source_unit_count, translated_unit_count, missing_unit_ids)",
       "confidence": "0.0-1.0",
       "prompt_artifacts": "array(object(prompt_instance, slot_values, model_output, decision_record))",
@@ -28,6 +31,6 @@
       "next_state": "S6_LayoutPlan|S_FAIL_PROCESS_CONTRACT"
     }
   },
-  "failure_policy": "If any source unit is not translated, if placeholders are used, or if provider/coverage metadata is missing, return FAIL with missing_unit_ids and invalid_unit_ids.",
+  "failure_policy": "If any source unit is not translated, if placeholders or line-category meta descriptions are used, or if provider/coverage metadata is missing, return FAIL with missing_unit_ids and invalid_unit_ids.",
   "anti_overfit_policy": "Do not use known sample translations. Translate the supplied units only."
 }

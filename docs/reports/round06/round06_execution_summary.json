@@ -1,0 +1,41 @@
+{
+  "round": "round06",
+  "workspace_boundary": "PASS",
+  "input_root": "docs/input/round06",
+  "output_root": "docs/output/round06",
+  "spikes_used_as_authority": "NO",
+  "cases": {
+    "R06_R11_AIA_zh_pages_03_08_09_24_25_zh_to_en": {
+      "semantic_validation": "PASS",
+      "candidate_pdf": "docs/output/round06/R06_R11_AIA_zh_pages_03_08_09_24_25_zh_to_en_candidate.pdf",
+      "inserted_unit_count": 245,
+      "inserted_region_count": 165,
+      "fit_warning_count": 7,
+      "product_quality_verdict": "FAIL",
+      "terminal_state": "S_FAIL_QUALITY"
+    },
+    "R06_R12_EN_random_pages_081_152_214_220_231": {
+      "semantic_validation": "FAIL",
+      "failure_class": "missing_semantic_translations",
+      "candidate_pdf": null,
+      "terminal_state": "S_FAIL_CAPABILITY"
+    },
+    "R06_R12_ZH_random_pages_034_036_144_228_261": {
+      "semantic_validation": "FAIL",
+      "failure_class": "missing_semantic_translations",
+      "candidate_pdf": null,
+      "terminal_state": "S_FAIL_CAPABILITY"
+    }
+  },
+  "overall_terminal_state": "S_FAIL_QUALITY_AND_S_FAIL_CAPABILITY",
+  "requires_next_revision": true,
+  "process_contract_verdict": "PASS",
+  "anti_overfit_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "terminal_state": "S_FAIL_QUALITY",
+  "capability_failures": [
+    "R06_R12_EN_random_pages_081_152_214_220_231",
+    "R06_R12_ZH_random_pages_034_036_144_228_261"
+  ],
+  "offline_reference_runtime_boundary": "PASS: bilingual/reference artifacts were not used as runtime inputs; reference evaluation tools/evidence live outside pdf_translation_workflow_core"
+}

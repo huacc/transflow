@@ -42,7 +42,7 @@ Every model adjudication must be recorded:
 In `product_quality`, D2 must produce or reference:
 
 ```text
-docs\input\semantic_translations\<regression_id>.translations.json
+docs\input\semantic_translations\<case_id>.translations.json
 ```
 
 Required D2 output dimensions:
@@ -53,13 +53,15 @@ Required D2 output dimensions:
 | `translation_quality` | must be `semantic_translation` |
 | `semantic_coverage` | must be `full_semantic_translation` |
 | `unit_coverage` | source unit count, translated unit count, missing ids |
-| `units` | one translation per extracted English unit id |
+| `units` | one translation per extracted source-language unit id |
 | `preserve_tokens` | numbers, years, percentages, currency, footnote markers preserved |
 | `term_decisions` | terminology choices for financial/table/chart labels |
 | `layout_risk` | compactness risk for later layout planning |
+| `layout_variants` | optional compact target-language variants for constrained labels, table cells, legends, and side navigation |
+| `forbidden_pattern_check` | evidence that target text and variants do not contain placeholder or line-category pseudo translation patterns |
 | `prompt_artifacts` | prompt_instance, slot_values, model_output, decision_record refs |
 
-D2 fails if any required English unit lacks a real Chinese translation or if the output contains placeholder text such as `中文回填`, `中文标题`, or `中文标签`.
+D2 fails if any required source-language unit lacks a real target-language translation or if the output contains placeholder or metadata-style pseudo translation text such as `中文回填`, `中文标题`, `中文标签`, `待翻译`, `占位`, `placeholder`, `TBD`, `This line reports...`, `This line describes...`, `本行说明...`, `本行列示...`, `当前页的财务报告、治理或业务信息`, or `保留数值与标记...`.
 
 ## Prompt Requirements
 
@@ -79,10 +81,12 @@ D4 must explicitly decide these layout dimensions when the corresponding source 
 
 | Dimension | Required output |
 |---|---|
-| `region_classification` | role thresholds and affected region kinds, including `body`, `body_flow`, `table_note`, `footnote`, `heading`, `vertical_nav`, `compact_label`, and `legend` |
-| `body_flow_grouping` | whether aligned body paragraphs should be merged into a flowing article region; cite current-run x/width statistics |
+| `region_classification` | role thresholds and affected region kinds, including `body`, `body_flow`, `table_cell`, `table_note`, `footnote`, `heading`, `vertical_nav`, `compact_label`, and `legend` |
+| `body_flow_grouping` | whether aligned body paragraphs should be merged into a flowing article region; cite current-run x/width/y-gap statistics |
+| `body_flow_line_joining` | `paragraph_gap_pt`, target-language line joiners, and paragraph separator evidence |
 | `table_note_detection` | whether wide `Note:` / `Notes:` blocks remain `table_note` and are excluded from `body_flow` |
-| `font_hierarchy_ratio` | source-relative font profile choices for note/body/table/title roles |
+| `table_cell_detection` | whether dense table/chart labels are preserved as `table_cell` and excluded from `body_flow` |
+| `font_hierarchy_ratio` | source-relative font profile choices for note/body/table_cell/table_note/title roles |
 | `sidebar_draw_mode` | whether narrow navigation uses `rotated_horizontal_text_image` or line preservation |
 | `anti_overfit_evidence` | confirm no filename, fixed page, literal text, or fixed coordinate branch was used |
 
@@ -98,7 +102,7 @@ D7 must judge these dimensions from source-vs-output renders and metrics:
 | `font_hierarchy_ratio` | notes/footnotes/table notes/body/headings lose source-relative scale |
 | `sidebar_orientation` | rotated source navigation becomes stacked Chinese characters |
 | `sidebar_orientation_group_consistency` | labels in one side-navigation group do not share one writing mode |
-| `sidebar_glyph_orientation` | back-rotated output crop does not become readable horizontal Chinese |
+| `sidebar_glyph_orientation` | back-rotated output crop does not become readable horizontal target-language text |
 | `visual_similarity` | overall source-vs-output layout remains visibly mismatched |
 
 ## Hidden Reasoning Boundary

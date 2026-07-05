@@ -5,8 +5,9 @@ This directory is the executable-methodology entrypoint for PDF translation/back
 It is separate from `docs\业务流程`:
 
 - `docs\业务流程\<process_record>.md` is the audit narrative and source-of-truth process record copied into a round.
-- `pdf_translation_workflow_core` is the reusable workflow core: contracts, backend model prompt packages, tool taxonomy, and regression anchors.
+- `pdf_translation_workflow_core` is the reusable workflow core: contracts, backend model prompt packages, tool taxonomy, and generic runtime tools.
 - Runtime reports are not stored in this core directory. They belong under `docs\reports\pdf_translation_workflow_core`.
+- Offline bilingual references, regression fixtures, historical replay scripts, and sample-specific evidence do not belong in this directory. Keep them under `docs\offline_reference_evaluation` or a run/report directory.
 
 ## Directory Map
 
@@ -25,8 +26,6 @@ It is separate from `docs\业务流程`:
 | `prompts\prompt_tool_bindings.json` | State-to-tool-to-prompt orchestration binding |
 | `prompts\model_tool_orchestration_contract.md` | How tool outputs fill prompt slots and drive next states |
 | `prompts\templates\*.prompt.json` | System prompts, user prompt templates, slots, schemas, and failure policies |
-| `regression\regression_manifest.json` | Regression input manifest; sample-specific facts remain evidence only |
-| `regression\regression_matrix.md` | How to use regression inputs without overfitting |
 | `tools\README.md` | Tool taxonomy and where new tools should live |
 
 External prompts for another Codex/human validation round are not part of the core prompt package. They live under:
@@ -39,7 +38,7 @@ docs\测试提示词
 
 No sample-specific fact may become a generic behavior rule.
 
-Do not hardcode filenames, page numbers, coordinates, colors, strings, chart labels, or known document identities into the workflow logic. Regression samples are evidence only.
+Do not hardcode filenames, page numbers, coordinates, colors, strings, chart labels, or known document identities into the workflow logic. Offline reference samples are evidence only and must stay outside this core directory.
 
 ## Required Verdict Split
 
@@ -59,7 +58,7 @@ In `product_quality` mode, product-quality failure blocks final success and must
 `product_quality` mode reads semantic translation input from:
 
 ```text
-docs\input\semantic_translations\<regression_id>.translations.json
+docs\input\semantic_translations\<case_id>.translations.json
 ```
 
 The file must pass `tools\validators\validate_semantic_translations.py` before `tools\generators\generate_semantic_backfill.py` may create a candidate PDF. Missing or invalid semantic translations are `S_FAIL_CAPABILITY`, not a reason to fall back to placeholder generation.

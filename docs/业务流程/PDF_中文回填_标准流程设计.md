@@ -2,7 +2,7 @@
 
 ## 1. 目的
 
-本文件是 PDF 英文内容翻译为中文并回填 PDF 的标准执行规范。
+本文件是 PDF 源语言内容翻译为目标语言并回填 PDF 的标准执行规范。历史默认方向是英译中；当输入包声明 `source_language`、`target_language` 和 `target_text_field` 时，执行器必须按声明方向运行，例如中译英。
 
 它用于指导一个新的 Codex 会话按固定状态机执行：
 
@@ -21,9 +21,68 @@
 5. 失败可接受：产品质量失败可以接受，但必须诚实进入修复循环或终态失败。
 6. 反过拟合：生产工具和契约不能依赖样本文件名、固定页码、固定坐标、固定文本、固定颜色或已知文档身份。
 
+### 2.1 翻译方向契约
+
+每个产品质量运行必须在 `run_request.json` 或语义译文 JSON 中声明方向：
+
+```json
+{
+  "source_language": "en|zh|...",
+  "target_language": "zh|en|...",
+  "target_text_field": "translation_zh|translation_en|translation_target_text"
+}
+```
+
+默认兼容值：
+
+```json
+{
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh"
+}
+```
+
+方向只影响“哪些源行需要翻译”和“目标文本字段/残留文本如何校验”。布局策略、状态机、修复 loop、视觉裁决和反过拟合边界不因具体语言或样本文档而换规则。
+
+### 2.2 对照样本边界
+
+如果存在同一报告的官方中文/英文对照版本，它只能作为离线评估集使用：
+
+```text
+允许：在 round 完成后，用对照样本观察结果偏差、总结通用规则缺陷、设计新的非过拟合质量指标。
+禁止：把对照样本作为 D2 翻译输入、D4 布局输入、D7 视觉裁决输入、运行时 prompt 槽位、坐标来源、页码规则来源或术语强制映射来源。
+```
+
+执行报告必须区分：
+
+```text
+runtime_input: 当前 round 实际输入
+offline_reference: 仅用于事后评估的对照样本
+```
+
+`offline_reference` 不得出现在 `prompt_instance.json`、`slot_values.json`、`semantic_translations.json`、`layout_policy.json` 的输入来源中。
+
+对照样本相关脚本、回放工具、样本敏感词列表和人工结果差异报告也不得进入 `pdf_translation_workflow_core`。它们只能放在：
+
+```text
+docs\offline_reference_evaluation\
+docs\reports\<round_id>\
+```
+
+`pdf_translation_workflow_core` 只存放真实运行时会调用的通用抽取、布局、回填、验证工具，以及与这些工具一致的提示词和契约。
+
 ## 3. 目录约定
 
-每个执行轮次必须有独立工作目录：
+每个执行轮次必须有独立工作目录，或在根目录 `docs` 下用 round 编号隔离。根目录验证优先使用：
+
+```text
+docs\input\<round_id>\
+docs\output\<round_id>\
+docs\reports\<round_id>\
+```
+
+外部会话验证包可以使用独立 round 根目录：
 
 ```text
 <round_root>\
@@ -37,6 +96,7 @@
     测试提示词\
   state_trace.json
   operation_log.jsonl
+  decision_log.jsonl
 ```
 
 输入 PDF 可以放在 round 根目录或 `测试数据\` 下。
@@ -62,9 +122,9 @@ docs\reports\
 | `S2_ToolProbe` | 探测 Python、PDF 库、字体、渲染能力 | `tool_probe.json` | `S_FAIL_TOOLING` |
 | `S3_SourceExtract` | 提取源 PDF 页尺寸、文字、bbox、字体、图像、绘图对象，并渲染源图 | `source_extraction.json`、源 PNG | `S_FAIL_TOOLING` |
 | `S4_PageStrategy` | 判断页面类型和区域角色 | `page_strategy.json` | `S_FAIL_PROCESS_CONTRACT` |
-| `S5_TranslationPlan` | 生成或校验语义中文译文 | `*.translations.json`、`semantic_translation_validation.json` | `S_FAIL_CAPABILITY` |
+| `S5_TranslationPlan` | 生成或校验目标语语义译文 | `*.translations.json`、`semantic_translation_validation.json` | `S_FAIL_CAPABILITY` |
 | `S6_LayoutPlan` | 生成或修订布局策略 | `layout_policy.json`、`layout_plan.json` | `S_FAIL_PROCESS_CONTRACT` |
-| `S7_GenerateCandidate` | 擦除英文并回填中文候选 PDF | 候选 PDF、`candidate_generation_evidence.json` | `S_FAIL_TOOLING` 或 `S_FAIL_CAPABILITY` |
+| `S7_GenerateCandidate` | 擦除源语文本并回填目标语候选 PDF | 候选 PDF、`candidate_generation_evidence.json` | `S_FAIL_TOOLING` 或 `S_FAIL_CAPABILITY` |
 | `S8_VerifyProductQuality` | 执行机器质量门禁和视觉裁决 | `product_quality_gates.json`、`visual_adjudication.json` | `S_FAIL_QUALITY` |
 | `Lx_RepairLoop` | 对一个阻塞失败执行一次修复循环 | `repair_loop_<n>.json` | `S_FAIL_QUALITY` |
 | `Ax_AdaptiveChange` | 当工具/契约/提示词不足时做小幅方法论修补 | `adaptive_change_record.json`、前后 manifest | `S_FAIL_CAPABILITY` |
@@ -104,8 +164,8 @@ stateDiagram-v2
   S4_PageStrategy --> S5_TranslationPlan: 页面策略有证据
   S4_PageStrategy --> S_FAIL_PROCESS_CONTRACT: 页面策略缺失或无依据
 
-  S5_TranslationPlan --> S6_LayoutPlan: 语义译文覆盖目标文本
-  S5_TranslationPlan --> S_FAIL_CAPABILITY: 缺译/placeholder/非语义译文
+  S5_TranslationPlan --> S6_LayoutPlan: 语义译文覆盖目标文本且通过真实性校验
+  S5_TranslationPlan --> S_FAIL_CAPABILITY: 缺译/placeholder/元描述式伪译文/非语义译文
 
   S6_LayoutPlan --> S7_GenerateCandidate: 布局策略可追溯
   S6_LayoutPlan --> S_FAIL_PROCESS_CONTRACT: 布局策略缺失或过拟合
@@ -224,7 +284,7 @@ pdf_translation_workflow_core\prompts\templates\D9_final_acceptance.prompt.json
 
 ```text
 round 本地路径
-run_id / regression_id
+run_id / case_id
 当前页码和裁剪图引用
 当前 metrics 和 gate summary
 工具输出 JSON 的读取包装
@@ -237,6 +297,7 @@ run_id / regression_id
 删除必填质量维度
 把 blocking gate 改为非 blocking
 用 placeholder 译文通过 product_quality
+用“本行说明/This line reports”这类元描述式伪译文通过 product_quality
 没有 backrotated crop 就判侧栏字形方向通过
 把样本文件名、固定页码、固定坐标、固定文本写成规则
 ```
@@ -269,10 +330,45 @@ python pdf_translation_workflow_core\tools\renderers\render_pdf.py --input <pdf>
 python pdf_translation_workflow_core\tools\validators\validate_semantic_translations.py --source-extraction docs\reports\<run_id>\source_extraction.json --translations docs\input\semantic_translations\<run_id>.translations.json --out docs\reports\<run_id>\semantic_translation_validation.json
 ```
 
+校验必须同时覆盖：
+
+```text
+unit_id/source_text 精确匹配
+source_language/target_language/target_text_field 正确
+目标语字段非空且符合目标语字符规则
+数字、年份、百分比、货币、脚注标记保留
+禁止 placeholder
+禁止元描述式伪译文：本行说明、本行列示、This line reports、This line describes、当前页的财务报告/治理/业务信息、保留数值与标记/preserve figures markers
+layout_variants 也必须满足同样的真实性规则
+```
+
 ### 7.5 布局策略
 
 ```powershell
 python pdf_translation_workflow_core\tools\planners\build_layout_policy.py --source-extraction docs\reports\<run_id>\source_extraction.json --semantic-translations docs\input\semantic_translations\<run_id>.translations.json --out docs\reports\<run_id>\layout_policy.json
+```
+
+`layout_policy.json` 至少要表达：
+
+```text
+classification_rules.table_note
+classification_rules.table_cell
+classification_rules.legend
+classification_rules.vertical_nav
+reflow.reflow_kinds / preserve_line_kinds
+flow_grouping.body.enabled
+flow_grouping.body.min_region_count
+flow_grouping.body.max_x0_delta_pt
+flow_grouping.body.max_width_delta_ratio
+flow_grouping.body.max_vertical_gap_pt
+flow_grouping.body.paragraph_gap_pt
+flow_grouping.body.line_joiner_en / line_joiner_zh
+flow_grouping.body.disable_page_type_guesses
+layout_text_variants 中 compact_label、short_label、table_cell、legend 的目标语字段
+font_profiles 中 table_cell、legend、table_note、footnote、body、body_flow、heading
+source_separator_policy
+draw_modes.vertical_nav
+fallback policy
 ```
 
 ### 7.6 候选 PDF 生成
@@ -310,16 +406,16 @@ python pdf_translation_workflow_core\tools\renderers\render_source_output_crop.p
 ### 7.9 过程与反过拟合验证
 
 ```powershell
-python pdf_translation_workflow_core\tools\validators\scan_core_overfit.py --root pdf_translation_workflow_core --out docs\reports\anti_overfit_scan.json
-python pdf_translation_workflow_core\tools\validators\validate_process_artifacts.py --run-dir . --out docs\reports\process_validation.json
+python pdf_translation_workflow_core\tools\validators\scan_core_overfit.py --root pdf_translation_workflow_core --token-file docs\reports\<round_id>\anti_overfit_tokens.json --out docs\reports\<round_id>\anti_overfit_scan.json
+python pdf_translation_workflow_core\tools\validators\validate_process_artifacts.py --run-dir docs\reports\<round_id> --out docs\reports\<round_id>\process_validation.json
 ```
 
 ### 7.10 自检线束
 
-`run_state_machine_selftest.py` 可用于验证工具链和状态机证据结构是否能跑通，但它不是完整执行主体，不能替代新 Codex 写 `state_trace.json`、`operation_log.jsonl`、视觉裁决和最终审计报告。
+自检线束如需使用，必须放在 `docs\offline_reference_evaluation\tools` 或具体 round 报告目录下。它可用于验证工具链和状态机证据结构是否能跑通，但它不是完整执行主体，不能替代新 Codex 写 `state_trace.json`、`operation_log.jsonl`、`decision_log.jsonl`、视觉裁决和最终审计报告。
 
 ```powershell
-python pdf_translation_workflow_core\tools\run_state_machine_selftest.py --modes product_quality --generator semantic_backfill --semantic-translations-dir docs\input\semantic_translations --process-doc docs\业务流程\PDF_中文回填_标准流程设计.md --out-dir docs\reports\selftest
+python docs\offline_reference_evaluation\tools\run_state_machine_selftest.py --modes product_quality --generator semantic_backfill --semantic-translations-dir docs\input\semantic_translations --process-doc docs\业务流程\PDF_中文回填_标准流程设计.md --out-dir docs\reports\selftest
 ```
 
 ## 8. 质量 gate
@@ -334,6 +430,7 @@ translation_authenticity pass
 semantic_translation_preflight pass
 semantic_coverage pass
 text_fit pass
+source_anchor_order pass
 visual_similarity pass
 ```
 
@@ -348,6 +445,15 @@ sidebar_glyph_orientation
 
 ```text
 候选侧栏裁剪图反向旋转后，中文标签可以横向阅读。
+```
+
+`source_anchor_order` 的通过条件：
+
+```text
+一个中文 reflow region 不能跨过同一源 block 内未被翻译但可见的源分隔行。
+源分隔行包括年份、数字标题、项目符号、纯分隔标签等。
+生成证据必须包含 source_block_ids 和 source_line_indexes。
+如果同一 region 的同一 block 行号从 1 跳到 3，说明中间第 2 行被跨过，必须进入质量失败或修复循环。
 ```
 
 ## 9. 修复循环
@@ -371,14 +477,16 @@ sidebar_glyph_orientation
 
 | failure_class | repair_atom | 回到状态 |
 |---|---|---|
+| `semantic_translation_authenticity_fail` | `regenerate_D2_translation_without_meta_description` | `S5` |
 | `line_fragmentation` | `body_flow_region_reflow` | `S6` |
+| `source_anchor_order_mismatch` | `split_region_at_source_separator` | `S6` |
 | `paragraph_density_mismatch` | `font_size_and_region_density_rebalance` | `S6` |
 | `font_hierarchy_ratio_mismatch` | `font_hierarchy_profile_repair` | `S6` |
 | `sidebar_glyph_orientation_fail` | `rotated_horizontal_text_image_draw_mode` | `S6` |
 | `side_nav_group_consistency_fail` | `side_nav_group_writing_mode_policy` | `S6` |
 | `text_fit_overflow` | `region_fit_repair` | `S6` |
 | `visual_similarity_fail` | `visual_similarity_targeted_repair` | `S6` |
-| `table_integrity_fail` | `table_region_preserve_or_reflow_repair` | `S6` |
+| `table_integrity_fail` | `table_cell_variant_or_grid_preserve_repair` | `S6` |
 
 ## 10. 小幅方法论变更
 
@@ -416,7 +524,7 @@ docs\reports\change_manifest_after.json
 必须运行：
 
 ```powershell
-python pdf_translation_workflow_core\tools\validators\scan_core_overfit.py --root pdf_translation_workflow_core --out docs\reports\anti_overfit_scan.json
+python pdf_translation_workflow_core\tools\validators\scan_core_overfit.py --root pdf_translation_workflow_core --token-file docs\reports\<round_id>\anti_overfit_tokens.json --out docs\reports\<round_id>\anti_overfit_scan.json
 ```
 
 通过条件：
@@ -425,14 +533,16 @@ python pdf_translation_workflow_core\tools\validators\scan_core_overfit.py --roo
 blocking_hit_count == 0
 ```
 
-`regression` 目录可以包含样本事实，因为它是回归证据，不是生产逻辑。
+`anti_overfit_tokens.json` 是本轮外部扫描输入，不属于 core。它可以包含本轮 PDF 文件名片段、已知页码组合、人工反馈中出现的专有名词、年份、财务指标缩写、标题词等敏感 token，用来证明这些 token 没有进入 core 的工具、契约或提示词。
+
+`pdf_translation_workflow_core` 内部不允许保留样本事实目录。历史回归证据、官方中英对照、人工参考结果、样本 token 文件和回放脚本必须位于 `docs\offline_reference_evaluation` 或本轮 `docs\reports\<round_id>`。
 
 ## 12. 最终报告
 
-每轮必须输出：
+每轮必须输出最终审计报告。根目录验证使用：
 
 ```text
-docs\reports\<round_id>_execution_audit.md
+docs\reports\<round_id>\execution_audit.md
 ```
 
 报告必须包含：
@@ -670,7 +780,7 @@ stateDiagram-v2
   S4_PageStrategy --> S_FAIL_PROCESS_CONTRACT: page strategy incomplete
 
   S5_TranslationPlan --> S6_LayoutPlan: semantic translations validated
-  S5_TranslationPlan --> S_FAIL_CAPABILITY: missing/placeholder/incomplete translation
+  S5_TranslationPlan --> S_FAIL_CAPABILITY: missing/placeholder/meta-description/incomplete translation
 
   S6_LayoutPlan --> S7_GenerateCandidate: traceable layout_policy exists
   S6_LayoutPlan --> S_FAIL_PROCESS_CONTRACT: policy missing or overfit
@@ -799,7 +909,7 @@ change_manifest_after.json
 ### 15.4 状态到工具调用关系图
 
 ```mermaid
-flowchart TD
+flowchart LR
   S1[S1_ContractLoad] --> C1[read contracts/prompts/standard design]
   S2[S2_ToolProbe] --> T1[tool_probe.py]
   S3[S3_SourceExtract] --> T2[extract_pdf_structure.py]
@@ -833,7 +943,7 @@ flowchart TD
 | `S2_ToolProbe` | 不能在工具能力未知时进入 PDF 提取 |
 | `S3_SourceExtract` | 每个目标页必须有 page geometry；可提取文字必须有 bbox/font/text |
 | `S4_PageStrategy` | 页面类型和区域角色必须来自当前 source evidence |
-| `S5_TranslationPlan` | product_quality 禁止 placeholder 或缺覆盖译文 |
+| `S5_TranslationPlan` | product_quality 禁止 placeholder、元描述式伪译文或缺覆盖译文 |
 | `S6_LayoutPlan` | generator 使用的布局参数必须来自 `layout_policy.json`，不能隐藏在代码常量里 |
 | `S7_GenerateCandidate` | product_quality 候选必须由 `generate_semantic_backfill.py` 生成 |
 | `S8_VerifyProductQuality` | 产品 gate 失败不能进入产品成功终态 |
@@ -853,7 +963,7 @@ flowchart TD
 | `S3_SourceExtract` | 源结构和渲染完成 | `S4_PageStrategy` |
 | `S4_PageStrategy` | D1 裁决完整 | `S5_TranslationPlan` |
 | `S5_TranslationPlan` | 语义译文校验通过 | `S6_LayoutPlan` |
-| `S5_TranslationPlan` | 译文缺失、placeholder、覆盖不足 | `S_FAIL_CAPABILITY` |
+| `S5_TranslationPlan` | 译文缺失、placeholder、元描述式伪译文、覆盖不足 | `S_FAIL_CAPABILITY` |
 | `S6_LayoutPlan` | policy 可追溯、无过拟合 | `S7_GenerateCandidate` |
 | `S7_GenerateCandidate` | 候选 PDF 和生成证据存在 | `S8_VerifyProductQuality` |
 | `S8_VerifyProductQuality` | 全部阻塞 gate 通过 | `S9_VerifyProcessContract` |
@@ -921,16 +1031,18 @@ End
 ### 16.2 每个输入 PDF 的活动流
 
 ```text
-For each regression/input item:
+For each case/input item:
   create docs/reports/<run_id>/
   extract source structure
   render source preview
   bind D1 page strategy prompt slots
   record D1 decision
   validate semantic translation JSON
+  stop at S_FAIL_CAPABILITY if validator finds placeholder or meta-description pseudo translation
   build baseline layout policy
   bind D4 layout prompt slots
   record final layout policy
+  verify layout_policy records table_cell/legend/body_flow/source_separator/font profiles when those roles exist
   generate semantic backfill candidate
   render candidate preview
   evaluate product quality gates
@@ -985,27 +1097,86 @@ Exit:
 | Artifact | Producer | Consumer | 必填要点 |
 |---|---|---|---|
 | `source_extraction.json` | `extract_pdf_structure.py` | D1、D2、D4、generator、validator | page_index、bbox、text、font_size、page_rect |
-| `semantic_translations.json` | D2 或输入包 | translation validator、generator | unit_id、source_text、translation_zh、coverage |
+| `semantic_translations.json` | D2 或输入包 | translation validator、generator | unit_id、source_text、source_language、target_language、target_text_field、translation_target_text 或目标字段、coverage |
 | `semantic_translation_validation.json` | `validate_semantic_translations.py` | S5 gate、final report | verdict、missing units、invalid units |
-| `layout_policy.json` | `build_layout_policy.py` + D4 | generator | classification_rules、draw_modes、font_profiles、fallback |
+| `layout_policy.json` | `build_layout_policy.py` + D4 | generator | classification_rules、draw_modes、source_separator_policy、font_profiles、fallback |
 | `layout_plan.json` | generator | audit、quality review | inserted regions、region kinds、layout mode |
-| `candidate_generation_evidence.json` | generator | quality evaluator、audit | `tool`、`strategy`、`real_backfill_pdf`、`translation_quality`、`semantic_coverage`、`layout_policy_json`、`layout_policy_sha256`、`inserted_unit_count`、`inserted_region_count`、`fit_warning_count` |
+| `candidate_generation_evidence.json` | generator | quality evaluator、audit | `tool`、`strategy`、`real_backfill_pdf`、`translation_quality`、`semantic_coverage`、`layout_policy_json`、`layout_policy_sha256`、`inserted_unit_count`、`inserted_region_count`、`fit_warning_count`、`source_block_ids`、`source_line_indexes` |
 | `product_quality_gates.json` | quality evaluator | D7、repair loop、final report | gates、blocking failures、page metrics |
 | `visual_adjudication.json` | D7/human/model visual review | quality evaluator、final report | dimensions、status、evidence refs |
 | `anti_overfit_scan.json` | anti-overfit scanner | D9、final report | verdict、blocking_hit_count |
 | `state_trace.json` | execution engine | process validator、final report | all transitions |
 | `operation_log.jsonl` | execution engine | process validator、final report | all tool calls |
+| `decision_log.jsonl` | execution engine | process validator、final report | all D1-D9 decision records |
 
 ### 17.2 模型裁决输出契约
 
 | Decision | 状态 | 输出必须包含 |
 |---|---|---|
-| `D1_page_strategy` | `S4` | page_type、region_roles、evidence_refs、risk_flags |
-| `D2_translation` | `S5` | translations、coverage、term_decisions、provider |
-| `D4_layout_plan` | `S6` | layout_policy or policy_overrides、evidence、fit_risks |
+| `D1_role_classification` | `S4` | page_type、region_roles、evidence_refs、risk_flags |
+| `D2_translation` | `S5` | translations、coverage、term_decisions、provider、target_text_field、forbidden_pattern_check、layout_variants |
+| `D4_layout_plan` | `S6` | layout_policy or policy_overrides、region_classification、body_flow_gap_policy、table_cell_policy、font_profiles、evidence、fit_risks |
 | `D5_D7_quality_gate` | `S8` | dimension statuses、blocking status、repair hints、next_state |
 | `D8_repair_selection` | `Lx` | failure_class、repair_atom、target_state、verification_to_run |
 | `D9_final_acceptance` | `S9` | process verdict、product verdict、anti-overfit verdict、terminal_state |
+
+### 17.3 状态 trace 必填 schema
+
+`state_trace.json` 每条迁移必须包含以下字段，缺一项就是 `S_FAIL_PROCESS_CONTRACT`：
+
+```json
+{
+  "transition_id": "T001",
+  "from": "S0_Request",
+  "to": "S1_ContractLoad",
+  "entry_condition": "why this transition can start",
+  "run_mode": "product_quality",
+  "tools": ["tool names used in this transition"],
+  "input_artifacts": ["paths read"],
+  "output_artifacts": ["paths written"],
+  "decision_record_ids": ["D1_role_classification"],
+  "gates": [{"gate_id": "name", "status": "pass|fail|warn|skipped"}],
+  "next_state_rule": "explicit rule that selected the next state",
+  "timestamp_local": "local ISO timestamp"
+}
+```
+
+### 17.4 决策日志必填 schema
+
+`decision_log.jsonl` 必须至少包含这些 `decision_id`，ID 不得改名：
+
+```text
+D1_role_classification
+D2_translation
+D3_visual_only_text
+D4_layout_plan
+D5_initial_verification
+D6_user_feedback_adjudication
+D7_similarity_gate
+D8_minimal_repair_selection
+D9_final_acceptance
+```
+
+每条决策必须包含：
+
+```json
+{
+  "decision_id": "D7_similarity_gate",
+  "state": "S8_VerifyProductQuality",
+  "purpose": "what this judgement decides",
+  "input_artifacts": ["tool evidence paths"],
+  "prompt_contract": "prompt or contract path used",
+  "required_output_dimensions": ["dimensions judged"],
+  "model_output": {
+    "verdict": "pass|fail|warn|skipped",
+    "backend_model_call_made": false,
+    "reason": "honest result"
+  },
+  "next_state": "S_FAIL_QUALITY"
+}
+```
+
+如果没有调用外部后端大模型，必须写 `backend_model_call_made=false`，并说明裁决由 Codex 执行器基于哪些工具证据完成。不能伪造模型交互。
 
 ## 18. 关键裁决逻辑
 
@@ -1019,7 +1190,7 @@ JSON 是否可解析
 PDF 是否可打开
 页数是否一致
 是否有候选 PDF
-是否有英文残留
+是否有源语言残留
 是否有 fit_warning
 anti_overfit blocking_hit_count
 ```
@@ -1031,7 +1202,10 @@ anti_overfit blocking_hit_count
 ```text
 页面类型和区域角色
 译文语义是否符合源文本
+译文是否是元描述式伪译文
 布局策略是否符合当前源 PDF 证据
+body_flow 中哪些行是同段续行、哪些是新段落
+表格/图例/侧栏的 preserve-line 与 variants 是否合理
 视觉相似度、段落节奏、字号比例、空白密度
 repair atom 选择
 最终 split verdict 的解释
@@ -1089,6 +1263,6 @@ product_quality_gates.json 中对应 gate
 [ ] visual_adjudication.json 如需要则存在
 [ ] anti_overfit_scan.json 存在且 blocking_hit_count=0
 [ ] process_validation.json 存在
-[ ] state_trace.json 和 operation_log.jsonl 存在
+[ ] state_trace.json、operation_log.jsonl 和 decision_log.jsonl 存在
 [ ] final report 写明 process/product 双 verdict
 ```

@@ -64,7 +64,7 @@ Any blocking quality failure must enter a repair loop. A run cannot claim produc
 
 `product_quality` must not use `backfill_placeholder` or `smoke_copy`. It requires:
 
-- `docs\input\semantic_translations\<regression_id>.translations.json`;
+- `docs\input\semantic_translations\<case_id>.translations.json`;
 - `translation_validation_verdict: PASS` from `validate_semantic_translations.py`;
 - `layout_policy.json` from `build_layout_policy.py` and/or D4 model revision;
 - `generate_semantic_backfill.py` as the candidate generator;

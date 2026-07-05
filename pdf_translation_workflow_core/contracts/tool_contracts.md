@@ -7,8 +7,8 @@
 | shell | PowerShell | file discovery, command orchestration, environment variables |
 | pdf_extract | PyMuPDF `get_text("dict")`, `get_text("text")` | text, bbox, font, page geometry |
 | pdf_render | PyMuPDF `get_pixmap`, Poppler if available | source/output PNG evidence |
-| pdf_modify | PyMuPDF redaction and insertion | remove source English and insert Chinese |
-| translation_provider | model/API/human-reviewed translation adapter | produce semantic Chinese translations with coverage metadata |
+| pdf_modify | PyMuPDF redaction and insertion | remove source-language units and insert target-language text |
+| translation_provider | model/API/human-reviewed translation adapter | produce semantic target-language translations with coverage metadata |
 | visual_review | `view_image`, source-vs-output PNG comparison | human/model visual adjudication |
 | edit | `apply_patch` | minimal repair edits to scripts/docs |
 | validation | Python validators | process, product gate, semantic coverage, and anti-overfit validation |
@@ -93,13 +93,15 @@ Fill color must have provenance:
 | `generate_backfill_candidate.py` | `backfill_candidate_validation` | proves redaction/insertion mechanics only; fails semantic product quality |
 | `validate_semantic_translations.py` | `product_quality` | validates complete real translation input before generation |
 | `build_layout_policy.py` | `product_quality` and validation runs | derives a run-local layout policy from current extraction statistics; may be revised by D4 model judgement |
-| `generate_semantic_backfill.py` | `product_quality` | consumes validated semantic translations and explicit layout policy, then performs redaction/backfill with region-level Chinese reflow |
+| `generate_semantic_backfill.py` | `product_quality` | consumes validated semantic translations and explicit layout policy, then performs redaction/backfill with region-level target-language reflow |
 
 `product_quality` must not silently fall back to `generate_backfill_candidate.py`. If semantic translations are missing or fail validation, return `S_FAIL_CAPABILITY` before creating a product candidate.
 
+`validate_semantic_translations.py` must reject both literal placeholders and metadata-style pseudo translations. A target string such as `This line reports...`, `This line describes...`, `本行说明...`, `本行列示...`, `当前页的财务报告、治理或业务信息`, or leaked instruction text such as `保留数值与标记...` is not a semantic translation and must block `S7_GenerateCandidate`.
+
 ## Semantic Backfill Layout Contract
 
-`generate_semantic_backfill.py` must not insert Chinese one source line at a time for paragraph-like content. That behavior over-preserves English line breaks and produces short Chinese lines.
+`generate_semantic_backfill.py` must not insert target-language text one source line at a time for paragraph-like content. That behavior over-preserves source line breaks and produces short target-language lines.
 
 Required behavior:
 
@@ -108,19 +110,23 @@ Required behavior:
 | redaction | redact every extractable source text unit by its original bbox |
 | layout policy | read `layout_policy.json`; do not hardcode role thresholds, font scales, shrink arrays, or fallback lengths in generator logic |
 | grouping | derive block/region groups from current-run extraction metadata such as `unit_id`, bbox, font size, page geometry, and policy thresholds |
-| reflow | insert Chinese once per paragraph/body/footnote/heading region when the policy marks the region kind as `region_reflow` |
-| body flow | merge aligned wide body paragraph regions only when `layout_policy.flow_grouping.body` permits it and current-run x/width statistics prove one continuous article column |
+| source separators | do not merge translated units across visible source lines that are not translation units, such as years, numeric headings, bullets, or separator labels; the policy field is `source_separator_policy.split_on_untranslated_visible_line_gap=true` |
+| reflow | insert target-language text once per paragraph/body/footnote/heading region when the policy marks the region kind as `region_reflow` |
+| body flow | merge aligned wide body paragraph regions only when `layout_policy.flow_grouping.body` permits it and current-run x/width/y-gap statistics prove one continuous article column |
+| body flow line joining | inside one `body_flow`, use the policy's `paragraph_gap_pt` to decide whether adjacent source regions are same-paragraph continuations or new paragraphs; do not always join with `\n\n` |
 | table notes | classify wide `Note:` / `Notes:` blocks as `table_note`; do not merge them into `body_flow`; keep note/body font hierarchy close to the source |
-| rotated navigation | execute `layout_policy.draw_modes.vertical_nav=rotated_horizontal_text_image` for narrow side navigation; Chinese must be laid out horizontally first and rotated as one unit, not inserted as one-character vertical writing |
+| table cells | on dense table/chart pages, classify constrained labels and cells as `table_cell`; use explicit `table_cell_zh/table_cell_en` or compact variants from D2, and do not merge these cells into `body_flow` |
+| dense page guard | when page extraction says `table_or_chart_dense` or `chart_or_dashboard`, `body_flow` is disabled unless D4 records a contrary page-local justification |
+| rotated navigation | execute `layout_policy.draw_modes.vertical_nav=rotated_horizontal_text_image` for narrow side navigation; target text must be laid out horizontally first and rotated as one unit, not inserted as one-character vertical writing |
 | preserve-line | preserve line-level insertion only for policy-defined compact labels, legends, vertical navigation, chart ticks, or single-line regions |
-| compact labels | consume explicit `layout_variants` from translation input; never invent document-specific abbreviations inside the generator; never reintroduce English residue such as `n/m` to make text fit |
-| evidence | report both `inserted_unit_count` and `inserted_region_count`; unit count proves coverage, region count proves reflow happened |
+| compact labels | consume explicit `layout_variants` from translation input; never invent document-specific abbreviations inside the generator; never reintroduce source-language residue such as `n/m` to make text fit |
+| evidence | report both `inserted_unit_count` and `inserted_region_count`; unit count proves coverage, region count proves reflow happened; every insertion must also report `source_block_ids` and `source_line_indexes` so validators can detect cross-separator reflow |
 
 Required generation evidence:
 
 ```json
 {
-  "strategy": "redact_extractable_ascii_lines_and_insert_semantic_chinese_regions",
+  "strategy": "redact_extractable_<source_language>_lines_and_insert_semantic_<target_language>_regions",
   "layout_policy_json": "docs/reports/.../layout_policy.json",
   "layout_policy_sha256": "...",
   "layout_policy_version": "...",
@@ -128,11 +134,21 @@ Required generation evidence:
   "redacted_line_count": 209,
   "inserted_unit_count": 209,
   "inserted_region_count": 127,
-  "fit_warning_count": 0
+  "fit_warning_count": 0,
+  "insertions": [
+    {
+      "region_id": "region_p0_b2_018",
+      "unit_ids": ["p0_b2_l3", "p0_b2_l4"],
+      "source_block_ids": ["2"],
+      "source_line_indexes": [3, 4]
+    }
+  ]
 }
 ```
 
-`inserted_region_count` may be lower than `inserted_unit_count`. That is expected when multiple English source lines are merged into one Chinese paragraph region. Validators must compare redaction coverage against `inserted_unit_count`, not against region count.
+`inserted_region_count` may be lower than `inserted_unit_count`. That is expected when multiple source lines are merged into one target-language paragraph region. Validators must compare redaction coverage against `inserted_unit_count`, not against region count.
+
+`source_line_indexes` must be contiguous inside one source block unless the skipped line has been explicitly classified as ignorable. If one insertion jumps from line index `1` to `3` in the same block, the generator has crossed a visible source separator and product quality must fail through `source_anchor_order`.
 
 ## Visual Adjudication Tool Contract
 
@@ -147,7 +163,7 @@ python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
   --out <product_quality_gates.json>
 ```
 
-This file is not produced by `generate_semantic_backfill.py`. It must be produced by a recorded visual review step that names input render/crop artifacts and returns dimensions such as `line_fragmentation`, `paragraph_density`, `internal_paragraph_gap`, `end_blank_allowed`, `font_hierarchy_ratio`, `sidebar_orientation`, `sidebar_orientation_group_consistency`, `sidebar_glyph_orientation`, `footnote_readability`, and `visual_similarity`.
+This file is not produced by `generate_semantic_backfill.py`. It must be produced by a recorded visual review step that names input render/crop artifacts and returns dimensions such as `line_fragmentation`, `paragraph_density`, `internal_paragraph_gap`, `end_blank_allowed`, `source_anchor_order`, `region_crosses_untranslated_separator`, `font_hierarchy_ratio`, `sidebar_orientation`, `sidebar_orientation_group_consistency`, `sidebar_glyph_orientation`, `footnote_readability`, and `visual_similarity`.
 
 If the visual adjudication verdict is missing or not `PASS`, `visual_similarity` remains a blocking failure in product-quality mode.
 
@@ -167,14 +183,14 @@ python pdf_translation_workflow_core\tools\renderers\render_source_output_crop.p
 
 The crop rectangle is run evidence supplied by the executor or D7 decision; the renderer itself must not contain sample-specific coordinates.
 
-For rotated side navigation, D7 should also request `--backrotate-output-degrees` and `--backrotate-output-out`. A valid rotated horizontal Chinese label must become readable horizontal Chinese in the back-rotated output crop.
+For rotated side navigation, D7 should also request `--backrotate-output-degrees` and `--backrotate-output-out`. A valid rotated horizontal target-language label must become readable horizontal target-language text in the back-rotated output crop.
 
 ## Semantic Translation Tool Contract
 
 Required input path:
 
 ```text
-docs\input\semantic_translations\<regression_id>.translations.json
+docs\input\semantic_translations\<case_id>.translations.json
 ```
 
 Required preflight:
@@ -182,7 +198,7 @@ Required preflight:
 ```powershell
 python pdf_translation_workflow_core\tools\validators\validate_semantic_translations.py `
   --source-extraction <source_extraction.json> `
-  --translations docs\input\semantic_translations\<regression_id>.translations.json `
+  --translations docs\input\semantic_translations\<case_id>.translations.json `
   --out <run_dir>\semantic_translation_validation.json
 ```
 
@@ -192,7 +208,7 @@ Only `translation_validation_verdict: PASS` may enter:
 python pdf_translation_workflow_core\tools\generators\generate_semantic_backfill.py `
   --input <source.pdf> `
   --source-extraction <source_extraction.json> `
-  --semantic-translations docs\input\semantic_translations\<regression_id>.translations.json `
+  --semantic-translations docs\input\semantic_translations\<case_id>.translations.json `
   --layout-policy <run_dir>\layout_policy.json `
   --output <run_dir>\outputs\candidate.pdf `
   --evidence <run_dir>\candidate_generation_evidence.json `
@@ -204,9 +220,10 @@ python pdf_translation_workflow_core\tools\generators\generate_semantic_backfill
 
 Tools may read sample facts as input evidence, but tool behavior cannot branch on known filename, known page number, exact text, or fixed sample coordinates.
 
+Official bilingual reference PDFs are not runtime evidence for translation, layout, or quality decisions. They may be used only after a run as offline evaluation data to identify generic process gaps. Reusable tools must not consume the reference pair to derive hardcoded translations, coordinates, page identities, or terminology exceptions.
+
 `tools\validators\scan_core_overfit.py` must be run before final acceptance in `S9_VerifyProcessContract`.
-It scans the reusable core and fails if sample-specific tokens appear in production `tools`, `contracts`, or `prompts`.
-Hits under `regression` are allowed as evidence-only because regression fixtures intentionally contain sample anchors.
+It scans the reusable core using a run-local token list stored outside the core and fails if sample-specific tokens appear in `tools`, `contracts`, or `prompts`.
 
 Required output:
 

@@ -1,0 +1,10 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "FAIL",
+  "failure_class": "missing_semantic_translations",
+  "reason": "product_quality requires a real semantic translations JSON before candidate generation; docs/input/round06 contains only the source PDF for this round12 input",
+  "next_state": "S_FAIL_CAPABILITY",
+  "candidate_generation_allowed": false,
+  "source_extraction": "docs\\reports\\round06\\R06_R12_ZH_random_pages_034_036_144_228_261\\source_extraction.json",
+  "translations_json": null
+}

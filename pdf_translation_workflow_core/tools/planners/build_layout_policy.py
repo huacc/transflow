@@ -12,12 +12,34 @@ anti_overfit_statement: derives parameters from current-run geometry/font statis
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from _common import read_json, rel, resolve_workspace_path, write_json  # noqa: E402
+
+
+CJK_RE = re.compile(r"[\u3400-\u9fff]")
+
+
+def normalize_language(value: Any, default: str) -> str:
+    text = str(value or default).strip().lower()
+    if text in {"zh", "zh-cn", "zh-hans", "zh-hant", "chinese", "中文"}:
+        return "zh"
+    if text in {"en", "en-us", "en-gb", "english", "英文"}:
+        return "en"
+    return text or default
+
+
+def line_is_translatable(line: dict[str, Any], source_language: str) -> bool:
+    text = str(line.get("text", ""))
+    if source_language == "zh":
+        return bool(CJK_RE.search(text))
+    if source_language == "en":
+        return bool(line.get("ascii_tokens"))
+    return bool(text.strip())
 
 
 def quantile(values: list[float], q: float) -> float:
@@ -32,14 +54,14 @@ def median(values: list[float]) -> float:
     return quantile(values, 0.5)
 
 
-def collect_units(extraction: dict[str, Any]) -> list[dict[str, Any]]:
+def collect_units(extraction: dict[str, Any], source_language: str) -> list[dict[str, Any]]:
     units: list[dict[str, Any]] = []
     for page in extraction.get("pages", []):
         rect = page.get("rect", [0.0, 0.0, 1.0, 1.0])
         page_width = max(1.0, float(rect[2]) - float(rect[0]))
         page_height = max(1.0, float(rect[3]) - float(rect[1]))
         for line in page.get("text_lines", []):
-            if not line.get("ascii_tokens"):
+            if not line_is_translatable(line, source_language):
                 continue
             bbox = [float(v) for v in line.get("bbox", [0, 0, 0, 0])]
             units.append(
@@ -58,9 +80,12 @@ def collect_units(extraction: dict[str, Any]) -> list[dict[str, Any]]:
 
 def build_policy(extraction_path: Path, translations_path: Path | None = None) -> dict[str, Any]:
     extraction = read_json(extraction_path)
-    units = collect_units(extraction)
+    translations = read_json(translations_path) if translations_path is not None else {}
+    source_language = normalize_language(translations.get("source_language"), "en")
+    target_language = normalize_language(translations.get("target_language"), "zh")
+    units = collect_units(extraction, source_language)
     if not units:
-        raise ValueError("layout policy requires at least one extractable ASCII text unit")
+        raise ValueError("layout policy requires at least one extractable source text unit")
 
     font_sizes = [unit["font_size"] for unit in units if unit["font_size"] > 0]
     widths = [unit["width"] for unit in units if unit["width"] > 0]
@@ -79,11 +104,17 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None) -
     body_scale = 1.04 if font_q50 >= 8.0 else 1.0
     footnote_scale = 0.78 if font_q25 <= 7.5 else 0.84
     compact_scale = 0.66 if width_q25 < 32 else 0.74
+    body_flow_min_region_count = 2 if target_language == "en" else 4
+    body_min_pt = 4.4 if target_language == "en" else 5.2
+    body_flow_min_pt = 4.8 if target_language == "en" else 5.6
 
     policy = {
         "tool": "build_layout_policy",
         "policy_version": "2026-07-05.region_reflow_policy_v1",
         "policy_source": "auto_from_current_extraction_statistics",
+        "source_language": source_language,
+        "target_language": target_language,
+        "target_text_field": translations.get("target_text_field") or ("translation_zh" if target_language == "zh" else "translation_en"),
         "source_extraction": rel(extraction_path),
         "semantic_translations": None if translations_path is None else rel(translations_path),
         "statistics": {
@@ -142,6 +173,12 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None) -
                 "max_region_width_pt": round(max(80.0, min(width_q50 * 1.25, 140.0)), 3),
                 "max_median_line_width_pt": round(max(52.0, min(width_q25 * 3.0, 95.0)), 3),
             },
+            "table_cell": {
+                "page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard"],
+                "max_line_count": 2,
+                "max_region_width_pt": round(max(40.0, min(width_q50 * 1.10, 130.0)), 3),
+                "max_median_font_size": round(max(font_q50, font_q75), 3),
+            },
             "heading": {
                 "min_median_font_size": round(max(font_q75, font_q50 * 1.25), 3),
             },
@@ -152,20 +189,31 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None) -
         },
         "reflow": {
             "reflow_kinds": ["body", "body_flow", "table_note", "footnote", "heading", "short_label"],
-            "preserve_line_kinds": ["vertical_nav", "legend", "compact_label"],
+            "preserve_line_kinds": ["vertical_nav", "legend", "compact_label", "table_cell"],
             "min_items_for_reflow": 2,
         },
         "flow_grouping": {
             "body": {
                 "enabled": True,
-                "min_region_count": 4,
+                "min_region_count": body_flow_min_region_count,
                 "min_region_width_page_ratio": 0.45,
                 "max_x0_delta_pt": round(max(12.0, font_q50 * 2.0), 3),
                 "max_width_delta_ratio": 0.18,
+                "max_vertical_gap_pt": round(max(18.0, font_q50 * 3.0), 3),
+                "paragraph_gap_pt": round(max(10.0, font_q50 * 1.8), 3),
+                "line_joiner_en": " ",
+                "line_joiner_zh": "",
+                "include_line_preserve_body": target_language == "en",
+                "disable_page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard"],
                 "paragraph_separator": "\n\n",
                 "target_region_kind": "body_flow",
                 "source": "current_run_width_alignment_and_user_feedback",
             }
+        },
+        "source_separator_policy": {
+            "split_on_untranslated_visible_line_gap": True,
+            "max_line_index_gap_without_split": 1,
+            "reason": "do not reflow translated text across visible source headings, years, bullets, or separators that are not translation units",
         },
         "draw_modes": {
             "vertical_nav": {
@@ -181,6 +229,12 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None) -
         "layout_text_variants": {
             "compact_label": ["compact_label_zh", "compact_zh", "display_zh"],
             "short_label": ["short_label_zh", "compact_zh", "display_zh"],
+            "table_cell": ["table_cell_zh", "compact_label_zh", "compact_zh", "display_zh"],
+            "legend": ["legend_zh", "compact_label_zh", "compact_zh", "display_zh"],
+            "compact_label_en": ["compact_label_en", "compact_en", "display_en"],
+            "short_label_en": ["short_label_en", "compact_en", "display_en"],
+            "table_cell_en": ["table_cell_en", "compact_label_en", "compact_en", "display_en"],
+            "legend_en": ["legend_en", "compact_label_en", "compact_en", "display_en"],
         },
         "font_profiles": {
             "footnote": {
@@ -201,6 +255,18 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None) -
                 "max_pt": round(max(4.2, min(font_q25 * compact_scale, 5.2)), 3),
                 "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60],
             },
+            "table_cell": {
+                "source_scale": round(max(0.72, min(0.92, compact_scale + 0.14)), 3),
+                "min_pt": 3.6,
+                "max_pt": round(max(4.8, min(font_q50 * 0.92, 7.4)), 3),
+                "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60, 0.54],
+            },
+            "legend": {
+                "source_scale": round(max(0.78, min(0.98, compact_scale + 0.18)), 3),
+                "min_pt": 4.0,
+                "max_pt": round(max(5.2, min(font_q50 * 0.98, 8.0)), 3),
+                "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64],
+            },
             "heading": {
                 "source_scale": 0.95,
                 "min_pt": 5.0,
@@ -215,15 +281,15 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None) -
             },
             "body": {
                 "source_scale": round(body_scale, 3),
-                "min_pt": 5.2,
+                "min_pt": body_min_pt,
                 "max_pt": round(max(7.8, min(max(font_q50 * 1.15, font_q75 * 1.10), 11.5)), 3),
-                "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70],
+                "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64, 0.58, 0.52, 0.46],
             },
             "body_flow": {
                 "source_scale": round(max(body_scale, 1.12), 3),
-                "min_pt": 5.6,
+                "min_pt": body_flow_min_pt,
                 "max_pt": round(max(8.4, min(max(font_q50 * 1.24, font_q75 * 1.16), 12.4)), 3),
-                "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.80, 0.76],
+                "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.80, 0.76, 0.70, 0.64, 0.58, 0.52, 0.46],
             },
         },
         "fallback": {

@@ -12,6 +12,7 @@ anti_overfit_statement: classification uses structural counts only, not sample f
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -20,6 +21,9 @@ import fitz
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from _common import ascii_tokens, rel, resolve_workspace_path, sha256_file, write_json  # noqa: E402
+
+
+CJK_RE = re.compile(r"[\u3400-\u9fff]")
 
 
 def rect_values(rect: Any) -> list[float]:
@@ -74,6 +78,7 @@ def extract(pdf_path: Path) -> dict[str, Any]:
                         "font": first_span.get("font", ""),
                         "color": first_span.get("color"),
                         "ascii_tokens": ascii_tokens(text),
+                        "cjk_char_count": len(CJK_RE.findall(text)),
                     }
                 )
         drawings = page.get_drawings()
@@ -112,4 +117,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

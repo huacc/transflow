@@ -1,9 +1,9 @@
-"""Generate a Chinese backfill PDF from validated semantic translations.
+"""Generate a target-language backfill PDF from validated semantic translations.
 
 tool_name: generate_semantic_backfill
 category: generators
 input_contract: source PDF, source extraction JSON, semantic translations JSON, output/evidence paths
-output_contract: candidate PDF with English text redacted and semantic Chinese translations inserted, plus translations/layout/evidence JSON
+output_contract: candidate PDF with source-language text redacted and semantic target-language translations inserted, plus translations/layout/evidence JSON
 failure_signals: missing/invalid semantic translations, font unavailable, insertion/output failure
 fallback: mark S_FAIL_CAPABILITY or S_FAIL_QUALITY; never fall back to placeholder text in product_quality
 anti_overfit_statement: consumes current-run unit ids and bboxes only and never branches on sample filename, page number, coordinates, exact text, or document identity
@@ -28,10 +28,71 @@ from generate_backfill_candidate import choose_font, inflate_rect, sample_fill, 
 
 
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
-UNIT_BLOCK_RE = re.compile(r"^(p\d+_b\d+)_l\d+$")
+ASCII_OR_DIGIT_RE = re.compile(r"[A-Za-z0-9]")
+UNIT_ID_RE = re.compile(r"^(p\d+_b\d+)_l(\d+)$")
 NOTE_LABEL_RE = re.compile(r"^(note|notes):$", re.IGNORECASE)
 FORBIDDEN_PROVIDERS = {"", "deterministic_placeholder", "placeholder", "manual_placeholder", None}
 FORBIDDEN_TRANSLATION_FRAGMENTS = ("中文回填", "中文标题", "中文标签", "待翻译", "占位", "placeholder", "tbd")
+FORBIDDEN_TRANSLATION_PATTERNS = [
+    (
+        "meta_line_description_zh",
+        re.compile(r"^本行(?:说明|列示|报告|描述|展示|表示)"),
+    ),
+    (
+        "meta_line_description_en",
+        re.compile(r"^this line (?:reports|describes|lists|shows|states|explains)\b", re.IGNORECASE),
+    ),
+    (
+        "preservation_instruction_leaked_zh",
+        re.compile(r"保留(?:数值|数字|标记|符号)"),
+    ),
+    (
+        "preservation_instruction_leaked_en",
+        re.compile(r"\bpreserv(?:e|ed|ing)\s+(?:figures|numbers|markers|tokens)\b", re.IGNORECASE),
+    ),
+    (
+        "generic_page_description_zh",
+        re.compile(r"当前页的(?:财务报告|治理|业务信息)"),
+    ),
+    (
+        "generic_page_description_en",
+        re.compile(r"\bcurrent page'?s? (?:financial report|governance|business information)\b", re.IGNORECASE),
+    ),
+]
+
+
+def normalize_language(value: Any, default: str) -> str:
+    text = str(value or default).strip().lower()
+    if text in {"zh", "zh-cn", "zh-hans", "zh-hant", "chinese", "中文"}:
+        return "zh"
+    if text in {"en", "en-us", "en-gb", "english", "英文"}:
+        return "en"
+    return text or default
+
+
+def target_text_field(data: dict[str, Any]) -> str:
+    target_language = normalize_language(data.get("target_language"), "zh")
+    explicit = str(data.get("target_text_field") or "").strip()
+    if explicit:
+        return explicit
+    if target_language == "zh":
+        return "translation_zh"
+    if target_language == "en":
+        return "translation_en"
+    return "translation_target_text"
+
+
+def line_is_translatable(line: dict[str, Any], source_language: str) -> bool:
+    text = str(line.get("text", ""))
+    if source_language == "zh":
+        return bool(CJK_RE.search(text))
+    if source_language == "en":
+        return bool(line.get("ascii_tokens"))
+    return bool(text.strip())
+
+
+def get_target_text(item: dict[str, Any], field: str) -> str:
+    return str(item.get(field) or item.get("translation_target_text") or item.get("translation_zh") or item.get("translation_en") or "").strip()
 
 
 def load_semantic_units(translations_path: Path) -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
@@ -43,6 +104,9 @@ def load_semantic_units(translations_path: Path) -> tuple[dict[str, Any], dict[s
         raise ValueError("translation_quality must be semantic_translation")
     if data.get("semantic_coverage") != "full_semantic_translation":
         raise ValueError("semantic_coverage must be full_semantic_translation")
+    data["source_language"] = normalize_language(data.get("source_language"), "en")
+    data["target_language"] = normalize_language(data.get("target_language"), "zh")
+    data["target_text_field"] = target_text_field(data)
     by_id: dict[str, dict[str, Any]] = {}
     for item in data.get("units", []):
         if not isinstance(item, dict):
@@ -53,21 +117,34 @@ def load_semantic_units(translations_path: Path) -> tuple[dict[str, Any], dict[s
     return data, by_id
 
 
-def reject_bad_translation(unit_id: str, source_text: str, translation_zh: str) -> None:
-    lowered = translation_zh.strip().lower()
+def reject_bad_translation(unit_id: str, source_text: str, translation_text: str, target_language: str, target_field: str) -> None:
+    lowered = translation_text.strip().lower()
     if not lowered:
-        raise ValueError(f"{unit_id}: missing translation_zh")
-    if not CJK_RE.search(translation_zh):
-        raise ValueError(f"{unit_id}: translation_zh has no CJK characters")
+        raise ValueError(f"{unit_id}: missing {target_field}")
+    if target_language == "zh" and not CJK_RE.search(translation_text):
+        raise ValueError(f"{unit_id}: {target_field} has no CJK characters")
+    if target_language == "en":
+        if not ASCII_OR_DIGIT_RE.search(translation_text):
+            raise ValueError(f"{unit_id}: {target_field} has no ASCII letters or digits")
+        if CJK_RE.search(translation_text):
+            raise ValueError(f"{unit_id}: {target_field} has CJK residue")
     if lowered == source_text.strip().lower():
         raise ValueError(f"{unit_id}: translation equals source text")
     if any(fragment in lowered for fragment in FORBIDDEN_TRANSLATION_FRAGMENTS):
         raise ValueError(f"{unit_id}: placeholder translation text is forbidden")
+    for reason, pattern in FORBIDDEN_TRANSLATION_PATTERNS:
+        if pattern.search(translation_text.strip()):
+            raise ValueError(f"{unit_id}: placeholder/meta translation text is forbidden: {reason}")
 
 
 def block_key(unit_id: str) -> str:
-    match = UNIT_BLOCK_RE.match(unit_id)
+    match = UNIT_ID_RE.match(unit_id)
     return match.group(1) if match else unit_id
+
+
+def unit_line_index(unit_id: str) -> int | None:
+    match = UNIT_ID_RE.match(unit_id)
+    return int(match.group(2)) if match else None
 
 
 def median_float(values: list[float]) -> float:
@@ -153,7 +230,13 @@ def expand_region_rect(rect: fitz.Rect, page_rect: fitz.Rect, source_size: float
     return expanded
 
 
-def region_kind(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[str, Any]) -> str:
+def page_type_guess(page_context: dict[str, Any] | None) -> str:
+    if not isinstance(page_context, dict):
+        return ""
+    return str(page_context.get("page_type_guess") or "")
+
+
+def region_kind(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[str, Any], page_context: dict[str, Any] | None = None) -> str:
     rects = [item["rect"] for item in items]
     sizes = [float(item.get("font_size") or 0.0) for item in items]
     rect = union_rect(rects)
@@ -176,75 +259,138 @@ def region_kind(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[
     vertical_nav = require_mapping(rules.get("vertical_nav"), "classification_rules.vertical_nav")
     if rect.width < policy_float(vertical_nav, "max_region_width_pt") and rect.height > rect.width * policy_float(vertical_nav, "min_height_width_ratio"):
         return "vertical_nav"
+    table_cell = rules.get("table_cell")
+    if isinstance(table_cell, dict):
+        page_types = {str(value) for value in table_cell.get("page_type_guesses", [])}
+        if (
+            page_type_guess(page_context) in page_types
+            and len(items) <= policy_int(table_cell, "max_line_count")
+            and rect.width <= policy_float(table_cell, "max_region_width_pt")
+            and median_size <= policy_float(table_cell, "max_median_font_size")
+        ):
+            return "table_cell"
+    legend = require_mapping(rules.get("legend"), "classification_rules.legend")
+    if len(items) >= policy_int(legend, "min_line_count") and rect.width <= policy_float(legend, "max_region_width_pt") and median_float([r.width for r in rects]) <= policy_float(legend, "max_median_line_width_pt"):
+        return "legend"
     compact_label = require_mapping(rules.get("compact_label"), "classification_rules.compact_label")
     if rect.width < policy_float(compact_label, "max_region_width_pt") or median_float([r.width for r in rects]) < policy_float(compact_label, "max_median_line_width_pt"):
         return "compact_label"
     short_label = require_mapping(rules.get("short_label"), "classification_rules.short_label")
     if len(items) <= policy_int(short_label, "max_line_count") and rect.width <= policy_float(short_label, "max_region_width_pt") and median_size >= policy_float(short_label, "min_median_font_size"):
         return "short_label"
-    legend = require_mapping(rules.get("legend"), "classification_rules.legend")
-    if len(items) >= policy_int(legend, "min_line_count") and rect.width <= policy_float(legend, "max_region_width_pt") and median_float([r.width for r in rects]) <= policy_float(legend, "max_median_line_width_pt"):
-        return "legend"
     heading = require_mapping(rules.get("heading"), "classification_rules.heading")
     if median_size >= policy_float(heading, "min_median_font_size"):
         return "heading"
     return "body"
 
 
-def should_reflow_region(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[str, Any]) -> bool:
+def should_reflow_region(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[str, Any], page_context: dict[str, Any] | None = None) -> bool:
     reflow = policy_section(policy, "reflow")
     if len(items) < policy_int(reflow, "min_items_for_reflow"):
         return False
-    kind = region_kind(items, page_rect, policy)
+    kind = region_kind(items, page_rect, policy, page_context)
     if kind in set(reflow.get("preserve_line_kinds", [])):
         return False
     return kind in set(reflow.get("reflow_kinds", []))
 
 
 def explicit_layout_text(item: dict[str, Any], kind: str, policy: dict[str, Any]) -> str:
-    variant_keys = policy.get("layout_text_variants", {}).get(kind, [])
+    target_language = str(policy.get("target_language") or "zh")
+    variant_key = f"{kind}_{target_language}"
+    variants_by_kind = policy.get("layout_text_variants", {})
+    variant_keys = variants_by_kind.get(variant_key) or variants_by_kind.get(kind, [])
     variants = item.get("layout_variants")
     if isinstance(variants, dict):
         for key in variant_keys:
             value = variants.get(key)
             if isinstance(value, str) and value.strip():
                 return value.strip()
-    return str(item["translation_zh"]).strip()
+    return str(item["target_text"]).strip()
 
 
-def reject_bad_layout_text(unit_id: str, layout_text: str) -> None:
+def reject_bad_layout_text(unit_id: str, layout_text: str, policy: dict[str, Any]) -> None:
+    target_language = str(policy.get("target_language") or "zh")
     if not layout_text:
         raise ValueError(f"{unit_id}: empty layout text")
-    if not CJK_RE.search(layout_text):
+    if target_language == "zh" and not CJK_RE.search(layout_text):
         raise ValueError(f"{unit_id}: layout text has no CJK characters")
+    if target_language == "en" and CJK_RE.search(layout_text):
+        raise ValueError(f"{unit_id}: layout text has CJK residue")
     if any(fragment in layout_text.lower() for fragment in FORBIDDEN_TRANSLATION_FRAGMENTS):
         raise ValueError(f"{unit_id}: placeholder layout text is forbidden")
-    residue = ascii_tokens(layout_text)
-    if residue:
+    for reason, pattern in FORBIDDEN_TRANSLATION_PATTERNS:
+        if pattern.search(layout_text.strip()):
+            raise ValueError(f"{unit_id}: placeholder/meta layout text is forbidden: {reason}")
+    residue = ascii_tokens(layout_text) if target_language == "zh" else []
+    if target_language == "zh" and residue:
         raise ValueError(f"{unit_id}: layout text contains ASCII residue: {','.join(residue[:8])}")
 
 
 def join_translation_fragments(items: list[dict[str, Any]], kind: str, policy: dict[str, Any]) -> str:
     text = ""
+    target_language = str(policy.get("target_language") or "zh")
+    separator = " " if target_language == "en" else ""
     for item in items:
         fragment = explicit_layout_text(item, kind, policy)
-        if fragment != str(item["translation_zh"]).strip():
-            reject_bad_layout_text(str(item["unit_id"]), fragment)
+        if fragment != str(item["target_text"]).strip():
+            reject_bad_layout_text(str(item["unit_id"]), fragment, policy)
         if not fragment:
             continue
         if not text:
             text = fragment
             continue
-        text += fragment
+        text += separator + fragment
     return re.sub(r"\s+", " ", text).strip()
 
-def split_heading_prefix(items: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
+def split_heading_prefix(items: list[dict[str, Any]], policy: dict[str, Any]) -> list[list[dict[str, Any]]]:
     if len(items) <= 1:
         return [items]
-    first_text = str(items[0]["source_text"]).strip().lower()
-    if NOTE_LABEL_RE.match(first_text):
-        return [items]
-    return [items]
+    separator_policy = policy.get("source_separator_policy", {})
+    split_on_gap = not isinstance(separator_policy, dict) or bool(separator_policy.get("split_on_untranslated_visible_line_gap", True))
+    max_gap = int(separator_policy.get("max_line_index_gap_without_split", 1)) if isinstance(separator_policy, dict) else 1
+    parts: list[list[dict[str, Any]]] = []
+    current: list[dict[str, Any]] = []
+    previous_index: int | None = None
+    previous_block: Any = None
+    for item in items:
+        current_index = item.get("line_index")
+        if current_index is None:
+            current_index = unit_line_index(str(item.get("unit_id", "")))
+        current_block = item.get("block_id") if item.get("block_id") is not None else block_key(str(item.get("unit_id", "")))
+        crosses_separator = (
+            split_on_gap
+            and current
+            and previous_index is not None
+            and current_index is not None
+            and previous_block == current_block
+            and int(current_index) - int(previous_index) > max_gap
+        )
+        if crosses_separator:
+            parts.append(current)
+            current = []
+        current.append(item)
+        previous_index = int(current_index) if current_index is not None else None
+        previous_block = current_block
+    if current:
+        parts.append(current)
+    output: list[list[dict[str, Any]]] = []
+    for part in parts:
+        if len(part) <= 1:
+            output.append(part)
+            continue
+        first_text = str(part[0]["source_text"]).strip().lower()
+        if NOTE_LABEL_RE.match(first_text):
+            output.append(part)
+            continue
+        rest_sizes = [float(item.get("font_size") or 0.0) for item in part[1:]]
+        first_size = float(part[0].get("font_size") or 0.0)
+        rest_median = median_float(rest_sizes)
+        if rest_median and first_size >= rest_median * 1.25:
+            output.append([part[0]])
+            output.append(part[1:])
+            continue
+        output.append(part)
+    return output
 
 
 def numeric_list(values: list[float]) -> list[float]:
@@ -261,7 +407,15 @@ def is_body_flow_candidate(region: dict[str, Any], page_rect: fitz.Rect, policy:
     profile = body_flow_profile(policy)
     if not profile.get("enabled"):
         return False
-    if region.get("region_kind") != "body" or region.get("layout_mode") != "region_reflow":
+    disabled_page_types = {str(value) for value in profile.get("disable_page_type_guesses", [])}
+    if str(region.get("page_type_guess") or "") in disabled_page_types:
+        return False
+    if region.get("region_kind") != "body":
+        return False
+    mode = str(region.get("layout_mode") or "")
+    if mode == "line_preserve" and not bool(profile.get("include_line_preserve_body", False)):
+        return False
+    if mode not in {"region_reflow", "line_preserve"}:
         return False
     min_ratio = float(profile.get("min_region_width_page_ratio", 0.45))
     return float(region["rect"].width) >= float(page_rect.width) * min_ratio
@@ -275,13 +429,41 @@ def can_join_body_flow(group: list[dict[str, Any]], candidate: dict[str, Any], p
     widths = numeric_list([item["rect"].width for item in group] + [candidate["rect"].width])
     max_x0_delta = float(profile.get("max_x0_delta_pt", 12.0))
     max_width_delta_ratio = float(profile.get("max_width_delta_ratio", 0.18))
+    max_vertical_gap = float(profile.get("max_vertical_gap_pt", 99999.0))
     median_width = max(1.0, median_float(widths))
-    return (max(x0_values) - min(x0_values)) <= max_x0_delta and ((max(widths) - min(widths)) / median_width) <= max_width_delta_ratio
+    previous = group[-1]["rect"]
+    y_gap = max(0.0, float(candidate["rect"].y0) - float(previous.y1))
+    return (
+        (max(x0_values) - min(x0_values)) <= max_x0_delta
+        and ((max(widths) - min(widths)) / median_width) <= max_width_delta_ratio
+        and y_gap <= max_vertical_gap
+    )
+
+
+def join_body_flow_text(group: list[dict[str, Any]], text_key: str, policy: dict[str, Any]) -> str:
+    profile = body_flow_profile(policy)
+    target_language = str(policy.get("target_language") or "zh")
+    line_joiner = str(profile.get(f"line_joiner_{target_language}", " " if target_language == "en" else ""))
+    paragraph_separator = str(profile.get("paragraph_separator", "\n\n"))
+    paragraph_gap = float(profile.get("paragraph_gap_pt", 12.0))
+    parts: list[str] = []
+    previous_rect: fitz.Rect | None = None
+    for region in group:
+        text = str(region.get(text_key) or "").strip()
+        if not text:
+            continue
+        if not parts:
+            parts.append(text)
+        else:
+            gap = 0.0 if previous_rect is None else max(0.0, float(region["rect"].y0) - float(previous_rect.y1))
+            joiner = paragraph_separator if gap >= paragraph_gap else line_joiner
+            parts.append(joiner + text)
+        previous_rect = region["rect"]
+    return "".join(parts).strip()
 
 
 def make_body_flow_region(group: list[dict[str, Any]], index: int, policy: dict[str, Any]) -> dict[str, Any]:
     profile = body_flow_profile(policy)
-    separator = str(profile.get("paragraph_separator", "\n\n"))
     target_kind = str(profile.get("target_region_kind", "body_flow"))
     items = [item for region in group for item in region["items"]]
     rect = union_rect([region["rect"] for region in group])
@@ -291,11 +473,13 @@ def make_body_flow_region(group: list[dict[str, Any]], index: int, policy: dict[
         "region_kind": target_kind,
         "items": items,
         "rect": rect,
-        "translation_zh": separator.join(str(region["translation_zh"]).strip() for region in group if str(region["translation_zh"]).strip()),
+        "translation_zh": join_body_flow_text(group, "translation_zh", policy),
+        "target_text": join_body_flow_text(group, "target_text", policy),
         "text_color": dominant_text_color(items),
         "source_size": median_float(source_sizes),
         "layout_mode": "region_flow",
         "flow_source_region_count": len(group),
+        "page_type_guess": group[0].get("page_type_guess"),
     }
 
 
@@ -330,7 +514,7 @@ def apply_body_flow_grouping(regions: list[dict[str, Any]], page_rect: fitz.Rect
     return output
 
 
-def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[str, Any]) -> list[dict[str, Any]]:
+def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[str, Any], page_context: dict[str, Any] | None = None) -> list[dict[str, Any]]:
     grouped: dict[str, list[dict[str, Any]]] = {}
     order: list[str] = []
     for item in items:
@@ -342,11 +526,11 @@ def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dic
 
     regions: list[dict[str, Any]] = []
     for key in order:
-        for part in split_heading_prefix(grouped[key]):
-            if should_reflow_region(part, page_rect, policy):
+        for part in split_heading_prefix(grouped[key], policy):
+            if should_reflow_region(part, page_rect, policy, page_context):
                 rect = union_rect([item["rect"] for item in part])
                 sizes = [float(item.get("font_size") or 6.0) for item in part]
-                kind = region_kind(part, page_rect, policy)
+                kind = region_kind(part, page_rect, policy, page_context)
                 regions.append(
                     {
                         "region_id": f"region_{key}_{len(regions):03d}",
@@ -354,14 +538,16 @@ def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dic
                         "items": part,
                         "rect": expand_region_rect(rect, page_rect, median_float(sizes), kind, policy),
                         "translation_zh": join_translation_fragments(part, kind, policy),
+                        "target_text": join_translation_fragments(part, kind, policy),
                         "text_color": dominant_text_color(part),
                         "source_size": median_float(sizes),
                         "layout_mode": "region_reflow",
+                        "page_type_guess": page_type_guess(page_context),
                     }
                 )
             else:
                 for item in part:
-                    kind = region_kind([item], page_rect, policy)
+                    kind = region_kind([item], page_rect, policy, page_context)
                     regions.append(
                         {
                             "region_id": f"region_{item['unit_id']}",
@@ -369,9 +555,11 @@ def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dic
                             "items": [item],
                             "rect": item["rect"],
                             "translation_zh": explicit_layout_text(item, kind, policy),
+                            "target_text": explicit_layout_text(item, kind, policy),
                             "text_color": dominant_text_color([item]),
                             "source_size": float(item.get("font_size") or 6.0),
                             "layout_mode": "line_preserve",
+                            "page_type_guess": page_type_guess(page_context),
                         }
                     )
     return apply_body_flow_grouping(regions, page_rect, policy)
@@ -612,6 +800,12 @@ def generate(
     extraction = read_json(extraction_path)
     semantic_data, semantic_by_id = load_semantic_units(semantic_translations_path)
     layout_policy = load_layout_policy(layout_policy_path)
+    source_language = str(semantic_data.get("source_language") or "en")
+    target_language = str(semantic_data.get("target_language") or "zh")
+    target_field = str(semantic_data.get("target_text_field") or target_text_field(semantic_data))
+    layout_policy.setdefault("source_language", source_language)
+    layout_policy.setdefault("target_language", target_language)
+    layout_policy.setdefault("target_text_field", target_field)
     doc = fitz.open(source)
     translation_units: list[dict[str, Any]] = []
     layout_slots: list[dict[str, Any]] = []
@@ -624,7 +818,7 @@ def generate(
         page = doc[page_index]
         page_units: list[dict[str, Any]] = []
         for line in page_info.get("text_lines", []):
-            if not line.get("ascii_tokens"):
+            if not line_is_translatable(line, source_language):
                 continue
             unit_id = str(line["line_id"])
             source_text = str(line.get("text", ""))
@@ -634,8 +828,8 @@ def generate(
                 continue
             if str(translated.get("source_text", "")).strip() != source_text.strip():
                 raise ValueError(f"{unit_id}: source_text mismatch")
-            zh = str(translated.get("translation_zh", "")).strip()
-            reject_bad_translation(unit_id, source_text, zh)
+            target_text = get_target_text(translated, target_field)
+            reject_bad_translation(unit_id, source_text, target_text, target_language, target_field)
 
             bbox = [float(v) for v in line["bbox"]]
             rect = inflate_rect(bbox, page.rect)
@@ -643,8 +837,12 @@ def generate(
             page_unit = {
                 "unit_id": unit_id,
                 "page_index": page_index,
+                "block_id": line.get("block_id"),
+                "line_index": line.get("line_index"),
                 "source_text": source_text,
-                "translation_zh": zh,
+                "translation_zh": target_text,
+                "target_text": target_text,
+                "target_text_field": target_field,
                 "bbox": bbox,
                 "rect": rect,
                 "fill_color": fill,
@@ -657,7 +855,11 @@ def generate(
                     "unit_id": unit_id,
                     "page_index": page_index,
                     "source_text": source_text,
-                    "translation_zh": zh,
+                    "translation_zh": target_text,
+                    "target_text": target_text,
+                    target_field: target_text,
+                    "source_language": source_language,
+                    "target_language": target_language,
                     "translation_mode": "semantic_translation",
                     "semantic_coverage": "full_semantic_translation",
                     "bbox": bbox,
@@ -684,7 +886,13 @@ def generate(
                 graphics=fitz.PDF_REDACT_LINE_ART_NONE,
                 text=fitz.PDF_REDACT_TEXT_REMOVE,
             )
-            regions = build_regions(page_units, page.rect, layout_policy)
+            page_context = {
+                "page_type_guess": page_info.get("page_type_guess"),
+                "text_line_count": page_info.get("text_line_count"),
+                "drawing_count": page_info.get("drawing_count"),
+                "image_block_count": page_info.get("image_block_count"),
+            }
+            regions = build_regions(page_units, page.rect, layout_policy, page_context)
             for region in regions:
                 insert_result = insert_region(page, region, fontfile, layout_policy)
                 unit_ids = [item["unit_id"] for item in region["items"]]
@@ -693,6 +901,8 @@ def generate(
                         "slot_id": region["region_id"],
                         "unit_ids": unit_ids,
                         "page_index": page_index,
+                        "source_block_ids": sorted({str(item.get("block_id")) for item in region["items"] if item.get("block_id") is not None}),
+                        "source_line_indexes": [item.get("line_index") for item in region["items"]],
                         "anchor_bbox": [round(v, 3) for v in region["rect"]],
                         "font_file": str(fontfile),
                         "font_size": insert_result["font_size"],
@@ -702,6 +912,7 @@ def generate(
                         "fill_color": None,
                         "region_kind": region["region_kind"],
                         "layout_mode": region["layout_mode"],
+                        "page_type_guess": region.get("page_type_guess"),
                         "layout_policy": rel(layout_policy_path),
                         "draw_mode": layout_policy.get("draw_modes", {}).get(region["region_kind"], {}).get("mode", "textbox"),
                         "rotation_degrees": insert_result.get("rotation_degrees"),
@@ -713,10 +924,15 @@ def generate(
                         "region_id": region["region_id"],
                         "unit_ids": unit_ids,
                         "page_index": page_index,
+                        "source_block_ids": sorted({str(item.get("block_id")) for item in region["items"] if item.get("block_id") is not None}),
+                        "source_line_indexes": [item.get("line_index") for item in region["items"]],
                         "bbox": [round(v, 3) for v in region["rect"]],
                         "translation_zh": region["translation_zh"],
+                        "target_text": region.get("target_text", region["translation_zh"]),
+                        "target_text_field": target_field,
                         "region_kind": region["region_kind"],
                         "layout_mode": region["layout_mode"],
+                        "page_type_guess": region.get("page_type_guess"),
                         **insert_result,
                     }
                 )
@@ -730,6 +946,9 @@ def generate(
 
     translations = {
         "translation_provider": semantic_data.get("translation_provider"),
+        "source_language": source_language,
+        "target_language": target_language,
+        "target_text_field": target_field,
         "translation_quality": "semantic_translation",
         "semantic_coverage": "full_semantic_translation",
         "prompt_artifacts": semantic_data.get("prompt_artifacts", []),
@@ -750,9 +969,12 @@ def generate(
     fit_warnings = [item for item in insertion_records if item["status"] not in {"fit", "point_fit", "rotated_fit", "rotated_horizontal_image_fit"}]
     return {
         "tool": "generate_semantic_backfill",
-        "strategy": "redact_extractable_ascii_lines_and_insert_semantic_chinese_regions",
+        "strategy": f"redact_extractable_{source_language}_lines_and_insert_semantic_{target_language}_regions",
         "real_backfill_pdf": True,
         "translation_provider": semantic_data.get("translation_provider"),
+        "source_language": source_language,
+        "target_language": target_language,
+        "target_text_field": target_field,
         "translation_quality": "semantic_translation",
         "input_semantic_translations": rel(semantic_translations_path),
         "semantic_translation_validation": "PASS",

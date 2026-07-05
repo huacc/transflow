@@ -27,5 +27,5 @@
     }
   },
   "failure_policy": "If required logs or quality evidence are missing, process_contract_verdict must be FAIL.",
-  "anti_overfit_policy": "Anti-overfit PASS requires evidence that sample-specific facts were confined to manifests, fixtures, tests, or reports."
+  "anti_overfit_policy": "Anti-overfit PASS requires evidence that sample-specific facts are absent from reusable core tools/contracts/prompts. Offline references, historical replay fixtures, and sample-specific tokens must live outside the core."
 }

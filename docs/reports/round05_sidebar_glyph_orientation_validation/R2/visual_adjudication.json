@@ -1,0 +1,43 @@
+{
+  "tool": "codex_view_image_visual_adjudication",
+  "adjudication_provider": "current_codex_session_visual_review",
+  "external_openai_api_call": false,
+  "source_output_comparison_only": true,
+  "verdict": "FAIL",
+  "reason": "Round05 addresses the user's sidebar glyph-direction finding. The side navigation labels are generated as horizontal Chinese text images rotated as one unit, and the back-rotated output crop shows horizontal Chinese labels. Product-quality acceptance is still not claimed because overall visual similarity remains failed.",
+  "input_artifacts": [
+    "docs/reports/round05_sidebar_glyph_orientation_validation/compare/R2_page04_sidebar_source_vs_round05.png",
+    "docs/reports/round05_sidebar_glyph_orientation_validation/compare/R2_page04_sidebar_round05_backrotated.png",
+    "docs/reports/round05_sidebar_glyph_orientation_validation/R2/candidate_generation_evidence.json",
+    "docs/reports/round05_sidebar_glyph_orientation_validation/R2/layout_policy.json",
+    "docs/reports/round05_sidebar_glyph_orientation_validation/R2/product_quality_gates.json"
+  ],
+  "dimensions": [
+    {
+      "dimension": "sidebar_orientation_group_consistency",
+      "status": "PASS",
+      "evidence": "All vertical_nav slots use draw_mode=rotated_horizontal_text_image and rotation_degrees=90."
+    },
+    {
+      "dimension": "sidebar_glyph_orientation",
+      "status": "PASS",
+      "evidence": "Back-rotating the sidebar crop by -90 degrees produces horizontal Chinese labels, including 财务及营运回顾."
+    },
+    {
+      "dimension": "sidebar_orientation",
+      "status": "PASS",
+      "evidence": "The active sidebar title follows the source's rotated-label orientation rather than one-character vertical writing."
+    },
+    {
+      "dimension": "text_fit",
+      "status": "PASS",
+      "evidence": "candidate_generation_evidence.fit_warning_count=0."
+    },
+    {
+      "dimension": "visual_similarity",
+      "status": "FAIL",
+      "evidence": "Final product acceptance remains blocked by broader body/layout visual similarity issues."
+    }
+  ],
+  "next_state": "Lx_RepairLoop"
+}

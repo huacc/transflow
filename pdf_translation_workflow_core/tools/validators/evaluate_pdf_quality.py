@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -24,6 +25,44 @@ from _common import ascii_tokens, median, rel, resolve_workspace_path, write_jso
 
 
 FORBIDDEN_TRANSLATION_PROVIDERS = {None, "", "deterministic_placeholder", "placeholder", "manual_placeholder"}
+UNIT_ID_RE = re.compile(r"^(p\d+_b\d+)_l(\d+)$")
+CJK_RE = re.compile(r"[\u3400-\u9fff]")
+
+
+def unit_ref(unit_id: Any) -> tuple[str, int] | None:
+    match = UNIT_ID_RE.match(str(unit_id))
+    if not match:
+        return None
+    return match.group(1), int(match.group(2))
+
+
+def source_anchor_order_violations(evidence_data: dict[str, Any]) -> list[dict[str, Any]]:
+    violations: list[dict[str, Any]] = []
+    for insertion in evidence_data.get("insertions", []):
+        if not isinstance(insertion, dict):
+            continue
+        unit_ids = [str(item) for item in insertion.get("unit_ids", [])]
+        refs = [unit_ref(unit_id) for unit_id in unit_ids]
+        refs = [ref for ref in refs if ref is not None]
+        if len(refs) < 2:
+            continue
+        for (prev_block, prev_index), (next_block, next_index) in zip(refs, refs[1:]):
+            if prev_block == next_block and next_index - prev_index > 1:
+                violations.append(
+                    {
+                        "region_id": insertion.get("region_id") or insertion.get("slot_id"),
+                        "unit_ids": unit_ids,
+                        "gap": {
+                            "block": prev_block,
+                            "previous_line_index": prev_index,
+                            "next_line_index": next_index,
+                            "skipped_line_count": next_index - prev_index - 1,
+                        },
+                        "reason": "one inserted region crosses source lines that were not translation units; this can move text across visible headings, years, bullets, or separators",
+                    }
+                )
+                break
+    return violations
 
 
 def line_records(page: fitz.Page) -> list[dict[str, Any]]:
@@ -143,6 +182,11 @@ def evaluate(
     )
     page_results = []
     output_ascii = []
+    output_cjk_chars = []
+    evidence_data: dict[str, Any] = {}
+    if generation_evidence is not None and generation_evidence.exists():
+        evidence_data = json.loads(generation_evidence.read_text(encoding="utf-8"))
+    target_language = str(evidence_data.get("target_language") or "zh").lower()
     for page_index in range(min(src.page_count, out.page_count)):
         s_page = src[page_index]
         o_page = out[page_index]
@@ -158,6 +202,7 @@ def evaluate(
         )
         tokens = ascii_tokens(o_page.get_text("text"))
         output_ascii.extend(tokens)
+        output_cjk_chars.extend(CJK_RE.findall(o_page.get_text("text")))
         s_lines = line_records(s_page)
         o_lines = line_records(o_page)
         s_metrics = metrics(s_lines)
@@ -185,12 +230,19 @@ def evaluate(
             }
         )
     ascii_unique = sorted(set(output_ascii))
+    cjk_unique = sorted(set(output_cjk_chars))
+    residue_fail = bool(ascii_unique) if target_language == "zh" else bool(cjk_unique)
     gates.append(
         {
             "gate_id": "text_residue",
-            "status": "pass" if not ascii_unique else "fail",
+            "status": "pass" if not residue_fail else "fail",
             "blocking": True,
-            "evidence": {"ascii_token_count": len(ascii_unique), "sample": ascii_unique[:80]},
+            "evidence": {
+                "target_language": target_language,
+                "ascii_token_count": len(ascii_unique),
+                "cjk_unique_count": len(cjk_unique),
+                "sample": ascii_unique[:80] if target_language == "zh" else cjk_unique[:80],
+            },
         }
     )
     visual_data: dict[str, Any] | None = None
@@ -198,7 +250,6 @@ def evaluate(
         visual_data = json.loads(visual_adjudication.read_text(encoding="utf-8"))
 
     if generation_evidence is not None and generation_evidence.exists():
-        evidence_data = json.loads(generation_evidence.read_text(encoding="utf-8"))
         semantic_coverage = evidence_data.get("semantic_coverage")
         translation_quality = evidence_data.get("translation_quality")
         translation_provider = evidence_data.get("translation_provider")
@@ -237,6 +288,20 @@ def evaluate(
                 "evidence": {
                     "fit_warning_count": fit_warning_count,
                     "reason": "fallback insertion or overflow evidence blocks product-quality acceptance",
+                    "generation_evidence": rel(generation_evidence),
+                },
+            }
+        )
+        anchor_violations = source_anchor_order_violations(evidence_data)
+        gates.append(
+            {
+                "gate_id": "source_anchor_order",
+                "status": "pass" if not anchor_violations else "fail",
+                "blocking": True,
+                "evidence": {
+                    "violation_count": len(anchor_violations),
+                    "sample": anchor_violations[:12],
+                    "reason": "a target-language reflow region must not cross untranslated visible source separators inside the same block",
                     "generation_evidence": rel(generation_evidence),
                 },
             }

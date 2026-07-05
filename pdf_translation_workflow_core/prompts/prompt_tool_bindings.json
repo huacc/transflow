@@ -6,7 +6,7 @@
     "default_rule": "Do not create new judgement prompts during a round. Use these templates and fill their slots from current-run artifacts.",
     "allowed_adjustments": [
       "round-local file paths",
-      "run_id and regression_id values",
+      "run_id and case_id values",
       "page indexes and crop references",
       "current metrics and gate summaries",
       "JSON field ordering or wrapper adaptation needed to read tool output"
@@ -16,6 +16,7 @@
       "remove required quality dimensions",
       "change blocking gates into non-blocking gates",
       "pass product_quality with placeholder translations",
+      "pass product_quality with line-category pseudo translations such as This line reports or 本行说明",
       "pass sidebar_glyph_orientation without back-rotated crop evidence",
       "encode sample filenames, fixed page numbers, fixed coordinates, fixed text, colors, or known document identity as rules"
     ],
@@ -43,7 +44,7 @@
       "tool_first": [],
       "model_prompt": "templates/D1_page_strategy.prompt.json",
       "slot_bindings": {
-        "source_pdf_ref": "regression_manifest input + sha256/page_count",
+        "source_pdf_ref": "run_request source PDF input + sha256/page_count",
         "page_context": "source_extraction.json pages[*] + source_render_manifest.json",
         "tool_evidence_refs": ["source_extraction.json", "source_render_manifest.json"]
       },
@@ -58,8 +59,8 @@
         "translation_units": "source_extraction.json text_lines grouped by region/page strategy",
         "terminology_policy": "contracts/decision_contracts.md + run-specific glossary if present"
       },
-      "produces": ["docs/input/semantic_translations/<regression_id>.translations.json", "semantic_translation_validation.json"],
-      "product_quality_requirement": "semantic translations must identify a non-placeholder translation_provider, translation_quality=semantic_translation, one output per source unit, and semantic_coverage=full_semantic_translation",
+      "produces": ["docs/input/semantic_translations/<case_id>.translations.json", "semantic_translation_validation.json"],
+      "product_quality_requirement": "semantic translations must identify a non-placeholder translation_provider, translation_quality=semantic_translation, one output per source unit, semantic_coverage=full_semantic_translation, and no placeholder or line-category pseudo translation patterns",
       "next_state_from_model": ["S6_LayoutPlan", "S_FAIL_PROCESS_CONTRACT"]
     },
     {
@@ -77,12 +78,15 @@
       "required_decisions": [
         "policy numeric values must come from current-run extraction statistics, explicit D4 judgement, or user feedback evidence",
         "for each multi-line body/footnote/heading block choose region_reflow unless there is a recorded D4 reason",
-        "for aligned wide body paragraphs choose body_flow only when current-run x/width statistics prove one continuous article column",
+        "set source_separator_policy so visible untranslated anchors such as years, numeric headings, bullets, or separator labels split reflow regions",
+        "for aligned wide body paragraphs choose body_flow only when current-run x/width/y-gap statistics prove one continuous article column",
+        "inside body_flow set paragraph_gap_pt and line_joiner rules so same-paragraph continuations do not receive forced paragraph separators",
         "for wide Note/Notes blocks after tables choose table_note and preserve the source-relative note/body font hierarchy",
+        "for dense table/chart pages classify compact labels and cells as table_cell and keep them out of body_flow unless D4 records an exception",
         "for narrow vertical navigation choose draw_modes.vertical_nav=rotated_horizontal_text_image instead of stacked character text",
         "for compact table labels, chart ticks, legends, or vertical navigation choose line_preserve",
         "record any visual_only image-text regions as OCR/tooling boundaries",
-        "if compact labels need shorter Chinese, require layout_variants in semantic translations rather than generator hardcoded replacements"
+        "if compact labels need shorter target-language text, require layout_variants in semantic translations rather than generator hardcoded replacements"
       ],
       "next_state_from_model": ["S7_GenerateCandidate", "S_FAIL_PROCESS_CONTRACT"]
     },
@@ -96,7 +100,7 @@
       },
       "produces": ["candidate.pdf", "translations.json", "layout_plan.json", "candidate_generation_evidence.json"],
       "mode_scope": "backfill_candidate_validation|product_quality",
-      "current_gap": "The semantic generator consumes validated translations, redacts source text per unit, and reflows paragraph/footnote blocks into Chinese regions. Product-quality may still fail visual gates, but line-by-line English bbox copying and placeholder semantic failure must not occur.",
+      "current_gap": "The semantic generator consumes validated translations, redacts source-language text per unit, and reflows paragraph/footnote blocks into target-language regions. Product-quality may still fail visual gates, but line-by-line source bbox copying, placeholder semantic failure, pseudo-translation semantic failure, and fixed paragraph separators between every source-wrapped line must not occur.",
       "next_state_on_pass": "S8_VerifyProductQuality",
       "next_state_on_fail": "S_FAIL_TOOLING|S_FAIL_CAPABILITY"
     },
@@ -112,7 +116,7 @@
         "tool_evidence_refs": ["product_quality_gates.json", "source/candidate previews", "source-vs-output crop manifests"]
       },
       "produces": ["quality_findings.json"],
-      "failure_classes": ["line_fragmentation", "paragraph_rhythm_mismatch", "paragraph_density_mismatch", "font_hierarchy_ratio_mismatch", "sidebar_orientation_fail", "sidebar_glyph_orientation_fail", "side_nav_group_consistency_fail", "footnote_readability", "text_fit_overflow", "visual_similarity_fail", "table_integrity_fail"],
+      "failure_classes": ["semantic_translation_authenticity_fail", "source_anchor_order_mismatch", "line_fragmentation", "paragraph_rhythm_mismatch", "paragraph_density_mismatch", "font_hierarchy_ratio_mismatch", "sidebar_orientation_fail", "sidebar_glyph_orientation_fail", "side_nav_group_consistency_fail", "footnote_readability", "text_fit_overflow", "visual_similarity_fail", "table_integrity_fail"],
       "next_state_from_model": ["S9_VerifyProcessContract", "Lx_RepairLoop", "S_FAIL_QUALITY", "S_FAIL_PROCESS_CONTRACT"]
     },
     {
@@ -126,7 +130,7 @@
         "prior_loop_summary": "state_trace.json previous loop entries"
       },
       "produces": ["repair_plan.json"],
-      "next_state_from_model": ["S7_GenerateCandidate", "S_FAIL_QUALITY", "S_FAIL_PROCESS_CONTRACT"]
+      "next_state_from_model": ["S5_TranslationPlan", "S6_LayoutPlan", "S7_GenerateCandidate", "S_FAIL_QUALITY", "S_FAIL_CAPABILITY", "S_FAIL_PROCESS_CONTRACT"]
     },
     {
       "state": "S9_VerifyProcessContract",

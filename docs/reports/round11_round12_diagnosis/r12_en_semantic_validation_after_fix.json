@@ -1,0 +1,2949 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "FAIL",
+  "translation_provider": "codex_gpt5_semantic_translation",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [],
+  "coverage": {
+    "source_unit_count": 271,
+    "translated_unit_count": 271,
+    "matched_unit_count": 271,
+    "missing_unit_ids": [],
+    "invalid_unit_count": 257
+  },
+  "invalid_units": [
+    {
+      "unit_id": "p0_b0_l0",
+      "page_index": 0,
+      "source_text": "ANNUAL REPORT 2019 | 077",
+      "translation_zh": "年报；保留数值与标记：2019、077",
+      "reasons": [
+        "preservation_instruction_leaked_zh",
+        "layout_variant_preservation_instruction_leaked_zh:compact_label_zh",
+        "layout_variant_preservation_instruction_leaked_zh:short_label_zh",
+        "layout_variant_preservation_instruction_leaked_zh:compact_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l0",
+      "page_index": 0,
+      "source_text": "Mr. Mohamed Azman Yahya (alias: Mohamed Azman bin Yahya)",
+      "translation_zh": "本行说明个人履历、董事职务、委员会成员身份及任期事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l1",
+      "page_index": 0,
+      "source_text": "Aged 56, is an Independent Non-executive Director of the Company, having been appointed on 24 February",
+      "translation_zh": "本行说明独立非执行董事、非执行董事、公司、董事、获委任相关事项；保留数值与标记：56, 、24",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l2",
+      "page_index": 0,
+      "source_text": "2014. He is also a member of the Nomination Committee and the Remuneration Committee of the Company.",
+      "translation_zh": "本行说明提名委员会、薪酬委员会、公司、成员相关事项；保留数值与标记：2014",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l3",
+      "page_index": 0,
+      "source_text": "Mr. Yahya is the Executive Chairman of Symphony Life Berhad and the Independent Non-executive Chairman of",
+      "translation_zh": "本行说明个人履历、董事职务、委员会成员身份及任期事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l4",
+      "page_index": 0,
+      "source_text": "Ranhill Holdings Berhad, both listed on the Main Market of Bursa Malaysia Securities Berhad (Bursa Malaysia). Mr.",
+      "translation_zh": "本行说明市场、上市相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l5",
+      "page_index": 0,
+      "source_text": "Yahya is a director and Chairman of various companies, including Symphony House Sdn Bhd (formerly known as",
+      "translation_zh": "本行说明董事、主席相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l6",
+      "page_index": 0,
+      "source_text": "Symphony House Berhad) and Sepang International Circuit Sdn Bhd. He started his career at KPMG in London and",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l7",
+      "page_index": 0,
+      "source_text": "thereafter worked in a variety of roles in investment banking, ultimately being named chief executive of Amanah",
+      "translation_zh": "本行说明投资银行相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l8",
+      "page_index": 0,
+      "source_text": "Merchant Bank. In 1998, he was tasked by the Malaysian Government to set-up and head Danaharta, the national",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：1998",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l9",
+      "page_index": 0,
+      "source_text": "asset management company. He was also the Chairman of the Corporate Debt Restructuring Committee, set up by",
+      "translation_zh": "本行说明债务重组、资产管理公司、公司、主席相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l10",
+      "page_index": 0,
+      "source_text": "Bank Negara Malaysia to mediate and assist in debt restructuring programmes of viable companies. Mr. Yahya was",
+      "translation_zh": "本行说明债务重组相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l11",
+      "page_index": 0,
+      "source_text": "a director of Khazanah Nasional Berhad, the Malaysian government investment arm, from 2004 to 2018, a director",
+      "translation_zh": "本行说明政府投资机构、董事相关事项；保留数值与标记：2004、2018",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l12",
+      "page_index": 0,
+      "source_text": "of Ekuiti Nasional Berhad, a government linked private equity fund management company, from 2009 to 2019,",
+      "translation_zh": "本行说明私募股权基金管理公司、公司相关事项；保留数值与标记：2009、2019",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l13",
+      "page_index": 0,
+      "source_text": "and an independent non-executive director of Sime Darby Berhad from 2017 to 2019. Mr. Yahya was the Non-",
+      "translation_zh": "本行说明独立非执行董事、非执行董事、董事相关事项；保留数值与标记：2017、2019",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l14",
+      "page_index": 0,
+      "source_text": "executive Chairman of Ranhill Holdings Berhad before his re-designation as Independent Non-executive Chairman",
+      "translation_zh": "本行说明执行主席、独立非执行主席、主席相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l15",
+      "page_index": 0,
+      "source_text": "with effective from 2 February 2019. Mr. Yahya received his BSc Economics (First Class) from the London School",
+      "translation_zh": "本行说明生效、取得相关事项；保留数值与标记：2019、2",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l16",
+      "page_index": 0,
+      "source_text": "of Economics and Political Science in 1985 and is a member of the Institute of Chartered Accountants in England",
+      "translation_zh": "本行说明成员相关事项；保留数值与标记：1985",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l17",
+      "page_index": 0,
+      "source_text": "and Wales, the Malaysian Institute of Accountants and a fellow of the Institute of Bankers Malaysia.",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l0",
+      "page_index": 0,
+      "source_text": "Professor Lawrence Juen-Yee Lau",
+      "translation_zh": "本行说明个人履历、董事职务、委员会成员身份及任期事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l1",
+      "page_index": 0,
+      "source_text": "Aged 75, is an Independent Non-executive Director of the Company, having been appointed on 18 September",
+      "translation_zh": "本行说明独立非执行董事、非执行董事、公司、董事、获委任相关事项；保留数值与标记：75, 、18",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l2",
+      "page_index": 0,
+      "source_text": "2014. He is also a member of the Nomination Committee and the Risk Committee of the Company. Professor Lau",
+      "translation_zh": "本行说明提名委员会、风险委员会、公司、成员相关事项；保留数值与标记：2014",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l3",
+      "page_index": 0,
+      "source_text": "currently serves as an independent non-executive director of CNOOC Limited and Semiconductor Manufacturing",
+      "translation_zh": "本行说明独立非执行董事、非执行董事、董事相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l4",
+      "page_index": 0,
+      "source_text": "International Corporation (both listed on the Hong Kong Stock Exchange and the New York Stock Exchange). He",
+      "translation_zh": "本行说明上市相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l5",
+      "page_index": 0,
+      "source_text": "is also an independent non-executive director of Hysan Development Company Limited (listed on the Hong Kong",
+      "translation_zh": "本行说明独立非执行董事、非执行董事、公司、董事、上市相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l6",
+      "page_index": 0,
+      "source_text": "Stock Exchange) and Far EasTone Telecommunications Company Limited (listed on the Taiwan Stock Exchange).",
+      "translation_zh": "本行说明公司、上市相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l7",
+      "page_index": 0,
+      "source_text": "He has been serving as the Ralph and Claire Landau Professor of Economics at The Chinese University of Hong",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l8",
+      "page_index": 0,
+      "source_text": "Kong (CUHK) since 2007 and the Chairman of the Council of Shenzhen Finance Institute of CUHK, Shenzhen since",
+      "translation_zh": "本行说明主席相关事项；保留数值与标记：2007",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l9",
+      "page_index": 0,
+      "source_text": "12 January 2017. He currently serves as a member of the Currency Board Sub-committee of the Exchange Fund",
+      "translation_zh": "本行说明成员相关事项；保留数值与标记：2017、12",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l10",
+      "page_index": 0,
+      "source_text": "Advisory Committee of the HKSAR. He was formerly a member of the Exchange Fund Advisory Committee of the",
+      "translation_zh": "本行说明成员相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l11",
+      "page_index": 0,
+      "source_text": "HKSAR, Chairman of its Governance Sub-committee and a member of its Investment Sub-committee until 2019.",
+      "translation_zh": "本行说明主席、成员相关事项；保留数值与标记：2019",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l12",
+      "page_index": 0,
+      "source_text": "In addition, he serves as a member and Chairman of the Prize Recommendation Committee for the LUI Che Woo",
+      "translation_zh": "本行说明主席、成员相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l13",
+      "page_index": 0,
+      "source_text": "Prize Limited; Vice-Chairman of the Our Hong Kong Foundation; Vice-Chairman of China Center for International",
+      "translation_zh": "本行说明主席相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l14",
+      "page_index": 0,
+      "source_text": "Economic Exchanges, Beijing; a member of the Hong Kong Trade Development Council Belt and Road & Greater",
+      "translation_zh": "本行说明成员相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l15",
+      "page_index": 0,
+      "source_text": "Bay Area Committee; a fellow of the Hong Kong Academy of Finance; as well as the C.V. Starr distinguished",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l16",
+      "page_index": 0,
+      "source_text": "fellow of China Development Research Foundation, Beijing. He was awarded the Gold Bauhinia Star by the",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l17",
+      "page_index": 0,
+      "source_text": "HKSAR Government in 2011. From 2004 to 2010, Professor Lau served as Vice-Chancellor (President) of CUHK.",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：2011、2004、2010",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l18",
+      "page_index": 0,
+      "source_text": "He was appointed Chairman of CIC International (Hong Kong) Co., Limited, a wholly-owned subsidiary of China",
+      "translation_zh": "本行说明主席、获委任相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l19",
+      "page_index": 0,
+      "source_text": "Investment Corporation, in September 2010 and retired from the position in September 2014. He was a member",
+      "translation_zh": "本行说明成员相关事项；保留数值与标记：2010、2014",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l20",
+      "page_index": 0,
+      "source_text": "of the 12th National Committee of the Chinese People’s Political Consultative Conference and a Vice-Chairman",
+      "translation_zh": "本行说明主席相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l21",
+      "page_index": 0,
+      "source_text": "of its Sub-committee of Economics from 2013 to 2018. He received his B.S. degree (with Great Distinction) in",
+      "translation_zh": "本行说明取得相关事项；保留数值与标记：2013、2018",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l22",
+      "page_index": 0,
+      "source_text": "Physics from Stanford University in 1964 and his M.A. and Ph.D. degrees in Economics from the University of",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：1964",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l23",
+      "page_index": 0,
+      "source_text": "California at Berkeley in 1966 and 1969, respectively. He joined the faculty of the Department of Economics at",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：1966、1969",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l24",
+      "page_index": 0,
+      "source_text": "Stanford University in 1966, becoming its Professor of Economics in 1976 and the first Kwoh-Ting Li Professor",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：1966、1976",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l25",
+      "page_index": 0,
+      "source_text": "in Economic Development in 1992. From 1992 to 1996, he served as a Co-Director of the Asia-Pacific Research",
+      "translation_zh": "本行说明董事相关事项；保留数值与标记：1992、1996",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l26",
+      "page_index": 0,
+      "source_text": "Center at Stanford University, and from 1997 to 1999 as the Director of the Stanford Institute for Economic Policy",
+      "translation_zh": "本行说明董事相关事项；保留数值与标记：1997、1999",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l27",
+      "page_index": 0,
+      "source_text": "Research. He became its Kwoh-Ting Li Professor in Economic Development, Emeritus, upon his retirement from",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l28",
+      "page_index": 0,
+      "source_text": "Stanford University in 2006.",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：2006",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b1_l0",
+      "page_index": 1,
+      "source_text": "2. SIGNIFICANT ACCOUNTING POLICIES (continued)",
+      "translation_zh": "本行说明合并财务报表及重要会计政策相关事项；保留数值与标记：2",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b1_l1",
+      "page_index": 1,
+      "source_text": "2.4 Insurance and investment contracts (continued)",
+      "translation_zh": "本行说明保险相关事项；保留数值与标记：2.4",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b1_l2",
+      "page_index": 1,
+      "source_text": "Product classification (continued)",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b1_l3",
+      "page_index": 1,
+      "source_text": "Certain contracts with DPF supplement the amount of guaranteed benefits due to policyholders. These contracts are",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b1_l4",
+      "page_index": 1,
+      "source_text": "distinct from other insurance and investment contracts as the Group has discretion in the amount and/or timing of the",
+      "translation_zh": "本行说明保险、集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b1_l5",
+      "page_index": 1,
+      "source_text": "benefits declared, and how such benefits are allocated between groups of policyholders. Customers may be entitled to",
+      "translation_zh": "本行说明集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b1_l6",
+      "page_index": 1,
+      "source_text": "receive, as a supplement to guaranteed benefits, additional benefits or bonuses:",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b2_l1",
+      "page_index": 1,
+      "source_text": "that are likely to be a significant portion of the total contractual benefits;",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b3_l1",
+      "page_index": 1,
+      "source_text": "whose amount or timing is contractually at the discretion of the Group; and",
+      "translation_zh": "本行说明集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b4_l1",
+      "page_index": 1,
+      "source_text": "that are contractually based on:",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b5_l0",
+      "page_index": 1,
+      "source_text": "– the performance of a specified pool of contracts or a specified type of contract;",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b6_l0",
+      "page_index": 1,
+      "source_text": "– realised and/or unrealised investment returns on a specified pool of assets held by the issuer; or",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b7_l0",
+      "page_index": 1,
+      "source_text": "– the profit or loss of the Company, fund or other entity that issues the contract.",
+      "translation_zh": "本行说明公司相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b8_l0",
+      "page_index": 1,
+      "source_text": "The Group applies the same accounting policies for the recognition and measurement of obligations and the deferral of",
+      "translation_zh": "本行说明合并财务报表及重要会计政策相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b8_l1",
+      "page_index": 1,
+      "source_text": "acquisition costs arising from investment contracts with DPF as it does to insurance contracts. The Group refers to such",
+      "translation_zh": "本行说明保险、集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b8_l2",
+      "page_index": 1,
+      "source_text": "contracts as participating business. In some jurisdictions participating business is written in a participating fund which is",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b8_l3",
+      "page_index": 1,
+      "source_text": "distinct from the other assets of the Company or branch. The allocation of benefits from the assets held in such participating",
+      "translation_zh": "本行说明公司相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b8_l4",
+      "page_index": 1,
+      "source_text": "funds is subject to minimum policyholder participation mechanisms which are established by regulation. The extent of",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b8_l5",
+      "page_index": 1,
+      "source_text": "such policyholder participation may change over time. The current policyholder participation in declared dividends for",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b8_l6",
+      "page_index": 1,
+      "source_text": "locations with participating funds is set out below:",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b9_l0",
+      "page_index": 1,
+      "source_text": "Country",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b9_l1",
+      "page_index": 1,
+      "source_text": "Current policyholder",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b9_l2",
+      "page_index": 1,
+      "source_text": "participation",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b10_l0",
+      "page_index": 1,
+      "source_text": "Singapore",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b11_l0",
+      "page_index": 1,
+      "source_text": "Malaysia",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b12_l0",
+      "page_index": 1,
+      "source_text": "Mainland China",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b13_l0",
+      "page_index": 1,
+      "source_text": "Australia",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b14_l0",
+      "page_index": 1,
+      "source_text": "Brunei",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b15_l0",
+      "page_index": 1,
+      "source_text": "In some jurisdictions participating business is not written in a distinct fund and the Group refers to this as other participating",
+      "translation_zh": "本行说明集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b15_l1",
+      "page_index": 1,
+      "source_text": "business.",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p1_b16_l0",
+      "page_index": 1,
+      "source_text": "| AIA GROUP LIMITED",
+      "translation_zh": "本行说明集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b1_l0",
+      "page_index": 2,
+      "source_text": "23. FAIR VALUE MEASUREMENT",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：23",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b1_l1",
+      "page_index": 2,
+      "source_text": "Fair value of financial instruments",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b1_l2",
+      "page_index": 2,
+      "source_text": "The Group classifies all financial assets as either at fair value through profit or loss, or as available for sale, which are",
+      "translation_zh": "本行说明集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b1_l3",
+      "page_index": 2,
+      "source_text": "carried at fair value, or as loans and receivables, which are carried at amortised cost. Financial liabilities are classified as",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b1_l4",
+      "page_index": 2,
+      "source_text": "either at fair value through profit or loss or at amortised cost, except for investment contracts with DPF which are accounted",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b1_l5",
+      "page_index": 2,
+      "source_text": "for under IFRS 4.",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：4",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b2_l0",
+      "page_index": 2,
+      "source_text": "The following tables present the fair values of the Group’s financial assets and financial liabilities:",
+      "translation_zh": "本行说明集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b3_l0",
+      "page_index": 2,
+      "source_text": "Fair value",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b4_l0",
+      "page_index": 2,
+      "source_text": "US$m",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b4_l1",
+      "page_index": 2,
+      "source_text": "Notes",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b5_l0",
+      "page_index": 2,
+      "source_text": "Fair value",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b5_l1",
+      "page_index": 2,
+      "source_text": "through",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b5_l2",
+      "page_index": 2,
+      "source_text": "profit or loss",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b5_l3",
+      "page_index": 2,
+      "source_text": "Available",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b5_l4",
+      "page_index": 2,
+      "source_text": "for sale",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b6_l0",
+      "page_index": 2,
+      "source_text": "Cost/",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b6_l1",
+      "page_index": 2,
+      "source_text": "amortised",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b6_l2",
+      "page_index": 2,
+      "source_text": "cost",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b7_l0",
+      "page_index": 2,
+      "source_text": "Total",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b7_l1",
+      "page_index": 2,
+      "source_text": "carrying",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b7_l2",
+      "page_index": 2,
+      "source_text": "value",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b7_l3",
+      "page_index": 2,
+      "source_text": "Total fair",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b7_l4",
+      "page_index": 2,
+      "source_text": "value",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b8_l0",
+      "page_index": 2,
+      "source_text": "31 December 2019",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：2019、31",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b9_l0",
+      "page_index": 2,
+      "source_text": "Financial investments",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b10_l0",
+      "page_index": 2,
+      "source_text": "Loans and deposits",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b11_l0",
+      "page_index": 2,
+      "source_text": "Debt securities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b12_l0",
+      "page_index": 2,
+      "source_text": "Equity securities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b13_l0",
+      "page_index": 2,
+      "source_text": "Derivative financial instruments",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b14_l0",
+      "page_index": 2,
+      "source_text": "Reinsurance receivables",
+      "translation_zh": "本行说明保险相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b15_l0",
+      "page_index": 2,
+      "source_text": "Other receivables",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b16_l0",
+      "page_index": 2,
+      "source_text": "Accrued investment income",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b17_l0",
+      "page_index": 2,
+      "source_text": "Cash and cash equivalents",
+      "translation_zh": "本行说明现金及现金等价物相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b18_l0",
+      "page_index": 2,
+      "source_text": "Financial assets",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b19_l0",
+      "page_index": 2,
+      "source_text": "Notes",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b20_l0",
+      "page_index": 2,
+      "source_text": "Fair value",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b20_l1",
+      "page_index": 2,
+      "source_text": "through",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b20_l2",
+      "page_index": 2,
+      "source_text": "profit or loss",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b21_l0",
+      "page_index": 2,
+      "source_text": "Cost/",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b21_l1",
+      "page_index": 2,
+      "source_text": "amortised",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b21_l2",
+      "page_index": 2,
+      "source_text": "cost",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b22_l0",
+      "page_index": 2,
+      "source_text": "Total",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b22_l1",
+      "page_index": 2,
+      "source_text": "carrying",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b22_l2",
+      "page_index": 2,
+      "source_text": "value",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b22_l3",
+      "page_index": 2,
+      "source_text": "Total fair",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b22_l4",
+      "page_index": 2,
+      "source_text": "value",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b23_l0",
+      "page_index": 2,
+      "source_text": "Financial liabilities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b24_l0",
+      "page_index": 2,
+      "source_text": "Investment contract liabilities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b25_l0",
+      "page_index": 2,
+      "source_text": "Borrowings",
+      "translation_zh": "本行说明信贷融资、借款余额及一般公司资金用途",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b26_l0",
+      "page_index": 2,
+      "source_text": "Obligations under repurchase agreements",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b27_l0",
+      "page_index": 2,
+      "source_text": "Derivative financial instruments",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b28_l0",
+      "page_index": 2,
+      "source_text": "Other liabilities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b29_l0",
+      "page_index": 2,
+      "source_text": "Financial liabilities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p2_b30_l0",
+      "page_index": 2,
+      "source_text": "| AIA GROUP LIMITED",
+      "translation_zh": "本行说明集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b1_l0",
+      "page_index": 3,
+      "source_text": "23. FAIR VALUE MEASUREMENT (continued)",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：23",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b1_l1",
+      "page_index": 3,
+      "source_text": "Fair value hierarchy for fair value measurement on a recurring basis (continued)",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b2_l0",
+      "page_index": 3,
+      "source_text": "Fair value hierarchy",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b3_l0",
+      "page_index": 3,
+      "source_text": "US$m",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b3_l1",
+      "page_index": 3,
+      "source_text": "Level 1",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：1",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b3_l2",
+      "page_index": 3,
+      "source_text": "Level 2",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：2",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b3_l3",
+      "page_index": 3,
+      "source_text": "Level 3",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：3",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b3_l4",
+      "page_index": 3,
+      "source_text": "Total",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b4_l0",
+      "page_index": 3,
+      "source_text": "31 December 2018",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：2018、31",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b5_l0",
+      "page_index": 3,
+      "source_text": "Recurring fair value measurements",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b6_l0",
+      "page_index": 3,
+      "source_text": "Non-financial assets",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b7_l0",
+      "page_index": 3,
+      "source_text": "Property held for own use",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b8_l0",
+      "page_index": 3,
+      "source_text": "Investment property",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b9_l0",
+      "page_index": 3,
+      "source_text": "Financial assets",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b10_l0",
+      "page_index": 3,
+      "source_text": "Available for sale",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b11_l0",
+      "page_index": 3,
+      "source_text": "Debt securities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b12_l0",
+      "page_index": 3,
+      "source_text": "Participating funds and Other participating business",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b12_l1",
+      "page_index": 3,
+      "source_text": "with distinct portfolios",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b13_l0",
+      "page_index": 3,
+      "source_text": "Other policyholder and shareholder",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b14_l0",
+      "page_index": 3,
+      "source_text": "At fair value through profit or loss",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b15_l0",
+      "page_index": 3,
+      "source_text": "Debt securities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b16_l0",
+      "page_index": 3,
+      "source_text": "Participating funds and Other participating business",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b16_l1",
+      "page_index": 3,
+      "source_text": "with distinct portfolios",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b17_l0",
+      "page_index": 3,
+      "source_text": "Unit-linked and consolidated investment funds",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b18_l0",
+      "page_index": 3,
+      "source_text": "Other policyholder and shareholder",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b19_l0",
+      "page_index": 3,
+      "source_text": "Equity securities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b20_l0",
+      "page_index": 3,
+      "source_text": "Participating funds and Other participating business",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b20_l1",
+      "page_index": 3,
+      "source_text": "with distinct portfolios",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b21_l0",
+      "page_index": 3,
+      "source_text": "Unit-linked and consolidated investment funds",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b22_l0",
+      "page_index": 3,
+      "source_text": "Other policyholder and shareholder",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b23_l0",
+      "page_index": 3,
+      "source_text": "Derivative financial instruments",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b24_l0",
+      "page_index": 3,
+      "source_text": "Foreign exchange contracts",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b25_l0",
+      "page_index": 3,
+      "source_text": "Interest rate contracts",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b26_l0",
+      "page_index": 3,
+      "source_text": "Other contracts",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b27_l0",
+      "page_index": 3,
+      "source_text": "Total assets on a recurring fair value measurement basis",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b28_l0",
+      "page_index": 3,
+      "source_text": "% of Total",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b29_l0",
+      "page_index": 3,
+      "source_text": "Financial liabilities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b30_l0",
+      "page_index": 3,
+      "source_text": "Investment contract liabilities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b31_l0",
+      "page_index": 3,
+      "source_text": "Derivative financial instruments",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b32_l0",
+      "page_index": 3,
+      "source_text": "Foreign exchange contracts",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b33_l0",
+      "page_index": 3,
+      "source_text": "Interest rate contracts",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b34_l0",
+      "page_index": 3,
+      "source_text": "Other liabilities",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b35_l0",
+      "page_index": 3,
+      "source_text": "Total liabilities on a recurring fair value",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b35_l1",
+      "page_index": 3,
+      "source_text": "measurement basis",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b36_l0",
+      "page_index": 3,
+      "source_text": "% of Total",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b37_l0",
+      "page_index": 3,
+      "source_text": "The Group’s policy is to recognise transfers of assets and liabilities between Level 1 and Level 2 at their fair values as at",
+      "translation_zh": "本行说明集团相关事项；保留数值与标记：1 、2",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b37_l1",
+      "page_index": 3,
+      "source_text": "the end of each reporting period, consistent with the date of the determination of fair value. Assets are transferred out of",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b37_l2",
+      "page_index": 3,
+      "source_text": "Level 1 when they are no longer transacted with sufficient frequency and volume in an active market. During the year",
+      "translation_zh": "本行说明市场相关事项；保留数值与标记：1",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b37_l3",
+      "page_index": 3,
+      "source_text": "ended 31 December 2019, the Group transferred US$379m (thirteen months ended 31 December 2018: US$15m) of",
+      "translation_zh": "本行说明集团相关事项；保留数值与标记：2019、2018、31",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b37_l4",
+      "page_index": 3,
+      "source_text": "assets measured at fair value from Level 1 to Level 2. Conversely, assets are transferred from Level 2 to Level 1 when",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：1 、2、2",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b37_l5",
+      "page_index": 3,
+      "source_text": "transaction volume and frequency are indicative of an active market. The Group transferred US$36m of asset (thirteen",
+      "translation_zh": "本行说明集团、市场相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b37_l6",
+      "page_index": 3,
+      "source_text": "months ended 31 December 2018: nil) from Level 2 to Level 1 during the year ended 31 December 2019.",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：2018、2019、31 、2 、1",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p3_b38_l0",
+      "page_index": 3,
+      "source_text": "| AIA GROUP LIMITED",
+      "translation_zh": "本行说明集团相关事项",
+      "reasons": [
+        "meta_line_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b1_l0",
+      "page_index": 4,
+      "source_text": "30. BORROWINGS",
+      "translation_zh": "本行说明信贷融资、借款余额及一般公司资金用途；保留数值与标记：30",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b2_l0",
+      "page_index": 4,
+      "source_text": "US$m",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b3_l0",
+      "page_index": 4,
+      "source_text": "As at",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b3_l1",
+      "page_index": 4,
+      "source_text": "31 December",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：31",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b4_l0",
+      "page_index": 4,
+      "source_text": "As at",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b4_l1",
+      "page_index": 4,
+      "source_text": "31 December",
+      "translation_zh": "本行列示财务报告中的数值、期间或注释信息；保留数值与标记：31",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b5_l0",
+      "page_index": 4,
+      "source_text": "Medium-term notes",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b6_l0",
+      "page_index": 4,
+      "source_text": "Total",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b7_l0",
+      "page_index": 4,
+      "source_text": "Interest expense on borrowings is shown in note 11. Further information relating to interest rates and the maturity profile",
+      "translation_zh": "本行说明信贷融资、借款余额及一般公司资金用途；保留数值与标记：11",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b7_l1",
+      "page_index": 4,
+      "source_text": "of borrowings is presented in note 38.",
+      "translation_zh": "本行说明信贷融资、借款余额及一般公司资金用途；保留数值与标记：38",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b8_l0",
+      "page_index": 4,
+      "source_text": "The following table summarises the Company’s outstanding medium-term notes placed to the market at 31 December",
+      "translation_zh": "本行说明公司、市场相关事项；保留数值与标记：31",
+      "reasons": [
+        "meta_line_description_zh",
+        "preservation_instruction_leaked_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_preservation_instruction_leaked_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b9_l0",
+      "page_index": 4,
+      "source_text": "Issue date",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b9_l1",
+      "page_index": 4,
+      "source_text": "Nominal amount",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    },
+    {
+      "unit_id": "p4_b9_l2",
+      "page_index": 4,
+      "source_text": "Interest rate",
+      "translation_zh": "本行说明当前页的财务报告、治理或业务信息",
+      "reasons": [
+        "meta_line_description_zh",
+        "generic_page_description_zh",
+        "layout_variant_meta_line_description_zh:compact_label_zh",
+        "layout_variant_meta_line_description_zh:short_label_zh",
+        "layout_variant_meta_line_description_zh:compact_zh",
+        "layout_variant_meta_line_description_zh:display_zh",
+        "layout_variant_generic_page_description_zh:display_zh"
+      ]
+    }
+  ],
+  "warnings": [],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\round12\\docs\\reports\\R12_EN_random_5pages\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\round12\\docs\\reports\\R12_EN_random_5pages\\semantic_translations.generated.json"
+}
