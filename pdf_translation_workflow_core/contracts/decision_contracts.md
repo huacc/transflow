@@ -59,7 +59,7 @@ Required D2 output dimensions:
 | `layout_risk` | compactness risk for later layout planning |
 | `layout_variants` | optional compact target-language variants for constrained labels, table cells, legends, and side navigation |
 | `forbidden_pattern_check` | evidence that target text and variants do not contain placeholder or line-category pseudo translation patterns |
-| `prompt_artifacts` | prompt_instance, slot_values, model_output, decision_record refs |
+| `prompt_artifacts` | workspace_boundary, prompt_instance, slot_values, model_output, decision_record refs |
 
 D2 fails if any required source-language unit lacks a real target-language translation or if the output contains placeholder or metadata-style pseudo translation text such as `中文回填`, `中文标题`, `中文标签`, `待翻译`, `占位`, `placeholder`, `TBD`, `This line reports...`, `This line describes...`, `本行说明...`, `本行列示...`, `当前页的财务报告、治理或业务信息`, or `保留数值与标记...`.
 

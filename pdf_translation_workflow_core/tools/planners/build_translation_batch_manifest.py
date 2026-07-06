@@ -147,6 +147,7 @@ def build_manifest(
         model_output_path = batch_dir / f"{batch_id}.model_output.json"
         validation_path = batch_dir / f"{batch_id}.validation.json"
         decision_record_path = batch_dir / f"{batch_id}.decision_record.json"
+        workspace_boundary_path = batch_dir / f"{batch_id}.workspace_boundary.json"
         slot_values = {
             "run_id": run_id,
             "case_id": case_id,
@@ -165,6 +166,7 @@ def build_manifest(
                 "known_reference_translation_allowed": False,
             },
             "output_contract": {
+                "workspace_boundary_ref": rel(workspace_boundary_path),
                 "write_model_output_to": rel(model_output_path),
                 "required_units": [unit["unit_id"] for unit in batch_units],
                 "forbidden_placeholders": [
@@ -188,6 +190,7 @@ def build_manifest(
                 "model_output_ref": rel(model_output_path),
                 "batch_validation_ref": rel(validation_path),
                 "decision_record_ref": rel(decision_record_path),
+                "workspace_boundary_ref": rel(workspace_boundary_path),
             }
         )
 
@@ -213,6 +216,7 @@ def build_manifest(
         "batch_count": len(batches),
         "batches": batches,
         "required_d2_loop": [
+            "For each batch, run validate_workspace_boundary.py for workspace_boundary_ref before writing prompt/model/decision/validation artifacts.",
             "For each batch, fill D2_translation.prompt.json slots from slot_values_ref.",
             "Persist prompt_instance_ref before judgement.",
             "Persist raw model JSON to model_output_ref.",

@@ -244,22 +244,55 @@ docs\output\
 docs\reports\
 ```
 
+### 3.1 执行根与写入边界契约
+
+每个执行轮次只有一个执行根。独立 spike/round 包的执行根就是包含 `pdf_translation_workflow_core`、`docs`、`run_request.json`、`state_trace.json`、`operation_log.jsonl`、`decision_log.jsonl` 的目录。
+
+执行器在任何运行时产物写入前，必须先把计划写入路径解析成绝对路径，并证明这些路径都位于执行根内。该检查不是人工口头约束，必须调用：
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\validate_workspace_boundary.py `
+  --workspace-root . `
+  --path docs\reports `
+  --path docs\output `
+  --path docs\input\semantic_translations `
+  --out docs\reports\workspace_boundary_preflight.json `
+  --allow-missing
+```
+
+状态内的具体写入也必须有同类报告。例如 S5B 每个 D2 batch 写 `prompt_instance.json`、`model_output.json`、`decision_record.json`、`validation.json` 前，必须先输出：
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\validate_workspace_boundary.py `
+  --workspace-root . `
+  --path docs\reports\<run_id>\translation_batches\<batch_id>.prompt_instance.json `
+  --path docs\reports\<run_id>\translation_batches\<batch_id>.model_output.json `
+  --path docs\reports\<run_id>\translation_batches\<batch_id>.decision_record.json `
+  --path docs\reports\<run_id>\translation_batches\<batch_id>.validation.json `
+  --out docs\reports\<run_id>\translation_batches\<batch_id>.workspace_boundary.json `
+  --allow-missing
+```
+
+只有 `workspace_boundary_verdict=PASS` 才能继续写入。若任何计划路径解析到执行根外，必须停止当前状态并进入 `S_FAIL_PROCESS_CONTRACT`。
+
+`apply_patch` 只能用于修改工具、契约、提示词或流程文档，不能作为运行时证据写入器。`prompt_instance.json`、`model_output.json`、`decision_record.json`、`state_trace.json`、`operation_log.jsonl`、`decision_log.jsonl`、报告、预览图和候选 PDF 必须由工具或锚定执行根的 shell/Python 写入，并在 `operation_log.jsonl` 中记录 `workspace_boundary_check_ref`。
+
 ## 4. 状态机
 
 | 状态 | 目的 | 必须产物 | 失败终态 |
 |---|---|---|---|
 | `S0_Request` | 确认目标、输入、run mode、非目标 | `run_request.json` | 输入缺失则等待用户 |
-| `S1_ContractLoad` | 读取流程文档、契约、工具说明、提示词绑定 | `contract_load_record.json` | `S_FAIL_PROCESS_CONTRACT` |
+| `S1_ContractLoad` | 读取流程文档、契约、工具说明、提示词绑定，并验证执行根写入边界 | `contract_load_record.json`、`workspace_boundary_preflight.json` | `S_FAIL_PROCESS_CONTRACT` |
 | `S2_ToolProbe` | 探测 Python、PDF 库、字体、渲染能力 | `tool_probe.json` | `S_FAIL_TOOLING` |
 | `S3_SourceExtract` | 提取源 PDF 页尺寸、文字、bbox、字体、图像、绘图对象，并渲染源图 | `source_extraction.json`、源 PNG | `S_FAIL_TOOLING` |
 | `S4_PageStrategy` | 判断页面类型和区域角色 | `page_strategy.json` | `S_FAIL_PROCESS_CONTRACT` |
-| `S5_TranslationPlan` | 生成翻译批次、逐批执行 D2、校验批次、汇总目标语语义译文并做全量校验 | `translation_batch_manifest.json`、`translation_batches/<batch_id>.*.json`、`*.translations.json`、`semantic_translation_validation.json` | `S_FAIL_CAPABILITY` |
+| `S5_TranslationPlan` | 生成翻译批次、逐批执行 D2、校验批次、汇总目标语语义译文并做全量校验 | `translation_batch_manifest.json`、`translation_batches/<batch_id>.workspace_boundary.json`、`translation_batches/<batch_id>.*.json`、`*.translations.json`、`semantic_translation_validation.json` | `S_FAIL_CAPABILITY`；路径越界则 `S_FAIL_PROCESS_CONTRACT` |
 | `S6_LayoutPlan` | 生成或修订布局策略；必须区分 `constrained_slot` 与 `fluid_body`，并声明 `target_composition` 是否适用 | `layout_policy.json`、`layout_plan.json` | `S_FAIL_PROCESS_CONTRACT` |
 | `S7_GenerateCandidate` | 擦除源语文本并回填目标语候选 PDF；流式正文可按目标语构图，受限槽位必须原位约束 | 候选 PDF、`candidate_generation_evidence.json` | `S_FAIL_TOOLING` 或 `S_FAIL_CAPABILITY` |
 | `S8_VerifyProductQuality` | 执行机器质量门禁和视觉裁决；必须检查正文构图、字体层级、重叠残留、侧边栏方向和表格/图表完整性 | `product_quality_gates.json`、`visual_adjudication.json` | `S_FAIL_QUALITY` |
 | `Lx_RepairLoop` | 对一个阻塞失败执行一次修复循环 | `repair_loop_<n>.json` | `S_FAIL_QUALITY` |
 | `Ax_AdaptiveChange` | 当工具/契约/提示词不足时做小幅方法论修补 | `adaptive_change_record.json`、前后 manifest | `S_FAIL_CAPABILITY` |
-| `S9_VerifyProcessContract` | 验证状态 trace、操作日志、反过拟合和最终审计 | `process_validation.json`、`anti_overfit_scan.json`、`final_acceptance.json` | `S_FAIL_PROCESS_CONTRACT` |
+| `S9_VerifyProcessContract` | 验证状态 trace、操作日志、写入边界、反过拟合和最终审计 | `process_validation.json`、`anti_overfit_scan.json`、`final_acceptance.json` | `S_FAIL_PROCESS_CONTRACT` |
 
 成功终态：
 
@@ -283,8 +316,8 @@ S_FAIL_QUALITY
 stateDiagram-v2
   [*] --> S0_Request
   S0_Request --> S1_ContractLoad: 输入和 run mode 明确
-  S1_ContractLoad --> S2_ToolProbe: 契约/工具/提示词可读
-  S1_ContractLoad --> S_FAIL_PROCESS_CONTRACT: 契约缺失
+  S1_ContractLoad --> S2_ToolProbe: 契约/工具/提示词可读且 workspace preflight PASS
+  S1_ContractLoad --> S_FAIL_PROCESS_CONTRACT: 契约缺失或执行根边界失败
 
   S2_ToolProbe --> S3_SourceExtract: 工具能力满足
   S2_ToolProbe --> S_FAIL_TOOLING: 必需工具不可用
@@ -297,6 +330,7 @@ stateDiagram-v2
 
   S5_TranslationPlan --> S6_LayoutPlan: 语义译文覆盖目标文本且通过真实性校验
   S5_TranslationPlan --> S_FAIL_CAPABILITY: 缺译/placeholder/元描述式伪译文/非语义译文
+  S5_TranslationPlan --> S_FAIL_PROCESS_CONTRACT: batch 写入边界或 batch 证据缺失
 
   S6_LayoutPlan --> S7_GenerateCandidate: 布局策略可追溯
   S6_LayoutPlan --> S_FAIL_PROCESS_CONTRACT: 布局策略缺失或过拟合
@@ -326,8 +360,8 @@ stateDiagram-v2
   S_FAIL_CAPABILITY --> S9_VerifyProcessContract: 记录失败审计
   S_FAIL_QUALITY --> S9_VerifyProcessContract: 记录失败审计
 
-  S9_VerifyProcessContract --> S_DONE_PRODUCT_ACCEPTED: 产品和过程均通过
-  S9_VerifyProcessContract --> S_DONE_PROCESS_VALIDATED: 过程通过但产品未通过
+  S9_VerifyProcessContract --> S_DONE_PRODUCT_ACCEPTED: 产品、过程和写入边界均通过
+  S9_VerifyProcessContract --> S_DONE_PROCESS_VALIDATED: 过程和写入边界通过但产品未通过
   S9_VerifyProcessContract --> S_FAIL_PROCESS_CONTRACT: trace 或证据不可信
 
   S_DONE_PRODUCT_ACCEPTED --> [*]
@@ -342,15 +376,17 @@ stateDiagram-v2
 ```mermaid
 stateDiagram-v2
   [*] --> S5A_BuildBatchManifest
-  S5A_BuildBatchManifest --> S5B_RunD2Batch: next batch exists
+  S5A_BuildBatchManifest --> S5B_PreflightBatchWrite: next batch exists
+  S5B_PreflightBatchWrite --> S5B_RunD2Batch: batch workspace_boundary PASS
+  S5B_PreflightBatchWrite --> S_FAIL_PROCESS_CONTRACT: planned batch write escapes execution root
   S5B_RunD2Batch --> S5C_ValidateBatch: model_output persisted
-  S5C_ValidateBatch --> S5B_RunD2Batch: batch pass and more batches remain
+  S5C_ValidateBatch --> S5B_PreflightBatchWrite: batch pass and more batches remain
   S5C_ValidateBatch --> S5D_AssembleTranslations: all batches pass
-  S5C_ValidateBatch --> S5B_RunD2Batch: retry bounded failed batch
+  S5C_ValidateBatch --> S5B_PreflightBatchWrite: retry bounded failed batch
   S5C_ValidateBatch --> S_FAIL_CAPABILITY: cannot materialize real semantic batch
   S5D_AssembleTranslations --> S5E_ValidateFullSemanticTranslations
   S5E_ValidateFullSemanticTranslations --> S6_LayoutPlan: full semantic validation pass
-  S5E_ValidateFullSemanticTranslations --> S5B_RunD2Batch: missing/invalid units are repairable by targeted batch retry
+  S5E_ValidateFullSemanticTranslations --> S5B_PreflightBatchWrite: missing/invalid units are repairable by targeted batch retry
   S5E_ValidateFullSemanticTranslations --> S_FAIL_CAPABILITY: missing/placeholder/pseudo translations remain
 ```
 
@@ -359,6 +395,7 @@ stateDiagram-v2
 | 子状态 | 工具/裁决 | 产物 |
 |---|---|---|
 | `S5A_BuildBatchManifest` | `build_translation_batch_manifest.py` | `translation_batch_manifest.json`、`translation_batches/<batch_id>.slot_values.json` |
+| `S5B_PreflightBatchWrite` | `validate_workspace_boundary.py` | `translation_batches/<batch_id>.workspace_boundary.json` |
 | `S5B_RunD2Batch` | `D2_translation.prompt.json` | `prompt_instance.json`、`model_output.json`、`decision_record.json` |
 | `S5C_ValidateBatch` | `validate_translation_batch.py` | `translation_batches/<batch_id>.validation.json` |
 | `S5D_AssembleTranslations` | `assemble_semantic_translations.py` | `docs/input/semantic_translations/<case_id>.translations.json`、`translation_assembly_evidence.json` |
@@ -433,16 +470,16 @@ stateDiagram-v2
 
 | 状态 | 必须调用的工具 | 大模型裁决 | next_state |
 |---|---|---|---|
-| `S1_ContractLoad` | 文件读取 | 否 | 契约齐全 -> `S2` |
+| `S1_ContractLoad` | 文件读取、`validate_workspace_boundary.py` | 否 | 契约齐全且写入边界预检通过 -> `S2` |
 | `S2_ToolProbe` | `tools\probes\tool_probe.py` | 否 | 工具可用 -> `S3` |
 | `S3_SourceExtract` | `extract_pdf_structure.py`、`render_pdf.py` | 否 | 源证据完整 -> `S4` |
 | `S4_PageStrategy` | 无必需工具，读取 S3 产物 | `D1_page_strategy.prompt.json` | 页面策略完整 -> `S5` |
-| `S5_TranslationPlan` | `build_translation_batch_manifest.py`、逐批 `validate_translation_batch.py`、`assemble_semantic_translations.py`、`validate_semantic_translations.py` | 逐批 `D2_translation.prompt.json` | 全量语义译文有效 -> `S6`；无法物化 -> `S_FAIL_CAPABILITY` |
+| `S5_TranslationPlan` | `build_translation_batch_manifest.py`、逐批 `validate_workspace_boundary.py`、逐批 `validate_translation_batch.py`、`assemble_semantic_translations.py`、`validate_semantic_translations.py` | 逐批 `D2_translation.prompt.json` | 全量语义译文有效 -> `S6`；无法物化 -> `S_FAIL_CAPABILITY`；写入边界失败 -> `S_FAIL_PROCESS_CONTRACT` |
 | `S6_LayoutPlan` | `build_layout_policy.py` | `D4_layout_plan.prompt.json` | 布局策略可追溯 -> `S7` |
 | `S7_GenerateCandidate` | `generate_semantic_backfill.py` | 否 | 候选生成 -> `S8` |
 | `S8_VerifyProductQuality` | `render_pdf.py`、`collect_visual_region_metrics.py`、`render_source_output_crop.py`、`evaluate_pdf_quality.py`、`plan_visual_region_repairs.py` | `D5_D7_quality_gate.prompt.json` | 全 pass -> `S9`；可修 -> `Lx`；不可修 -> fail |
 | `Lx_RepairLoop` | 按 failure_class 选择工具；读取 `visual_region_metrics.json`、`visual_repair_plan.json`、`product_quality_gates.json`、`visual_adjudication.json` | `D8_repair_selection.prompt.json` | 按 repair_atom 回到 `S3`、`S5`、`S6` 或 `S7` |
-| `S9_VerifyProcessContract` | `validate_process_artifacts.py`、`scan_core_overfit.py` | `D9_final_acceptance.prompt.json` | 输出最终终态 |
+| `S9_VerifyProcessContract` | `validate_process_artifacts.py`、`scan_core_overfit.py`；必要时用 `validate_workspace_boundary.py --operation-log` 复核日志路径 | `D9_final_acceptance.prompt.json` | 输出最终终态 |
 
 ## 6. 提示词边界
 
@@ -492,6 +529,24 @@ run_id / case_id
 
 ## 7. 工具契约
 
+### 7.0 运行写入边界预检
+
+每个运行开始后，在 S1 必须生成一次根目录级预检：
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\validate_workspace_boundary.py --workspace-root . --path docs\reports --path docs\output --path docs\input\semantic_translations --out docs\reports\workspace_boundary_preflight.json --allow-missing
+```
+
+每个会写运行时产物的状态，还必须对该状态计划写入的具体文件执行同类检查。检查报告必须在 `state_trace.json` 或 `operation_log.jsonl` 中通过 `workspace_boundary_check_ref` 引用。
+
+失败处理：
+
+| 失败 | 终态 |
+|---|---|
+| `workspace_boundary_verdict=FAIL` | `S_FAIL_PROCESS_CONTRACT` |
+| `--out` 本身解析到执行根外 | `S_FAIL_PROCESS_CONTRACT` |
+| 状态写了 `output_artifacts` 但没有 boundary report | `S_FAIL_PROCESS_CONTRACT` |
+
 ### 7.1 探测
 
 ```powershell
@@ -520,12 +575,18 @@ python pdf_translation_workflow_core\tools\planners\build_translation_batch_mani
 
 对 `translation_batch_manifest.json` 中每个 batch：
 
+```powershell
+python pdf_translation_workflow_core\tools\validators\validate_workspace_boundary.py --workspace-root . --path docs\reports\<run_id>\translation_batches\<batch_id>.prompt_instance.json --path docs\reports\<run_id>\translation_batches\<batch_id>.model_output.json --path docs\reports\<run_id>\translation_batches\<batch_id>.decision_record.json --path docs\reports\<run_id>\translation_batches\<batch_id>.validation.json --out docs\reports\<run_id>\translation_batches\<batch_id>.workspace_boundary.json --allow-missing
+```
+
 ```text
 1. 读取 translation_batches\<batch_id>.slot_values.json。
-2. 用 D2_translation.prompt.json 填槽位。
-3. 写 translation_batches\<batch_id>.prompt_instance.json。
-4. 写 translation_batches\<batch_id>.model_output.json。
-5. 写 translation_batches\<batch_id>.decision_record.json。
+2. 对该 batch 的 prompt_instance/model_output/decision_record/validation 计划路径运行 validate_workspace_boundary.py。
+3. 确认 translation_batches\<batch_id>.workspace_boundary.json 为 PASS。
+4. 用 D2_translation.prompt.json 填槽位。
+5. 写 translation_batches\<batch_id>.prompt_instance.json。
+6. 写 translation_batches\<batch_id>.model_output.json。
+7. 写 translation_batches\<batch_id>.decision_record.json。
 ```
 
 然后校验每个 batch：
@@ -1420,11 +1481,13 @@ change_manifest_after.json
 ```mermaid
 flowchart LR
   S1[S1_ContractLoad] --> C1[read contracts/prompts/standard design]
+  S1 --> W0[validate_workspace_boundary.py root preflight]
   S2[S2_ToolProbe] --> T1[tool_probe.py]
   S3[S3_SourceExtract] --> T2[extract_pdf_structure.py]
   S3 --> T3[render_pdf.py source]
   S4[S4_PageStrategy] --> D1[D1_page_strategy.prompt.json]
   S5[S5_TranslationPlan] --> T4a[build_translation_batch_manifest.py]
+  S5 --> W1[validate_workspace_boundary.py per D2 batch]
   S5 --> D2[D2_translation.prompt.json per batch]
   S5 --> T4b[validate_translation_batch.py per batch]
   S5 --> T4c[assemble_semantic_translations.py]
@@ -1443,6 +1506,7 @@ flowchart LR
   AX[Ax_AdaptiveChange] --> M2[change manifests]
   S9[S9_VerifyProcessContract] --> T12[scan_core_overfit.py]
   S9 --> T13[validate_process_artifacts.py]
+  S9 --> W2[validate_workspace_boundary.py operation-log review when needed]
   S9 --> D9[D9_final_acceptance.prompt.json]
 ```
 
@@ -1453,31 +1517,32 @@ flowchart LR
 | 状态 | 不变量 |
 |---|---|
 | `S0_Request` | run mode、输入 PDF、输出目录、非目标必须明确 |
-| `S1_ContractLoad` | 核心流程文档、contracts、prompts、tools README 必须可读 |
+| `S1_ContractLoad` | 核心流程文档、contracts、prompts、tools README 必须可读；`workspace_boundary_preflight.json` 必须 PASS |
 | `S2_ToolProbe` | 不能在工具能力未知时进入 PDF 提取 |
 | `S3_SourceExtract` | 每个目标页必须有 page geometry；可提取文字必须有 bbox/font/text |
 | `S4_PageStrategy` | 页面类型和区域角色必须来自当前 source evidence |
-| `S5_TranslationPlan` | product_quality 必须有 batch manifest、逐批 D2 输出、batch validation、assembly evidence 和全量 semantic validation；禁止 placeholder、元描述式伪译文或缺覆盖译文 |
+| `S5_TranslationPlan` | product_quality 必须有 batch manifest、逐批 workspace boundary、逐批 D2 输出、batch validation、assembly evidence 和全量 semantic validation；禁止 placeholder、元描述式伪译文或缺覆盖译文 |
 | `S6_LayoutPlan` | generator 使用的布局参数必须来自 `layout_policy.json`，不能隐藏在代码常量里 |
 | `S7_GenerateCandidate` | product_quality 候选必须由 `generate_semantic_backfill.py` 生成 |
 | `S8_VerifyProductQuality` | 产品 gate 失败不能进入产品成功终态 |
 | `Lx_RepairLoop` | 每次 loop 只修一个主要 failure_class |
 | `Ax_AdaptiveChange` | 方法论变更必须记录 before/after 和原因 |
-| `S9_VerifyProcessContract` | 必须同时输出 process verdict、product verdict、terminal state |
+| `S9_VerifyProcessContract` | 必须同时输出 process verdict、product verdict、terminal state；写了 output_artifacts 的 trace/operation 必须引用 PASS 的 workspace boundary report |
 
 ### 15.6 迁移规则
 
 | From | 条件 | To |
 |---|---|---|
 | `S0_Request` | 输入齐全 | `S1_ContractLoad` |
-| `S1_ContractLoad` | 契约齐全 | `S2_ToolProbe` |
-| `S1_ContractLoad` | 契约缺失 | `S_FAIL_PROCESS_CONTRACT` |
+| `S1_ContractLoad` | 契约齐全且 workspace preflight PASS | `S2_ToolProbe` |
+| `S1_ContractLoad` | 契约缺失或 workspace preflight FAIL | `S_FAIL_PROCESS_CONTRACT` |
 | `S2_ToolProbe` | 必需工具可用 | `S3_SourceExtract` |
 | `S2_ToolProbe` | 必需工具缺失且无替代 | `S_FAIL_TOOLING` |
 | `S3_SourceExtract` | 源结构和渲染完成 | `S4_PageStrategy` |
 | `S4_PageStrategy` | D1 裁决完整 | `S5_TranslationPlan` |
 | `S5_TranslationPlan` | 每个 D2 batch 校验通过、汇总完整、全量语义译文校验通过 | `S6_LayoutPlan` |
 | `S5_TranslationPlan` | batch 缺失、无法物化真实语义译文、placeholder、元描述式伪译文、覆盖不足 | `S_FAIL_CAPABILITY` |
+| `S5_TranslationPlan` | batch 计划写入路径越界、缺 workspace boundary report、或 batch runtime artifact 写入根不可证明 | `S_FAIL_PROCESS_CONTRACT` |
 | `S6_LayoutPlan` | policy 可追溯、无过拟合 | `S7_GenerateCandidate` |
 | `S7_GenerateCandidate` | 候选 PDF 和生成证据存在 | `S8_VerifyProductQuality` |
 | `S8_VerifyProductQuality` | 全部机器 gate、块级视觉 gate、D7 视觉裁决阻塞项通过 | `S9_VerifyProcessContract` |
@@ -1505,11 +1570,14 @@ flowchart LR
   "tools": ["tools/planners/build_layout_policy.py"],
   "input_artifacts": ["docs/reports/<run_id>/source_extraction.json"],
   "output_artifacts": ["docs/reports/<run_id>/layout_policy.json"],
+  "workspace_boundary_check_ref": "docs/reports/<run_id>/layout_policy.workspace_boundary.json",
   "decision_record_ids": ["D4_layout_plan"],
   "gates": [{"gate_id": "layout_policy_traceable", "status": "pass"}],
   "next_state_rule": "candidate generation may start"
 }
 ```
+
+如果某次迁移写 `output_artifacts`，则 `workspace_boundary_check_ref` 或等价内联对象为必填。引用文件必须由 `validate_workspace_boundary.py` 生成且 `workspace_boundary_verdict=PASS`。
 
 ### 15.8 终态语义
 

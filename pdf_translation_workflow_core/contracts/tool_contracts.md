@@ -15,6 +15,41 @@
 | change_tracking | `collect_change_manifest.py` | before/after file hashes and changed-file delta for adaptive rounds |
 | optional | OCR, ReportLab, Poppler | only when explicitly justified |
 
+## Workspace Boundary Contract
+
+Every run has one execution root. In an external validation package that root is the spike/round directory containing `pdf_translation_workflow_core`, `docs`, `run_request.json`, `state_trace.json`, `operation_log.jsonl`, and `decision_log.jsonl`. Runtime artifacts must not be read from or written to a parent directory unless the prompt explicitly defines an offline reference check that is outside the product run.
+
+Before the executor writes any runtime artifact, it must resolve every planned artifact path against the current execution root and record a boundary check:
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\validate_workspace_boundary.py `
+  --workspace-root . `
+  --path docs\reports `
+  --path docs\output `
+  --path docs\input\semantic_translations `
+  --out docs\reports\workspace_boundary_preflight.json `
+  --allow-missing
+```
+
+For a state-specific planned write set, pass the exact planned output paths:
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\validate_workspace_boundary.py `
+  --workspace-root . `
+  --path docs\reports\<run_id>\translation_batches\<batch_id>.prompt_instance.json `
+  --path docs\reports\<run_id>\translation_batches\<batch_id>.model_output.json `
+  --path docs\reports\<run_id>\translation_batches\<batch_id>.decision_record.json `
+  --path docs\reports\<run_id>\translation_batches\<batch_id>.validation.json `
+  --out docs\reports\<run_id>\translation_batches\<batch_id>.workspace_boundary.json `
+  --allow-missing
+```
+
+The output path passed to `--out` is itself resolved against the same root. If any planned input/output artifact resolves outside the execution root, the state must stop before the write and enter `S_FAIL_PROCESS_CONTRACT`.
+
+`apply_patch` is for edits to reusable scripts, contracts, or prompts. It is not a runtime artifact writer. Runtime evidence such as `prompt_instance.json`, `model_output.json`, `decision_record.json`, `state_trace.json`, `operation_log.jsonl`, reports, previews, and candidate PDFs must be written by tools or shell/Python commands anchored to the execution root after a passing workspace-boundary check. If an executor uses `apply_patch` for a runtime artifact and the resolved target root cannot be proven, the run must fail process-contract validation.
+
+Each `operation_log.jsonl` record that writes artifacts must include either `workspace_boundary_check_ref` or an inline `workspace_boundary_check` object with `workspace_boundary_verdict=PASS`.
+
 ## Mandatory Tool Record
 
 Every tool invocation that affects the run must be represented in either state trace or operation log:

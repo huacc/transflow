@@ -5,11 +5,11 @@
 | State | Purpose | Required artifacts | Exit gate |
 |---|---|---|---|
 | `S0_Request` | Restate goal, mode, inputs, non-goals | run header | Mode declared |
-| `S1_ContractLoad` | Load process docs and core contracts | contract load record | Sections and core files present |
+| `S1_ContractLoad` | Load process docs and core contracts, prove execution-root artifact boundary | contract load record, `workspace_boundary_preflight.json` | Sections and core files present; planned runtime roots resolve inside execution root |
 | `S2_ToolProbe` | Probe local tools, fonts, renderers, extraction libraries | tool probe JSON | Tool availability known |
 | `S3_SourceExtract` | Extract page geometry, text, images/drawings, source renders | source extraction JSON, source PNGs | All pages represented |
 | `S4_PageStrategy` | Classify page types and region roles | page strategy records | D1/D3 decisions recorded |
-| `S5_TranslationPlan` | Build translation units, materialize D2 batch translations, assemble semantic translation JSON, and validate coverage | `translation_batch_manifest.json`, per-batch slot/model/validation records, semantic translations JSON, `semantic_translation_validation.json` in product-quality mode | All D2 batches validated and final semantic translation validation passes, or capability failure is recorded |
+| `S5_TranslationPlan` | Build translation units, materialize D2 batch translations, assemble semantic translation JSON, and validate coverage | `translation_batch_manifest.json`, per-batch boundary/slot/model/validation records, semantic translations JSON, `semantic_translation_validation.json` in product-quality mode | All D2 batches validated and final semantic translation validation passes, or capability failure is recorded |
 | `S6_LayoutPlan` | Build or revise explicit region-aware layout policy | `layout_policy.json`, optional LayoutSlot/RegionSlot plan | D4 decisions recorded, including constrained-slot vs fluid-body split, policy source, target composition, reflow-vs-preserve-line decisions, font profiles, and fallback policy |
 | `S7_GenerateCandidate` | Generate a candidate PDF with a real backfill attempt if feasible | candidate PDF, candidate PNGs, generation evidence, translations/layout artifacts, semantic translation validation, or explicit generation failure | Candidate contains backfilled target-language text or explicit failure; fluid body uses target composition when policy requires it |
 | `S8_VerifyProductQuality` | Evaluate machine and visual quality gates | quality gates JSON | D5/D7 decisions recorded, including target composition, font hierarchy, overlap residue, and constrained-slot integrity |
@@ -65,6 +65,7 @@ Every transition must be recorded:
   "tools": ["Python", "PyMuPDF", "Codex/OpenAI model"],
   "input_artifacts": ["tmp/pdfs/source_extraction.json"],
   "output_artifacts": ["tmp/pdfs/render_patches.json"],
+  "workspace_boundary_check_ref": "docs/reports/<run_id>/workspace_boundary.json",
   "decision_record_ids": ["D4_layout_plan"],
   "gates": [
     {"gate_id": "render_patches_complete", "status": "pass", "evidence": "..."}
@@ -73,6 +74,8 @@ Every transition must be recorded:
   "timestamp_local": "YYYY-MM-DD HH:MM:SS"
 }
 ```
+
+When a transition writes runtime artifacts, `workspace_boundary_check_ref` is required unless the transition records an explicit `workspace_boundary_check` object. The referenced report must be produced by `tools/validators/validate_workspace_boundary.py` and must have `workspace_boundary_verdict=PASS`. A missing or failing boundary report routes to `S_FAIL_PROCESS_CONTRACT`.
 
 ## Repair Loop Schema
 
@@ -88,7 +91,7 @@ Each repair iteration must be recorded. `loop_iteration` increases on every pass
   "repair_atom": "reduce_font_or_reflow",
   "target_state": "S6_LayoutPlan",
   "patch_scope": ["page_index", "region_id", "slot_id"],
-  "tools": ["apply_patch", "Python", "PyMuPDF"],
+  "tools": ["Python", "PyMuPDF", "apply_patch only for explicitly allowed code/doc repair, never runtime artifacts"],
   "expected_effect": "reduce overflow without lowering text-area ratio below threshold",
   "verification_to_run": ["render_png", "extract_text", "quality_metrics"],
   "exit_condition": "gate pass or max attempts reached"
@@ -150,8 +153,11 @@ S5 exits only through these outcomes:
 | model/API/human translation capacity is unavailable or cannot materialize current-run units | `S_FAIL_CAPABILITY` |
 | batch outputs contain placeholders, metadata-style pseudo translations, missing units, invalid target language, or token preservation failures | repair inside S5 if bounded and documented; otherwise `S_FAIL_CAPABILITY` |
 | state trace, prompt artifacts, batch refs, or validation artifacts are missing | `S_FAIL_PROCESS_CONTRACT` |
+| any planned batch artifact resolves outside the execution root, or the batch model/prompt/decision files are written without a passing workspace-boundary check | `S_FAIL_PROCESS_CONTRACT` |
 
 The executor may choose a smaller batch size to stay within model context. It must not silently drop units or generate placeholder text to satisfy coverage.
+
+Before `S5B_RunD2Batch` persists `prompt_instance.json`, `model_output.json`, `decision_record.json`, or `validation.json`, it must run `tools/validators/validate_workspace_boundary.py` against those planned output paths and persist the result as `translation_batches/<batch_id>.workspace_boundary.json`. The batch write may proceed only when that report has `workspace_boundary_verdict=PASS`. This check is a process-contract guard, not a product-quality or translation-capability gate.
 
 ## Mode-Specific State Rule
 

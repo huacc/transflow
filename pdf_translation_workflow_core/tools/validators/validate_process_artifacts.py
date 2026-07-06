@@ -60,6 +60,46 @@ REQUIRED_TRACE_FIELDS = {
 }
 
 
+def resolve_artifact(run_dir: Path, path_text: str) -> Path | None:
+    path = Path(path_text)
+    candidates = [path] if path.is_absolute() else [run_dir / path, Path.cwd() / path]
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
+
+
+def validate_boundary_check(
+    run_dir: Path,
+    holder: dict[str, Any],
+    label: str,
+    errors: list[str],
+) -> None:
+    output_artifacts = holder.get("output_artifacts") or []
+    if not output_artifacts:
+        return
+    inline = holder.get("workspace_boundary_check")
+    if isinstance(inline, dict):
+        if inline.get("workspace_boundary_verdict") != "PASS":
+            errors.append(f"{label} workspace_boundary_check is not PASS")
+        return
+    ref = holder.get("workspace_boundary_check_ref")
+    if not ref:
+        errors.append(f"{label} writes output_artifacts without workspace_boundary_check_ref")
+        return
+    report_path = resolve_artifact(run_dir, str(ref))
+    if report_path is None:
+        errors.append(f"{label} workspace_boundary_check_ref missing: {ref}")
+        return
+    try:
+        report = json.loads(report_path.read_text(encoding="utf-8-sig"))
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"{label} workspace boundary report unreadable: {ref}: {exc}")
+        return
+    if report.get("workspace_boundary_verdict") != "PASS":
+        errors.append(f"{label} workspace boundary report is not PASS: {ref}")
+
+
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
     if not path.exists():
         return []
@@ -92,6 +132,7 @@ def validate(run_dir: Path) -> dict[str, Any]:
         missing = REQUIRED_TRACE_FIELDS - set(item)
         if missing:
             errors.append(f"state_trace[{idx}] missing fields: {sorted(missing)}")
+        validate_boundary_check(run_dir, item, f"state_trace[{idx}]", errors)
     states_seen = {item.get("from") for item in state_trace} | {item.get("to") for item in state_trace}
     terminal_states = {
         "S_DONE_PROCESS_VALIDATED",
@@ -129,6 +170,7 @@ def validate(run_dir: Path) -> dict[str, Any]:
             for field in ["operation_id", "state", "tool", "status"]:
                 if field not in item:
                     errors.append(f"operation_log[{idx}] missing {field}")
+            validate_boundary_check(run_dir, item, f"operation_log[{idx}]", errors)
 
     return {
         "tool": "validate_process_artifacts",

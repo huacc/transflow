@@ -55,7 +55,13 @@ For each batch listed in `translation_batch_manifest.json`, the executor fills `
 translation_batches\<batch_id>.slot_values.json
 ```
 
-and must persist:
+Before writing model-call artifacts, the executor must first persist a passing boundary report:
+
+```text
+translation_batches\<batch_id>.workspace_boundary.json
+```
+
+Then it may persist:
 
 ```text
 translation_batches\<batch_id>.prompt_instance.json
@@ -99,6 +105,7 @@ If any batch is missing, invalid, or cannot be translated, the executor may retr
   "source_extraction_ref": "docs/reports/.../source_extraction.json",
   "prompt_artifacts": [
     {
+      "workspace_boundary": "docs/reports/.../batch.workspace_boundary.json",
       "prompt_instance": "docs/reports/.../prompt_instance.json",
       "slot_values": "docs/reports/.../slot_values.json",
       "model_output": "docs/reports/.../model_output.json",
@@ -206,6 +213,7 @@ Every model-backed translation decision must persist:
 
 | Artifact | Required content |
 |---|---|
+| `workspace_boundary.json` | resolved planned prompt/model/decision/validation output paths and `workspace_boundary_verdict=PASS` |
 | `prompt_instance.json` | system prompt, filled user prompt, model/provider identifier |
 | `slot_values.json` | exact unit ids, source text, page/region metadata sent to the model |
 | `model_output.json` | raw model output before normalization |

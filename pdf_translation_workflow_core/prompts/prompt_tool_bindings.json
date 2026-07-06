@@ -18,11 +18,20 @@
       "pass product_quality with placeholder translations",
       "pass product_quality with line-category pseudo translations such as This line reports or 本行说明",
       "pass sidebar_glyph_orientation without back-rotated crop evidence",
+      "write runtime prompt/model/decision/report artifacts without validate_workspace_boundary.py evidence",
       "encode sample filenames, fixed page numbers, fixed coordinates, fixed text, colors, or known document identity as rules"
     ],
     "escalation": "If the existing template cannot express a required judgement, enter Ax_AdaptiveChange and record adaptive_change_record.json before returning to the triggering state."
   },
   "bindings": [
+    {
+      "state": "S1_ContractLoad",
+      "tool_first": ["tools/validators/validate_workspace_boundary.py for workspace_boundary_preflight.json"],
+      "model_prompt": null,
+      "produces": ["contract_load_record.json", "workspace_boundary_preflight.json"],
+      "next_state_on_pass": "S2_ToolProbe",
+      "next_state_on_fail": "S_FAIL_PROCESS_CONTRACT"
+    },
     {
       "state": "S2_ToolProbe",
       "tool_first": ["tools/probes/tool_probe.py"],
@@ -55,6 +64,7 @@
       "state": "S5_TranslationPlan",
       "tool_first": [
         "tools/planners/build_translation_batch_manifest.py in product_quality before D2 model calls",
+        "tools/validators/validate_workspace_boundary.py before each D2 batch runtime artifact write",
         "tools/validators/validate_translation_batch.py after each D2 batch model_output is written",
         "tools/generators/assemble_semantic_translations.py after all batch validations pass",
         "tools/validators/validate_semantic_translations.py as the final S5 entry gate to S6"
@@ -67,10 +77,12 @@
         "batch_count": "translation_batch_manifest.json batch_count",
         "batch_slot_values_ref": "translation_batch_manifest.json batches[*].slot_values_ref",
         "batch_model_output_ref": "translation_batch_manifest.json batches[*].model_output_ref",
+        "batch_workspace_boundary_ref": "translation_batch_manifest.json batches[*].workspace_boundary_ref or docs/reports/<run_id>/translation_batches/<batch_id>.workspace_boundary.json",
         "terminology_policy": "contracts/decision_contracts.md + run-specific glossary if present"
       },
       "produces": [
         "translation_batch_manifest.json",
+        "translation_batches/<batch_id>.workspace_boundary.json",
         "translation_batches/<batch_id>.slot_values.json",
         "translation_batches/<batch_id>.prompt_instance.json",
         "translation_batches/<batch_id>.model_output.json",
@@ -81,7 +93,7 @@
         "semantic_translation_validation.json"
       ],
       "product_quality_requirement": "semantic translations must identify a non-placeholder translation_provider, translation_quality=semantic_translation, one output per source unit, semantic_coverage=full_semantic_translation, and no placeholder or line-category pseudo translation patterns",
-      "loop_policy": "S5 is a bounded D2 materialization loop. The executor must not ask D2 to translate the whole PDF in one unbounded prompt. It must iterate batches from translation_batch_manifest.json, validate each batch, assemble only validated batch outputs, then run validate_semantic_translations.py. Missing batches, failed batch validation, or inability to translate current-run units routes to S_FAIL_CAPABILITY.",
+      "loop_policy": "S5 is a bounded D2 materialization loop. The executor must not ask D2 to translate the whole PDF in one unbounded prompt. It must iterate batches from translation_batch_manifest.json, run validate_workspace_boundary.py before writing each batch's prompt/model/decision/validation artifacts, validate each batch, assemble only validated batch outputs, then run validate_semantic_translations.py. Missing batches, failed batch validation, or inability to translate current-run units routes to S_FAIL_CAPABILITY. Any missing or failing batch workspace-boundary report routes to S_FAIL_PROCESS_CONTRACT.",
       "next_state_from_model": ["S5_TranslationPlan", "S6_LayoutPlan", "S_FAIL_CAPABILITY", "S_FAIL_PROCESS_CONTRACT"]
     },
     {
@@ -161,13 +173,14 @@
     },
     {
       "state": "S9_VerifyProcessContract",
-      "tool_first": ["tools/validators/validate_process_artifacts.py", "tools/validators/scan_core_overfit.py"],
+      "tool_first": ["tools/validators/validate_process_artifacts.py", "tools/validators/scan_core_overfit.py", "tools/validators/validate_workspace_boundary.py when operation logs need a final containment review"],
       "model_prompt": "templates/D9_final_acceptance.prompt.json",
       "slot_bindings": {
         "state_trace_summary": "state_trace.json",
         "process_validation_summary": "process_validation.json",
         "product_quality_summary": "product_quality_gates.json + quality_findings.json",
-        "anti_overfit_evidence": "operation_log.jsonl + anti_overfit_scan.json from tools/validators/scan_core_overfit.py"
+        "anti_overfit_evidence": "operation_log.jsonl + anti_overfit_scan.json from tools/validators/scan_core_overfit.py",
+        "workspace_boundary_evidence": "workspace_boundary_preflight.json plus each operation/state workspace_boundary_check_ref"
       },
       "produces": ["final_acceptance.json", "audit_report.md"],
       "next_state_from_model": ["S_DONE_PROCESS_VALIDATED", "S_DONE_PRODUCT_ACCEPTED", "S_FAIL_PROCESS_CONTRACT", "S_FAIL_QUALITY", "S_FAIL_TOOLING", "S_FAIL_CAPABILITY"]
