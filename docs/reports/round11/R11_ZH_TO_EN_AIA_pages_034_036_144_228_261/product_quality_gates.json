@@ -1,0 +1,2937 @@
+{
+  "tool": "evaluate_pdf_quality",
+  "source_pdf": "docs/input/round11/source_pdfs/AIA_2020_Annual_Report_zh_pages_034_036_144_228_261.pdf",
+  "output_pdf": "docs/output/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261_candidate.pdf",
+  "generation_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/candidate_generation_evidence.json",
+  "visual_adjudication": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_adjudication.json",
+  "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+  "product_quality_verdict": "PASS",
+  "gates": [
+    {
+      "gate_id": "page_count",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=5; output=5"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_1",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_2",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_3",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_4",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_5",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "text_residue",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "target_language": "en",
+        "ascii_token_count": 426,
+        "cjk_unique_count": 0,
+        "sample": []
+      }
+    },
+    {
+      "gate_id": "backfill_generation",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "real_backfill_pdf": true,
+        "redacted_line_count": 252,
+        "inserted_line_count": 252,
+        "inserted_unit_count": 252,
+        "inserted_region_count": 233,
+        "generation_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "text_fit",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "fit_warning_count": 0,
+        "reason": "fallback insertion or overflow evidence blocks product-quality acceptance",
+        "generation_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "source_anchor_order",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "violation_count": 0,
+        "sample": [],
+        "reason": "a target-language reflow region must not cross untranslated visible source separators inside the same block",
+        "generation_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "translation_authenticity",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "translation_provider": "google_translate_gtx_current_run",
+        "reason": "product-quality success requires a real translation provider, not deterministic placeholders",
+        "generation_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "semantic_translation_preflight",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "semantic_translation_validation": "PASS",
+        "reason": "product-quality success requires validated semantic translations before generation",
+        "generation_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "semantic_coverage",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "semantic_coverage": "full_semantic_translation",
+        "translation_quality": "semantic_translation",
+        "reason": "placeholder translations are valid generation evidence but not product-quality success",
+        "generation_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "visual_similarity",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "visual_quality_adjudication": "PASS_WITH_WARN",
+        "visual_adjudication": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_adjudication.json",
+        "reason": "automated structural checks are not enough for product-quality acceptance; source-vs-output PNG adjudication must be recorded",
+        "generation_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "body_paragraph_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "warn",
+        "failure_count": 0,
+        "warning_count": 15,
+        "region_count": 17,
+        "sample": [
+          {
+            "region_id": "region_p0_b3_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              109.913,
+              516.408,
+              122.665
+            ],
+            "source_union_bbox": [
+              62.362,
+              110.313,
+              515.908,
+              122.265
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b3_l0_body.png",
+            "target_text_sample": "Working capital held by the Group's corporate centers consists of debt and equity securities, deposits and cash and cash"
+          },
+          {
+            "region_id": "region_p0_b5_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              157.919,
+              516.444,
+              170.671
+            ],
+            "source_union_bbox": [
+              62.362,
+              158.319,
+              515.944,
+              170.271
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b5_l0_body.png",
+            "target_text_sample": "Net remittances from business units increased by US$977 million to US$3.730 billion, with most of the increase coming fr"
+          },
+          {
+            "region_id": "region_p0_b6_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              173.921,
+              516.408,
+              186.673
+            ],
+            "source_union_bbox": [
+              62.362,
+              174.321,
+              515.908,
+              186.273
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b6_l0_body.png",
+            "target_text_sample": "After being approved in 2018, and as mentioned earlier in the 2018 annual report, due to the timing of various required "
+          },
+          {
+            "region_id": "region_p0_b7_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              189.923,
+              516.49,
+              202.675
+            ],
+            "source_union_bbox": [
+              62.362,
+              190.323,
+              515.99,
+              202.275
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b7_l0_body.png",
+            "target_text_sample": "Of US$319 million, remittances to Thailand increased to US$1.037 billion in 2019. Remittances from mainland China nearly"
+          },
+          {
+            "region_id": "region_p0_b8_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              205.925,
+              516.417,
+              218.677
+            ],
+            "source_union_bbox": [
+              62.362,
+              206.325,
+              515.917,
+              218.277
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b8_l0_body.png",
+            "target_text_sample": "A one-time transfer to continuously expand and accumulate retained profits. As mentioned earlier, the extraordinary remi"
+          },
+          {
+            "region_id": "region_p0_b10_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              253.931,
+              516.399,
+              266.683
+            ],
+            "source_union_bbox": [
+              62.362,
+              254.331,
+              515.899,
+              266.283
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b10_l0_body.png",
+            "target_text_sample": "Borrowings increased by US$797 million due to the net proceeds from the issuance of medium-term notes of US$1.301 billio"
+          },
+          {
+            "region_id": "region_p0_b11_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              269.933,
+              514.824,
+              282.685
+            ],
+            "source_union_bbox": [
+              62.362,
+              270.333,
+              514.324,
+              282.285
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b11_l0_body.png",
+            "target_text_sample": "This total increase in working capital was reported after the payment of dividends of US$1.961 billion and the initial p"
+          },
+          {
+            "region_id": "region_p3_b3_l0",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              50.524,
+              129.844,
+              539.134,
+              139.644
+            ],
+            "source_union_bbox": [
+              51.024,
+              130.244,
+              538.634,
+              139.244
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "source_inner_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_inner_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "text_image_background_rgb": [
+              202,
+              221,
+              243
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.0,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_04_region_p3_b3_l0_body.png",
+            "target_text_sample": "Profit for the year/period and shareholders' equity are primarily sensitive to market, insurance and failure risks, whic"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "footnote_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "warn",
+        "failure_count": 0,
+        "warning_count": 2,
+        "region_count": 9,
+        "sample": [
+          {
+            "region_id": "region_p0_b29_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 3.968,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.467,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              67.561,
+              574.909,
+              190.324,
+              586.997
+            ],
+            "source_union_bbox": [
+              68.061,
+              575.309,
+              189.824,
+              586.597
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.47 is below footnote warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "footnote_fit_curve_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b29_l0_footnote.png",
+            "target_text_sample": "Changes in Market Value of Debt Securities and Other Matters"
+          },
+          {
+            "region_id": "region_p3_b26_l0",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 3.968,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.441,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              50.632,
+              606.311,
+              539.035,
+              616.111
+            ],
+            "source_union_bbox": [
+              51.132,
+              606.711,
+              538.535,
+              615.711
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "source_inner_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_inner_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.44 is below footnote warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "footnote_fit_curve_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_04_region_p3_b26_l0_footnote.png",
+            "target_text_sample": "Exposure to expense risk in the case of fees charged to holders of insurance and investment contracts in non-participati"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "short_label_legibility",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "warn",
+        "failure_count": 0,
+        "warning_count": 2,
+        "region_count": 2,
+        "sample": [
+          {
+            "region_id": "region_p2_b2_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "short_label",
+            "page_type_guess": "mixed_text",
+            "quality_role": "short_label",
+            "gate_id": "short_label_legibility",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 11.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.473,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.4,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.55,
+            "bbox": [
+              50.524,
+              93.767,
+              107.184,
+              108.867
+            ],
+            "source_union_bbox": [
+              51.024,
+              94.167,
+              106.684,
+              108.467
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "source_inner_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_inner_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "text_image_background_rgb": [
+              202,
+              221,
+              243
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.47 is below short_label warn ratio 0.55"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_03_region_p2_b2_l0_short_label.png",
+            "target_text_sample": "1. Company information"
+          },
+          {
+            "region_id": "region_p2_b24_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "compact_label",
+            "page_type_guess": "mixed_text",
+            "quality_role": "short_label",
+            "gate_id": "short_label_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 3.952,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.465,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.4,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.55,
+            "bbox": [
+              50.524,
+              26.238,
+              86.799,
+              37.927
+            ],
+            "source_union_bbox": [
+              51.024,
+              26.638,
+              86.299,
+              37.527
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 3.95pt is below short_label recommended floor 4.40pt",
+              "output_to_source_font_ratio 0.47 is below short_label warn ratio 0.55"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_03_region_p2_b24_l0_short_label.png",
+            "target_text_sample": "financial statements"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "sidebar_navigation_legibility",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 4,
+        "sample": [
+          {
+            "region_id": "region_p4_b42_l1",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "vertical_nav",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 9.35,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 1.1,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              574.642,
+              215.333,
+              586.53,
+              280.733
+            ],
+            "source_union_bbox": [
+              575.142,
+              215.733,
+              586.03,
+              280.333
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Financial and Operational Review"
+          },
+          {
+            "region_id": "region_p4_b42_l2",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "vertical_nav",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 9.35,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 1.1,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              574.642,
+              395.184,
+              586.53,
+              432.534
+            ],
+            "source_union_bbox": [
+              575.142,
+              395.584,
+              586.03,
+              432.134
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "corporate governance"
+          },
+          {
+            "region_id": "region_p4_b42_l3",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "vertical_nav",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 9.35,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 1.1,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              574.642,
+              685.74,
+              586.53,
+              723.09
+            ],
+            "source_union_bbox": [
+              575.142,
+              686.14,
+              586.03,
+              722.69
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Other information"
+          },
+          {
+            "region_id": "region_p4_b42_l4",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "vertical_nav",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 9.35,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 1.1,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              574.642,
+              539.752,
+              586.53,
+              577.102
+            ],
+            "source_union_bbox": [
+              575.142,
+              540.152,
+              586.03,
+              576.702
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "financial statements"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "warn",
+        "failure_count": 0,
+        "warning_count": 77,
+        "region_count": 200,
+        "sample": [
+          {
+            "region_id": "region_p0_b1_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 3.72,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.438,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              61.862,
+              24.7,
+              124.912,
+              36.584
+            ],
+            "source_union_bbox": [
+              62.362,
+              25.1,
+              124.412,
+              36.184
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 3.72pt is below table_text recommended floor 3.80pt",
+              "output_to_source_font_ratio 0.44 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b1_l0_table_text.png",
+            "target_text_sample": "Financial and Operational Review"
+          },
+          {
+            "region_id": "region_p0_b2_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 11.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.473,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              61.862,
+              91.5,
+              175.337,
+              106.644
+            ],
+            "source_union_bbox": [
+              62.362,
+              91.9,
+              174.837,
+              106.244
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "output_to_source_font_ratio 0.47 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b2_l0_table_text.png",
+            "target_text_sample": "Group Enterprise Center Net Fund Flow"
+          },
+          {
+            "region_id": "region_p0_b14_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 4.216,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.496,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              67.535,
+              342.615,
+              120.598,
+              354.499
+            ],
+            "source_union_bbox": [
+              68.035,
+              343.015,
+              120.098,
+              354.099
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.50 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b14_l0_table_text.png",
+            "target_text_sample": "Beginning working capital"
+          },
+          {
+            "region_id": "region_p0_b15_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 4.216,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.496,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              67.544,
+              358.298,
+              155.456,
+              370.386
+            ],
+            "source_union_bbox": [
+              68.044,
+              358.698,
+              154.956,
+              369.986
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.50 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b15_l0_table_text.png",
+            "target_text_sample": "Group Corporate Center Operating Results"
+          },
+          {
+            "region_id": "region_p0_b25_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 4.216,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.496,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              67.536,
+              513.029,
+              159.418,
+              525.117
+            ],
+            "source_union_bbox": [
+              68.036,
+              513.429,
+              158.918,
+              524.717
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.50 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b25_l0_table_text.png",
+            "target_text_sample": "Payment for the acquisition of Sovereign"
+          },
+          {
+            "region_id": "region_p0_b26_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 3.72,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.438,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              67.536,
+              528.499,
+              103.173,
+              540.587
+            ],
+            "source_union_bbox": [
+              68.036,
+              528.899,
+              102.673,
+              540.187
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 3.72pt is below table_text recommended floor 3.80pt",
+              "output_to_source_font_ratio 0.44 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b26_l0_table_text.png",
+            "target_text_sample": "Increase in borrowing"
+          },
+          {
+            "region_id": "region_p1_b1_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "table_cell",
+            "page_type_guess": "chart_or_dashboard",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 3.72,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.438,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              61.862,
+              24.7,
+              124.912,
+              36.584
+            ],
+            "source_union_bbox": [
+              62.362,
+              25.1,
+              124.412,
+              36.184
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 3.72pt is below table_text recommended floor 3.80pt",
+              "output_to_source_font_ratio 0.44 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_02_region_p1_b1_l0_table_text.png",
+            "target_text_sample": "Financial and Operational Review"
+          },
+          {
+            "region_id": "region_p1_b4_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "table_cell",
+            "page_type_guess": "chart_or_dashboard",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 3.72,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.438,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              67.535,
+              136.117,
+              120.598,
+              148.001
+            ],
+            "source_union_bbox": [
+              68.035,
+              136.517,
+              120.098,
+              147.601
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 3.72pt is below table_text recommended floor 3.80pt",
+              "output_to_source_font_ratio 0.44 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_02_region_p1_b4_l0_table_text.png",
+            "target_text_sample": "Beginning shareholders' equity"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "title_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 1,
+        "sample": [
+          {
+            "region_id": "region_p2_b1_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "heading",
+            "page_type_guess": "mixed_text",
+            "quality_role": "title",
+            "gate_id": "title_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 12.333,
+            "source_median_font_size": 12.333,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 1.0,
+            "fail_font_pt": 6.2,
+            "warn_font_pt": 7.0,
+            "fail_source_ratio": 0.3,
+            "warn_source_ratio": 0.42,
+            "bbox": [
+              50.524,
+              36.672,
+              467.217,
+              88.767
+            ],
+            "source_union_bbox": [
+              51.024,
+              37.072,
+              230.619,
+              54.024
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "source_inner_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_inner_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Notes to Consolidated Financial Statements and Significant Accounting Policies"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "background_residue_artifact",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 233,
+        "sample": [],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "warn",
+        "failure_count": 0,
+        "warning_count": 83,
+        "region_count": 181,
+        "sample": [
+          {
+            "region_id": "region_p0_b1_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 3.72,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.438,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              61.862,
+              24.7,
+              124.912,
+              36.584
+            ],
+            "source_union_bbox": [
+              62.362,
+              25.1,
+              124.412,
+              36.184
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 3.72pt is below table_text recommended floor 3.80pt",
+              "output_to_source_font_ratio 0.44 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b1_l0_table_text.png",
+            "target_text_sample": "Financial and Operational Review"
+          },
+          {
+            "region_id": "region_p0_b2_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 11.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.473,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              61.862,
+              91.5,
+              175.337,
+              106.644
+            ],
+            "source_union_bbox": [
+              62.362,
+              91.9,
+              174.837,
+              106.244
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "output_to_source_font_ratio 0.47 is below table_text warn ratio 0.50"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b2_l0_table_text.png",
+            "target_text_sample": "Group Enterprise Center Net Fund Flow"
+          },
+          {
+            "region_id": "region_p0_b3_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              109.913,
+              516.408,
+              122.665
+            ],
+            "source_union_bbox": [
+              62.362,
+              110.313,
+              515.908,
+              122.265
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b3_l0_body.png",
+            "target_text_sample": "Working capital held by the Group's corporate centers consists of debt and equity securities, deposits and cash and cash"
+          },
+          {
+            "region_id": "region_p0_b5_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              157.919,
+              516.444,
+              170.671
+            ],
+            "source_union_bbox": [
+              62.362,
+              158.319,
+              515.944,
+              170.271
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b5_l0_body.png",
+            "target_text_sample": "Net remittances from business units increased by US$977 million to US$3.730 billion, with most of the increase coming fr"
+          },
+          {
+            "region_id": "region_p0_b6_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              173.921,
+              516.408,
+              186.673
+            ],
+            "source_union_bbox": [
+              62.362,
+              174.321,
+              515.908,
+              186.273
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b6_l0_body.png",
+            "target_text_sample": "After being approved in 2018, and as mentioned earlier in the 2018 annual report, due to the timing of various required "
+          },
+          {
+            "region_id": "region_p0_b7_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              189.923,
+              516.49,
+              202.675
+            ],
+            "source_union_bbox": [
+              62.362,
+              190.323,
+              515.99,
+              202.275
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b7_l0_body.png",
+            "target_text_sample": "Of US$319 million, remittances to Thailand increased to US$1.037 billion in 2019. Remittances from mainland China nearly"
+          },
+          {
+            "region_id": "region_p0_b8_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              205.925,
+              516.417,
+              218.677
+            ],
+            "source_union_bbox": [
+              62.362,
+              206.325,
+              515.917,
+              218.277
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b8_l0_body.png",
+            "target_text_sample": "A one-time transfer to continuously expand and accumulate retained profits. As mentioned earlier, the extraordinary remi"
+          },
+          {
+            "region_id": "region_p0_b10_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.578,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              61.862,
+              253.931,
+              516.399,
+              266.683
+            ],
+            "source_union_bbox": [
+              62.362,
+              254.331,
+              515.899,
+              266.283
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "text_image_background_rgb": [
+              249,
+              248,
+              239
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 4.667,
+            "reasons": [
+              "font_size 5.20pt is below body recommended floor 6.80pt",
+              "output_to_source_font_ratio 0.58 is below body warn ratio 0.62"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_crops/page_01_region_p0_b10_l0_body.png",
+            "target_text_sample": "Borrowings increased by US$797 million due to the net proceeds from the issuance of medium-term notes of US$1.301 billio"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "source_relative_visual_baseline",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 233,
+        "sample": [],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "image_color_integrity",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 5,
+        "sample": [
+          {
+            "page_index": 0,
+            "page_number": 1,
+            "source_image_count": 0,
+            "output_image_count": 12,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              244.822,
+              243.39,
+              236.944
+            ],
+            "output_mean_rgb": [
+              244.454,
+              243.113,
+              236.66
+            ],
+            "mean_rgb_delta": 0.31,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              5.833,
+              6.017,
+              5.75
+            ]
+          },
+          {
+            "page_index": 1,
+            "page_number": 2,
+            "source_image_count": 0,
+            "output_image_count": 9,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              242.561,
+              238.62,
+              233.579
+            ],
+            "output_mean_rgb": [
+              243.018,
+              239.038,
+              233.99
+            ],
+            "mean_rgb_delta": 0.429,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              2.658,
+              3.113,
+              2.898
+            ]
+          },
+          {
+            "page_index": 2,
+            "page_number": 3,
+            "source_image_count": 0,
+            "output_image_count": 3,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              208.795,
+              223.667,
+              241.819
+            ],
+            "output_mean_rgb": [
+              205.426,
+              219.0,
+              236.981
+            ],
+            "mean_rgb_delta": 4.291,
+            "source_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              7.153,
+              9.884,
+              10.176
+            ]
+          },
+          {
+            "page_index": 3,
+            "page_number": 4,
+            "source_image_count": 0,
+            "output_image_count": 9,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              208.857,
+              223.698,
+              241.818
+            ],
+            "output_mean_rgb": [
+              209.569,
+              224.706,
+              242.848
+            ],
+            "mean_rgb_delta": 0.916,
+            "source_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              2.917,
+              4.078,
+              4.222
+            ]
+          },
+          {
+            "page_index": 4,
+            "page_number": 5,
+            "source_image_count": 0,
+            "output_image_count": 16,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              211.916,
+              225.465,
+              242.198
+            ],
+            "output_mean_rgb": [
+              212.284,
+              225.968,
+              242.69
+            ],
+            "mean_rgb_delta": 0.455,
+            "source_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              2.141,
+              2.928,
+              2.996
+            ]
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    }
+  ],
+  "page_metrics": [
+    {
+      "page_index": 0,
+      "source_metrics": {
+        "line_count": 69,
+        "text_area": 65962.694,
+        "y_span": 796.821,
+        "median_gap": -8.371,
+        "median_font_size": 8.5
+      },
+      "output_metrics": {
+        "line_count": 58,
+        "text_area": 15150.28,
+        "y_span": 796.596,
+        "median_gap": -5.016,
+        "median_font_size": 8.5
+      },
+      "source_font_hierarchy": {
+        "q10": 8.5,
+        "q25": 8.5,
+        "q50": 8.5,
+        "q75": 8.5,
+        "q90": 9.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.059
+      },
+      "output_font_hierarchy": {
+        "q10": 4.216,
+        "q25": 5.208,
+        "q50": 8.5,
+        "q75": 8.5,
+        "q90": 8.5,
+        "small_to_body_ratio": 0.613,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.23,
+        "line_count_ratio": 0.841,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.387
+      }
+    },
+    {
+      "page_index": 1,
+      "source_metrics": {
+        "line_count": 105,
+        "text_area": 42459.093,
+        "y_span": 796.821,
+        "median_gap": -10.081,
+        "median_font_size": 8.5
+      },
+      "output_metrics": {
+        "line_count": 101,
+        "text_area": 22280.322,
+        "y_span": 796.596,
+        "median_gap": -6.524,
+        "median_font_size": 8.5
+      },
+      "source_font_hierarchy": {
+        "q10": 8.5,
+        "q25": 8.5,
+        "q50": 8.5,
+        "q75": 8.5,
+        "q90": 8.5,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 3.72,
+        "q25": 5.084,
+        "q50": 8.5,
+        "q75": 8.5,
+        "q90": 8.5,
+        "small_to_body_ratio": 0.598,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.525,
+        "line_count_ratio": 0.962,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.402
+      }
+    },
+    {
+      "page_index": 2,
+      "source_metrics": {
+        "line_count": 25,
+        "text_area": 71256.276,
+        "y_span": 795.281,
+        "median_gap": 7.002,
+        "median_font_size": 9.0
+      },
+      "output_metrics": {
+        "line_count": 37,
+        "text_area": 184909.178,
+        "y_span": 795.057,
+        "median_gap": 0.696,
+        "median_font_size": 8.976
+      },
+      "source_font_hierarchy": {
+        "q10": 8.5,
+        "q25": 9.0,
+        "q50": 9.0,
+        "q75": 9.0,
+        "q90": 11.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.222
+      },
+      "output_font_hierarchy": {
+        "q10": 8.976,
+        "q25": 8.976,
+        "q50": 8.976,
+        "q75": 10.2,
+        "q90": 10.2,
+        "small_to_body_ratio": 0.88,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 2.595,
+        "line_count_ratio": 1.48,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 0.997,
+        "small_to_body_ratio_delta": -0.12
+      }
+    },
+    {
+      "page_index": 3,
+      "source_metrics": {
+        "line_count": 96,
+        "text_area": 70481.714,
+        "y_span": 795.281,
+        "median_gap": -9.0,
+        "median_font_size": 9.0
+      },
+      "output_metrics": {
+        "line_count": 98,
+        "text_area": 29439.287,
+        "y_span": 795.058,
+        "median_gap": -4.907,
+        "median_font_size": 4.216
+      },
+      "source_font_hierarchy": {
+        "q10": 9.0,
+        "q25": 9.0,
+        "q50": 9.0,
+        "q75": 9.0,
+        "q90": 9.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 3.224,
+        "q25": 3.72,
+        "q50": 4.216,
+        "q75": 5.208,
+        "q90": 5.704,
+        "small_to_body_ratio": 0.714,
+        "large_to_body_ratio": 1.095
+      },
+      "ratios": {
+        "text_area_ratio": 0.418,
+        "line_count_ratio": 1.021,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 0.468,
+        "small_to_body_ratio_delta": -0.286
+      }
+    },
+    {
+      "page_index": 4,
+      "source_metrics": {
+        "line_count": 106,
+        "text_area": 60137.704,
+        "y_span": 795.281,
+        "median_gap": -8.687,
+        "median_font_size": 9.5
+      },
+      "output_metrics": {
+        "line_count": 95,
+        "text_area": 23923.877,
+        "y_span": 721.486,
+        "median_gap": -4.192,
+        "median_font_size": 9.5
+      },
+      "source_font_hierarchy": {
+        "q10": 8.5,
+        "q25": 9.0,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 0.947,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 4.216,
+        "q25": 4.712,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 0.496,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.398,
+        "line_count_ratio": 0.896,
+        "y_span_ratio": 0.907,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.451
+      }
+    }
+  ],
+  "blocking_failure_count": 0
+}

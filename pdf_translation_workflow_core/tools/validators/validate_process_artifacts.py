@@ -60,6 +60,14 @@ REQUIRED_TRACE_FIELDS = {
 }
 
 
+MANDATORY_VISUAL_ARTIFACTS = {
+    "candidate_render_manifest.json",
+    "visual_region_metrics.json",
+    "visual_repair_plan.json",
+    "visual_adjudication.json",
+}
+
+
 def resolve_artifact(run_dir: Path, path_text: str) -> Path | None:
     path = Path(path_text)
     candidates = [path] if path.is_absolute() else [run_dir / path, Path.cwd() / path]
@@ -98,6 +106,93 @@ def validate_boundary_check(
         return
     if report.get("workspace_boundary_verdict") != "PASS":
         errors.append(f"{label} workspace boundary report is not PASS: {ref}")
+
+
+def operation_outputs(operations: list[dict[str, Any]]) -> list[str]:
+    outputs: list[str] = []
+    for item in operations:
+        value = item.get("output_artifacts") or []
+        if isinstance(value, list):
+            outputs.extend(str(path) for path in value)
+    return outputs
+
+
+def find_candidate_case_dirs(run_dir: Path, operations: list[dict[str, Any]]) -> list[Path]:
+    dirs: dict[str, Path] = {}
+    for path_text in operation_outputs(operations):
+        if Path(path_text).name == "candidate_generation_evidence.json":
+            path = resolve_artifact(run_dir, path_text)
+            if path is not None:
+                dirs[str(path.parent.resolve())] = path.parent.resolve()
+    for candidate_path in run_dir.rglob("candidate_generation_evidence.json"):
+        if "pdf_translation_workflow_core" in candidate_path.parts:
+            continue
+        dirs[str(candidate_path.parent.resolve())] = candidate_path.parent.resolve()
+    return sorted(dirs.values(), key=lambda item: str(item))
+
+
+def decision_by_id(decisions: list[dict[str, Any]], decision_id: str) -> dict[str, Any] | None:
+    for item in decisions:
+        if item.get("decision_id") == decision_id:
+            return item
+    return None
+
+
+def has_unrepairable_reason(decision: dict[str, Any]) -> bool:
+    model_output = decision.get("model_output")
+    if not isinstance(model_output, dict):
+        return False
+    repair_plan = model_output.get("repair_plan")
+    return any(
+        key in model_output and model_output.get(key)
+        for key in ["unrepairable_reason", "no_valid_repair_reason", "failure_class", "repair_atom"]
+    ) or isinstance(repair_plan, dict)
+
+
+def validate_product_quality_visual_closure(
+    run_dir: Path,
+    state_trace: list[dict[str, Any]],
+    decisions: list[dict[str, Any]],
+    operations: list[dict[str, Any]],
+    errors: list[str],
+) -> None:
+    is_product_quality = any(item.get("run_mode") == "product_quality" for item in state_trace)
+    if not is_product_quality:
+        return
+
+    outputs = operation_outputs(operations)
+    candidate_pdf_written = any(str(path).lower().endswith(".pdf") and "candidate" in str(path).lower() for path in outputs)
+    candidate_evidence_written = any(Path(str(path)).name == "candidate_generation_evidence.json" for path in outputs)
+    if not (candidate_pdf_written or candidate_evidence_written):
+        return
+
+    case_dirs = find_candidate_case_dirs(run_dir, operations)
+    if not case_dirs:
+        errors.append("product_quality candidate generation reached but no candidate_generation_evidence.json case directory was found")
+    for case_dir in case_dirs:
+        for artifact_name in MANDATORY_VISUAL_ARTIFACTS:
+            if not (case_dir / artifact_name).exists():
+                errors.append(f"product_quality visual closure missing {artifact_name} in {case_dir}")
+
+    tool_text = "\n".join(str(item.get("tool", "")) for item in operations)
+    for required_tool in [
+        "render_pdf.py",
+        "collect_visual_region_metrics.py",
+        "plan_visual_region_repairs.py",
+        "evaluate_pdf_quality.py",
+    ]:
+        if required_tool not in tool_text:
+            errors.append(f"product_quality visual closure missing tool invocation: {required_tool}")
+
+    d7 = decision_by_id(decisions, "D7_similarity_gate")
+    d8 = decision_by_id(decisions, "D8_minimal_repair_selection")
+    if d7 and isinstance(d7.get("model_output"), dict) and d7["model_output"].get("verdict") == "fail":
+        if not d8:
+            errors.append("D7 failed but D8_minimal_repair_selection is missing")
+        elif isinstance(d8.get("model_output"), dict) and d8["model_output"].get("verdict") == "skipped":
+            errors.append("D7 failed but D8_minimal_repair_selection was skipped")
+        elif d8.get("next_state") == "S_FAIL_QUALITY" and not has_unrepairable_reason(d8):
+            errors.append("D8 routed to S_FAIL_QUALITY without repair plan or unrepairable reason")
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -171,6 +266,8 @@ def validate(run_dir: Path) -> dict[str, Any]:
                 if field not in item:
                     errors.append(f"operation_log[{idx}] missing {field}")
             validate_boundary_check(run_dir, item, f"operation_log[{idx}]", errors)
+
+    validate_product_quality_visual_closure(run_dir, state_trace, decisions, operations, errors)
 
     return {
         "tool": "validate_process_artifacts",

@@ -64,55 +64,89 @@ def placeholder_translate(text: str) -> str:
 def sample_fill_detail(page: fitz.Page, rect: fitz.Rect) -> dict[str, Any]:
     pix = page.get_pixmap(alpha=False)
     page_rect = page.rect
-    candidates: list[tuple[float, float]] = []
-    for gap in [1.5, 3.0, 5.0, 8.0]:
-        x_mid = (rect.x0 + rect.x1) / 2
-        y_mid = (rect.y0 + rect.y1) / 2
-        if rect.y0 - gap >= page_rect.y0:
-            candidates.extend([(rect.x0 + 1, rect.y0 - gap), (x_mid, rect.y0 - gap), (rect.x1 - 1, rect.y0 - gap)])
-        if rect.y1 + gap <= page_rect.y1:
-            candidates.extend([(rect.x0 + 1, rect.y1 + gap), (x_mid, rect.y1 + gap), (rect.x1 - 1, rect.y1 + gap)])
-        if rect.x0 - gap >= page_rect.x0:
-            candidates.extend([(rect.x0 - gap, rect.y0 + 1), (rect.x0 - gap, y_mid), (rect.x0 - gap, rect.y1 - 1)])
-        if rect.x1 + gap <= page_rect.x1:
-            candidates.extend([(rect.x1 + gap, rect.y0 + 1), (rect.x1 + gap, y_mid), (rect.x1 + gap, rect.y1 - 1)])
-    if not candidates:
-        candidates = [
-            (rect.x0 + 1, rect.y0 + 1),
-            (rect.x1 - 1, rect.y0 + 1),
-            (rect.x0 + 1, rect.y1 - 1),
-            (rect.x1 - 1, rect.y1 - 1),
-        ]
-    colors: list[tuple[int, int, int]] = []
-    for x, y in candidates:
+    samples: list[tuple[int, int, int, str]] = []
+
+    def add_sample(x: float, y: float, source: str) -> None:
         ix = max(0, min(pix.width - 1, int(round(x))))
         iy = max(0, min(pix.height - 1, int(round(y))))
         offset = (iy * pix.width + ix) * pix.n
         rgb = tuple(pix.samples[offset : offset + 3])
         if len(rgb) == 3:
-            colors.append(rgb)  # type: ignore[arg-type]
-    if not colors:
+            samples.append((int(rgb[0]), int(rgb[1]), int(rgb[2]), source))
+
+    inner_x_count = 5 if rect.width >= 12 else 3
+    inner_y_count = 3 if rect.height >= 6 else 2
+    for x_index in range(inner_x_count):
+        x = rect.x0 + (rect.width * (x_index + 0.5) / inner_x_count)
+        for y_index in range(inner_y_count):
+            y = rect.y0 + (rect.height * (y_index + 0.5) / inner_y_count)
+            add_sample(x, y, "inner")
+
+    for gap in [1.5, 3.0, 5.0, 8.0]:
+        source_name = "near_ring" if gap <= 5.0 else "outer_ring"
+        x_mid = (rect.x0 + rect.x1) / 2
+        y_mid = (rect.y0 + rect.y1) / 2
+        if rect.y0 - gap >= page_rect.y0:
+            for point in [(rect.x0 + 1, rect.y0 - gap), (x_mid, rect.y0 - gap), (rect.x1 - 1, rect.y0 - gap)]:
+                add_sample(point[0], point[1], source_name)
+        if rect.y1 + gap <= page_rect.y1:
+            for point in [(rect.x0 + 1, rect.y1 + gap), (x_mid, rect.y1 + gap), (rect.x1 - 1, rect.y1 + gap)]:
+                add_sample(point[0], point[1], source_name)
+        if rect.x0 - gap >= page_rect.x0:
+            for point in [(rect.x0 - gap, rect.y0 + 1), (rect.x0 - gap, y_mid), (rect.x0 - gap, rect.y1 - 1)]:
+                add_sample(point[0], point[1], source_name)
+        if rect.x1 + gap <= page_rect.x1:
+            for point in [(rect.x1 + gap, rect.y0 + 1), (rect.x1 + gap, y_mid), (rect.x1 + gap, rect.y1 - 1)]:
+                add_sample(point[0], point[1], source_name)
+    if not samples:
         return {
             "fill_color": (1.0, 1.0, 1.0),
-            "method": "surrounding_pixel_cluster",
+            "method": "outside_ring_median_pixel_cluster",
             "sample_count": 0,
             "selected_cluster_count": 0,
             "quantization_step": 8,
         }
-    clusters: dict[tuple[int, int, int], list[tuple[int, int, int]]] = {}
-    for rgb in colors:
-        key = tuple(int(round(channel / 8) * 8) for channel in rgb)
+    clusters: dict[tuple[int, int, int], list[tuple[int, int, int, str]]] = {}
+    for rgb in samples:
+        key = tuple(int(round(channel / 8) * 8) for channel in rgb[:3])
         clusters.setdefault(key, []).append(rgb)
-    cluster_key, cluster = max(clusters.items(), key=lambda item: (len(item[1]), sum(item[0])))
-    r = round(sum(color[0] for color in cluster) / len(cluster))
-    g = round(sum(color[1] for color in cluster) / len(cluster))
-    b = round(sum(color[2] for color in cluster) / len(cluster))
+    def source_weight(sample_source: str) -> int:
+        if sample_source == "near_ring":
+            return 3
+        if sample_source == "outer_ring":
+            return 1
+        return 2
+
+    cluster_key, cluster = max(
+        clusters.items(),
+        key=lambda item: (
+            sum(source_weight(sample[3]) for sample in item[1]),
+            len(item[1]),
+            -sum(item[0]),
+        ),
+    )
+    representative_samples = [sample for sample in cluster if sample[3] != "inner"] or cluster
+
+    def median_channel(channel_index: int) -> int:
+        values = sorted(sample[channel_index] for sample in representative_samples)
+        mid = len(values) // 2
+        if len(values) % 2:
+            return int(values[mid])
+        return int(round((values[mid - 1] + values[mid]) / 2))
+
+    r = median_channel(0)
+    g = median_channel(1)
+    b = median_channel(2)
     return {
         "fill_color": (r / 255, g / 255, b / 255),
-        "method": "surrounding_pixel_cluster",
-        "sample_count": len(colors),
+        "method": "outside_ring_median_pixel_cluster",
+        "sample_count": len(samples),
         "selected_cluster_count": len(cluster),
         "selected_cluster_key": list(cluster_key),
+        "selected_cluster_inner_count": sum(1 for sample in cluster if sample[3] == "inner"),
+        "selected_cluster_near_ring_count": sum(1 for sample in cluster if sample[3] == "near_ring"),
+        "selected_cluster_outer_ring_count": sum(1 for sample in cluster if sample[3] == "outer_ring"),
+        "selected_cluster_representative_source": "ring" if any(sample[3] != "inner" for sample in cluster) else "inner",
         "quantization_step": 8,
     }
 
@@ -218,7 +252,7 @@ def generate(source: Path, extraction_path: Path, output: Path, translations_pat
                 }
             )
             page.add_redact_annot(rect, fill=fill)
-            page_units.append((unit_id, rect, zh, float(line.get("font_size") or 6.0)))
+            page_units.append((unit_id, rect, zh, float(line.get("font_size") or 6.0), fill, fill_provenance))
 
         if page_units:
             page.apply_redactions(
@@ -226,7 +260,7 @@ def generate(source: Path, extraction_path: Path, output: Path, translations_pat
                 graphics=fitz.PDF_REDACT_LINE_ART_NONE,
                 text=fitz.PDF_REDACT_TEXT_REMOVE,
             )
-            for unit_id, rect, zh, source_size in page_units:
+            for unit_id, rect, zh, source_size, fill, fill_provenance in page_units:
                 insert_result = insert_chinese(page, rect, zh, fontfile, source_size)
                 insertion_records.append(
                     {
@@ -234,6 +268,13 @@ def generate(source: Path, extraction_path: Path, output: Path, translations_pat
                         "page_index": page_index,
                         "bbox": [round(v, 3) for v in rect],
                         "translation_zh": zh,
+                        "redaction_fill_provenance": [
+                            {
+                                "unit_id": unit_id,
+                                "fill_color": [round(v, 4) for v in fill],
+                                "fill_color_provenance": fill_provenance,
+                            }
+                        ],
                         **insert_result,
                     }
                 )

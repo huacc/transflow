@@ -110,10 +110,25 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
 
 FAIL_STATUSES = {"fallback_insert_text"}
 WARN_STATUSES = {"point_fit"}
+DENSE_TABLE_PAGE_TYPES = {"table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"}
 IMAGE_DELTA_FAIL = 34.0
 IMAGE_DELTA_WARN = 22.0
 BACKGROUND_DELTA_FAIL = 42.0
 BACKGROUND_DELTA_WARN = 26.0
+BACKGROUND_RESIDUE_FAIL = 18.0
+BACKGROUND_RESIDUE_WARN = 12.0
+INNER_BACKGROUND_DELTA_FAIL = 30.0
+INNER_BACKGROUND_DELTA_WARN = 20.0
+TEXT_IMAGE_BACKGROUND_DELTA_FAIL = 12.0
+TEXT_IMAGE_BACKGROUND_DELTA_WARN = 6.0
+TEXT_IMAGE_STATUSES = {"constrained_text_image_fit", "rotated_horizontal_image_fit"}
+REDACTION_FILL_DELTA_FAIL = 2.0
+REDACTION_FILL_DELTA_WARN = 1.2
+REDACTION_PATCH_SCORE_FAIL = 4.5
+REDACTION_PATCH_SCORE_WARN = 2.8
+BACKGROUND_COVER_SOLID_PATCH_SATURATION_FAIL = 18.0
+BACKGROUND_COVER_SOLID_PATCH_AREA_FAIL = 600.0
+BACKGROUND_COVER_SOLID_PATCH_AREA_WARN = 300.0
 SOURCE_BASELINE_FAIL_COVERAGE = 0.90
 SOURCE_BASELINE_WARN_COVERAGE = 0.97
 
@@ -145,6 +160,19 @@ def expand_box(box: tuple[int, int, int, int], image: Image.Image, pad: int) -> 
         max(0, box[1] - pad),
         min(image.width, box[2] + pad),
         min(image.height, box[3] + pad),
+    )
+
+
+def inner_box(box: tuple[int, int, int, int], image: Image.Image, inset_ratio: float = 0.18) -> tuple[int, int, int, int]:
+    width = max(1, box[2] - box[0])
+    height = max(1, box[3] - box[1])
+    inset_x = min(width // 3, max(1, int(round(width * inset_ratio))))
+    inset_y = min(height // 3, max(1, int(round(height * inset_ratio))))
+    return (
+        max(0, min(image.width - 1, box[0] + inset_x)),
+        max(0, min(image.height - 1, box[1] + inset_y)),
+        max(1, min(image.width, box[2] - inset_x)),
+        max(1, min(image.height, box[3] - inset_y)),
     )
 
 
@@ -202,6 +230,42 @@ def edge_dominant_rgb(image: Image.Image, edge_width: int = 3) -> tuple[int, int
     return tuple(max(0, min(255, int(v))) for v in key)
 
 
+def ring_dominant_rgb(
+    image: Image.Image,
+    box: tuple[int, int, int, int],
+    pad: int,
+    quantization_step: int = 8,
+) -> tuple[int, int, int]:
+    ring = expand_box(box, image, pad)
+    pixels: list[tuple[int, int, int]] = []
+    for y in range(ring[1], ring[3]):
+        for x in range(ring[0], ring[2]):
+            if box[0] <= x < box[2] and box[1] <= y < box[3]:
+                continue
+            pixels.append(image.getpixel((x, y)))
+    if not pixels:
+        return edge_dominant_rgb(image.crop(box))
+    step = max(1, len(pixels) // 20000)
+    clusters: dict[tuple[int, int, int], list[tuple[int, int, int]]] = {}
+    for r, g, b in pixels[::step]:
+        key = (
+            round(r / quantization_step) * quantization_step,
+            round(g / quantization_step) * quantization_step,
+            round(b / quantization_step) * quantization_step,
+        )
+        clusters.setdefault(key, []).append((r, g, b))
+    cluster = max(clusters.items(), key=lambda item: (len(item[1]), sum(item[0])))[1]
+
+    def median_channel(index: int) -> int:
+        values = sorted(color[index] for color in cluster)
+        mid = len(values) // 2
+        if len(values) % 2:
+            return int(values[mid])
+        return int(round((values[mid - 1] + values[mid]) / 2))
+
+    return (median_channel(0), median_channel(1), median_channel(2))
+
+
 def color_delta(a: tuple[float, float, float] | tuple[int, int, int], b: tuple[float, float, float] | tuple[int, int, int]) -> float:
     return round(sum(abs(float(x) - float(y)) for x, y in zip(a, b)) / 3, 3)
 
@@ -209,6 +273,18 @@ def color_delta(a: tuple[float, float, float] | tuple[int, int, int], b: tuple[f
 def saturation(color: tuple[int, int, int] | tuple[float, float, float]) -> float:
     values = [float(v) for v in color]
     return max(values) - min(values)
+
+
+def normalized_float_color_to_rgb(value: Any) -> tuple[int, int, int] | None:
+    if not isinstance(value, (list, tuple)) or len(value) < 3:
+        return None
+    try:
+        channels = [float(value[index]) for index in range(3)]
+    except (TypeError, ValueError):
+        return None
+    if all(0.0 <= channel <= 1.0 for channel in channels):
+        return tuple(max(0, min(255, int(round(channel * 255)))) for channel in channels)
+    return tuple(max(0, min(255, int(round(channel)))) for channel in channels)
 
 
 def crop_contact_sheet(source_crop: Image.Image, output_crop: Image.Image, out_path: Path, label: str) -> str:
@@ -237,7 +313,7 @@ def region_role(insertion: dict[str, Any], page_rect: fitz.Rect, source_bg: tupl
         return "hero_banner_title"
     if kind == "heading":
         return "title"
-    if page_type in {"table_or_chart_dense", "chart_or_dashboard"} and kind in {"body", "short_label", "compact_label"} and width_ratio < 0.50:
+    if page_type in DENSE_TABLE_PAGE_TYPES and kind in {"body", "short_label", "compact_label"} and width_ratio < 0.50:
         return "table_text"
     if kind in {"body", "body_flow"}:
         return "body"
@@ -314,6 +390,7 @@ def status_for_region(
     insertion: dict[str, Any],
     role: str,
     bg_delta: float,
+    residue_delta: float,
     source_font_size: float | None,
 ) -> tuple[str, list[str], list[str], float | None]:
     rule = ROLE_RULES.get(role, ROLE_RULES["body"])
@@ -339,6 +416,23 @@ def status_for_region(
     if bg_delta >= BACKGROUND_DELTA_FAIL:
         reasons.append(f"background_delta {bg_delta:.1f} exceeds fail threshold {BACKGROUND_DELTA_FAIL:.1f}")
         repair_atoms.append("background_fill_resample")
+    source_residue_delta = float(insertion.get("source_residue_delta") or 0.0)
+    inner_bg_delta = float(insertion.get("inner_background_delta") or 0.0)
+    text_image_bg_delta = float(insertion.get("text_image_background_delta") or 0.0)
+    residue_excess = max(0.0, residue_delta - source_residue_delta)
+    residue_check_enabled = max(saturation(insertion.get("output_inner_background_rgb", (0, 0, 0))), saturation(insertion.get("output_background_rgb", (0, 0, 0)))) <= 72.0
+    if status in TEXT_IMAGE_STATUSES and insertion.get("text_image_background_rgb") is None:
+        reasons.append(f"{status} has no image_background_color evidence")
+        repair_atoms.append("background_residue_fill_resample")
+    if text_image_bg_delta >= TEXT_IMAGE_BACKGROUND_DELTA_FAIL:
+        reasons.append(f"text_image_background_delta {text_image_bg_delta:.1f} exceeds fail threshold {TEXT_IMAGE_BACKGROUND_DELTA_FAIL:.1f}")
+        repair_atoms.append("background_residue_fill_resample")
+    if inner_bg_delta >= INNER_BACKGROUND_DELTA_FAIL:
+        reasons.append(f"inner_background_delta {inner_bg_delta:.1f} exceeds fail threshold {INNER_BACKGROUND_DELTA_FAIL:.1f}")
+        repair_atoms.append("background_residue_fill_resample")
+    if residue_check_enabled and residue_delta >= BACKGROUND_RESIDUE_FAIL and residue_excess >= 8.0:
+        reasons.append(f"background_residue_delta {residue_delta:.1f} exceeds fail threshold {BACKGROUND_RESIDUE_FAIL:.1f}")
+        repair_atoms.append("background_residue_fill_resample")
     if reasons:
         return "fail", reasons, sorted(set(repair_atoms)), font_ratio
     warn_reasons: list[str] = []
@@ -353,6 +447,12 @@ def status_for_region(
         return "warn", warn_reasons, sorted(set(warn_repairs)), font_ratio
     if bg_delta >= BACKGROUND_DELTA_WARN:
         return "warn", [f"background_delta {bg_delta:.1f} exceeds warn threshold {BACKGROUND_DELTA_WARN:.1f}"], ["background_fill_resample"], font_ratio
+    if inner_bg_delta >= INNER_BACKGROUND_DELTA_WARN:
+        return "warn", [f"inner_background_delta {inner_bg_delta:.1f} exceeds warn threshold {INNER_BACKGROUND_DELTA_WARN:.1f}"], ["background_residue_fill_resample"], font_ratio
+    if text_image_bg_delta >= TEXT_IMAGE_BACKGROUND_DELTA_WARN:
+        return "warn", [f"text_image_background_delta {text_image_bg_delta:.1f} exceeds warn threshold {TEXT_IMAGE_BACKGROUND_DELTA_WARN:.1f}"], ["background_residue_fill_resample"], font_ratio
+    if residue_check_enabled and residue_delta >= BACKGROUND_RESIDUE_WARN and residue_excess >= 6.0:
+        return "warn", [f"background_residue_delta {residue_delta:.1f} exceeds warn threshold {BACKGROUND_RESIDUE_WARN:.1f}"], ["background_residue_fill_resample"], font_ratio
     return "pass", [], [], font_ratio
 
 
@@ -374,6 +474,15 @@ def page_color_metrics(source_image: Image.Image, output_image: Image.Image) -> 
     }
 
 
+def rect_contains(container: list[float], inner: list[float], tolerance: float = 0.75) -> bool:
+    return (
+        float(container[0]) <= float(inner[0]) + tolerance
+        and float(container[1]) <= float(inner[1]) + tolerance
+        and float(container[2]) >= float(inner[2]) - tolerance
+        and float(container[3]) >= float(inner[3]) - tolerance
+    )
+
+
 def collect(
     source: Path,
     output: Path,
@@ -384,6 +493,15 @@ def collect(
     zoom: float,
 ) -> dict[str, Any]:
     evidence = read_json(generation_evidence)
+    cover_rects_by_page: dict[int, list[list[float]]] = {}
+    for cover in evidence.get("background_covers", []):
+        if not isinstance(cover, dict):
+            continue
+        bbox = cover.get("bbox")
+        if not isinstance(bbox, list) or len(bbox) != 4:
+            continue
+        page_index = int(cover.get("page_index") or 0)
+        cover_rects_by_page.setdefault(page_index, []).append([float(v) for v in bbox])
     source_lines = source_line_index(read_json(source_extraction) if source_extraction is not None and source_extraction.exists() else None)
     source_doc = fitz.open(source)
     output_doc = fitz.open(output)
@@ -438,6 +556,21 @@ def collect(
         source_bg = edge_dominant_rgb(source_crop)
         output_bg = edge_dominant_rgb(output_crop)
         bg_delta = color_delta(source_bg, output_bg)
+        source_inner = source_image.crop(inner_box(box, source_image))
+        source_inner_bg = dominant_rgb(source_inner)
+        source_residue_delta = color_delta(source_inner_bg, source_bg)
+        output_inner = output_image.crop(inner_box(box, output_image))
+        output_inner_bg = dominant_rgb(output_inner)
+        residue_delta = color_delta(output_inner_bg, output_bg)
+        inner_bg_delta = color_delta(source_inner_bg, output_inner_bg)
+        text_image_background_rgb = normalized_float_color_to_rgb(insertion.get("image_background_color"))
+        text_image_bg_delta = color_delta(text_image_background_rgb, source_inner_bg) if text_image_background_rgb is not None else 0.0
+        insertion["source_residue_delta"] = source_residue_delta
+        insertion["output_background_rgb"] = output_bg
+        insertion["output_inner_background_rgb"] = output_inner_bg
+        insertion["inner_background_delta"] = inner_bg_delta
+        insertion["text_image_background_rgb"] = text_image_background_rgb
+        insertion["text_image_background_delta"] = text_image_bg_delta
         role = region_role(insertion, source_doc[page_index].rect, source_bg)
         source_stats = source_stats_for_insertion(insertion, source_lines)
         source_font_size = source_stats.get("source_median_font_size")
@@ -445,6 +578,7 @@ def collect(
             insertion,
             role,
             bg_delta,
+            residue_delta,
             float(source_font_size) if isinstance(source_font_size, (int, float)) else None,
         )
         gate_id = ROLE_RULES.get(role, ROLE_RULES["body"])["gate_id"]
@@ -458,6 +592,7 @@ def collect(
             "page_index": page_index,
             "page_number": page_index + 1,
             "region_kind": insertion.get("region_kind"),
+            "page_type_guess": insertion.get("page_type_guess"),
             "quality_role": role,
             "gate_id": gate_id,
             "status": status,
@@ -474,8 +609,15 @@ def collect(
             "bbox": [round(v, 3) for v in bbox],
             "source_union_bbox": source_stats.get("source_union_bbox"),
             "source_background_rgb": list(source_bg),
+            "source_inner_background_rgb": list(source_inner_bg),
             "output_background_rgb": list(output_bg),
+            "output_inner_background_rgb": list(output_inner_bg),
+            "text_image_background_rgb": list(text_image_background_rgb) if text_image_background_rgb is not None else None,
             "background_delta": bg_delta,
+            "source_residue_delta": source_residue_delta,
+            "background_residue_delta": residue_delta,
+            "inner_background_delta": inner_bg_delta,
+            "text_image_background_delta": text_image_bg_delta,
             "reasons": reasons,
             "repair_atoms": repair_atoms,
             "crop_evidence": crop_ref,
@@ -483,6 +625,134 @@ def collect(
         }
         region_metrics.append(metric)
         role_gate_items.setdefault(str(gate_id), []).append(metric)
+
+    redaction_metrics: list[dict[str, Any]] = []
+    for redaction in evidence.get("redactions", []):
+        if not isinstance(redaction, dict):
+            continue
+        page_index = int(redaction.get("page_index") or 0)
+        if page_index < 0 or page_index >= page_count:
+            continue
+        bbox = [float(v) for v in redaction.get("bbox", [0, 0, 0, 0])]
+        source_image = source_images[page_index]
+        output_image = output_images[page_index]
+        box = scaled_box(bbox, zoom, source_image)
+        pad = max(4, int(round(4 * zoom)))
+        crop_box = expand_box(box, source_image, pad)
+        source_crop = source_image.crop(crop_box)
+        output_crop = output_image.crop(crop_box)
+        fill_rgb = normalized_float_color_to_rgb(redaction.get("fill_color")) or (255, 255, 255)
+        source_ring_bg = ring_dominant_rgb(source_image, box, pad)
+        output_ring_bg = ring_dominant_rgb(output_image, box, pad)
+        fill_delta = color_delta(fill_rgb, source_ring_bg)
+        output_ring_delta = color_delta(output_ring_bg, source_ring_bg)
+        area_pt2 = max(1.0, (bbox[2] - bbox[0]) * (bbox[3] - bbox[1]))
+        patch_score = round(fill_delta * min(4.0, math.sqrt(area_pt2) / 20.0), 3)
+        covered_by_background_cover = any(rect_contains(cover_bbox, bbox) for cover_bbox in cover_rects_by_page.get(page_index, []))
+        page_width = float(source_doc[page_index].rect.width)
+        wide_line_patch_risk = (
+            not covered_by_background_cover
+            and (bbox[2] - bbox[0]) >= page_width * 0.45
+            and (bbox[3] - bbox[1]) <= 18.0
+            and saturation(source_ring_bg) >= 18.0
+        )
+        status = "pass"
+        reasons: list[str] = []
+        repair_atoms: list[str] = []
+        if wide_line_patch_risk:
+            status = "fail"
+            reasons.append("wide colored-background line redaction has no region_background_cover and can render as a horizontal band")
+            repair_atoms.append("background_residue_fill_resample")
+        elif not covered_by_background_cover and fill_delta >= REDACTION_FILL_DELTA_FAIL and patch_score >= REDACTION_PATCH_SCORE_FAIL:
+            status = "fail"
+            reasons.append(
+                f"redaction_fill_delta {fill_delta:.1f} with patch_score {patch_score:.1f} exceeds fail threshold"
+            )
+            repair_atoms.append("background_residue_fill_resample")
+        elif not covered_by_background_cover and fill_delta >= REDACTION_FILL_DELTA_WARN and patch_score >= REDACTION_PATCH_SCORE_WARN:
+            status = "warn"
+            reasons.append(
+                f"redaction_fill_delta {fill_delta:.1f} with patch_score {patch_score:.1f} exceeds warn threshold"
+            )
+            repair_atoms.append("background_residue_fill_resample")
+        crop_ref = None
+        if crop_dir is not None and status in {"fail", "warn"}:
+            safe_id = str(redaction.get("unit_id") or "redaction").replace("/", "_").replace("\\", "_")
+            crop_path = crop_dir / f"page_{page_index + 1:02d}_{safe_id}_redaction_fill.png"
+            crop_ref = crop_contact_sheet(source_crop, output_crop, crop_path, "redaction_fill")
+        redaction_metrics.append(
+            {
+                "unit_id": redaction.get("unit_id"),
+                "page_index": page_index,
+                "page_number": page_index + 1,
+                "bbox": [round(v, 3) for v in bbox],
+                "status": status,
+                "fill_color_rgb": list(fill_rgb),
+                "source_ring_background_rgb": list(source_ring_bg),
+                "output_ring_background_rgb": list(output_ring_bg),
+                "redaction_fill_delta": fill_delta,
+                "output_ring_delta": output_ring_delta,
+                "patch_score": patch_score,
+                "covered_by_background_cover": covered_by_background_cover,
+                "wide_line_patch_risk": wide_line_patch_risk,
+                "fill_method": (redaction.get("fill_color_provenance") or {}).get("method"),
+                "fill_color_provenance": redaction.get("fill_color_provenance"),
+                "reasons": reasons,
+                "repair_atoms": repair_atoms,
+                "crop_evidence": crop_ref,
+            }
+        )
+
+    background_cover_metrics: list[dict[str, Any]] = []
+    for cover in evidence.get("background_covers", []):
+        if not isinstance(cover, dict):
+            continue
+        bbox = cover.get("bbox")
+        if not isinstance(bbox, list) or len(bbox) != 4:
+            continue
+        bbox_f = [float(v) for v in bbox]
+        area_pt2 = max(0.0, (bbox_f[2] - bbox_f[0]) * (bbox_f[3] - bbox_f[1]))
+        fill_rgb = normalized_float_color_to_rgb(cover.get("fill_color")) or (255, 255, 255)
+        draw_mode = str(cover.get("draw_mode") or "solid_vector_fill")
+        fill_saturation = saturation(fill_rgb)
+        status = "pass"
+        reasons: list[str] = []
+        repair_atoms: list[str] = []
+        if draw_mode == "solid_vector_fill" and fill_saturation >= BACKGROUND_COVER_SOLID_PATCH_SATURATION_FAIL:
+            if area_pt2 >= BACKGROUND_COVER_SOLID_PATCH_AREA_FAIL:
+                status = "fail"
+                reasons.append(
+                    "large solid_vector_fill background cover on a saturated/color background can create a visible rectangular block"
+                )
+                repair_atoms.append("background_residue_fill_resample")
+            elif area_pt2 >= BACKGROUND_COVER_SOLID_PATCH_AREA_WARN:
+                status = "warn"
+                reasons.append(
+                    "small solid_vector_fill background cover on a saturated/color background should prefer row_sampled_image_patch"
+                )
+                repair_atoms.append("background_residue_fill_resample")
+        elif draw_mode == "row_sampled_image_patch" and not cover.get("patch_size_px"):
+            status = "warn"
+            reasons.append("row_sampled_image_patch cover is missing patch_size_px evidence")
+            repair_atoms.append("background_residue_fill_resample")
+        background_cover_metrics.append(
+            {
+                "region_id": cover.get("region_id"),
+                "page_index": cover.get("page_index"),
+                "page_number": int(cover.get("page_index") or 0) + 1,
+                "bbox": [round(v, 3) for v in bbox_f],
+                "status": status,
+                "method": cover.get("method"),
+                "draw_mode": draw_mode,
+                "fill_color_rgb": list(fill_rgb),
+                "fill_saturation": round(fill_saturation, 3),
+                "area_pt2": round(area_pt2, 3),
+                "patch_size_px": cover.get("patch_size_px"),
+                "sample_zoom": cover.get("sample_zoom"),
+                "reasons": reasons,
+                "repair_atoms": repair_atoms,
+            }
+        )
 
     role_gates = []
     for gate_id, items in sorted(role_gate_items.items()):
@@ -500,6 +770,75 @@ def collect(
                 "sample": (failures or warnings or items)[:8],
             }
         )
+    residue_failures = [
+        item
+        for item in region_metrics
+        if item.get("status") == "fail" and "background_residue_fill_resample" in set(item.get("repair_atoms") or [])
+    ] + [
+        item
+        for item in redaction_metrics
+        if item.get("status") == "fail" and "background_residue_fill_resample" in set(item.get("repair_atoms") or [])
+    ] + [
+        item
+        for item in background_cover_metrics
+        if item.get("status") == "fail" and "background_residue_fill_resample" in set(item.get("repair_atoms") or [])
+    ]
+    residue_warnings = [
+        item
+        for item in region_metrics
+        if item.get("status") == "warn" and "background_residue_fill_resample" in set(item.get("repair_atoms") or [])
+    ] + [
+        item
+        for item in redaction_metrics
+        if item.get("status") == "warn" and "background_residue_fill_resample" in set(item.get("repair_atoms") or [])
+    ] + [
+        item
+        for item in background_cover_metrics
+        if item.get("status") == "warn" and "background_residue_fill_resample" in set(item.get("repair_atoms") or [])
+    ]
+    role_gates.append(
+        {
+            "gate_id": "background_residue_artifact",
+            "status": "fail" if residue_failures else "warn" if residue_warnings else "pass",
+            "blocking": bool(residue_failures),
+            "failure_count": len(residue_failures),
+            "warning_count": len(residue_warnings),
+            "region_count": len(region_metrics),
+            "redaction_count": len(redaction_metrics),
+            "background_cover_count": len(background_cover_metrics),
+            "sample": (residue_failures or residue_warnings)[:8],
+            "reason": "detects local redaction/fill rectangles whose interior background no longer matches the surrounding rendered region, including redaction-only bands not covered by translated text and colored-background cover blocks that create new visible rectangles",
+        }
+    )
+    matrix_regions = [
+        item
+        for item in region_metrics
+        if str(item.get("page_type_guess") or "") == "matrix_or_table_diagram"
+    ]
+    matrix_failures = [
+        item
+        for item in matrix_regions
+        if item.get("generation_status") in FAIL_STATUSES
+        or item.get("region_kind") in {"body_flow"}
+        or item.get("status") == "fail"
+    ]
+    matrix_warnings = [
+        item
+        for item in matrix_regions
+        if item.get("status") == "warn" and item not in matrix_failures
+    ]
+    role_gates.append(
+        {
+            "gate_id": "matrix_diagram_integrity",
+            "status": "fail" if matrix_failures else "warn" if matrix_warnings else "pass",
+            "blocking": bool(matrix_failures),
+            "failure_count": len(matrix_failures),
+            "warning_count": len(matrix_warnings),
+            "region_count": len(matrix_regions),
+            "sample": (matrix_failures or matrix_warnings)[:8],
+            "reason": "matrix/table-diagram pages must preserve two-dimensional cell/label structure and must not route diagram text through body_flow or fallback body insertion",
+        }
+    )
     baseline_items = [
         item
         for item in region_metrics
@@ -565,8 +904,13 @@ def collect(
         "region_count": len(region_metrics),
         "fail_region_count": sum(1 for item in region_metrics if item["status"] == "fail"),
         "warn_region_count": sum(1 for item in region_metrics if item["status"] == "warn"),
+        "redaction_count": len(redaction_metrics),
+        "fail_redaction_count": sum(1 for item in redaction_metrics if item["status"] == "fail"),
+        "warn_redaction_count": sum(1 for item in redaction_metrics if item["status"] == "warn"),
         "page_metrics": page_metrics,
         "region_metrics": region_metrics,
+        "redaction_metrics": redaction_metrics,
+        "background_cover_metrics": background_cover_metrics,
         "role_gates": role_gates,
     }
     write_json(out, result)

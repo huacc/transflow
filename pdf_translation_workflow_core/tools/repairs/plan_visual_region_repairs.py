@@ -76,6 +76,16 @@ REPAIR_ROUTE = {
         "target_state": "S7_GenerateCandidate",
         "description": "Resample local background from surrounding pixels instead of glyph color or fixed color.",
     },
+    "background_residue_artifact": {
+        "repair_atom": "background_residue_fill_resample",
+        "target_state": "S7_GenerateCandidate",
+        "description": "Repair visible redaction/fill residue by sampling continuous local background and avoiding rectangular artifact patches.",
+    },
+    "matrix_diagram_integrity": {
+        "repair_atom": "matrix_diagram_table_cell_preserve_repair",
+        "target_state": "S6_LayoutPlan",
+        "description": "Treat matrix/table-diagram pages as two-dimensional structures; preserve cells/labels and prevent body_flow/fallback insertion inside the diagram.",
+    },
 }
 
 

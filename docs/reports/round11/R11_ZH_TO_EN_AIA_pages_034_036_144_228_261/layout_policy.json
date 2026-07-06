@@ -1,0 +1,495 @@
+{
+  "tool": "build_layout_policy",
+  "policy_version": "2026-07-05.region_reflow_policy_v1",
+  "policy_source": "auto_from_current_extraction_statistics",
+  "source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "language_pair_profile": "zh_to_en",
+  "language_profile_json": "pdf_translation_workflow_core/profiles/zh_to_en.layout_profile.json",
+  "language_profile_sha256": "3ae1de16697603d39686f2bed2f95f6e0bfa0866bd5b6d3f0cbed497b495fe7e",
+  "layout_strategy": "target_visual_composition_before_font_shrink",
+  "source_extraction": "docs/reports/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261/source_extraction.json",
+  "semantic_translations": "docs/input/round11/semantic_translations/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261.translations.json",
+  "statistics": {
+    "unit_count": 252,
+    "font_size": {
+      "q25": 8.5,
+      "q50": 9.0,
+      "q75": 9.0,
+      "q95": 9.0,
+      "min": 6.0,
+      "max": 12.333
+    },
+    "line_width": {
+      "q25": 33.462,
+      "q50": 54.0,
+      "min": 9.0,
+      "max": 487.61
+    },
+    "line_height": {
+      "q50": 10.899,
+      "min": 7.5,
+      "max": 64.6
+    },
+    "page": {
+      "width_q50": 595.276,
+      "height_q50": 841.89
+    }
+  },
+  "classification_rules": {
+    "table_note": {
+      "marker_regex": "^(note|notes):$",
+      "min_line_count": 2,
+      "min_region_width_page_ratio": 0.45,
+      "max_median_font_size": 9.0,
+      "min_y_ratio": 0.4,
+      "dense_page_min_y_ratio": 0.72
+    },
+    "footnote": {
+      "max_median_font_size": 9.0,
+      "min_y_ratio": 0.6,
+      "dense_page_min_y_ratio": 0.68
+    },
+    "event_card": {
+      "page_type_guesses": [
+        "mixed_image_text"
+      ],
+      "max_line_count": 6,
+      "max_region_width_page_ratio": 0.24,
+      "min_y_ratio": 0.12,
+      "max_y_ratio": 0.92
+    },
+    "vertical_nav": {
+      "max_region_width_pt": 22.0,
+      "min_height_width_ratio": 1.8
+    },
+    "compact_label": {
+      "max_region_width_pt": 41.827,
+      "max_median_line_width_pt": 41.827
+    },
+    "short_label": {
+      "max_line_count": 2,
+      "max_region_width_pt": 90.0,
+      "min_median_font_size": 7.65
+    },
+    "legend": {
+      "min_line_count": 3,
+      "max_region_width_pt": 80.0,
+      "max_median_line_width_pt": 95.0
+    },
+    "table_cell": {
+      "page_type_guesses": [
+        "table_or_chart_dense",
+        "chart_or_dashboard",
+        "matrix_or_table_diagram"
+      ],
+      "max_line_count": 2,
+      "max_region_width_pt": 99.9,
+      "max_median_font_size": 9.0
+    },
+    "heading": {
+      "min_median_font_size": 11.25
+    }
+  },
+  "region_expansion": {
+    "default": {
+      "x_pad_pt": 1.0,
+      "y_pad_min_pt": 0.6,
+      "y_pad_source_size_ratio": 0.28
+    },
+    "footnote": {
+      "x_pad_pt": 0.5,
+      "y_pad_min_pt": 0.45,
+      "y_pad_source_size_ratio": 0.22
+    }
+  },
+  "reflow": {
+    "reflow_kinds": [
+      "body",
+      "body_flow",
+      "event_card",
+      "table_note",
+      "footnote",
+      "heading",
+      "short_label"
+    ],
+    "preserve_line_kinds": [
+      "vertical_nav",
+      "legend",
+      "compact_label",
+      "table_cell"
+    ],
+    "min_items_for_reflow": 2
+  },
+  "flow_grouping": {
+    "body": {
+      "enabled": true,
+      "min_region_count": 2,
+      "min_region_width_page_ratio": 0.24,
+      "max_x0_delta_pt": 18.0,
+      "max_width_delta_ratio": 1.0,
+      "max_vertical_gap_pt": 40.0,
+      "paragraph_gap_pt": 18.0,
+      "line_joiner_en": " ",
+      "line_joiner_zh": "",
+      "include_line_preserve_body": true,
+      "hard_disable_page_type_guesses": [
+        "matrix_or_table_diagram"
+      ],
+      "disable_page_type_guesses": [
+        "chart_or_dashboard",
+        "matrix_or_table_diagram"
+      ],
+      "paragraph_separator": "\n\n",
+      "target_region_kind": "body_flow",
+      "source": "current_run_width_alignment_and_user_feedback",
+      "candidate_region_kinds": [
+        "body",
+        "short_label",
+        "compact_label"
+      ],
+      "allow_short_continuation_lines": true,
+      "min_continuation_width_page_ratio": 0.02,
+      "allow_dense_page_body_below_y_ratio": 0.55
+    }
+  },
+  "source_separator_policy": {
+    "split_on_untranslated_visible_line_gap": true,
+    "max_line_index_gap_without_split": 1,
+    "reason": "do not reflow translated text across visible source headings, years, bullets, or separators that are not translation units"
+  },
+  "draw_modes": {
+    "vertical_nav": {
+      "mode": "rotated_horizontal_text_image",
+      "render_backend": "PIL_transparent_png",
+      "writing_mode": "horizontal_line_rotated_as_unit",
+      "glyph_orientation": "rotate_glyphs_with_line",
+      "rotation_degrees": 90,
+      "single_line": true,
+      "center_on_source_bbox": true
+    }
+  },
+  "constrained_text_image_fit": {
+    "enabled": true,
+    "region_kinds": [
+      "table_cell",
+      "compact_label",
+      "short_label",
+      "legend"
+    ],
+    "dense_single_line_body_page_types": [
+      "table_or_chart_dense",
+      "chart_or_dashboard",
+      "matrix_or_table_diagram"
+    ],
+    "min_font_pt": 3.2,
+    "max_font_pt": 5.2,
+    "reason": "Use a transparent text image only for constrained label slots after textbox probing fails; preserve full target text and record compression evidence."
+  },
+  "layout_text_variants": {
+    "compact_label": [
+      "compact_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "short_label": [
+      "short_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "table_cell": [
+      "table_cell_zh",
+      "compact_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "legend": [
+      "legend_zh",
+      "compact_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "compact_label_en": [
+      "compact_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "short_label_en": [
+      "short_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "table_cell_en": [
+      "table_cell_en",
+      "compact_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "legend_en": [
+      "legend_en",
+      "compact_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "event_card_en": [
+      "event_card_en",
+      "short_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "event_card_zh": [
+      "event_card_zh",
+      "short_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "heading_en": [
+      "heading_en",
+      "short_label_en",
+      "compact_label_en",
+      "display_en"
+    ],
+    "heading_zh": [
+      "heading_zh",
+      "short_label_zh",
+      "compact_label_zh",
+      "display_zh"
+    ]
+  },
+  "font_profiles": {
+    "footnote": {
+      "source_scale": 0.82,
+      "min_pt": 3.8,
+      "max_pt": 6.2,
+      "shrink_scales": [
+        1.0,
+        0.94,
+        0.88,
+        0.82,
+        0.76,
+        0.7,
+        0.64,
+        0.58
+      ],
+      "min_insert_pt": 3.8
+    },
+    "table_note": {
+      "source_scale": 1.0,
+      "min_pt": 6.2,
+      "max_pt": 8.0,
+      "shrink_scales": [
+        1.0,
+        0.96,
+        0.92,
+        0.88,
+        0.84,
+        0.8,
+        0.76
+      ],
+      "min_insert_pt": 5.8
+    },
+    "compact_label": {
+      "source_scale": 0.74,
+      "min_pt": 3.5,
+      "max_pt": 5.2,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76,
+        0.68,
+        0.6
+      ]
+    },
+    "table_cell": {
+      "source_scale": 0.9,
+      "min_pt": 3.2,
+      "max_pt": 6.2,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76,
+        0.68,
+        0.6,
+        0.52,
+        0.48
+      ],
+      "min_insert_pt": 3.2
+    },
+    "legend": {
+      "source_scale": 0.94,
+      "min_pt": 4.8,
+      "max_pt": 8.0,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76
+      ],
+      "min_insert_pt": 4.2
+    },
+    "heading": {
+      "source_scale": 1.0,
+      "min_pt": 8.0,
+      "min_insert_pt": 7.0,
+      "max_pt": 24.0,
+      "shrink_scales": [
+        1.0,
+        0.94,
+        0.88,
+        0.82,
+        0.74,
+        0.66,
+        0.58,
+        0.5,
+        0.42,
+        0.34,
+        0.3
+      ]
+    },
+    "short_label": {
+      "source_scale": 1.0,
+      "min_pt": 6.0,
+      "max_pt": 12.0,
+      "shrink_scales": [
+        1.0,
+        0.94,
+        0.88,
+        0.82,
+        0.76
+      ],
+      "min_insert_pt": 5.2
+    },
+    "event_card": {
+      "source_scale": 0.86,
+      "min_pt": 4.4,
+      "min_insert_pt": 4.0,
+      "max_pt": 7.4,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76,
+        0.68,
+        0.6
+      ]
+    },
+    "body": {
+      "source_scale": 1.1,
+      "min_pt": 7.4,
+      "max_pt": 10.0,
+      "shrink_scales": [
+        1.0,
+        0.96,
+        0.92,
+        0.88,
+        0.84,
+        0.8
+      ],
+      "min_insert_pt": 7.2
+    },
+    "body_flow": {
+      "source_scale": 1.16,
+      "min_pt": 8.0,
+      "max_pt": 10.2,
+      "shrink_scales": [
+        1.0,
+        0.96,
+        0.92,
+        0.88,
+        0.84,
+        0.8
+      ],
+      "min_insert_pt": 7.8
+    }
+  },
+  "fallback": {
+    "min_insert_pt": 3.2,
+    "point_fit_status_kinds": [
+      "compact_label",
+      "short_label"
+    ],
+    "point_fit_font_pt": 3.4,
+    "point_fit_max_chars": 80,
+    "fallback_insert_font_pt": 3.2,
+    "fallback_max_chars": 120
+  },
+  "anti_overfit": {
+    "no_filename_branch": true,
+    "no_known_text_branch": true,
+    "no_fixed_page_number_branch": true,
+    "parameters_are_current_run_policy": true
+  },
+  "target_composition": {
+    "enabled": true,
+    "region_kinds": [
+      "body_flow",
+      "heading"
+    ],
+    "hard_disable_page_type_guesses": [
+      "matrix_or_table_diagram"
+    ],
+    "disable_page_type_guesses": [
+      "chart_or_dashboard",
+      "matrix_or_table_diagram"
+    ],
+    "allow_dense_page_body_below_y_ratio": 0.55,
+    "left_margin_page_ratio": 0.08,
+    "right_margin_page_ratio": 0.08,
+    "top_margin_page_ratio": 0.04,
+    "bottom_margin_page_ratio": 0.04,
+    "min_width_page_ratio": 0.7,
+    "max_width_page_ratio": 0.82,
+    "height_expand_ratio": 1.25,
+    "min_height_page_ratio": 0.1,
+    "max_bottom_page_ratio": 0.93,
+    "overlap_guard": {
+      "enabled": true,
+      "min_column_overlap_ratio": 0.55,
+      "min_vertical_gap_pt": 5.0,
+      "min_remaining_height_pt": 18.0,
+      "ignore_region_kinds": [
+        "vertical_nav",
+        "legend"
+      ]
+    },
+    "source": "language_pair_profile_open_rule",
+    "reason": "For zh->en body copy, source bboxes are redaction/order anchors. The English paragraph frame must be recomposed from current-page body band, margins, and remaining readable area before font shrink."
+  },
+  "target_language_reflow": {
+    "enabled": true,
+    "region_kinds": [
+      "body_flow",
+      "table_note",
+      "heading"
+    ],
+    "hard_disable_page_type_guesses": [
+      "matrix_or_table_diagram"
+    ],
+    "disable_page_type_guesses": [
+      "chart_or_dashboard",
+      "matrix_or_table_diagram"
+    ],
+    "min_width_page_ratio": 0.68,
+    "right_margin_page_ratio": 0.08,
+    "bottom_margin_page_ratio": 0.06,
+    "height_expand_ratio": 1.35,
+    "min_height_page_ratio": 0.08,
+    "max_bottom_page_ratio": 0.94,
+    "allow_dense_page_body_below_y_ratio": 0.55,
+    "overlap_guard": {
+      "enabled": true,
+      "min_column_overlap_ratio": 0.55,
+      "min_vertical_gap_pt": 5.0,
+      "min_remaining_height_pt": 14.0,
+      "ignore_region_kinds": [
+        "vertical_nav",
+        "legend"
+      ]
+    },
+    "source": "language_pair_profile_open_rule",
+    "reason": "For zh->en, same-source bbox fitting over-shrinks body text. Expand current-page text frames within the same page band before shrink."
+  }
+}

@@ -30,14 +30,52 @@ def rect_values(rect: Any) -> list[float]:
     return [round(float(v), 3) for v in rect]
 
 
-def classify_page(text_lines: list[dict[str, Any]], drawings_count: int, image_count: int) -> str:
+def median(values: list[float]) -> float:
+    ordered = sorted(values)
+    if not ordered:
+        return 0.0
+    mid = len(ordered) // 2
+    if len(ordered) % 2:
+        return float(ordered[mid])
+    return (float(ordered[mid - 1]) + float(ordered[mid])) / 2
+
+
+def column_bucket_count(text_lines: list[dict[str, Any]], page_width: float) -> int:
+    if page_width <= 0:
+        return 0
+    buckets = {
+        int(max(0.0, min(0.99, float(line["bbox"][0]) / page_width)) / 0.08)
+        for line in text_lines
+        if isinstance(line.get("bbox"), list) and len(line["bbox"]) == 4
+    }
+    return len(buckets)
+
+
+def classify_page(text_lines: list[dict[str, Any]], drawings_count: int, image_count: int, page_rect: fitz.Rect) -> str:
     texts = [line["text"] for line in text_lines]
     joined = " ".join(texts)
     percent_count = joined.count("%")
     numeric_count = sum(1 for t in texts if any(ch.isdigit() for ch in t))
     short_line_count = sum(1 for t in texts if len(t.strip()) <= 12)
+    page_width = max(1.0, float(page_rect.width))
+    widths = [
+        max(0.0, float(line["bbox"][2]) - float(line["bbox"][0]))
+        for line in text_lines
+        if isinstance(line.get("bbox"), list) and len(line["bbox"]) == 4
+    ]
+    short_ratio = short_line_count / max(1, len(text_lines))
+    median_width_ratio = median(widths) / page_width
+    column_count = column_bucket_count(text_lines, page_width)
     if drawings_count > 40 and percent_count >= 4:
         return "chart_or_dashboard"
+    if (
+        len(text_lines) >= 45
+        and drawings_count >= 8
+        and short_ratio >= 0.45
+        and median_width_ratio <= 0.22
+        and column_count >= 4
+    ):
+        return "matrix_or_table_diagram"
     if drawings_count > 20 and numeric_count > 20 and short_line_count > 20:
         return "table_or_chart_dense"
     if image_count:
@@ -89,7 +127,7 @@ def extract(pdf_path: Path) -> dict[str, Any]:
                 "text_line_count": len(lines),
                 "image_block_count": image_blocks,
                 "drawing_count": len(drawings),
-                "page_type_guess": classify_page(lines, len(drawings), image_blocks),
+                "page_type_guess": classify_page(lines, len(drawings), image_blocks, page.rect),
                 "text_lines": lines,
             }
         )

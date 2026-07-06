@@ -14,6 +14,7 @@ Page type and region type must drive quality gates and repair atoms.
 | `bar_chart_dashboard` | chart title, axis labels, bars, value labels, growth tiles | chart geometry preservation, label readability |
 | `pie_chart_legend_footnote` | pie labels, legend, notes, side navigation | legend mapping, footnote density, side nav |
 | `table_body` | table header, rows, footnotes, body paragraphs | grid preservation, cell fit, numeric alignment |
+| `matrix_or_table_diagram` | many short labels in rows/columns, light rules, sparse diagram lines | two-dimensional structure preservation, no body-flow merge, no fallback body insertion |
 | `body_nav` | paragraphs, side navigation, footer | paragraph rhythm, nav preservation, body text area |
 
 ## Repair Atoms
@@ -48,9 +49,11 @@ Page type and region type must drive quality gates and repair atoms.
 | `event_card_readability_fail` | timeline/event cards | `event_card_local_fit_repair` | `S6_LayoutPlan` | event text remains local to its year/image anchor |
 | `image_color_integrity_fail` | image/chart/photo regions | `image_redaction_exclusion_repair` | `S7_GenerateCandidate` | source images are not removed, recolored, or covered by redaction fill |
 | `background_delta_fail` | colored/table/chart backgrounds | `background_fill_resample` | `S7_GenerateCandidate` | redaction fill samples local background, not glyph color or fixed color |
+| `background_residue_artifact` | colored/table/chart backgrounds | `background_residue_fill_resample` | `S7_GenerateCandidate` | source-vs-output inner-bbox background remains consistent, constrained text images use local fill-color backgrounds, wide colored source-line redactions are covered by `region_background_cover` or `residual_wide_line_background_cover`, large saturated/color covers use `row_sampled_image_patch` instead of `solid_vector_fill`, and no visible rectangular wipe/fill artifacts remain around translated text or empty redacted areas |
 | `text_image_collision_fail` | image-adjacent text | `avoid_region_reflow` or `image_redaction_exclusion_repair` | `S6_LayoutPlan` or `S7_GenerateCandidate` | no translated text overlaps image/color regions |
 | `visual_similarity_fail` | full page or crop | `visual_similarity_targeted_repair` | `S6_LayoutPlan` or `S7_GenerateCandidate` | D7 decomposes similarity failure into concrete gate evidence |
 | `table_integrity_fail` | tables | `table_cell_variant_or_grid_preserve_repair` | `S5_TranslationPlan`, `S6_LayoutPlan`, or `S7_GenerateCandidate` | table grid, cells, labels, and numeric alignment remain intact |
+| `matrix_diagram_integrity_fail` | matrix/table-diagram pages | `matrix_diagram_table_cell_preserve_repair` | `S6_LayoutPlan` | diagram labels stay in current-run row/column structure; no body_flow or fallback body text inside the matrix |
 | `chart_integrity_fail` | charts | `chart_region_preserve_or_label_reflow` | `S6_LayoutPlan` or `S7_GenerateCandidate` | chart geometry is preserved and labels remain readable |
 
 ## Generic Repair Loop

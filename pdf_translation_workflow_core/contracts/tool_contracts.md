@@ -220,6 +220,17 @@ Required generation evidence:
 
 `source_line_indexes` must be contiguous inside one source block unless the skipped line has been explicitly classified as ignorable. If one insertion jumps from line index `1` to `3` in the same block, the generator has crossed a visible source separator and product quality must fail through `source_anchor_order`.
 
+Each generated insertion must retain `redaction_fill_provenance`: the source unit id, chosen fill color, and sampling metadata used before redaction. A multi-unit region keeps one provenance record per source unit. This lets S8 explain whether a visible wipe artifact came from the generator's fill sampling or from later text drawing.
+
+`generate_semantic_backfill.py` must also materialize `background_covers` when colored-background source redactions would otherwise render as repeated horizontal bands. Two generic cover-scope methods are allowed:
+
+- `region_background_cover`: one continuous local-background rectangle over a semantic region's source-union bbox before inserting target text;
+- `residual_wide_line_background_cover`: one continuous local-background rectangle over remaining wide colored line groups that are not part of a reflow region.
+
+Each cover must also record the drawing mode. `solid_vector_fill` is allowed only for neutral backgrounds or small covers. Large covers on saturated/color backgrounds must use `row_sampled_image_patch`: render the source page before redaction, sample background pixels from the cover's same-row left/right neighborhood and fall back to top/bottom neighborhoods, then insert an opaque PNG patch. These covers must be recorded with `region_id`, `unit_ids`, `page_index`, `bbox`, `fill_color`, `method`, `draw_mode`, `sample_zoom`, `patch_size_px`, `fallback_rgb`, `region_kind`, `layout_mode`, `page_type_guess`, and `reason`. They must be selected from current-run geometry and local fill evidence only, never from sample names, fixed page numbers, exact text, or fixed colors.
+
+For `constrained_text_image_fit` and `rotated_horizontal_image_fit`, the insertion must also retain `image_background_color`. The value must come from the region's current redaction fill color. Missing evidence or a source-inner-background mismatch is routed by S8 to `background_residue_fill_resample`.
+
 ## Visual Adjudication Tool Contract
 
 `evaluate_pdf_quality.py` may consume a separate D7 visual adjudication artifact:
@@ -230,12 +241,22 @@ python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
   --output <candidate.pdf> `
   --generation-evidence <candidate_generation_evidence.json> `
   --visual-adjudication <visual_adjudication.json> `
+  --visual-region-metrics <visual_region_metrics.json> `
   --out <product_quality_gates.json>
 ```
 
-This file is not produced by `generate_semantic_backfill.py`. It must be produced by a recorded visual review step that names input render/crop artifacts and returns dimensions such as `line_fragmentation`, `paragraph_density`, `internal_paragraph_gap`, `end_blank_allowed`, `source_anchor_order`, `region_crosses_untranslated_separator`, `font_hierarchy_ratio`, `sidebar_orientation`, `sidebar_orientation_group_consistency`, `sidebar_glyph_orientation`, `footnote_readability`, and `visual_similarity`.
+This file is not produced by `generate_semantic_backfill.py`. It must be produced by a recorded visual review step that names input render/crop artifacts and returns dimensions such as `line_fragmentation`, `paragraph_density`, `internal_paragraph_gap`, `end_blank_allowed`, `source_anchor_order`, `region_crosses_untranslated_separator`, `font_hierarchy_ratio`, `sidebar_orientation`, `sidebar_orientation_group_consistency`, `sidebar_glyph_orientation`, `footnote_readability`, and `visual_similarity`. When deterministic region gates are sufficient and no backend model/human call is made, materialize the artifact with:
 
-If the visual adjudication verdict is missing or not `PASS`, `visual_similarity` remains a blocking failure in product-quality mode.
+```powershell
+python pdf_translation_workflow_core\tools\validators\write_visual_adjudication.py `
+  --visual-region-metrics docs\reports\<run_id>\visual_region_metrics.json `
+  --render-manifest docs\reports\<run_id>\candidate_render_manifest.json `
+  --repair-plan docs\reports\<run_id>\visual_repair_plan.json `
+  --case-id <run_id> `
+  --out docs\reports\<run_id>\visual_adjudication.json
+```
+
+If the visual adjudication verdict is missing, not `PASS`, and not `PASS_WITH_WARN`, `visual_similarity` remains a blocking failure in product-quality mode. `PASS_WITH_WARN` is acceptable only when `blocking_failure_count=0` and all warning dimensions are explicitly non-blocking.
 
 ## Region-Level Visual Metrics Contract
 
@@ -254,8 +275,10 @@ python pdf_translation_workflow_core\tools\validators\collect_visual_region_metr
 The output must contain:
 
 - `page_metrics`: image count and page-level color/dominant-color deltas;
-- `region_metrics`: one record per generated insertion with `quality_role`, `gate_id`, `font_size`, `source_median_font_size`, `output_to_source_font_ratio`, `generation_status`, `background_delta`, `crop_evidence`, reasons, and repair atoms;
-- `role_gates`: aggregated gates such as `source_relative_visual_baseline`, `hero_banner_text_readability`, `title_readability`, `body_paragraph_readability`, `table_text_legibility`, `footnote_readability`, `legend_label_alignment`, `sidebar_navigation_legibility`, `event_card_readability`, and `image_color_integrity`.
+- `region_metrics`: one record per generated insertion with `quality_role`, `gate_id`, `font_size`, `source_median_font_size`, `output_to_source_font_ratio`, `generation_status`, `source_background_rgb`, `source_inner_background_rgb`, `output_background_rgb`, `output_inner_background_rgb`, `text_image_background_rgb`, `background_delta`, `inner_background_delta`, `background_residue_delta`, `text_image_background_delta`, `crop_evidence`, reasons, and repair atoms;
+- `redaction_metrics`: one record per redacted source unit with `fill_color_rgb`, `source_ring_background_rgb`, `output_ring_background_rgb`, `redaction_fill_delta`, `patch_score`, `covered_by_background_cover`, `wide_line_patch_risk`, reasons, and repair atoms;
+- `background_cover_metrics`: one record per background cover with `method`, `draw_mode`, `fill_color_rgb`, `fill_saturation`, `area_pt2`, `patch_size_px`, `sample_zoom`, status, reasons, and repair atoms. Large saturated-background covers drawn as `solid_vector_fill` must fail `background_residue_artifact` because they can create new visible rectangular blocks even when average color deltas are small;
+- `role_gates`: aggregated gates such as `source_relative_visual_baseline`, `hero_banner_text_readability`, `title_readability`, `body_paragraph_readability`, `table_text_legibility`, `footnote_readability`, `legend_label_alignment`, `sidebar_navigation_legibility`, `event_card_readability`, `background_residue_artifact`, and `image_color_integrity`.
 
 `source_relative_visual_baseline` is mandatory in product-quality mode. It fails when `source_extraction.json` is missing or when too few generated regions can be tied back to source extraction font/line evidence. `evaluate_pdf_quality.py` must consume this file through `--visual-region-metrics`. A critical role gate with status `fail` is blocking even if `visual_similarity` is `PASS_WITH_WARN` or a full-page thumbnail looks acceptable.
 
@@ -267,7 +290,7 @@ python pdf_translation_workflow_core\tools\repairs\plan_visual_region_repairs.py
   --out docs\reports\<run_id>\visual_repair_plan.json
 ```
 
-This repair planner may select repair atoms such as `heading_frame_fit_or_short_title_variant`, `D2_constrained_slot_layout_variants`, `target_composition_body_reflow_repair`, `background_fill_resample`, or `image_redaction_exclusion_repair`. It must not rewrite candidate PDFs by itself.
+This repair planner may select repair atoms such as `heading_frame_fit_or_short_title_variant`, `D2_constrained_slot_layout_variants`, `target_composition_body_reflow_repair`, `background_fill_resample`, `background_residue_fill_resample`, or `image_redaction_exclusion_repair`. It must not rewrite candidate PDFs by itself.
 
 `evaluate_pdf_quality.py` also records per-page `source_font_hierarchy`, `output_font_hierarchy`, and `small_to_body_ratio_delta` metrics. These metrics do not replace visual judgement, but D7 must use them when deciding whether table notes, body copy, and headings still have source-like relative size.
 

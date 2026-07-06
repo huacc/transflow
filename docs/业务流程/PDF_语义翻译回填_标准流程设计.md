@@ -121,7 +121,7 @@ region_kind
 当 `target_composition.enabled=true` 且区域是 `fluid_body/body_flow` 时，`S7_GenerateCandidate` 的顺序是：
 
 ```text
-1. 按源 bbox 周边像素做背景聚类采样，记录 fill_color provenance。
+1. 按源 bbox 内侧像素和周边像素做背景聚类采样，记录 fill_color provenance。
 2. 按源 bbox 擦除可替换源文本；填充色必须来自局部背景，不得来自源字形颜色。
 3. 合并同栏正文为 body_flow。
 4. 用 target_composition 根据当前页正文带重算目标文本框。
@@ -155,14 +155,17 @@ translation_mode = preserve_already_target_language_span
 
 ### 2.4 擦除填充色与背景差异
 
-擦除填充色是视觉质量的一等约束。生成器必须以当前页、当前 bbox 的周边像素为输入做开放式背景采样：
+擦除填充色是视觉质量的一等约束。生成器必须以当前页、当前 bbox 的内侧像素和周边像素为输入做开放式背景采样：
 
 ```text
 input = page pixels + source bbox
-sample = bbox outside ring points, multi-distance
-selection = quantized majority color cluster
+sample = bbox inner grid points + bbox outside ring points, multi-distance
+selection = quantized majority color cluster, with inner samples weighted above outside-ring samples
 forbidden = filename/page/text/fixed color/known brand coordinate
-output = fill_color + provenance in candidate_generation_evidence.json
+output = fill_color + provenance in candidate_generation_evidence.json redactions and insertions.redaction_fill_provenance
+output += background_covers[] when current-run geometry needs region_background_cover or residual_wide_line_background_cover
+background_covers[].method = cover scope policy
+background_covers[].draw_mode = solid_vector_fill for neutral/small covers, row_sampled_image_patch for large saturated/color covers
 ```
 
 判断逻辑：
@@ -170,8 +173,16 @@ output = fill_color + provenance in candidate_generation_evidence.json
 ```text
 如果源字形为红色/蓝色/灰色，但周边背景为白色或米色，则 fill_color 必须接近周边背景。
 如果源文字位于红色/灰色底栏中，且周边背景也是该颜色，则 fill_color 可为该栏底色。
+如果源文字位于彩色条、表头、蓝底页或图片附近，且 bbox 内侧主背景与外环主背景不同，fill_color 必须优先保护 bbox 内侧主背景，避免用页面底色擦掉彩色条。
 如果候选页出现可见色块、遮罩块或与周边背景不一致的擦除痕迹，S8 归因为 background_delta。
-background_delta 的修复原子是 background_fill_resample，回到 S7 重新生成，不归因为翻译语义或字体缩放。
+如果候选页 bbox 内侧主背景偏离源页 bbox 内侧主背景，S8 归因为 inner_background_delta 或 background_residue_artifact。
+如果 S7 为了适配约束槽位而使用文字图像绘制，文字图像不得使用白色透明底；必须使用当前 region 的 redaction fill_color 作为不透明底，并在 insertion 中记录 image_background_color。
+如果文字图像底色与源 bbox 内侧背景存在可见偏差，S8 归因为 text_image_background_delta，并聚合到 background_residue_artifact。
+如果彩色背景上的宽源行 redaction 没有被 `background_covers` 覆盖，即使该区域没有译文插入，S8 也必须归因为 redaction-only band / `wide_line_patch_risk`，并聚合到 background_residue_artifact。
+S7 必须记录 `background_covers`：`region_background_cover` 用于语义区域 source-union bbox，`residual_wide_line_background_cover` 用于未进入重排区域但仍可能产生横向擦除带的宽源行组。该判断只能来自当前运行的 bbox、背景色饱和度、行宽和区域角色，不能来自页码、样本文字、固定颜色或文件名。
+S7 对每个 `background_covers` 必须记录 `draw_mode`。中性/小面积覆盖可用 `solid_vector_fill`；彩色或高饱和背景上的大面积覆盖必须使用 `row_sampled_image_patch`：在页面修改前渲染当前源页，按 cover rect 同一高度从左右邻域采样，必要时从上下邻域补样，生成逐行背景 PNG 再覆盖。这样修横向擦除带时不能生成新的发白/发灰矩形块。
+如果 `background_covers[*].draw_mode=solid_vector_fill` 且背景高饱和、面积较大，S8 必须归因为 background_residue_artifact；这类问题不能因平均色差小或整页相似而通过。
+background_delta 的修复原子是 background_fill_resample；inner_background_delta/background_residue_artifact 的修复原子是 background_residue_fill_resample；二者都回到 S7 重新生成，不归因为翻译语义或字体缩放。
 ```
 
 该规则只依赖当前渲染像素，不得写入任何样本专属颜色、页码、坐标或文本。
@@ -289,7 +300,7 @@ python pdf_translation_workflow_core\tools\validators\validate_workspace_boundar
 | `S5_TranslationPlan` | 生成翻译批次、逐批执行 D2、校验批次、汇总目标语语义译文并做全量校验 | `translation_batch_manifest.json`、`translation_batches/<batch_id>.workspace_boundary.json`、`translation_batches/<batch_id>.*.json`、`*.translations.json`、`semantic_translation_validation.json` | `S_FAIL_CAPABILITY`；路径越界则 `S_FAIL_PROCESS_CONTRACT` |
 | `S6_LayoutPlan` | 生成或修订布局策略；必须区分 `constrained_slot` 与 `fluid_body`，并声明 `target_composition` 是否适用 | `layout_policy.json`、`layout_plan.json` | `S_FAIL_PROCESS_CONTRACT` |
 | `S7_GenerateCandidate` | 擦除源语文本并回填目标语候选 PDF；流式正文可按目标语构图，受限槽位必须原位约束 | 候选 PDF、`candidate_generation_evidence.json` | `S_FAIL_TOOLING` 或 `S_FAIL_CAPABILITY` |
-| `S8_VerifyProductQuality` | 执行机器质量门禁和视觉裁决；必须检查正文构图、字体层级、重叠残留、侧边栏方向和表格/图表完整性 | `product_quality_gates.json`、`visual_adjudication.json` | `S_FAIL_QUALITY` |
+| `S8_VerifyProductQuality` | 执行候选渲染、块级视觉指标、视觉修复计划、视觉裁决和机器质量门禁；必须检查正文构图、字体层级、重叠残留、侧边栏方向和表格/图表完整性 | `candidate_render_manifest.json`、候选 PNG、`visual_region_metrics.json`、`visual_repair_plan.json`、`visual_adjudication.json`、`product_quality_gates.json` | 缺视觉闭环证据则 `S_FAIL_PROCESS_CONTRACT`；质量不可修则 `S_FAIL_QUALITY` |
 | `Lx_RepairLoop` | 对一个阻塞失败执行一次修复循环 | `repair_loop_<n>.json` | `S_FAIL_QUALITY` |
 | `Ax_AdaptiveChange` | 当工具/契约/提示词不足时做小幅方法论修补 | `adaptive_change_record.json`、前后 manifest | `S_FAIL_CAPABILITY` |
 | `S9_VerifyProcessContract` | 验证状态 trace、操作日志、写入边界、反过拟合和最终审计 | `process_validation.json`、`anti_overfit_scan.json`、`final_acceptance.json` | `S_FAIL_PROCESS_CONTRACT` |
@@ -339,9 +350,10 @@ stateDiagram-v2
   S7_GenerateCandidate --> S_FAIL_TOOLING: 生成工具失败
   S7_GenerateCandidate --> S_FAIL_CAPABILITY: 生成能力不足
 
-  S8_VerifyProductQuality --> S9_VerifyProcessContract: 机器 gate、块级视觉 gate、D7 视觉裁决阻塞项全通过
+  S8_VerifyProductQuality --> S9_VerifyProcessContract: 候选渲染、块级视觉 gate、D7 视觉裁决和机器 gate 全通过
   S8_VerifyProductQuality --> Lx_RepairLoop: 发现可修复质量失败
   S8_VerifyProductQuality --> S_FAIL_QUALITY: 不可修或 loop 耗尽
+  S8_VerifyProductQuality --> S_FAIL_PROCESS_CONTRACT: 缺 candidate render、visual_region_metrics、visual_repair_plan 或 visual_adjudication
 
   Lx_RepairLoop --> S3_SourceExtract: 需要重建源证据或修复 evidence linkage
   Lx_RepairLoop --> S5_TranslationPlan: 需要补译文或 compact variant
@@ -477,7 +489,7 @@ stateDiagram-v2
 | `S5_TranslationPlan` | `build_translation_batch_manifest.py`、逐批 `validate_workspace_boundary.py`、逐批 `validate_translation_batch.py`、`assemble_semantic_translations.py`、`validate_semantic_translations.py` | 逐批 `D2_translation.prompt.json` | 全量语义译文有效 -> `S6`；无法物化 -> `S_FAIL_CAPABILITY`；写入边界失败 -> `S_FAIL_PROCESS_CONTRACT` |
 | `S6_LayoutPlan` | `build_layout_policy.py` | `D4_layout_plan.prompt.json` | 布局策略可追溯 -> `S7` |
 | `S7_GenerateCandidate` | `generate_semantic_backfill.py` | 否 | 候选生成 -> `S8` |
-| `S8_VerifyProductQuality` | `render_pdf.py`、`collect_visual_region_metrics.py`、`render_source_output_crop.py`、`evaluate_pdf_quality.py`、`plan_visual_region_repairs.py` | `D5_D7_quality_gate.prompt.json` | 全 pass -> `S9`；可修 -> `Lx`；不可修 -> fail |
+| `S8_VerifyProductQuality` | `render_pdf.py`、`collect_visual_region_metrics.py`、`plan_visual_region_repairs.py`、`render_source_output_crop.py`、`write_visual_adjudication.py`、`evaluate_pdf_quality.py` | `D5_D7_quality_gate.prompt.json` | 全 pass 或无阻断 `PASS_WITH_WARN` -> `S9`；可修阻断 -> `Lx`；不可修 -> fail；缺视觉闭环证据 -> `S_FAIL_PROCESS_CONTRACT` |
 | `Lx_RepairLoop` | 按 failure_class 选择工具；读取 `visual_region_metrics.json`、`visual_repair_plan.json`、`product_quality_gates.json`、`visual_adjudication.json` | `D8_repair_selection.prompt.json` | 按 repair_atom 回到 `S3`、`S5`、`S6` 或 `S7` |
 | `S9_VerifyProcessContract` | `validate_process_artifacts.py`、`scan_core_overfit.py`；必要时用 `validate_workspace_boundary.py --operation-log` 复核日志路径 | `D9_final_acceptance.prompt.json` | 输出最终终态 |
 
@@ -705,7 +717,13 @@ preserved_target_language_unit_count
 
 ### 7.7 质量门禁
 
-先采集块级视觉指标：
+候选 PDF 生成后，必须先渲染候选页：
+
+```powershell
+python pdf_translation_workflow_core\tools\renderers\render_pdf.py --input docs\output\<run_id>_semantic_backfill_candidate.pdf --out-dir docs\reports\<run_id>\candidate_previews --prefix candidate --manifest docs\reports\<run_id>\candidate_render_manifest.json
+```
+
+再采集块级视觉指标：
 
 ```powershell
 python pdf_translation_workflow_core\tools\validators\collect_visual_region_metrics.py --source <source_pdf> --output docs\output\<run_id>_semantic_backfill_candidate.pdf --generation-evidence docs\reports\<run_id>\candidate_generation_evidence.json --source-extraction docs\reports\<run_id>\source_extraction.json --out docs\reports\<run_id>\visual_region_metrics.json --crop-dir docs\reports\<run_id>\visual_region_crops
@@ -717,11 +735,32 @@ python pdf_translation_workflow_core\tools\validators\collect_visual_region_metr
 python pdf_translation_workflow_core\tools\repairs\plan_visual_region_repairs.py --visual-region-metrics docs\reports\<run_id>\visual_region_metrics.json --out docs\reports\<run_id>\visual_repair_plan.json
 ```
 
+然后执行 D7 视觉裁决，输出 `visual_adjudication.json`。该裁决必须读取：
+
+```text
+candidate_render_manifest.json
+visual_region_metrics.json
+visual_repair_plan.json
+必要的 source-vs-output crop evidence
+```
+
+当 deterministic 块级视觉 gate 已足够形成裁决，且本轮没有调用后端视觉大模型或人工视觉复核时，必须用工具把当前 gate 物化为 D7 artifact，不能复用旧裁决：
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\write_visual_adjudication.py --visual-region-metrics docs\reports\<run_id>\visual_region_metrics.json --render-manifest docs\reports\<run_id>\candidate_render_manifest.json --repair-plan docs\reports\<run_id>\visual_repair_plan.json --case-id <run_id> --out docs\reports\<run_id>\visual_adjudication.json
+```
+
+`visual_adjudication.verdict=PASS_WITH_WARN` 表示没有阻断失败但存在非阻断 warning，可以进入 `S9_VerifyProcessContract`；`FAIL` 必须进入 `Lx_RepairLoop` 或 `S_FAIL_QUALITY`。
+
 最后合并机器 gate、视觉裁决和块级门禁：
 
 ```powershell
 python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py --source <source_pdf> --output docs\output\<run_id>_semantic_backfill_candidate.pdf --out docs\reports\<run_id>\product_quality_gates.json --generation-evidence docs\reports\<run_id>\candidate_generation_evidence.json --visual-adjudication docs\reports\<run_id>\visual_adjudication.json --visual-region-metrics docs\reports\<run_id>\visual_region_metrics.json
 ```
+
+缺少 `candidate_render_manifest.json`、`visual_region_metrics.json`、`visual_repair_plan.json`、`visual_adjudication.json` 或 `product_quality_gates.json` 时，`product_quality` 不能进入 `S9`，也不能把问题降级为普通质量失败；必须进入 `S_FAIL_PROCESS_CONTRACT`。
+
+如果 D7 发现阻塞失败，必须进入 D8。D8 不能 `skipped`：要么选择 repair atom 并进入 `Lx_RepairLoop`，要么记录明确 `unrepairable_reason` 后进入 `S_FAIL_QUALITY`。
 
 ### 7.8 局部裁剪对比
 
@@ -764,12 +803,21 @@ semantic_coverage pass
 text_fit pass
 source_relative_visual_baseline pass
 source_anchor_order pass
-visual_similarity pass
+visual_similarity pass 或无阻断 PASS_WITH_WARN
 hero_banner_text_readability pass when hero/banner title exists
 title_readability pass when title/heading exists
 body_paragraph_readability pass when body/body_flow exists
 table_text_legibility pass when table cells or table headers exist
+matrix_diagram_integrity pass 或无阻断 warn when matrix/table-diagram pages exist
+background_residue_artifact pass 或无阻断 warn
 image_color_integrity pass
+```
+
+`text_residue` 的目标语言规则：
+
+```text
+target_language=en: 候选中出现 CJK 字符就是 source residue fail。
+target_language=zh: 候选中的 ASCII/Latin token 只有在 candidate_generation_evidence 的 validated target_text / translation_zh 中出现时才允许；否则是 source residue fail。
 ```
 
 存在侧栏时还必须判断：
@@ -791,8 +839,10 @@ python pdf_translation_workflow_core\tools\validators\collect_visual_region_metr
 
 ```text
 page_metrics: 图片数量、页面平均颜色、主色差异
-region_metrics: 每个插入区的 quality_role、font_size、source_median_font_size、output_to_source_font_ratio、generation_status、background_delta、crop_evidence、reasons、repair_atoms
-role_gates: source_relative_visual_baseline、hero_banner_text_readability、title_readability、body_paragraph_readability、table_text_legibility、footnote_readability、legend_label_alignment、sidebar_navigation_legibility、event_card_readability、image_color_integrity
+region_metrics: 每个插入区的 quality_role、font_size、source_median_font_size、output_to_source_font_ratio、generation_status、source_background_rgb、source_inner_background_rgb、output_background_rgb、output_inner_background_rgb、text_image_background_rgb、background_delta、inner_background_delta、background_residue_delta、text_image_background_delta、crop_evidence、reasons、repair_atoms
+redaction_metrics: 每个 redaction 的 fill_color_rgb、source_ring_background_rgb、output_ring_background_rgb、redaction_fill_delta、patch_score、covered_by_background_cover、wide_line_patch_risk、reasons、repair_atoms
+background_cover_metrics: 每个 background_cover 的 method、draw_mode、fill_color_rgb、fill_saturation、area_pt2、patch_size_px、sample_zoom、status、reasons、repair_atoms
+role_gates: source_relative_visual_baseline、hero_banner_text_readability、title_readability、body_paragraph_readability、table_text_legibility、footnote_readability、legend_label_alignment、sidebar_navigation_legibility、event_card_readability、background_residue_artifact、matrix_diagram_integrity、image_color_integrity
 ```
 
 阻塞规则：
@@ -846,7 +896,7 @@ region_gates:
   visual_region_metrics.json 中的 source_relative_visual_baseline、role_gates、region_metrics、page_metrics、crop_evidence
 
 visual_adjudication:
-  D7/human/model 基于 source/candidate 渲染图和 crop 的视觉裁决，包括 visual_similarity、font_hierarchy_ratio、paragraph_density、table_integrity、chart_integrity、sidebar_glyph_orientation 等
+  D7/human/model 或 write_visual_adjudication.py 基于 source/candidate 渲染图、crop、visual_region_metrics 的视觉裁决，包括 visual_similarity、font_hierarchy_ratio、paragraph_density、matrix_diagram_integrity、table_integrity、chart_integrity、sidebar_glyph_orientation 等
 
 repair_plans:
   visual_repair_plan.json 中的 gate_id、repair_atom、target_state、sample_regions
@@ -857,7 +907,7 @@ repair_plans:
 | 原始状态 | 归一化状态 | 说明 |
 |---|---|---|
 | `PASS` / `pass` | `pass` | 可作为通过证据 |
-| `PASS_WITH_WARN` / `warn` | `warn` | 不自动阻断，但必须进入报告；critical role 可由 D7 升级为 fail |
+| `PASS_WITH_WARN` / `warn` | `warn` | 不自动阻断，可进入 `S9`，但必须进入报告；critical role 可由 D7 升级为 fail |
 | `FAIL` / `fail` | `fail` | 若 gate 是 blocking，则产品质量失败 |
 | `NEEDS_EVIDENCE` / 缺必需文件 | `fail` | product_quality 模式下，缺证据不能视为通过 |
 | `not_applicable` | `pass` | 只有在报告中说明页面无对应区域时才可使用 |
@@ -867,10 +917,11 @@ repair_plans:
 ```text
 1. 先检查 source_relative_visual_baseline。该 gate 失败时，不得继续用固定阈值或截图印象替代源文-译文对比证据。
 2. 所有 blocking gate 采用并集规则：任一 blocking gate = fail，则 product_quality_verdict = FAIL。
-3. visual_similarity 不能覆盖块级 critical role 失败；整页看起来相似但 table_text_legibility fail，仍然 fail。
+3. visual_similarity 不能覆盖块级 critical role 失败；整页看起来相似但 table_text_legibility fail 或 matrix_diagram_integrity fail，仍然 fail。
 4. 块级 gate 不能覆盖 D7 视觉裁决失败；局部指标 pass 但 D7 发现明显遮挡、破坏层级或表格断裂，仍然 fail。
 5. 同一区域出现多个失败时，不做平均分、投票或抵消；每个失败都保留在 findings/deferred_failures 中。
 6. 每次 Lx_RepairLoop 只选择一个主 failure_class。若一个 repair_atom 可顺带修复多个失败，可以执行，但必须记录哪些失败被顺带处理，哪些仍需回归。
+7. `matrix_or_table_diagram` 页是硬约束页型：候选 evidence 中若出现 `region_kind=body_flow`，或 `target_composition_applied=true` / `target_language_reflow_applied=true` 侵入矩阵区域，必须 fail `matrix_diagram_integrity` 并回到 `S6_LayoutPlan`。
 ```
 
 复合失败优先级：
@@ -881,8 +932,8 @@ repair_plans:
 | 1 | `source_relative_visual_baseline_fail` | 没有源文相对基线，后续视觉门禁不可信 | 重跑 `S3` / `S7` 证据链；不能调低阈值 |
 | 2 | `text_residue`、`backfill_generation`、`failed_probe_residue` | 候选生成物本身不可信 | `S7` |
 | 3 | `source_anchor_order_mismatch`、`text_fit_overflow`、`collision`、`text_image_collision` | 结构性错误会污染后续美观判断 | `S6` 或 `S7` |
-| 4 | `image_color_integrity_fail`、`background_delta_fail` | 图片/底色保护错误会造成明显视觉破坏 | `S7` |
-| 5 | `hero_banner_text_readability_fail`、`title_readability_fail`、`body_paragraph_readability_fail`、`table_text_legibility_fail`、`footnote_readability_fail`、`legend_label_alignment_fail`、`sidebar_navigation_legibility_fail`、`event_card_readability_fail`、`short_label_legibility_fail` | 角色可读性与局部布局失败 | `S5` / `S6` |
+| 4 | `image_color_integrity_fail`、`background_delta_fail`、`background_residue_artifact` | 图片/底色保护错误会造成明显视觉破坏 | `S7` |
+| 5 | `matrix_diagram_integrity_fail`、`hero_banner_text_readability_fail`、`title_readability_fail`、`body_paragraph_readability_fail`、`table_text_legibility_fail`、`footnote_readability_fail`、`legend_label_alignment_fail`、`sidebar_navigation_legibility_fail`、`event_card_readability_fail`、`short_label_legibility_fail` | 二维结构、角色可读性与局部布局失败 | `S5` / `S6` |
 | 6 | `line_fragmentation`、`paragraph_density_mismatch`、`font_hierarchy_ratio_mismatch`、`visual_similarity_fail`、`table_integrity_fail`、`chart_integrity_fail` | 审美和整体结构偏差 | `S6` / `S7` / `S_FAIL_QUALITY` |
 
 文字过小且挤占图片的处理：
@@ -923,8 +974,14 @@ product_quality_gates / visual_adjudication dimensions -> D8_repair_selection.pr
 | `short_label_legibility` | `short_label_legibility_fail` | `D2_constrained_slot_layout_variants`；若已有语义译文但 textbox 无法 fit，使用 `constrained_slot_text_image_fit` | `S5` 或 `S7` | `visual_region_metrics.role_gates`、`candidate_generation_evidence.insertions` |
 | `image_color_integrity` | `image_color_integrity_fail` | `image_redaction_exclusion_repair` | `S7` | `visual_region_metrics.page_metrics` |
 | `background_delta` / `background_color_delta` | `background_delta_fail` | `background_fill_resample` | `S7` | `region_metrics.reasons`、`repair_atoms`、crop |
+| `background_residue_artifact` | `background_residue_artifact` | `background_residue_fill_resample` | `S7` | `region_metrics.inner_background_delta`、`region_metrics.background_residue_delta`、`region_metrics.text_image_background_delta`、`redaction_metrics.wide_line_patch_risk`、`background_cover_metrics.draw_mode/area/saturation`、`background_covers`、`repair_atoms`、crop |
+| `matrix_diagram_integrity` | `matrix_diagram_integrity_fail` | `matrix_diagram_table_cell_preserve_repair` | `S6` | `candidate_generation_evidence.insertions`、`visual_region_metrics.role_gates` |
 
 如果某个 `region_metrics[*].repair_atoms` 包含 `background_fill_resample`，但没有聚合成 `background_color_delta` gate，D7 必须根据 sample region 将其提升为 `background_delta_fail` 或明确写为 `warn`。
+如果某个 `region_metrics[*].repair_atoms` 包含 `background_residue_fill_resample`，但没有聚合成 `background_residue_artifact` gate，D7 必须根据 inner/background residue 证据将其提升为 `background_residue_artifact` fail/warn，不能只看整页主色相似度。
+如果某个 `generation_status` 是 `constrained_text_image_fit` 或 `rotated_horizontal_image_fit`，但 `image_background_color` 缺失或 `text_image_background_delta` 超阈值，D7 必须把它归入 `background_residue_artifact`，不能用 `visual_similarity` 整页通过掩盖该问题。
+如果 `redaction_metrics[*].wide_line_patch_risk=true` 且 `covered_by_background_cover=false`，D7 必须把它归入 `background_residue_artifact`，不能因为插入区指标通过而忽略空白 redaction 区域的横向擦除带。
+如果 `background_cover_metrics[*].status=fail`，D7 必须把它归入 `background_residue_artifact`；典型原因是彩色背景上的大面积 `solid_vector_fill` 覆盖块。D8 修复只能回到 S7 重新生成，并要求该 cover 改为 `row_sampled_image_patch` 或更小的当前几何 cover，不得写固定颜色、页码、坐标或文本。
 
 #### 8.3.2 产品 gate 与视觉裁决分发
 
@@ -1356,9 +1413,10 @@ stateDiagram-v2
   S7_GenerateCandidate --> S_FAIL_TOOLING: generator failed
   S7_GenerateCandidate --> S_FAIL_CAPABILITY: required generation capability missing
 
-  S8_VerifyProductQuality --> S9_VerifyProcessContract: all blocking machine+region+visual gates pass
+  S8_VerifyProductQuality --> S9_VerifyProcessContract: candidate render, region metrics, visual adjudication and machine gates pass
   S8_VerifyProductQuality --> Lx_RepairLoop: repairable blocking quality failure
   S8_VerifyProductQuality --> S_FAIL_QUALITY: no valid repair
+  S8_VerifyProductQuality --> S_FAIL_PROCESS_CONTRACT: mandatory visual closure artifact missing
 
   Lx_RepairLoop --> S3_SourceExtract: repair requires source evidence or baseline rebuild
   Lx_RepairLoop --> S5_TranslationPlan: repair requires translation or compact variant change
@@ -1501,6 +1559,7 @@ flowchart LR
   S8 --> T10[render_source_output_crop.py]
   S8 --> T11[evaluate_pdf_quality.py]
   S8 --> D7[D5_D7_quality_gate.prompt.json]
+  S8 --> VADJ[visual_adjudication.json]
   LX[Lx_RepairLoop] --> D8[D8_repair_selection.prompt.json]
   LX --> M1[page_type_repair_matrix.md]
   AX[Ax_AdaptiveChange] --> M2[change manifests]
@@ -1524,7 +1583,7 @@ flowchart LR
 | `S5_TranslationPlan` | product_quality 必须有 batch manifest、逐批 workspace boundary、逐批 D2 输出、batch validation、assembly evidence 和全量 semantic validation；禁止 placeholder、元描述式伪译文或缺覆盖译文 |
 | `S6_LayoutPlan` | generator 使用的布局参数必须来自 `layout_policy.json`，不能隐藏在代码常量里 |
 | `S7_GenerateCandidate` | product_quality 候选必须由 `generate_semantic_backfill.py` 生成 |
-| `S8_VerifyProductQuality` | 产品 gate 失败不能进入产品成功终态 |
+| `S8_VerifyProductQuality` | 候选生成后必须有 candidate_render_manifest、visual_region_metrics、visual_repair_plan、visual_adjudication、product_quality_gates；产品 gate 失败不能进入产品成功终态 |
 | `Lx_RepairLoop` | 每次 loop 只修一个主要 failure_class |
 | `Ax_AdaptiveChange` | 方法论变更必须记录 before/after 和原因 |
 | `S9_VerifyProcessContract` | 必须同时输出 process verdict、product verdict、terminal state；写了 output_artifacts 的 trace/operation 必须引用 PASS 的 workspace boundary report |
@@ -1547,6 +1606,7 @@ flowchart LR
 | `S7_GenerateCandidate` | 候选 PDF 和生成证据存在 | `S8_VerifyProductQuality` |
 | `S8_VerifyProductQuality` | 全部机器 gate、块级视觉 gate、D7 视觉裁决阻塞项通过 | `S9_VerifyProcessContract` |
 | `S8_VerifyProductQuality` | 存在可修复阻塞失败 | `Lx_RepairLoop` |
+| `S8_VerifyProductQuality` | 缺 candidate render、visual_region_metrics、visual_repair_plan、visual_adjudication 或 product_quality_gates | `S_FAIL_PROCESS_CONTRACT` |
 | `S8_VerifyProductQuality` | 阻塞失败不可修复 | `S_FAIL_QUALITY` |
 | `Lx_RepairLoop` | repair atom 需要重建源抽取或修复 generation evidence unit_id 链接 | `S3_SourceExtract` 或 `S7_GenerateCandidate` |
 | `Lx_RepairLoop` | repair atom 需要补译文或 compact variant | `S5_TranslationPlan` |
@@ -1709,7 +1769,7 @@ Exit:
 | `visual_region_metrics.json` | `collect_visual_region_metrics.py` | quality evaluator、repair planner、D7、final report | source_relative_visual_baseline、region_metrics、role_gates、page_metrics、crop_evidence、repair_atoms |
 | `visual_repair_plan.json` | `plan_visual_region_repairs.py` | D8、repair loop、final report | gate_id、gate_status、repair_atom、target_state、sample_regions、blocking_repair_count |
 | `product_quality_gates.json` | quality evaluator | D7、repair loop、final report | gates、blocking failures、page metrics、visual_region_metrics ref、visual_adjudication ref |
-| `visual_adjudication.json` | D7/human/model visual review | quality evaluator、final report | dimensions、status、evidence refs |
+| `visual_adjudication.json` | D7/human/model visual review 或 `write_visual_adjudication.py` | quality evaluator、final report | verdict、dimensions、blocking_failure_count、warning_dimension_count、status、evidence refs、next_state |
 | `anti_overfit_scan.json` | anti-overfit scanner | D9、final report | verdict、blocking_hit_count |
 | `state_trace.json` | execution engine | process validator、final report | all transitions |
 | `operation_log.jsonl` | execution engine | process validator、final report | all tool calls |
@@ -1721,7 +1781,7 @@ Exit:
 |---|---|---|
 | `D1_role_classification` | `S4` | page_type、region_roles、evidence_refs、risk_flags |
 | `D2_translation` | `S5` | batch_id、batch_index/count、batch-level translations、coverage、term_decisions、provider、target_text_field、forbidden_pattern_check、layout_variants、next_state |
-| `D4_layout_plan` | `S6` | layout_policy or policy_overrides、language_pair_profile、constrained_slot/event_card/fluid_body 分流、target_composition、target_language_reflow、body_flow_gap_policy、short_continuation_policy、dense_page_body_band_policy、event_card_policy、table_cell_policy、font_profiles、probe_isolation_requirement、evidence、fit_risks |
+| `D4_layout_plan` | `S6` | layout_policy or policy_overrides、language_pair_profile、constrained_slot/event_card/fluid_body 分流、target_composition、target_language_reflow、body_flow_gap_policy、short_continuation_policy、dense_page_body_band_policy、matrix_or_table_diagram hard-disable policy、event_card_policy、table_cell_policy、font_profiles、probe_isolation_requirement、evidence、fit_risks |
 | `D5_D7_quality_gate` | `S8` | dimension statuses、blocking status、source_relative_visual_baseline verdict、region gate findings、visual adjudication findings、repair hints、repair_atom candidates、next_state |
 | `D8_repair_selection` | `Lx` | selected primary failure_class、repair_atom、target_state、target_scope、expected_effect、verification_to_run、deferred_failures、rejected_repair_plans |
 | `D9_final_acceptance` | `S9` | process verdict、product verdict、anti-overfit verdict、terminal_state |

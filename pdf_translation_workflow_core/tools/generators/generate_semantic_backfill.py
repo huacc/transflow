@@ -31,6 +31,7 @@ CJK_RE = re.compile(r"[\u3400-\u9fff]")
 ASCII_OR_DIGIT_RE = re.compile(r"[A-Za-z0-9]")
 UNIT_ID_RE = re.compile(r"^(p\d+_b\d+)_l(\d+)$")
 NOTE_LABEL_RE = re.compile(r"^(note|notes):$", re.IGNORECASE)
+DENSE_TABLE_PAGE_TYPES = {"table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"}
 FORBIDDEN_PROVIDERS = {"", "deterministic_placeholder", "placeholder", "manual_placeholder", None}
 FORBIDDEN_TRANSLATION_FRAGMENTS = ("中文回填", "中文标题", "中文标签", "待翻译", "占位", "placeholder", "tbd")
 FORBIDDEN_TRANSLATION_PATTERNS = [
@@ -194,6 +195,17 @@ def dominant_text_color(items: list[dict[str, Any]]) -> tuple[float, float, floa
     return max(counts.items(), key=lambda item: item[1])[0] if counts else (0.05, 0.05, 0.05)
 
 
+def dominant_fill_color(items: list[dict[str, Any]]) -> tuple[float, float, float]:
+    counts: dict[tuple[float, float, float], int] = {}
+    for item in items:
+        color = item.get("fill_color")
+        if not isinstance(color, (list, tuple)) or len(color) < 3:
+            continue
+        key = tuple(round(float(channel), 4) for channel in color[:3])
+        counts[key] = counts.get(key, 0) + 1
+    return max(counts.items(), key=lambda item: item[1])[0] if counts else (1.0, 1.0, 1.0)
+
+
 def require_mapping(data: Any, name: str) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError(f"layout policy section must be an object: {name}")
@@ -263,13 +275,17 @@ def region_kind(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[
     table_note = require_mapping(rules.get("table_note"), "classification_rules.table_note")
     first_text = str(items[0].get("source_text", "")).strip()
     has_note_marker = bool(NOTE_LABEL_RE.match(first_text))
+    y_ratio = float(rect.y0) / max(1.0, float(page_rect.height))
+    dense_page_type = page_type_guess(page_context) in DENSE_TABLE_PAGE_TYPES
     wide_note_block = (
         len(items) >= policy_int(table_note, "min_line_count")
         and rect.width >= page_rect.width * policy_float(table_note, "min_region_width_page_ratio")
         and median_size <= policy_float(table_note, "max_median_font_size")
         and rect.y0 >= page_rect.height * policy_float(table_note, "min_y_ratio")
     )
-    if has_note_marker or wide_note_block:
+    dense_page_min_y_ratio = float(table_note.get("dense_page_min_y_ratio", 0.72))
+    dense_page_bottom_note = dense_page_type and wide_note_block and y_ratio >= dense_page_min_y_ratio
+    if has_note_marker or (wide_note_block and not dense_page_type) or dense_page_bottom_note:
         return "table_note"
     event_card = rules.get("event_card")
     if isinstance(event_card, dict):
@@ -297,7 +313,10 @@ def region_kind(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[
         ):
             return "table_cell"
     footnote = require_mapping(rules.get("footnote"), "classification_rules.footnote")
-    if median_size <= policy_float(footnote, "max_median_font_size") and rect.y0 >= page_rect.height * policy_float(footnote, "min_y_ratio"):
+    footnote_min_y_ratio = policy_float(footnote, "min_y_ratio")
+    if dense_page_type:
+        footnote_min_y_ratio = float(footnote.get("dense_page_min_y_ratio", max(0.68, footnote_min_y_ratio)))
+    if median_size <= policy_float(footnote, "max_median_font_size") and rect.y0 >= page_rect.height * footnote_min_y_ratio:
         return "footnote"
     legend = require_mapping(rules.get("legend"), "classification_rules.legend")
     if len(items) >= policy_int(legend, "min_line_count") and rect.width <= policy_float(legend, "max_region_width_pt") and median_float([r.width for r in rects]) <= policy_float(legend, "max_median_line_width_pt"):
@@ -319,6 +338,8 @@ def should_reflow_region(items: list[dict[str, Any]], page_rect: fitz.Rect, poli
     if len(items) < policy_int(reflow, "min_items_for_reflow"):
         return False
     kind = region_kind(items, page_rect, policy, page_context)
+    if page_type_guess(page_context) in DENSE_TABLE_PAGE_TYPES and kind not in {"table_note", "footnote"}:
+        return False
     if kind in set(reflow.get("preserve_line_kinds", [])):
         return False
     return kind in set(reflow.get("reflow_kinds", []))
@@ -433,12 +454,19 @@ def body_flow_profile(policy: dict[str, Any]) -> dict[str, Any]:
     return body if isinstance(body, dict) else {}
 
 
+def hard_disabled_page_type(profile: dict[str, Any], page_type: str) -> bool:
+    return page_type in {str(value) for value in profile.get("hard_disable_page_type_guesses", [])}
+
+
 def is_body_flow_candidate(region: dict[str, Any], page_rect: fitz.Rect, policy: dict[str, Any], *, active_group: bool = False) -> bool:
     profile = body_flow_profile(policy)
     if not profile.get("enabled"):
         return False
+    page_type = str(region.get("page_type_guess") or "")
+    if hard_disabled_page_type(profile, page_type):
+        return False
     disabled_page_types = {str(value) for value in profile.get("disable_page_type_guesses", [])}
-    page_type_disabled = str(region.get("page_type_guess") or "") in disabled_page_types
+    page_type_disabled = page_type in disabled_page_types
     if page_type_disabled:
         dense_page_y = profile.get("allow_dense_page_body_below_y_ratio")
         if dense_page_y is None:
@@ -521,6 +549,7 @@ def make_body_flow_region(group: list[dict[str, Any]], index: int, policy: dict[
         "translation_zh": join_body_flow_text(group, "translation_zh", policy),
         "target_text": join_body_flow_text(group, "target_text", policy),
         "text_color": dominant_text_color(items),
+        "background_color": dominant_fill_color(items),
         "source_size": median_float(source_sizes),
         "layout_mode": "region_flow",
         "flow_source_region_count": len(group),
@@ -610,8 +639,11 @@ def apply_target_composition_rect(region: dict[str, Any], page_rect: fitz.Rect, 
     region_kinds = {str(value) for value in profile.get("region_kinds", [])}
     if region_kinds and str(region.get("region_kind")) not in region_kinds:
         return
+    page_type = str(region.get("page_type_guess") or "")
+    if hard_disabled_page_type(profile, page_type):
+        return
     disabled_page_types = {str(value) for value in profile.get("disable_page_type_guesses", [])}
-    page_type_disabled = str(region.get("page_type_guess") or "") in disabled_page_types
+    page_type_disabled = page_type in disabled_page_types
     if page_type_disabled:
         dense_page_y = profile.get("allow_dense_page_body_below_y_ratio")
         if dense_page_y is None:
@@ -672,8 +704,11 @@ def apply_target_language_reflow_rect(region: dict[str, Any], page_rect: fitz.Re
     region_kinds = {str(value) for value in profile.get("region_kinds", [])}
     if region_kinds and str(region.get("region_kind")) not in region_kinds:
         return
+    page_type = str(region.get("page_type_guess") or "")
+    if hard_disabled_page_type(profile, page_type):
+        return
     disabled_page_types = {str(value) for value in profile.get("disable_page_type_guesses", [])}
-    page_type_disabled = str(region.get("page_type_guess") or "") in disabled_page_types
+    page_type_disabled = page_type in disabled_page_types
     if page_type_disabled:
         dense_page_y = profile.get("allow_dense_page_body_below_y_ratio")
         if dense_page_y is None:
@@ -769,6 +804,7 @@ def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dic
                         "translation_zh": join_translation_fragments(part, kind, policy),
                         "target_text": join_translation_fragments(part, kind, policy),
                         "text_color": dominant_text_color(part),
+                        "background_color": dominant_fill_color(part),
                         "source_size": median_float(sizes),
                         "layout_mode": "region_reflow",
                         "page_type_guess": page_type_guess(page_context),
@@ -786,6 +822,7 @@ def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dic
                             "translation_zh": explicit_layout_text(item, kind, policy),
                             "target_text": explicit_layout_text(item, kind, policy),
                             "text_color": dominant_text_color([item]),
+                            "background_color": dominant_fill_color([item]),
                             "source_size": float(item.get("font_size") or 6.0),
                             "layout_mode": "line_preserve",
                             "page_type_guess": page_type_guess(page_context),
@@ -795,6 +832,270 @@ def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dic
     for region in grouped_regions:
         apply_target_language_reflow_rect(region, page_rect, policy)
     return grouped_regions
+
+
+BACKGROUND_COVER_REGION_KINDS = {"body", "body_flow", "heading", "table_note", "footnote", "event_card"}
+BACKGROUND_COVER_SKIP_PAGE_TYPES = {"chart_or_dashboard", "matrix_or_table_diagram"}
+BACKGROUND_COVER_SKIP_KINDS = {"table_cell", "legend", "vertical_nav", "compact_label", "short_label"}
+BACKGROUND_COVER_IMAGE_PATCH_SATURATION = 18.0
+BACKGROUND_COVER_IMAGE_PATCH_MIN_AREA_PT2 = 600.0
+BACKGROUND_COVER_SAMPLE_ZOOM = 2.0
+
+
+def should_apply_region_background_cover(region: dict[str, Any]) -> bool:
+    kind = str(region.get("region_kind") or "")
+    if kind in BACKGROUND_COVER_SKIP_KINDS:
+        return False
+    page_type = str(region.get("page_type_guess") or "")
+    if page_type in BACKGROUND_COVER_SKIP_PAGE_TYPES and kind not in {"table_note", "footnote"}:
+        return False
+    items = region.get("items") if isinstance(region.get("items"), list) else []
+    if len(items) < 2 and str(region.get("layout_mode") or "") == "line_preserve":
+        return False
+    return kind in BACKGROUND_COVER_REGION_KINDS or bool(region.get("target_composition_applied")) or str(region.get("layout_mode") or "") == "region_flow"
+
+
+def source_background_cover_rect(region: dict[str, Any], page_rect: fitz.Rect) -> fitz.Rect:
+    rect = union_rect([item["rect"] for item in region["items"]])
+    source_size = float(region.get("source_size") or 6.0)
+    x_pad = max(0.8, source_size * 0.18)
+    y_pad = max(0.8, source_size * 0.14)
+    rect.x0 = max(page_rect.x0, rect.x0 - x_pad)
+    rect.x1 = min(page_rect.x1, rect.x1 + x_pad)
+    rect.y0 = max(page_rect.y0, rect.y0 - y_pad)
+    rect.y1 = min(page_rect.y1, rect.y1 + y_pad)
+    return rect
+
+
+def page_background_sample_image(page: fitz.Page, zoom: float) -> Image.Image:
+    pix = page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), alpha=False)
+    return Image.frombytes("RGB", [pix.width, pix.height], pix.samples)
+
+
+def cover_pixel_box(rect: fitz.Rect, image: Image.Image, zoom: float) -> tuple[int, int, int, int]:
+    return (
+        max(0, min(image.width - 1, int(round(rect.x0 * zoom)))),
+        max(0, min(image.height - 1, int(round(rect.y0 * zoom)))),
+        max(1, min(image.width, int(round(rect.x1 * zoom)))),
+        max(1, min(image.height, int(round(rect.y1 * zoom)))),
+    )
+
+
+def rgb_delta(a: tuple[int, int, int], b: tuple[int, int, int]) -> float:
+    return sum(abs(x - y) for x, y in zip(a, b)) / 3.0
+
+
+def dominant_patch_row_color(samples: list[tuple[int, int, int]], fallback_rgb: tuple[int, int, int]) -> tuple[int, int, int]:
+    if not samples:
+        return fallback_rgb
+    close_samples = [pixel for pixel in samples if rgb_delta(pixel, fallback_rgb) <= 18.0]
+    usable = close_samples or samples
+    clusters: dict[tuple[int, int, int], list[tuple[int, int, int]]] = {}
+    for r, g, b in usable:
+        key = (round(r / 2) * 2, round(g / 2) * 2, round(b / 2) * 2)
+        clusters.setdefault(key, []).append((r, g, b))
+    cluster = max(clusters.values(), key=len)
+    return tuple(int(round(sum(pixel[i] for pixel in cluster) / len(cluster))) for i in range(3))
+
+
+def background_cover_patch_png(
+    source_image: Image.Image,
+    rect: fitz.Rect,
+    fallback_rgb: tuple[int, int, int],
+    zoom: float,
+) -> tuple[bytes, tuple[int, int]] | None:
+    box = cover_pixel_box(rect, source_image, zoom)
+    width = max(1, box[2] - box[0])
+    height = max(1, box[3] - box[1])
+    if width <= 0 or height <= 0:
+        return None
+    pad = max(4, int(round(6 * zoom)))
+    edge = max(2, int(round(3 * zoom)))
+    patch = Image.new("RGB", (width, height), fallback_rgb)
+    for row in range(height):
+        y = max(0, min(source_image.height - 1, box[1] + row))
+        samples: list[tuple[int, int, int]] = []
+        left_x0 = max(0, box[0] - pad)
+        left_x1 = max(0, box[0] - 1)
+        right_x0 = min(source_image.width, box[2] + 1)
+        right_x1 = min(source_image.width, box[2] + pad)
+        for x in range(left_x0, left_x1):
+            samples.append(source_image.getpixel((x, y)))
+        for x in range(right_x0, right_x1):
+            samples.append(source_image.getpixel((x, y)))
+        if len(samples) < edge:
+            for dy in range(1, pad + 1):
+                top_y = box[1] - dy
+                bottom_y = box[3] + dy
+                if top_y >= 0:
+                    for x in range(box[0], box[2], max(1, width // 300)):
+                        samples.append(source_image.getpixel((x, top_y)))
+                if bottom_y < source_image.height:
+                    for x in range(box[0], box[2], max(1, width // 300)):
+                        samples.append(source_image.getpixel((x, bottom_y)))
+                if len(samples) >= edge:
+                    break
+        row_color = dominant_patch_row_color(samples, fallback_rgb)
+        for x in range(width):
+            patch.putpixel((x, row), row_color)
+    buf = io.BytesIO()
+    patch.save(buf, format="PNG")
+    return buf.getvalue(), (width, height)
+
+
+def draw_background_cover(
+    page: fitz.Page,
+    cover_rect: fitz.Rect,
+    fill: Any,
+    source_background_image: Image.Image | None,
+    sample_zoom: float,
+) -> dict[str, Any]:
+    fallback_rgb = float_color_to_rgba(fill)[:3]
+    area = float(cover_rect.width) * float(cover_rect.height)
+    if (
+        source_background_image is not None
+        and fill_saturation(fill) >= BACKGROUND_COVER_IMAGE_PATCH_SATURATION
+        and area >= BACKGROUND_COVER_IMAGE_PATCH_MIN_AREA_PT2
+    ):
+        patch = background_cover_patch_png(source_background_image, cover_rect, fallback_rgb, sample_zoom)
+        if patch is not None:
+            png, patch_size = patch
+            page.insert_image(cover_rect, stream=png, keep_proportion=False, overlay=True)
+            return {
+                "draw_mode": "row_sampled_image_patch",
+                "sample_zoom": sample_zoom,
+                "patch_size_px": list(patch_size),
+                "fallback_rgb": list(fallback_rgb),
+            }
+    page.draw_rect(cover_rect, color=None, fill=fill, overlay=True)
+    return {
+        "draw_mode": "solid_vector_fill",
+        "sample_zoom": None,
+        "patch_size_px": None,
+        "fallback_rgb": list(fallback_rgb),
+    }
+
+
+def apply_region_background_cover(
+    page: fitz.Page,
+    region: dict[str, Any],
+    source_background_image: Image.Image | None,
+    sample_zoom: float,
+) -> dict[str, Any] | None:
+    if not should_apply_region_background_cover(region):
+        return None
+    cover_rect = source_background_cover_rect(region, page.rect)
+    fill = region.get("background_color", (1.0, 1.0, 1.0))
+    draw_result = draw_background_cover(page, cover_rect, fill, source_background_image, sample_zoom)
+    return {
+        "region_id": region.get("region_id"),
+        "unit_ids": [item.get("unit_id") for item in region.get("items", [])],
+        "page_index": region.get("page_index"),
+        "bbox": [round(float(v), 3) for v in cover_rect],
+        "fill_color": [round(float(v), 4) for v in fill],
+        **draw_result,
+        "method": "region_background_cover",
+        "region_kind": region.get("region_kind"),
+        "layout_mode": region.get("layout_mode"),
+        "page_type_guess": region.get("page_type_guess"),
+        "reason": "cover multiline source redaction bands with one continuous local background before target text insertion",
+    }
+
+
+def fill_saturation(fill: Any) -> float:
+    if not isinstance(fill, (list, tuple)) or len(fill) < 3:
+        return 0.0
+    channels = [float(value) * 255.0 if float(value) <= 1.0 else float(value) for value in fill[:3]]
+    return max(channels) - min(channels)
+
+
+def should_apply_residual_background_cover(
+    item: dict[str, Any],
+    page_rect: fitz.Rect,
+    policy: dict[str, Any],
+    page_context: dict[str, Any] | None,
+) -> bool:
+    rect = item["rect"]
+    if rect.width < float(page_rect.width) * 0.45:
+        return False
+    if rect.height > 18.0:
+        return False
+    if fill_saturation(item.get("fill_color")) < 18.0:
+        return False
+    kind = region_kind([item], page_rect, policy, page_context)
+    return kind not in BACKGROUND_COVER_SKIP_KINDS
+
+
+def residual_cover_rect(group: list[dict[str, Any]], page_rect: fitz.Rect) -> fitz.Rect:
+    rect = union_rect([item["rect"] for item in group])
+    sizes = [float(item.get("font_size") or 6.0) for item in group]
+    source_size = median_float(sizes)
+    x_pad = max(0.8, source_size * 0.18)
+    y_pad = max(0.9, source_size * 0.18)
+    rect.x0 = max(page_rect.x0, rect.x0 - x_pad)
+    rect.x1 = min(page_rect.x1, rect.x1 + x_pad)
+    rect.y0 = max(page_rect.y0, rect.y0 - y_pad)
+    rect.y1 = min(page_rect.y1, rect.y1 + y_pad)
+    return rect
+
+
+def group_residual_cover_items(items: list[dict[str, Any]]) -> list[list[dict[str, Any]]]:
+    groups: list[list[dict[str, Any]]] = []
+    current: list[dict[str, Any]] = []
+    for item in sorted(items, key=lambda value: (float(value["rect"].y0), float(value["rect"].x0))):
+        if not current:
+            current = [item]
+            continue
+        previous = current[-1]
+        gap = float(item["rect"].y0) - float(previous["rect"].y1)
+        same_column = column_overlap_ratio(item["rect"], previous["rect"]) >= 0.40
+        max_gap = max(24.0, median_float([float(previous.get("font_size") or 6.0), float(item.get("font_size") or 6.0)]) * 3.0)
+        if same_column and gap <= max_gap:
+            current.append(item)
+        else:
+            groups.append(current)
+            current = [item]
+    if current:
+        groups.append(current)
+    return groups
+
+
+def apply_residual_background_covers(
+    page: fitz.Page,
+    page_units: list[dict[str, Any]],
+    page_context: dict[str, Any],
+    policy: dict[str, Any],
+    excluded_unit_ids: set[str],
+    source_background_image: Image.Image | None,
+    sample_zoom: float,
+) -> list[dict[str, Any]]:
+    candidates = [
+        item
+        for item in page_units
+        if str(item.get("unit_id")) not in excluded_unit_ids
+        and should_apply_residual_background_cover(item, page.rect, policy, page_context)
+    ]
+    records: list[dict[str, Any]] = []
+    for index, group in enumerate(group_residual_cover_items(candidates)):
+        cover_rect = residual_cover_rect(group, page.rect)
+        fill = dominant_fill_color(group)
+        draw_result = draw_background_cover(page, cover_rect, fill, source_background_image, sample_zoom)
+        records.append(
+            {
+                "region_id": f"residual_background_cover_{index:03d}",
+                "unit_ids": [item.get("unit_id") for item in group],
+                "page_index": group[0].get("page_index"),
+                "bbox": [round(float(v), 3) for v in cover_rect],
+                "fill_color": [round(float(v), 4) for v in fill],
+                **draw_result,
+                "method": "residual_wide_line_background_cover",
+                "region_kind": "wide_colored_background_line_group",
+                "layout_mode": "residual_cover_before_insertion",
+                "page_type_guess": page_context.get("page_type_guess"),
+                "reason": "cover remaining wide source-line redactions on colored backgrounds so viewer scaling does not expose line-band patches",
+            }
+        )
+    return records
 
 
 def probe_textbox_return_code(
@@ -900,6 +1201,7 @@ def constrained_text_image_png(
     fontfile: Path,
     font_size_pt: float,
     color: tuple[float, float, float],
+    background_color: tuple[float, float, float],
 ) -> tuple[bytes, int, int]:
     scale = 4
     font_px = max(8, int(round(font_size_pt * scale)))
@@ -910,7 +1212,7 @@ def constrained_text_image_png(
     bbox = draw.textbbox((0, 0), normalized, font=font)
     width = max(1, bbox[2] - bbox[0] + scale * 2)
     height = max(1, bbox[3] - bbox[1] + scale * 2)
-    image = Image.new("RGBA", (width, height), (255, 255, 255, 0))
+    image = Image.new("RGBA", (width, height), float_color_to_rgba(background_color))
     draw = ImageDraw.Draw(image)
     draw.text((scale - bbox[0], scale - bbox[1]), normalized, font=font, fill=float_color_to_rgba(color))
     buf = io.BytesIO()
@@ -939,6 +1241,7 @@ def insert_constrained_text_image(
         fontfile,
         font_size,
         region.get("text_color", (0.05, 0.05, 0.05)),
+        region.get("background_color", (1.0, 1.0, 1.0)),
     )
     target = fitz.Rect(region["rect"])
     if target.width <= 0 or target.height <= 0:
@@ -956,6 +1259,7 @@ def insert_constrained_text_image(
         "target_width_pt": round(float(target.width), 3),
         "target_height_pt": round(float(target.height), 3),
         "horizontal_compression_ratio": compression_ratio,
+        "image_background_color": [round(float(v), 4) for v in region.get("background_color", (1.0, 1.0, 1.0))],
     }
 
 
@@ -989,6 +1293,7 @@ def rotated_horizontal_text_png(
     fontfile: Path,
     font_size_pt: float,
     color: tuple[float, float, float],
+    background_color: tuple[float, float, float],
     rotation: int,
 ) -> tuple[bytes, int, int]:
     scale = 4
@@ -1000,7 +1305,7 @@ def rotated_horizontal_text_png(
     width = max(1, bbox[2] - bbox[0])
     height = max(1, bbox[3] - bbox[1])
     pad = max(4, int(round(font_px * 0.25)))
-    image = Image.new("RGBA", (width + pad * 2, height + pad * 2), (255, 255, 255, 0))
+    image = Image.new("RGBA", (width + pad * 2, height + pad * 2), float_color_to_rgba(background_color))
     draw = ImageDraw.Draw(image)
     draw.text((pad - bbox[0], pad - bbox[1]), text, font=font, fill=float_color_to_rgba(color))
     rotated = image.rotate(rotation, expand=True, resample=Image.Resampling.BICUBIC)
@@ -1040,6 +1345,7 @@ def insert_rotated_horizontal_text_image(
             fontfile,
             current_size,
             region.get("text_color", (0.05, 0.05, 0.05)),
+            region.get("background_color", (1.0, 1.0, 1.0)),
             rotation,
         )
         target = target_rect_for_image(rect, image_width, image_height)
@@ -1060,6 +1366,7 @@ def insert_rotated_horizontal_text_image(
                 "attempts": attempts,
                 "rotation_degrees": rotation,
                 "image_bbox": [round(v, 3) for v in target],
+                "image_background_color": [round(float(v), 4) for v in region.get("background_color", (1.0, 1.0, 1.0))],
             }
         attempts.append(
             {
@@ -1146,6 +1453,7 @@ def generate(
     doc = fitz.open(source)
     translation_units: list[dict[str, Any]] = []
     layout_slots: list[dict[str, Any]] = []
+    background_cover_records: list[dict[str, Any]] = []
     redaction_records: list[dict[str, Any]] = []
     insertion_records: list[dict[str, Any]] = []
     missing_unit_ids: list[str] = []
@@ -1156,6 +1464,7 @@ def generate(
         page_index = int(page_info["page_index"])
         page = doc[page_index]
         page_units: list[dict[str, Any]] = []
+        source_background_image: Image.Image | None = None
         for line in page_info.get("text_lines", []):
             source_unit = line_is_translatable(line, source_language)
             preserve_target_span = line_is_already_target_language(line, source_language, target_language)
@@ -1241,6 +1550,7 @@ def generate(
             page_units.append(page_unit)
 
         if page_units:
+            source_background_image = page_background_sample_image(page, BACKGROUND_COVER_SAMPLE_ZOOM)
             page.apply_redactions(
                 images=fitz.PDF_REDACT_IMAGE_NONE,
                 graphics=fitz.PDF_REDACT_LINE_ART_NONE,
@@ -1253,10 +1563,37 @@ def generate(
                 "image_block_count": page_info.get("image_block_count"),
             }
             regions = build_regions(page_units, page.rect, layout_policy, page_context)
+            for region in regions:
+                region["page_index"] = page_index
+            planned_cover_unit_ids = {
+                str(item.get("unit_id"))
+                for region in regions
+                if should_apply_region_background_cover(region)
+                for item in region.get("items", [])
+            }
+            background_cover_records.extend(
+                apply_residual_background_covers(
+                    page,
+                    page_units,
+                    page_context,
+                    layout_policy,
+                    planned_cover_unit_ids,
+                    source_background_image,
+                    BACKGROUND_COVER_SAMPLE_ZOOM,
+                )
+            )
             probe_doc = fitz.open()
             try:
                 probe_page = probe_doc.new_page(width=float(page.rect.width), height=float(page.rect.height))
                 for region in regions:
+                    background_cover = apply_region_background_cover(
+                        page,
+                        region,
+                        source_background_image,
+                        BACKGROUND_COVER_SAMPLE_ZOOM,
+                    )
+                    if background_cover is not None:
+                        background_cover_records.append(background_cover)
                     insert_result = insert_region(page, probe_page, region, fontfile, layout_policy)
                     unit_ids = [item["unit_id"] for item in region["items"]]
                     layout_slots.append(
@@ -1273,6 +1610,7 @@ def generate(
                             "line_height": None,
                             "wrap_width": round(region["rect"].width, 3),
                             "fill_color": None,
+                            "image_background_color": [round(float(v), 4) for v in region.get("background_color", (1.0, 1.0, 1.0))],
                             "region_kind": region["region_kind"],
                             "layout_mode": region["layout_mode"],
                             "page_type_guess": region.get("page_type_guess"),
@@ -1281,6 +1619,7 @@ def generate(
                             "target_composition_applied": bool(region.get("target_composition_applied")),
                             "target_composition_profile": region.get("target_composition_profile"),
                             "source_anchor_bbox": region.get("source_anchor_bbox"),
+                            "background_cover": background_cover,
                             "layout_policy": rel(layout_policy_path),
                             "draw_mode": layout_policy.get("draw_modes", {}).get(region["region_kind"], {}).get("mode", "textbox"),
                             "rotation_degrees": insert_result.get("rotation_degrees"),
@@ -1306,6 +1645,15 @@ def generate(
                             "target_composition_applied": bool(region.get("target_composition_applied")),
                             "target_composition_profile": region.get("target_composition_profile"),
                             "source_anchor_bbox": region.get("source_anchor_bbox"),
+                            "background_cover": background_cover,
+                            "redaction_fill_provenance": [
+                                {
+                                    "unit_id": item.get("unit_id"),
+                                    "fill_color": [round(v, 4) for v in item.get("fill_color", [])],
+                                    "fill_color_provenance": item.get("fill_color_provenance"),
+                                }
+                                for item in region["items"]
+                            ],
                             **insert_result,
                         }
                     )
@@ -1387,6 +1735,7 @@ def generate(
         "semantic_coverage": "full_semantic_translation",
         "layout_policy_statistics": layout_policy.get("statistics"),
         "prompt_artifacts": semantic_data.get("prompt_artifacts", []),
+        "background_covers": background_cover_records,
         "redactions": redaction_records,
         "insertions": insertion_records,
     }

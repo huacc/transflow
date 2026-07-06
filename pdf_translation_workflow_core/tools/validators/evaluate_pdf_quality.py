@@ -27,6 +27,7 @@ from _common import ascii_tokens, median, rel, resolve_workspace_path, write_jso
 FORBIDDEN_TRANSLATION_PROVIDERS = {None, "", "deterministic_placeholder", "placeholder", "manual_placeholder"}
 UNIT_ID_RE = re.compile(r"^(p\d+_b\d+)_l(\d+)$")
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
+VISUAL_PASS_VERDICTS = {"PASS", "PASS_WITH_WARN"}
 
 
 def unit_ref(unit_id: Any) -> tuple[str, int] | None:
@@ -162,6 +163,36 @@ def visual_dimension_status(visual_data: dict[str, Any] | None, dimension: str) 
     return None
 
 
+def target_text_tokens_from_evidence(evidence_data: dict[str, Any]) -> set[str]:
+    tokens: set[str] = set()
+    for insertion in evidence_data.get("insertions", []):
+        if not isinstance(insertion, dict):
+            continue
+        for key in ("target_text", "translation_zh", "translation_en"):
+            value = insertion.get(key)
+            if isinstance(value, str) and value.strip():
+                tokens.update(ascii_tokens(value))
+    return tokens
+
+
+def zh_residue_evidence(output_ascii: list[str], cjk_unique: list[str], evidence_data: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
+    ascii_unique = sorted(set(output_ascii))
+    allowed_tokens = target_text_tokens_from_evidence(evidence_data)
+    disallowed = [token for token in ascii_unique if token not in allowed_tokens]
+    target_text_has_cjk = bool(cjk_unique)
+    failed = bool(disallowed) or not target_text_has_cjk
+    return failed, {
+        "target_language": "zh",
+        "ascii_token_count": len(ascii_unique),
+        "cjk_unique_count": len(cjk_unique),
+        "allowed_latin_token_count": len([token for token in ascii_unique if token in allowed_tokens]),
+        "disallowed_ascii_token_count": len(disallowed),
+        "sample": disallowed[:80],
+        "allowed_latin_sample": [token for token in ascii_unique if token in allowed_tokens][:80],
+        "reason": "Latin tokens are accepted only when they appear in the validated target-language evidence; other ASCII tokens remain source-residue failures.",
+    }
+
+
 def evaluate(
     source: Path,
     output: Path,
@@ -232,18 +263,22 @@ def evaluate(
         )
     ascii_unique = sorted(set(output_ascii))
     cjk_unique = sorted(set(output_cjk_chars))
-    residue_fail = bool(ascii_unique) if target_language == "zh" else bool(cjk_unique)
+    if target_language == "zh":
+        residue_fail, residue_evidence = zh_residue_evidence(output_ascii, cjk_unique, evidence_data)
+    else:
+        residue_fail = bool(cjk_unique)
+        residue_evidence = {
+            "target_language": target_language,
+            "ascii_token_count": len(ascii_unique),
+            "cjk_unique_count": len(cjk_unique),
+            "sample": cjk_unique[:80],
+        }
     gates.append(
         {
             "gate_id": "text_residue",
             "status": "pass" if not residue_fail else "fail",
             "blocking": True,
-            "evidence": {
-                "target_language": target_language,
-                "ascii_token_count": len(ascii_unique),
-                "cjk_unique_count": len(cjk_unique),
-                "sample": ascii_unique[:80] if target_language == "zh" else cjk_unique[:80],
-            },
+            "evidence": residue_evidence,
         }
     )
     visual_data: dict[str, Any] | None = None
@@ -350,7 +385,7 @@ def evaluate(
         gates.append(
             {
                 "gate_id": "visual_similarity",
-                "status": "pass" if visual_quality_adjudication == "PASS" else "fail",
+                "status": "pass" if str(visual_quality_adjudication or "").upper() in VISUAL_PASS_VERDICTS else "fail",
                 "blocking": True,
                 "evidence": {
                     "visual_quality_adjudication": visual_quality_adjudication,

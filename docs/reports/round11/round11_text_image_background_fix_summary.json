@@ -1,0 +1,74 @@
+{
+  "generated_at_local": "2026-07-06T18:23:34",
+  "cases": [
+    {
+      "case_id": "R11_EN_TO_ZH_AIA_pages_081_152_214_220_231",
+      "input_pdf": "docs/input/round11/source_pdfs/AIA_2020_Annual_Report_en_pages_081_152_214_220_231.pdf",
+      "output_pdf": "docs/output/round11/R11_EN_TO_ZH_AIA_pages_081_152_214_220_231_candidate.pdf",
+      "direction": "en_to_zh",
+      "sha256": "4E51AC3C174FDF9EF1855B5A9DA7800EB42DA975C62540C9723B76667CAF1770",
+      "product_quality_verdict": "PASS",
+      "blocking_failure_count": 0,
+      "visual_adjudication_verdict": "PASS_WITH_WARN",
+      "visual_warning_dimension_count": 4,
+      "region_count": 208,
+      "fail_region_count": 0,
+      "warn_region_count": 6,
+      "background_residue_artifact": "pass",
+      "background_residue_failures": 0,
+      "background_residue_warnings": 0,
+      "max_inner_background_delta": 0.0,
+      "max_background_delta": 31.0,
+      "text_image_region_count": 10,
+      "text_image_missing_background_count": 0,
+      "max_text_image_background_delta": 0.0,
+      "fit_warning_count": 0,
+      "inserted_unit_count": 271,
+      "inserted_region_count": 208,
+      "redaction_provenance_region_count": 208,
+      "fill_sampling_methods": [
+        "inner_plus_surrounding_pixel_cluster"
+      ]
+    },
+    {
+      "case_id": "R11_ZH_TO_EN_AIA_pages_034_036_144_228_261",
+      "input_pdf": "docs/input/round11/source_pdfs/AIA_2020_Annual_Report_zh_pages_034_036_144_228_261.pdf",
+      "output_pdf": "docs/output/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261_candidate.pdf",
+      "direction": "zh_to_en",
+      "sha256": "9D62C79E150B454AEF6A313BDD86B90ECE5033DF0ACB8D74D90139AC730B0A7C",
+      "product_quality_verdict": "PASS",
+      "blocking_failure_count": 0,
+      "visual_adjudication_verdict": "PASS_WITH_WARN",
+      "visual_warning_dimension_count": 5,
+      "region_count": 233,
+      "fail_region_count": 0,
+      "warn_region_count": 96,
+      "background_residue_artifact": "pass",
+      "background_residue_failures": 0,
+      "background_residue_warnings": 0,
+      "max_inner_background_delta": 0.0,
+      "max_background_delta": 0.0,
+      "text_image_region_count": 44,
+      "text_image_missing_background_count": 0,
+      "max_text_image_background_delta": 4.667,
+      "fit_warning_count": 0,
+      "inserted_unit_count": 252,
+      "inserted_region_count": 233,
+      "redaction_provenance_region_count": 233,
+      "fill_sampling_methods": [
+        "inner_plus_surrounding_pixel_cluster"
+      ]
+    }
+  ],
+  "changed_files": [
+    "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py",
+    "pdf_translation_workflow_core/tools/validators/collect_visual_region_metrics.py",
+    "docs/????/PDF_??????_??????.md",
+    "pdf_translation_workflow_core/tools/README.md",
+    "pdf_translation_workflow_core/contracts/tool_contracts.md",
+    "pdf_translation_workflow_core/contracts/product_quality_contract.md",
+    "pdf_translation_workflow_core/contracts/page_type_repair_matrix.md",
+    "pdf_translation_workflow_core/prompts/templates/D5_D7_quality_gate.prompt.json",
+    "pdf_translation_workflow_core/prompts/templates/D8_repair_selection.prompt.json"
+  ]
+}

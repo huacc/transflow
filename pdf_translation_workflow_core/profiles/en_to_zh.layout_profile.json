@@ -19,6 +19,8 @@
       "body": {
         "enabled": true,
         "min_region_count": 4,
+        "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
+        "disable_page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
         "paragraph_gap_pt": 8.0,
         "paragraph_separator": "\n\n",
         "line_joiner_zh": "",

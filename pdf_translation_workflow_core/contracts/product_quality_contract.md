@@ -89,6 +89,10 @@ The workflow cannot proceed to `S_DONE_PRODUCT_ACCEPTED` until every blocking qu
 }
 ```
 
+`background_delta` compares the source and output edge/background color around a generated region. `inner_background_delta` compares the source and output dominant color inside the original bbox. `text_image_background_delta` compares the opaque background used by constrained/rotated text-image drawing against the source inner-bbox background. `redaction_metrics` checks every redacted source unit, including areas not covered by inserted text, and fails uncovered wide source-line redactions on colored backgrounds through `wide_line_patch_risk`. `background_cover_metrics` checks whether the cover itself has become a new visible block. These are required because a redaction patch can erase a table header or colored band, a sequence of line-level redactions can leave horizontal wipe bands, a text image can leave a subtle per-word background rectangle, or a large solid cover can create a faint rectangular patch while the surrounding page background still looks acceptable.
+
+`background_covers` are the generator-side repair evidence for this class. `region_background_cover` and `residual_wide_line_background_cover` are valid only when derived from current-run geometry and local fill sampling; they must not use sample-specific page numbers, text, or colors. Large covers on saturated/color backgrounds must use `draw_mode=row_sampled_image_patch`, not `solid_vector_fill`. If `redaction_metrics[*].wide_line_patch_risk=true` and `covered_by_background_cover=false`, or if `background_cover_metrics[*].status=fail`, `background_residue_artifact` is blocking and routes to `background_residue_fill_resample`.
+
 If the run uses `deterministic_placeholder`, the correct terminal state is `S_FAIL_CAPABILITY` or `S_FAIL_QUALITY`; it cannot be counted as a product-quality attempt that is merely awaiting visual repair.
 
 If `docs\input\semantic_translations\<case_id>.translations.json` is missing or fails validation, the correct terminal state is `S_FAIL_CAPABILITY` before candidate generation.
@@ -103,7 +107,18 @@ Current executable validator:
 pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py
 ```
 
-Visual adjudication should be supplied as a separate artifact when available:
+In `product_quality`, after a semantic candidate PDF exists, visual adjudication is mandatory. The evaluator must receive both `visual_region_metrics.json` and `visual_adjudication.json`; otherwise the run has a process-contract gap and must not claim that S8 was fully executed.
+
+When deterministic region gates are sufficient and no backend visual model or human review is called, materialize the D7 artifact with:
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\write_visual_adjudication.py `
+  --visual-region-metrics docs\reports\<run_id>\visual_region_metrics.json `
+  --render-manifest docs\reports\<run_id>\candidate_render_manifest.json `
+  --repair-plan docs\reports\<run_id>\visual_repair_plan.json `
+  --case-id <run_id> `
+  --out docs\reports\<run_id>\visual_adjudication.json
+```
 
 ```powershell
 python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
@@ -111,6 +126,7 @@ python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
   --output <candidate.pdf> `
   --generation-evidence <candidate_generation_evidence.json> `
   --visual-adjudication <visual_adjudication.json> `
+  --visual-region-metrics <visual_region_metrics.json> `
   --out <product_quality_gates.json>
 ```
 
@@ -138,13 +154,15 @@ python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
 }
 ```
 
+`PASS_WITH_WARN` is not a blocking product failure when `blocking_failure_count=0`. It must remain visible in the report and can still be used to guide future quality improvements.
+
 Current blocking automation coverage:
 
 | Gate | Automated as blocking | Notes |
 |---|---:|---|
 | `page_count` | yes | PyMuPDF page count |
 | `page_geometry` | yes | page rectangle equality |
-| `text_residue` | yes | source-language residue: ASCII tokens for zh targets, CJK characters for en targets |
+| `text_residue` | yes | source-language residue: disallowed ASCII tokens for zh targets, CJK characters for en targets; zh-target Latin tokens pass only when present in validated target evidence |
 | `backfill_generation` | yes if generation evidence is supplied | candidate must not be source-copy only |
 | `source_anchor_order` | yes if generation evidence is supplied | blocks when one inserted target-language region crosses skipped source lines inside the same block |
 | `translation_authenticity` | yes if generation evidence is supplied | deterministic placeholder providers fail |
@@ -161,7 +179,7 @@ Current blocking automation coverage:
 | `sidebar_glyph_orientation` | partial/yes if adjudication evidence is supplied | use source-vs-output crop plus back-rotated output crop; blocks if D7 returns `FAIL` |
 | `clipping` | no | requires bbox-plus-PNG validator |
 | `collision` | no | requires region intersection validator |
-| `visual_similarity` | partial/yes if adjudication evidence is supplied | blocks success unless source-vs-output PNG adjudication is recorded as PASS |
+| `visual_similarity` | partial/yes if adjudication evidence is supplied | blocks success unless source-vs-output PNG adjudication is recorded as `PASS` or non-blocking `PASS_WITH_WARN` |
 | `source_relative_visual_baseline` | yes if `visual_region_metrics` is supplied | blocks when source extraction is missing or generated regions cannot be compared to source font/line evidence |
 | `hero_banner_text_readability` | yes if `visual_region_metrics` is supplied | blocks when a banner/title region falls back to tiny point text or below role font floor |
 | `title_readability` | yes if `visual_region_metrics` is supplied | blocks when heading/title text is unreadable, too small, or fallback-rendered |
@@ -197,6 +215,8 @@ Within `body_flow`, adjacent source regions are joined as same-paragraph continu
 Short same-column continuation lines may join an active `body_flow` when `allow_short_continuation_lines=true`, x/y geometry matches the current flow, and width exceeds `min_continuation_width_page_ratio`. This prevents a source-wrapped final word or phrase from breaking the article into multiple regions.
 
 On dense table/chart pages, compact labels and cell text should be `table_cell` and excluded from `body_flow`. A lower-page body copy band may re-enter `body_flow` only when `allow_dense_page_body_below_y_ratio` is set and current-run geometry proves same-column article text below the dense table/chart area.
+
+On `matrix_or_table_diagram` pages, `body_flow`, `target_composition`, and target-language frame expansion are hard-disabled. Matrix rows must remain line-preserved cells unless a row is an explicit `Note:` / `Notes:` marker or a bottom-page note past the dense-page y-ratio threshold. This prevents a row of table cells from being merged into one paragraph that crosses numeric columns or diagram bands.
 
 On mixed image/text timeline or milestone pages, narrow event descriptions should be `event_card`, not `body_flow`. Product quality for event cards is local: each card must remain tied to its year/image anchor, avoid overlap with adjacent cards, and use a readable constrained-slot font or compact event variant.
 
@@ -261,6 +281,8 @@ Passing evidence must include:
   "source_value": 123.4,
   "output_value": 80.0,
   "ratio_or_delta": 0.648,
+  "inner_background_delta": 0.0,
+  "text_image_background_delta": 0.0,
   "threshold": ">=0.80 for table_header",
   "status": "fail",
   "blocking": true,

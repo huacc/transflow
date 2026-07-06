@@ -192,10 +192,12 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "min_region_width_page_ratio": 0.45,
                 "max_median_font_size": round(max(font_q25, min(font_q50, font_q25 + 0.75)), 3),
                 "min_y_ratio": 0.40,
+                "dense_page_min_y_ratio": 0.72,
             },
             "footnote": {
                 "max_median_font_size": round(max(font_q25, min(font_q50, font_q25 + 0.75)), 3),
                 "min_y_ratio": 0.60,
+                "dense_page_min_y_ratio": 0.68,
             },
             "event_card": {
                 "page_type_guesses": ["mixed_image_text"],
@@ -223,7 +225,7 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "max_median_line_width_pt": round(max(52.0, min(width_q25 * 3.0, 95.0)), 3),
             },
             "table_cell": {
-                "page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard"],
+                "page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
                 "max_line_count": 2,
                 "max_region_width_pt": round(max(70.0, min(width_q50 * 1.85, 160.0)), 3),
                 "max_median_font_size": round(max(font_q50, font_q75), 3),
@@ -253,7 +255,8 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "line_joiner_en": " ",
                 "line_joiner_zh": "",
                 "include_line_preserve_body": target_language == "en",
-                "disable_page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard"],
+                "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
+                "disable_page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
                 "paragraph_separator": "\n\n",
                 "target_region_kind": "body_flow",
                 "source": "current_run_width_alignment_and_user_feedback",
@@ -278,7 +281,7 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
         "constrained_text_image_fit": {
             "enabled": True,
             "region_kinds": ["table_cell", "compact_label", "short_label", "legend"],
-            "dense_single_line_body_page_types": ["table_or_chart_dense", "chart_or_dashboard"],
+            "dense_single_line_body_page_types": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
             "min_font_pt": 3.2,
             "max_font_pt": 5.2,
             "reason": "Use a transparent text image only for constrained label slots after textbox probing fails; preserve full target text and record compression evidence.",
@@ -294,6 +297,8 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
             "legend_en": ["legend_en", "compact_label_en", "compact_en", "display_en"],
             "event_card_en": ["event_card_en", "short_label_en", "compact_en", "display_en"],
             "event_card_zh": ["event_card_zh", "short_label_zh", "compact_zh", "display_zh"],
+            "heading_en": ["heading_en", "short_label_en", "compact_label_en", "display_en"],
+            "heading_zh": ["heading_zh", "short_label_zh", "compact_label_zh", "display_zh"],
         },
         "font_profiles": {
             "footnote": {

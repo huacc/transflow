@@ -1,0 +1,132 @@
+{
+  "round": "round11",
+  "issue": "EN_TO_ZH candidate still showed redaction-like horizontal bands on colored/blue backgrounds",
+  "backend_model_calls_made": false,
+  "steps": [
+    {
+      "step": 1,
+      "state": "diagnose_reproduce",
+      "actions": [
+        "Reviewed rendered candidate previews for EN_TO_ZH pages.",
+        "Rendered source-vs-output high-zoom crop for page 2.",
+        "Ran collect_visual_region_metrics.py on the old candidate after adding redaction_metrics."
+      ],
+      "tools": [
+        "view_image",
+        "render_source_output_crop.py",
+        "collect_visual_region_metrics.py"
+      ],
+      "finding": "Insertion-region checks alone did not cover redaction-only empty areas; colored-background wide line redactions could leave viewer-visible horizontal bands."
+    },
+    {
+      "step": 2,
+      "state": "hypothesis_test",
+      "actions": [
+        "Compared redaction fill provenance against local source ring backgrounds.",
+        "Inspected ZH_TO_EN table-header crop after the first sampling change."
+      ],
+      "tools": [
+        "candidate_generation_evidence.json",
+        "visual_region_metrics.json",
+        "render_source_output_crop.py"
+      ],
+      "finding": "Two generic mechanisms were needed: continuous background covers for band-prone colored redactions, and balanced fill sampling to avoid selecting distant page background for table/header cells."
+    },
+    {
+      "step": 3,
+      "state": "S7_GenerateCandidate_repair",
+      "actions": [
+        "Changed fill sampling to outside_ring_median_pixel_cluster.",
+        "Set source priority to near-ring > inner-grid > far-outer-ring.",
+        "Added region_background_cover and residual_wide_line_background_cover before target text insertion."
+      ],
+      "tools_modified": [
+        "pdf_translation_workflow_core/tools/generators/generate_backfill_candidate.py",
+        "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py"
+      ],
+      "anti_overfit_basis": "Rules use current-run bbox width, bbox height, background saturation, region kind, page type, and local sampled colors only."
+    },
+    {
+      "step": 4,
+      "state": "S8_VerifyProductQuality_repair",
+      "actions": [
+        "Added redaction_metrics for every redacted source unit.",
+        "Added covered_by_background_cover and wide_line_patch_risk.",
+        "Aggregated insertion-region residue and redaction-only band residue into background_residue_artifact."
+      ],
+      "tools_modified": [
+        "pdf_translation_workflow_core/tools/validators/collect_visual_region_metrics.py"
+      ],
+      "repair_route": "background_residue_artifact -> background_residue_fill_resample -> S7_GenerateCandidate"
+    },
+    {
+      "step": 5,
+      "state": "regenerate_candidates",
+      "actions": [
+        "Regenerated EN_TO_ZH candidate PDF.",
+        "Regenerated ZH_TO_EN candidate PDF.",
+        "Rendered candidate previews."
+      ],
+      "output_pdfs": [
+        "docs/output/round11/R11_EN_TO_ZH_AIA_pages_081_152_214_220_231_candidate.pdf",
+        "docs/output/round11/R11_ZH_TO_EN_AIA_pages_034_036_144_228_261_candidate.pdf"
+      ],
+      "tools": [
+        "generate_semantic_backfill.py",
+        "render_pdf.py"
+      ]
+    },
+    {
+      "step": 6,
+      "state": "verify",
+      "actions": [
+        "Collected visual region and redaction metrics.",
+        "Materialized deterministic visual adjudication.",
+        "Ran product quality gates with visual_region_metrics and visual_adjudication.",
+        "Ran anti-overfit scan with sample-sensitive tokens."
+      ],
+      "tools": [
+        "collect_visual_region_metrics.py",
+        "write_visual_adjudication.py",
+        "evaluate_pdf_quality.py",
+        "scan_core_overfit.py"
+      ],
+      "result": {
+        "EN_TO_ZH": {
+          "product_quality_verdict": "PASS",
+          "redaction_fail_warn": "0/0",
+          "background_covers": 14,
+          "sha256": "253B18F798E8F61E680CD2A66E9820E437FE9FABB7E90FE2CF0B64942AD65BA4"
+        },
+        "ZH_TO_EN": {
+          "product_quality_verdict": "PASS",
+          "redaction_fail_warn": "0/0",
+          "background_covers": 6,
+          "sha256": "CC9F5556C88A06B54B30C78FD60E85665B6D083E9733556150E3025A7C47A33D"
+        },
+        "anti_overfit_scan": "PASS"
+      }
+    },
+    {
+      "step": 7,
+      "state": "contract_sync",
+      "actions": [
+        "Updated standard process design document.",
+        "Updated tool contract, product-quality contract, repair matrix, tools README, D5/D7 prompt template, D8 prompt template, and prompt tool bindings.",
+        "Updated round11 final report and final verdict JSON."
+      ],
+      "files_updated": [
+        "docs/业务流程/PDF_语义翻译回填_标准流程设计.md",
+        "pdf_translation_workflow_core/tools/README.md",
+        "pdf_translation_workflow_core/contracts/tool_contracts.md",
+        "pdf_translation_workflow_core/contracts/product_quality_contract.md",
+        "pdf_translation_workflow_core/contracts/page_type_repair_matrix.md",
+        "pdf_translation_workflow_core/prompts/templates/D5_D7_quality_gate.prompt.json",
+        "pdf_translation_workflow_core/prompts/templates/D8_repair_selection.prompt.json",
+        "pdf_translation_workflow_core/prompts/prompt_tool_bindings.json",
+        "docs/reports/round11/round11_final_report.md",
+        "docs/reports/round11/round11_final_verdict.json"
+      ]
+    }
+  ]
+}

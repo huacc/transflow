@@ -12,7 +12,7 @@
 | `S5_TranslationPlan` | Build translation units, materialize D2 batch translations, assemble semantic translation JSON, and validate coverage | `translation_batch_manifest.json`, per-batch boundary/slot/model/validation records, semantic translations JSON, `semantic_translation_validation.json` in product-quality mode | All D2 batches validated and final semantic translation validation passes, or capability failure is recorded |
 | `S6_LayoutPlan` | Build or revise explicit region-aware layout policy | `layout_policy.json`, optional LayoutSlot/RegionSlot plan | D4 decisions recorded, including constrained-slot vs fluid-body split, policy source, target composition, reflow-vs-preserve-line decisions, font profiles, and fallback policy |
 | `S7_GenerateCandidate` | Generate a candidate PDF with a real backfill attempt if feasible | candidate PDF, candidate PNGs, generation evidence, translations/layout artifacts, semantic translation validation, or explicit generation failure | Candidate contains backfilled target-language text or explicit failure; fluid body uses target composition when policy requires it |
-| `S8_VerifyProductQuality` | Evaluate machine and visual quality gates | quality gates JSON | D5/D7 decisions recorded, including target composition, font hierarchy, overlap residue, and constrained-slot integrity |
+| `S8_VerifyProductQuality` | Evaluate machine and visual quality gates | candidate render manifest, candidate PNGs, `visual_region_metrics.json`, `visual_repair_plan.json`, `visual_adjudication.json`, quality gates JSON | D5/D7 decisions recorded, including target composition, font hierarchy, overlap residue, and constrained-slot integrity |
 | `Lx_RepairLoop` | Repair one documented failure class at a time | repair decision, patch record, verification result | Failure fixed, deferred, or terminal |
 | `Ax_AdaptiveChange` | Modify round-local docs/tools when the package is insufficient | change log, before/after manifests, verification result | Change recorded and verified |
 | `S9_VerifyProcessContract` | Validate state trace, decision log, artifacts, and anti-overfit evidence | process validator output, `anti_overfit_scan.json` | Process pass/fail known and reusable core has no blocking sample-specific hits |
@@ -169,6 +169,18 @@ In `product_quality`, quality failures must go to `Lx_RepairLoop`, `S_FAIL_QUALI
 
 In `product_quality`, missing or invalid semantic translations must go to `S_FAIL_CAPABILITY` before placeholder candidate generation. The workflow must not create a product candidate by falling back to `backfill_candidate_validation`.
 
+In `product_quality`, once `S7_GenerateCandidate` writes a candidate PDF or `candidate_generation_evidence.json`, `S8_VerifyProductQuality` must run the full visual-closure sequence before any final process verdict:
+
+```text
+render_pdf.py candidate
+collect_visual_region_metrics.py
+plan_visual_region_repairs.py
+D5_D7_quality_gate.prompt.json / visual_adjudication.json
+evaluate_pdf_quality.py with --visual-region-metrics and --visual-adjudication
+```
+
+Missing any visual-closure artifact is a process-contract failure, not merely a product-quality failure. If D7 reports a blocking failure, D8 must run. D8 may route to `S_FAIL_QUALITY` only with a recorded failure class plus either a repair plan that was attempted and failed, or an explicit unrepairable reason. A skipped D8 after D7 failure is invalid process execution.
+
 ## Candidate Generation Authenticity Rule
 
 In `product_quality` mode, `S7_GenerateCandidate` must not be satisfied by copying the source PDF.
@@ -245,6 +257,8 @@ Visible source lines that are already in the target language may be redacted and
 Inside `region_flow`, same-paragraph continuations and new paragraphs must be distinguished by current-run y-gap evidence. The policy fields `flow_grouping.body.paragraph_gap_pt`, `line_joiner_en`, `line_joiner_zh`, and `paragraph_separator` define this behavior. Fixed `\n\n` insertion between every merged source line is invalid because it creates artificial paragraph gaps.
 
 Short same-column continuation lines may join an active `region_flow` only when policy fields `allow_short_continuation_lines` and `min_continuation_width_page_ratio` permit it. Dense table/chart pages must still preserve cells and legends, but lower-page article bands may re-enter `region_flow` when `allow_dense_page_body_below_y_ratio` is present and current-run geometry proves same-column body copy.
+
+`matrix_or_table_diagram` is stricter than ordinary dense table/chart pages. It must be listed in `hard_disable_page_type_guesses` for `flow_grouping.body`, `target_composition`, and `target_language_reflow`. S6 must keep rows/columns as `table_cell` or line-preserved compact labels unless the block is an explicit note marker or a bottom-page note past the dense-page y-ratio threshold. If S7 evidence contains `region_kind=body_flow` on a matrix page, S8 must fail `matrix_diagram_integrity` and return to S6.
 
 `S7_GenerateCandidate` must probe textbox fit on a temporary page before drawing. Failed font-size attempts must not render to the real candidate page. If evidence or PNG review shows failed probe residue, the run must return to `S6`/`S7` repair or fail product quality.
 
