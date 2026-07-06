@@ -9,7 +9,7 @@
 | `S2_ToolProbe` | Probe local tools, fonts, renderers, extraction libraries | tool probe JSON | Tool availability known |
 | `S3_SourceExtract` | Extract page geometry, text, images/drawings, source renders | source extraction JSON, source PNGs | All pages represented |
 | `S4_PageStrategy` | Classify page types and region roles | page strategy records | D1/D3 decisions recorded |
-| `S5_TranslationPlan` | Build translation units and terminology policy | TranslationUnit records; semantic translations JSON in product-quality mode | D2 decisions recorded |
+| `S5_TranslationPlan` | Build translation units, materialize D2 batch translations, assemble semantic translation JSON, and validate coverage | `translation_batch_manifest.json`, per-batch slot/model/validation records, semantic translations JSON, `semantic_translation_validation.json` in product-quality mode | All D2 batches validated and final semantic translation validation passes, or capability failure is recorded |
 | `S6_LayoutPlan` | Build or revise explicit region-aware layout policy | `layout_policy.json`, optional LayoutSlot/RegionSlot plan | D4 decisions recorded, including constrained-slot vs fluid-body split, policy source, target composition, reflow-vs-preserve-line decisions, font profiles, and fallback policy |
 | `S7_GenerateCandidate` | Generate a candidate PDF with a real backfill attempt if feasible | candidate PDF, candidate PNGs, generation evidence, translations/layout artifacts, semantic translation validation, or explicit generation failure | Candidate contains backfilled target-language text or explicit failure; fluid body uses target composition when policy requires it |
 | `S8_VerifyProductQuality` | Evaluate machine and visual quality gates | quality gates JSON | D5/D7 decisions recorded, including target composition, font hierarchy, overlap residue, and constrained-slot integrity |
@@ -114,6 +114,44 @@ Each repair iteration must be recorded. `loop_iteration` increases on every pass
 ```
 
 Adaptive changes are round-local. A later maintainer must decide whether to backport them into the root workflow core.
+
+## S5 Translation Materialization Loop
+
+`S5_TranslationPlan` is also a composite state. It is not satisfied by a single broad instruction such as "translate all units".
+
+In `product_quality`, S5 must run this bounded loop:
+
+```text
+build translation batch manifest
+for each batch:
+  fill D2_translation prompt slots from that batch slot_values JSON
+  persist prompt_instance.json
+  persist raw model_output.json
+  validate batch with validate_translation_batch.py
+assemble validated batch outputs into docs/input/semantic_translations/<case_id>.translations.json
+validate assembled translations with validate_semantic_translations.py
+```
+
+Required tools:
+
+| Step | Tool | Required output |
+|---|---|---|
+| build batches | `tools/planners/build_translation_batch_manifest.py` | `translation_batch_manifest.json`, `translation_batches/<batch_id>.slot_values.json` |
+| batch judgement | `templates/D2_translation.prompt.json` | `translation_batches/<batch_id>.prompt_instance.json`, `translation_batches/<batch_id>.model_output.json`, `translation_batches/<batch_id>.decision_record.json` |
+| validate batch | `tools/validators/validate_translation_batch.py` | `translation_batches/<batch_id>.validation.json` |
+| assemble batches | `tools/generators/assemble_semantic_translations.py` | `docs/input/semantic_translations/<case_id>.translations.json`, `translation_assembly_evidence.json` |
+| final semantic gate | `tools/validators/validate_semantic_translations.py` | `semantic_translation_validation.json` |
+
+S5 exits only through these outcomes:
+
+| Outcome | Exit target |
+|---|---|
+| every required batch output exists, every batch validation passes, assembled coverage is complete, and final semantic validation passes | `S6_LayoutPlan` |
+| model/API/human translation capacity is unavailable or cannot materialize current-run units | `S_FAIL_CAPABILITY` |
+| batch outputs contain placeholders, metadata-style pseudo translations, missing units, invalid target language, or token preservation failures | repair inside S5 if bounded and documented; otherwise `S_FAIL_CAPABILITY` |
+| state trace, prompt artifacts, batch refs, or validation artifacts are missing | `S_FAIL_PROCESS_CONTRACT` |
+
+The executor may choose a smaller batch size to stay within model context. It must not silently drop units or generate placeholder text to satisfy coverage.
 
 ## Mode-Specific State Rule
 

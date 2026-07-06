@@ -36,7 +36,7 @@ def iter_files(root: Path) -> list[Path]:
 def load_tokens(token_file: Path | None, inline_tokens: list[str]) -> list[str]:
     tokens: list[str] = []
     if token_file:
-        raw = json.loads(token_file.read_text(encoding="utf-8"))
+        raw = json.loads(token_file.read_text(encoding="utf-8-sig"))
         if isinstance(raw, list):
             tokens.extend(str(item) for item in raw)
         elif isinstance(raw, dict) and isinstance(raw.get("tokens"), list):

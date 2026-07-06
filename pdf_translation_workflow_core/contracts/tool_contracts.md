@@ -8,7 +8,7 @@
 | pdf_extract | PyMuPDF `get_text("dict")`, `get_text("text")` | text, bbox, font, page geometry |
 | pdf_render | PyMuPDF `get_pixmap`, Poppler if available | source/output PNG evidence |
 | pdf_modify | PyMuPDF redaction and insertion | remove source-language units and insert target-language text |
-| translation_provider | model/API/human-reviewed translation adapter | produce semantic target-language translations with coverage metadata |
+| translation_provider | D2 batch prompt loop, model/API/human-reviewed translation adapter | produce semantic target-language translations with coverage metadata |
 | visual_review | `view_image`, source-vs-output PNG comparison | human/model visual adjudication |
 | edit | `apply_patch` | minimal repair edits to scripts/docs |
 | validation | Python validators | process, product gate, semantic coverage, and anti-overfit validation |
@@ -95,10 +95,26 @@ The fill sampler is an open function over the current bbox and page pixels. It m
 | `generate_minimal_candidate.py` | process smoke only | never product-quality evidence |
 | `generate_backfill_candidate.py` | `backfill_candidate_validation` | proves redaction/insertion mechanics only; fails semantic product quality |
 | `validate_semantic_translations.py` | `product_quality` | validates complete real translation input before generation |
+| `build_translation_batch_manifest.py` | `product_quality` | creates bounded D2 batch slot files from current source extraction |
+| `validate_translation_batch.py` | `product_quality` | validates one D2 batch before assembly |
+| `assemble_semantic_translations.py` | `product_quality` | assembles validated batch outputs into semantic translation JSON |
 | `build_layout_policy.py` | `product_quality` and validation runs | derives a run-local layout policy from current extraction statistics plus the matching generic language layout profile; may be revised by D4 model judgement |
 | `generate_semantic_backfill.py` | `product_quality` | consumes validated semantic translations and explicit layout policy, then performs redaction/backfill with region-level target-language reflow |
 
 `product_quality` must not silently fall back to `generate_backfill_candidate.py`. If semantic translations are missing or fail validation, return `S_FAIL_CAPABILITY` before creating a product candidate.
+
+`product_quality` must not treat D2 as an unbounded one-shot request. The executable S5 sequence is:
+
+```text
+build_translation_batch_manifest.py
+for each batch:
+  D2_translation.prompt.json
+  validate_translation_batch.py
+assemble_semantic_translations.py
+validate_semantic_translations.py
+```
+
+The PDF generator can consume only the assembled file that passes `validate_semantic_translations.py`.
 
 `validate_semantic_translations.py` must reject both literal placeholders and metadata-style pseudo translations. A target string such as `This line reports...`, `This line describes...`, `本行说明...`, `本行列示...`, `当前页的财务报告、治理或业务信息`, or leaked instruction text such as `保留数值与标记...` is not a semantic translation and must block `S7_GenerateCandidate`.
 

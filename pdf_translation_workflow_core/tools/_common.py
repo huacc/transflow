@@ -36,7 +36,7 @@ def ensure_dir(path: Path) -> Path:
 
 
 def read_json(path: Path) -> Any:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def write_json(path: Path, data: Any) -> None:
@@ -84,4 +84,3 @@ def median(values: list[float]) -> float | None:
     if len(values) % 2:
         return values[mid]
     return (values[mid - 1] + values[mid]) / 2
-

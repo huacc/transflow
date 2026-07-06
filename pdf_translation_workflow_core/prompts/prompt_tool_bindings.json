@@ -53,15 +53,36 @@
     },
     {
       "state": "S5_TranslationPlan",
-      "tool_first": ["tools/validators/validate_semantic_translations.py in product_quality after D2 output is materialized"],
+      "tool_first": [
+        "tools/planners/build_translation_batch_manifest.py in product_quality before D2 model calls",
+        "tools/validators/validate_translation_batch.py after each D2 batch model_output is written",
+        "tools/generators/assemble_semantic_translations.py after all batch validations pass",
+        "tools/validators/validate_semantic_translations.py as the final S5 entry gate to S6"
+      ],
       "model_prompt": "templates/D2_translation.prompt.json",
       "slot_bindings": {
-        "translation_units": "source_extraction.json text_lines grouped by region/page strategy",
+        "translation_units": "translation_batch_manifest.json batches[*].slot_values_ref translation_units, not the full document at once",
+        "batch_id": "translation_batch_manifest.json batches[*].batch_id",
+        "batch_index": "translation_batch_manifest.json batches[*].batch_index",
+        "batch_count": "translation_batch_manifest.json batch_count",
+        "batch_slot_values_ref": "translation_batch_manifest.json batches[*].slot_values_ref",
+        "batch_model_output_ref": "translation_batch_manifest.json batches[*].model_output_ref",
         "terminology_policy": "contracts/decision_contracts.md + run-specific glossary if present"
       },
-      "produces": ["docs/input/semantic_translations/<case_id>.translations.json", "semantic_translation_validation.json"],
+      "produces": [
+        "translation_batch_manifest.json",
+        "translation_batches/<batch_id>.slot_values.json",
+        "translation_batches/<batch_id>.prompt_instance.json",
+        "translation_batches/<batch_id>.model_output.json",
+        "translation_batches/<batch_id>.validation.json",
+        "translation_batches/<batch_id>.decision_record.json",
+        "translation_assembly_evidence.json",
+        "docs/input/semantic_translations/<case_id>.translations.json",
+        "semantic_translation_validation.json"
+      ],
       "product_quality_requirement": "semantic translations must identify a non-placeholder translation_provider, translation_quality=semantic_translation, one output per source unit, semantic_coverage=full_semantic_translation, and no placeholder or line-category pseudo translation patterns",
-      "next_state_from_model": ["S6_LayoutPlan", "S_FAIL_PROCESS_CONTRACT"]
+      "loop_policy": "S5 is a bounded D2 materialization loop. The executor must not ask D2 to translate the whole PDF in one unbounded prompt. It must iterate batches from translation_batch_manifest.json, validate each batch, assemble only validated batch outputs, then run validate_semantic_translations.py. Missing batches, failed batch validation, or inability to translate current-run units routes to S_FAIL_CAPABILITY.",
+      "next_state_from_model": ["S5_TranslationPlan", "S6_LayoutPlan", "S_FAIL_CAPABILITY", "S_FAIL_PROCESS_CONTRACT"]
     },
     {
       "state": "S6_LayoutPlan",

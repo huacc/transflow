@@ -18,9 +18,9 @@
     "required": ["process_contract_verdict", "product_quality_verdict", "anti_overfit_verdict", "terminal_state", "known_risks", "confidence", "evidence_refs"],
     "properties": {
       "process_contract_verdict": "PASS|FAIL",
-      "product_quality_verdict": "PASS|FAIL|NOT_ATTEMPTED",
+      "product_quality_verdict": "PASS|FAIL|NOT_ATTEMPTED|NOT_REACHED",
       "anti_overfit_verdict": "PASS|FAIL|NOT_CHECKED",
-      "terminal_state": "S_DONE_PROCESS_VALIDATED|S_DONE_PRODUCT_ACCEPTED|S_FAIL_PROCESS_CONTRACT|S_FAIL_QUALITY|S_FAIL_TOOLING",
+      "terminal_state": "S_DONE_PROCESS_VALIDATED|S_DONE_PRODUCT_ACCEPTED|S_FAIL_PROCESS_CONTRACT|S_FAIL_QUALITY|S_FAIL_TOOLING|S_FAIL_CAPABILITY",
       "known_risks": "array(string)",
       "confidence": "0.0-1.0",
       "evidence_refs": "array(path)"
