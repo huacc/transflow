@@ -1,0 +1,23 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "PASS",
+  "translation_provider": "google_translate_web_gtx",
+  "source_language": "en",
+  "inferred_source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [],
+  "coverage": {
+    "source_unit_count": 216,
+    "translated_unit_count": 216,
+    "matched_unit_count": 216,
+    "missing_unit_ids": [],
+    "invalid_unit_count": 0
+  },
+  "invalid_units": [],
+  "warnings": [],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\reports\\round13\\R13_建業新生活有限公司_e\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\input\\round13\\semantic_translations\\R13_建業新生活有限公司_e.translations.json"
+}

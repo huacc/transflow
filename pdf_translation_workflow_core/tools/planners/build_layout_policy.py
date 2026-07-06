@@ -280,7 +280,8 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
         },
         "constrained_text_image_fit": {
             "enabled": True,
-            "region_kinds": ["table_cell", "compact_label", "short_label", "legend"],
+            "region_kinds": ["table_cell", "compact_label", "short_label", "legend", "table_note", "footnote"],
+            "wrapped_region_kinds": ["table_note", "footnote"],
             "dense_single_line_body_page_types": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
             "min_font_pt": 3.2,
             "max_font_pt": 5.2,

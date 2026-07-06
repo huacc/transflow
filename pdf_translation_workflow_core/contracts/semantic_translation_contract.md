@@ -164,6 +164,8 @@ This preservation path is allowed only when the line does not contain source-lan
 
 For every required unit:
 
+- The declared `source_language` must match the dominant language inferred from the current `source_extraction.json`. A semantic JSON for another source-language direction must fail even if no units are selected under its declared language.
+- The validator must fail when the declared source-language rule selects zero required units, unless a separate OCR/tooling boundary has already routed the case away from product-quality generation.
 - `unit_id` must match the source extraction unit id.
 - `source_text` must match the source extraction text exactly after trimming.
 - The target text field named by `target_text_field` must be non-empty.
@@ -184,7 +186,7 @@ For every required unit:
 - A variant may abbreviate wording for fit, but it must preserve the semantic identity recorded in the full target text.
 - A variant must not replace real translation with a line-category description. The same forbidden metadata patterns apply to variants.
 - The generator may choose a variant only when `layout_policy.json` permits that variant field for the current region kind.
-- If a constrained role lacks a matching variant, the generator must not invent one. It may try the full target text through the normal fit curve, but any overflow/fallback must remain visible as `text_fit` evidence and feed D2/D4 repair.
+- If a constrained role lacks a matching variant, the generator must not invent one. It may try the full target text through the normal fit curve. If the current layout policy explicitly permits `constrained_text_image_fit`, S7 may render the full target text as a wrapped local text image; otherwise any overflow/fallback must remain visible as `text_fit` evidence and feed D2/D4 repair.
 
 ## Provider Rules
 

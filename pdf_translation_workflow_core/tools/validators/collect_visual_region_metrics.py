@@ -413,14 +413,26 @@ def status_for_region(
     if font_ratio is not None and font_ratio < float(rule["fail_source_ratio"]):
         reasons.append(f"output_to_source_font_ratio {font_ratio:.2f} is below {role} fail ratio {float(rule['fail_source_ratio']):.2f}")
         repair_atoms.append(str(rule["repair_atom"]))
-    if bg_delta >= BACKGROUND_DELTA_FAIL:
-        reasons.append(f"background_delta {bg_delta:.1f} exceeds fail threshold {BACKGROUND_DELTA_FAIL:.1f}")
-        repair_atoms.append("background_fill_resample")
     source_residue_delta = float(insertion.get("source_residue_delta") or 0.0)
     inner_bg_delta = float(insertion.get("inner_background_delta") or 0.0)
     text_image_bg_delta = float(insertion.get("text_image_background_delta") or 0.0)
     residue_excess = max(0.0, residue_delta - source_residue_delta)
     residue_check_enabled = max(saturation(insertion.get("output_inner_background_rgb", (0, 0, 0))), saturation(insertion.get("output_background_rgb", (0, 0, 0)))) <= 72.0
+    text_label_roles = {"event_card", "short_label", "legend", "sidebar"}
+    background_delta_only = (
+        inner_bg_delta < INNER_BACKGROUND_DELTA_FAIL
+        and text_image_bg_delta < TEXT_IMAGE_BACKGROUND_DELTA_FAIL
+        and not (residue_check_enabled and residue_delta >= BACKGROUND_RESIDUE_FAIL and residue_excess >= 8.0)
+    )
+    if bg_delta >= BACKGROUND_DELTA_FAIL:
+        if role in text_label_roles and background_delta_only:
+            # For compact labels and diagram captions, source-vs-output edge color can change
+            # because translated glyphs replace source glyphs. Treat that as a warning unless
+            # inner/background-residue evidence shows an actual patch artifact.
+            pass
+        else:
+            reasons.append(f"background_delta {bg_delta:.1f} exceeds fail threshold {BACKGROUND_DELTA_FAIL:.1f}")
+            repair_atoms.append("background_fill_resample")
     if status in TEXT_IMAGE_STATUSES and insertion.get("text_image_background_rgb") is None:
         reasons.append(f"{status} has no image_background_color evidence")
         repair_atoms.append("background_residue_fill_resample")

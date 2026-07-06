@@ -1,0 +1,83 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "FAIL",
+  "translation_provider": "google_translate_web_gtx",
+  "source_language": "en",
+  "inferred_source_language": "zh",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [
+    "source_language_mismatch:declared=en;inferred_from_current_extraction=zh"
+  ],
+  "coverage": {
+    "source_unit_count": 1,
+    "translated_unit_count": 64,
+    "matched_unit_count": 0,
+    "missing_unit_ids": [
+      "p0_b2_l1"
+    ],
+    "invalid_unit_count": 0
+  },
+  "invalid_units": [],
+  "warnings": [
+    {
+      "warning": "extra_translation_units_ignored",
+      "unit_ids": [
+        "p0_b10_l0",
+        "p0_b10_l1",
+        "p0_b11_l0",
+        "p0_b11_l11",
+        "p0_b11_l12",
+        "p0_b11_l13",
+        "p0_b11_l20",
+        "p0_b11_l3",
+        "p0_b11_l4",
+        "p0_b11_l7",
+        "p0_b11_l8",
+        "p0_b12_l0",
+        "p0_b13_l0",
+        "p0_b13_l1",
+        "p0_b13_l2",
+        "p0_b13_l3",
+        "p0_b13_l4",
+        "p0_b14_l0",
+        "p0_b15_l0",
+        "p0_b15_l1",
+        "p0_b16_l0",
+        "p0_b16_l1",
+        "p0_b1_l0",
+        "p0_b2_l0",
+        "p0_b30_l0",
+        "p0_b30_l1",
+        "p0_b30_l10",
+        "p0_b30_l11",
+        "p0_b30_l2",
+        "p0_b30_l3",
+        "p0_b30_l4",
+        "p0_b30_l5",
+        "p0_b30_l6",
+        "p0_b30_l7",
+        "p0_b30_l8",
+        "p0_b30_l9",
+        "p0_b3_l0",
+        "p0_b3_l1",
+        "p0_b43_l0",
+        "p0_b44_l0",
+        "p0_b45_l0",
+        "p0_b45_l1",
+        "p0_b45_l2",
+        "p0_b45_l3",
+        "p0_b45_l4",
+        "p0_b45_l5",
+        "p0_b45_l6",
+        "p0_b45_l7",
+        "p0_b45_l8",
+        "p0_b4_l0"
+      ]
+    }
+  ],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\reports\\round13\\R13_建業新生活有限公司_c\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\input\\round13\\semantic_translation_pool\\R12_00388_2026_annual_report_en.translations.json"
+}

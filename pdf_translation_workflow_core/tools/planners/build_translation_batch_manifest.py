@@ -46,11 +46,39 @@ def normalize_language(value: str) -> str:
     return text
 
 
+def cjk_count(text: str) -> int:
+    return len(CJK_RE.findall(text))
+
+
+def latin_count(text: str) -> int:
+    return sum(1 for ch in text if ("A" <= ch <= "Z") or ("a" <= ch <= "z"))
+
+
+def is_neutral_identifier(text: str) -> bool:
+    stripped = text.strip()
+    if not stripped:
+        return False
+    upper_identifier_labels = {"CUSIP", "ISIN", "SEDOL", "RIC", "LEI"}
+    if stripped.upper() in upper_identifier_labels:
+        return True
+    if re.fullmatch(r"[A-Z]", stripped):
+        return True
+    if re.fullmatch(r"[A-Z]{1,6}[\dA-Z.:-]{2,}", stripped):
+        return True
+    if re.fullmatch(r"\d+[A-Z.:-]+[A-Z\d.:-]*", stripped):
+        return True
+    return False
+
+
 def line_is_translatable(line: dict[str, Any], source_language: str) -> bool:
     text = str(line.get("text", ""))
     if source_language == "zh":
         return bool(CJK_RE.search(text))
     if source_language == "en":
+        if cjk_count(text) > max(1, latin_count(text)) * 0.5:
+            return False
+        if is_neutral_identifier(text):
+            return False
         return bool(line.get("ascii_tokens"))
     return bool(text.strip())
 

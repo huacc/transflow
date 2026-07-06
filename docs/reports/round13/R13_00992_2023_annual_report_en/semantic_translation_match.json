@@ -1,0 +1,33 @@
+{
+  "case_id": "R13_00992_2023_annual_report_en",
+  "matching_strategy": "validate_each_semantic_translation_against_current_source_extraction",
+  "filename_used_as_verdict": false,
+  "selected_semantic_translation": "docs/input/round13/semantic_translations/R13_00992_2023_annual_report_en.translations.json",
+  "selected_pool_file": "docs/input/round13/semantic_translation_pool/R12_00992_2023_annual_report_en.translations.json",
+  "attempts": [
+    {
+      "candidate": "docs/input/round13/semantic_translation_pool/R12_00005_2025_interim_report_zh.translations.json",
+      "validation": "docs/reports/round13/R13_00992_2023_annual_report_en/translation_match_candidates/candidate_001_R12_00005_2025_interim_report_zh.translations.validation.json",
+      "returncode": 2,
+      "translation_validation_verdict": "FAIL",
+      "missing_count": 0,
+      "invalid_count": 0
+    },
+    {
+      "candidate": "docs/input/round13/semantic_translation_pool/R12_00388_2026_annual_report_en.translations.json",
+      "validation": "docs/reports/round13/R13_00992_2023_annual_report_en/translation_match_candidates/candidate_002_R12_00388_2026_annual_report_en.translations.validation.json",
+      "returncode": 2,
+      "translation_validation_verdict": "FAIL",
+      "missing_count": 475,
+      "invalid_count": 18
+    },
+    {
+      "candidate": "docs/input/round13/semantic_translation_pool/R12_00992_2023_annual_report_en.translations.json",
+      "validation": "docs/reports/round13/R13_00992_2023_annual_report_en/translation_match_candidates/candidate_003_R12_00992_2023_annual_report_en.translations.validation.json",
+      "returncode": 0,
+      "translation_validation_verdict": "PASS",
+      "missing_count": 0,
+      "invalid_count": 0
+    }
+  ]
+}

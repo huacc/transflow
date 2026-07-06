@@ -33,6 +33,14 @@ The top-level state machine enters `Lx_RepairLoop` from `S8_VerifyProductQuality
 classify failure -> select repair atom -> apply repair -> regenerate candidate -> rejudge
 ```
 
+`visual_repair_plan.json` is only planning evidence. It does not prove that a
+repair loop executed. Every entry into `Lx_RepairLoop` must write at least one
+`repair_loop_<n>.json` execution record. If no repair atom is applied, that
+record must say `execution_status=not_executed_unrepairable` or
+`partial_not_full_loop` and include the explicit reason. A run that enters
+`Lx_RepairLoop` without a `repair_loop_<n>.json` record fails the process
+contract even if final product quality also fails.
+
 The loop exits only through one of these outcomes:
 
 | Outcome | Exit target |
@@ -261,6 +269,8 @@ Short same-column continuation lines may join an active `region_flow` only when 
 `matrix_or_table_diagram` is stricter than ordinary dense table/chart pages. It must be listed in `hard_disable_page_type_guesses` for `flow_grouping.body`, `target_composition`, and `target_language_reflow`. S6 must keep rows/columns as `table_cell` or line-preserved compact labels unless the block is an explicit note marker or a bottom-page note past the dense-page y-ratio threshold. If S7 evidence contains `region_kind=body_flow` on a matrix page, S8 must fail `matrix_diagram_integrity` and return to S6.
 
 `S7_GenerateCandidate` must probe textbox fit on a temporary page before drawing. Failed font-size attempts must not render to the real candidate page. If evidence or PNG review shows failed probe residue, the run must return to `S6`/`S7` repair or fail product quality.
+
+When all textbox probes fail, the generator may use `constrained_text_image_fit` only for roles explicitly declared by the layout policy. Wrapped text-image fallback is allowed for `table_note`, `footnote`, and language-profile-declared `body_flow` cases such as `zh_to_en`; it must preserve the full target text, wrap to the target box width, record image/background evidence, and remain subject to `text_image_background_delta` and role readability gates.
 
 If `S8_VerifyProductQuality` observes short target-language lines caused by inherited source bboxes, the failure class is:
 

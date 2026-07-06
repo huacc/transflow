@@ -138,7 +138,7 @@
       },
       "produces": ["candidate.pdf", "translations.json", "layout_plan.json", "candidate_generation_evidence.json"],
       "mode_scope": "backfill_candidate_validation|product_quality",
-      "current_gap": "The semantic generator consumes validated translations, redacts source-language text per unit, probes textbox fit on a temporary page before drawing, and reflows paragraph/footnote/body_flow blocks into target-language regions. Product-quality may still fail visual gates, but line-by-line source bbox copying, failed-probe residue, placeholder semantic failure, pseudo-translation semantic failure, and fixed paragraph separators between every source-wrapped line must not occur.",
+      "current_gap": "The semantic generator consumes validated translations, redacts source-language text per unit, probes textbox fit on a temporary page before drawing, reflows paragraph/footnote/body_flow blocks into target-language regions, and can use policy-declared constrained text-image fallback with wrapped text for table_note, footnote, and zh-to-en body_flow after textbox probing fails. Product-quality may still fail visual gates, but line-by-line source bbox copying, failed-probe residue, placeholder semantic failure, pseudo-translation semantic failure, and fixed paragraph separators between every source-wrapped line must not occur.",
       "next_state_on_pass": "S8_VerifyProductQuality",
       "next_state_on_fail": "S_FAIL_TOOLING|S_FAIL_CAPABILITY"
     },
@@ -161,7 +161,7 @@
     },
     {
       "state": "Lx_RepairLoop",
-      "tool_first": [],
+      "tool_first": ["tools/run_semantic_product_quality_round.py must write repair_loop_<n>.json for every entered repair loop; a visual_repair_plan.json alone is not loop execution evidence"],
       "model_prompt": "templates/D8_repair_selection.prompt.json",
       "slot_bindings": {
         "failed_findings": "quality_findings.json blocking findings",
@@ -169,7 +169,7 @@
         "repair_atom_catalog": "contracts/page_type_repair_matrix.md",
         "prior_loop_summary": "state_trace.json previous loop entries"
       },
-      "produces": ["repair_plan.json"],
+      "produces": ["repair_loop_<n>.json", "optional revised layout/translation/candidate artifacts when a repair atom executor is available"],
       "next_state_from_model": ["S3_SourceExtract", "S5_TranslationPlan", "S6_LayoutPlan", "S7_GenerateCandidate", "S_FAIL_QUALITY", "S_FAIL_CAPABILITY", "S_FAIL_PROCESS_CONTRACT"]
     },
     {

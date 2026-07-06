@@ -1,0 +1,1252 @@
+{
+  "decision_id": "D7_visual_adjudication_from_region_metrics",
+  "state": "S8_VerifyProductQuality",
+  "case_id": "R13_建業新生活有限公司_c",
+  "verdict": "PASS_WITH_WARN",
+  "dimensions": [
+    {
+      "dimension": "body_paragraph_readability",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 20,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p0_b1_000",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "body",
+          "page_type_guess": "mixed_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 10.0,
+          "source_median_font_size": 13.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 4,
+          "output_to_source_font_ratio": 0.769,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            53.549,
+            50.339,
+            542.088,
+            132.116
+          ],
+          "source_union_bbox": [
+            55.049,
+            54.379,
+            540.588,
+            128.076
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited have regard to the contents of this"
+        },
+        {
+          "region_id": "region_p0_b2_001",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "body",
+          "page_type_guess": "mixed_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 10.0,
+          "source_median_font_size": 16.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 2,
+          "output_to_source_font_ratio": 0.625,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            179.242,
+            204.161,
+            416.05,
+            254.913
+          ],
+          "source_union_bbox": [
+            180.742,
+            209.041,
+            414.55,
+            250.033
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "Jianye New Life Co., Ltd. Central China New Life Limited"
+        },
+        {
+          "region_id": "region_p0_b3_002",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "body",
+          "page_type_guess": "mixed_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 10.0,
+          "source_median_font_size": 11.5,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 2,
+          "output_to_source_font_ratio": 0.87,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            199.998,
+            248.215,
+            395.475,
+            287.999
+          ],
+          "source_union_bbox": [
+            201.498,
+            251.835,
+            393.975,
+            284.379
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "(Incorporated in the Cayman Islands with limited liability) (Stock code: 9983)"
+        },
+        {
+          "region_id": "body_flow_000",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "body_flow",
+          "page_type_guess": "mixed_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 10.2,
+          "source_median_font_size": 13.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 6,
+          "output_to_source_font_ratio": 0.785,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            55.193,
+            339.283,
+            540.111,
+            509.237
+          ],
+          "source_union_bbox": [
+            56.693,
+            343.323,
+            538.611,
+            493.395
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "This is to inform that Jianye New Life Co., Ltd. (the \"Company\") is hereby scheduled to start on June 1, 2026 (Monday) 1"
+        },
+        {
+          "region_id": "body_flow_001",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "body_flow",
+          "page_type_guess": "mixed_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 10.2,
+          "source_median_font_size": 13.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 3,
+          "output_to_source_font_ratio": 0.785,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            78.891,
+            514.237,
+            495.584,
+            619.594
+          ],
+          "source_union_bbox": [
+            79.391,
+            514.637,
+            391.443,
+            607.392
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "(B) To re-elect Mr. Liang Xiang as an independent non-executive director.\n\n(C) To re-elect Ms. Luo Ying as an independen"
+        },
+        {
+          "region_id": "region_p0_b11_010",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "body",
+          "page_type_guess": "mixed_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 10.0,
+          "source_median_font_size": 13.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 2,
+          "output_to_source_font_ratio": 0.769,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            55.206,
+            624.594,
+            540.142,
+            668.437
+          ],
+          "source_union_bbox": [
+            56.706,
+            628.634,
+            538.642,
+            664.397
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "3. Re-appoint Bochun Certified Public Accountants Co., Ltd. as the company’s auditor and authorize the Board of Director"
+        },
+        {
+          "region_id": "region_p1_b1_000",
+          "page_index": 1,
+          "page_number": 2,
+          "region_kind": "body",
+          "page_type_guess": "mixed_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 10.0,
+          "source_median_font_size": 13.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 2,
+          "output_to_source_font_ratio": 0.769,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            55.193,
+            50.339,
+            539.99,
+            94.104
+          ],
+          "source_union_bbox": [
+            56.693,
+            54.379,
+            538.49,
+            90.064
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "4. Consider and, as appropriate, pass (with or without amendments) the following resolutions proposed in the form of spe"
+        },
+        {
+          "region_id": "body_flow_000",
+          "page_index": 1,
+          "page_number": 2,
+          "region_kind": "body_flow",
+          "page_type_guess": "mixed_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 10.2,
+          "source_median_font_size": 13.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 22,
+          "output_to_source_font_ratio": 0.785,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            100.537,
+            145.343,
+            546.577,
+            722.682
+          ],
+          "source_union_bbox": [
+            102.037,
+            149.383,
+            545.077,
+            603.174
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "(i) Subject to paragraph (iii) below, give general and unconditional approval to the directors for the relevant period ("
+        }
+      ]
+    },
+    {
+      "dimension": "footnote_readability",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 1,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p3_b9_l0",
+          "page_index": 3,
+          "page_number": 4,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 6.2,
+          "source_median_font_size": 11.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.564,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            54.802,
+            603.121,
+            94.552,
+            618.034
+          ],
+          "source_union_bbox": [
+            55.302,
+            603.521,
+            94.052,
+            617.634
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "P.S.:"
+        }
+      ]
+    },
+    {
+      "dimension": "short_label_legibility",
+      "status": "PASS_WITH_WARN",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 1,
+      "region_count": 5,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p0_b4_l0",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "short_label",
+          "page_type_guess": "mixed_text",
+          "quality_role": "short_label",
+          "gate_id": "short_label_legibility",
+          "status": "warn",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 6.6,
+          "source_median_font_size": 14.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.471,
+          "fail_font_pt": 3.4,
+          "warn_font_pt": 4.4,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.55,
+          "bbox": [
+            230.113,
+            303.829,
+            365.163,
+            322.563
+          ],
+          "source_union_bbox": [
+            230.613,
+            304.229,
+            364.663,
+            322.163
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "output_to_source_font_ratio 0.47 is below short_label warn ratio 0.55"
+          ],
+          "repair_atoms": [
+            "D2_constrained_slot_layout_variants"
+          ],
+          "crop_evidence": "docs/reports/round13/R13_建業新生活有限公司_c/visual_crops/page_01_region_p0_b4_l0_short_label.png",
+          "target_text_sample": "Notice of Annual General Meeting"
+        }
+      ]
+    },
+    {
+      "dimension": "table_text_legibility",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 5,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p3_b10_009",
+          "page_index": 3,
+          "page_number": 4,
+          "region_kind": "table_note",
+          "page_type_guess": "mixed_text",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 8.0,
+          "source_median_font_size": 11.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 2,
+          "output_to_source_font_ratio": 0.727,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            55.193,
+            630.041,
+            540.124,
+            670.042
+          ],
+          "source_union_bbox": [
+            56.693,
+            633.521,
+            538.624,
+            662.638
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "(a) At the meeting, the Chairman of the General Assembly will vote on the above items in accordance with Article 66 of t"
+        },
+        {
+          "region_id": "region_p3_b11_010",
+          "page_index": 3,
+          "page_number": 4,
+          "region_kind": "table_note",
+          "page_type_guess": "mixed_text",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 8.0,
+          "source_median_font_size": 11.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 3,
+          "output_to_source_font_ratio": 0.727,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            55.193,
+            675.042,
+            540.214,
+            744.09
+          ],
+          "source_union_bbox": [
+            56.693,
+            678.522,
+            538.714,
+            722.709
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "(b) The company will be suspended from May 27, 2026 (Wednesday) to June 1, 2026 (Monday) (both days inclusive) During th"
+        },
+        {
+          "region_id": "region_p4_b5_004",
+          "page_index": 4,
+          "page_number": 5,
+          "region_kind": "table_note",
+          "page_type_guess": "mixed_text",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 8.0,
+          "source_median_font_size": 11.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 3,
+          "output_to_source_font_ratio": 0.727,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            55.199,
+            366.295,
+            540.22,
+            421.3
+          ],
+          "source_union_bbox": [
+            56.699,
+            369.775,
+            538.72,
+            413.896
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "(f) For the above-mentioned resolutions 2(A), (B) and (C), Mr. Yan Xuewen, Mr. Liang Xiang and Ms. Luo Ying Members will"
+        },
+        {
+          "region_id": "region_p4_b6_005",
+          "page_index": 4,
+          "page_number": 5,
+          "region_kind": "table_note",
+          "page_type_guess": "mixed_text",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 8.0,
+          "source_median_font_size": 11.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 3,
+          "output_to_source_font_ratio": 0.727,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            55.199,
+            426.3,
+            540.23,
+            481.305
+          ],
+          "source_union_bbox": [
+            56.699,
+            429.78,
+            538.73,
+            473.901
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "(g) For the above-mentioned resolutions 4(A) and 4(C), it is necessary to obtain the consent of the shareholders to give"
+        },
+        {
+          "region_id": "region_p4_b7_006",
+          "page_index": 4,
+          "page_number": 5,
+          "region_kind": "table_note",
+          "page_type_guess": "mixed_text",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 8.0,
+          "source_median_font_size": 11.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 4,
+          "output_to_source_font_ratio": 0.727,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            55.21,
+            486.305,
+            540.167,
+            575.52
+          ],
+          "source_union_bbox": [
+            56.71,
+            489.785,
+            538.667,
+            548.91
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "(h) In relation to resolution 4(B) proposed above, the Directors would like to declare that they will, in appropriate ci"
+        }
+      ]
+    },
+    {
+      "dimension": "background_residue_artifact",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 31,
+      "evidence": "detects local redaction/fill rectangles whose interior background no longer matches the surrounding rendered region, including redaction-only bands not covered by translated text and colored-background cover blocks that create new visible rectangles",
+      "sample": []
+    },
+    {
+      "dimension": "matrix_diagram_integrity",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 0,
+      "evidence": "matrix/table-diagram pages must preserve two-dimensional cell/label structure and must not route diagram text through body_flow or fallback body insertion",
+      "sample": []
+    },
+    {
+      "dimension": "source_relative_visual_baseline",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 31,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": []
+    },
+    {
+      "dimension": "image_color_integrity",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 6,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "page_index": 0,
+          "page_number": 1,
+          "source_image_count": 0,
+          "output_image_count": 1,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            247.891,
+            248.023,
+            248.349
+          ],
+          "output_mean_rgb": [
+            246.292,
+            246.373,
+            246.703
+          ],
+          "mean_rgb_delta": 1.631,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            12.463,
+            12.665,
+            12.609
+          ]
+        },
+        {
+          "page_index": 1,
+          "page_number": 2,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            246.852,
+            246.737,
+            246.775
+          ],
+          "output_mean_rgb": [
+            243.432,
+            243.226,
+            243.276
+          ],
+          "mean_rgb_delta": 3.477,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            17.717,
+            18.007,
+            17.928
+          ]
+        },
+        {
+          "page_index": 2,
+          "page_number": 3,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            247.54,
+            247.434,
+            247.469
+          ],
+          "output_mean_rgb": [
+            244.246,
+            244.055,
+            244.101
+          ],
+          "mean_rgb_delta": 3.347,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            16.748,
+            17.023,
+            16.948
+          ]
+        },
+        {
+          "page_index": 3,
+          "page_number": 4,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            248.104,
+            248.006,
+            248.039
+          ],
+          "output_mean_rgb": [
+            245.459,
+            245.289,
+            245.33
+          ],
+          "mean_rgb_delta": 2.69,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            14.82,
+            15.063,
+            14.997
+          ]
+        },
+        {
+          "page_index": 4,
+          "page_number": 5,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            246.775,
+            246.658,
+            246.697
+          ],
+          "output_mean_rgb": [
+            241.771,
+            241.535,
+            241.592
+          ],
+          "mean_rgb_delta": 5.077,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            18.868,
+            19.182,
+            19.098
+          ]
+        },
+        {
+          "page_index": 5,
+          "page_number": 6,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            252.393,
+            252.356,
+            252.369
+          ],
+          "output_mean_rgb": [
+            250.376,
+            250.293,
+            250.313
+          ],
+          "mean_rgb_delta": 2.045,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            6.354,
+            6.46,
+            6.432
+          ]
+        }
+      ]
+    }
+  ],
+  "blocking_failure_count": 0,
+  "warning_dimension_count": 1,
+  "evidence_refs": [
+    "docs/reports/round13/R13_建業新生活有限公司_c/visual_region_metrics.json",
+    "docs/reports/round13/R13_建業新生活有限公司_c/candidate_render_manifest.json",
+    "docs/reports/round13/R13_建業新生活有限公司_c/visual_repair_plan.json"
+  ],
+  "backend_model_call_made": false,
+  "adjudicator": "deterministic_visual_region_gate_materializer",
+  "next_state": "S9_VerifyProcessContract",
+  "notes": "This artifact materializes current-run deterministic visual gates. A human/model review may replace it when source-vs-output image judgement is required."
+}

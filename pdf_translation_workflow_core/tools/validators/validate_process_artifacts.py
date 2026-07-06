@@ -142,11 +142,19 @@ def has_unrepairable_reason(decision: dict[str, Any]) -> bool:
     model_output = decision.get("model_output")
     if not isinstance(model_output, dict):
         return False
-    repair_plan = model_output.get("repair_plan")
     return any(
         key in model_output and model_output.get(key)
-        for key in ["unrepairable_reason", "no_valid_repair_reason", "failure_class", "repair_atom"]
-    ) or isinstance(repair_plan, dict)
+        for key in ["unrepairable_reason", "no_valid_repair_reason"]
+    )
+
+
+def find_repair_loop_records(run_dir: Path) -> list[Path]:
+    records: list[Path] = []
+    for candidate in run_dir.rglob("repair_loop_*.json"):
+        if "pdf_translation_workflow_core" in candidate.parts:
+            continue
+        records.append(candidate)
+    return sorted(records, key=lambda item: str(item))
 
 
 def validate_product_quality_visual_closure(
@@ -159,6 +167,7 @@ def validate_product_quality_visual_closure(
     is_product_quality = any(item.get("run_mode") == "product_quality" for item in state_trace)
     if not is_product_quality:
         return
+    states_seen = {item.get("from") for item in state_trace} | {item.get("to") for item in state_trace}
 
     outputs = operation_outputs(operations)
     candidate_pdf_written = any(str(path).lower().endswith(".pdf") and "candidate" in str(path).lower() for path in outputs)
@@ -192,7 +201,13 @@ def validate_product_quality_visual_closure(
         elif isinstance(d8.get("model_output"), dict) and d8["model_output"].get("verdict") == "skipped":
             errors.append("D7 failed but D8_minimal_repair_selection was skipped")
         elif d8.get("next_state") == "S_FAIL_QUALITY" and not has_unrepairable_reason(d8):
-            errors.append("D8 routed to S_FAIL_QUALITY without repair plan or unrepairable reason")
+            errors.append("D8 routed to S_FAIL_QUALITY without explicit unrepairable reason")
+
+    if "Lx_RepairLoop" in states_seen and not find_repair_loop_records(run_dir):
+        errors.append(
+            "Lx_RepairLoop was entered but no repair_loop_*.json execution record was found; "
+            "visual_repair_plan.json is planning evidence, not repair-loop execution evidence"
+        )
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:

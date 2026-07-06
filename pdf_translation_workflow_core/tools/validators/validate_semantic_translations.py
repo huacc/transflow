@@ -93,8 +93,39 @@ def line_is_translatable(line: dict[str, Any], source_language: str) -> bool:
     if source_language == "zh":
         return bool(CJK_RE.search(text))
     if source_language == "en":
+        cjk_count = len(CJK_RE.findall(text))
+        latin_count = sum(1 for ch in text if ("A" <= ch <= "Z") or ("a" <= ch <= "z"))
+        if cjk_count > max(1, latin_count) * 0.5:
+            return False
+        upper_identifier_labels = {"CUSIP", "ISIN", "SEDOL", "RIC", "LEI"}
+        stripped = text.strip()
+        if stripped.upper() in upper_identifier_labels:
+            return False
+        if re.fullmatch(r"[A-Z]", stripped):
+            return False
+        if re.fullmatch(r"[A-Z]{1,6}[\dA-Z.:-]{2,}", stripped):
+            return False
+        if re.fullmatch(r"\d+[A-Z.:-]+[A-Z\d.:-]*", stripped):
+            return False
         return bool(line.get("ascii_tokens"))
     return bool(text.strip())
+
+
+def infer_source_language(extraction: dict[str, Any]) -> str:
+    cjk_count = 0
+    latin_count = 0
+    for page in extraction.get("pages", []):
+        for line in page.get("text_lines", []):
+            text = str(line.get("text", ""))
+            cjk_count += len(CJK_RE.findall(text))
+            latin_count += sum(1 for ch in text if ("A" <= ch <= "Z") or ("a" <= ch <= "z"))
+    if cjk_count == 0 and latin_count == 0:
+        return "unknown"
+    if cjk_count > max(1, latin_count) * 0.5:
+        return "zh"
+    if latin_count > 0:
+        return "en"
+    return "unknown"
 
 
 def source_units(extraction: dict[str, Any], source_language: str) -> list[dict[str, Any]]:
@@ -212,6 +243,7 @@ def validate(extraction_path: Path, translations_path: Path) -> dict[str, Any]:
     source_language = normalize_language(translations.get("source_language"), "en")
     target_language = normalize_language(translations.get("target_language"), "zh")
     translation_field = target_text_field(translations, target_language)
+    inferred_source_language = infer_source_language(extraction)
     units = source_units(extraction, source_language)
     translated_units = translations.get("units", [])
     by_id = {item.get("unit_id"): item for item in translated_units if isinstance(item, dict)}
@@ -229,6 +261,12 @@ def validate(extraction_path: Path, translations_path: Path) -> dict[str, Any]:
         top_level_errors.append("translation_quality_must_be_semantic_translation")
     if semantic_coverage != "full_semantic_translation":
         top_level_errors.append("semantic_coverage_must_be_full_semantic_translation")
+    if inferred_source_language != "unknown" and inferred_source_language != source_language:
+        top_level_errors.append(
+            f"source_language_mismatch:declared={source_language};inferred_from_current_extraction={inferred_source_language}"
+        )
+    if not units:
+        top_level_errors.append("no_required_source_units_for_declared_source_language")
 
     missing_unit_ids = []
     for unit in units:
@@ -278,6 +316,7 @@ def validate(extraction_path: Path, translations_path: Path) -> dict[str, Any]:
         "translation_validation_verdict": verdict,
         "translation_provider": provider,
         "source_language": source_language,
+        "inferred_source_language": inferred_source_language,
         "target_language": target_language,
         "target_text_field": translation_field,
         "translation_quality": translation_quality,

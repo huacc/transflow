@@ -137,6 +137,15 @@
         "shrink_scales": [1.0, 0.92, 0.84, 0.76]
       }
     },
+    "constrained_text_image_fit": {
+      "enabled": true,
+      "region_kinds": ["table_cell", "compact_label", "short_label", "legend", "table_note", "footnote", "body_flow"],
+      "wrapped_region_kinds": ["table_note", "footnote", "body_flow"],
+      "dense_single_line_body_page_types": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
+      "min_font_pt": 5.2,
+      "max_font_pt": 6.6,
+      "reason": "For zh->en, textbox probing is preferred. If a body/table-note/footnote region still overflows after frame expansion, render wrapped target text as a last-resort local text image instead of falling back to tiny point text."
+    },
       "fallback": {
       "min_insert_pt": 3.2,
       "fallback_insert_font_pt": 3.2,

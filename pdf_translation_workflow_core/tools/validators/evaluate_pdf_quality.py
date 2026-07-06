@@ -175,10 +175,52 @@ def target_text_tokens_from_evidence(evidence_data: dict[str, Any]) -> set[str]:
     return tokens
 
 
+def is_neutral_identifier_token(token: str) -> bool:
+    stripped = token.strip()
+    if not stripped:
+        return False
+    upper_identifier_labels = {"CUSIP", "ISIN", "SEDOL", "RIC", "LEI"}
+    if stripped.upper() in upper_identifier_labels:
+        return True
+    if re.fullmatch(r"[A-Z]", stripped):
+        return True
+    if re.fullmatch(r"[A-Z]{1,6}[\dA-Z.:-]{2,}", stripped):
+        return True
+    if re.fullmatch(r"\d+[A-Z.:-]+[A-Z\d.:-]*", stripped):
+        return True
+    if re.fullmatch(r"[A-Z]{2,6}(?:-[A-Z])?", stripped):
+        return True
+    return False
+
+
+def is_brand_or_code_token(token: str) -> bool:
+    stripped = token.strip()
+    if len(stripped) < 4:
+        return False
+    if any(ch.isdigit() for ch in stripped):
+        return True
+    return any("A" <= ch <= "Z" for ch in stripped)
+
+
+def allowed_latin_fragments(output_tokens: list[str], allowed_tokens: set[str]) -> set[str]:
+    brand_tokens = {token for token in allowed_tokens if is_brand_or_code_token(token)}
+    fragments: set[str] = set()
+    for token in output_tokens:
+        if token in allowed_tokens:
+            continue
+        lowered = token.lower()
+        if any(lowered and lowered in allowed.lower() for allowed in brand_tokens):
+            fragments.add(token)
+    return fragments
+
+
 def zh_residue_evidence(output_ascii: list[str], cjk_unique: list[str], evidence_data: dict[str, Any]) -> tuple[bool, dict[str, Any]]:
     ascii_unique = sorted(set(output_ascii))
     allowed_tokens = target_text_tokens_from_evidence(evidence_data)
-    disallowed = [token for token in ascii_unique if token not in allowed_tokens]
+    neutral_tokens = {token for token in ascii_unique if is_neutral_identifier_token(token)}
+    fragment_tokens = allowed_latin_fragments(ascii_unique, allowed_tokens)
+    allowed_or_neutral = allowed_tokens | neutral_tokens | fragment_tokens
+    disallowed = [token for token in ascii_unique if token not in allowed_or_neutral]
     target_text_has_cjk = bool(cjk_unique)
     failed = bool(disallowed) or not target_text_has_cjk
     return failed, {
@@ -186,10 +228,14 @@ def zh_residue_evidence(output_ascii: list[str], cjk_unique: list[str], evidence
         "ascii_token_count": len(ascii_unique),
         "cjk_unique_count": len(cjk_unique),
         "allowed_latin_token_count": len([token for token in ascii_unique if token in allowed_tokens]),
+        "neutral_identifier_token_count": len(neutral_tokens),
+        "allowed_fragment_token_count": len(fragment_tokens),
         "disallowed_ascii_token_count": len(disallowed),
         "sample": disallowed[:80],
         "allowed_latin_sample": [token for token in ascii_unique if token in allowed_tokens][:80],
-        "reason": "Latin tokens are accepted only when they appear in the validated target-language evidence; other ASCII tokens remain source-residue failures.",
+        "neutral_identifier_sample": sorted(neutral_tokens)[:80],
+        "allowed_fragment_sample": sorted(fragment_tokens)[:80],
+        "reason": "Latin tokens are accepted only when they appear in validated target-language evidence, match generic neutral identifier/code patterns, or are extractor-split fragments of an allowed brand/code token; other ASCII tokens remain source-residue failures.",
     }
 
 

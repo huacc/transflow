@@ -1,0 +1,77 @@
+{
+  "round_id": "round13",
+  "input_count": 5,
+  "process_contract_verdict": "PASS",
+  "semantic_translation_verdict": "PASS",
+  "generation_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "terminal_state": "S_FAIL_QUALITY",
+  "cases": [
+    {
+      "case_id": "R13_00005_2025_interim_report_zh",
+      "source_pdf": "docs/input/round13/source_pdfs/00005_2025_interim_report_zh.pdf",
+      "target_language": "en",
+      "candidate_pdf": "docs/output/round13/R13_00005_2025_interim_report_zh_candidate.pdf",
+      "product_quality_verdict": "FAIL",
+      "failed_gate_ids": [
+        "text_residue",
+        "visual_similarity",
+        "sidebar_navigation_legibility",
+        "table_text_legibility",
+        "background_residue_artifact",
+        "matrix_diagram_integrity"
+      ],
+      "blocking_repair_count": 4,
+      "repair_loop_records": [
+        "docs/reports/round13/R13_00005_2025_interim_report_zh/repair_loop_0001.json"
+      ],
+      "report_dir": "docs/reports/round13/R13_00005_2025_interim_report_zh"
+    },
+    {
+      "case_id": "R13_00388_2026_annual_report_en",
+      "source_pdf": "docs/input/round13/source_pdfs/00388_2026_annual_report_en.pdf",
+      "target_language": "zh",
+      "candidate_pdf": "docs/output/round13/R13_00388_2026_annual_report_en_candidate.pdf",
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_repair_count": 0,
+      "repair_loop_records": [],
+      "report_dir": "docs/reports/round13/R13_00388_2026_annual_report_en"
+    },
+    {
+      "case_id": "R13_00992_2023_annual_report_en",
+      "source_pdf": "docs/input/round13/source_pdfs/00992_2023_annual_report_en.pdf",
+      "target_language": "zh",
+      "candidate_pdf": "docs/output/round13/R13_00992_2023_annual_report_en_candidate.pdf",
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_repair_count": 0,
+      "repair_loop_records": [],
+      "report_dir": "docs/reports/round13/R13_00992_2023_annual_report_en"
+    },
+    {
+      "case_id": "R13_建業新生活有限公司_c",
+      "source_pdf": "docs/input/round13/source_pdfs/建業新生活有限公司_c.pdf",
+      "target_language": "en",
+      "candidate_pdf": "docs/output/round13/R13_建業新生活有限公司_c_candidate.pdf",
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_repair_count": 0,
+      "repair_loop_records": [],
+      "report_dir": "docs/reports/round13/R13_建業新生活有限公司_c"
+    },
+    {
+      "case_id": "R13_建業新生活有限公司_e",
+      "source_pdf": "docs/input/round13/source_pdfs/建業新生活有限公司_e.pdf",
+      "target_language": "zh",
+      "candidate_pdf": "docs/output/round13/R13_建業新生活有限公司_e_candidate.pdf",
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_repair_count": 0,
+      "repair_loop_records": [],
+      "report_dir": "docs/reports/round13/R13_建業新生活有限公司_e"
+    }
+  ],
+  "process_validation": "docs/reports/round13/process_validation.json",
+  "process_validation_errors": []
+}

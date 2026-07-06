@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import math
 import re
 import sys
 from pathlib import Path
@@ -83,11 +84,39 @@ def target_text_field(data: dict[str, Any]) -> str:
     return "translation_target_text"
 
 
+def cjk_count(text: str) -> int:
+    return len(CJK_RE.findall(text))
+
+
+def latin_count(text: str) -> int:
+    return sum(1 for ch in text if ("A" <= ch <= "Z") or ("a" <= ch <= "z"))
+
+
+def is_neutral_identifier(text: str) -> bool:
+    stripped = text.strip()
+    if not stripped:
+        return False
+    upper_identifier_labels = {"CUSIP", "ISIN", "SEDOL", "RIC", "LEI"}
+    if stripped.upper() in upper_identifier_labels:
+        return True
+    if re.fullmatch(r"[A-Z]", stripped):
+        return True
+    if re.fullmatch(r"[A-Z]{1,6}[\dA-Z.:-]{2,}", stripped):
+        return True
+    if re.fullmatch(r"\d+[A-Z.:-]+[A-Z\d.:-]*", stripped):
+        return True
+    return False
+
+
 def line_is_translatable(line: dict[str, Any], source_language: str) -> bool:
     text = str(line.get("text", ""))
     if source_language == "zh":
         return bool(CJK_RE.search(text))
     if source_language == "en":
+        if cjk_count(text) > max(1, latin_count(text)) * 0.5:
+            return False
+        if is_neutral_identifier(text):
+            return False
         return bool(line.get("ascii_tokens"))
     return bool(text.strip())
 
@@ -175,6 +204,58 @@ def union_rect(rects: list[fitz.Rect]) -> fitz.Rect:
     for item in rects[1:]:
         rect.include_rect(item)
     return rect
+
+
+def rect_is_usable(rect: fitz.Rect) -> bool:
+    values = [rect.x0, rect.y0, rect.x1, rect.y1, rect.width, rect.height]
+    return all(math.isfinite(float(value)) for value in values) and rect.is_valid and not rect.is_empty and rect.width > 0.25 and rect.height > 0.25
+
+
+def clamp_rect_to_page(rect: fitz.Rect, page_rect: fitz.Rect) -> fitz.Rect:
+    clamped = fitz.Rect(rect)
+    clamped.x0 = max(page_rect.x0, min(page_rect.x1, clamped.x0))
+    clamped.x1 = max(page_rect.x0, min(page_rect.x1, clamped.x1))
+    clamped.y0 = max(page_rect.y0, min(page_rect.y1, clamped.y0))
+    clamped.y1 = max(page_rect.y0, min(page_rect.y1, clamped.y1))
+    return clamped
+
+
+def sanitize_region_rect(region: dict[str, Any], page_rect: fitz.Rect) -> None:
+    rect = fitz.Rect(region.get("rect", [0, 0, 0, 0]))
+    if rect_is_usable(rect):
+        region["rect"] = clamp_rect_to_page(rect, page_rect)
+        return
+    candidate_rects: list[fitz.Rect] = []
+    source_anchor = region.get("source_anchor_bbox")
+    if isinstance(source_anchor, list) and len(source_anchor) == 4:
+        candidate_rects.append(fitz.Rect(source_anchor))
+    for item in region.get("items", []):
+        item_rect = item.get("rect")
+        if isinstance(item_rect, fitz.Rect) and rect_is_usable(item_rect):
+            candidate_rects.append(fitz.Rect(item_rect))
+    if candidate_rects:
+        repaired = union_rect(candidate_rects)
+    else:
+        repaired = fitz.Rect(page_rect.x0 + 1, page_rect.y0 + 1, min(page_rect.x0 + 60, page_rect.x1 - 1), min(page_rect.y0 + 18, page_rect.y1 - 1))
+    source_size = float(region.get("source_size") or 6.0)
+    x_pad = max(1.0, source_size * 0.25)
+    y_pad = max(1.0, source_size * 0.25)
+    repaired.x0 = max(page_rect.x0, repaired.x0 - x_pad)
+    repaired.x1 = min(page_rect.x1, repaired.x1 + x_pad)
+    repaired.y0 = max(page_rect.y0, repaired.y0 - y_pad)
+    repaired.y1 = min(page_rect.y1, repaired.y1 + y_pad)
+    min_width = max(6.0, source_size * 2.0)
+    min_height = max(4.0, source_size * 1.2)
+    if repaired.width < min_width:
+        repaired.x1 = min(page_rect.x1, repaired.x0 + min_width)
+    if repaired.height < min_height:
+        repaired.y1 = min(page_rect.y1, repaired.y0 + min_height)
+    repaired = clamp_rect_to_page(repaired, page_rect)
+    region["rect"] = repaired
+    region["rect_repair"] = {
+        "reason": "empty_or_nonfinite_region_rect",
+        "repaired_bbox": [round(float(v), 3) for v in repaired],
+    }
 
 
 def color_int_to_rgb(color: Any) -> tuple[float, float, float]:
@@ -1196,6 +1277,13 @@ def constrained_image_allowed(region: dict[str, Any], policy: dict[str, Any]) ->
     return str(region.get("page_type_guess") or "") in dense_body_page_types
 
 
+def constrained_image_wrap_allowed(region: dict[str, Any], policy: dict[str, Any]) -> bool:
+    profile = constrained_image_profile(policy)
+    kind = str(region.get("region_kind") or "")
+    wrapped_kinds = {str(value) for value in profile.get("wrapped_region_kinds", [])}
+    return kind in wrapped_kinds
+
+
 def constrained_text_image_png(
     text: str,
     fontfile: Path,
@@ -1218,6 +1306,57 @@ def constrained_text_image_png(
     buf = io.BytesIO()
     image.save(buf, format="PNG")
     return buf.getvalue(), width, height
+
+
+def wrap_text_for_image(text: str, font: ImageFont.FreeTypeFont, max_width_px: int) -> list[str]:
+    normalized = re.sub(r"\s+", " ", text).strip()
+    if not normalized:
+        return [""]
+    words = normalized.split(" ")
+    lines: list[str] = []
+    current = ""
+    for word in words:
+        candidate = word if not current else f"{current} {word}"
+        if font.getlength(candidate) <= max_width_px or not current:
+            current = candidate
+            continue
+        lines.append(current)
+        current = word
+    if current:
+        lines.append(current)
+    return lines or [normalized]
+
+
+def constrained_wrapped_text_image_png(
+    text: str,
+    fontfile: Path,
+    font_size_pt: float,
+    color: tuple[float, float, float],
+    background_color: tuple[float, float, float],
+    target_width_pt: float,
+) -> tuple[bytes, int, int]:
+    scale = 4
+    font_px = max(8, int(round(font_size_pt * scale)))
+    font = ImageFont.truetype(str(fontfile), font_px)
+    pad = max(4, int(round(font_px * 0.22)))
+    max_width = max(12, int(round(target_width_pt * scale)) - pad * 2)
+    lines = wrap_text_for_image(text, font, max_width)
+    line_gap = max(2, int(round(font_px * 0.28)))
+    probe = Image.new("RGBA", (1, 1), (255, 255, 255, 0))
+    draw = ImageDraw.Draw(probe)
+    line_boxes = [draw.textbbox((0, 0), line, font=font) for line in lines]
+    width = max(1, min(max_width, max((box[2] - box[0] for box in line_boxes), default=max_width))) + pad * 2
+    line_heights = [max(1, box[3] - box[1]) for box in line_boxes]
+    height = sum(line_heights) + line_gap * max(0, len(lines) - 1) + pad * 2
+    image = Image.new("RGBA", (width, max(1, height)), float_color_to_rgba(background_color))
+    draw = ImageDraw.Draw(image)
+    y = pad
+    for line, box, line_height in zip(lines, line_boxes, line_heights):
+        draw.text((pad - box[0], y - box[1]), line, font=font, fill=float_color_to_rgba(color))
+        y += line_height + line_gap
+    buf = io.BytesIO()
+    image.save(buf, format="PNG")
+    return buf.getvalue(), image.width, image.height
 
 
 def insert_constrained_text_image(
@@ -1246,6 +1385,15 @@ def insert_constrained_text_image(
     target = fitz.Rect(region["rect"])
     if target.width <= 0 or target.height <= 0:
         return None
+    if constrained_image_wrap_allowed(region, policy):
+        png, image_width, image_height = constrained_wrapped_text_image_png(
+            str(region.get("translation_zh") or ""),
+            fontfile,
+            font_size,
+            region.get("text_color", (0.05, 0.05, 0.05)),
+            region.get("background_color", (1.0, 1.0, 1.0)),
+            float(target.width),
+        )
     page.insert_image(target, stream=png, keep_proportion=False)
     source_aspect = image_width / max(1, image_height)
     target_aspect = float(target.width) / max(0.001, float(target.height))
@@ -1564,6 +1712,8 @@ def generate(
             }
             regions = build_regions(page_units, page.rect, layout_policy, page_context)
             for region in regions:
+                sanitize_region_rect(region, page.rect)
+            for region in regions:
                 region["page_index"] = page_index
             planned_cover_unit_ids = {
                 str(item.get("unit_id"))
@@ -1619,6 +1769,7 @@ def generate(
                             "target_composition_applied": bool(region.get("target_composition_applied")),
                             "target_composition_profile": region.get("target_composition_profile"),
                             "source_anchor_bbox": region.get("source_anchor_bbox"),
+                            "rect_repair": region.get("rect_repair"),
                             "background_cover": background_cover,
                             "layout_policy": rel(layout_policy_path),
                             "draw_mode": layout_policy.get("draw_modes", {}).get(region["region_kind"], {}).get("mode", "textbox"),
@@ -1645,6 +1796,7 @@ def generate(
                             "target_composition_applied": bool(region.get("target_composition_applied")),
                             "target_composition_profile": region.get("target_composition_profile"),
                             "source_anchor_bbox": region.get("source_anchor_bbox"),
+                            "rect_repair": region.get("rect_repair"),
                             "background_cover": background_cover,
                             "redaction_fill_provenance": [
                                 {
