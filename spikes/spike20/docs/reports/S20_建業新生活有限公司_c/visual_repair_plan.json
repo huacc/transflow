@@ -1,0 +1,32 @@
+{
+  "tool": "plan_visual_region_repairs",
+  "visual_region_metrics": "docs/reports/S20_建業新生活有限公司_c/visual_region_metrics.json",
+  "repair_plan_count": 1,
+  "blocking_repair_count": 0,
+  "next_state": "S8_VerifyProductQuality",
+  "plans": [
+    {
+      "gate_id": "short_label_legibility",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 1,
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan",
+      "description": "Generate compact display variant for short constrained label.",
+      "sample_regions": [
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b4_l0",
+          "quality_role": "short_label",
+          "region_kind": "short_label",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 6.6,
+          "crop_evidence": "docs/reports/S20_建業新生活有限公司_c/visual_crops/page_01_region_p0_b4_l0_short_label.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.47 is below short_label warn ratio 0.55"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "loop_id": "S20_00005_2025_interim_report_zh_L001",
+  "loop_iteration": 1,
+  "entered_from_state": "S8_VerifyProductQuality",
+  "failure_class": "sidebar_navigation_legibility",
+  "failed_gate_ids": [
+    "sidebar_navigation_legibility",
+    "table_text_legibility",
+    "background_residue_artifact",
+    "matrix_diagram_integrity"
+  ],
+  "repair_atom": "side_navigation_rotated_image_repair",
+  "target_state": "S6_LayoutPlan",
+  "target_scope": [
+    {
+      "page_number": 2,
+      "region_id": "region_p1_b4_l29",
+      "quality_role": "sidebar",
+      "region_kind": "vertical_nav",
+      "generation_status": "rotated_horizontal_image_fit",
+      "font_size": 7.7,
+      "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l29_sidebar.png",
+      "reasons": [
+        "inner_background_delta 31.0 exceeds fail threshold 30.0"
+      ]
+    }
+  ],
+  "expected_effect": "Use horizontal text image then rotate as a unit; verify with back-rotated crop.",
+  "verification_to_run": [
+    "generate_semantic_backfill.py if a generic repair executor is available",
+    "render_pdf.py",
+    "collect_visual_region_metrics.py",
+    "evaluate_pdf_quality.py"
+  ],
+  "deferred_failures": [
+    {
+      "gate_id": "table_text_legibility",
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan"
+    },
+    {
+      "gate_id": "background_residue_artifact",
+      "repair_atom": "background_residue_fill_resample",
+      "target_state": "S7_GenerateCandidate"
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "repair_atom": "matrix_diagram_table_cell_preserve_repair",
+      "target_state": "S6_LayoutPlan"
+    }
+  ],
+  "execution_status": "not_executed_unrepairable",
+  "unrepairable_reason": "Round runner can select and record repair atoms, but no generic atom executor is wired for this failure class without adding new tool behavior. Product quality remains FAIL instead of being silently promoted.",
+  "input_artifacts": [
+    "docs/reports/S20_00005_2025_interim_report_zh/product_quality_gates.json",
+    "docs/reports/S20_00005_2025_interim_report_zh/visual_repair_plan.json"
+  ],
+  "output_artifacts": [
+    "docs/reports/S20_00005_2025_interim_report_zh/repair_loop_0001.json"
+  ],
+  "next_state": "S_FAIL_QUALITY",
+  "timestamp_local": "2026-07-06 23:34:47"
+}

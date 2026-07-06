@@ -1,0 +1,810 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "FAIL",
+  "translation_provider": "google_translate_web_gtx",
+  "source_language": "zh",
+  "inferred_source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [],
+  "coverage": {
+    "source_unit_count": 132,
+    "translated_unit_count": 857,
+    "matched_unit_count": 74,
+    "missing_unit_ids": [
+      "p0_b3_l1",
+      "p0_b6_l1",
+      "p0_b8_l0",
+      "p0_b9_l0",
+      "p0_b10_l0",
+      "p0_b11_l0",
+      "p0_b11_l1",
+      "p1_b1_l1",
+      "p1_b3_l1",
+      "p1_b3_l2",
+      "p1_b3_l3",
+      "p1_b3_l4",
+      "p1_b3_l5",
+      "p1_b3_l6",
+      "p1_b5_l4",
+      "p1_b5_l5",
+      "p1_b5_l6",
+      "p1_b5_l7",
+      "p1_b5_l8",
+      "p1_b5_l9",
+      "p1_b5_l10",
+      "p2_b6_l1",
+      "p2_b6_l2",
+      "p2_b6_l3",
+      "p2_b6_l4",
+      "p2_b6_l5",
+      "p2_b8_l4",
+      "p2_b8_l5",
+      "p2_b9_l1",
+      "p2_b9_l2",
+      "p3_b6_l4",
+      "p3_b6_l5",
+      "p3_b6_l6",
+      "p3_b7_l1",
+      "p3_b7_l2",
+      "p3_b7_l3",
+      "p3_b9_l0",
+      "p3_b10_l0",
+      "p3_b10_l1",
+      "p3_b11_l0",
+      "p3_b11_l1",
+      "p3_b11_l2",
+      "p4_b1_l2",
+      "p4_b2_l3",
+      "p4_b2_l4",
+      "p4_b2_l5",
+      "p4_b2_l6",
+      "p4_b2_l7",
+      "p4_b5_l1",
+      "p4_b5_l2",
+      "p4_b7_l1",
+      "p4_b7_l2",
+      "p4_b7_l3",
+      "p5_b1_l1",
+      "p5_b1_l2",
+      "p5_b2_l0",
+      "p5_b2_l1",
+      "p5_b2_l2"
+    ],
+    "invalid_unit_count": 74
+  },
+  "invalid_units": [
+    {
+      "unit_id": "p0_b1_l0",
+      "page_index": 0,
+      "source_text": "香港交易及結算所有限公司及香港聯合交易所有限公司對本通告之內",
+      "translation_en": "(reviewed)",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b1_l1",
+      "page_index": 0,
+      "source_text": "容概不負責，對其準確性或完整性亦不發表任何聲明，並明確表示，概",
+      "translation_en": "On June 30, 2025",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b1_l2",
+      "page_index": 0,
+      "source_text": "不對因本通告全部或任何部分內容而產生或因倚賴該等內容而引致之",
+      "translation_en": "On December 31, 2024",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b1_l3",
+      "page_index": 0,
+      "source_text": "任何損失承擔任何責任。",
+      "translation_en": "Total book value/nominal amount",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b2_l0",
+      "page_index": 0,
+      "source_text": "建業新生活有限公司",
+      "translation_en": "Total book value/nominal amount",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b3_l0",
+      "page_index": 0,
+      "source_text": "（於開曼群島註冊成立的有限公司）",
+      "translation_en": "– Level 1",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b4_l0",
+      "page_index": 0,
+      "source_text": "股東週年大會通告",
+      "translation_en": "1 In this disclosure, total carrying amount refers to the amortized cost of financial assets before any adjustment for loss provisions. The total carrying amount of debt instruments at fair value through other comprehensive income shown in the table above does not include fair value gains and losses and therefore will not be consistent with the amounts shown on the balance sheet.",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b5_l0",
+      "page_index": 0,
+      "source_text": "茲通告建業新生活有限公司（「本公司」）謹訂於2026年6 月1 日（星期一）上",
+      "translation_en": "Overview",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b5_l1",
+      "page_index": 0,
+      "source_text": "午十時正假座香港九龍尖沙咀廣東道25號海港城港威大廈2 座16 樓",
+      "translation_en": "interim management report",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p0_b5_l2",
+      "page_index": 0,
+      "source_text": "1602–1605 室舉行股東週年大會（「大會」），藉以處理下列事項：",
+      "translation_en": "Condensed Consolidated Interim Financial Statements",
+      "reasons": [
+        "source_text_mismatch",
+        "preserve_tokens_missing:currency_amount=1602,currency_amount=1605 "
+      ]
+    },
+    {
+      "unit_id": "p0_b6_l0",
+      "page_index": 0,
+      "source_text": "1. 審議及批准截至2025 年12月31日止財政年度經審核綜合財務報表及",
+      "translation_en": "risk",
+      "reasons": [
+        "source_text_mismatch",
+        "preserve_tokens_missing:currency_amount=1"
+      ]
+    },
+    {
+      "unit_id": "p0_b7_l0",
+      "page_index": 0,
+      "source_text": "2. (A) 重選閆學文先生為執行董事。",
+      "translation_en": "HSBC Holdings plc 2025 Interim Results Report",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b1_l0",
+      "page_index": 1,
+      "source_text": "4. 考慮及酌情通過（不論有否修訂）下列以特別事項方式提呈之決議案",
+      "translation_en": "Distribution by grade of customer loans among total personal loans",
+      "reasons": [
+        "source_text_mismatch",
+        "preserve_tokens_missing:currency_amount=4"
+      ]
+    },
+    {
+      "unit_id": "p1_b2_l0",
+      "page_index": 1,
+      "source_text": "(A) 「動議：",
+      "translation_en": "On June 30, 2025",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b3_l0",
+      "page_index": 1,
+      "source_text": "(i) 在下文第(iii)段之規限下，一般及無條件批准董事在有關期間",
+      "translation_en": "Presentation of loans and other credit-related commitments and financial guarantees in total personal loans by grade distribution",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b4_l0",
+      "page_index": 1,
+      "source_text": "(ii) 批准上文(i) 段，即授權董事於有關期間作出或授予可能需於",
+      "translation_en": "On June 30, 2025",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b4_l1",
+      "page_index": 1,
+      "source_text": "有關期間結束後行使該等權力之售股建議、協議、購股權（包",
+      "translation_en": "On December 31, 2024",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b4_l2",
+      "page_index": 1,
+      "source_text": "括債券、認股權證及可轉換為本公司股份之債權證）及交換或",
+      "translation_en": "Notional amount",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b4_l3",
+      "page_index": 1,
+      "source_text": "轉換權；",
+      "translation_en": "Expected credit loss provisions",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b5_l0",
+      "page_index": 1,
+      "source_text": "(iii) 董事依據上文(i) 段之批准而配發或發行或同意有條件或無條",
+      "translation_en": "Overview",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b5_l1",
+      "page_index": 1,
+      "source_text": "件配發及發行（不論是否根據購股權或其他方式配發）之股本",
+      "translation_en": "interim management report",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b5_l2",
+      "page_index": 1,
+      "source_text": "面值總額不得超過於本決議案獲通過當日之本公司已發行股",
+      "translation_en": "Condensed Consolidated Interim Financial Statements",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p1_b5_l3",
+      "page_index": 1,
+      "source_text": "本面值總額之20%，惟根據(a) 供股（定義見下文），或(b) 按本公",
+      "translation_en": "Supplementary information",
+      "reasons": [
+        "source_text_mismatch",
+        "preserve_tokens_missing:percentage=20%"
+      ]
+    },
+    {
+      "unit_id": "p2_b1_l0",
+      "page_index": 2,
+      "source_text": "(iv) 就本決議案而言：",
+      "translation_en": "Distribution by grade of interbank and customer loans in total wholesale loans",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b2_l0",
+      "page_index": 2,
+      "source_text": "「有關期間」乃指由本決議案獲通過當日起至下列三者中最早",
+      "translation_en": "Total book value",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b2_l1",
+      "page_index": 2,
+      "source_text": "之日期止之期間：",
+      "translation_en": "Expected credit loss provisions",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b3_l0",
+      "page_index": 2,
+      "source_text": "(a) 本公司下屆股東週年大會結束時，除非授權於大會上以普",
+      "translation_en": "first level",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b3_l1",
+      "page_index": 2,
+      "source_text": "通決議案方式獲無條件或有條件重續；",
+      "translation_en": "Level 2",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b4_l0",
+      "page_index": 2,
+      "source_text": "(b) 本公司根據任何適用開曼群島法律或組織章程細則規定",
+      "translation_en": "purchase or",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b4_l1",
+      "page_index": 2,
+      "source_text": "須舉行下屆股東週年大會之期限屆滿時；或",
+      "translation_en": "Undertake credit",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b5_l0",
+      "page_index": 2,
+      "source_text": "(c) 本決議案所述之授權於股東大會上藉通過本公司普通決",
+      "translation_en": "purchase or",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b5_l1",
+      "page_index": 2,
+      "source_text": "議案予以撤銷、修訂或重續之日。",
+      "translation_en": "Undertake credit",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b6_l0",
+      "page_index": 2,
+      "source_text": "「供股」乃指董事於所定期間內根據於某一指定記錄日期名列",
+      "translation_en": "Listed by legal entity",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b7_l0",
+      "page_index": 2,
+      "source_text": "(B) 「動議：",
+      "translation_en": "1 The \"total book value\" transfer between Level 1 and Level 2 (mainly from Asia) is due to an increase in the average PD for the remaining period at the reporting date, reflecting the Group's updates to the PD model and the market",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b8_l0",
+      "page_index": 2,
+      "source_text": "(i) 在下文(ii)段之規限下，一般及無條件批准董事在有關期間內",
+      "translation_en": "Overview",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b8_l1",
+      "page_index": 2,
+      "source_text": "行使本公司一切權力在聯交所或股份可能上市並經由聯交所",
+      "translation_en": "interim management report",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b8_l2",
+      "page_index": 2,
+      "source_text": "及香港證券及期貨事務監察委員會（「證監會」）就此認可之任",
+      "translation_en": "Condensed Consolidated Interim Financial Statements",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b8_l3",
+      "page_index": 2,
+      "source_text": "何其他證券交易所購買或以其他方式收購本公司股本之股份，",
+      "translation_en": "Supplementary information",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p2_b9_l0",
+      "page_index": 2,
+      "source_text": "(ii) 上文(i) 段之批准授權購買本公司股份之面值總額不得超過本",
+      "translation_en": "risk",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b1_l0",
+      "page_index": 3,
+      "source_text": "(iii) 就本決議案而言：「有關期間」乃指由本決議案獲通過當日起",
+      "translation_en": "Total book value",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b1_l1",
+      "page_index": 3,
+      "source_text": "至下列三者中最早之日期止之期間：",
+      "translation_en": "Expected credit loss provisions",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b2_l0",
+      "page_index": 3,
+      "source_text": "(a) 本公司下屆股東週年大會結束時，除非授權於大會上以普",
+      "translation_en": "first level",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b2_l1",
+      "page_index": 3,
+      "source_text": "通決議案方式獲無條件或有條件重續；",
+      "translation_en": "Level 2",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b3_l0",
+      "page_index": 3,
+      "source_text": "(b) 本公司根據任何適用開曼群島法律或組織章程細則規定",
+      "translation_en": "purchase or",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b3_l1",
+      "page_index": 3,
+      "source_text": "須舉行下屆股東週年大會之期限屆滿時；或",
+      "translation_en": "Undertake credit",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b4_l0",
+      "page_index": 3,
+      "source_text": "(c) 本決議案所述之授權於股東大會上藉通過本公司普通決",
+      "translation_en": "purchase or",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b4_l1",
+      "page_index": 3,
+      "source_text": "議案予以撤銷、修訂或重續之日。」",
+      "translation_en": "Undertake credit",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b5_l0",
+      "page_index": 3,
+      "source_text": "(C) 「動議：",
+      "translation_en": "Listed by legal entity",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b6_l0",
+      "page_index": 3,
+      "source_text": "待召開本大會之通告所載之第4(A) 段及4(B) 段決議案獲通過後，",
+      "translation_en": "Overview",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b6_l1",
+      "page_index": 3,
+      "source_text": "將根據召開本大會之通告所載第4(A) 段決議案而授予董事行使",
+      "translation_en": "interim management report",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b6_l2",
+      "page_index": 3,
+      "source_text": "本公司權力以配發、發行及以其他方式處理本公司股份之一般",
+      "translation_en": "Condensed Consolidated Interim Financial Statements",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b6_l3",
+      "page_index": 3,
+      "source_text": "授權，並透過加入相當於本公司根據上文第4(B) 段所述決議案授",
+      "translation_en": "Supplementary information",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b7_l0",
+      "page_index": 3,
+      "source_text": "承董事會命",
+      "translation_en": "risk",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p3_b8_l0",
+      "page_index": 3,
+      "source_text": "香港，2026 年4月20日",
+      "translation_en": "HSBC Holdings plc 2025 Interim Results Report",
+      "reasons": [
+        "source_text_mismatch",
+        "preserve_tokens_missing:year=2026"
+      ]
+    },
+    {
+      "unit_id": "p4_b1_l0",
+      "page_index": 4,
+      "source_text": "格出席大會，所有填妥的過戶表格連同有關股票須於2026 年5月26日（星期二）下",
+      "translation_en": "Notional amount",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b1_l1",
+      "page_index": 4,
+      "source_text": "午四時三十分前送達本公司之香港股份過戶登記分處香港中央證券登記有限公司，",
+      "translation_en": "Expected credit loss provisions",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b2_l0",
+      "page_index": 4,
+      "source_text": "(c) 凡有權出席大會並可於會上投票之股東，均有權委派一名代理人出席並代其投票。",
+      "translation_en": "first level",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b2_l1",
+      "page_index": 4,
+      "source_text": "凡有權出席大會並可於會上投票之持有兩股或以上股份之股東，均有權委派一",
+      "translation_en": "Level 2",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b2_l2",
+      "page_index": 4,
+      "source_text": "名或多名代理人出席並代其投票。受委任代理人毌須為本公司股東，但按指定",
+      "translation_en": "Level 3",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b3_l0",
+      "page_index": 4,
+      "source_text": "(d) 本公司股東於填妥及交回代表委任表格後，屆時仍可依願出席大會或續會，並",
+      "translation_en": "purchase or",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b3_l1",
+      "page_index": 4,
+      "source_text": "於會上表決投票，在此情況下，代表委任表格將被視作撤銷論。",
+      "translation_en": "Undertake credit",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b4_l0",
+      "page_index": 4,
+      "source_text": "(e) 倘為任何股份的聯名登記持有人，其中任何一人可在大會（或其任何續會）上親",
+      "translation_en": "purchase or",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b4_l1",
+      "page_index": 4,
+      "source_text": "自或由代表就該股份投票，猶如其為唯一有權投票的人；倘多於一名聯名登記",
+      "translation_en": "Undertake credit",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b4_l2",
+      "page_index": 4,
+      "source_text": "持有人親身或委派代表出席大會，則股東名冊內排名首位的有關聯名登記持有",
+      "translation_en": "Impaired",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b4_l3",
+      "page_index": 4,
+      "source_text": "人方可就共同持有的相關股份投票，而其他聯名持有人概不得投票。",
+      "translation_en": "financial assets",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b5_l0",
+      "page_index": 4,
+      "source_text": "(f) 就上述所提呈之第2(A)、(B)及(C)項決議案而言，閆學文先生、梁翔先生及羅瑩女",
+      "translation_en": "Corporate and commercial loans",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b6_l0",
+      "page_index": 4,
+      "source_text": "(g) 就上述所提呈之第4(A) 項及第4(C)項決議案而言，須取得股東同意給予董事一般",
+      "translation_en": "1 The amount related to the unsettled reverse repurchase agreement is US$95 billion (December 31, 2024: US$49 billion), including loans and other credit-related commitments and financial guarantees. Once the relevant amounts are drawn, they will be classified as",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b6_l1",
+      "page_index": 4,
+      "source_text": "授權，以授權其根據上市規則配發及發行股份。董事會並無即時計劃發行任何",
+      "translation_en": "\"Reverse Repurchase Agreement – ​​Non-Trading Purposes\".",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b6_l2",
+      "page_index": 4,
+      "source_text": "根據本公司的股份計劃或任何取得股東同意的以股代息計劃之新股。",
+      "translation_en": "2 The \"total book value\" transfer between Level 1 and Level 2 (mainly from Asia) is due to an increase in the average PD for the remaining period at the reporting date, reflecting the Group's updates to the PD model and the market",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p4_b7_l0",
+      "page_index": 4,
+      "source_text": "(h) 就上述所提呈之第4(B)項決議案而言，董事謹聲明，彼等將在適當的情況下，出",
+      "translation_en": "commercial real estate",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p5_b1_l0",
+      "page_index": 5,
+      "source_text": "(i) 倘若預料於股東大會當日上午六時正後，將懸掛八號或以上颱風信號，或黑色",
+      "translation_en": "in:",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p5_b3_l0",
+      "page_index": 5,
+      "source_text": "本通告中英版本如有任何歧義，概以英文版為準。",
+      "translation_en": "UK",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p5_b4_l0",
+      "page_index": 5,
+      "source_text": "於本通告日期，董事會包括：(i) 執行董事王俊先生（主席）、閆學文先生及",
+      "translation_en": "Hong Kong and Shanghai",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    },
+    {
+      "unit_id": "p5_b4_l1",
+      "page_index": 5,
+      "source_text": "郭立圓先生；及(ii)獨立非執行董事梁翔先生、羅瑩女士及辛珠女士。",
+      "translation_en": "HSBC",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "warning": "extra_translation_units_ignored",
+      "unit_ids": [
+        "p0_b0_l0",
+        "p0_b1_l4",
+        "p0_b1_l5",
+        "p0_b1_l6",
+        "p0_b2_l1",
+        "p0_b2_l10",
+        "p0_b2_l101",
+        "p0_b2_l102",
+        "p0_b2_l11",
+        "p0_b2_l119",
+        "p0_b2_l12",
+        "p0_b2_l120",
+        "p0_b2_l13",
+        "p0_b2_l137",
+        "p0_b2_l14",
+        "p0_b2_l15",
+        "p0_b2_l154",
+        "p0_b2_l16",
+        "p0_b2_l17",
+        "p0_b2_l171",
+        "p0_b2_l18",
+        "p0_b2_l188",
+        "p0_b2_l189",
+        "p0_b2_l19",
+        "p0_b2_l2",
+        "p0_b2_l20",
+        "p0_b2_l206",
+        "p0_b2_l207",
+        "p0_b2_l21",
+        "p0_b2_l22",
+        "p0_b2_l224",
+        "p0_b2_l23",
+        "p0_b2_l24",
+        "p0_b2_l241",
+        "p0_b2_l25",
+        "p0_b2_l258",
+        "p0_b2_l26",
+        "p0_b2_l27",
+        "p0_b2_l275",
+        "p0_b2_l276",
+        "p0_b2_l28",
+        "p0_b2_l29",
+        "p0_b2_l293",
+        "p0_b2_l294",
+        "p0_b2_l3",
+        "p0_b2_l30",
+        "p0_b2_l31",
+        "p0_b2_l311",
+        "p0_b2_l32",
+        "p0_b2_l328"
+      ]
+    }
+  ],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_建業新生活有限公司_c\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\input\\semantic_translation_pool\\S20_00005_2025_interim_report_zh.translations.json"
+}

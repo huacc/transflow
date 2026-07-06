@@ -1,0 +1,75 @@
+{
+  "workspace_boundary": "docs/reports/language_detection_workspace_boundary.json",
+  "cases": [
+    {
+      "regression_id": "S20_00005_2025_interim_report_zh",
+      "input_pdf": "input/00005_2025_interim_report_zh.pdf",
+      "metadata_source_language": "zh",
+      "target_language": "en",
+      "detected_source_language": "zh",
+      "cjk_char_count": 5686,
+      "latin_word_token_count": 97,
+      "latin_letter_count": 396,
+      "text_line_count": 3884,
+      "number_or_punctuation_only_line_count": 2991,
+      "language_metadata_mismatch": false,
+      "rule": "current extraction only: zh when CJK chars dominate translatable text; en when Latin word letters dominate; pure numeric/punctuation lines are counted separately and do not drive the language decision"
+    },
+    {
+      "regression_id": "S20_00388_2026_annual_report_en",
+      "input_pdf": "input/00388_2026_annual_report_en.pdf",
+      "metadata_source_language": "en",
+      "target_language": "zh",
+      "detected_source_language": "en",
+      "cjk_char_count": 10,
+      "latin_word_token_count": 220,
+      "latin_letter_count": 1117,
+      "text_line_count": 138,
+      "number_or_punctuation_only_line_count": 59,
+      "language_metadata_mismatch": false,
+      "rule": "current extraction only: zh when CJK chars dominate translatable text; en when Latin word letters dominate; pure numeric/punctuation lines are counted separately and do not drive the language decision"
+    },
+    {
+      "regression_id": "S20_00992_2023_annual_report_en",
+      "input_pdf": "input/00992_2023_annual_report_en.pdf",
+      "metadata_source_language": "en",
+      "target_language": "zh",
+      "detected_source_language": "en",
+      "cjk_char_count": 0,
+      "latin_word_token_count": 3574,
+      "latin_letter_count": 20046,
+      "text_line_count": 562,
+      "number_or_punctuation_only_line_count": 47,
+      "language_metadata_mismatch": false,
+      "rule": "current extraction only: zh when CJK chars dominate translatable text; en when Latin word letters dominate; pure numeric/punctuation lines are counted separately and do not drive the language decision"
+    },
+    {
+      "regression_id": "S20_建業新生活有限公司_c",
+      "input_pdf": "input/建業新生活有限公司_c.pdf",
+      "metadata_source_language": "zh",
+      "target_language": "en",
+      "detected_source_language": "zh",
+      "cjk_char_count": 2888,
+      "latin_word_token_count": 13,
+      "latin_letter_count": 45,
+      "text_line_count": 139,
+      "number_or_punctuation_only_line_count": 6,
+      "language_metadata_mismatch": false,
+      "rule": "current extraction only: zh when CJK chars dominate translatable text; en when Latin word letters dominate; pure numeric/punctuation lines are counted separately and do not drive the language decision"
+    },
+    {
+      "regression_id": "S20_建業新生活有限公司_e",
+      "input_pdf": "input/建業新生活有限公司_e.pdf",
+      "metadata_source_language": "en",
+      "target_language": "zh",
+      "detected_source_language": "en",
+      "cjk_char_count": 9,
+      "latin_word_token_count": 2113,
+      "latin_letter_count": 10293,
+      "text_line_count": 227,
+      "number_or_punctuation_only_line_count": 10,
+      "language_metadata_mismatch": false,
+      "rule": "current extraction only: zh when CJK chars dominate translatable text; en when Latin word letters dominate; pure numeric/punctuation lines are counted separately and do not drive the language decision"
+    }
+  ]
+}

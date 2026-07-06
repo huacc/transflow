@@ -1,0 +1,2419 @@
+{
+  "tool": "evaluate_pdf_quality",
+  "source_pdf": "docs/input/source_pdfs/00005_2025_interim_report_zh.pdf",
+  "output_pdf": "docs/output/S20_00005_2025_interim_report_zh_candidate.pdf",
+  "generation_evidence": "docs/reports/S20_00005_2025_interim_report_zh/candidate_generation_evidence.json",
+  "visual_adjudication": "docs/reports/S20_00005_2025_interim_report_zh/visual_adjudication.json",
+  "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+  "product_quality_verdict": "FAIL",
+  "gates": [
+    {
+      "gate_id": "page_count",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=9; output=9"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_1",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 841.8895874023438, 595.2750244140625]; output=[0.0, 0.0, 841.8895874023438, 595.2750244140625]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_2",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 841.8896484375, 595.2760009765625]; output=[0.0, 0.0, 841.8896484375, 595.2760009765625]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_3",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.280029296875, 841.8900146484375]; output=[0.0, 0.0, 595.280029296875, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_4",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.280029296875, 841.8900146484375]; output=[0.0, 0.0, 595.280029296875, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_5",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.280029296875, 841.8900146484375]; output=[0.0, 0.0, 595.280029296875, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_6",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.280029296875, 841.8900146484375]; output=[0.0, 0.0, 595.280029296875, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_7",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.280029296875, 841.8900146484375]; output=[0.0, 0.0, 595.280029296875, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_8",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.280029296875, 841.8900146484375]; output=[0.0, 0.0, 595.280029296875, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_9",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.280029296875, 841.8900146484375]; output=[0.0, 0.0, 595.280029296875, 841.8900146484375]"
+    },
+    {
+      "gate_id": "text_residue",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "target_language": "en",
+        "ascii_token_count": 286,
+        "cjk_unique_count": 151,
+        "sample": [
+          "一",
+          "三",
+          "上",
+          "中",
+          "之",
+          "二",
+          "交",
+          "人",
+          "他",
+          "任",
+          "住",
+          "何",
+          "作",
+          "供",
+          "保",
+          "信",
+          "個",
+          "值",
+          "健",
+          "備",
+          "債",
+          "僅",
+          "允",
+          "元",
+          "入",
+          "全",
+          "公",
+          "其",
+          "具",
+          "分",
+          "列",
+          "別",
+          "利",
+          "力",
+          "務",
+          "包",
+          "北",
+          "卡",
+          "及",
+          "可",
+          "司",
+          "合",
+          "同",
+          "國",
+          "好",
+          "宅",
+          "定",
+          "客",
+          "實",
+          "審",
+          "對",
+          "就",
+          "工",
+          "已",
+          "布",
+          "律",
+          "息",
+          "應",
+          "成",
+          "或",
+          "戶",
+          "承",
+          "披",
+          "抵",
+          "押",
+          "括",
+          "指",
+          "按",
+          "控",
+          "揭",
+          "損",
+          "擔",
+          "攤",
+          "收",
+          "整",
+          "易",
+          "有",
+          "未",
+          "本",
+          "東"
+        ]
+      }
+    },
+    {
+      "gate_id": "backfill_generation",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "real_backfill_pdf": true,
+        "redacted_line_count": 893,
+        "inserted_line_count": 893,
+        "inserted_unit_count": 893,
+        "inserted_region_count": 850,
+        "generation_evidence": "docs/reports/S20_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "text_fit",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "fit_warning_count": 0,
+        "reason": "fallback insertion or overflow evidence blocks product-quality acceptance",
+        "generation_evidence": "docs/reports/S20_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "source_anchor_order",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "violation_count": 0,
+        "sample": [],
+        "reason": "a target-language reflow region must not cross untranslated visible source separators inside the same block",
+        "generation_evidence": "docs/reports/S20_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "translation_authenticity",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "translation_provider": "google_translate_web_gtx",
+        "reason": "product-quality success requires a real translation provider, not deterministic placeholders",
+        "generation_evidence": "docs/reports/S20_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "semantic_translation_preflight",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "semantic_translation_validation": "PASS",
+        "reason": "product-quality success requires validated semantic translations before generation",
+        "generation_evidence": "docs/reports/S20_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "semantic_coverage",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "semantic_coverage": "full_semantic_translation",
+        "translation_quality": "semantic_translation",
+        "reason": "placeholder translations are valid generation evidence but not product-quality success",
+        "generation_evidence": "docs/reports/S20_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "visual_similarity",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_quality_adjudication": "FAIL",
+        "visual_adjudication": "docs/reports/S20_00005_2025_interim_report_zh/visual_adjudication.json",
+        "reason": "automated structural checks are not enough for product-quality acceptance; source-vs-output PNG adjudication must be recorded",
+        "generation_evidence": "docs/reports/S20_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "body_paragraph_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "warn",
+        "failure_count": 0,
+        "warning_count": 5,
+        "region_count": 6,
+        "sample": [
+          {
+            "region_id": "region_p2_b7_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 6.6,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.943,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              40.85,
+              545.57,
+              550.19,
+              555.681
+            ],
+            "source_union_bbox": [
+              41.35,
+              545.97,
+              549.69,
+              555.281
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 6.60pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_03_region_p2_b7_l0_body.png",
+            "target_text_sample": "1 The \"total book value\" transfer between Level 1 and Level 2 (mainly from Asia) is due to an increase in the average PD"
+          },
+          {
+            "region_id": "region_p4_b6_l0",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 6.6,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.943,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              40.85,
+              388.17,
+              550.932,
+              398.281
+            ],
+            "source_union_bbox": [
+              41.35,
+              388.57,
+              550.432,
+              397.881
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 6.60pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_05_region_p4_b6_l0_body.png",
+            "target_text_sample": "1 The amount related to the unsettled reverse repurchase agreement is US$95 billion (December 31, 2024: US$49 billion), "
+          },
+          {
+            "region_id": "region_p4_b6_l2",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "body",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 6.6,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.943,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              40.85,
+              404.97,
+              550.19,
+              415.081
+            ],
+            "source_union_bbox": [
+              41.35,
+              405.37,
+              549.69,
+              414.681
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 6.60pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_05_region_p4_b6_l2_body.png",
+            "target_text_sample": "2 The \"total book value\" transfer between Level 1 and Level 2 (mainly from Asia) is due to an increase in the average PD"
+          },
+          {
+            "region_id": "body_flow_000",
+            "page_index": 5,
+            "page_number": 6,
+            "region_kind": "body_flow",
+            "page_type_guess": "chart_or_dashboard",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 6.6,
+            "source_median_font_size": 8.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 21,
+            "output_to_source_font_ratio": 0.825,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              47.622,
+              463.485,
+              464.318,
+              566.742
+            ],
+            "source_union_bbox": [
+              41.35,
+              463.885,
+              289.35,
+              712.625
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 6.60pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_06_body_flow_000_body.png",
+            "target_text_sample": "In view of the continued challenges facing the market, Hong Kong’s commercial real estate loan portfolio (excluding Main"
+          },
+          {
+            "region_id": "body_flow_001",
+            "page_index": 5,
+            "page_number": 6,
+            "region_kind": "body_flow",
+            "page_type_guess": "chart_or_dashboard",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "constrained_text_image_fit",
+            "font_size": 6.6,
+            "source_median_font_size": 8.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 10,
+            "output_to_source_font_ratio": 0.825,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              130.962,
+              463.485,
+              547.658,
+              566.742
+            ],
+            "source_union_bbox": [
+              304.71,
+              463.885,
+              552.71,
+              567.425
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "font_size 6.60pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_06_body_flow_001_body.png",
+            "target_text_sample": "Downward pressure continues as oversupply continues to adversely impact rentals and capital values. With Valuations are "
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "footnote_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 13,
+        "sample": [
+          {
+            "region_id": "region_p2_b10_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              235.5,
+              808.27,
+              359.462,
+              818.381
+            ],
+            "source_union_bbox": [
+              236.0,
+              808.67,
+              358.962,
+              817.981
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "HSBC Holdings plc 2025 Interim Results Report"
+          },
+          {
+            "region_id": "region_p3_b8_l0",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              235.5,
+              808.27,
+              359.462,
+              818.381
+            ],
+            "source_union_bbox": [
+              236.0,
+              808.67,
+              358.962,
+              817.981
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "HSBC Holdings plc 2025 Interim Results Report"
+          },
+          {
+            "region_id": "region_p4_b16_076",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 3,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              158.22,
+              572.69,
+              188.22,
+              602.681
+            ],
+            "source_union_bbox": [
+              159.22,
+              574.63,
+              187.22,
+              600.741
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "source_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "UK HSBC Ltd."
+          },
+          {
+            "region_id": "region_p4_b17_077",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 3,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              197.97,
+              572.69,
+              227.97,
+              602.681
+            ],
+            "source_union_bbox": [
+              198.97,
+              574.63,
+              226.97,
+              600.741
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "source_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Hong Kong and Shanghai HSBC Ltd."
+          },
+          {
+            "region_id": "region_p4_b18_078",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 3,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              237.72,
+              572.69,
+              267.72,
+              602.681
+            ],
+            "source_union_bbox": [
+              238.72,
+              574.63,
+              266.72,
+              600.741
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "source_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "middle east HSBC Ltd."
+          },
+          {
+            "region_id": "region_p4_b19_079",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 4.707,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 3,
+            "output_to_source_font_ratio": 0.672,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              277.47,
+              572.69,
+              307.47,
+              602.681
+            ],
+            "source_union_bbox": [
+              278.47,
+              574.63,
+              306.47,
+              600.741
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "source_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "North America HSBC Holdings Ltd."
+          },
+          {
+            "region_id": "region_p4_b25_l0",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "footnote",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              235.5,
+              808.27,
+              359.462,
+              818.381
+            ],
+            "source_union_bbox": [
+              236.0,
+              808.67,
+              358.962,
+              817.981
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "HSBC Holdings plc 2025 Interim Results Report"
+          },
+          {
+            "region_id": "region_p5_b32_l0",
+            "page_index": 5,
+            "page_number": 6,
+            "region_kind": "footnote",
+            "page_type_guess": "chart_or_dashboard",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              235.5,
+              808.27,
+              359.462,
+              818.381
+            ],
+            "source_union_bbox": [
+              236.0,
+              808.67,
+              358.962,
+              817.981
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "HSBC Holdings plc 2025 Interim Results Report"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "sidebar_navigation_legibility",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "fail",
+        "failure_count": 1,
+        "warning_count": 0,
+        "region_count": 96,
+        "sample": [
+          {
+            "region_id": "region_p1_b4_l29",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "vertical_nav",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "fail",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 7.7,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 1.1,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              404.847,
+              351.099,
+              414.632,
+              379.899
+            ],
+            "source_union_bbox": [
+              405.347,
+              351.499,
+              414.132,
+              379.499
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 31.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 31.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "inner_background_delta 31.0 exceeds fail threshold 30.0"
+            ],
+            "repair_atoms": [
+              "background_residue_fill_resample"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l29_sidebar.png",
+            "target_text_sample": "million dollars"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "fail",
+        "failure_count": 1,
+        "warning_count": 180,
+        "region_count": 734,
+        "sample": [
+          {
+            "region_id": "region_p1_b4_l13",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fit",
+            "font_size": 4.712,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.673,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              395.097,
+              351.099,
+              404.882,
+              365.899
+            ],
+            "source_union_bbox": [
+              395.597,
+              351.499,
+              404.382,
+              365.499
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 31.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 31.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "inner_background_delta 31.0 exceeds fail threshold 30.0"
+            ],
+            "repair_atoms": [
+              "background_residue_fill_resample"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l13_table_text.png",
+            "target_text_sample": "total"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "title_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 1,
+        "sample": [
+          {
+            "region_id": "region_p5_b28_l0",
+            "page_index": 5,
+            "page_number": 6,
+            "region_kind": "heading",
+            "page_type_guess": "chart_or_dashboard",
+            "quality_role": "title",
+            "gate_id": "title_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 11.28,
+            "source_median_font_size": 12.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.94,
+            "fail_font_pt": 6.2,
+            "warn_font_pt": 7.0,
+            "fail_source_ratio": 0.3,
+            "warn_source_ratio": 0.42,
+            "bbox": [
+              130.962,
+              571.742,
+              547.658,
+              589.742
+            ],
+            "source_union_bbox": [
+              304.71,
+              572.142,
+              424.71,
+              588.103
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 0.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 0.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Commercial Real Estate Refinancing Risks"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "background_residue_artifact",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "fail",
+        "failure_count": 3,
+        "warning_count": 0,
+        "region_count": 850,
+        "sample": [
+          {
+            "region_id": "region_p1_b4_l13",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fit",
+            "font_size": 4.712,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.673,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              395.097,
+              351.099,
+              404.882,
+              365.899
+            ],
+            "source_union_bbox": [
+              395.597,
+              351.499,
+              404.382,
+              365.499
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 31.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 31.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "inner_background_delta 31.0 exceeds fail threshold 30.0"
+            ],
+            "repair_atoms": [
+              "background_residue_fill_resample"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l13_table_text.png",
+            "target_text_sample": "total"
+          },
+          {
+            "region_id": "region_p1_b4_l29",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "vertical_nav",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "fail",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 7.7,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 1.1,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              404.847,
+              351.099,
+              414.632,
+              379.899
+            ],
+            "source_union_bbox": [
+              405.347,
+              351.499,
+              414.132,
+              379.499
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 31.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 31.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "inner_background_delta 31.0 exceeds fail threshold 30.0"
+            ],
+            "repair_atoms": [
+              "background_residue_fill_resample"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l29_sidebar.png",
+            "target_text_sample": "million dollars"
+          },
+          {
+            "unit_id": "p6_b12_l0",
+            "page_index": 6,
+            "page_number": 7,
+            "bbox": [
+              245.16,
+              317.43,
+              303.315,
+              327.541
+            ],
+            "status": "fail",
+            "fill_color_rgb": [
+              224,
+              225,
+              226
+            ],
+            "source_ring_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_ring_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "redaction_fill_delta": 30.0,
+            "output_ring_delta": 0.0,
+            "patch_score": 36.373,
+            "covered_by_background_cover": false,
+            "wide_line_patch_risk": false,
+            "fill_method": "outside_ring_median_pixel_cluster",
+            "fill_color_provenance": {
+              "fill_color": [
+                0.8784313725490196,
+                0.8823529411764706,
+                0.8862745098039215
+              ],
+              "method": "outside_ring_median_pixel_cluster",
+              "sample_count": 63,
+              "selected_cluster_count": 30,
+              "selected_cluster_key": [
+                224,
+                224,
+                224
+              ],
+              "selected_cluster_inner_count": 8,
+              "selected_cluster_near_ring_count": 15,
+              "selected_cluster_outer_ring_count": 7,
+              "selected_cluster_representative_source": "ring",
+              "quantization_step": 8
+            },
+            "reasons": [
+              "redaction_fill_delta 30.0 with patch_score 36.4 exceeds fail threshold"
+            ],
+            "repair_atoms": [
+              "background_residue_fill_resample"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_07_p6_b12_l0_redaction_fill.png"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "fail",
+        "failure_count": 2,
+        "warning_count": 160,
+        "region_count": 736,
+        "sample": [
+          {
+            "region_id": "region_p1_b4_l13",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "table_cell",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fit",
+            "font_size": 4.712,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.673,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              395.097,
+              351.099,
+              404.882,
+              365.899
+            ],
+            "source_union_bbox": [
+              395.597,
+              351.499,
+              404.382,
+              365.499
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": null,
+            "background_delta": 31.0,
+            "source_residue_delta": 0.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 31.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "inner_background_delta 31.0 exceeds fail threshold 30.0"
+            ],
+            "repair_atoms": [
+              "background_residue_fill_resample"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l13_table_text.png",
+            "target_text_sample": "total"
+          },
+          {
+            "region_id": "region_p1_b4_l29",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "vertical_nav",
+            "page_type_guess": "matrix_or_table_diagram",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "fail",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 7.7,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 1.1,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              404.847,
+              351.099,
+              414.632,
+              379.899
+            ],
+            "source_union_bbox": [
+              405.347,
+              351.499,
+              414.132,
+              379.499
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "source_inner_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_inner_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "text_image_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "source_residue_delta": 31.0,
+            "background_residue_delta": 0.0,
+            "inner_background_delta": 31.0,
+            "text_image_background_delta": 0.0,
+            "reasons": [
+              "inner_background_delta 31.0 exceeds fail threshold 30.0"
+            ],
+            "repair_atoms": [
+              "background_residue_fill_resample"
+            ],
+            "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l29_sidebar.png",
+            "target_text_sample": "million dollars"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "source_relative_visual_baseline",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 850,
+        "sample": [],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "image_color_integrity",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 9,
+        "sample": [
+          {
+            "page_index": 0,
+            "page_number": 1,
+            "source_image_count": 0,
+            "output_image_count": 33,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              235.485,
+              234.72,
+              235.109
+            ],
+            "output_mean_rgb": [
+              236.276,
+              235.545,
+              235.935
+            ],
+            "mean_rgb_delta": 0.814,
+            "source_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              2.329,
+              2.374,
+              2.362
+            ]
+          },
+          {
+            "page_index": 1,
+            "page_number": 2,
+            "source_image_count": 0,
+            "output_image_count": 67,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              237.76,
+              236.765,
+              237.058
+            ],
+            "output_mean_rgb": [
+              238.254,
+              237.302,
+              237.611
+            ],
+            "mean_rgb_delta": 0.528,
+            "source_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              3.531,
+              3.633,
+              3.613
+            ]
+          },
+          {
+            "page_index": 2,
+            "page_number": 3,
+            "source_image_count": 0,
+            "output_image_count": 15,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              236.955,
+              236.338,
+              236.703
+            ],
+            "output_mean_rgb": [
+              238.058,
+              237.45,
+              237.826
+            ],
+            "mean_rgb_delta": 1.112,
+            "source_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              3.999,
+              4.218,
+              4.206
+            ]
+          },
+          {
+            "page_index": 3,
+            "page_number": 4,
+            "source_image_count": 0,
+            "output_image_count": 12,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              248.202,
+              247.307,
+              247.371
+            ],
+            "output_mean_rgb": [
+              249.104,
+              248.207,
+              248.279
+            ],
+            "mean_rgb_delta": 0.903,
+            "source_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              3.127,
+              3.359,
+              3.343
+            ]
+          },
+          {
+            "page_index": 4,
+            "page_number": 5,
+            "source_image_count": 0,
+            "output_image_count": 29,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              234.641,
+              233.819,
+              234.143
+            ],
+            "output_mean_rgb": [
+              236.07,
+              235.244,
+              235.601
+            ],
+            "mean_rgb_delta": 1.437,
+            "source_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              9.273,
+              9.736,
+              9.709
+            ]
+          },
+          {
+            "page_index": 5,
+            "page_number": 6,
+            "source_image_count": 0,
+            "output_image_count": 5,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              240.162,
+              239.114,
+              239.291
+            ],
+            "output_mean_rgb": [
+              241.798,
+              240.674,
+              240.884
+            ],
+            "mean_rgb_delta": 1.596,
+            "source_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              11.832,
+              12.539,
+              12.488
+            ]
+          },
+          {
+            "page_index": 6,
+            "page_number": 7,
+            "source_image_count": 0,
+            "output_image_count": 31,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              237.825,
+              237.029,
+              237.273
+            ],
+            "output_mean_rgb": [
+              239.248,
+              238.449,
+              238.72
+            ],
+            "mean_rgb_delta": 1.43,
+            "source_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              8.068,
+              8.38,
+              8.362
+            ]
+          },
+          {
+            "page_index": 7,
+            "page_number": 8,
+            "source_image_count": 0,
+            "output_image_count": 7,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              241.366,
+              240.592,
+              240.822
+            ],
+            "output_mean_rgb": [
+              242.192,
+              241.426,
+              241.666
+            ],
+            "mean_rgb_delta": 0.835,
+            "source_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              255
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              3.093,
+              3.336,
+              3.323
+            ]
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    }
+  ],
+  "page_metrics": [
+    {
+      "page_index": 0,
+      "source_metrics": {
+        "line_count": 586,
+        "text_area": 107006.745,
+        "y_span": 755.616,
+        "median_gap": -14.245,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 635,
+        "text_area": 112688.278,
+        "y_span": 799.817,
+        "median_gap": -13.909,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 6.2,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 1.053,
+        "line_count_ratio": 1.084,
+        "y_span_ratio": 1.058,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": 0.0
+      }
+    },
+    {
+      "page_index": 1,
+      "source_metrics": {
+        "line_count": 548,
+        "text_area": 103131.508,
+        "y_span": 757.761,
+        "median_gap": -16.653,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 556,
+        "text_area": 103437.727,
+        "y_span": 799.618,
+        "median_gap": -13.909,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 6.2,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 1.003,
+        "line_count_ratio": 1.015,
+        "y_span_ratio": 1.055,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": 0.0
+      }
+    },
+    {
+      "page_index": 2,
+      "source_metrics": {
+        "line_count": 421,
+        "text_area": 109176.254,
+        "y_span": 813.53,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 410,
+        "text_area": 81037.15,
+        "y_span": 813.93,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 4.216,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.742,
+        "line_count_ratio": 0.974,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": 0.0
+      }
+    },
+    {
+      "page_index": 3,
+      "source_metrics": {
+        "line_count": 418,
+        "text_area": 98628.374,
+        "y_span": 813.53,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 412,
+        "text_area": 78493.73,
+        "y_span": 813.93,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 4.216,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.796,
+        "line_count_ratio": 0.986,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": 0.0
+      }
+    },
+    {
+      "page_index": 4,
+      "source_metrics": {
+        "line_count": 422,
+        "text_area": 152966.918,
+        "y_span": 813.53,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 397,
+        "text_area": 78162.313,
+        "y_span": 813.93,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 4.216,
+        "q25": 6.2,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 0.886,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.511,
+        "line_count_ratio": 0.941,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.114
+      }
+    },
+    {
+      "page_index": 5,
+      "source_metrics": {
+        "line_count": 359,
+        "text_area": 157623.762,
+        "y_span": 813.53,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 337,
+        "text_area": 89387.557,
+        "y_span": 813.93,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 8.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.143
+      },
+      "output_font_hierarchy": {
+        "q10": 3.72,
+        "q25": 6.2,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 0.886,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.567,
+        "line_count_ratio": 0.939,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.114
+      }
+    },
+    {
+      "page_index": 6,
+      "source_metrics": {
+        "line_count": 391,
+        "text_area": 133912.373,
+        "y_span": 813.53,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 369,
+        "text_area": 65970.378,
+        "y_span": 813.93,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 4.216,
+        "q25": 6.2,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 0.886,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.493,
+        "line_count_ratio": 0.944,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.114
+      }
+    },
+    {
+      "page_index": 7,
+      "source_metrics": {
+        "line_count": 381,
+        "text_area": 97210.715,
+        "y_span": 813.53,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 383,
+        "text_area": 77413.199,
+        "y_span": 813.93,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 4.216,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.796,
+        "line_count_ratio": 1.005,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": 0.0
+      }
+    },
+    {
+      "page_index": 8,
+      "source_metrics": {
+        "line_count": 358,
+        "text_area": 79498.957,
+        "y_span": 813.53,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 359,
+        "text_area": 65916.849,
+        "y_span": 813.93,
+        "median_gap": -9.311,
+        "median_font_size": 7.0
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 4.216,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 7.0,
+        "q90": 7.0,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.829,
+        "line_count_ratio": 1.003,
+        "y_span_ratio": 1.0,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": 0.0
+      }
+    }
+  ],
+  "blocking_failure_count": 6
+}

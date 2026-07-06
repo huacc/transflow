@@ -1,0 +1,208 @@
+{
+  "tool": "plan_visual_region_repairs",
+  "visual_region_metrics": "docs/reports/S20_00005_2025_interim_report_zh/visual_region_metrics.json",
+  "repair_plan_count": 5,
+  "blocking_repair_count": 4,
+  "next_state": "Lx_RepairLoop",
+  "plans": [
+    {
+      "gate_id": "body_paragraph_readability",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 5,
+      "repair_atom": "target_composition_body_reflow_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Recompose body frame from current page margins/body band before shrinking text.",
+      "sample_regions": [
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b7_l0",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 6.6,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_03_region_p2_b7_l0_body.png",
+          "reasons": [
+            "font_size 6.60pt is below body recommended floor 6.80pt"
+          ]
+        },
+        {
+          "page_number": 5,
+          "region_id": "region_p4_b6_l0",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 6.6,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_05_region_p4_b6_l0_body.png",
+          "reasons": [
+            "font_size 6.60pt is below body recommended floor 6.80pt"
+          ]
+        },
+        {
+          "page_number": 5,
+          "region_id": "region_p4_b6_l2",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 6.6,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_05_region_p4_b6_l2_body.png",
+          "reasons": [
+            "font_size 6.60pt is below body recommended floor 6.80pt"
+          ]
+        },
+        {
+          "page_number": 6,
+          "region_id": "body_flow_000",
+          "quality_role": "body",
+          "region_kind": "body_flow",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 6.6,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_06_body_flow_000_body.png",
+          "reasons": [
+            "font_size 6.60pt is below body recommended floor 6.80pt"
+          ]
+        },
+        {
+          "page_number": 6,
+          "region_id": "body_flow_001",
+          "quality_role": "body",
+          "region_kind": "body_flow",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 6.6,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_06_body_flow_001_body.png",
+          "reasons": [
+            "font_size 6.60pt is below body recommended floor 6.80pt"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "sidebar_navigation_legibility",
+      "gate_status": "fail",
+      "failure_count": 1,
+      "warning_count": 0,
+      "repair_atom": "side_navigation_rotated_image_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Use horizontal text image then rotate as a unit; verify with back-rotated crop.",
+      "sample_regions": [
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b4_l29",
+          "quality_role": "sidebar",
+          "region_kind": "vertical_nav",
+          "generation_status": "rotated_horizontal_image_fit",
+          "font_size": 7.7,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l29_sidebar.png",
+          "reasons": [
+            "inner_background_delta 31.0 exceeds fail threshold 30.0"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "gate_status": "fail",
+      "failure_count": 1,
+      "warning_count": 180,
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan",
+      "description": "Generate compact semantic variants for table cells/headers; generator must not invent abbreviations.",
+      "sample_regions": [
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b4_l13",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 4.712,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l13_table_text.png",
+          "reasons": [
+            "inner_background_delta 31.0 exceeds fail threshold 30.0"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "background_residue_artifact",
+      "gate_status": "fail",
+      "failure_count": 3,
+      "warning_count": 0,
+      "repair_atom": "background_residue_fill_resample",
+      "target_state": "S7_GenerateCandidate",
+      "description": "Repair visible redaction/fill residue by sampling continuous local background and avoiding rectangular artifact patches.",
+      "sample_regions": [
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b4_l13",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 4.712,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l13_table_text.png",
+          "reasons": [
+            "inner_background_delta 31.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b4_l29",
+          "quality_role": "sidebar",
+          "region_kind": "vertical_nav",
+          "generation_status": "rotated_horizontal_image_fit",
+          "font_size": 7.7,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l29_sidebar.png",
+          "reasons": [
+            "inner_background_delta 31.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 7,
+          "region_id": null,
+          "quality_role": null,
+          "region_kind": null,
+          "generation_status": null,
+          "font_size": null,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_07_p6_b12_l0_redaction_fill.png",
+          "reasons": [
+            "redaction_fill_delta 30.0 with patch_score 36.4 exceeds fail threshold"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "gate_status": "fail",
+      "failure_count": 2,
+      "warning_count": 160,
+      "repair_atom": "matrix_diagram_table_cell_preserve_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Treat matrix/table-diagram pages as two-dimensional structures; preserve cells/labels and prevent body_flow/fallback insertion inside the diagram.",
+      "sample_regions": [
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b4_l13",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 4.712,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l13_table_text.png",
+          "reasons": [
+            "inner_background_delta 31.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b4_l29",
+          "quality_role": "sidebar",
+          "region_kind": "vertical_nav",
+          "generation_status": "rotated_horizontal_image_fit",
+          "font_size": 7.7,
+          "crop_evidence": "docs/reports/S20_00005_2025_interim_report_zh/visual_crops/page_02_region_p1_b4_l29_sidebar.png",
+          "reasons": [
+            "inner_background_delta 31.0 exceeds fail threshold 30.0"
+          ]
+        }
+      ]
+    }
+  ]
+}

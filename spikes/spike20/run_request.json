@@ -1,0 +1,76 @@
+{
+  "spike": "spike20",
+  "run_mode": "product_quality",
+  "mission": "puncture_validation_using_round13_source_pdf_inputs",
+  "workspace_root": "spikes/spike20",
+  "input_source": "docs/input/round13/source_pdfs copied into spike20/input",
+  "input_policy": "top-level input contains PDFs only; no JSON input or bilingual reference is allowed as source evidence",
+  "target_reference_policy": "forbidden during execution",
+  "framework_mutation_policy": "frozen by default; round-local Ax_AdaptiveChange is allowed only when execution is blocked and must be recorded",
+  "runtime_write_guard_policy": "mandatory validate_workspace_boundary.py before every runtime artifact write set",
+  "semantic_translation_policy": "D2 translations must be materialized inside this spike from current-run source units only before product-quality candidate generation",
+  "language_metadata_policy": "source_language and target_language are expected metadata; executor must confirm source language from current extraction and record any mismatch",
+  "visual_closure_policy": "after candidate generation, S8 must produce candidate render, visual region metrics, repair plan, visual adjudication, and product quality gates before final verdict",
+  "repair_loop_policy": "if D7 reports a blocking failure, D8 must not be skipped; it must choose a generic repair atom or record an explicit unrepairable reason with evidence",
+  "regressions": [
+    {
+      "regression_id": "S20_00005_2025_interim_report_zh",
+      "input_pdf": "input/00005_2025_interim_report_zh.pdf",
+      "source_language": "zh",
+      "target_language": "en",
+      "target_text_field": "translation_en",
+      "sha256": "7a9dcdcb77be921d41adac3eae2b77ac3f11c8dd86209f668aef48b5ad65c0d3",
+      "bytes": 5252473,
+      "semantic_translations_output": "docs/input/semantic_translations/S20_00005_2025_interim_report_zh.translations.json",
+      "candidate_pdf": "docs/output/S20_00005_2025_interim_report_zh_candidate.pdf"
+    },
+    {
+      "regression_id": "S20_00388_2026_annual_report_en",
+      "input_pdf": "input/00388_2026_annual_report_en.pdf",
+      "source_language": "en",
+      "target_language": "zh",
+      "target_text_field": "translation_zh",
+      "sha256": "0642d314ec4c8b3837564187aa751dca6e61ffe94c1cc4f8b61721dc89b820d6",
+      "bytes": 71026,
+      "semantic_translations_output": "docs/input/semantic_translations/S20_00388_2026_annual_report_en.translations.json",
+      "candidate_pdf": "docs/output/S20_00388_2026_annual_report_en_candidate.pdf"
+    },
+    {
+      "regression_id": "S20_00992_2023_annual_report_en",
+      "input_pdf": "input/00992_2023_annual_report_en.pdf",
+      "source_language": "en",
+      "target_language": "zh",
+      "target_text_field": "translation_zh",
+      "sha256": "2919b1f547165a9b41db9f5831d45fdb5ca99f3447cd6759063aeed18a3ede65",
+      "bytes": 638927,
+      "semantic_translations_output": "docs/input/semantic_translations/S20_00992_2023_annual_report_en.translations.json",
+      "candidate_pdf": "docs/output/S20_00992_2023_annual_report_en_candidate.pdf"
+    },
+    {
+      "regression_id": "S20_建業新生活有限公司_c",
+      "input_pdf": "input/建業新生活有限公司_c.pdf",
+      "source_language": "zh",
+      "target_language": "en",
+      "target_text_field": "translation_en",
+      "sha256": "d1b3e97bb552f785bde132029fdb722b56c7c65687ba9c777c9e0de164164c97",
+      "bytes": 168896,
+      "semantic_translations_output": "docs/input/semantic_translations/S20_建業新生活有限公司_c.translations.json",
+      "candidate_pdf": "docs/output/S20_建業新生活有限公司_c_candidate.pdf"
+    },
+    {
+      "regression_id": "S20_建業新生活有限公司_e",
+      "input_pdf": "input/建業新生活有限公司_e.pdf",
+      "source_language": "en",
+      "target_language": "zh",
+      "target_text_field": "translation_zh",
+      "sha256": "61cd782456e9cd44055e79aeb403e6bd2d0cc67ae963444edf56566c140ef0a1",
+      "bytes": 86111,
+      "semantic_translations_output": "docs/input/semantic_translations/S20_建業新生活有限公司_e.translations.json",
+      "candidate_pdf": "docs/output/S20_建業新生活有限公司_e_candidate.pdf"
+    }
+  ],
+  "output_dir": "docs/output",
+  "reports_dir": "docs/reports",
+  "final_report": "docs/reports/spike20_execution_audit.md",
+  "final_verdict": "docs/reports/spike20_final_verdict.json"
+}

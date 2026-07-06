@@ -1,0 +1,17 @@
+{
+  "case_id": "S20_00005_2025_interim_report_zh",
+  "matching_strategy": "validate_each_semantic_translation_against_current_source_extraction",
+  "filename_used_as_verdict": false,
+  "selected_semantic_translation": "docs/input/semantic_translations/S20_00005_2025_interim_report_zh.translations.json",
+  "selected_pool_file": "docs/input/semantic_translation_pool/S20_00005_2025_interim_report_zh.translations.json",
+  "attempts": [
+    {
+      "candidate": "docs/input/semantic_translation_pool/S20_00005_2025_interim_report_zh.translations.json",
+      "validation": "docs/reports/S20_00005_2025_interim_report_zh/translation_match_candidates/candidate_001_S20_00005_2025_interim_report_zh.translations.validation.json",
+      "returncode": 0,
+      "translation_validation_verdict": "PASS",
+      "missing_count": 0,
+      "invalid_count": 0
+    }
+  ]
+}

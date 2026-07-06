@@ -1,0 +1,138 @@
+{
+  "tool": "plan_visual_region_repairs",
+  "visual_region_metrics": "docs/reports/S20_00992_2023_annual_report_en/visual_region_metrics.json",
+  "repair_plan_count": 3,
+  "blocking_repair_count": 0,
+  "next_state": "S8_VerifyProductQuality",
+  "plans": [
+    {
+      "gate_id": "body_paragraph_readability",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 1,
+      "repair_atom": "target_composition_body_reflow_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Recompose body frame from current page margins/body band before shrinking text.",
+      "sample_regions": [
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b8_l0",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "fit",
+          "font_size": 5.472,
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_03_region_p2_b8_l0_body.png",
+          "reasons": [
+            "font_size 5.47pt is below body recommended floor 6.80pt"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "event_card_readability",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 3,
+      "repair_atom": "event_card_local_fit_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Keep event text local to its anchor and tune event-card fit curve.",
+      "sample_regions": [
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b17_l0",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 5.538,
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_01_region_p0_b17_l0_event_card.png",
+          "reasons": [
+            "background_delta 175.0 exceeds warn threshold 26.0"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b25_033",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 6.02,
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_01_region_p0_b25_033_event_card.png",
+          "reasons": [
+            "background_delta 207.0 exceeds warn threshold 26.0"
+          ]
+        },
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b2_l0",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 7.4,
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_03_region_p2_b2_l0_event_card.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.46 is below event_card warn ratio 0.60"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "short_label_legibility",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 4,
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan",
+      "description": "Generate compact display variant for short constrained label.",
+      "sample_regions": [
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b13_l0",
+          "quality_role": "short_label",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 5.2,
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_02_region_p1_b13_l0_short_label.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.43 is below short_label warn ratio 0.55"
+          ]
+        },
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b17_l0",
+          "quality_role": "short_label",
+          "region_kind": "short_label",
+          "generation_status": "fit",
+          "font_size": 8.303,
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_02_region_p1_b17_l0_short_label.png",
+          "reasons": [
+            "background_delta 169.7 exceeds warn threshold 26.0"
+          ]
+        },
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b17_l3",
+          "quality_role": "short_label",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 5.2,
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_02_region_p1_b17_l3_short_label.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.55 is below short_label warn ratio 0.55"
+          ]
+        },
+        {
+          "page_number": 9,
+          "region_id": "region_p8_b2_l0",
+          "quality_role": "short_label",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 5.2,
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_09_region_p8_b2_l0_short_label.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.52 is below short_label warn ratio 0.55"
+          ]
+        }
+      ]
+    }
+  ]
+}

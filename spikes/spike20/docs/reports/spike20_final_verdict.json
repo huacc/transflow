@@ -1,0 +1,223 @@
+{
+  "spike": "spike20",
+  "input_purity": "PASS",
+  "workspace_boundary_preflight": "PASS",
+  "s5_batch_materialization": {
+    "S20_00005_2025_interim_report_zh": {
+      "source_unit_count": 857,
+      "batch_count": 22,
+      "materialization_verdict": "PASS",
+      "materialized_batch_count": 22,
+      "batch_validation_pass_count": 22,
+      "batch_validation_fail_count": 0,
+      "assembly_verdict": "PASS",
+      "semantic_translation_output": "docs/input/semantic_translations/S20_00005_2025_interim_report_zh.translations.json",
+      "semantic_translation_validation": "PASS"
+    },
+    "S20_00388_2026_annual_report_en": {
+      "source_unit_count": 64,
+      "batch_count": 2,
+      "materialization_verdict": "PASS",
+      "materialized_batch_count": 2,
+      "batch_validation_pass_count": 2,
+      "batch_validation_fail_count": 0,
+      "assembly_verdict": "PASS",
+      "semantic_translation_output": "docs/input/semantic_translations/S20_00388_2026_annual_report_en.translations.json",
+      "semantic_translation_validation": "PASS"
+    },
+    "S20_00992_2023_annual_report_en": {
+      "source_unit_count": 493,
+      "batch_count": 13,
+      "materialization_verdict": "PASS",
+      "materialized_batch_count": 13,
+      "batch_validation_pass_count": 13,
+      "batch_validation_fail_count": 0,
+      "assembly_verdict": "PASS",
+      "semantic_translation_output": "docs/input/semantic_translations/S20_00992_2023_annual_report_en.translations.json",
+      "semantic_translation_validation": "PASS"
+    },
+    "S20_建業新生活有限公司_c": {
+      "source_unit_count": 132,
+      "batch_count": 4,
+      "materialization_verdict": "PASS",
+      "materialized_batch_count": 4,
+      "batch_validation_pass_count": 4,
+      "batch_validation_fail_count": 0,
+      "assembly_verdict": "PASS",
+      "semantic_translation_output": "docs/input/semantic_translations/S20_建業新生活有限公司_c.translations.json",
+      "semantic_translation_validation": "PASS"
+    },
+    "S20_建業新生活有限公司_e": {
+      "source_unit_count": 216,
+      "batch_count": 6,
+      "materialization_verdict": "PASS",
+      "materialized_batch_count": 6,
+      "batch_validation_pass_count": 6,
+      "batch_validation_fail_count": 0,
+      "assembly_verdict": "PASS",
+      "semantic_translation_output": "docs/input/semantic_translations/S20_建業新生活有限公司_e.translations.json",
+      "semantic_translation_validation": "PASS"
+    }
+  },
+  "semantic_translation_validation": {
+    "S20_00005_2025_interim_report_zh": {
+      "verdict": "PASS",
+      "source_unit_count": 857,
+      "matched_unit_count": 857,
+      "invalid_unit_count": 0,
+      "evidence": "docs\\reports\\S20_00005_2025_interim_report_zh\\semantic_translation_validation.json"
+    },
+    "S20_00388_2026_annual_report_en": {
+      "verdict": "PASS",
+      "source_unit_count": 64,
+      "matched_unit_count": 64,
+      "invalid_unit_count": 0,
+      "evidence": "docs\\reports\\S20_00388_2026_annual_report_en\\semantic_translation_validation.json"
+    },
+    "S20_00992_2023_annual_report_en": {
+      "verdict": "PASS",
+      "source_unit_count": 493,
+      "matched_unit_count": 493,
+      "invalid_unit_count": 0,
+      "evidence": "docs\\reports\\S20_00992_2023_annual_report_en\\semantic_translation_validation.json"
+    },
+    "S20_建業新生活有限公司_c": {
+      "verdict": "PASS",
+      "source_unit_count": 132,
+      "matched_unit_count": 132,
+      "invalid_unit_count": 0,
+      "evidence": "docs\\reports\\S20_建業新生活有限公司_c\\semantic_translation_validation.json"
+    },
+    "S20_建業新生活有限公司_e": {
+      "verdict": "PASS",
+      "source_unit_count": 216,
+      "matched_unit_count": 216,
+      "invalid_unit_count": 0,
+      "evidence": "docs\\reports\\S20_建業新生活有限公司_e\\semantic_translation_validation.json"
+    }
+  },
+  "candidate_generation": "PASS",
+  "visual_closure": "FAIL",
+  "d8_repair_selection": "PASS",
+  "framework_immutability": "PASS",
+  "adaptive_changes_made": false,
+  "adaptive_change_refs": [],
+  "state_machine_followed": "PASS",
+  "tool_orchestration_followed": "PASS",
+  "prompt_template_boundary_followed": "PASS",
+  "model_interaction_records_complete": "PASS",
+  "anti_overfit_scan": "PASS",
+  "process_artifact_schema_verdict": "PASS",
+  "process_contract_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "terminal_state": "S_FAIL_QUALITY",
+  "candidate_pdfs": [
+    "docs/output/S20_00005_2025_interim_report_zh_candidate.pdf",
+    "docs/output/S20_00388_2026_annual_report_en_candidate.pdf",
+    "docs/output/S20_00992_2023_annual_report_en_candidate.pdf",
+    "docs/output/S20_建業新生活有限公司_c_candidate.pdf",
+    "docs/output/S20_建業新生活有限公司_e_candidate.pdf"
+  ],
+  "design_gaps_found": [
+    {
+      "gap_id": "missing_generic_repair_atom_executor",
+      "evidence": "docs/reports/S20_00005_2025_interim_report_zh/repair_loop_0001.json",
+      "description": "D8 selected repair atoms for sidebar/table/background/matrix failures, but no generic executor is wired, so repair_loop_0001 records not_executed_unrepairable and terminal_state remains S_FAIL_QUALITY."
+    },
+    {
+      "gap_id": "complex_table_sidebar_quality_not_closed",
+      "evidence": "docs/reports/S20_00005_2025_interim_report_zh/product_quality_gates.json",
+      "description": "The 00005 zh-to-en candidate still has blocking text residue, visual similarity, sidebar navigation, table text, background residue, and matrix diagram integrity failures."
+    }
+  ],
+  "evidence_refs": {
+    "execution_audit": "docs/reports/spike20_execution_audit.md",
+    "runner_verdict": "docs/reports/S20_final_verdict.json",
+    "runner_report": "docs/reports/S20_execution_report.md",
+    "manual_operation_log": "docs/reports/spike20_operation_log.jsonl",
+    "runner_operation_log": "docs/reports/operation_log.jsonl",
+    "state_trace": "docs/reports/state_trace.json",
+    "decision_log": "docs/reports/decision_log.jsonl",
+    "process_validation": "docs/reports/process_validation.json",
+    "anti_overfit_scan": "docs/reports/anti_overfit_scan.json",
+    "language_detection": "docs/reports/language_detection_summary.json",
+    "final_outputs_boundary": "docs/reports/final_outputs_workspace_boundary.json"
+  },
+  "visual_closure_artifact_presence": "PASS",
+  "cases": [
+    {
+      "case_id": "S20_00005_2025_interim_report_zh",
+      "candidate_pdf": "docs/output/S20_00005_2025_interim_report_zh_candidate.pdf",
+      "candidate_exists": true,
+      "product_quality_verdict": "FAIL",
+      "failed_gate_ids": [
+        "text_residue",
+        "visual_similarity",
+        "sidebar_navigation_legibility",
+        "table_text_legibility",
+        "background_residue_artifact",
+        "matrix_diagram_integrity"
+      ],
+      "blocking_failure_count": 6,
+      "visual_adjudication_verdict": "FAIL",
+      "s8_artifacts_present": true,
+      "candidate_preview_png_count": 9,
+      "repair_loop_records": [
+        "docs/reports/S20_00005_2025_interim_report_zh/repair_loop_0001.json"
+      ],
+      "report_dir": "docs/reports/S20_00005_2025_interim_report_zh"
+    },
+    {
+      "case_id": "S20_00388_2026_annual_report_en",
+      "candidate_pdf": "docs/output/S20_00388_2026_annual_report_en_candidate.pdf",
+      "candidate_exists": true,
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_failure_count": 0,
+      "visual_adjudication_verdict": "PASS_WITH_WARN",
+      "s8_artifacts_present": true,
+      "candidate_preview_png_count": 1,
+      "repair_loop_records": [],
+      "report_dir": "docs/reports/S20_00388_2026_annual_report_en"
+    },
+    {
+      "case_id": "S20_00992_2023_annual_report_en",
+      "candidate_pdf": "docs/output/S20_00992_2023_annual_report_en_candidate.pdf",
+      "candidate_exists": true,
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_failure_count": 0,
+      "visual_adjudication_verdict": "PASS_WITH_WARN",
+      "s8_artifacts_present": true,
+      "candidate_preview_png_count": 11,
+      "repair_loop_records": [],
+      "report_dir": "docs/reports/S20_00992_2023_annual_report_en"
+    },
+    {
+      "case_id": "S20_建業新生活有限公司_c",
+      "candidate_pdf": "docs/output/S20_建業新生活有限公司_c_candidate.pdf",
+      "candidate_exists": true,
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_failure_count": 0,
+      "visual_adjudication_verdict": "PASS_WITH_WARN",
+      "s8_artifacts_present": true,
+      "candidate_preview_png_count": 6,
+      "repair_loop_records": [],
+      "report_dir": "docs/reports/S20_建業新生活有限公司_c"
+    },
+    {
+      "case_id": "S20_建業新生活有限公司_e",
+      "candidate_pdf": "docs/output/S20_建業新生活有限公司_e_candidate.pdf",
+      "candidate_exists": true,
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_failure_count": 0,
+      "visual_adjudication_verdict": "PASS_WITH_WARN",
+      "s8_artifacts_present": true,
+      "candidate_preview_png_count": 6,
+      "repair_loop_records": [],
+      "report_dir": "docs/reports/S20_建業新生活有限公司_e"
+    }
+  ]
+}

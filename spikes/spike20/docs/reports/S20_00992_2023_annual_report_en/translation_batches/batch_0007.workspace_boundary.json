@@ -1,0 +1,47 @@
+{
+  "tool": "validate_workspace_boundary",
+  "workspace_root": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20",
+  "allow_missing": true,
+  "workspace_boundary_verdict": "PASS",
+  "checked_count": 5,
+  "checked_paths": [
+    {
+      "source": "cli",
+      "path": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0007.slot_values.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00992_2023_annual_report_en\\translation_batches\\batch_0007.slot_values.json",
+      "inside_workspace": true,
+      "exists": true
+    },
+    {
+      "source": "cli",
+      "path": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0007.prompt_instance.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00992_2023_annual_report_en\\translation_batches\\batch_0007.prompt_instance.json",
+      "inside_workspace": true,
+      "exists": false
+    },
+    {
+      "source": "cli",
+      "path": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0007.model_output.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00992_2023_annual_report_en\\translation_batches\\batch_0007.model_output.json",
+      "inside_workspace": true,
+      "exists": false
+    },
+    {
+      "source": "cli",
+      "path": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0007.validation.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00992_2023_annual_report_en\\translation_batches\\batch_0007.validation.json",
+      "inside_workspace": true,
+      "exists": false
+    },
+    {
+      "source": "cli",
+      "path": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0007.decision_record.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00992_2023_annual_report_en\\translation_batches\\batch_0007.decision_record.json",
+      "inside_workspace": true,
+      "exists": false
+    }
+  ],
+  "escaping_paths": [],
+  "missing_paths": [],
+  "output_report": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00992_2023_annual_report_en\\translation_batches\\batch_0007.workspace_boundary.json"
+}

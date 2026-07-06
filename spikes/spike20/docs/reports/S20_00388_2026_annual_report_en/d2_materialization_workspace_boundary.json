@@ -1,0 +1,40 @@
+{
+  "tool": "validate_workspace_boundary",
+  "workspace_root": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20",
+  "allow_missing": true,
+  "workspace_boundary_verdict": "PASS",
+  "checked_count": 4,
+  "checked_paths": [
+    {
+      "source": "cli",
+      "path": "docs\\reports\\S20_00388_2026_annual_report_en\\translation_batch_manifest.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00388_2026_annual_report_en\\translation_batch_manifest.json",
+      "inside_workspace": true,
+      "exists": true
+    },
+    {
+      "source": "cli",
+      "path": "pdf_translation_workflow_core/prompts/templates/D2_translation.prompt.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\pdf_translation_workflow_core\\prompts\\templates\\D2_translation.prompt.json",
+      "inside_workspace": true,
+      "exists": true
+    },
+    {
+      "source": "cli",
+      "path": "docs\\reports\\S20_00388_2026_annual_report_en\\translation_cache.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00388_2026_annual_report_en\\translation_cache.json",
+      "inside_workspace": true,
+      "exists": false
+    },
+    {
+      "source": "cli",
+      "path": "docs\\reports\\S20_00388_2026_annual_report_en\\d2_materialization.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00388_2026_annual_report_en\\d2_materialization.json",
+      "inside_workspace": true,
+      "exists": false
+    }
+  ],
+  "escaping_paths": [],
+  "missing_paths": [],
+  "output_report": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_00388_2026_annual_report_en\\d2_materialization_workspace_boundary.json"
+}

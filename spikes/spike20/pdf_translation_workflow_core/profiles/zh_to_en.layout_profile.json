@@ -1,0 +1,173 @@
+{
+  "profile_id": "zh_to_en",
+  "source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "layout_strategy": "target_visual_composition_before_font_shrink",
+  "principles": [
+    "Use the Chinese source PDF as the only runtime layout anchor.",
+    "English target text often expands and needs Western word wrapping, so expand paragraph frames before shrinking font size.",
+    "Do not use official English reference pages during generation; use them only after the run for offline comparison."
+  ],
+  "policy_overrides": {
+    "language_pair_profile": "zh_to_en",
+    "target_composition": {
+      "enabled": true,
+      "region_kinds": ["body_flow", "heading"],
+      "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
+      "disable_page_type_guesses": ["chart_or_dashboard", "matrix_or_table_diagram"],
+      "allow_dense_page_body_below_y_ratio": 0.55,
+      "left_margin_page_ratio": 0.08,
+      "right_margin_page_ratio": 0.08,
+      "top_margin_page_ratio": 0.04,
+      "bottom_margin_page_ratio": 0.04,
+      "min_width_page_ratio": 0.70,
+      "max_width_page_ratio": 0.82,
+      "height_expand_ratio": 1.25,
+      "min_height_page_ratio": 0.10,
+      "max_bottom_page_ratio": 0.93,
+      "overlap_guard": {
+        "enabled": true,
+        "min_column_overlap_ratio": 0.55,
+        "min_vertical_gap_pt": 5.0,
+        "min_remaining_height_pt": 18.0,
+        "ignore_region_kinds": ["vertical_nav", "legend"]
+      },
+      "source": "language_pair_profile_open_rule",
+      "reason": "For zh->en body copy, source bboxes are redaction/order anchors. The English paragraph frame must be recomposed from current-page body band, margins, and remaining readable area before font shrink."
+    },
+    "target_language_reflow": {
+      "enabled": true,
+      "region_kinds": ["body_flow", "table_note", "heading"],
+      "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
+      "disable_page_type_guesses": ["chart_or_dashboard", "matrix_or_table_diagram"],
+      "min_width_page_ratio": 0.68,
+      "right_margin_page_ratio": 0.08,
+      "bottom_margin_page_ratio": 0.06,
+      "height_expand_ratio": 1.35,
+      "min_height_page_ratio": 0.08,
+      "max_bottom_page_ratio": 0.94,
+      "allow_dense_page_body_below_y_ratio": 0.55,
+      "overlap_guard": {
+        "enabled": true,
+        "min_column_overlap_ratio": 0.55,
+        "min_vertical_gap_pt": 5.0,
+        "min_remaining_height_pt": 14.0,
+        "ignore_region_kinds": ["vertical_nav", "legend"]
+      },
+      "source": "language_pair_profile_open_rule",
+      "reason": "For zh->en, same-source bbox fitting over-shrinks body text. Expand current-page text frames within the same page band before shrink."
+    },
+    "flow_grouping": {
+      "body": {
+        "enabled": true,
+        "candidate_region_kinds": ["body", "short_label", "compact_label"],
+        "min_region_count": 2,
+        "min_region_width_page_ratio": 0.24,
+        "max_x0_delta_pt": 18.0,
+        "max_width_delta_ratio": 1.0,
+        "max_vertical_gap_pt": 40.0,
+        "allow_short_continuation_lines": true,
+        "min_continuation_width_page_ratio": 0.02,
+        "paragraph_gap_pt": 18.0,
+        "include_line_preserve_body": true,
+        "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
+        "disable_page_type_guesses": ["chart_or_dashboard", "matrix_or_table_diagram"],
+        "allow_dense_page_body_below_y_ratio": 0.55,
+        "paragraph_separator": "\n\n",
+        "line_joiner_en": " ",
+        "line_joiner_zh": ""
+      }
+    },
+    "font_profiles": {
+      "body": {
+        "source_scale": 1.1,
+        "min_pt": 7.4,
+        "min_insert_pt": 7.2,
+        "max_pt": 10.0,
+        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8]
+      },
+      "body_flow": {
+        "source_scale": 1.16,
+        "min_pt": 8.0,
+        "min_insert_pt": 7.8,
+        "max_pt": 10.2,
+        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8]
+      },
+      "table_note": {
+        "source_scale": 1.0,
+        "min_pt": 6.2,
+        "min_insert_pt": 5.8,
+        "max_pt": 8.0,
+        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8, 0.76]
+      },
+      "footnote": {
+        "source_scale": 0.82,
+        "min_pt": 3.8,
+        "min_insert_pt": 3.8,
+        "max_pt": 6.2,
+        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64, 0.58]
+      },
+      "heading": {
+        "source_scale": 1.0,
+        "min_pt": 8.0,
+        "min_insert_pt": 7.0,
+        "max_pt": 24.0,
+        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.74, 0.66, 0.58, 0.50, 0.42, 0.34, 0.30]
+      },
+      "short_label": {
+        "source_scale": 1.0,
+        "min_pt": 6.0,
+        "min_insert_pt": 5.2,
+        "max_pt": 12.0,
+        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76]
+      },
+      "table_cell": {
+        "source_scale": 0.9,
+        "min_pt": 3.2,
+        "min_insert_pt": 3.2,
+        "max_pt": 6.2,
+        "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.6, 0.52, 0.48]
+      },
+      "legend": {
+        "source_scale": 0.94,
+        "min_pt": 4.8,
+        "min_insert_pt": 4.2,
+        "max_pt": 8.0,
+        "shrink_scales": [1.0, 0.92, 0.84, 0.76]
+      }
+    },
+    "constrained_text_image_fit": {
+      "enabled": true,
+      "region_kinds": ["table_cell", "compact_label", "short_label", "legend", "table_note", "footnote", "body_flow"],
+      "wrapped_region_kinds": ["table_note", "footnote", "body_flow"],
+      "dense_single_line_body_page_types": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
+      "min_font_pt": 5.2,
+      "max_font_pt": 6.6,
+      "reason": "For zh->en, textbox probing is preferred. If a body/table-note/footnote region still overflows after frame expansion, render wrapped target text as a last-resort local text image instead of falling back to tiny point text."
+    },
+      "fallback": {
+      "min_insert_pt": 3.2,
+      "fallback_insert_font_pt": 3.2,
+      "point_fit_font_pt": 3.4,
+      "fallback_max_chars": 120,
+      "point_fit_max_chars": 80
+    }
+  },
+  "prompt_overlay": {
+    "D2_translation": [
+      "Translate into natural English suitable for an annual report.",
+      "Do not copy Chinese punctuation rhythm into English; use Western word wrapping and concise paragraphs.",
+      "Provide compact English variants for chart labels, table cells, legends, and side navigation."
+    ],
+    "D4_layout_plan": [
+      "For paragraph body copy, treat source bboxes as redaction/order anchors, not hard containers; recompute target visual composition within the current page body band before shrinking font size.",
+      "Do not accept tiny English body text merely because it fits the Chinese source bbox.",
+      "Preserve graphics, tables, side navigation anchors, and section bands while recomputing body paragraph frames."
+    ],
+    "D7_quality_gate": [
+      "Fail if English body font is visually much smaller than annual-report body text or if excessive blank space remains after over-compression.",
+      "Judge official English only after the run as offline comparison, not as runtime evidence."
+    ]
+  }
+}

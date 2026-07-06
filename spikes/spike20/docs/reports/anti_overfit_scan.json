@@ -1,0 +1,19 @@
+{
+  "tool": "scan_core_overfit",
+  "root": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\pdf_translation_workflow_core",
+  "verdict": "PASS",
+  "token_count": 5,
+  "blocking_hit_count": 0,
+  "warning_hit_count": 0,
+  "blocking_hits": [],
+  "all_hits": [],
+  "policy": {
+    "blocking_dirs": [
+      "contracts",
+      "profiles",
+      "prompts",
+      "tools"
+    ],
+    "rule": "Sample-specific tokens must be supplied from a run-local token file outside the core. Hits in tools/contracts/prompts/profiles fail anti-overfit validation."
+  }
+}

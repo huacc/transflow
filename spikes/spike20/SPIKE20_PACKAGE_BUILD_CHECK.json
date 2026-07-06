@@ -1,0 +1,17 @@
+{
+  "spike": "spike20",
+  "package_build_verdict": "PASS",
+  "workspace_root": "spikes/spike20",
+  "built_from": {
+    "source_pdfs": "docs/input/round13/source_pdfs",
+    "core": "pdf_translation_workflow_core",
+    "process_design": "docs/业务流程/PDF_语义翻译回填_标准流程设计.md",
+    "reference_package_shape": "spikes/spike19"
+  },
+  "input_pdf_count": 5,
+  "top_level_input_policy": "PDF_ONLY",
+  "prebuilt_semantic_translation_json_included": false,
+  "historical_output_included": false,
+  "framework_copy_contains_pycache": false,
+  "execution_prompt": "docs/测试提示词/SPIKE20_ROUND13_SOURCE_PUNCTURE_PROMPT.md"
+}

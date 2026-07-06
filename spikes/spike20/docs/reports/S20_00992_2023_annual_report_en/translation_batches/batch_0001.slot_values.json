@@ -1,0 +1,1330 @@
+{
+  "run_id": "spike20",
+  "case_id": "S20_00992_2023_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0001",
+  "batch_index": 1,
+  "batch_count": 13,
+  "source_extraction_ref": "docs/reports/S20_00992_2023_annual_report_en/source_extraction.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p0_b0_l0",
+      "page_index": 0,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Corporate governance report",
+      "bbox": [
+        42.52,
+        39.18,
+        318.656,
+        65.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 20.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Corporate",
+        "governance",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p0_b1_l0",
+      "page_index": 0,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Lenovo Group Limited  2023/24 Annual Report",
+      "bbox": [
+        81.496,
+        812.946,
+        304.015,
+        825.326
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Annual",
+        "Group",
+        "Lenovo",
+        "Limited",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2023"
+        },
+        {
+          "type": "currency_amount",
+          "value": "24 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b2_l0",
+      "page_index": 0,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "The Board has established a clear governance structure as set out in the below diagram and the overall approach has",
+      "bbox": [
+        42.52,
+        112.09,
+        526.153,
+        123.232
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "The",
+        "a",
+        "and",
+        "approach",
+        "as",
+        "below",
+        "clear",
+        "diagram",
+        "established",
+        "governance",
+        "has",
+        "in",
+        "out",
+        "overall",
+        "set",
+        "structure",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b2_l1",
+      "page_index": 0,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "been designed to support and work within the Group organizational structure to ensure the accountability, fairness and",
+      "bbox": [
+        42.52,
+        123.088,
+        534.459,
+        134.23
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Group",
+        "accountability",
+        "and",
+        "been",
+        "designed",
+        "ensure",
+        "fairness",
+        "organizational",
+        "structure",
+        "support",
+        "the",
+        "to",
+        "within",
+        "work"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b2_l2",
+      "page_index": 0,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "transparency in how the Group runs and communicate with its stakeholders as well as to meet the future challenges.",
+      "bbox": [
+        42.52,
+        134.086,
+        520.599,
+        145.228
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Group",
+        "and",
+        "as",
+        "challenges.",
+        "communicate",
+        "future",
+        "how",
+        "in",
+        "its",
+        "meet",
+        "runs",
+        "stakeholders",
+        "the",
+        "to",
+        "transparency",
+        "well",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b3_l0",
+      "page_index": 0,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Key matters",
+      "bbox": [
+        42.52,
+        526.423,
+        124.936,
+        542.191
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Key",
+        "matters"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b3_l1",
+      "page_index": 0,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "reserved to the",
+      "bbox": [
+        42.52,
+        539.923,
+        145.144,
+        555.691
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "reserved",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b3_l2",
+      "page_index": 0,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "Board decision",
+      "bbox": [
+        42.52,
+        553.423,
+        135.136,
+        569.191
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Board",
+        "decision"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b4_l1",
+      "page_index": 0,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "The Board has adopted a schedule",
+      "bbox": [
+        56.693,
+        580.843,
+        170.627,
+        589.509
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "The",
+        "a",
+        "adopted",
+        "has",
+        "schedule"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b4_l2",
+      "page_index": 0,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "of key matters relating to strategy,",
+      "bbox": [
+        56.688,
+        588.844,
+        168.433,
+        597.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "key",
+        "matters",
+        "of",
+        "relating",
+        "strategy",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b4_l3",
+      "page_index": 0,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "finance and corporate governance",
+      "bbox": [
+        56.688,
+        596.845,
+        169.059,
+        605.511
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "and",
+        "corporate",
+        "finance",
+        "governance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b4_l4",
+      "page_index": 0,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "which are for decision by",
+      "bbox": [
+        56.688,
+        604.846,
+        140.632,
+        613.512
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "are",
+        "by",
+        "decision",
+        "for",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b4_l5",
+      "page_index": 0,
+      "block_id": 4,
+      "line_index": 5,
+      "source_text": "the Board.",
+      "bbox": [
+        56.688,
+        612.847,
+        90.232,
+        621.513
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board.",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b5_l1",
+      "page_index": 0,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "Such key matters reserved by the",
+      "bbox": [
+        56.686,
+        626.518,
+        166.189,
+        635.184
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Such",
+        "by",
+        "key",
+        "matters",
+        "reserved",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b5_l2",
+      "page_index": 0,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "Board for decision is set out in the",
+      "bbox": [
+        56.688,
+        634.519,
+        168.183,
+        643.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "decision",
+        "for",
+        "in",
+        "is",
+        "out",
+        "set",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b5_l3",
+      "page_index": 0,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "table on page 83.",
+      "bbox": [
+        56.688,
+        642.52,
+        112.765,
+        651.186
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "on",
+        "page",
+        "table"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "83"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b6_l0",
+      "page_index": 0,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Board",
+      "bbox": [
+        184.252,
+        526.423,
+        229.024,
+        542.191
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Board"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b6_l1",
+      "page_index": 0,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "committees",
+      "bbox": [
+        184.252,
+        539.923,
+        260.392,
+        555.691
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "committees"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b6_l2",
+      "page_index": 0,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "structure",
+      "bbox": [
+        184.252,
+        553.423,
+        239.908,
+        569.191
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "structure"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b7_l1",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "The Board has delegated authority",
+      "bbox": [
+        198.425,
+        580.843,
+        312.282,
+        589.509
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "The",
+        "authority",
+        "delegated",
+        "has"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b7_l2",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "for its key governance functions",
+      "bbox": [
+        198.42,
+        588.844,
+        302.894,
+        597.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "for",
+        "functions",
+        "governance",
+        "its",
+        "key"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b7_l3",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 3,
+      "source_text": "to three main committees, namely",
+      "bbox": [
+        198.42,
+        596.845,
+        310.209,
+        605.511
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "committees",
+        "main",
+        "namely",
+        "three",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b7_l4",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "Audit Committee, Compensation",
+      "bbox": [
+        198.42,
+        604.846,
+        306.611,
+        613.512
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Audit",
+        "Committee",
+        "Compensation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b7_l5",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 5,
+      "source_text": "Committee and Nomination and",
+      "bbox": [
+        198.42,
+        612.847,
+        304.281,
+        621.513
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Committee",
+        "Nomination",
+        "and"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b7_l6",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 6,
+      "source_text": "Governance Committee",
+      "bbox": [
+        198.42,
+        620.848,
+        278.843,
+        629.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Committee",
+        "Governance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b7_l7",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 7,
+      "source_text": "(the “Board Committees”), with",
+      "bbox": [
+        198.42,
+        628.849,
+        302.075,
+        637.515
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "Committees",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b7_l8",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 8,
+      "source_text": "the responsibilities outlined on",
+      "bbox": [
+        198.42,
+        636.85,
+        298.297,
+        645.516
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "on",
+        "outlined",
+        "responsibilities",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b7_l9",
+      "page_index": 0,
+      "block_id": 7,
+      "line_index": 9,
+      "source_text": "page 89.",
+      "bbox": [
+        198.42,
+        644.851,
+        226.602,
+        653.517
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "page"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "89"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b8_l1",
+      "page_index": 0,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "Details of the activities and",
+      "bbox": [
+        198.418,
+        658.522,
+        287.096,
+        667.188
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Details",
+        "activities",
+        "and",
+        "of",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b8_l2",
+      "page_index": 0,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "decisions taken by these",
+      "bbox": [
+        198.413,
+        666.523,
+        279.318,
+        675.189
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "by",
+        "decisions",
+        "taken",
+        "these"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b8_l3",
+      "page_index": 0,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "committees during the year are",
+      "bbox": [
+        198.413,
+        674.524,
+        301.403,
+        683.19
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "are",
+        "committees",
+        "during",
+        "the",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b8_l4",
+      "page_index": 0,
+      "block_id": 8,
+      "line_index": 4,
+      "source_text": "shown in the relevant committees’",
+      "bbox": [
+        198.413,
+        682.525,
+        310.245,
+        691.191
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "committees",
+        "in",
+        "relevant",
+        "shown",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b8_l5",
+      "page_index": 0,
+      "block_id": 8,
+      "line_index": 5,
+      "source_text": "reports.",
+      "bbox": [
+        198.413,
+        690.526,
+        223.312,
+        699.192
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "reports."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b9_l0",
+      "page_index": 0,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "CEO, Lenovo Executive",
+      "bbox": [
+        325.984,
+        526.423,
+        474.58,
+        542.191
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "CEO",
+        "Executive",
+        "Lenovo"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b9_l1",
+      "page_index": 0,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "Committee and",
+      "bbox": [
+        325.984,
+        539.923,
+        428.944,
+        555.691
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Committee",
+        "and"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b9_l2",
+      "page_index": 0,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "delegated authorities",
+      "bbox": [
+        325.984,
+        553.423,
+        458.848,
+        569.191
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "authorities",
+        "delegated"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b10_l0",
+      "page_index": 0,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "The CEO",
+      "bbox": [
+        325.984,
+        579.932,
+        355.363,
+        589.13
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "CEO",
+        "The"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p0_b10_l2",
+      "page_index": 0,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "manages the business in line with the strategy agreed by the",
+      "bbox": [
+        340.157,
+        590.18,
+        536.383,
+        598.846
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "agreed",
+        "business",
+        "by",
+        "in",
+        "line",
+        "manages",
+        "strategy",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b10_l3",
+      "page_index": 0,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "Board and is accountable to it. Details of the responsibilities",
+      "bbox": [
+        340.152,
+        597.432,
+        532.855,
+        606.098
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "Details",
+        "accountable",
+        "and",
+        "is",
+        "it.",
+        "of",
+        "responsibilities",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p0_b10_l4",
+      "page_index": 0,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "of CEO are set out on page 64;",
+      "bbox": [
+        340.152,
+        604.684,
+        439.965,
+        613.35
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "CEO",
+        "are",
+        "of",
+        "on",
+        "out",
+        "page",
+        "set"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "64"
+        }
+      ],
+      "layout_hint": "body"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0001.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0001.model_output.json",
+    "required_units": [
+      "p0_b0_l0",
+      "p0_b1_l0",
+      "p0_b2_l0",
+      "p0_b2_l1",
+      "p0_b2_l2",
+      "p0_b3_l0",
+      "p0_b3_l1",
+      "p0_b3_l2",
+      "p0_b4_l1",
+      "p0_b4_l2",
+      "p0_b4_l3",
+      "p0_b4_l4",
+      "p0_b4_l5",
+      "p0_b5_l1",
+      "p0_b5_l2",
+      "p0_b5_l3",
+      "p0_b6_l0",
+      "p0_b6_l1",
+      "p0_b6_l2",
+      "p0_b7_l1",
+      "p0_b7_l2",
+      "p0_b7_l3",
+      "p0_b7_l4",
+      "p0_b7_l5",
+      "p0_b7_l6",
+      "p0_b7_l7",
+      "p0_b7_l8",
+      "p0_b7_l9",
+      "p0_b8_l1",
+      "p0_b8_l2",
+      "p0_b8_l3",
+      "p0_b8_l4",
+      "p0_b8_l5",
+      "p0_b9_l0",
+      "p0_b9_l1",
+      "p0_b9_l2",
+      "p0_b10_l0",
+      "p0_b10_l2",
+      "p0_b10_l3",
+      "p0_b10_l4"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

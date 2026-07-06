@@ -1,0 +1,2422 @@
+{
+  "decision_id": "D7_visual_adjudication_from_region_metrics",
+  "state": "S8_VerifyProductQuality",
+  "case_id": "S20_00992_2023_annual_report_en",
+  "verdict": "PASS_WITH_WARN",
+  "dimensions": [
+    {
+      "dimension": "body_paragraph_readability",
+      "status": "PASS_WITH_WARN",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 1,
+      "region_count": 87,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p2_b8_l0",
+          "page_index": 2,
+          "page_number": 3,
+          "region_kind": "body",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "body",
+          "gate_id": "body_paragraph_readability",
+          "status": "warn",
+          "generation_status": "fit",
+          "font_size": 5.472,
+          "source_median_font_size": 7.5,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.73,
+          "fail_font_pt": 5.2,
+          "warn_font_pt": 6.8,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.62,
+          "bbox": [
+            299.028,
+            489.115,
+            495.865,
+            497.88
+          ],
+          "source_union_bbox": [
+            299.528,
+            489.515,
+            495.365,
+            497.48
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "font_size 5.47pt is below body recommended floor 6.80pt"
+          ],
+          "repair_atoms": [
+            "target_composition_body_reflow_repair"
+          ],
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_03_region_p2_b8_l0_body.png",
+          "target_text_sample": "• 在出现潜在利益冲突时发挥带头作用"
+        }
+      ]
+    },
+    {
+      "dimension": "event_card_readability",
+      "status": "PASS_WITH_WARN",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 3,
+      "region_count": 37,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p0_b17_l0",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "event_card",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "event_card",
+          "gate_id": "event_card_readability",
+          "status": "warn",
+          "generation_status": "fit",
+          "font_size": 5.538,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.791,
+          "fail_font_pt": 3.8,
+          "warn_font_pt": 4.2,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.6,
+          "bbox": [
+            245.731,
+            294.3,
+            341.042,
+            303.766
+          ],
+          "source_union_bbox": [
+            246.231,
+            294.7,
+            340.542,
+            303.366
+          ],
+          "source_background_rgb": [
+            32,
+            64,
+            144
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 175.0,
+          "source_residue_delta": 175.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "background_delta 175.0 exceeds warn threshold 26.0"
+          ],
+          "repair_atoms": [
+            "background_fill_resample"
+          ],
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_01_region_p0_b17_l0_event_card.png",
+          "target_text_sample": "更多详情，第 64 至 88 页"
+        },
+        {
+          "region_id": "region_p0_b25_033",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "event_card",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "event_card",
+          "gate_id": "event_card_readability",
+          "status": "warn",
+          "generation_status": "fit",
+          "font_size": 6.02,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 2,
+          "output_to_source_font_ratio": 0.86,
+          "fail_font_pt": 3.8,
+          "warn_font_pt": 4.2,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.6,
+          "bbox": [
+            294.91,
+            384.914,
+            348.548,
+            406.301
+          ],
+          "source_union_bbox": [
+            296.41,
+            387.274,
+            347.048,
+            403.941
+          ],
+          "source_background_rgb": [
+            80,
+            32,
+            32
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 207.0,
+          "source_residue_delta": 207.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "background_delta 207.0 exceeds warn threshold 26.0"
+          ],
+          "repair_atoms": [
+            "background_fill_resample"
+          ],
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_01_region_p0_b25_033_event_card.png",
+          "target_text_sample": "更多细节，第 90 至 92 页"
+        },
+        {
+          "region_id": "region_p2_b2_l0",
+          "page_index": 2,
+          "page_number": 3,
+          "region_kind": "event_card",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "event_card",
+          "gate_id": "event_card_readability",
+          "status": "warn",
+          "generation_status": "fit",
+          "font_size": 7.4,
+          "source_median_font_size": 16.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.463,
+          "fail_font_pt": 3.8,
+          "warn_font_pt": 4.2,
+          "fail_source_ratio": 0.45,
+          "warn_source_ratio": 0.6,
+          "bbox": [
+            70.366,
+            110.314,
+            155.558,
+            132.138
+          ],
+          "source_union_bbox": [
+            70.866,
+            110.714,
+            155.058,
+            131.738
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "output_to_source_font_ratio 0.46 is below event_card warn ratio 0.60"
+          ],
+          "repair_atoms": [
+            "event_card_local_fit_repair"
+          ],
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_03_region_p2_b2_l0_event_card.png",
+          "target_text_sample": "领导"
+        }
+      ]
+    },
+    {
+      "dimension": "footnote_readability",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 29,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p0_b7_007",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 5.74,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 9,
+          "output_to_source_font_ratio": 0.82,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            197.42,
+            578.903,
+            313.282,
+            655.457
+          ],
+          "source_union_bbox": [
+            198.42,
+            580.843,
+            312.282,
+            653.517
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "董事会已授予权力因其关键治理职能三个主要委员会，即审计委员会、薪酬委员会和提名以及治理委员会（“董事会委员会”），概述的责任第 89 页。"
+        },
+        {
+          "region_id": "region_p0_b10_011",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 5.74,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 3,
+          "output_to_source_font_ratio": 0.82,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            339.152,
+            588.24,
+            537.383,
+            615.29
+          ],
+          "source_union_bbox": [
+            340.152,
+            590.18,
+            536.383,
+            613.35
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "按照董事会同意的战略管理业务董事会并对其负责。职责详情首席执行官的名单载于第 64 页；"
+        },
+        {
+          "region_id": "region_p0_b10_012",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 5.74,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 4,
+          "output_to_source_font_ratio": 0.82,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            339.145,
+            612.831,
+            533.345,
+            647.133
+          ],
+          "source_union_bbox": [
+            340.145,
+            614.771,
+            532.345,
+            645.193
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "得到联想执行委员会的支持由首席执行官和某些人员组成的管理委员会高级管理层成员并帮助实施战略和管理运营绩效；和"
+        },
+        {
+          "region_id": "region_p0_b10_013",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 5.74,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 4,
+          "output_to_source_font_ratio": 0.82,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            324.963,
+            644.674,
+            540.198,
+            682.182
+          ],
+          "source_union_bbox": [
+            325.963,
+            646.614,
+            539.198,
+            680.242
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "通过集团采用的权力框架他将某些管理决策委托给特定的人个人和管理层。首席执行官顾问委员会"
+        },
+        {
+          "region_id": "region_p0_b10_014",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 5.74,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 3,
+          "output_to_source_font_ratio": 0.82,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            339.131,
+            679.352,
+            536.166,
+            706.402
+          ],
+          "source_union_bbox": [
+            340.131,
+            681.292,
+            535.166,
+            704.462
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "由各领域的外部专家组成（“专业领域”），包括地缘政治、经济、网络安全和环境、社会和治理（“ESG”）；和"
+        },
+        {
+          "region_id": "region_p0_b10_015",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 5.74,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 4,
+          "output_to_source_font_ratio": 0.82,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            324.949,
+            703.943,
+            539.958,
+            741.451
+          ],
+          "source_union_bbox": [
+            325.949,
+            705.883,
+            538.958,
+            739.511
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "为首席执行官和高级管理层提供战略和建议关键领域的运作问题，其中包括专门领域。ESG执行监督委员会"
+        },
+        {
+          "region_id": "region_p0_b10_016",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 5.74,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 3,
+          "output_to_source_font_ratio": 0.82,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            339.117,
+            738.621,
+            529.605,
+            765.671
+          ],
+          "source_union_bbox": [
+            340.117,
+            740.561,
+            528.605,
+            763.731
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "是一个由首席法律和企业主管担任主席的委员会责任官并由高级管理层组成来自各个业务和职能部门；"
+        },
+        {
+          "region_id": "region_p0_b10_017",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "footnote",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "footnote",
+          "gate_id": "footnote_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 5.74,
+          "source_median_font_size": 7.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 2,
+          "output_to_source_font_ratio": 0.82,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            339.11,
+            763.212,
+            522.802,
+            783.01
+          ],
+          "source_union_bbox": [
+            340.11,
+            765.152,
+            521.802,
+            781.07
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "旨在推广联想文化，鼓励强劲的 ESG 表现；和"
+        }
+      ]
+    },
+    {
+      "dimension": "short_label_legibility",
+      "status": "PASS_WITH_WARN",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 4,
+      "region_count": 43,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p1_b13_l0",
+          "page_index": 1,
+          "page_number": 2,
+          "region_kind": "compact_label",
+          "page_type_guess": "mixed_text",
+          "quality_role": "short_label",
+          "gate_id": "short_label_legibility",
+          "status": "warn",
+          "generation_status": "fit",
+          "font_size": 5.2,
+          "source_median_font_size": 12.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.433,
+          "fail_font_pt": 3.4,
+          "warn_font_pt": 4.4,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.55,
+          "bbox": [
+            160.825,
+            213.029,
+            198.041,
+            229.597
+          ],
+          "source_union_bbox": [
+            161.325,
+            213.429,
+            197.541,
+            229.197
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "output_to_source_font_ratio 0.43 is below short_label warn ratio 0.55"
+          ],
+          "repair_atoms": [
+            "D2_constrained_slot_layout_variants"
+          ],
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_02_region_p1_b13_l0_short_label.png",
+          "target_text_sample": "想象"
+        },
+        {
+          "region_id": "region_p1_b17_l0",
+          "page_index": 1,
+          "page_number": 2,
+          "region_kind": "short_label",
+          "page_type_guess": "mixed_text",
+          "quality_role": "short_label",
+          "gate_id": "short_label_legibility",
+          "status": "warn",
+          "generation_status": "fit",
+          "font_size": 8.303,
+          "source_median_font_size": 9.5,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.874,
+          "fail_font_pt": 3.4,
+          "warn_font_pt": 4.4,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.55,
+          "bbox": [
+            398.452,
+            294.163,
+            466.815,
+            307.446
+          ],
+          "source_union_bbox": [
+            398.952,
+            294.563,
+            466.315,
+            307.046
+          ],
+          "source_background_rgb": [
+            176,
+            48,
+            32
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 169.667,
+          "source_residue_delta": 169.667,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "background_delta 169.7 exceeds warn threshold 26.0"
+          ],
+          "repair_atoms": [
+            "background_fill_resample"
+          ],
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_02_region_p1_b17_l0_short_label.png",
+          "target_text_sample": "3S（智能物联网、"
+        },
+        {
+          "region_id": "region_p1_b17_l3",
+          "page_index": 1,
+          "page_number": 2,
+          "region_kind": "compact_label",
+          "page_type_guess": "mixed_text",
+          "quality_role": "short_label",
+          "gate_id": "short_label_legibility",
+          "status": "warn",
+          "generation_status": "fit",
+          "font_size": 5.2,
+          "source_median_font_size": 9.5,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.547,
+          "fail_font_pt": 3.4,
+          "warn_font_pt": 4.4,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.55,
+          "bbox": [
+            411.524,
+            324.174,
+            450.885,
+            337.457
+          ],
+          "source_union_bbox": [
+            412.024,
+            324.574,
+            450.385,
+            337.057
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "output_to_source_font_ratio 0.55 is below short_label warn ratio 0.55"
+          ],
+          "repair_atoms": [
+            "D2_constrained_slot_layout_variants"
+          ],
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_02_region_p1_b17_l3_short_label.png",
+          "target_text_sample": "战略"
+        },
+        {
+          "region_id": "region_p8_b2_l0",
+          "page_index": 8,
+          "page_number": 9,
+          "region_kind": "compact_label",
+          "page_type_guess": "mixed_text",
+          "quality_role": "short_label",
+          "gate_id": "short_label_legibility",
+          "status": "warn",
+          "generation_status": "fit",
+          "font_size": 5.2,
+          "source_median_font_size": 10.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.52,
+          "fail_font_pt": 3.4,
+          "warn_font_pt": 4.4,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.55,
+          "bbox": [
+            42.02,
+            111.316,
+            75.2,
+            125.256
+          ],
+          "source_union_bbox": [
+            42.52,
+            111.716,
+            74.7,
+            124.856
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [
+            "output_to_source_font_ratio 0.52 is below short_label warn ratio 0.55"
+          ],
+          "repair_atoms": [
+            "D2_constrained_slot_layout_variants"
+          ],
+          "crop_evidence": "docs/reports/S20_00992_2023_annual_report_en/visual_crops/page_09_region_p8_b2_l0_short_label.png",
+          "target_text_sample": "终身教职"
+        }
+      ]
+    },
+    {
+      "dimension": "table_text_legibility",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 10,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p2_b28_028",
+          "page_index": 2,
+          "page_number": 3,
+          "region_kind": "table_note",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 6.3,
+          "source_median_font_size": 6.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 4,
+          "output_to_source_font_ratio": 1.05,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            44.461,
+            784.766,
+            475.009,
+            798.622
+          ],
+          "source_union_bbox": [
+            45.961,
+            786.846,
+            473.509,
+            796.542
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "审计委员会C 薪酬委员会N 提名和治理委员会委员会主席"
+        },
+        {
+          "region_id": "region_p7_b0_l0",
+          "page_index": 7,
+          "page_number": 8,
+          "region_kind": "body",
+          "page_type_guess": "chart_or_dashboard",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 8.272,
+          "source_median_font_size": 10.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.827,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            295.962,
+            812.546,
+            516.881,
+            825.726
+          ],
+          "source_union_bbox": [
+            296.462,
+            812.946,
+            516.381,
+            825.326
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "联想集团有限公司2023/24年度报告"
+        },
+        {
+          "region_id": "region_p7_b1_l0",
+          "page_index": 7,
+          "page_number": 8,
+          "region_kind": "short_label",
+          "page_type_guess": "chart_or_dashboard",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 8.694,
+          "source_median_font_size": 10.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.869,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            56.193,
+            392.308,
+            150.352,
+            406.248
+          ],
+          "source_union_bbox": [
+            56.693,
+            392.708,
+            149.852,
+            405.848
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "劳动力多元化"
+        },
+        {
+          "region_id": "region_p7_b4_l0",
+          "page_index": 7,
+          "page_number": 8,
+          "region_kind": "short_label",
+          "page_type_guess": "chart_or_dashboard",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 8.694,
+          "source_median_font_size": 10.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.869,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            56.193,
+            111.316,
+            195.823,
+            125.256
+          ],
+          "source_union_bbox": [
+            56.693,
+            111.716,
+            195.323,
+            124.856
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "高级管理层多元化"
+        },
+        {
+          "region_id": "region_p7_b5_l3",
+          "page_index": 7,
+          "page_number": 8,
+          "region_kind": "body",
+          "page_type_guess": "chart_or_dashboard",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 7.258,
+          "source_median_font_size": 9.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.806,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            56.193,
+            162.203,
+            322.801,
+            174.145
+          ],
+          "source_union_bbox": [
+            56.693,
+            162.603,
+            322.301,
+            173.745
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "简历载于本年报第147至150页。"
+        },
+        {
+          "region_id": "region_p7_b6_l0",
+          "page_index": 7,
+          "page_number": 8,
+          "region_kind": "table_cell",
+          "page_type_guess": "chart_or_dashboard",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 6.8,
+          "source_median_font_size": 9.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.756,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            56.193,
+            196.169,
+            88.927,
+            208.795
+          ],
+          "source_union_bbox": [
+            56.693,
+            196.569,
+            88.427,
+            208.395
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "性别"
+        },
+        {
+          "region_id": "region_p7_b7_l0",
+          "page_index": 7,
+          "page_number": 8,
+          "region_kind": "table_cell",
+          "page_type_guess": "chart_or_dashboard",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 6.8,
+          "source_median_font_size": 9.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.756,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            252.096,
+            256.127,
+            287.629,
+            268.069
+          ],
+          "source_union_bbox": [
+            252.596,
+            256.527,
+            287.129,
+            267.669
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "男 (9)"
+        },
+        {
+          "region_id": "region_p7_b7_l1",
+          "page_index": 7,
+          "page_number": 8,
+          "region_kind": "table_cell",
+          "page_type_guess": "chart_or_dashboard",
+          "quality_role": "table_text",
+          "gate_id": "table_text_legibility",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 6.8,
+          "source_median_font_size": 9.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.756,
+          "fail_font_pt": 3.2,
+          "warn_font_pt": 3.8,
+          "fail_source_ratio": 0.35,
+          "warn_source_ratio": 0.5,
+          "bbox": [
+            486.006,
+            256.127,
+            532.357,
+            268.069
+          ],
+          "source_union_bbox": [
+            486.506,
+            256.527,
+            531.857,
+            267.669
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "女 (3)"
+        }
+      ]
+    },
+    {
+      "dimension": "title_readability",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 9,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "region_id": "region_p0_b0_l0",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "heading",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "title",
+          "gate_id": "title_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 15.96,
+          "source_median_font_size": 20.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.798,
+          "fail_font_pt": 6.2,
+          "warn_font_pt": 7.0,
+          "fail_source_ratio": 0.3,
+          "warn_source_ratio": 0.42,
+          "bbox": [
+            42.02,
+            38.78,
+            319.156,
+            65.86
+          ],
+          "source_union_bbox": [
+            42.52,
+            39.18,
+            318.656,
+            65.46
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "公司治理报告"
+        },
+        {
+          "region_id": "region_p0_b9_009",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "heading",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "title",
+          "gate_id": "title_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 11.4,
+          "source_median_font_size": 12.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 3,
+          "output_to_source_font_ratio": 0.95,
+          "fail_font_pt": 6.2,
+          "warn_font_pt": 7.0,
+          "fail_source_ratio": 0.3,
+          "warn_source_ratio": 0.42,
+          "bbox": [
+            324.484,
+            522.663,
+            476.08,
+            572.951
+          ],
+          "source_union_bbox": [
+            325.984,
+            526.423,
+            474.58,
+            569.191
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "联想高管首席执行官委员会和授权"
+        },
+        {
+          "region_id": "region_p0_b14_l0",
+          "page_index": 0,
+          "page_number": 1,
+          "region_kind": "heading",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "title",
+          "gate_id": "title_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 9.576,
+          "source_median_font_size": 12.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.798,
+          "fail_font_pt": 6.2,
+          "warn_font_pt": 7.0,
+          "fail_source_ratio": 0.3,
+          "warn_source_ratio": 0.42,
+          "bbox": [
+            185.686,
+            206.135,
+            401.089,
+            222.703
+          ],
+          "source_union_bbox": [
+            186.186,
+            206.535,
+            400.589,
+            222.303
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "股东及其他利益相关者"
+        },
+        {
+          "region_id": "region_p2_b0_l0",
+          "page_index": 2,
+          "page_number": 3,
+          "region_kind": "heading",
+          "page_type_guess": "mixed_image_text",
+          "quality_role": "title",
+          "gate_id": "title_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 15.96,
+          "source_median_font_size": 20.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.798,
+          "fail_font_pt": 6.2,
+          "warn_font_pt": 7.0,
+          "fail_source_ratio": 0.3,
+          "warn_source_ratio": 0.42,
+          "bbox": [
+            42.02,
+            38.78,
+            319.156,
+            65.86
+          ],
+          "source_union_bbox": [
+            42.52,
+            39.18,
+            318.656,
+            65.46
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "公司治理报告"
+        },
+        {
+          "region_id": "region_p4_b0_l0",
+          "page_index": 4,
+          "page_number": 5,
+          "region_kind": "heading",
+          "page_type_guess": "mixed_text",
+          "quality_role": "title",
+          "gate_id": "title_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 15.96,
+          "source_median_font_size": 20.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.798,
+          "fail_font_pt": 6.2,
+          "warn_font_pt": 7.0,
+          "fail_source_ratio": 0.3,
+          "warn_source_ratio": 0.42,
+          "bbox": [
+            42.02,
+            38.78,
+            319.156,
+            65.86
+          ],
+          "source_union_bbox": [
+            42.52,
+            39.18,
+            318.656,
+            65.46
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "公司治理报告"
+        },
+        {
+          "region_id": "region_p6_b0_l0",
+          "page_index": 6,
+          "page_number": 7,
+          "region_kind": "heading",
+          "page_type_guess": "mixed_text",
+          "quality_role": "title",
+          "gate_id": "title_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 15.96,
+          "source_median_font_size": 20.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.798,
+          "fail_font_pt": 6.2,
+          "warn_font_pt": 7.0,
+          "fail_source_ratio": 0.3,
+          "warn_source_ratio": 0.42,
+          "bbox": [
+            42.02,
+            38.78,
+            319.156,
+            65.86
+          ],
+          "source_union_bbox": [
+            42.52,
+            39.18,
+            318.656,
+            65.46
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "公司治理报告"
+        },
+        {
+          "region_id": "region_p8_b0_l0",
+          "page_index": 8,
+          "page_number": 9,
+          "region_kind": "heading",
+          "page_type_guess": "mixed_text",
+          "quality_role": "title",
+          "gate_id": "title_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 15.96,
+          "source_median_font_size": 20.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.798,
+          "fail_font_pt": 6.2,
+          "warn_font_pt": 7.0,
+          "fail_source_ratio": 0.3,
+          "warn_source_ratio": 0.42,
+          "bbox": [
+            42.02,
+            38.78,
+            319.156,
+            65.86
+          ],
+          "source_union_bbox": [
+            42.52,
+            39.18,
+            318.656,
+            65.46
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "公司治理报告"
+        },
+        {
+          "region_id": "region_p8_b6_l0",
+          "page_index": 8,
+          "page_number": 9,
+          "region_kind": "heading",
+          "page_type_guess": "mixed_text",
+          "quality_role": "title",
+          "gate_id": "title_readability",
+          "status": "pass",
+          "generation_status": "fit",
+          "font_size": 9.576,
+          "source_median_font_size": 12.0,
+          "source_font_source": "source_extraction",
+          "source_matched_line_count": 1,
+          "output_to_source_font_ratio": 0.798,
+          "fail_font_pt": 6.2,
+          "warn_font_pt": 7.0,
+          "fail_source_ratio": 0.3,
+          "warn_source_ratio": 0.42,
+          "bbox": [
+            154.289,
+            565.47,
+            427.4,
+            582.038
+          ],
+          "source_union_bbox": [
+            154.789,
+            565.87,
+            426.9,
+            581.638
+          ],
+          "source_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "source_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_inner_background_rgb": [
+            255,
+            255,
+            255
+          ],
+          "text_image_background_rgb": null,
+          "background_delta": 0.0,
+          "source_residue_delta": 0.0,
+          "background_residue_delta": 0.0,
+          "inner_background_delta": 0.0,
+          "text_image_background_delta": 0.0,
+          "reasons": [],
+          "repair_atoms": [],
+          "crop_evidence": null,
+          "target_text_sample": "2019年1月至2024年5月期间"
+        }
+      ]
+    },
+    {
+      "dimension": "background_residue_artifact",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 215,
+      "evidence": "detects local redaction/fill rectangles whose interior background no longer matches the surrounding rendered region, including redaction-only bands not covered by translated text and colored-background cover blocks that create new visible rectangles",
+      "sample": []
+    },
+    {
+      "dimension": "matrix_diagram_integrity",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 0,
+      "evidence": "matrix/table-diagram pages must preserve two-dimensional cell/label structure and must not route diagram text through body_flow or fallback body insertion",
+      "sample": []
+    },
+    {
+      "dimension": "source_relative_visual_baseline",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 215,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": []
+    },
+    {
+      "dimension": "image_color_integrity",
+      "status": "PASS",
+      "blocking": false,
+      "failure_count": 0,
+      "warning_count": 0,
+      "region_count": 11,
+      "evidence": "role gate from visual_region_metrics",
+      "sample": [
+        {
+          "page_index": 0,
+          "page_number": 1,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            242.831,
+            240.548,
+            241.719
+          ],
+          "output_mean_rgb": [
+            246.335,
+            244.485,
+            245.482
+          ],
+          "mean_rgb_delta": 3.735,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            10.868,
+            11.819,
+            11.498
+          ]
+        },
+        {
+          "page_index": 1,
+          "page_number": 2,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            246.558,
+            243.757,
+            243.847
+          ],
+          "output_mean_rgb": [
+            247.359,
+            244.638,
+            244.661
+          ],
+          "mean_rgb_delta": 0.832,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            9.614,
+            9.953,
+            9.859
+          ]
+        },
+        {
+          "page_index": 2,
+          "page_number": 3,
+          "source_image_count": 2,
+          "output_image_count": 2,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            240.215,
+            237.046,
+            238.616
+          ],
+          "output_mean_rgb": [
+            242.385,
+            239.315,
+            240.739
+          ],
+          "mean_rgb_delta": 2.187,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            13.823,
+            14.252,
+            13.963
+          ]
+        },
+        {
+          "page_index": 3,
+          "page_number": 4,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            248.51,
+            244.946,
+            245.311
+          ],
+          "output_mean_rgb": [
+            249.031,
+            245.497,
+            245.807
+          ],
+          "mean_rgb_delta": 0.523,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            5.161,
+            5.267,
+            5.142
+          ]
+        },
+        {
+          "page_index": 4,
+          "page_number": 5,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            242.63,
+            239.602,
+            241.675
+          ],
+          "output_mean_rgb": [
+            243.766,
+            240.898,
+            242.908
+          ],
+          "mean_rgb_delta": 1.221,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            2.482,
+            2.828,
+            2.693
+          ]
+        },
+        {
+          "page_index": 5,
+          "page_number": 6,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            244.742,
+            244.9,
+            246.967
+          ],
+          "output_mean_rgb": [
+            244.042,
+            244.257,
+            246.2
+          ],
+          "mean_rgb_delta": 0.703,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            7.526,
+            7.633,
+            7.391
+          ]
+        },
+        {
+          "page_index": 6,
+          "page_number": 7,
+          "source_image_count": 0,
+          "output_image_count": 1,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            240.27,
+            240.221,
+            242.143
+          ],
+          "output_mean_rgb": [
+            239.955,
+            239.992,
+            241.951
+          ],
+          "mean_rgb_delta": 0.246,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            13.574,
+            13.779,
+            13.587
+          ]
+        },
+        {
+          "page_index": 7,
+          "page_number": 8,
+          "source_image_count": 0,
+          "output_image_count": 0,
+          "image_color_status": "pass",
+          "image_color_reasons": [],
+          "source_mean_rgb": [
+            246.131,
+            244.092,
+            244.43
+          ],
+          "output_mean_rgb": [
+            248.596,
+            246.591,
+            246.908
+          ],
+          "mean_rgb_delta": 2.481,
+          "source_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "output_dominant_rgb": [
+            255,
+            255,
+            255
+          ],
+          "dominant_rgb_delta": 0.0,
+          "pixel_diff_mean_rgb": [
+            8.714,
+            8.877,
+            8.826
+          ]
+        }
+      ]
+    }
+  ],
+  "blocking_failure_count": 0,
+  "warning_dimension_count": 3,
+  "evidence_refs": [
+    "docs/reports/S20_00992_2023_annual_report_en/visual_region_metrics.json",
+    "docs/reports/S20_00992_2023_annual_report_en/candidate_render_manifest.json",
+    "docs/reports/S20_00992_2023_annual_report_en/visual_repair_plan.json"
+  ],
+  "backend_model_call_made": false,
+  "adjudicator": "deterministic_visual_region_gate_materializer",
+  "next_state": "S9_VerifyProcessContract",
+  "notes": "This artifact materializes current-run deterministic visual gates. A human/model review may replace it when source-vs-output image judgement is required."
+}

@@ -1,0 +1,91 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "FAIL",
+  "translation_provider": "google_translate_web_gtx",
+  "source_language": "en",
+  "inferred_source_language": "zh",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [
+    "source_language_mismatch:declared=en;inferred_from_current_extraction=zh"
+  ],
+  "coverage": {
+    "source_unit_count": 1,
+    "translated_unit_count": 493,
+    "matched_unit_count": 1,
+    "missing_unit_ids": [],
+    "invalid_unit_count": 1
+  },
+  "invalid_units": [
+    {
+      "unit_id": "p0_b2_l1",
+      "page_index": 0,
+      "source_text": "Central China New Life Limited",
+      "translation_zh": "旨在支持集团组织结构并在其内部工作，以确保问责制、公平性和",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "warning": "extra_translation_units_ignored",
+      "unit_ids": [
+        "p0_b0_l0",
+        "p0_b10_l0",
+        "p0_b10_l11",
+        "p0_b10_l12",
+        "p0_b10_l13",
+        "p0_b10_l14",
+        "p0_b10_l16",
+        "p0_b10_l17",
+        "p0_b10_l18",
+        "p0_b10_l2",
+        "p0_b10_l20",
+        "p0_b10_l21",
+        "p0_b10_l22",
+        "p0_b10_l23",
+        "p0_b10_l25",
+        "p0_b10_l26",
+        "p0_b10_l27",
+        "p0_b10_l29",
+        "p0_b10_l3",
+        "p0_b10_l30",
+        "p0_b10_l32",
+        "p0_b10_l33",
+        "p0_b10_l4",
+        "p0_b10_l6",
+        "p0_b10_l7",
+        "p0_b10_l8",
+        "p0_b10_l9",
+        "p0_b11_l0",
+        "p0_b12_l0",
+        "p0_b12_l1",
+        "p0_b12_l2",
+        "p0_b12_l3",
+        "p0_b13_l0",
+        "p0_b13_l1",
+        "p0_b14_l0",
+        "p0_b15_l0",
+        "p0_b16_l0",
+        "p0_b17_l0",
+        "p0_b18_l0",
+        "p0_b18_l1",
+        "p0_b19_l0",
+        "p0_b19_l1",
+        "p0_b1_l0",
+        "p0_b20_l0",
+        "p0_b20_l1",
+        "p0_b21_l0",
+        "p0_b21_l1",
+        "p0_b22_l0",
+        "p0_b22_l1",
+        "p0_b23_l0"
+      ]
+    }
+  ],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_建業新生活有限公司_c\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\input\\semantic_translation_pool\\S20_00992_2023_annual_report_en.translations.json"
+}

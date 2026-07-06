@@ -1,0 +1,91 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "FAIL",
+  "translation_provider": "google_translate_web_gtx",
+  "source_language": "zh",
+  "inferred_source_language": "en",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [
+    "source_language_mismatch:declared=zh;inferred_from_current_extraction=en"
+  ],
+  "coverage": {
+    "source_unit_count": 1,
+    "translated_unit_count": 132,
+    "matched_unit_count": 1,
+    "missing_unit_ids": [],
+    "invalid_unit_count": 1
+  },
+  "invalid_units": [
+    {
+      "unit_id": "p0_b1_l0",
+      "page_index": 0,
+      "source_text": "建業新生活有限公司",
+      "translation_en": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited have regard to the contents of this announcement",
+      "reasons": [
+        "source_text_mismatch"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "warning": "extra_translation_units_ignored",
+      "unit_ids": [
+        "p0_b10_l0",
+        "p0_b11_l0",
+        "p0_b11_l1",
+        "p0_b1_l1",
+        "p0_b1_l2",
+        "p0_b1_l3",
+        "p0_b2_l0",
+        "p0_b3_l0",
+        "p0_b3_l1",
+        "p0_b4_l0",
+        "p0_b5_l0",
+        "p0_b5_l1",
+        "p0_b5_l2",
+        "p0_b6_l0",
+        "p0_b6_l1",
+        "p0_b7_l0",
+        "p0_b8_l0",
+        "p0_b9_l0",
+        "p1_b1_l0",
+        "p1_b1_l1",
+        "p1_b2_l0",
+        "p1_b3_l0",
+        "p1_b3_l1",
+        "p1_b3_l2",
+        "p1_b3_l3",
+        "p1_b3_l4",
+        "p1_b3_l5",
+        "p1_b3_l6",
+        "p1_b4_l0",
+        "p1_b4_l1",
+        "p1_b4_l2",
+        "p1_b4_l3",
+        "p1_b5_l0",
+        "p1_b5_l1",
+        "p1_b5_l10",
+        "p1_b5_l2",
+        "p1_b5_l3",
+        "p1_b5_l4",
+        "p1_b5_l5",
+        "p1_b5_l6",
+        "p1_b5_l7",
+        "p1_b5_l8",
+        "p1_b5_l9",
+        "p2_b1_l0",
+        "p2_b2_l0",
+        "p2_b2_l1",
+        "p2_b3_l0",
+        "p2_b3_l1",
+        "p2_b4_l0",
+        "p2_b4_l1"
+      ]
+    }
+  ],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\S20_建業新生活有限公司_e\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\input\\semantic_translation_pool\\S20_建業新生活有限公司_c.translations.json"
+}

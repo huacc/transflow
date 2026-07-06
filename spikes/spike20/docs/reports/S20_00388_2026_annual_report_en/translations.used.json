@@ -1,0 +1,2169 @@
+{
+  "translation_provider": "google_translate_web_gtx",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "prompt_artifacts": [
+    {
+      "batch_id": "batch_0001",
+      "slot_values": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0001.slot_values.json",
+      "prompt_instance": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0001.prompt_instance.json",
+      "model_output": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0001.model_output.json",
+      "batch_validation": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0001.validation.json",
+      "decision_record": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0001.decision_record.json",
+      "unit_count": 40
+    },
+    {
+      "batch_id": "batch_0002",
+      "slot_values": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0002.slot_values.json",
+      "prompt_instance": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0002.prompt_instance.json",
+      "model_output": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0002.model_output.json",
+      "batch_validation": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0002.validation.json",
+      "decision_record": "docs/reports/S20_00388_2026_annual_report_en/translation_batches/batch_0002.decision_record.json",
+      "unit_count": 24
+    }
+  ],
+  "unit_count": 66,
+  "semantic_translated_unit_count": 64,
+  "preserved_target_language_unit_count": 2,
+  "units": [
+    {
+      "unit_id": "p0_b1_l0",
+      "page_index": 0,
+      "source_text": "Listing",
+      "translation_zh": "上市",
+      "target_text": "上市",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        189.74,
+        90.324,
+        201.53
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "上市",
+        "short_label_zh": "上市"
+      },
+      "layout_risk": {
+        "length_ratio": 0.286,
+        "bbox_width": 28.116,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b2_l0",
+      "page_index": 0,
+      "source_text": "As at 31 December 2025",
+      "translation_zh": "截至2025年12月31日",
+      "target_text": "截至2025年12月31日",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        208.086,
+        150.287,
+        218.406
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "截至2025年12月31日",
+        "short_label_zh": "至2025年12月31日"
+      },
+      "layout_risk": {
+        "length_ratio": 0.591,
+        "bbox_width": 88.079,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b3_l0",
+      "page_index": 0,
+      "source_text": "•\t Number of issued shares",
+      "translation_zh": "• 已发行股份数量",
+      "target_text": "• 已发行股份数量",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        222.262,
+        161.768,
+        232.582
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "• 已发行股份数量"
+      },
+      "layout_risk": {
+        "length_ratio": 0.346,
+        "bbox_width": 99.56,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b3_l1",
+      "page_index": 0,
+      "source_text": "1,267,836,895 shares 1",
+      "translation_zh": "1,267,836,895 股 1",
+      "target_text": "1,267,836,895 股 1",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        195.248,
+        222.262,
+        276.351,
+        232.582
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "1,267,836,895 股 1",
+        "short_label_zh": "1,267,836,895 股 1"
+      },
+      "layout_risk": {
+        "length_ratio": 0.773,
+        "bbox_width": 81.103,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b4_l0",
+      "page_index": 0,
+      "source_text": "•\t Market capitalisation",
+      "translation_zh": "• 市值",
+      "target_text": "• 市值",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        236.433,
+        148.528,
+        246.753
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "• 市值",
+        "short_label_zh": "• 市值"
+      },
+      "layout_risk": {
+        "length_ratio": 0.167,
+        "bbox_width": 86.32,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b4_l1",
+      "page_index": 0,
+      "source_text": "$517 billion",
+      "translation_zh": "5170亿美元",
+      "target_text": "5170亿美元",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        228.52,
+        236.433,
+        270.68,
+        246.753
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "5170亿美元",
+        "short_label_zh": "5170亿美元"
+      },
+      "layout_risk": {
+        "length_ratio": 0.583,
+        "bbox_width": 42.16,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b5_l0",
+      "page_index": 0,
+      "source_text": "Board lot size",
+      "translation_zh": "每手买卖单位大小",
+      "target_text": "每手买卖单位大小",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        250.609,
+        110.608,
+        260.929
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "每手买卖单位大小",
+        "short_label_zh": "每手买卖单位大小"
+      },
+      "layout_risk": {
+        "length_ratio": 0.571,
+        "bbox_width": 48.4,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b5_l1",
+      "page_index": 0,
+      "source_text": "100 shares",
+      "translation_zh": "100股",
+      "target_text": "100股",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        231.888,
+        250.609,
+        270.68,
+        260.929
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "100股",
+        "short_label_zh": "100股"
+      },
+      "layout_risk": {
+        "length_ratio": 0.4,
+        "bbox_width": 38.792,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b6_l1",
+      "page_index": 0,
+      "source_text": "HKEX has only one class of shares, where all the shares (100%)",
+      "translation_zh": "香港交易所只有一类股份，其中所有股份（100%） ((100%))",
+      "target_text": "香港交易所只有一类股份，其中所有股份（100%） ((100%))",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        76.383,
+        271.622,
+        276.307,
+        280.652
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "香港交易所只有一类股份，其中所有股份（100%） ((100%))"
+      },
+      "layout_risk": {
+        "length_ratio": 0.532,
+        "bbox_width": 199.924,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b6_l2",
+      "page_index": 0,
+      "source_text": "rank equally in all respects, including in relation to dividends,",
+      "translation_zh": "在所有方面均享有同等地位，包括股息方面，",
+      "target_text": "在所有方面均享有同等地位，包括股息方面，",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        76.383,
+        280.624,
+        268.712,
+        289.654
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "在所有方面均享有同等地位，包括股息方面，"
+      },
+      "layout_risk": {
+        "length_ratio": 0.308,
+        "bbox_width": 192.329,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b6_l3",
+      "page_index": 0,
+      "source_text": "distributions and voting.",
+      "translation_zh": "分配和投票。",
+      "target_text": "分配和投票。",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        76.383,
+        289.626,
+        153.249,
+        298.656
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "分配和投票。"
+      },
+      "layout_risk": {
+        "length_ratio": 0.24,
+        "bbox_width": 76.866,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b7_l0",
+      "page_index": 0,
+      "source_text": "American Depositary Receipt",
+      "translation_zh": "美国存托凭证",
+      "target_text": "美国存托凭证",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        294.803,
+        249.962,
+        416.698,
+        261.752
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "美国存托凭证"
+      },
+      "layout_risk": {
+        "length_ratio": 0.222,
+        "bbox_width": 121.895,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b8_l0",
+      "page_index": 0,
+      "source_text": "Ticker Symbol",
+      "translation_zh": "股票代码",
+      "target_text": "股票代码",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        294.803,
+        268.308,
+        345.483,
+        278.628
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "股票代码",
+        "short_label_zh": "股票代码"
+      },
+      "layout_risk": {
+        "length_ratio": 0.308,
+        "bbox_width": 50.68,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b10_l0",
+      "page_index": 0,
+      "source_text": "HKD Counter",
+      "translation_zh": "港币柜台",
+      "target_text": "港币柜台",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        388.011,
+        114.749,
+        443.766,
+        126.539
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "港币柜台",
+        "short_label_zh": "港币柜台"
+      },
+      "layout_risk": {
+        "length_ratio": 0.364,
+        "bbox_width": 55.755,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b10_l1",
+      "page_index": 0,
+      "source_text": "RMB Counter",
+      "translation_zh": "人民币柜台",
+      "target_text": "人民币柜台",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        454.647,
+        114.749,
+        510.384,
+        126.539
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "人民币柜台",
+        "short_label_zh": "人民币柜台"
+      },
+      "layout_risk": {
+        "length_ratio": 0.455,
+        "bbox_width": 55.737,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l0",
+      "page_index": 0,
+      "source_text": "Stock code",
+      "translation_zh": "股票代码",
+      "target_text": "股票代码",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        294.803,
+        133.096,
+        333.899,
+        143.416
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "股票代码",
+        "short_label_zh": "股票代码"
+      },
+      "layout_risk": {
+        "length_ratio": 0.4,
+        "bbox_width": 39.096,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l3",
+      "page_index": 0,
+      "source_text": "English stock",
+      "translation_zh": "英文股票",
+      "target_text": "英文股票",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        294.803,
+        144.768,
+        341.971,
+        155.088
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "英文股票",
+        "short_label_zh": "英文股票"
+      },
+      "layout_risk": {
+        "length_ratio": 0.308,
+        "bbox_width": 47.168,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l4",
+      "page_index": 0,
+      "source_text": "short name",
+      "translation_zh": "简称",
+      "target_text": "简称",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        302.739,
+        156.44,
+        344.051,
+        166.76
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "简称",
+        "short_label_zh": "简称"
+      },
+      "layout_risk": {
+        "length_ratio": 0.2,
+        "bbox_width": 41.312,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l7",
+      "page_index": 0,
+      "source_text": "Chinese stock",
+      "translation_zh": "中国股票",
+      "target_text": "中国股票",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        294.803,
+        168.112,
+        347.635,
+        178.432
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "中国股票",
+        "short_label_zh": "中国股票"
+      },
+      "layout_risk": {
+        "length_ratio": 0.308,
+        "bbox_width": 52.832,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l8",
+      "page_index": 0,
+      "source_text": "short name",
+      "translation_zh": "简称",
+      "target_text": "简称",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        302.739,
+        178.112,
+        344.051,
+        188.432
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "简称",
+        "short_label_zh": "简称"
+      },
+      "layout_risk": {
+        "length_ratio": 0.2,
+        "bbox_width": 41.312,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l9",
+      "page_index": 0,
+      "source_text": "香港交易所",
+      "translation_zh": "香港交易所",
+      "target_text": "香港交易所",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "preserve_already_target_language_span",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        403.779,
+        177.624,
+        443.619,
+        188.248
+      ],
+      "text_role": "label",
+      "term_decisions": [],
+      "layout_variants": {},
+      "layout_risk": "already_target_language_visible_span"
+    },
+    {
+      "unit_id": "p0_b11_l10",
+      "page_index": 0,
+      "source_text": "香港交易所-R",
+      "translation_zh": "香港交易所-R",
+      "target_text": "香港交易所-R",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "preserve_already_target_language_span",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        462.475,
+        177.624,
+        510.235,
+        188.248
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": [],
+      "layout_variants": {},
+      "layout_risk": "already_target_language_visible_span"
+    },
+    {
+      "unit_id": "p0_b11_l11",
+      "page_index": 0,
+      "source_text": "Bloomberg",
+      "translation_zh": "彭博社",
+      "target_text": "彭博社",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        294.803,
+        189.784,
+        335.043,
+        200.104
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "彭博社",
+        "short_label_zh": "彭博社"
+      },
+      "layout_risk": {
+        "length_ratio": 0.333,
+        "bbox_width": 40.24,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l12",
+      "page_index": 0,
+      "source_text": "388 HK Equity 80388 HK Equity",
+      "translation_zh": "388港股 80388港股",
+      "target_text": "388港股 80388港股",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        392.011,
+        189.784,
+        510.363,
+        200.104
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "388港股 80388港股"
+      },
+      "layout_risk": {
+        "length_ratio": 0.448,
+        "bbox_width": 118.352,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l13",
+      "page_index": 0,
+      "source_text": "Reuters",
+      "translation_zh": "路透社",
+      "target_text": "路透社",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        294.803,
+        201.456,
+        322.579,
+        211.776
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "路透社",
+        "short_label_zh": "路透社"
+      },
+      "layout_risk": {
+        "length_ratio": 0.429,
+        "bbox_width": 27.776,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l20",
+      "page_index": 0,
+      "source_text": "6267359 HK",
+      "translation_zh": "6267359 香港",
+      "target_text": "6267359 香港",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        398.491,
+        224.8,
+        443.747,
+        235.12
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "6267359 香港",
+        "short_label_zh": "6267359 香港"
+      },
+      "layout_risk": {
+        "length_ratio": 1.0,
+        "bbox_width": 45.256,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b12_l0",
+      "page_index": 0,
+      "source_text": "Share Information",
+      "translation_zh": "分享信息",
+      "target_text": "分享信息",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        93.024,
+        172.63,
+        110.054
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "分享信息",
+        "short_label_zh": "分享信息"
+      },
+      "layout_risk": {
+        "length_ratio": 0.235,
+        "bbox_width": 110.422,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b13_l0",
+      "page_index": 0,
+      "source_text": "HKEX shares are listed on the Stock Exchange and",
+      "translation_zh": "香港交易所股份在联交所上市",
+      "target_text": "香港交易所股份在联交所上市",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        114.725,
+        268.926,
+        126.335
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "香港交易所股份在联交所上市"
+      },
+      "layout_risk": {
+        "length_ratio": 0.271,
+        "bbox_width": 206.718,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b13_l1",
+      "page_index": 0,
+      "source_text": "are eligible for Southbound Trading under Stock",
+      "translation_zh": "符合股票港股通条件",
+      "target_text": "符合股票港股通条件",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        126.722,
+        259.152,
+        138.332
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "符合股票港股通条件"
+      },
+      "layout_risk": {
+        "length_ratio": 0.191,
+        "bbox_width": 196.944,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b13_l2",
+      "page_index": 0,
+      "source_text": "Connect. HKEX is currently a constituent stock of the",
+      "translation_zh": "连接。香港交易所现为港交所的成分股",
+      "target_text": "连接。香港交易所现为港交所的成分股",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        138.719,
+        279.69,
+        150.329
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "连接。香港交易所现为港交所的成分股"
+      },
+      "layout_risk": {
+        "length_ratio": 0.321,
+        "bbox_width": 217.482,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b13_l3",
+      "page_index": 0,
+      "source_text": "HSI and a number of sustainability indices as",
+      "translation_zh": "恒生指数和多项可持续发展指数",
+      "target_text": "恒生指数和多项可持续发展指数",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        150.717,
+        245.454,
+        162.327
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "恒生指数和多项可持续发展指数"
+      },
+      "layout_risk": {
+        "length_ratio": 0.311,
+        "bbox_width": 183.246,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b13_l4",
+      "page_index": 0,
+      "source_text": "disclosed on the HKEX Group website IR .",
+      "translation_zh": "于香港交易所集团网站IR披露。",
+      "target_text": "于香港交易所集团网站IR披露。",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.208,
+        162.631,
+        234.948,
+        174.421
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "于香港交易所集团网站IR披露。"
+      },
+      "layout_risk": {
+        "length_ratio": 0.375,
+        "bbox_width": 172.74,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b14_l0",
+      "page_index": 0,
+      "source_text": "HKEX Share Price Performance vs HSI in 2025",
+      "translation_zh": "2025 年港交所股价表现与恒指对比",
+      "target_text": "2025 年港交所股价表现与恒指对比",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.364,
+        314.191,
+        253.9,
+        325.981
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "2025 年港交所股价表现与恒指对比"
+      },
+      "layout_risk": {
+        "length_ratio": 0.419,
+        "bbox_width": 191.536,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b15_l0",
+      "page_index": 0,
+      "source_text": "Closing price of HKEX shares traded on",
+      "translation_zh": "港交所股票收市价",
+      "target_text": "港交所股票收市价",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        81.354,
+        553.508,
+        203.91,
+        562.538
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "港交所股票收市价"
+      },
+      "layout_risk": {
+        "length_ratio": 0.211,
+        "bbox_width": 122.556,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b15_l1",
+      "page_index": 0,
+      "source_text": "HKD counter",
+      "translation_zh": "港币柜台",
+      "target_text": "港币柜台",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        81.354,
+        562.51,
+        122.325,
+        571.54
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "港币柜台",
+        "short_label_zh": "港币柜台"
+      },
+      "layout_risk": {
+        "length_ratio": 0.364,
+        "bbox_width": 40.971,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b16_l0",
+      "page_index": 0,
+      "source_text": "Closing price of HKEX shares traded on",
+      "translation_zh": "港交所股票收市价",
+      "target_text": "港交所股票收市价",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        236.976,
+        553.658,
+        361.212,
+        562.688
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "港交所股票收市价"
+      },
+      "layout_risk": {
+        "length_ratio": 0.211,
+        "bbox_width": 124.236,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b16_l1",
+      "page_index": 0,
+      "source_text": "RMB counter",
+      "translation_zh": "人民币柜台",
+      "target_text": "人民币柜台",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        236.976,
+        562.66,
+        278.017,
+        571.69
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "人民币柜台",
+        "short_label_zh": "人民币柜台"
+      },
+      "layout_risk": {
+        "length_ratio": 0.455,
+        "bbox_width": 41.041,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l0",
+      "page_index": 0,
+      "source_text": "Jan",
+      "translation_zh": "扬",
+      "target_text": "扬",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        77.882,
+        534.008,
+        88.098,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "扬",
+        "short_label_zh": "扬"
+      },
+      "layout_risk": {
+        "length_ratio": 0.333,
+        "bbox_width": 10.216,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l1",
+      "page_index": 0,
+      "source_text": "Feb",
+      "translation_zh": "二月",
+      "target_text": "二月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        100.9,
+        534.008,
+        112.074,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "二月",
+        "short_label_zh": "二月"
+      },
+      "layout_risk": {
+        "length_ratio": 0.667,
+        "bbox_width": 11.174,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l2",
+      "page_index": 0,
+      "source_text": "Mar",
+      "translation_zh": "三月",
+      "target_text": "三月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        126.525,
+        534.008,
+        138.08,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "三月",
+        "short_label_zh": "三月"
+      },
+      "layout_risk": {
+        "length_ratio": 0.667,
+        "bbox_width": 11.555,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l3",
+      "page_index": 0,
+      "source_text": "Apr",
+      "translation_zh": "四月",
+      "target_text": "四月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        156.503,
+        534.008,
+        167.158,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "四月",
+        "short_label_zh": "四月"
+      },
+      "layout_risk": {
+        "length_ratio": 0.667,
+        "bbox_width": 10.655,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l4",
+      "page_index": 0,
+      "source_text": "May",
+      "translation_zh": "可能",
+      "target_text": "可能",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        178.05,
+        534.008,
+        190.498,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "可能",
+        "short_label_zh": "可能"
+      },
+      "layout_risk": {
+        "length_ratio": 0.667,
+        "bbox_width": 12.448,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l5",
+      "page_index": 0,
+      "source_text": "Jun",
+      "translation_zh": "君",
+      "target_text": "君",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        206.006,
+        534.008,
+        216.563,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "君",
+        "short_label_zh": "君"
+      },
+      "layout_risk": {
+        "length_ratio": 0.333,
+        "bbox_width": 10.557,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l6",
+      "page_index": 0,
+      "source_text": "Jul",
+      "translation_zh": "七月",
+      "target_text": "七月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        233.587,
+        534.008,
+        242.188,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "七月",
+        "short_label_zh": "七月"
+      },
+      "layout_risk": {
+        "length_ratio": 0.667,
+        "bbox_width": 8.601,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l7",
+      "page_index": 0,
+      "source_text": "Aug",
+      "translation_zh": "八月",
+      "target_text": "八月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        258.535,
+        534.008,
+        270.504,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "八月",
+        "short_label_zh": "八月"
+      },
+      "layout_risk": {
+        "length_ratio": 0.667,
+        "bbox_width": 11.969,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l8",
+      "page_index": 0,
+      "source_text": "Sep",
+      "translation_zh": "九月",
+      "target_text": "九月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        288.703,
+        534.008,
+        299.865,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "九月",
+        "short_label_zh": "九月"
+      },
+      "layout_risk": {
+        "length_ratio": 0.667,
+        "bbox_width": 11.162,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l9",
+      "page_index": 0,
+      "source_text": "Oct",
+      "translation_zh": "十月",
+      "target_text": "十月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        313.402,
+        534.008,
+        324.248,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "十月",
+        "short_label_zh": "十月"
+      },
+      "layout_risk": {
+        "length_ratio": 0.667,
+        "bbox_width": 10.846,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l10",
+      "page_index": 0,
+      "source_text": "Nov",
+      "translation_zh": "十一月",
+      "target_text": "十一月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        338.837,
+        534.008,
+        351.016,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "十一月",
+        "short_label_zh": "十一月"
+      },
+      "layout_risk": {
+        "length_ratio": 1.0,
+        "bbox_width": 12.179,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l11",
+      "page_index": 0,
+      "source_text": "Dec",
+      "translation_zh": "十二月",
+      "target_text": "十二月",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        367.514,
+        534.008,
+        378.938,
+        542.477
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "十二月",
+        "short_label_zh": "十二月"
+      },
+      "layout_risk": {
+        "length_ratio": 1.0,
+        "bbox_width": 11.424,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b43_l0",
+      "page_index": 0,
+      "source_text": "Share Ownership Composition",
+      "translation_zh": "股权构成",
+      "target_text": "股权构成",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        580.306,
+        246.454,
+        597.336
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "股权构成"
+      },
+      "layout_risk": {
+        "length_ratio": 0.148,
+        "bbox_width": 184.092,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b44_l0",
+      "page_index": 0,
+      "source_text": "Shareholding Distribution as at 31 December 2025 (based on HKEX’s Register of Members)",
+      "translation_zh": "截至2025年12月31日的股权分配（根据香港交易所股东名册）",
+      "target_text": "截至2025年12月31日的股权分配（根据香港交易所股东名册）",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        606.244,
+        504.826,
+        620.434
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "截至2025年12月31日的股权分配（根据香港交易所股东名册）"
+      },
+      "layout_risk": {
+        "length_ratio": 0.36,
+        "bbox_width": 442.464,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l0",
+      "page_index": 0,
+      "source_text": "Size of shareholding",
+      "translation_zh": "持股规模",
+      "target_text": "持股规模",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.362,
+        642.275,
+        136.954,
+        652.755
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "持股规模",
+        "short_label_zh": "持股规模"
+      },
+      "layout_risk": {
+        "length_ratio": 0.2,
+        "bbox_width": 74.592,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l1",
+      "page_index": 0,
+      "source_text": "Number of",
+      "translation_zh": "数量",
+      "target_text": "数量",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        215.298,
+        632.275,
+        257.042,
+        642.755
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "数量",
+        "short_label_zh": "数量"
+      },
+      "layout_risk": {
+        "length_ratio": 0.222,
+        "bbox_width": 41.744,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l2",
+      "page_index": 0,
+      "source_text": "Shareholders",
+      "translation_zh": "股东",
+      "target_text": "股东",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        206.018,
+        642.275,
+        255.122,
+        652.755
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "股东",
+        "short_label_zh": "股东"
+      },
+      "layout_risk": {
+        "length_ratio": 0.167,
+        "bbox_width": 49.104,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l3",
+      "page_index": 0,
+      "source_text": "% of",
+      "translation_zh": "％ 的",
+      "target_text": "％ 的",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        322.482,
+        632.275,
+        340.666,
+        642.755
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "％ 的",
+        "short_label_zh": "％ 的"
+      },
+      "layout_risk": {
+        "length_ratio": 0.75,
+        "bbox_width": 18.184,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l4",
+      "page_index": 0,
+      "source_text": "Shareholders",
+      "translation_zh": "股东",
+      "target_text": "股东",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        289.642,
+        642.275,
+        338.746,
+        652.755
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "股东",
+        "short_label_zh": "股东"
+      },
+      "layout_risk": {
+        "length_ratio": 0.167,
+        "bbox_width": 49.104,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l5",
+      "page_index": 0,
+      "source_text": "Number of",
+      "translation_zh": "数量",
+      "target_text": "数量",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        382.546,
+        632.275,
+        424.29,
+        642.755
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "数量",
+        "short_label_zh": "数量"
+      },
+      "layout_risk": {
+        "length_ratio": 0.222,
+        "bbox_width": 41.744,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l6",
+      "page_index": 0,
+      "source_text": "HKEX shares held",
+      "translation_zh": "持有港交所股份",
+      "target_text": "持有港交所股份",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        356.738,
+        642.275,
+        422.37,
+        652.755
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "持有港交所股份",
+        "short_label_zh": "持有港交所股份"
+      },
+      "layout_risk": {
+        "length_ratio": 0.438,
+        "bbox_width": 65.632,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l7",
+      "page_index": 0,
+      "source_text": "% of HKEX",
+      "translation_zh": "占香港交易所的百分比",
+      "target_text": "占香港交易所的百分比",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        466.146,
+        632.275,
+        507.914,
+        642.755
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "占香港交易所的百分比",
+        "short_label_zh": "占香港交易所的百分比"
+      },
+      "layout_risk": {
+        "length_ratio": 1.111,
+        "bbox_width": 41.768,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b45_l8",
+      "page_index": 0,
+      "source_text": "shares in issue",
+      "translation_zh": "已发行股份",
+      "target_text": "已发行股份",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        452.994,
+        642.275,
+        505.994,
+        652.755
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "已发行股份",
+        "short_label_zh": "已发行股份"
+      },
+      "layout_risk": {
+        "length_ratio": 0.333,
+        "bbox_width": 53.0,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b51_l0",
+      "page_index": 0,
+      "source_text": "100,001 and above",
+      "translation_zh": "100,001及以上",
+      "target_text": "100,001及以上",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.394,
+        717.63,
+        130.722,
+        727.95
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "100,001及以上",
+        "short_label_zh": "100,001及以上"
+      },
+      "layout_risk": {
+        "length_ratio": 0.588,
+        "bbox_width": 68.328,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b52_l0",
+      "page_index": 0,
+      "source_text": "Total",
+      "translation_zh": "全部的",
+      "target_text": "全部的",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.402,
+        733.55,
+        80.546,
+        743.87
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "全部的",
+        "short_label_zh": "全部的"
+      },
+      "layout_risk": {
+        "length_ratio": 0.6,
+        "bbox_width": 18.144,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b53_l1",
+      "page_index": 0,
+      "source_text": "Percentage may not add up to the total due to rounding.",
+      "translation_zh": "由于四舍五入，百分比相加可能不等于总数。",
+      "target_text": "由于四舍五入，百分比相加可能不等于总数。",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        76.538,
+        756.815,
+        254.552,
+        765.845
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "由于四舍五入，百分比相加可能不等于总数。"
+      },
+      "layout_risk": {
+        "length_ratio": 0.364,
+        "bbox_width": 178.014,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b54_l0",
+      "page_index": 0,
+      "source_text": "Details about HKEX’s major Shareholders are disclosed in the Corporate Governance Report contained in this",
+      "translation_zh": "香港交易所主要股东的详情已在本报告所载的企业管治报告中披露。",
+      "target_text": "香港交易所主要股东的详情已在本报告所载的企业管治报告中披露。",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.363,
+        781.633,
+        507.831,
+        793.244
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "香港交易所主要股东的详情已在本报告所载的企业管治报告中披露。"
+      },
+      "layout_risk": {
+        "length_ratio": 0.283,
+        "bbox_width": 445.468,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b54_l1",
+      "page_index": 0,
+      "source_text": "Annual Report.",
+      "translation_zh": "年报。",
+      "target_text": "年报。",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        62.363,
+        793.63,
+        124.138,
+        805.241
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "年报。",
+        "short_label_zh": "年报。"
+      },
+      "layout_risk": {
+        "length_ratio": 0.214,
+        "bbox_width": 61.775,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b55_l0",
+      "page_index": 0,
+      "source_text": "Shareholder Information",
+      "translation_zh": "股东信息",
+      "target_text": "股东信息",
+      "source_language": "en",
+      "target_language": "zh",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        432.117,
+        812.157,
+        510.236,
+        821.187
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "en",
+        "target_language": "zh",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_zh": "股东信息",
+        "short_label_zh": "股东信息"
+      },
+      "layout_risk": {
+        "length_ratio": 0.174,
+        "bbox_width": 78.119,
+        "risk": "normal"
+      }
+    }
+  ]
+}

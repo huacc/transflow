@@ -1,0 +1,69 @@
+{
+  "round_id": "S20",
+  "source_dir": "input",
+  "semantic_dir": "docs/input/semantic_translations",
+  "input_dir": "docs/input",
+  "semantic_translation_pool": "docs/input/semantic_translation_pool",
+  "case_count": 5,
+  "semantic_pool_count": 5,
+  "semantic_pool_files": [
+    "docs/input/semantic_translation_pool/S20_00005_2025_interim_report_zh.translations.json",
+    "docs/input/semantic_translation_pool/S20_00388_2026_annual_report_en.translations.json",
+    "docs/input/semantic_translation_pool/S20_00992_2023_annual_report_en.translations.json",
+    "docs/input/semantic_translation_pool/S20_建業新生活有限公司_c.translations.json",
+    "docs/input/semantic_translation_pool/S20_建業新生活有限公司_e.translations.json"
+  ],
+  "cases": [
+    {
+      "case_id": "S20_00005_2025_interim_report_zh",
+      "source_language": null,
+      "target_language": null,
+      "target_text_field": null,
+      "unit_count": null,
+      "translation_provider": null,
+      "source_pdf": "docs/input/source_pdfs/00005_2025_interim_report_zh.pdf",
+      "semantic_translations": null
+    },
+    {
+      "case_id": "S20_00388_2026_annual_report_en",
+      "source_language": null,
+      "target_language": null,
+      "target_text_field": null,
+      "unit_count": null,
+      "translation_provider": null,
+      "source_pdf": "docs/input/source_pdfs/00388_2026_annual_report_en.pdf",
+      "semantic_translations": null
+    },
+    {
+      "case_id": "S20_00992_2023_annual_report_en",
+      "source_language": null,
+      "target_language": null,
+      "target_text_field": null,
+      "unit_count": null,
+      "translation_provider": null,
+      "source_pdf": "docs/input/source_pdfs/00992_2023_annual_report_en.pdf",
+      "semantic_translations": null
+    },
+    {
+      "case_id": "S20_建業新生活有限公司_c",
+      "source_language": null,
+      "target_language": null,
+      "target_text_field": null,
+      "unit_count": null,
+      "translation_provider": null,
+      "source_pdf": "docs/input/source_pdfs/建業新生活有限公司_c.pdf",
+      "semantic_translations": null
+    },
+    {
+      "case_id": "S20_建業新生活有限公司_e",
+      "source_language": null,
+      "target_language": null,
+      "target_text_field": null,
+      "unit_count": null,
+      "translation_provider": null,
+      "source_pdf": "docs/input/source_pdfs/建業新生活有限公司_e.pdf",
+      "semantic_translations": null
+    }
+  ],
+  "note": "Semantic translation JSONs are copied into a current-round pool. Each source PDF is matched by running validate_semantic_translations.py against current source_extraction.json; filenames are not used as the matching verdict."
+}

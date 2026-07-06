@@ -1,0 +1,490 @@
+{
+  "run_id": "spike20",
+  "case_id": "S20_00992_2023_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0013",
+  "batch_index": 13,
+  "batch_count": 13,
+  "source_extraction_ref": "docs/reports/S20_00992_2023_annual_report_en/source_extraction.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p10_b4_l8",
+      "page_index": 10,
+      "block_id": 4,
+      "line_index": 8,
+      "source_text": "out in page 73, the Company confirmed that all the independent non-executive directors are independent.",
+      "bbox": [
+        42.52,
+        267.255,
+        479.046,
+        278.397
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Company",
+        "all",
+        "are",
+        "confirmed",
+        "directors",
+        "in",
+        "independent",
+        "independent.",
+        "non-executive",
+        "out",
+        "page",
+        "that",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "73, "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p10_b5_l0",
+      "page_index": 10,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "The Nomination and Governance Committee affirmed that all independent non-executive directors of the Company",
+      "bbox": [
+        42.52,
+        283.923,
+        520.68,
+        295.065
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Committee",
+        "Company",
+        "Governance",
+        "Nomination",
+        "The",
+        "affirmed",
+        "all",
+        "and",
+        "directors",
+        "independent",
+        "non-executive",
+        "of",
+        "that",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p10_b5_l1",
+      "page_index": 10,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "provided a strong independent element on the Board, were free from any business or other relationship which could",
+      "bbox": [
+        42.52,
+        294.921,
+        522.74,
+        306.063
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "a",
+        "any",
+        "business",
+        "could",
+        "element",
+        "free",
+        "from",
+        "independent",
+        "on",
+        "or",
+        "other",
+        "provided",
+        "relationship",
+        "strong",
+        "the",
+        "were",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p10_b5_l2",
+      "page_index": 10,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "materially interfere with the exercise of their judgement, and remained independent for FY2023/24. The diagram below",
+      "bbox": [
+        42.52,
+        305.919,
+        536.09,
+        317.061
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "FY2023/24.",
+        "The",
+        "and",
+        "below",
+        "diagram",
+        "exercise",
+        "for",
+        "independent",
+        "interfere",
+        "judgement",
+        "materially",
+        "of",
+        "remained",
+        "the",
+        "their",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "24"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p10_b5_l3",
+      "page_index": 10,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "shows the independence weighting of the Board and the Board Committees as of March 31, 2024 and the date of this",
+      "bbox": [
+        42.52,
+        316.917,
+        527.717,
+        328.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "Committees",
+        "March",
+        "and",
+        "as",
+        "date",
+        "independence",
+        "of",
+        "shows",
+        "the",
+        "this",
+        "weighting"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31, "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p10_b5_l4",
+      "page_index": 10,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "annual report.",
+      "bbox": [
+        42.52,
+        327.915,
+        100.012,
+        339.057
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "annual",
+        "report."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p10_b6_l0",
+      "page_index": 10,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Independence weighting",
+      "bbox": [
+        89.646,
+        350.747,
+        207.266,
+        363.887
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Independence",
+        "weighting"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p10_b7_l0",
+      "page_index": 10,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "Key",
+      "bbox": [
+        89.646,
+        688.39,
+        100.494,
+        696.273
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 6.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Key"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p10_b9_l0",
+      "page_index": 10,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Board",
+      "bbox": [
+        89.646,
+        387.19,
+        115.161,
+        398.332
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p10_b10_l0",
+      "page_index": 10,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "Compensation Committee",
+      "bbox": [
+        89.646,
+        538.264,
+        199.212,
+        549.406
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Committee",
+        "Compensation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p10_b13_l0",
+      "page_index": 10,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "Audit Committee",
+      "bbox": [
+        89.646,
+        462.729,
+        161.493,
+        473.871
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Audit",
+        "Committee"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p10_b14_l0",
+      "page_index": 10,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "Nomination and Governance Committee",
+      "bbox": [
+        89.646,
+        615.216,
+        257.019,
+        626.358
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Committee",
+        "Governance",
+        "Nomination",
+        "and"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p10_b16_l2",
+      "page_index": 10,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "ED",
+      "bbox": [
+        356.475,
+        709.946,
+        367.065,
+        719.232
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 7.5,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "ED"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0013.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/S20_00992_2023_annual_report_en/translation_batches/batch_0013.model_output.json",
+    "required_units": [
+      "p10_b4_l8",
+      "p10_b5_l0",
+      "p10_b5_l1",
+      "p10_b5_l2",
+      "p10_b5_l3",
+      "p10_b5_l4",
+      "p10_b6_l0",
+      "p10_b7_l0",
+      "p10_b9_l0",
+      "p10_b10_l0",
+      "p10_b13_l0",
+      "p10_b14_l0",
+      "p10_b16_l2"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

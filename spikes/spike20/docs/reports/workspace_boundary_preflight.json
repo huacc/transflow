@@ -1,0 +1,40 @@
+{
+  "tool": "validate_workspace_boundary",
+  "workspace_root": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20",
+  "allow_missing": true,
+  "workspace_boundary_verdict": "PASS",
+  "checked_count": 4,
+  "checked_paths": [
+    {
+      "source": "cli",
+      "path": "input",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\input",
+      "inside_workspace": true,
+      "exists": true
+    },
+    {
+      "source": "cli",
+      "path": "docs\\input",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\input",
+      "inside_workspace": true,
+      "exists": true
+    },
+    {
+      "source": "cli",
+      "path": "docs\\reports",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports",
+      "inside_workspace": true,
+      "exists": true
+    },
+    {
+      "source": "cli",
+      "path": "docs\\output",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\output",
+      "inside_workspace": true,
+      "exists": true
+    }
+  ],
+  "escaping_paths": [],
+  "missing_paths": [],
+  "output_report": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike20\\docs\\reports\\workspace_boundary_preflight.json"
+}
