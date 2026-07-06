@@ -19,7 +19,7 @@ Every model adjudication must be recorded:
     "blocking": true
   },
   "tool_outputs": [{"path": "...", "kind": "..."}],
-  "next_state": "L2_RepairLoop"
+  "next_state": "Lx_RepairLoop"
 }
 ```
 
@@ -81,12 +81,17 @@ D4 must explicitly decide these layout dimensions when the corresponding source 
 
 | Dimension | Required output |
 |---|---|
+| `language_pair_profile` | selected generic profile path, profile sha256, source_language, target_language, target_text_field, and layout_strategy |
 | `region_classification` | role thresholds and affected region kinds, including `body`, `body_flow`, `table_cell`, `table_note`, `footnote`, `heading`, `vertical_nav`, `compact_label`, and `legend` |
 | `body_flow_grouping` | whether aligned body paragraphs should be merged into a flowing article region; cite current-run x/width/y-gap statistics |
 | `body_flow_line_joining` | `paragraph_gap_pt`, target-language line joiners, and paragraph separator evidence |
+| `short_continuation_policy` | whether narrow same-column continuation lines may join an active `body_flow`; include `allow_short_continuation_lines` and `min_continuation_width_page_ratio` |
+| `dense_page_body_band_policy` | when dense table/chart page types may still allow lower-page article text into `body_flow`; include `allow_dense_page_body_below_y_ratio` evidence |
+| `target_language_reflow` | region kinds eligible for target-language frame expansion plus `overlap_guard` settings |
 | `table_note_detection` | whether wide `Note:` / `Notes:` blocks remain `table_note` and are excluded from `body_flow` |
 | `table_cell_detection` | whether dense table/chart labels are preserved as `table_cell` and excluded from `body_flow` |
 | `font_hierarchy_ratio` | source-relative font profile choices for note/body/table_cell/table_note/title roles |
+| `textbox_probe_isolation` | confirm failed textbox fit attempts are probed off-page and cannot render residue into the candidate |
 | `sidebar_draw_mode` | whether narrow navigation uses `rotated_horizontal_text_image` or line preservation |
 | `anti_overfit_evidence` | confirm no filename, fixed page, literal text, or fixed coordinate branch was used |
 
@@ -96,14 +101,45 @@ D7 must judge these dimensions from source-vs-output renders and metrics:
 
 | Dimension | Failure signal |
 |---|---|
+| `source_relative_visual_baseline` | generated regions cannot be tied back to current-run source extraction/font/line evidence |
+| `hero_banner_text_readability` | hero or banner title falls below readable source-relative font floor |
+| `title_readability` | title or heading text is too small, clipped, or fallback-rendered |
+| `body_paragraph_readability` | body text is unreadable, over-fragmented, or forced into tiny source bboxes |
+| `table_text_legibility` | table cell/header text is unreadable or requires compact semantic variants |
+| `footnote_readability` | notes or footnotes are unreadable or lose source-relative hierarchy |
+| `legend_label_alignment` | legend labels drift away from swatches or become unreadable |
+| `short_label_legibility` | constrained labels cannot be read at the generated size |
+| `sidebar_navigation_legibility` | side navigation labels are unreadable or drawn with the wrong writing mode |
+| `image_color_integrity` | source images/color regions are removed, recolored, or covered |
+| `background_delta` | redaction fill visibly differs from surrounding background |
 | `paragraph_density` | active body paragraphs leave large internal holes compared with the source |
 | `internal_paragraph_gap` | gaps between active paragraphs are visually excessive |
+| `single_dense_paragraph` | source paragraph gaps collapse into one continuous paragraph |
+| `body_flow_fallback_truncation` | long body text falls back to a clipped point insertion instead of fitting as flowing text |
+| `failed_probe_residue` | failed font-size attempts leave visible overlapped text in the output |
 | `end_blank_allowed` | blank space appears only after the final active paragraph and is recorded as non-blocking or warning |
 | `font_hierarchy_ratio` | notes/footnotes/table notes/body/headings lose source-relative scale |
 | `sidebar_orientation` | rotated source navigation becomes stacked Chinese characters |
 | `sidebar_orientation_group_consistency` | labels in one side-navigation group do not share one writing mode |
 | `sidebar_glyph_orientation` | back-rotated output crop does not become readable horizontal target-language text |
 | `visual_similarity` | overall source-vs-output layout remains visibly mismatched |
+
+## D8 Repair Selection Required Dimensions
+
+D8 must choose exactly one primary failure class per loop, while preserving all other blocking findings in `deferred_failures`.
+
+Required D8 output dimensions:
+
+| Dimension | Meaning |
+|---|---|
+| `primary_failure_class` | failure class selected by the multi-adjudication priority table |
+| `repair_atom` | one catalog atom from `page_type_repair_matrix.md` or `visual_repair_plan.json` |
+| `target_state` | `S3_SourceExtract`, `S5_TranslationPlan`, `S6_LayoutPlan`, `S7_GenerateCandidate`, or terminal failure |
+| `target_scope` | page, region, slot, or evidence scope to modify |
+| `expected_effect` | the gate-level improvement expected after the repair |
+| `verification_to_run` | exact tools/gates to rerun after the repair |
+| `deferred_failures` | other blocking failures left for later loops |
+| `rejected_repair_plans` | plans not selected and the reason they were not selected |
 
 ## Hidden Reasoning Boundary
 

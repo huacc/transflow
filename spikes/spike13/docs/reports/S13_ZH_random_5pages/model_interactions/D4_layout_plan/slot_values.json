@@ -1,0 +1,3036 @@
+{
+  "run_id": "spike13",
+  "run_mode": "product_quality",
+  "state_id": "S6_LayoutPlan",
+  "page_strategy": {
+    "decision_id": "D1_role_classification",
+    "regression_id": "S13_ZH_random_5pages",
+    "verdict": "PASS",
+    "backend_model_call_made": false,
+    "executor": "Codex based on current extraction/render evidence; no external model call was required for this structural classification record.",
+    "pages": [
+      {
+        "verdict": "PASS",
+        "page_index": 0,
+        "page_type": "table_body",
+        "source_page_type_guess": "table_or_chart_dense",
+        "region_roles": [
+          {
+            "region_id": "p0_b0_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                49.89,
+                813.08,
+                123.939,
+                821.92
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b0_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                34.494,
+                813.345,
+                47.201,
+                821.297
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b1_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                25.1,
+                124.412,
+                36.184
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b1_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                36.439,
+                97.637,
+                47.523
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b2_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                91.9,
+                174.837,
+                106.244
+              ],
+              "font_size": 11.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b3_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                110.313,
+                515.908,
+                122.265
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b4_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                126.315,
+                154.045,
+                138.267
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b5_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                158.319,
+                515.944,
+                170.271
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b6_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                174.321,
+                515.908,
+                186.273
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b7_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                190.323,
+                515.99,
+                202.275
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b8_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                206.325,
+                515.917,
+                218.277
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b9_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                222.327,
+                183.016,
+                234.279
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b10_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                254.331,
+                515.899,
+                266.283
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b11_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                270.333,
+                514.324,
+                282.285
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b12_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                302.337,
+                163.612,
+                314.289
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b13_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                68.032,
+                326.909,
+                135.532,
+                334.733
+              ],
+              "font_size": 6.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b13_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                421.287,
+                323.856,
+                448.249,
+                334.94
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b13_l2",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                484.365,
+                323.856,
+                510.614,
+                335.076
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b14_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                68.035,
+                343.015,
+                120.098,
+                354.099
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p0_b14_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                422.23,
+                343.814,
+                448.258,
+                354.108
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          }
+        ],
+        "risk_flags": [
+          "dense_table_or_chart_requires_constrained_slots"
+        ],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+          "docs/reports/S13_ZH_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      },
+      {
+        "verdict": "PASS",
+        "page_index": 1,
+        "page_type": "bar_chart_dashboard",
+        "source_page_type_guess": "chart_or_dashboard",
+        "region_roles": [
+          {
+            "region_id": "p1_b0_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                49.89,
+                813.08,
+                123.939,
+                821.92
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b0_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                34.553,
+                813.345,
+                47.197,
+                821.297
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b1_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                25.1,
+                124.412,
+                36.184
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b1_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                36.439,
+                97.637,
+                47.523
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b2_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                62.362,
+                92.951,
+                123.612,
+                105.991
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b3_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                68.031,
+                120.41,
+                135.531,
+                128.234
+              ],
+              "font_size": 6.0,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b3_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                421.287,
+                117.358,
+                448.249,
+                128.442
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b3_l2",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                484.365,
+                117.358,
+                510.614,
+                128.578
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b4_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                68.035,
+                136.517,
+                120.098,
+                147.601
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b4_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                422.23,
+                137.316,
+                448.258,
+                147.609
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b4_l2",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                485.521,
+                137.528,
+                510.622,
+                147.822
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b5_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                68.044,
+                152.199,
+                225.107,
+                163.487
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b5_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                434.249,
+                152.786,
+                448.266,
+                163.079
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b5_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                506.261,
+                152.998,
+                510.63,
+                163.292
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b6_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                68.052,
+                167.669,
+                85.265,
+                178.957
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b6_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                426.99,
+                168.256,
+                448.275,
+                178.549
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b6_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                490.12,
+                168.468,
+                510.639,
+                178.762
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b7_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                68.061,
+                183.139,
+                147.324,
+                194.427
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b7_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                139.886,
+                183.139,
+                174.523,
+                194.427
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          },
+          {
+            "region_id": "p1_b7_l2",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                422.256,
+                183.726,
+                448.283,
+                194.019
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "chart_or_dashboard"
+            }
+          }
+        ],
+        "risk_flags": [
+          "dense_table_or_chart_requires_constrained_slots"
+        ],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+          "docs/reports/S13_ZH_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      },
+      {
+        "verdict": "PASS",
+        "page_index": 2,
+        "page_type": "mixed_text",
+        "source_page_type_guess": "mixed_text",
+        "region_roles": [
+          {
+            "region_id": "p2_b0_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                34.758,
+                813.344,
+                47.199,
+                821.296
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b1_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                37.072,
+                230.619,
+                54.024
+              ],
+              "font_size": 12.333,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b2_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                94.167,
+                106.684,
+                108.467
+              ],
+              "font_size": 11.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b3_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                113.426,
+                538.581,
+                124.325
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b4_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                129.428,
+                141.276,
+                140.327
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b5_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                153.431,
+                538.623,
+                164.33
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b6_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                169.433,
+                187.131,
+                180.332
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b7_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                194.254,
+                538.59,
+                203.254
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b8_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                209.438,
+                538.544,
+                220.337
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b9_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                226.258,
+                159.024,
+                235.258
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b10_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                262.165,
+                128.684,
+                276.465
+              ],
+              "font_size": 11.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b11_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                279.259,
+                157.054,
+                292.259
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b12_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                298.242,
+                538.572,
+                307.242
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b13_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                314.244,
+                538.427,
+                323.244
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b14_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                330.246,
+                538.584,
+                339.246
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b15_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                346.248,
+                538.422,
+                355.248
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b16_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                362.25,
+                438.024,
+                371.25
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b17_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                385.435,
+                263.406,
+                396.334
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b18_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                410.256,
+                538.584,
+                419.256
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p2_b19_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                426.258,
+                325.524,
+                435.258
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "mixed_text"
+            }
+          }
+        ],
+        "risk_flags": [],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+          "docs/reports/S13_ZH_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      },
+      {
+        "verdict": "PASS",
+        "page_index": 3,
+        "page_type": "body_nav",
+        "source_page_type_guess": "body_or_notes_dense",
+        "region_roles": [
+          {
+            "region_id": "p3_b0_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                34.512,
+                813.344,
+                47.195,
+                821.296
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b1_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                94.167,
+                156.656,
+                108.467
+              ],
+              "font_size": 11.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b2_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                111.261,
+                101.024,
+                124.071
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b3_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                130.244,
+                538.634,
+                139.244
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b4_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                146.246,
+                538.598,
+                155.246
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b5_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                162.248,
+                538.401,
+                171.248
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b6_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                178.25,
+                494.274,
+                187.25
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b7_l0",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                277.057,
+                201.079,
+                329.557,
+                208.579
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b8_l0",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                240.12,
+                216.101,
+                270.12,
+                223.601
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b9_l0",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                51.022,
+                231.124,
+                81.022,
+                238.624
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b9_l1",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                158.737,
+                231.124,
+                226.237,
+                238.624
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b9_l2",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                260.782,
+                231.124,
+                381.495,
+                238.624
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b9_l3",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                447.87,
+                231.124,
+                515.37,
+                238.624
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b10_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                254.64,
+                96.024,
+                263.64
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b10_l1",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                267.636,
+                96.024,
+                276.636
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b10_l2",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                280.632,
+                87.024,
+                289.632
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b11_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                116.22,
+                254.631,
+                152.22,
+                263.631
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b11_l1",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                160.779,
+                253.814,
+                248.241,
+                264.712
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b11_l2",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                167.241,
+                267.627,
+                248.241,
+                276.627
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b11_l3",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                167.241,
+                280.623,
+                176.241,
+                289.623
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          }
+        ],
+        "risk_flags": [],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+          "docs/reports/S13_ZH_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      },
+      {
+        "verdict": "PASS",
+        "page_index": 4,
+        "page_type": "table_body",
+        "source_page_type_guess": "table_or_chart_dense",
+        "region_roles": [
+          {
+            "region_id": "p4_b0_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                548.079,
+                813.344,
+                560.622,
+                821.296
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b1_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                94.167,
+                206.326,
+                108.467
+              ],
+              "font_size": 11.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b2_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                113.426,
+                544.277,
+                124.325
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b3_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                129.428,
+                544.115,
+                140.327
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b4_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                56.684,
+                145.43,
+                427.7,
+                156.329
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b5_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                56.684,
+                169.433,
+                403.814,
+                180.332
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b6_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                199.26,
+                120.573,
+                212.58
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b7_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                59.153,
+                242.078,
+                89.153,
+                249.578
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b8_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                437.355,
+                223.502,
+                475.845,
+                233.29
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b8_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                444.855,
+                232.0,
+                475.845,
+                241.787
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b8_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                453.345,
+                240.497,
+                475.845,
+                250.105
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b9_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                500.288,
+                224.387,
+                538.208,
+                233.47
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b9_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                507.788,
+                232.885,
+                538.208,
+                241.967
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b9_l2",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                500.708,
+                242.063,
+                538.208,
+                249.563
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b10_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                59.153,
+                263.678,
+                77.153,
+                275.207
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b11_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                59.153,
+                281.262,
+                122.153,
+                290.262
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b11_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                447.032,
+                281.579,
+                475.846,
+                292.628
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b11_l2",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                510.91,
+                281.684,
+                538.204,
+                292.39
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b12_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                59.153,
+                296.966,
+                158.153,
+                305.966
+              ],
+              "font_size": 9.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p4_b12_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                449.36,
+                297.279,
+                478.8,
+                308.328
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          }
+        ],
+        "risk_flags": [
+          "dense_table_or_chart_requires_constrained_slots"
+        ],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+          "docs/reports/S13_ZH_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      }
+    ],
+    "evidence_refs": [
+      "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+      "docs/reports/S13_ZH_random_5pages/source_render_manifest.json"
+    ],
+    "next_state": "S5_TranslationPlan"
+  },
+  "translated_units": [
+    {
+      "unit_id": "p0_b0_l0",
+      "page_index": 0,
+      "source_text": "| 友邦保險控股有限公司",
+      "translation_target_text": "| AIA Insurance Holdings Limited",
+      "translation_en": "| AIA Insurance Holdings Limited",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "| AIA Insurance Holdings Limited",
+        "short_label_en": "| AIA Insurance Holdings Limited",
+        "table_cell_en": "| AIA Insurance Holdings Limited",
+        "legend_en": "| AIA Insurance Holdings Limited",
+        "vertical_nav_en": "| AIA Insurance Holdings Limited",
+        "compact_en": "| AIA Insurance Holdings Limited",
+        "display_en": "| AIA Insurance Holdings Limited"
+      }
+    },
+    {
+      "unit_id": "p0_b1_l0",
+      "page_index": 0,
+      "source_text": "財務及營運回顧",
+      "translation_target_text": "Financial and Operational Review",
+      "translation_en": "Financial and Operational Review",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Financial and Operational Review",
+        "short_label_en": "Financial and Operational Review",
+        "table_cell_en": "Financial and Operational Review",
+        "legend_en": "Financial and Operational Review",
+        "vertical_nav_en": "Financial and Operational Review",
+        "compact_en": "Financial and Operational Review",
+        "display_en": "Financial and Operational Review"
+      }
+    },
+    {
+      "unit_id": "p0_b1_l1",
+      "page_index": 0,
+      "source_text": "財務回顧",
+      "translation_target_text": "financial review",
+      "translation_en": "financial review",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "financial review",
+        "short_label_en": "financial review",
+        "table_cell_en": "financial review",
+        "legend_en": "financial review",
+        "vertical_nav_en": "financial review",
+        "compact_en": "financial review",
+        "display_en": "financial review"
+      }
+    },
+    {
+      "unit_id": "p0_b2_l0",
+      "page_index": 0,
+      "source_text": "集團企業中心淨資金流",
+      "translation_target_text": "Group Enterprise Center Net Fund Flow",
+      "translation_en": "Group Enterprise Center Net Fund Flow",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Group Enterprise Center Net Fund Flow",
+        "short_label_en": "Group Enterprise Center Net Fund Flow",
+        "table_cell_en": "Group Enterprise Center Net Fund Flow",
+        "legend_en": "Group Enterprise Center Net Fund Flow",
+        "vertical_nav_en": "Group Enterprise Center Net Fund Flow",
+        "compact_en": "Group Enterprise Center Net Fund Flow",
+        "display_en": "Group Enterprise Center Net Fund Flow"
+      }
+    },
+    {
+      "unit_id": "p0_b3_l0",
+      "page_index": 0,
+      "source_text": "集團企業中心所持有的營運資金包括債務及股本證券、存款和現金及現金等價物。營運資金增長至2019年12月",
+      "translation_target_text": "Working capital held by the Group's corporate centers consists of debt and equity securities, deposits and cash and cash equivalents. Working capital increased to December 2019",
+      "translation_en": "Working capital held by the Group's corporate centers consists of debt and equity securities, deposits and cash and cash equivalents. Working capital increased to December 2019",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Working capital held by the Group's corporate ce",
+        "short_label_en": "Working capital held by the Group's corporate ce",
+        "table_cell_en": "Working capital held by the Group's corporate ce",
+        "legend_en": "Working capital held by the Group's corporate ce",
+        "vertical_nav_en": "Working capital held by the Group's corporate ce",
+        "compact_en": "Working capital held by the Group's corporate ce",
+        "display_en": "Working capital held by the Group's corporate ce"
+      }
+    },
+    {
+      "unit_id": "p0_b4_l0",
+      "page_index": 0,
+      "source_text": "31日的134.71億美元。",
+      "translation_target_text": "13.471 billion US dollars on the 31st.",
+      "translation_en": "13.471 billion US dollars on the 31st.",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "13.471 billion US dollars on the 31st",
+        "short_label_en": "13.471 billion US dollars on the 31st",
+        "table_cell_en": "13.471 billion US dollars on the 31st",
+        "legend_en": "13.471 billion US dollars on the 31st",
+        "vertical_nav_en": "13.471 billion US dollars on the 31st",
+        "compact_en": "13.471 billion US dollars on the 31st",
+        "display_en": "13.471 billion US dollars on the 31st"
+      }
+    },
+    {
+      "unit_id": "p0_b5_l0",
+      "page_index": 0,
+      "source_text": "來自業務單位的匯款淨額增加9.77億美元至37.30億美元，其中大部分增加來自泰國及中國內地。在監管變動於",
+      "translation_target_text": "Net remittances from business units increased by US$977 million to US$3.730 billion, with most of the increase coming from Thailand and mainland China. In regulatory changes to",
+      "translation_en": "Net remittances from business units increased by US$977 million to US$3.730 billion, with most of the increase coming from Thailand and mainland China. In regulatory changes to",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Net remittances from business units increased by",
+        "short_label_en": "Net remittances from business units increased by",
+        "table_cell_en": "Net remittances from business units increased by",
+        "legend_en": "Net remittances from business units increased by",
+        "vertical_nav_en": "Net remittances from business units increased by",
+        "compact_en": "Net remittances from business units increased by",
+        "display_en": "Net remittances from business units increased by"
+      }
+    },
+    {
+      "unit_id": "p0_b6_l0",
+      "page_index": 0,
+      "source_text": "2018年獲批後，及如早前於2018年報所述，由於2018年各項所需監管批文的時間安排，而於2019年1月額外匯付",
+      "translation_target_text": "After being approved in 2018, and as mentioned earlier in the 2018 annual report, due to the timing of various required regulatory approvals in 2018, additional remittances were made in January 2019.",
+      "translation_en": "After being approved in 2018, and as mentioned earlier in the 2018 annual report, due to the timing of various required regulatory approvals in 2018, additional remittances were made in January 2019.",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "After being approved in 2018, and as mentioned e",
+        "short_label_en": "After being approved in 2018, and as mentioned e",
+        "table_cell_en": "After being approved in 2018, and as mentioned e",
+        "legend_en": "After being approved in 2018, and as mentioned e",
+        "vertical_nav_en": "After being approved in 2018, and as mentioned e",
+        "compact_en": "After being approved in 2018, and as mentioned e",
+        "display_en": "After being approved in 2018, and as mentioned e"
+      }
+    },
+    {
+      "unit_id": "p0_b7_l0",
+      "page_index": 0,
+      "source_text": "的3.19億美元，泰國的匯款於2019年增至10.37億美元。來自中國內地的匯款增加接近一倍，反映出業務規模不",
+      "translation_target_text": "Of US$319 million, remittances to Thailand increased to US$1.037 billion in 2019. Remittances from mainland China nearly doubled, reflecting declining business scale",
+      "translation_en": "Of US$319 million, remittances to Thailand increased to US$1.037 billion in 2019. Remittances from mainland China nearly doubled, reflecting declining business scale",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Of US$319 million, remittances to Thailand incre",
+        "short_label_en": "Of US$319 million, remittances to Thailand incre",
+        "table_cell_en": "Of US$319 million, remittances to Thailand incre",
+        "legend_en": "Of US$319 million, remittances to Thailand incre",
+        "vertical_nav_en": "Of US$319 million, remittances to Thailand incre",
+        "compact_en": "Of US$319 million, remittances to Thailand incre",
+        "display_en": "Of US$319 million, remittances to Thailand incre"
+      }
+    },
+    {
+      "unit_id": "p0_b8_l0",
+      "page_index": 0,
+      "source_text": "斷擴大及累計保留盈利的一次性調動。如早前所述，在2018年收購Sovereign後來自新西蘭的特別匯款，說明了",
+      "translation_target_text": "A one-time transfer to continuously expand and accumulate retained profits. As mentioned earlier, the extraordinary remittance from New Zealand following the acquisition of Sovereign in 2018 illustrates",
+      "translation_en": "A one-time transfer to continuously expand and accumulate retained profits. As mentioned earlier, the extraordinary remittance from New Zealand following the acquisition of Sovereign in 2018 illustrates",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "A one-time transfer to continuously expand and a",
+        "short_label_en": "A one-time transfer to continuously expand and a",
+        "table_cell_en": "A one-time transfer to continuously expand and a",
+        "legend_en": "A one-time transfer to continuously expand and a",
+        "vertical_nav_en": "A one-time transfer to continuously expand and a",
+        "compact_en": "A one-time transfer to continuously expand and a",
+        "display_en": "A one-time transfer to continuously expand and a"
+      }
+    },
+    {
+      "unit_id": "p0_b9_l0",
+      "page_index": 0,
+      "source_text": "較低的2019年其他市場匯款。",
+      "translation_target_text": "Lower remittances to other markets in 2019.",
+      "translation_en": "Lower remittances to other markets in 2019.",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Lower remittances to other markets in 2019",
+        "short_label_en": "Lower remittances to other markets in 2019",
+        "table_cell_en": "Lower remittances to other markets in 2019",
+        "legend_en": "Lower remittances to other markets in 2019",
+        "vertical_nav_en": "Lower remittances to other markets in 2019",
+        "compact_en": "Lower remittances to other markets in 2019",
+        "display_en": "Lower remittances to other markets in 2019"
+      }
+    },
+    {
+      "unit_id": "p0_b10_l0",
+      "page_index": 0,
+      "source_text": "借貸因發行中期票據的所得款項淨額13.01億美元，扣除於到期日贖回的中期票據5.00億美元而增加7.97億美元。",
+      "translation_target_text": "Borrowings increased by US$797 million due to the net proceeds from the issuance of medium-term notes of US$1.301 billion, excluding US$500 million of medium-term notes redeemed on the maturity date.",
+      "translation_en": "Borrowings increased by US$797 million due to the net proceeds from the issuance of medium-term notes of US$1.301 billion, excluding US$500 million of medium-term notes redeemed on the maturity date.",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Borrowings increased by US$797 million due to th",
+        "short_label_en": "Borrowings increased by US$797 million due to th",
+        "table_cell_en": "Borrowings increased by US$797 million due to th",
+        "legend_en": "Borrowings increased by US$797 million due to th",
+        "vertical_nav_en": "Borrowings increased by US$797 million due to th",
+        "compact_en": "Borrowings increased by US$797 million due to th",
+        "display_en": "Borrowings increased by US$797 million due to th"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l0",
+      "page_index": 0,
+      "source_text": "此營運資金的總增長乃於派付股息19.61億美元及於2019年初步支付有關收購CMLA的總款項3.44億美元後錄報。",
+      "translation_target_text": "This total increase in working capital was reported after the payment of dividends of US$1.961 billion and the initial payment of a total amount of US$344 million in connection with the acquisition of CMLA in 2019.",
+      "translation_en": "This total increase in working capital was reported after the payment of dividends of US$1.961 billion and the initial payment of a total amount of US$344 million in connection with the acquisition of CMLA in 2019.",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "This total increase in working capital was repor",
+        "short_label_en": "This total increase in working capital was repor",
+        "table_cell_en": "This total increase in working capital was repor",
+        "legend_en": "This total increase in working capital was repor",
+        "vertical_nav_en": "This total increase in working capital was repor",
+        "compact_en": "This total increase in working capital was repor",
+        "display_en": "This total increase in working capital was repor"
+      }
+    },
+    {
+      "unit_id": "p0_b12_l0",
+      "page_index": 0,
+      "source_text": "營運資金變動概述如下：",
+      "translation_target_text": "A summary of changes in working capital is as follows:",
+      "translation_en": "A summary of changes in working capital is as follows:",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "A summary of changes in working capital is as fo",
+        "short_label_en": "A summary of changes in working capital is as fo",
+        "table_cell_en": "A summary of changes in working capital is as fo",
+        "legend_en": "A summary of changes in working capital is as fo",
+        "vertical_nav_en": "A summary of changes in working capital is as fo",
+        "compact_en": "A summary of changes in working capital is as fo",
+        "display_en": "A summary of changes in working capital is as fo"
+      }
+    },
+    {
+      "unit_id": "p0_b13_l0",
+      "page_index": 0,
+      "source_text": "百萬美元，除另有說明外",
+      "translation_target_text": "Millions of U.S. dollars, unless otherwise stated",
+      "translation_en": "Millions of U.S. dollars, unless otherwise stated",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Millions of U.S. dollars, unless otherwise state",
+        "short_label_en": "Millions of U.S. dollars, unless otherwise state",
+        "table_cell_en": "Millions of U.S. dollars, unless otherwise state",
+        "legend_en": "Millions of U.S. dollars, unless otherwise state",
+        "vertical_nav_en": "Millions of U.S. dollars, unless otherwise state",
+        "compact_en": "Millions of U.S. dollars, unless otherwise state",
+        "display_en": "Millions of U.S. dollars, unless otherwise state"
+      }
+    },
+    {
+      "unit_id": "p0_b13_l1",
+      "page_index": 0,
+      "source_text": "2019年",
+      "translation_target_text": "2019",
+      "translation_en": "2019",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "2019",
+        "short_label_en": "2019",
+        "table_cell_en": "2019",
+        "legend_en": "2019",
+        "vertical_nav_en": "2019",
+        "compact_en": "2019",
+        "display_en": "2019"
+      }
+    },
+    {
+      "unit_id": "p0_b13_l2",
+      "page_index": 0,
+      "source_text": "2018年",
+      "translation_target_text": "2018",
+      "translation_en": "2018",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "2018",
+        "short_label_en": "2018",
+        "table_cell_en": "2018",
+        "legend_en": "2018",
+        "vertical_nav_en": "2018",
+        "compact_en": "2018",
+        "display_en": "2018"
+      }
+    },
+    {
+      "unit_id": "p0_b14_l0",
+      "page_index": 0,
+      "source_text": "期初營運資金",
+      "translation_target_text": "Beginning working capital",
+      "translation_en": "Beginning working capital",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Beginning working capital",
+        "short_label_en": "Beginning working capital",
+        "table_cell_en": "Beginning working capital",
+        "legend_en": "Beginning working capital",
+        "vertical_nav_en": "Beginning working capital",
+        "compact_en": "Beginning working capital",
+        "display_en": "Beginning working capital"
+      }
+    },
+    {
+      "unit_id": "p0_b15_l0",
+      "page_index": 0,
+      "source_text": "集團企業中心營運業績",
+      "translation_target_text": "Group Corporate Center Operating Results",
+      "translation_en": "Group Corporate Center Operating Results",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Group Corporate Center Operating Results",
+        "short_label_en": "Group Corporate Center Operating Results",
+        "table_cell_en": "Group Corporate Center Operating Results",
+        "legend_en": "Group Corporate Center Operating Results",
+        "vertical_nav_en": "Group Corporate Center Operating Results",
+        "compact_en": "Group Corporate Center Operating Results",
+        "display_en": "Group Corporate Center Operating Results"
+      }
+    },
+    {
+      "unit_id": "p0_b16_l0",
+      "page_index": 0,
+      "source_text": "來自業務單位的匯款淨額",
+      "translation_target_text": "Net remittances from business units",
+      "translation_en": "Net remittances from business units",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Net remittances from business units",
+        "short_label_en": "Net remittances from business units",
+        "table_cell_en": "Net remittances from business units",
+        "legend_en": "Net remittances from business units",
+        "vertical_nav_en": "Net remittances from business units",
+        "compact_en": "Net remittances from business units",
+        "display_en": "Net remittances from business units"
+      }
+    },
+    {
+      "unit_id": "p0_b17_l0",
+      "page_index": 0,
+      "source_text": "香港",
+      "translation_target_text": "Hongkong",
+      "translation_en": "Hongkong",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Hongkong",
+        "short_label_en": "Hongkong",
+        "table_cell_en": "Hongkong",
+        "legend_en": "Hongkong",
+        "vertical_nav_en": "Hongkong",
+        "compact_en": "Hongkong",
+        "display_en": "Hongkong"
+      }
+    },
+    {
+      "unit_id": "p0_b18_l0",
+      "page_index": 0,
+      "source_text": "泰國",
+      "translation_target_text": "Thailand",
+      "translation_en": "Thailand",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Thailand",
+        "short_label_en": "Thailand",
+        "table_cell_en": "Thailand",
+        "legend_en": "Thailand",
+        "vertical_nav_en": "Thailand",
+        "compact_en": "Thailand",
+        "display_en": "Thailand"
+      }
+    },
+    {
+      "unit_id": "p0_b19_l0",
+      "page_index": 0,
+      "source_text": "新加坡",
+      "translation_target_text": "Singapore",
+      "translation_en": "Singapore",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Singapore",
+        "short_label_en": "Singapore",
+        "table_cell_en": "Singapore",
+        "legend_en": "Singapore",
+        "vertical_nav_en": "Singapore",
+        "compact_en": "Singapore",
+        "display_en": "Singapore"
+      }
+    },
+    {
+      "unit_id": "p0_b20_l0",
+      "page_index": 0,
+      "source_text": "馬來西亞",
+      "translation_target_text": "Malaysia",
+      "translation_en": "Malaysia",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Malaysia",
+        "short_label_en": "Malaysia",
+        "table_cell_en": "Malaysia",
+        "legend_en": "Malaysia",
+        "vertical_nav_en": "Malaysia",
+        "compact_en": "Malaysia",
+        "display_en": "Malaysia"
+      }
+    },
+    {
+      "unit_id": "p0_b21_l0",
+      "page_index": 0,
+      "source_text": "中國內地",
+      "translation_target_text": "Mainland China",
+      "translation_en": "Mainland China",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Mainland China",
+        "short_label_en": "Mainland China",
+        "table_cell_en": "Mainland China",
+        "legend_en": "Mainland China",
+        "vertical_nav_en": "Mainland China",
+        "compact_en": "Mainland China",
+        "display_en": "Mainland China"
+      }
+    },
+    {
+      "unit_id": "p0_b22_l0",
+      "page_index": 0,
+      "source_text": "其他市場",
+      "translation_target_text": "other markets",
+      "translation_en": "other markets",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "other markets",
+        "short_label_en": "other markets",
+        "table_cell_en": "other markets",
+        "legend_en": "other markets",
+        "vertical_nav_en": "other markets",
+        "compact_en": "other markets",
+        "display_en": "other markets"
+      }
+    },
+    {
+      "unit_id": "p0_b23_l0",
+      "page_index": 0,
+      "source_text": "匯付予集團企業中心的匯款淨額",
+      "translation_target_text": "Net remittances to Group Corporate Center",
+      "translation_en": "Net remittances to Group Corporate Center",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Net remittances to Group Corporate Center",
+        "short_label_en": "Net remittances to Group Corporate Center",
+        "table_cell_en": "Net remittances to Group Corporate Center",
+        "legend_en": "Net remittances to Group Corporate Center",
+        "vertical_nav_en": "Net remittances to Group Corporate Center",
+        "compact_en": "Net remittances to Group Corporate Center",
+        "display_en": "Net remittances to Group Corporate Center"
+      }
+    },
+    {
+      "unit_id": "p0_b24_l0",
+      "page_index": 0,
+      "source_text": "初次支付收購CMLA款項(1)",
+      "translation_target_text": "Initial payment for acquisition of CMLA(1)",
+      "translation_en": "Initial payment for acquisition of CMLA(1)",
+      "preserve_tokens": [
+        {
+          "type": "footnote_marker",
+          "value": "(1)"
+        }
+      ],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Initial payment for acquisition of CMLA(1",
+        "short_label_en": "Initial payment for acquisition of CMLA(1",
+        "table_cell_en": "Initial payment for acquisition of CMLA(1",
+        "legend_en": "Initial payment for acquisition of CMLA(1",
+        "vertical_nav_en": "Initial payment for acquisition of CMLA(1",
+        "compact_en": "Initial payment for acquisition of CMLA(1",
+        "display_en": "Initial payment for acquisition of CMLA(1"
+      }
+    },
+    {
+      "unit_id": "p0_b25_l0",
+      "page_index": 0,
+      "source_text": "支付收購Sovereign款項",
+      "translation_target_text": "Payment for the acquisition of Sovereign",
+      "translation_en": "Payment for the acquisition of Sovereign",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Payment for the acquisition of Sovereign",
+        "short_label_en": "Payment for the acquisition of Sovereign",
+        "table_cell_en": "Payment for the acquisition of Sovereign",
+        "legend_en": "Payment for the acquisition of Sovereign",
+        "vertical_nav_en": "Payment for the acquisition of Sovereign",
+        "compact_en": "Payment for the acquisition of Sovereign",
+        "display_en": "Payment for the acquisition of Sovereign"
+      }
+    },
+    {
+      "unit_id": "p0_b26_l0",
+      "page_index": 0,
+      "source_text": "借貸增加",
+      "translation_target_text": "Increase in borrowing",
+      "translation_en": "Increase in borrowing",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Increase in borrowing",
+        "short_label_en": "Increase in borrowing",
+        "table_cell_en": "Increase in borrowing",
+        "legend_en": "Increase in borrowing",
+        "vertical_nav_en": "Increase in borrowing",
+        "compact_en": "Increase in borrowing",
+        "display_en": "Increase in borrowing"
+      }
+    },
+    {
+      "unit_id": "p0_b27_l0",
+      "page_index": 0,
+      "source_text": "注入僱員股票信託的股份",
+      "translation_target_text": "Shares injected into employee stock trusts",
+      "translation_en": "Shares injected into employee stock trusts",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Shares injected into employee stock trusts",
+        "short_label_en": "Shares injected into employee stock trusts",
+        "table_cell_en": "Shares injected into employee stock trusts",
+        "legend_en": "Shares injected into employee stock trusts",
+        "vertical_nav_en": "Shares injected into employee stock trusts",
+        "compact_en": "Shares injected into employee stock trusts",
+        "display_en": "Shares injected into employee stock trusts"
+      }
+    },
+    {
+      "unit_id": "p0_b28_l0",
+      "page_index": 0,
+      "source_text": "派付股息",
+      "translation_target_text": "pay dividends",
+      "translation_en": "pay dividends",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "pay dividends",
+        "short_label_en": "pay dividends",
+        "table_cell_en": "pay dividends",
+        "legend_en": "pay dividends",
+        "vertical_nav_en": "pay dividends",
+        "compact_en": "pay dividends",
+        "display_en": "pay dividends"
+      }
+    },
+    {
+      "unit_id": "p0_b29_l0",
+      "page_index": 0,
+      "source_text": "債務證券的市值變動及其他事項",
+      "translation_target_text": "Changes in Market Value of Debt Securities and Other Matters",
+      "translation_en": "Changes in Market Value of Debt Securities and Other Matters",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Changes in Market Value of Debt Securities and O",
+        "short_label_en": "Changes in Market Value of Debt Securities and O",
+        "table_cell_en": "Changes in Market Value of Debt Securities and O",
+        "legend_en": "Changes in Market Value of Debt Securities and O",
+        "vertical_nav_en": "Changes in Market Value of Debt Securities and O",
+        "compact_en": "Changes in Market Value of Debt Securities and O",
+        "display_en": "Changes in Market Value of Debt Securities and O"
+      }
+    },
+    {
+      "unit_id": "p0_b30_l0",
+      "page_index": 0,
+      "source_text": "期末營運資金",
+      "translation_target_text": "Ending working capital",
+      "translation_en": "Ending working capital",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Ending working capital",
+        "short_label_en": "Ending working capital",
+        "table_cell_en": "Ending working capital",
+        "legend_en": "Ending working capital",
+        "vertical_nav_en": "Ending working capital",
+        "compact_en": "Ending working capital",
+        "display_en": "Ending working capital"
+      }
+    },
+    {
+      "unit_id": "p0_b31_l0",
+      "page_index": 0,
+      "source_text": "附註：",
+      "translation_target_text": "P.S.:",
+      "translation_en": "P.S.:",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "P.S",
+        "short_label_en": "P.S",
+        "table_cell_en": "P.S",
+        "legend_en": "P.S",
+        "vertical_nav_en": "P.S",
+        "compact_en": "P.S",
+        "display_en": "P.S"
+      }
+    },
+    {
+      "unit_id": "p0_b31_l1",
+      "page_index": 0,
+      "source_text": "(1) 指早前所公佈的初次支付款項5.00億澳元。",
+      "translation_target_text": "(1) Refers to the previously announced initial payment of A$500 million.",
+      "translation_en": "(1) Refers to the previously announced initial payment of A$500 million.",
+      "preserve_tokens": [
+        {
+          "type": "footnote_marker",
+          "value": "(1)"
+        }
+      ],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "1) Refers to the previously announced initial pa",
+        "short_label_en": "1) Refers to the previously announced initial pa",
+        "table_cell_en": "1) Refers to the previously announced initial pa",
+        "legend_en": "1) Refers to the previously announced initial pa",
+        "vertical_nav_en": "1) Refers to the previously announced initial pa",
+        "compact_en": "1) Refers to the previously announced initial pa",
+        "display_en": "1) Refers to the previously announced initial pa"
+      }
+    },
+    {
+      "unit_id": "p1_b0_l0",
+      "page_index": 1,
+      "source_text": "| 友邦保險控股有限公司",
+      "translation_target_text": "| AIA Insurance Holdings Limited",
+      "translation_en": "| AIA Insurance Holdings Limited",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "| AIA Insurance Holdings Limited",
+        "short_label_en": "| AIA Insurance Holdings Limited",
+        "table_cell_en": "| AIA Insurance Holdings Limited",
+        "legend_en": "| AIA Insurance Holdings Limited",
+        "vertical_nav_en": "| AIA Insurance Holdings Limited",
+        "compact_en": "| AIA Insurance Holdings Limited",
+        "display_en": "| AIA Insurance Holdings Limited"
+      }
+    },
+    {
+      "unit_id": "p1_b1_l0",
+      "page_index": 1,
+      "source_text": "財務及營運回顧",
+      "translation_target_text": "Financial and Operational Review",
+      "translation_en": "Financial and Operational Review",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Financial and Operational Review",
+        "short_label_en": "Financial and Operational Review",
+        "table_cell_en": "Financial and Operational Review",
+        "legend_en": "Financial and Operational Review",
+        "vertical_nav_en": "Financial and Operational Review",
+        "compact_en": "Financial and Operational Review",
+        "display_en": "Financial and Operational Review"
+      }
+    },
+    {
+      "unit_id": "p1_b1_l1",
+      "page_index": 1,
+      "source_text": "財務回顧",
+      "translation_target_text": "financial review",
+      "translation_en": "financial review",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "financial review",
+        "short_label_en": "financial review",
+        "table_cell_en": "financial review",
+        "legend_en": "financial review",
+        "vertical_nav_en": "financial review",
+        "compact_en": "financial review",
+        "display_en": "financial review"
+      }
+    },
+    {
+      "unit_id": "p1_b2_l0",
+      "page_index": 1,
+      "source_text": "股東權益變動",
+      "translation_target_text": "Changes in shareholders' equity",
+      "translation_en": "Changes in shareholders' equity",
+      "preserve_tokens": [],
+      "term_decisions": [],
+      "layout_risk": "high",
+      "layout_variants": {
+        "compact_label_en": "Changes in shareholders' equity",
+        "short_label_en": "Changes in shareholders' equity",
+        "table_cell_en": "Changes in shareholders' equity",
+        "legend_en": "Changes in shareholders' equity",
+        "vertical_nav_en": "Changes in shareholders' equity",
+        "compact_en": "Changes in shareholders' equity",
+        "display_en": "Changes in shareholders' equity"
+      }
+    }
+  ],
+  "source_geometry": {
+    "source_extraction": "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+    "pages": [
+      {
+        "page_index": 0,
+        "rect": [
+          0.0,
+          0.0,
+          595.276,
+          841.89
+        ],
+        "page_type_guess": "table_or_chart_dense",
+        "text_line_count": 69
+      },
+      {
+        "page_index": 1,
+        "rect": [
+          0.0,
+          0.0,
+          595.276,
+          841.89
+        ],
+        "page_type_guess": "chart_or_dashboard",
+        "text_line_count": 105
+      },
+      {
+        "page_index": 2,
+        "rect": [
+          0.0,
+          0.0,
+          595.276,
+          841.89
+        ],
+        "page_type_guess": "mixed_text",
+        "text_line_count": 25
+      },
+      {
+        "page_index": 3,
+        "rect": [
+          0.0,
+          0.0,
+          595.276,
+          841.89
+        ],
+        "page_type_guess": "body_or_notes_dense",
+        "text_line_count": 96
+      },
+      {
+        "page_index": 4,
+        "rect": [
+          0.0,
+          0.0,
+          595.276,
+          841.89
+        ],
+        "page_type_guess": "table_or_chart_dense",
+        "text_line_count": 106
+      }
+    ]
+  },
+  "font_capabilities": {
+    "msyh": {
+      "path": "C:\\Windows\\Fonts\\msyh.ttc",
+      "exists": true
+    },
+    "msyhbd": {
+      "path": "C:\\Windows\\Fonts\\msyhbd.ttc",
+      "exists": true
+    },
+    "msyhl": {
+      "path": "C:\\Windows\\Fonts\\msyhl.ttc",
+      "exists": true
+    },
+    "simhei": {
+      "path": "C:\\Windows\\Fonts\\simhei.ttf",
+      "exists": true
+    }
+  },
+  "language_profile": {
+    "profile_id": "zh_to_en",
+    "source_language": "zh",
+    "target_language": "en",
+    "target_text_field": "translation_en",
+    "layout_strategy": "target_visual_composition_before_font_shrink",
+    "principles": [
+      "Use the Chinese source PDF as the only runtime layout anchor.",
+      "English target text often expands and needs Western word wrapping, so expand paragraph frames before shrinking font size.",
+      "Do not use official English reference pages during generation; use them only after the run for offline comparison."
+    ],
+    "policy_overrides": {
+      "language_pair_profile": "zh_to_en",
+      "target_composition": {
+        "enabled": true,
+        "region_kinds": [
+          "body_flow"
+        ],
+        "disable_page_type_guesses": [
+          "chart_or_dashboard"
+        ],
+        "allow_dense_page_body_below_y_ratio": 0.55,
+        "left_margin_page_ratio": 0.08,
+        "right_margin_page_ratio": 0.08,
+        "top_margin_page_ratio": 0.04,
+        "bottom_margin_page_ratio": 0.04,
+        "min_width_page_ratio": 0.7,
+        "max_width_page_ratio": 0.82,
+        "height_expand_ratio": 1.25,
+        "min_height_page_ratio": 0.1,
+        "max_bottom_page_ratio": 0.93,
+        "overlap_guard": {
+          "enabled": true,
+          "min_column_overlap_ratio": 0.55,
+          "min_vertical_gap_pt": 5.0,
+          "min_remaining_height_pt": 18.0,
+          "ignore_region_kinds": [
+            "vertical_nav",
+            "legend"
+          ]
+        },
+        "source": "language_pair_profile_open_rule",
+        "reason": "For zh->en body copy, source bboxes are redaction/order anchors. The English paragraph frame must be recomposed from current-page body band, margins, and remaining readable area before font shrink."
+      },
+      "target_language_reflow": {
+        "enabled": true,
+        "region_kinds": [
+          "body_flow",
+          "table_note"
+        ],
+        "disable_page_type_guesses": [
+          "chart_or_dashboard"
+        ],
+        "min_width_page_ratio": 0.68,
+        "right_margin_page_ratio": 0.08,
+        "bottom_margin_page_ratio": 0.06,
+        "height_expand_ratio": 1.35,
+        "min_height_page_ratio": 0.08,
+        "max_bottom_page_ratio": 0.94,
+        "allow_dense_page_body_below_y_ratio": 0.55,
+        "overlap_guard": {
+          "enabled": true,
+          "min_column_overlap_ratio": 0.55,
+          "min_vertical_gap_pt": 5.0,
+          "min_remaining_height_pt": 14.0,
+          "ignore_region_kinds": [
+            "vertical_nav",
+            "legend"
+          ]
+        },
+        "source": "language_pair_profile_open_rule",
+        "reason": "For zh->en, same-source bbox fitting over-shrinks body text. Expand current-page text frames within the same page band before shrink."
+      },
+      "flow_grouping": {
+        "body": {
+          "enabled": true,
+          "candidate_region_kinds": [
+            "body",
+            "short_label",
+            "compact_label"
+          ],
+          "min_region_count": 2,
+          "min_region_width_page_ratio": 0.24,
+          "max_x0_delta_pt": 18.0,
+          "max_width_delta_ratio": 1.0,
+          "max_vertical_gap_pt": 40.0,
+          "allow_short_continuation_lines": true,
+          "min_continuation_width_page_ratio": 0.02,
+          "paragraph_gap_pt": 18.0,
+          "include_line_preserve_body": true,
+          "disable_page_type_guesses": [
+            "chart_or_dashboard"
+          ],
+          "allow_dense_page_body_below_y_ratio": 0.55,
+          "paragraph_separator": "\n\n",
+          "line_joiner_en": " ",
+          "line_joiner_zh": ""
+        }
+      },
+      "font_profiles": {
+        "body": {
+          "source_scale": 1.1,
+          "min_pt": 7.4,
+          "min_insert_pt": 7.2,
+          "max_pt": 10.0,
+          "shrink_scales": [
+            1.0,
+            0.96,
+            0.92,
+            0.88,
+            0.84,
+            0.8
+          ]
+        },
+        "body_flow": {
+          "source_scale": 1.16,
+          "min_pt": 8.0,
+          "min_insert_pt": 7.8,
+          "max_pt": 10.2,
+          "shrink_scales": [
+            1.0,
+            0.96,
+            0.92,
+            0.88,
+            0.84,
+            0.8
+          ]
+        },
+        "table_note": {
+          "source_scale": 1.0,
+          "min_pt": 6.2,
+          "min_insert_pt": 5.8,
+          "max_pt": 8.0,
+          "shrink_scales": [
+            1.0,
+            0.96,
+            0.92,
+            0.88,
+            0.84,
+            0.8,
+            0.76
+          ]
+        },
+        "footnote": {
+          "source_scale": 0.92,
+          "min_pt": 5.6,
+          "min_insert_pt": 5.0,
+          "max_pt": 7.2,
+          "shrink_scales": [
+            1.0,
+            0.94,
+            0.88,
+            0.82,
+            0.76
+          ]
+        },
+        "heading": {
+          "source_scale": 1.0,
+          "min_pt": 8.0,
+          "min_insert_pt": 7.0,
+          "max_pt": 24.0,
+          "shrink_scales": [
+            1.0,
+            0.94,
+            0.88,
+            0.82,
+            0.74,
+            0.66,
+            0.58,
+            0.5,
+            0.42,
+            0.34,
+            0.3
+          ]
+        },
+        "short_label": {
+          "source_scale": 1.0,
+          "min_pt": 6.0,
+          "min_insert_pt": 5.2,
+          "max_pt": 12.0,
+          "shrink_scales": [
+            1.0,
+            0.94,
+            0.88,
+            0.82,
+            0.76
+          ]
+        },
+        "table_cell": {
+          "source_scale": 0.9,
+          "min_pt": 3.4,
+          "min_insert_pt": 3.4,
+          "max_pt": 6.2,
+          "shrink_scales": [
+            1.0,
+            0.92,
+            0.84,
+            0.76,
+            0.68,
+            0.6,
+            0.52
+          ]
+        },
+        "legend": {
+          "source_scale": 0.94,
+          "min_pt": 4.8,
+          "min_insert_pt": 4.2,
+          "max_pt": 8.0,
+          "shrink_scales": [
+            1.0,
+            0.92,
+            0.84,
+            0.76
+          ]
+        }
+      },
+      "fallback": {
+        "min_insert_pt": 3.4,
+        "fallback_insert_font_pt": 3.4,
+        "point_fit_font_pt": 3.4,
+        "fallback_max_chars": 120,
+        "point_fit_max_chars": 80
+      }
+    },
+    "prompt_overlay": {
+      "D2_translation": [
+        "Translate into natural English suitable for an annual report.",
+        "Do not copy Chinese punctuation rhythm into English; use Western word wrapping and concise paragraphs.",
+        "Provide compact English variants for chart labels, table cells, legends, and side navigation."
+      ],
+      "D4_layout_plan": [
+        "For paragraph body copy, treat source bboxes as redaction/order anchors, not hard containers; recompute target visual composition within the current page body band before shrinking font size.",
+        "Do not accept tiny English body text merely because it fits the Chinese source bbox.",
+        "Preserve graphics, tables, side navigation anchors, and section bands while recomputing body paragraph frames."
+      ],
+      "D7_quality_gate": [
+        "Fail if English body font is visually much smaller than annual-report body text or if excessive blank space remains after over-compression.",
+        "Judge official English only after the run as offline comparison, not as runtime evidence."
+      ]
+    }
+  },
+  "baseline_layout_policy": {
+    "tool": "build_layout_policy",
+    "policy_version": "2026-07-05.region_reflow_policy_v1",
+    "policy_source": "auto_from_current_extraction_statistics",
+    "source_language": "zh",
+    "target_language": "en",
+    "target_text_field": "translation_en",
+    "language_pair_profile": "zh_to_en",
+    "language_profile_json": "pdf_translation_workflow_core/profiles/zh_to_en.layout_profile.json",
+    "language_profile_sha256": "1e6b581231270248e58b7b7b2aecb169147768c8f88d521e388f3dc5b951d88d",
+    "layout_strategy": "target_visual_composition_before_font_shrink",
+    "source_extraction": "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+    "semantic_translations": "docs/reports/S13_ZH_random_5pages/semantic_translations.generated.json",
+    "statistics": {
+      "unit_count": 252,
+      "font_size": {
+        "q25": 8.5,
+        "q50": 9.0,
+        "q75": 9.0,
+        "q95": 9.0,
+        "min": 6.0,
+        "max": 12.333
+      },
+      "line_width": {
+        "q25": 33.462,
+        "q50": 54.0,
+        "min": 9.0,
+        "max": 487.61
+      },
+      "line_height": {
+        "q50": 10.899,
+        "min": 7.5,
+        "max": 64.6
+      },
+      "page": {
+        "width_q50": 595.276,
+        "height_q50": 841.89
+      }
+    },
+    "classification_rules": {
+      "table_note": {
+        "marker_regex": "^(note|notes):$",
+        "min_line_count": 2,
+        "min_region_width_page_ratio": 0.45,
+        "max_median_font_size": 9.0,
+        "min_y_ratio": 0.4
+      },
+      "footnote": {
+        "max_median_font_size": 9.0,
+        "min_y_ratio": 0.6
+      },
+      "event_card": {
+        "page_type_guesses": [
+          "mixed_image_text"
+        ],
+        "max_line_count": 6,
+        "max_region_width_page_ratio": 0.24,
+        "min_y_ratio": 0.12,
+        "max_y_ratio": 0.92
+      },
+      "vertical_nav": {
+        "max_region_width_pt": 22.0,
+        "min_height_width_ratio": 1.8
+      },
+      "compact_label": {
+        "max_region_width_pt": 41.827,
+        "max_median_line_width_pt": 41.827
+      },
+      "short_label": {
+        "max_line_count": 2,
+        "max_region_width_pt": 90.0,
+        "min_median_font_size": 7.65
+      },
+      "legend": {
+        "min_line_count": 3,
+        "max_region_width_pt": 80.0,
+        "max_median_line_width_pt": 95.0
+      },
+      "table_cell": {
+        "page_type_guesses": [
+          "table_or_chart_dense",
+          "chart_or_dashboard"
+        ],
+        "max_line_count": 2,
+        "max_region_width_pt": 59.4,
+        "max_median_font_size": 9.0
+      },
+      "heading": {
+        "min_median_font_size": 11.25
+      }
+    },
+    "region_expansion": {
+      "default": {
+        "x_pad_pt": 1.0,
+        "y_pad_min_pt": 0.6,
+        "y_pad_source_size_ratio": 0.28
+      },
+      "footnote": {
+        "x_pad_pt": 0.5,
+        "y_pad_min_pt": 0.45,
+        "y_pad_source_size_ratio": 0.22
+      }
+    },
+    "reflow": {
+      "reflow_kinds": [
+        "body",
+        "body_flow",
+        "event_card",
+        "table_note",
+        "footnote",
+        "heading",
+        "short_label"
+      ],
+      "preserve_line_kinds": [
+        "vertical_nav",
+        "legend",
+        "compact_label",
+        "table_cell"
+      ],
+      "min_items_for_reflow": 2
+    },
+    "flow_grouping": {
+      "body": {
+        "enabled": true,
+        "min_region_count": 2,
+        "min_region_width_page_ratio": 0.24,
+        "max_x0_delta_pt": 18.0,
+        "max_width_delta_ratio": 1.0,
+        "max_vertical_gap_pt": 40.0,
+        "paragraph_gap_pt": 18.0,
+        "line_joiner_en": " ",
+        "line_joiner_zh": "",
+        "include_line_preserve_body": true,
+        "disable_page_type_guesses": [
+          "chart_or_dashboard"
+        ],
+        "paragraph_separator": "\n\n",
+        "target_region_kind": "body_flow",
+        "source": "current_run_width_alignment_and_user_feedback",
+        "candidate_region_kinds": [
+          "body",
+          "short_label",
+          "compact_label"
+        ],
+        "allow_short_continuation_lines": true,
+        "min_continuation_width_page_ratio": 0.02,
+        "allow_dense_page_body_below_y_ratio": 0.55
+      }
+    },
+    "source_separator_policy": {
+      "split_on_untranslated_visible_line_gap": true,
+      "max_line_index_gap_without_split": 1,
+      "reason": "do not reflow translated text across visible source headings, years, bullets, or separators that are not translation units"
+    },
+    "draw_modes": {
+      "vertical_nav": {
+        "mode": "rotated_horizontal_text_image",
+        "render_backend": "PIL_transparent_png",
+        "writing_mode": "horizontal_line_rotated_as_unit",
+        "glyph_orientation": "rotate_glyphs_with_line",
+        "rotation_degrees": 90,
+        "single_line": true,
+        "center_on_source_bbox": true
+      }
+    },
+    "layout_text_variants": {
+      "compact_label": [
+        "compact_label_zh",
+        "compact_zh",
+        "display_zh"
+      ],
+      "short_label": [
+        "short_label_zh",
+        "compact_zh",
+        "display_zh"
+      ],
+      "table_cell": [
+        "table_cell_zh",
+        "compact_label_zh",
+        "compact_zh",
+        "display_zh"
+      ],
+      "legend": [
+        "legend_zh",
+        "compact_label_zh",
+        "compact_zh",
+        "display_zh"
+      ],
+      "compact_label_en": [
+        "compact_label_en",
+        "compact_en",
+        "display_en"
+      ],
+      "short_label_en": [
+        "short_label_en",
+        "compact_en",
+        "display_en"
+      ],
+      "table_cell_en": [
+        "table_cell_en",
+        "compact_label_en",
+        "compact_en",
+        "display_en"
+      ],
+      "legend_en": [
+        "legend_en",
+        "compact_label_en",
+        "compact_en",
+        "display_en"
+      ],
+      "event_card_en": [
+        "event_card_en",
+        "short_label_en",
+        "compact_en",
+        "display_en"
+      ],
+      "event_card_zh": [
+        "event_card_zh",
+        "short_label_zh",
+        "compact_zh",
+        "display_zh"
+      ]
+    },
+    "font_profiles": {
+      "footnote": {
+        "source_scale": 0.92,
+        "min_pt": 5.6,
+        "max_pt": 7.2,
+        "shrink_scales": [
+          1.0,
+          0.94,
+          0.88,
+          0.82,
+          0.76
+        ],
+        "min_insert_pt": 5.0
+      },
+      "table_note": {
+        "source_scale": 1.0,
+        "min_pt": 6.2,
+        "max_pt": 8.0,
+        "shrink_scales": [
+          1.0,
+          0.96,
+          0.92,
+          0.88,
+          0.84,
+          0.8,
+          0.76
+        ],
+        "min_insert_pt": 5.8
+      },
+      "compact_label": {
+        "source_scale": 0.74,
+        "min_pt": 3.5,
+        "max_pt": 5.2,
+        "shrink_scales": [
+          1.0,
+          0.92,
+          0.84,
+          0.76,
+          0.68,
+          0.6
+        ]
+      },
+      "table_cell": {
+        "source_scale": 0.9,
+        "min_pt": 3.4,
+        "max_pt": 6.2,
+        "shrink_scales": [
+          1.0,
+          0.92,
+          0.84,
+          0.76,
+          0.68,
+          0.6,
+          0.52
+        ],
+        "min_insert_pt": 3.4
+      },
+      "legend": {
+        "source_scale": 0.94,
+        "min_pt": 4.8,
+        "max_pt": 8.0,
+        "shrink_scales": [
+          1.0,
+          0.92,
+          0.84,
+          0.76
+        ],
+        "min_insert_pt": 4.2
+      },
+      "heading": {
+        "source_scale": 1.0,
+        "min_pt": 8.0,
+        "min_insert_pt": 7.0,
+        "max_pt": 24.0,
+        "shrink_scales": [
+          1.0,
+          0.94,
+          0.88,
+          0.82,
+          0.74,
+          0.66,
+          0.58,
+          0.5,
+          0.42,
+          0.34,
+          0.3
+        ]
+      },
+      "short_label": {
+        "source_scale": 1.0,
+        "min_pt": 6.0,
+        "max_pt": 12.0,
+        "shrink_scales": [
+          1.0,
+          0.94,
+          0.88,
+          0.82,
+          0.76
+        ],
+        "min_insert_pt": 5.2
+      },
+      "event_card": {
+        "source_scale": 0.86,
+        "min_pt": 4.4,
+        "min_insert_pt": 4.0,
+        "max_pt": 7.4,
+        "shrink_scales": [
+          1.0,
+          0.92,
+          0.84,
+          0.76,
+          0.68,
+          0.6
+        ]
+      },
+      "body": {
+        "source_scale": 1.1,
+        "min_pt": 7.4,
+        "max_pt": 10.0,
+        "shrink_scales": [
+          1.0,
+          0.96,
+          0.92,
+          0.88,
+          0.84,
+          0.8
+        ],
+        "min_insert_pt": 7.2
+      },
+      "body_flow": {
+        "source_scale": 1.16,
+        "min_pt": 8.0,
+        "max_pt": 10.2,
+        "shrink_scales": [
+          1.0,
+          0.96,
+          0.92,
+          0.88,
+          0.84,
+          0.8
+        ],
+        "min_insert_pt": 7.8
+      }
+    },
+    "fallback": {
+      "min_insert_pt": 3.4,
+      "point_fit_status_kinds": [
+        "compact_label",
+        "short_label"
+      ],
+      "point_fit_font_pt": 3.4,
+      "point_fit_max_chars": 80,
+      "fallback_insert_font_pt": 3.4,
+      "fallback_max_chars": 120
+    },
+    "anti_overfit": {
+      "no_filename_branch": true,
+      "no_known_text_branch": true,
+      "no_fixed_page_number_branch": true,
+      "parameters_are_current_run_policy": true
+    },
+    "target_composition": {
+      "enabled": true,
+      "region_kinds": [
+        "body_flow"
+      ],
+      "disable_page_type_guesses": [
+        "chart_or_dashboard"
+      ],
+      "allow_dense_page_body_below_y_ratio": 0.55,
+      "left_margin_page_ratio": 0.08,
+      "right_margin_page_ratio": 0.08,
+      "top_margin_page_ratio": 0.04,
+      "bottom_margin_page_ratio": 0.04,
+      "min_width_page_ratio": 0.7,
+      "max_width_page_ratio": 0.82,
+      "height_expand_ratio": 1.25,
+      "min_height_page_ratio": 0.1,
+      "max_bottom_page_ratio": 0.93,
+      "overlap_guard": {
+        "enabled": true,
+        "min_column_overlap_ratio": 0.55,
+        "min_vertical_gap_pt": 5.0,
+        "min_remaining_height_pt": 18.0,
+        "ignore_region_kinds": [
+          "vertical_nav",
+          "legend"
+        ]
+      },
+      "source": "language_pair_profile_open_rule",
+      "reason": "For zh->en body copy, source bboxes are redaction/order anchors. The English paragraph frame must be recomposed from current-page body band, margins, and remaining readable area before font shrink."
+    },
+    "target_language_reflow": {
+      "enabled": true,
+      "region_kinds": [
+        "body_flow",
+        "table_note"
+      ],
+      "disable_page_type_guesses": [
+        "chart_or_dashboard"
+      ],
+      "min_width_page_ratio": 0.68,
+      "right_margin_page_ratio": 0.08,
+      "bottom_margin_page_ratio": 0.06,
+      "height_expand_ratio": 1.35,
+      "min_height_page_ratio": 0.08,
+      "max_bottom_page_ratio": 0.94,
+      "allow_dense_page_body_below_y_ratio": 0.55,
+      "overlap_guard": {
+        "enabled": true,
+        "min_column_overlap_ratio": 0.55,
+        "min_vertical_gap_pt": 5.0,
+        "min_remaining_height_pt": 14.0,
+        "ignore_region_kinds": [
+          "vertical_nav",
+          "legend"
+        ]
+      },
+      "source": "language_pair_profile_open_rule",
+      "reason": "For zh->en, same-source bbox fitting over-shrinks body text. Expand current-page text frames within the same page band before shrink."
+    }
+  }
+}

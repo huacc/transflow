@@ -1,0 +1,26 @@
+{
+  "loop_id": "round08_loop_1",
+  "state": "Lx_RepairLoop",
+  "triggering_gates": [
+    "text_fit",
+    "visual_similarity=PASS_WITH_WARN"
+  ],
+  "selected_repairs": [
+    {
+      "repair_atom": "background_fill_resample",
+      "status": "applied_and_verified",
+      "reason": "visible redaction fill block came from glyph-color sampling; fixed with surrounding-pixel cluster sampling"
+    },
+    {
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "status": "design_updated_not_regenerated",
+      "reason": "remaining table/header fit warnings require translation variants, not generator-invented abbreviations"
+    },
+    {
+      "repair_atom": "side_navigation_crop_validation",
+      "status": "next_repair",
+      "reason": "side rail/navigation text still needs targeted crop evidence before product pass"
+    }
+  ],
+  "next_state": "S_FAIL_QUALITY"
+}

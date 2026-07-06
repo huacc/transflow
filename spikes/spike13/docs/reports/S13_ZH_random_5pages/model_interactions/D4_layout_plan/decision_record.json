@@ -1,0 +1,30 @@
+{
+  "decision_id": "D4_layout_plan",
+  "state": "S6_LayoutPlan",
+  "regression_id": "S13_ZH_random_5pages",
+  "purpose": "approve run-local layout policy for semantic candidate generation",
+  "input_artifacts": [
+    "docs/reports/S13_ZH_random_5pages/source_extraction.json",
+    "docs/reports/S13_ZH_random_5pages/semantic_translations.generated.json",
+    "docs/reports/S13_ZH_random_5pages/layout_policy.json",
+    "pdf_translation_workflow_core/profiles/zh_to_en.layout_profile.json"
+  ],
+  "prompt_contract": "pdf_translation_workflow_core/prompts/templates/D4_layout_plan.prompt.json",
+  "required_output_dimensions": [
+    "language_pair_profile",
+    "constrained_slot_vs_fluid_body",
+    "target_composition",
+    "font_profiles",
+    "anti_overfit_evidence"
+  ],
+  "model_output": {
+    "verdict": "pass",
+    "backend_model_call_made": false,
+    "openai_api_call_made": false,
+    "reason": "Codex executor accepted the run-local policy generated from current extraction and generic language profile."
+  },
+  "tool_outputs": [
+    "docs/reports/S13_ZH_random_5pages/layout_policy.json"
+  ],
+  "next_state": "S7_GenerateCandidate"
+}

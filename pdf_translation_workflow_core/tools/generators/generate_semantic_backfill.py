@@ -2,8 +2,8 @@
 
 tool_name: generate_semantic_backfill
 category: generators
-input_contract: source PDF, source extraction JSON, semantic translations JSON, output/evidence paths
-output_contract: candidate PDF with source-language text redacted and semantic target-language translations inserted, plus translations/layout/evidence JSON
+input_contract: source PDF, source extraction JSON, semantic translations JSON, explicit layout policy JSON, output/evidence paths
+output_contract: candidate PDF with source-language text redacted and semantic target-language translations inserted after temporary-page textbox fit probing, plus translations/layout/evidence JSON
 failure_signals: missing/invalid semantic translations, font unavailable, insertion/output failure
 fallback: mark S_FAIL_CAPABILITY or S_FAIL_QUALITY; never fall back to placeholder text in product_quality
 anti_overfit_statement: consumes current-run unit ids and bboxes only and never branches on sample filename, page number, coordinates, exact text, or document identity
@@ -24,7 +24,7 @@ from PIL import Image, ImageDraw, ImageFont
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _common import ascii_tokens, ensure_dir, read_json, rel, resolve_workspace_path, sha256_file, write_json  # noqa: E402
-from generate_backfill_candidate import choose_font, inflate_rect, sample_fill, text_kind  # noqa: E402
+from generate_backfill_candidate import choose_font, inflate_rect, sample_fill_detail, text_kind  # noqa: E402
 
 
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
@@ -89,6 +89,18 @@ def line_is_translatable(line: dict[str, Any], source_language: str) -> bool:
     if source_language == "en":
         return bool(line.get("ascii_tokens"))
     return bool(text.strip())
+
+
+def line_is_already_target_language(line: dict[str, Any], source_language: str, target_language: str) -> bool:
+    """Visible target-language spans still need redraw if a reflow region may cover them."""
+    text = str(line.get("text", "")).strip()
+    if not text or line_is_translatable(line, source_language):
+        return False
+    if target_language == "zh":
+        return bool(CJK_RE.search(text))
+    if target_language == "en":
+        return bool(line.get("ascii_tokens")) and not CJK_RE.search(text)
+    return False
 
 
 def get_target_text(item: dict[str, Any], field: str) -> str:
@@ -208,6 +220,12 @@ def policy_int(section: dict[str, Any], key: str) -> int:
     return int(section[key])
 
 
+def min_insert_point_size(profile: dict[str, Any], fallback: dict[str, Any]) -> float:
+    if "min_insert_pt" in profile:
+        return float(profile["min_insert_pt"])
+    return policy_float(fallback, "min_insert_pt")
+
+
 def load_layout_policy(policy_path: Path) -> dict[str, Any]:
     policy = read_json(policy_path)
     if not isinstance(policy, dict):
@@ -253,9 +271,18 @@ def region_kind(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[
     )
     if has_note_marker or wide_note_block:
         return "table_note"
-    footnote = require_mapping(rules.get("footnote"), "classification_rules.footnote")
-    if median_size <= policy_float(footnote, "max_median_font_size") and rect.y0 >= page_rect.height * policy_float(footnote, "min_y_ratio"):
-        return "footnote"
+    event_card = rules.get("event_card")
+    if isinstance(event_card, dict):
+        page_types = {str(value) for value in event_card.get("page_type_guesses", [])}
+        y_ratio = float(rect.y0) / max(1.0, float(page_rect.height))
+        if (
+            page_type_guess(page_context) in page_types
+            and len(items) <= policy_int(event_card, "max_line_count")
+            and rect.width <= float(page_rect.width) * policy_float(event_card, "max_region_width_page_ratio")
+            and y_ratio >= policy_float(event_card, "min_y_ratio")
+            and y_ratio <= policy_float(event_card, "max_y_ratio")
+        ):
+            return "event_card"
     vertical_nav = require_mapping(rules.get("vertical_nav"), "classification_rules.vertical_nav")
     if rect.width < policy_float(vertical_nav, "max_region_width_pt") and rect.height > rect.width * policy_float(vertical_nav, "min_height_width_ratio"):
         return "vertical_nav"
@@ -269,6 +296,9 @@ def region_kind(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[
             and median_size <= policy_float(table_cell, "max_median_font_size")
         ):
             return "table_cell"
+    footnote = require_mapping(rules.get("footnote"), "classification_rules.footnote")
+    if median_size <= policy_float(footnote, "max_median_font_size") and rect.y0 >= page_rect.height * policy_float(footnote, "min_y_ratio"):
+        return "footnote"
     legend = require_mapping(rules.get("legend"), "classification_rules.legend")
     if len(items) >= policy_int(legend, "min_line_count") and rect.width <= policy_float(legend, "max_region_width_pt") and median_float([r.width for r in rects]) <= policy_float(legend, "max_median_line_width_pt"):
         return "legend"
@@ -403,14 +433,20 @@ def body_flow_profile(policy: dict[str, Any]) -> dict[str, Any]:
     return body if isinstance(body, dict) else {}
 
 
-def is_body_flow_candidate(region: dict[str, Any], page_rect: fitz.Rect, policy: dict[str, Any]) -> bool:
+def is_body_flow_candidate(region: dict[str, Any], page_rect: fitz.Rect, policy: dict[str, Any], *, active_group: bool = False) -> bool:
     profile = body_flow_profile(policy)
     if not profile.get("enabled"):
         return False
     disabled_page_types = {str(value) for value in profile.get("disable_page_type_guesses", [])}
-    if str(region.get("page_type_guess") or "") in disabled_page_types:
-        return False
-    if region.get("region_kind") != "body":
+    page_type_disabled = str(region.get("page_type_guess") or "") in disabled_page_types
+    if page_type_disabled:
+        dense_page_y = profile.get("allow_dense_page_body_below_y_ratio")
+        if dense_page_y is None:
+            return False
+        if float(region["rect"].y0) / max(1.0, float(page_rect.height)) < float(dense_page_y):
+            return False
+    candidate_kinds = {str(value) for value in profile.get("candidate_region_kinds", ["body"])}
+    if str(region.get("region_kind")) not in candidate_kinds:
         return False
     mode = str(region.get("layout_mode") or "")
     if mode == "line_preserve" and not bool(profile.get("include_line_preserve_body", False)):
@@ -418,7 +454,12 @@ def is_body_flow_candidate(region: dict[str, Any], page_rect: fitz.Rect, policy:
     if mode not in {"region_reflow", "line_preserve"}:
         return False
     min_ratio = float(profile.get("min_region_width_page_ratio", 0.45))
-    return float(region["rect"].width) >= float(page_rect.width) * min_ratio
+    if float(region["rect"].width) >= float(page_rect.width) * min_ratio:
+        return True
+    if not active_group or not bool(profile.get("allow_short_continuation_lines", False)):
+        return False
+    continuation_min_ratio = float(profile.get("min_continuation_width_page_ratio", 0.10))
+    return float(region["rect"].width) >= float(page_rect.width) * continuation_min_ratio
 
 
 def can_join_body_flow(group: list[dict[str, Any]], candidate: dict[str, Any], policy: dict[str, Any]) -> bool:
@@ -433,10 +474,14 @@ def can_join_body_flow(group: list[dict[str, Any]], candidate: dict[str, Any], p
     median_width = max(1.0, median_float(widths))
     previous = group[-1]["rect"]
     y_gap = max(0.0, float(candidate["rect"].y0) - float(previous.y1))
+    aligned_and_close = (max(x0_values) - min(x0_values)) <= max_x0_delta and y_gap <= max_vertical_gap
+    if bool(profile.get("allow_short_continuation_lines", False)) and candidate["rect"].width < median_width:
+        continuation_min_width = float(profile.get("min_continuation_width_page_ratio", 0.10)) * max(1.0, float(group[0]["page_rect_width"]))
+        if candidate["rect"].width >= continuation_min_width:
+            return aligned_and_close
     return (
-        (max(x0_values) - min(x0_values)) <= max_x0_delta
+        aligned_and_close
         and ((max(widths) - min(widths)) / median_width) <= max_width_delta_ratio
-        and y_gap <= max_vertical_gap
     )
 
 
@@ -480,7 +525,186 @@ def make_body_flow_region(group: list[dict[str, Any]], index: int, policy: dict[
         "layout_mode": "region_flow",
         "flow_source_region_count": len(group),
         "page_type_guess": group[0].get("page_type_guess"),
+        "page_rect_width": group[0].get("page_rect_width"),
     }
+
+
+def column_overlap_ratio(left: fitz.Rect, right: fitz.Rect) -> float:
+    overlap = max(0.0, min(float(left.x1), float(right.x1)) - max(float(left.x0), float(right.x0)))
+    return overlap / max(1.0, min(float(left.width), float(right.width)))
+
+
+def overlap_guard_profile(policy: dict[str, Any]) -> dict[str, Any]:
+    composition = target_composition_profile(policy)
+    guard = composition.get("overlap_guard") if isinstance(composition.get("overlap_guard"), dict) else {}
+    if guard and bool(guard.get("enabled", False)):
+        return guard
+    reflow = target_language_reflow_profile(policy)
+    guard = reflow.get("overlap_guard") if isinstance(reflow.get("overlap_guard"), dict) else {}
+    return guard if isinstance(guard, dict) else {}
+
+
+def apply_reflow_overlap_guard(regions: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[str, Any]) -> None:
+    guard = overlap_guard_profile(policy)
+    if not guard or not bool(guard.get("enabled", False)):
+        return
+    min_column_overlap = float(guard.get("min_column_overlap_ratio", 0.55))
+    min_gap = float(guard.get("min_vertical_gap_pt", 4.0))
+    min_height = float(guard.get("min_remaining_height_pt", 12.0))
+    text_regions = [
+        region
+        for region in regions
+        if (region.get("target_language_reflow_applied") or region.get("target_composition_applied"))
+        and str(region.get("region_kind")) not in set(str(value) for value in guard.get("ignore_region_kinds", []))
+    ]
+    candidates = [
+        region
+        for region in regions
+        if str(region.get("region_kind")) not in set(str(value) for value in guard.get("ignore_region_kinds", []))
+    ]
+    for region in text_regions:
+        rect = fitz.Rect(region["rect"])
+        nearest_top: float | None = None
+        for other in candidates:
+            if other is region:
+                continue
+            other_rect = fitz.Rect(other["rect"])
+            if other_rect.y0 <= rect.y0:
+                continue
+            if column_overlap_ratio(rect, other_rect) < min_column_overlap:
+                continue
+            if nearest_top is None or other_rect.y0 < nearest_top:
+                nearest_top = float(other_rect.y0)
+        if nearest_top is None:
+            continue
+        capped_y1 = max(rect.y0 + min_height, nearest_top - min_gap)
+        if capped_y1 < rect.y1:
+            rect.y1 = min(float(page_rect.y1), capped_y1)
+            region["rect"] = rect
+            profile_evidence = region.setdefault("target_language_reflow_profile", {})
+            if isinstance(profile_evidence, dict):
+                profile_evidence["overlap_guard_applied"] = True
+                profile_evidence["overlap_guard_capped_y1"] = round(capped_y1, 3)
+            composition_evidence = region.setdefault("target_composition_profile", {})
+            if isinstance(composition_evidence, dict) and region.get("target_composition_applied"):
+                composition_evidence["overlap_guard_applied"] = True
+                composition_evidence["overlap_guard_capped_y1"] = round(capped_y1, 3)
+
+
+def target_language_reflow_profile(policy: dict[str, Any]) -> dict[str, Any]:
+    profile = policy.get("target_language_reflow")
+    return profile if isinstance(profile, dict) else {}
+
+
+def target_composition_profile(policy: dict[str, Any]) -> dict[str, Any]:
+    profile = policy.get("target_composition")
+    return profile if isinstance(profile, dict) else {}
+
+
+def apply_target_composition_rect(region: dict[str, Any], page_rect: fitz.Rect, policy: dict[str, Any]) -> None:
+    profile = target_composition_profile(policy)
+    if not profile.get("enabled"):
+        return
+    if region.get("target_composition_applied"):
+        return
+    region_kinds = {str(value) for value in profile.get("region_kinds", [])}
+    if region_kinds and str(region.get("region_kind")) not in region_kinds:
+        return
+    disabled_page_types = {str(value) for value in profile.get("disable_page_type_guesses", [])}
+    page_type_disabled = str(region.get("page_type_guess") or "") in disabled_page_types
+    if page_type_disabled:
+        dense_page_y = profile.get("allow_dense_page_body_below_y_ratio")
+        if dense_page_y is None:
+            return
+        if float(region["rect"].y0) / max(1.0, float(page_rect.height)) < float(dense_page_y):
+            return
+
+    rect = fitz.Rect(region["rect"])
+    page_width = max(1.0, float(page_rect.width))
+    page_height = max(1.0, float(page_rect.height))
+    left_margin = page_width * float(profile.get("left_margin_page_ratio", 0.08))
+    right_margin = page_width * float(profile.get("right_margin_page_ratio", 0.08))
+    top_margin = page_height * float(profile.get("top_margin_page_ratio", 0.04))
+    bottom_margin = page_height * float(profile.get("bottom_margin_page_ratio", 0.05))
+    min_width = page_width * float(profile.get("min_width_page_ratio", 0.0))
+    max_width_ratio = float(profile.get("max_width_page_ratio", 1.0))
+    max_width = page_width * max_width_ratio if max_width_ratio > 0 else page_width
+    max_x1 = float(page_rect.x1) - right_margin
+    min_x0 = float(page_rect.x0) + left_margin
+    target_x0 = max(min_x0, min(float(rect.x0), max_x1 - min_width))
+    target_width = min(max_width, max(float(rect.width), min_width))
+    target_x1 = min(max_x1, target_x0 + target_width)
+    if target_x1 - target_x0 < max(12.0, min_width * 0.6):
+        return
+
+    target_y0 = max(float(page_rect.y0) + top_margin, float(rect.y0))
+    max_bottom = min(
+        float(page_rect.y1) - bottom_margin,
+        float(page_rect.y0) + page_height * float(profile.get("max_bottom_page_ratio", 0.96)),
+    )
+    min_height = page_height * float(profile.get("min_height_page_ratio", 0.0))
+    height_expand_ratio = float(profile.get("height_expand_ratio", 1.0))
+    target_height = max(float(rect.height) * height_expand_ratio, min_height)
+    target_y1 = min(max_bottom, max(float(rect.y1), target_y0 + target_height))
+    if target_y1 <= target_y0 + 1:
+        return
+
+    region["source_anchor_bbox"] = [round(v, 3) for v in rect]
+    region["rect"] = fitz.Rect(target_x0, target_y0, target_x1, target_y1)
+    region["target_composition_applied"] = True
+    region["target_composition_profile"] = {
+        "min_width_page_ratio": profile.get("min_width_page_ratio"),
+        "max_width_page_ratio": profile.get("max_width_page_ratio"),
+        "height_expand_ratio": profile.get("height_expand_ratio"),
+        "max_bottom_page_ratio": profile.get("max_bottom_page_ratio"),
+        "source": profile.get("source"),
+    }
+
+
+def apply_target_language_reflow_rect(region: dict[str, Any], page_rect: fitz.Rect, policy: dict[str, Any]) -> None:
+    profile = target_language_reflow_profile(policy)
+    if not profile.get("enabled"):
+        return
+    if region.get("target_composition_applied"):
+        return
+    if region.get("target_language_reflow_applied"):
+        return
+    region_kinds = {str(value) for value in profile.get("region_kinds", [])}
+    if region_kinds and str(region.get("region_kind")) not in region_kinds:
+        return
+    disabled_page_types = {str(value) for value in profile.get("disable_page_type_guesses", [])}
+    page_type_disabled = str(region.get("page_type_guess") or "") in disabled_page_types
+    if page_type_disabled:
+        dense_page_y = profile.get("allow_dense_page_body_below_y_ratio")
+        if dense_page_y is None:
+            return
+        if float(region["rect"].y0) / max(1.0, float(page_rect.height)) < float(dense_page_y):
+            return
+    rect = fitz.Rect(region["rect"])
+    page_width = max(1.0, float(page_rect.width))
+    page_height = max(1.0, float(page_rect.height))
+    min_width = page_width * float(profile.get("min_width_page_ratio", 0.0))
+    right_margin = page_width * float(profile.get("right_margin_page_ratio", 0.08))
+    bottom_margin = page_height * float(profile.get("bottom_margin_page_ratio", 0.10))
+    max_bottom = min(
+        float(page_rect.y1) - bottom_margin,
+        float(page_rect.y0) + page_height * float(profile.get("max_bottom_page_ratio", 0.90)),
+    )
+    if rect.width < min_width:
+        rect.x1 = min(float(page_rect.x1) - right_margin, max(rect.x1, rect.x0 + min_width))
+    height_expand_ratio = float(profile.get("height_expand_ratio", 1.0))
+    min_height = page_height * float(profile.get("min_height_page_ratio", 0.0))
+    target_height = max(rect.height * height_expand_ratio, min_height)
+    if target_height > rect.height:
+        rect.y1 = min(max_bottom, max(rect.y1, rect.y0 + target_height))
+    if rect.x1 > rect.x0 + 1 and rect.y1 > rect.y0 + 1:
+        region["rect"] = rect
+        region["target_language_reflow_applied"] = True
+        region["target_language_reflow_profile"] = {
+            "min_width_page_ratio": profile.get("min_width_page_ratio"),
+            "height_expand_ratio": profile.get("height_expand_ratio"),
+            "source": profile.get("source"),
+        }
 
 
 def apply_body_flow_grouping(regions: list[dict[str, Any]], page_rect: fitz.Rect, policy: dict[str, Any]) -> list[dict[str, Any]]:
@@ -502,15 +726,20 @@ def apply_body_flow_grouping(regions: list[dict[str, Any]], page_rect: fitz.Rect
         group.clear()
 
     for region in regions:
-        if is_body_flow_candidate(region, page_rect, policy) and can_join_body_flow(group, region, policy):
+        region["page_rect_width"] = float(page_rect.width)
+        if is_body_flow_candidate(region, page_rect, policy, active_group=bool(group)) and can_join_body_flow(group, region, policy):
             group.append(region)
             continue
         flush_group()
-        if is_body_flow_candidate(region, page_rect, policy):
+        if is_body_flow_candidate(region, page_rect, policy, active_group=False):
             group.append(region)
         else:
             output.append(region)
     flush_group()
+    for region in output:
+        apply_target_composition_rect(region, page_rect, policy)
+        apply_target_language_reflow_rect(region, page_rect, policy)
+    apply_reflow_overlap_guard(output, page_rect, policy)
     return output
 
 
@@ -562,10 +791,30 @@ def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dic
                             "page_type_guess": page_type_guess(page_context),
                         }
                     )
-    return apply_body_flow_grouping(regions, page_rect, policy)
+    grouped_regions = apply_body_flow_grouping(regions, page_rect, policy)
+    for region in grouped_regions:
+        apply_target_language_reflow_rect(region, page_rect, policy)
+    return grouped_regions
 
 
-def insert_region(page: fitz.Page, region: dict[str, Any], fontfile: Path, policy: dict[str, Any]) -> dict[str, Any]:
+def probe_textbox_return_code(
+    probe_page: fitz.Page,
+    region: dict[str, Any],
+    fontfile: Path,
+    font_size: float,
+) -> float:
+    return probe_page.insert_textbox(
+        region["rect"],
+        region["translation_zh"],
+        fontsize=font_size,
+        fontname="cjk_backfill",
+        fontfile=str(fontfile),
+        color=region.get("text_color", (0.05, 0.05, 0.05)),
+        align=0,
+    )
+
+
+def insert_region(page: fitz.Page, probe_page: fitz.Page, region: dict[str, Any], fontfile: Path, policy: dict[str, Any]) -> dict[str, Any]:
     kind = region["region_kind"]
     draw_mode = policy.get("draw_modes", {}).get(kind, {})
     if isinstance(draw_mode, dict) and draw_mode.get("mode") == "rotated_horizontal_text_image":
@@ -586,19 +835,24 @@ def insert_region(page: fitz.Page, region: dict[str, Any], fontfile: Path, polic
 
     attempts = []
     for scale in scales:
-        current_size = max(policy_float(fallback, "min_insert_pt"), base_size * scale)
-        rc = page.insert_textbox(
-            region["rect"],
-            region["translation_zh"],
-            fontsize=current_size,
-            fontname="cjk_backfill",
-            fontfile=str(fontfile),
-            color=region.get("text_color", (0.05, 0.05, 0.05)),
-            align=0,
-        )
+        current_size = max(min_insert_point_size(profile, fallback), base_size * scale)
+        rc = probe_textbox_return_code(probe_page, region, fontfile, current_size)
         attempts.append({"font_size": round(current_size, 3), "return_code": rc})
         if rc >= 0:
+            page.insert_textbox(
+                region["rect"],
+                region["translation_zh"],
+                fontsize=current_size,
+                fontname="cjk_backfill",
+                fontfile=str(fontfile),
+                color=region.get("text_color", (0.05, 0.05, 0.05)),
+                align=0,
+            )
             return {"status": "fit", "font_size": round(current_size, 3), "attempts": attempts}
+
+    constrained_result = insert_constrained_text_image(page, region, fontfile, policy, profile, fallback, base_size, attempts)
+    if constrained_result is not None:
+        return constrained_result
 
     fallback_point = fitz.Point(region["rect"].x0, min(page.rect.y1 - 1, region["rect"].y1))
     if kind in set(fallback.get("point_fit_status_kinds", [])):
@@ -620,6 +874,89 @@ def insert_region(page: fitz.Page, region: dict[str, Any], fontfile: Path, polic
         color=region.get("text_color", (0.05, 0.05, 0.05)),
     )
     return {"status": "fallback_insert_text", "font_size": policy_float(fallback, "fallback_insert_font_pt"), "attempts": attempts}
+
+
+def constrained_image_profile(policy: dict[str, Any]) -> dict[str, Any]:
+    data = policy.get("constrained_text_image_fit")
+    return data if isinstance(data, dict) else {}
+
+
+def constrained_image_allowed(region: dict[str, Any], policy: dict[str, Any]) -> bool:
+    profile = constrained_image_profile(policy)
+    if not bool(profile.get("enabled", False)):
+        return False
+    kind = str(region.get("region_kind") or "")
+    allowed_kinds = {str(value) for value in profile.get("region_kinds", [])}
+    if kind in allowed_kinds:
+        return True
+    dense_body_page_types = {str(value) for value in profile.get("dense_single_line_body_page_types", [])}
+    if kind != "body" or len(region.get("items", [])) != 1:
+        return False
+    return str(region.get("page_type_guess") or "") in dense_body_page_types
+
+
+def constrained_text_image_png(
+    text: str,
+    fontfile: Path,
+    font_size_pt: float,
+    color: tuple[float, float, float],
+) -> tuple[bytes, int, int]:
+    scale = 4
+    font_px = max(8, int(round(font_size_pt * scale)))
+    font = ImageFont.truetype(str(fontfile), font_px)
+    normalized = re.sub(r"\s+", " ", text).strip()
+    probe = Image.new("RGBA", (1, 1), (255, 255, 255, 0))
+    draw = ImageDraw.Draw(probe)
+    bbox = draw.textbbox((0, 0), normalized, font=font)
+    width = max(1, bbox[2] - bbox[0] + scale * 2)
+    height = max(1, bbox[3] - bbox[1] + scale * 2)
+    image = Image.new("RGBA", (width, height), (255, 255, 255, 0))
+    draw = ImageDraw.Draw(image)
+    draw.text((scale - bbox[0], scale - bbox[1]), normalized, font=font, fill=float_color_to_rgba(color))
+    buf = io.BytesIO()
+    image.save(buf, format="PNG")
+    return buf.getvalue(), width, height
+
+
+def insert_constrained_text_image(
+    page: fitz.Page,
+    region: dict[str, Any],
+    fontfile: Path,
+    policy: dict[str, Any],
+    font_profile: dict[str, Any],
+    fallback: dict[str, Any],
+    base_size: float,
+    attempts: list[dict[str, Any]],
+) -> dict[str, Any] | None:
+    if not constrained_image_allowed(region, policy):
+        return None
+    profile = constrained_image_profile(policy)
+    min_pt = float(profile.get("min_font_pt", min_insert_point_size(font_profile, fallback)))
+    max_pt = float(profile.get("max_font_pt", base_size))
+    font_size = max(min_pt, min(max_pt, base_size))
+    png, image_width, image_height = constrained_text_image_png(
+        str(region.get("translation_zh") or ""),
+        fontfile,
+        font_size,
+        region.get("text_color", (0.05, 0.05, 0.05)),
+    )
+    target = fitz.Rect(region["rect"])
+    if target.width <= 0 or target.height <= 0:
+        return None
+    page.insert_image(target, stream=png, keep_proportion=False)
+    source_aspect = image_width / max(1, image_height)
+    target_aspect = float(target.width) / max(0.001, float(target.height))
+    compression_ratio = round(target_aspect / max(0.001, source_aspect), 3)
+    return {
+        "status": "constrained_text_image_fit",
+        "font_size": round(font_size, 3),
+        "attempts": attempts,
+        "image_width_px": image_width,
+        "image_height_px": image_height,
+        "target_width_pt": round(float(target.width), 3),
+        "target_height_pt": round(float(target.height), 3),
+        "horizontal_compression_ratio": compression_ratio,
+    }
 
 
 def float_color_to_rgba(color: Any) -> tuple[int, int, int, int]:
@@ -697,7 +1034,7 @@ def insert_rotated_horizontal_text_image(
 
     attempts = []
     for scale in scales:
-        current_size = max(policy_float(fallback, "min_insert_pt"), base_size * scale)
+        current_size = max(min_insert_point_size(profile, fallback), base_size * scale)
         png, image_width, image_height = rotated_horizontal_text_png(
             text,
             fontfile,
@@ -764,7 +1101,7 @@ def insert_rotated_region(
 
     attempts = []
     for scale in scales:
-        current_size = max(policy_float(fallback, "min_insert_pt"), base_size * scale)
+        current_size = max(min_insert_point_size(profile, fallback), base_size * scale)
         if rotation == 90:
             point = fitz.Point(rect.x0, rect.y1)
         elif rotation == 270:
@@ -812,28 +1149,49 @@ def generate(
     redaction_records: list[dict[str, Any]] = []
     insertion_records: list[dict[str, Any]] = []
     missing_unit_ids: list[str] = []
+    semantic_translated_unit_count = 0
+    preserved_target_language_unit_count = 0
 
     for page_info in extraction.get("pages", []):
         page_index = int(page_info["page_index"])
         page = doc[page_index]
         page_units: list[dict[str, Any]] = []
         for line in page_info.get("text_lines", []):
-            if not line_is_translatable(line, source_language):
+            source_unit = line_is_translatable(line, source_language)
+            preserve_target_span = line_is_already_target_language(line, source_language, target_language)
+            if not source_unit and not preserve_target_span:
                 continue
             unit_id = str(line["line_id"])
             source_text = str(line.get("text", ""))
+            translation_mode = "semantic_translation"
             translated = semantic_by_id.get(unit_id)
-            if translated is None:
-                missing_unit_ids.append(unit_id)
-                continue
-            if str(translated.get("source_text", "")).strip() != source_text.strip():
-                raise ValueError(f"{unit_id}: source_text mismatch")
-            target_text = get_target_text(translated, target_field)
-            reject_bad_translation(unit_id, source_text, target_text, target_language, target_field)
+            if source_unit:
+                if translated is None:
+                    missing_unit_ids.append(unit_id)
+                    continue
+                if str(translated.get("source_text", "")).strip() != source_text.strip():
+                    raise ValueError(f"{unit_id}: source_text mismatch")
+                target_text = get_target_text(translated, target_field)
+                reject_bad_translation(unit_id, source_text, target_text, target_language, target_field)
+                semantic_translated_unit_count += 1
+            else:
+                target_text = source_text.strip()
+                translated = {
+                    "unit_id": unit_id,
+                    "source_text": source_text,
+                    target_field: target_text,
+                    "translation_mode": "preserve_already_target_language_span",
+                    "layout_variants": {},
+                    "term_decisions": [],
+                    "layout_risk": "already_target_language_visible_span",
+                }
+                translation_mode = "preserve_already_target_language_span"
+                preserved_target_language_unit_count += 1
 
             bbox = [float(v) for v in line["bbox"]]
             rect = inflate_rect(bbox, page.rect)
-            fill = sample_fill(page, rect)
+            fill_provenance = sample_fill_detail(page, rect)
+            fill = fill_provenance["fill_color"]
             page_unit = {
                 "unit_id": unit_id,
                 "page_index": page_index,
@@ -844,8 +1202,9 @@ def generate(
                 "target_text": target_text,
                 "target_text_field": target_field,
                 "bbox": bbox,
-                "rect": rect,
-                "fill_color": fill,
+                    "rect": rect,
+                    "fill_color": fill,
+                    "fill_color_provenance": fill_provenance,
                 "font_size": float(line.get("font_size") or 6.0),
                 "text_color": color_int_to_rgb(line.get("color")),
                 "translated": translated,
@@ -860,7 +1219,7 @@ def generate(
                     target_field: target_text,
                     "source_language": source_language,
                     "target_language": target_language,
-                    "translation_mode": "semantic_translation",
+                    "translation_mode": translation_mode,
                     "semantic_coverage": "full_semantic_translation",
                     "bbox": bbox,
                     "text_role": text_kind(source_text),
@@ -875,6 +1234,7 @@ def generate(
                     "page_index": page_index,
                     "bbox": [round(v, 3) for v in rect],
                     "fill_color": [round(v, 4) for v in fill],
+                    "fill_color_provenance": fill_provenance,
                 }
             )
             page.add_redact_annot(rect, fill=fill)
@@ -893,49 +1253,64 @@ def generate(
                 "image_block_count": page_info.get("image_block_count"),
             }
             regions = build_regions(page_units, page.rect, layout_policy, page_context)
-            for region in regions:
-                insert_result = insert_region(page, region, fontfile, layout_policy)
-                unit_ids = [item["unit_id"] for item in region["items"]]
-                layout_slots.append(
-                    {
-                        "slot_id": region["region_id"],
-                        "unit_ids": unit_ids,
-                        "page_index": page_index,
-                        "source_block_ids": sorted({str(item.get("block_id")) for item in region["items"] if item.get("block_id") is not None}),
-                        "source_line_indexes": [item.get("line_index") for item in region["items"]],
-                        "anchor_bbox": [round(v, 3) for v in region["rect"]],
-                        "font_file": str(fontfile),
-                        "font_size": insert_result["font_size"],
-                        "source_font_size": round(float(region.get("source_size") or 0), 3),
-                        "line_height": None,
-                        "wrap_width": round(region["rect"].width, 3),
-                        "fill_color": None,
-                        "region_kind": region["region_kind"],
-                        "layout_mode": region["layout_mode"],
-                        "page_type_guess": region.get("page_type_guess"),
-                        "layout_policy": rel(layout_policy_path),
-                        "draw_mode": layout_policy.get("draw_modes", {}).get(region["region_kind"], {}).get("mode", "textbox"),
-                        "rotation_degrees": insert_result.get("rotation_degrees"),
-                        "overflow_policy": "region_reflow_shrink_then_fallback_insert_text",
-                    }
-                )
-                insertion_records.append(
-                    {
-                        "region_id": region["region_id"],
-                        "unit_ids": unit_ids,
-                        "page_index": page_index,
-                        "source_block_ids": sorted({str(item.get("block_id")) for item in region["items"] if item.get("block_id") is not None}),
-                        "source_line_indexes": [item.get("line_index") for item in region["items"]],
-                        "bbox": [round(v, 3) for v in region["rect"]],
-                        "translation_zh": region["translation_zh"],
-                        "target_text": region.get("target_text", region["translation_zh"]),
-                        "target_text_field": target_field,
-                        "region_kind": region["region_kind"],
-                        "layout_mode": region["layout_mode"],
-                        "page_type_guess": region.get("page_type_guess"),
-                        **insert_result,
-                    }
-                )
+            probe_doc = fitz.open()
+            try:
+                probe_page = probe_doc.new_page(width=float(page.rect.width), height=float(page.rect.height))
+                for region in regions:
+                    insert_result = insert_region(page, probe_page, region, fontfile, layout_policy)
+                    unit_ids = [item["unit_id"] for item in region["items"]]
+                    layout_slots.append(
+                        {
+                            "slot_id": region["region_id"],
+                            "unit_ids": unit_ids,
+                            "page_index": page_index,
+                            "source_block_ids": sorted({str(item.get("block_id")) for item in region["items"] if item.get("block_id") is not None}),
+                            "source_line_indexes": [item.get("line_index") for item in region["items"]],
+                            "anchor_bbox": [round(v, 3) for v in region["rect"]],
+                            "font_file": str(fontfile),
+                            "font_size": insert_result["font_size"],
+                            "source_font_size": round(float(region.get("source_size") or 0), 3),
+                            "line_height": None,
+                            "wrap_width": round(region["rect"].width, 3),
+                            "fill_color": None,
+                            "region_kind": region["region_kind"],
+                            "layout_mode": region["layout_mode"],
+                            "page_type_guess": region.get("page_type_guess"),
+                            "target_language_reflow_applied": bool(region.get("target_language_reflow_applied")),
+                            "target_language_reflow_profile": region.get("target_language_reflow_profile"),
+                            "target_composition_applied": bool(region.get("target_composition_applied")),
+                            "target_composition_profile": region.get("target_composition_profile"),
+                            "source_anchor_bbox": region.get("source_anchor_bbox"),
+                            "layout_policy": rel(layout_policy_path),
+                            "draw_mode": layout_policy.get("draw_modes", {}).get(region["region_kind"], {}).get("mode", "textbox"),
+                            "rotation_degrees": insert_result.get("rotation_degrees"),
+                            "overflow_policy": "probe_then_region_reflow_shrink_then_fallback_insert_text",
+                        }
+                    )
+                    insertion_records.append(
+                        {
+                            "region_id": region["region_id"],
+                            "unit_ids": unit_ids,
+                            "page_index": page_index,
+                            "source_block_ids": sorted({str(item.get("block_id")) for item in region["items"] if item.get("block_id") is not None}),
+                            "source_line_indexes": [item.get("line_index") for item in region["items"]],
+                            "bbox": [round(v, 3) for v in region["rect"]],
+                            "translation_zh": region["translation_zh"],
+                            "target_text": region.get("target_text", region["translation_zh"]),
+                            "target_text_field": target_field,
+                            "region_kind": region["region_kind"],
+                            "layout_mode": region["layout_mode"],
+                            "page_type_guess": region.get("page_type_guess"),
+                            "target_language_reflow_applied": bool(region.get("target_language_reflow_applied")),
+                            "target_language_reflow_profile": region.get("target_language_reflow_profile"),
+                            "target_composition_applied": bool(region.get("target_composition_applied")),
+                            "target_composition_profile": region.get("target_composition_profile"),
+                            "source_anchor_bbox": region.get("source_anchor_bbox"),
+                            **insert_result,
+                        }
+                    )
+            finally:
+                probe_doc.close()
 
     if missing_unit_ids:
         doc.close()
@@ -953,6 +1328,8 @@ def generate(
         "semantic_coverage": "full_semantic_translation",
         "prompt_artifacts": semantic_data.get("prompt_artifacts", []),
         "unit_count": len(translation_units),
+        "semantic_translated_unit_count": semantic_translated_unit_count,
+        "preserved_target_language_unit_count": preserved_target_language_unit_count,
         "units": translation_units,
     }
     layout = {
@@ -960,13 +1337,20 @@ def generate(
         "layout_policy": rel(layout_policy_path),
         "layout_policy_version": layout_policy.get("policy_version"),
         "layout_policy_source": layout_policy.get("policy_source"),
+        "language_pair_profile": layout_policy.get("language_pair_profile"),
+        "language_profile_json": layout_policy.get("language_profile_json"),
+        "layout_strategy": layout_policy.get("layout_strategy"),
         "layout_policy_statistics": layout_policy.get("statistics"),
         "slot_count": len(layout_slots),
         "slots": layout_slots,
     }
     write_json(translations_path, translations)
     write_json(layout_path, layout)
-    fit_warnings = [item for item in insertion_records if item["status"] not in {"fit", "point_fit", "rotated_fit", "rotated_horizontal_image_fit"}]
+    fit_warnings = [
+        item
+        for item in insertion_records
+        if item["status"] not in {"fit", "point_fit", "rotated_fit", "rotated_horizontal_image_fit", "constrained_text_image_fit"}
+    ]
     return {
         "tool": "generate_semantic_backfill",
         "strategy": f"redact_extractable_{source_language}_lines_and_insert_semantic_{target_language}_regions",
@@ -984,6 +1368,9 @@ def generate(
         "layout_policy_sha256": sha256_file(layout_policy_path),
         "layout_policy_version": layout_policy.get("policy_version"),
         "layout_policy_source": layout_policy.get("policy_source"),
+        "language_pair_profile": layout_policy.get("language_pair_profile"),
+        "language_profile_json": layout_policy.get("language_profile_json"),
+        "layout_strategy": layout_policy.get("layout_strategy"),
         "output_pdf": rel(output),
         "translations_json": rel(translations_path),
         "layout_plan_json": rel(layout_path),
@@ -993,6 +1380,8 @@ def generate(
         "inserted_line_count": len(redaction_records),
         "inserted_unit_count": len(redaction_records),
         "inserted_region_count": len(insertion_records),
+        "semantic_translated_unit_count": semantic_translated_unit_count,
+        "preserved_target_language_unit_count": preserved_target_language_unit_count,
         "fit_warning_count": len(fit_warnings),
         "font_file": str(fontfile),
         "semantic_coverage": "full_semantic_translation",

@@ -1,0 +1,35 @@
+{
+  "state": "S0_Request",
+  "policy": "Two input PDFs are independent random-page branches and are not target-language references for each other.",
+  "branches": [
+    {
+      "regression_id": "S13_EN_random_5pages",
+      "input_pdf": "input/AIA_2020_Annual_Report_en_pages_081_152_214_220_231.pdf",
+      "source_language": "en",
+      "target_language": "zh",
+      "target_text_field": "translation_zh",
+      "selected_original_pages_1_based": [
+        81,
+        152,
+        214,
+        220,
+        231
+      ]
+    },
+    {
+      "regression_id": "S13_ZH_random_5pages",
+      "input_pdf": "input/AIA_2020_Annual_Report_zh_pages_034_036_144_228_261.pdf",
+      "source_language": "zh",
+      "target_language": "en",
+      "target_text_field": "translation_en",
+      "selected_original_pages_1_based": [
+        34,
+        36,
+        144,
+        228,
+        261
+      ]
+    }
+  ],
+  "target_reference_policy": "PASS"
+}

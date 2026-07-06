@@ -1,0 +1,1549 @@
+{
+  "run_id": "spike13",
+  "run_mode": "product_quality",
+  "state_id": "Lx_RepairLoop",
+  "loop_id": "repair_loop_1",
+  "failed_findings": [
+    {
+      "gate_id": "text_residue",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "target_language": "zh",
+        "ascii_token_count": 25,
+        "cjk_unique_count": 472,
+        "sample": [
+          "Amanah",
+          "Berhad",
+          "Berhad)",
+          "Bhd",
+          "Claire",
+          "DPF",
+          "Danaharta",
+          "Darby",
+          "Ekuiti",
+          "HK",
+          "Holdings",
+          "House",
+          "IFRS",
+          "Khazanah",
+          "Landau",
+          "Life",
+          "Nasional",
+          "Ralph",
+          "Ranhill",
+          "Sdn",
+          "Sime",
+          "Symphony",
+          "US",
+          "Yahya",
+          "and"
+        ]
+      }
+    },
+    {
+      "gate_id": "visual_similarity",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_quality_adjudication": "PASS_WITH_WARN",
+        "visual_adjudication": "docs/reports/S13_EN_random_5pages/visual_adjudication.json",
+        "reason": "automated structural checks are not enough for product-quality acceptance; source-vs-output PNG adjudication must be recorded",
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    }
+  ],
+  "page_strategy": {
+    "decision_id": "D1_role_classification",
+    "regression_id": "S13_EN_random_5pages",
+    "verdict": "PASS",
+    "backend_model_call_made": false,
+    "executor": "Codex based on current extraction/render evidence; no external model call was required for this structural classification record.",
+    "pages": [
+      {
+        "verdict": "PASS",
+        "page_index": 0,
+        "page_type": "mixed_text",
+        "source_page_type_guess": "mixed_text",
+        "region_roles": [
+          {
+            "region_id": "p0_b0_l0",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                463.809,
+                813.344,
+                560.651,
+                821.296
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b1_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                574.194,
+                90.515,
+                582.146,
+                127.753
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b1_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                574.194,
+                185.187,
+                582.146,
+                310.88
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b1_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                574.194,
+                368.07,
+                582.146,
+                459.644
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b1_l3",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                574.194,
+                515.935,
+                582.146,
+                600.911
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b1_l4",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                574.194,
+                658.104,
+                582.146,
+                750.704
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                94.393,
+                377.59,
+                106.132
+              ],
+              "font_size": 10.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l1",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                108.896,
+                535.114,
+                119.432
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l2",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                122.396,
+                535.114,
+                132.931
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l3",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                135.895,
+                535.137,
+                146.431
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l4",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                149.395,
+                535.114,
+                159.93
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l5",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                162.894,
+                535.132,
+                173.43
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l6",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                176.394,
+                535.113,
+                186.929
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l7",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                189.893,
+                535.122,
+                200.429
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l8",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                203.393,
+                535.122,
+                213.928
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l9",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                216.892,
+                535.086,
+                227.428
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l10",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                230.392,
+                535.101,
+                240.927
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l11",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                243.891,
+                535.104,
+                254.427
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l12",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                257.391,
+                535.103,
+                267.926
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p0_b2_l13",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                79.37,
+                270.89,
+                532.892,
+                281.426
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          }
+        ],
+        "risk_flags": [],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_EN_random_5pages/source_extraction.json",
+          "docs/reports/S13_EN_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      },
+      {
+        "verdict": "PASS",
+        "page_index": 1,
+        "page_type": "mixed_text",
+        "source_page_type_guess": "mixed_text",
+        "region_roles": [
+          {
+            "region_id": "p1_b0_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                34.746,
+                813.344,
+                47.199,
+                821.296
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b1_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                95.508,
+                273.344,
+                106.868
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b1_l1",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                109.008,
+                269.874,
+                120.368
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b1_l2",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                122.972,
+                180.104,
+                133.764
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b1_l3",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                136.643,
+                540.713,
+                147.178
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b1_l4",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                150.142,
+                540.719,
+                160.678
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b1_l5",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                163.642,
+                540.777,
+                174.177
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b1_l6",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                177.141,
+                372.341,
+                187.677
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b2_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                197.139,
+                56.819,
+                207.674
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b2_l1",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                65.197,
+                197.139,
+                356.18,
+                207.674
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b3_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                217.136,
+                56.819,
+                227.672
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b3_l1",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                65.197,
+                217.136,
+                366.126,
+                227.672
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b4_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                237.134,
+                56.819,
+                247.669
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b4_l1",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                65.197,
+                237.134,
+                192.421,
+                247.669
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b5_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                65.198,
+                257.131,
+                390.459,
+                267.667
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b6_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                65.198,
+                277.129,
+                459.067,
+                287.664
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b7_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                65.198,
+                297.126,
+                384.607,
+                307.662
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b8_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                317.124,
+                540.72,
+                327.659
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b8_l1",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                330.623,
+                540.825,
+                341.159
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          },
+          {
+            "region_id": "p1_b8_l2",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                344.123,
+                540.757,
+                354.658
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "mixed_text"
+            }
+          }
+        ],
+        "risk_flags": [],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_EN_random_5pages/source_extraction.json",
+          "docs/reports/S13_EN_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      },
+      {
+        "verdict": "PASS",
+        "page_index": 2,
+        "page_type": "table_body",
+        "source_page_type_guess": "table_or_chart_dense",
+        "region_roles": [
+          {
+            "region_id": "p2_b0_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                35.01,
+                813.344,
+                47.199,
+                821.296
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b1_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                95.508,
+                198.624,
+                106.868
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b1_l1",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                109.008,
+                205.973,
+                120.368
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b1_l2",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                123.143,
+                540.801,
+                133.678
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b1_l3",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                136.642,
+                540.711,
+                147.178
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b1_l4",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                150.142,
+                540.769,
+                160.677
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b1_l5",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                163.641,
+                119.072,
+                174.177
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b2_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                183.639,
+                443.182,
+                194.174
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b3_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                318.708,
+                203.862,
+                350.268,
+                212.247
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b4_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                51.026,
+                234.342,
+                70.743,
+                243.522
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b4_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                250.676,
+                234.597,
+                269.291,
+                242.915
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b5_l0",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                297.258,
+                217.527,
+                330.543,
+                225.912
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b5_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                303.288,
+                226.025,
+                330.543,
+                234.41
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b5_l2",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                288.153,
+                234.522,
+                328.818,
+                242.907
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b5_l3",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                350.201,
+                226.025,
+                381.566,
+                234.41
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b5_l4",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                355.871,
+                234.522,
+                379.84,
+                242.907
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b6_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                413.193,
+                217.52,
+                430.863,
+                225.905
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b6_l1",
+            "region_type": "table_cell",
+            "evidence_signal": {
+              "bbox": [
+                398.223,
+                226.017,
+                432.588,
+                234.402
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b6_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                417.281,
+                234.515,
+                430.863,
+                242.9
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          },
+          {
+            "region_id": "p2_b7_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                466.203,
+                217.512,
+                483.611,
+                225.897
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "table_or_chart_dense"
+            }
+          }
+        ],
+        "risk_flags": [
+          "dense_table_or_chart_requires_constrained_slots"
+        ],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_EN_random_5pages/source_extraction.json",
+          "docs/reports/S13_EN_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      },
+      {
+        "verdict": "PASS",
+        "page_index": 3,
+        "page_type": "body_nav",
+        "source_page_type_guess": "body_or_notes_dense",
+        "region_roles": [
+          {
+            "region_id": "p3_b0_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                35.082,
+                813.344,
+                47.198,
+                821.296
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b1_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                95.508,
+                238.315,
+                106.868
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b1_l1",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                109.008,
+                398.682,
+                120.368
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b2_l0",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                351.237,
+                123.43,
+                414.118,
+                131.747
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b3_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                51.02,
+                136.847,
+                70.737,
+                146.027
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b3_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                322.917,
+                137.102,
+                345.823,
+                145.42
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b3_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                385.28,
+                137.102,
+                408.185,
+                145.42
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b3_l3",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                447.642,
+                137.102,
+                470.547,
+                145.42
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b3_l4",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                517.512,
+                137.102,
+                532.91,
+                145.42
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b4_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                160.028,
+                120.664,
+                169.455
+              ],
+              "font_size": 8.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b5_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                173.448,
+                196.116,
+                184.24
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b6_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                187.945,
+                135.555,
+                198.737
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b7_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.024,
+                202.613,
+                155.029,
+                213.148
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b7_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                340.261,
+                202.613,
+                345.828,
+                213.148
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b7_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                402.619,
+                202.613,
+                408.186,
+                213.148
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b7_l3",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                454.584,
+                202.613,
+                470.544,
+                213.148
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b7_l4",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                516.942,
+                202.613,
+                532.902,
+                213.148
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b8_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                51.014,
+                217.556,
+                132.837,
+                228.092
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b8_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                340.251,
+                217.556,
+                345.818,
+                228.092
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p3_b8_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                402.609,
+                217.556,
+                408.176,
+                228.092
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          }
+        ],
+        "risk_flags": [],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_EN_random_5pages/source_extraction.json",
+          "docs/reports/S13_EN_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      },
+      {
+        "verdict": "PASS",
+        "page_index": 4,
+        "page_type": "body_nav",
+        "source_page_type_guess": "body_or_notes_dense",
+        "region_roles": [
+          {
+            "region_id": "p4_b0_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                548.079,
+                813.344,
+                560.66,
+                821.296
+              ],
+              "font_size": 7.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b1_l0",
+            "region_type": "heading",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                95.508,
+                138.853,
+                106.868
+              ],
+              "font_size": 10.0,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b2_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                133.175,
+                76.41,
+                142.355
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b3_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                459.99,
+                116.36,
+                477.945,
+                124.745
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b3_l1",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                433.013,
+                124.857,
+                477.945,
+                133.242
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b3_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                459.42,
+                133.355,
+                476.22,
+                141.74
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b4_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                522.698,
+                116.42,
+                540.308,
+                124.737
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b4_l1",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                495.66,
+                124.917,
+                540.308,
+                133.235
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b4_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                521.783,
+                133.415,
+                538.583,
+                141.732
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b5_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                155.449,
+                136.341,
+                165.985
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b5_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                452.805,
+                155.278,
+                476.222,
+                166.07
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b5_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                515.429,
+                155.449,
+                538.58,
+                165.985
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b6_l0",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                169.775,
+                76.852,
+                180.567
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b6_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                452.805,
+                169.775,
+                476.222,
+                180.567
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b6_l2",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                515.429,
+                169.946,
+                538.58,
+                180.482
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b7_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                196.841,
+                546.389,
+                207.376
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b7_l1",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                210.34,
+                208.549,
+                220.876
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b8_l0",
+            "region_type": "body",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                230.338,
+                546.439,
+                240.873
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b8_l1",
+            "region_type": "vertical_nav",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                243.837,
+                80.129,
+                254.373
+              ],
+              "font_size": 9.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          },
+          {
+            "region_id": "p4_b9_l0",
+            "region_type": "footnote",
+            "evidence_signal": {
+              "bbox": [
+                56.693,
+                264.13,
+                89.272,
+                272.448
+              ],
+              "font_size": 7.5,
+              "page_type_guess": "body_or_notes_dense"
+            }
+          }
+        ],
+        "risk_flags": [],
+        "confidence": 0.72,
+        "evidence_refs": [
+          "docs/reports/S13_EN_random_5pages/source_extraction.json",
+          "docs/reports/S13_EN_random_5pages/source_render_manifest.json"
+        ],
+        "next_state": "S5_TranslationPlan"
+      }
+    ],
+    "evidence_refs": [
+      "docs/reports/S13_EN_random_5pages/source_extraction.json",
+      "docs/reports/S13_EN_random_5pages/source_render_manifest.json"
+    ],
+    "next_state": "S5_TranslationPlan"
+  },
+  "repair_atom_catalog": "# Page Type Repair Matrix\n\n## Purpose\n\nThis matrix prevents the workflow from treating all PDF pages as timeline pages.\n\nPage type and region type must drive quality gates and repair atoms.\n\n## Page Types\n\n| Page type | Typical regions | Required special gates |\n|---|---|---|\n| `timeline` | year labels, body text, images, badges | column rhythm, image avoidance, year hierarchy |\n| `bar_chart_dashboard` | chart title, axis labels, bars, value labels, growth tiles | chart geometry preservation, label readability |\n| `pie_chart_legend_footnote` | pie labels, legend, notes, side navigation | legend mapping, footnote density, side nav |\n| `table_body` | table header, rows, footnotes, body paragraphs | grid preservation, cell fit, numeric alignment |\n| `body_nav` | paragraphs, side navigation, footer | paragraph rhythm, nav preservation, body text area |\n\n## Repair Atoms\n\n| Failure class | Applicable page/region | Repair atom | Tools | Verification |\n|---|---|---|---|---|\n| `semantic_translation_authenticity_fail` | all | regenerate_D2_translation_without_meta_description | D2 prompt, semantic validator | no placeholder or line-category pseudo translation patterns |\n| `source_relative_visual_baseline_fail` | all generated text regions | rerun_source_extraction_or_generation_evidence_linkage | source_extraction.json, generation evidence unit_ids | each generated region can be compared to current-run source font/line evidence |\n| `ascii_residue` | all | retranslate_or_cover_residue | PyMuPDF text extraction, regex, render | no ASCII tokens unless allowed |\n| `text_fit_overflow` | all text slots | reduce_font_or_reflow | PyMuPDF insertion, font metrics | fit result non-negative; no clipping |\n| `visual_density_low` | body/notes/footnotes | expand_translation_or_adjust_line_height | translation plan, layout plan | text_area_ratio/y_span_ratio recover |\n| `source_anchor_order_mismatch` | timeline/body/notes/headings | split_region_at_source_separator | source line indexes, layout policy, generation evidence | no insertion region crosses skipped source lines inside one source block |\n| `paragraph_density_mismatch` | body paragraphs | body_flow_grouping | layout policy, source x/width/y-gap statistics, source-vs-output crop | active paragraph gaps shrink without creating overlap; end blank may remain |\n| `internal_paragraph_gap` | body paragraphs | body_flow_line_joining_or_line_height_adjust | layout policy `paragraph_gap_pt` and line joiners, render crop | same-paragraph continuations do not receive artificial paragraph breaks |\n| `single_dense_paragraph` | body paragraphs | body_flow_paragraph_gap_rebalance | layout policy `paragraph_gap_pt`, source y-gap statistics, render crop | source paragraph gaps become readable target-language paragraph gaps |\n| `body_flow_fallback_truncation` | body paragraphs | short_continuation_and_reflow_frame_repair | generation evidence, `allow_short_continuation_lines`, target_language_reflow, overlap_guard | body flow fits without clipped point fallback |\n| `dense_page_body_band_fragmentation` | table/body pages | dense_page_body_band_flow_repair | page type guess, lower-page y ratio, same-column x/width evidence | table cells stay preserved while lower-page body text becomes one readable flow |\n| `failed_probe_residue` | all textbox regions | textbox_probe_isolation_repair | generator evidence, PNG render | failed fit attempts are not visible in candidate output |\n| `font_hierarchy_ratio_mismatch` | notes/body/headings/table labels | role_font_profile_or_region_classification | layout policy, font hierarchy metrics, source-vs-output crop | note/body/title ratios remain close to source |\n| `sidebar_orientation_fail` | annual report side navigation | rotated_horizontal_text_image_draw_mode | layout policy draw_modes, rotated horizontal label image insertion, source-vs-output crop | rotated source labels remain rotated, not stacked character-by-character |\n| `sidebar_glyph_orientation_fail` | annual report side navigation | backrotated_crop_glyph_check | source-vs-output crop, back-rotated output crop | back-rotated output crop is readable horizontal Chinese |\n| `side_nav_group_consistency_fail` | annual report side navigation | side_nav_group_writing_mode_policy | source region grouping, layout policy draw modes | all labels in one side-nav group share the same writing mode |\n| `over_narrow_lines` | body/notes | increase_wrap_width_or_reduce_target_lines | layout plan | no near-vertical short lines |\n| `background_patch_visible` | colored/table/chart backgrounds | resample_fill_color_or_split_redaction | image sampling, PyMuPDF redaction | background_delta below threshold |\n| `table_cell_collision` | tables | table_cell_variant_or_cell_reflow | bbox, font metrics, D2 layout_variants | no cell overlap; numeric alignment preserved |\n| `table_grid_damage` | tables | preserve_or_redraw_grid | PyMuPDF drawing inspection/render | grid lines continuous |\n| `chart_label_overlap` | charts | local_label_reflow | bbox, render | labels readable; chart geometry intact |\n| `legend_mismatch` | pies/charts | legend_item_mapping_repair | extraction + visual review | colors and labels aligned |\n| `footnote_unreadable` | notes | footnote_microtype_adjust | font size/line height/wrap | minimum readable font and no overflow |\n| `side_nav_corruption` | annual report nav | side_nav_region_strategy | visual-only handling | nav preserved or translated consistently |\n| `image_collision` | image-adjacent text | avoid_region_reflow | image bbox + layout slots | no text-image collision |\n\n## Generic Repair Loop\n\n1. Select exactly one failure class.\n2. Select one repair atom.\n3. Patch only affected slots/regions.\n4. Regenerate candidate.\n5. Re-run only relevant gates plus global residue/page geometry gates.\n6. Record result and next state.\n\nDo not repair unrelated regions during the same loop.\n",
+  "prior_loop_summary": []
+}

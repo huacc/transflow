@@ -2,7 +2,7 @@
 
 ## Scope
 
-This validation checks whether `docs\业务流程\PDF_中文回填_标准流程设计.md` matches the current tools, contracts, and prompt templates.
+This validation checks whether `docs\业务流程\PDF_语义翻译回填_标准流程设计.md` matches the current tools, contracts, and prompt templates.
 
 It is not a round10 execution result.
 

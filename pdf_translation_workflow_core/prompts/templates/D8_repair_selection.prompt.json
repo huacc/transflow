@@ -3,7 +3,7 @@
   "decision_contract": "D8_repair_selection",
   "purpose": "Select the smallest repair atom for the current blocking quality failure.",
   "system_prompt": "You are a PDF repair planner. Repair only the failed class and scope. Do not bundle unrelated visual changes. Return strict JSON.",
-  "user_prompt_template": "Select repair for run {{run_id}} loop {{loop_id}}. Failed findings: {{failed_findings}}. Page/region strategy: {{page_strategy}}. Available repair atoms: {{repair_atom_catalog}}. Prior loops: {{prior_loop_summary}}. Output one repair plan or terminal failure. If the failed class is semantic_translation_authenticity_fail, the repair target is S5_TranslationPlan/D2 regeneration, not a layout-only S6/S7 repair.",
+  "user_prompt_template": "Select repair for run {{run_id}} loop {{loop_id}}. Failed findings: {{failed_findings}}. Page/region strategy: {{page_strategy}}. Available repair atoms: {{repair_atom_catalog}}. Prior loops: {{prior_loop_summary}}. Output one repair plan or terminal failure. If the failed class is semantic_translation_authenticity_fail or semantic_coverage_fail, the repair target is S5_TranslationPlan/D2 regeneration, not a layout-only S6/S7 repair. If the failed class is source_relative_visual_baseline_fail, repair the evidence chain by rerunning S3_SourceExtract or S7_GenerateCandidate so each generated region records source unit ids that resolve in source_extraction.json; do not tune visual thresholds. Route hero_banner_text_readability_fail and title_readability_fail to heading_frame_fit_or_short_title_variant or heading_font_fit_curve_repair, body_paragraph_readability_fail to target_composition_body_reflow_repair, table_text_legibility_fail, legend_label_alignment_fail, and short_label_legibility_fail first to D2_constrained_slot_layout_variants when compact semantic variants are missing; if semantic text is already valid and the failure is textbox fit in a constrained slot, route to S7_GenerateCandidate with constrained_slot_text_image_fit. Route footnote_readability_fail to footnote_fit_curve_repair, sidebar_navigation_legibility_fail or sidebar_glyph_orientation_fail to side_navigation_rotated_image_repair or rotated_horizontal_text_image_draw_mode, image_color_integrity_fail to image_redaction_exclusion_repair, text_image_collision_fail to avoid_region_reflow or image_redaction_exclusion_repair, single_dense_paragraph to body_flow_paragraph_gap_rebalance, body_flow_fallback_truncation to short_continuation_and_reflow_frame_repair, dense_page_body_band_fragmentation to dense_page_body_band_flow_repair, background_delta_fail or background_delta to background_fill_resample, and failed_probe_residue to textbox_probe_isolation_repair. Preserve deferred_failures when multiple blocking failures exist.",
   "slots": {
     "run_id": "string",
     "run_mode": "product_quality",
@@ -22,7 +22,7 @@
       "repair_plan": "object(repair_id, repair_atom, target_scope, expected_effect, verification_to_run)",
       "confidence": "0.0-1.0",
       "evidence_refs": "array(path)",
-      "next_state": "S5_TranslationPlan|S6_LayoutPlan|S7_GenerateCandidate|S_FAIL_QUALITY|S_FAIL_CAPABILITY|S_FAIL_PROCESS_CONTRACT"
+      "next_state": "S3_SourceExtract|S5_TranslationPlan|S6_LayoutPlan|S7_GenerateCandidate|S_FAIL_QUALITY|S_FAIL_CAPABILITY|S_FAIL_PROCESS_CONTRACT"
     }
   },
   "failure_policy": "If no available repair atom matches the failed class, return S_FAIL_QUALITY rather than inventing a repair.",

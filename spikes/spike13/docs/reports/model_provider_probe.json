@@ -1,0 +1,15 @@
+{
+  "tool": "openai_backend_model_probe",
+  "state": "S5_TranslationPlan",
+  "provider_requested": "codex_gpt5_semantic_translation",
+  "backend_model_call_made": false,
+  "status": "not_used",
+  "failure_class": "backend_model_authentication_failed",
+  "timestamp_local": "2026-07-06 08:55:51",
+  "error_type": "AuthenticationError",
+  "error_message_sanitized": "OpenAI API authentication failed with 401 invalid_api_key; credential value fully redacted.",
+  "superseded_by_user_instruction": true,
+  "user_instruction": "Do not call OpenAI API; Codex executor self-judges model decisions against prompt contracts.",
+  "openai_api_call_made_for_final_execution": false,
+  "note": "Earlier authentication probe is not part of the final execution verdict path."
+}

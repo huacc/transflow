@@ -80,10 +80,13 @@ page.apply_redactions(
 
 Fill color must have provenance:
 
-- exact page background sample;
+- exact local page background sample;
 - table cell background sample;
-- explicit white only for white regions;
+- multi-point surrounding-pixel cluster sample for normal text bboxes, so glyph color is not mistaken for the background;
+- explicit white only for white regions after sampled evidence agrees;
 - transparent/no-fill only if the library supports it safely.
+
+The fill sampler is an open function over the current bbox and page pixels. It must not branch on filename, page number, exact text, known brand colors, hard-coded coordinates, or remembered samples. If a source glyph is red, blue, gray, or white, the sampler must still choose the surrounding region background unless the surrounding region itself has that color.
 
 ## Generator Mode Contract
 
@@ -92,7 +95,7 @@ Fill color must have provenance:
 | `generate_minimal_candidate.py` | process smoke only | never product-quality evidence |
 | `generate_backfill_candidate.py` | `backfill_candidate_validation` | proves redaction/insertion mechanics only; fails semantic product quality |
 | `validate_semantic_translations.py` | `product_quality` | validates complete real translation input before generation |
-| `build_layout_policy.py` | `product_quality` and validation runs | derives a run-local layout policy from current extraction statistics; may be revised by D4 model judgement |
+| `build_layout_policy.py` | `product_quality` and validation runs | derives a run-local layout policy from current extraction statistics plus the matching generic language layout profile; may be revised by D4 model judgement |
 | `generate_semantic_backfill.py` | `product_quality` | consumes validated semantic translations and explicit layout policy, then performs redaction/backfill with region-level target-language reflow |
 
 `product_quality` must not silently fall back to `generate_backfill_candidate.py`. If semantic translations are missing or fail validation, return `S_FAIL_CAPABILITY` before creating a product candidate.
@@ -109,17 +112,25 @@ Required behavior:
 |---|---|
 | redaction | redact every extractable source text unit by its original bbox |
 | layout policy | read `layout_policy.json`; do not hardcode role thresholds, font scales, shrink arrays, or fallback lengths in generator logic |
+| language profile | `layout_policy.json` must record `language_pair_profile`, `language_profile_json`, `language_profile_sha256`, and `layout_strategy`; language-direction behavior must come from this explicit profile, not sample branches |
+| already-target spans | if a source-language PDF contains visible text that is already in the target language and that text may be covered by a recomposed target frame, the generator may mark it `preserve_already_target_language_span`, redact it, and redraw the same text; this is preservation evidence, not semantic translation evidence |
 | grouping | derive block/region groups from current-run extraction metadata such as `unit_id`, bbox, font size, page geometry, and policy thresholds |
 | source separators | do not merge translated units across visible source lines that are not translation units, such as years, numeric headings, bullets, or separator labels; the policy field is `source_separator_policy.split_on_untranslated_visible_line_gap=true` |
 | reflow | insert target-language text once per paragraph/body/footnote/heading region when the policy marks the region kind as `region_reflow` |
 | body flow | merge aligned wide body paragraph regions only when `layout_policy.flow_grouping.body` permits it and current-run x/width/y-gap statistics prove one continuous article column |
 | body flow line joining | inside one `body_flow`, use the policy's `paragraph_gap_pt` to decide whether adjacent source regions are same-paragraph continuations or new paragraphs; do not always join with `\n\n` |
+| target composition | for fluid `body_flow` regions, source bboxes are redaction/order/anchor evidence, not hard target containers; when `layout_policy.target_composition.enabled=true`, recompute the target frame from current-page margins, body band, source-body height expansion, bottom limit, region role, and avoid/overlap guard before font shrink; the frame must not automatically consume the whole remaining page |
+| short continuation lines | a short same-column continuation may join only an already-active body flow, only when the policy enables `allow_short_continuation_lines`, and only when x/y geometry plus `min_continuation_width_page_ratio` pass |
 | table notes | classify wide `Note:` / `Notes:` blocks as `table_note`; do not merge them into `body_flow`; keep note/body font hierarchy close to the source |
 | table cells | on dense table/chart pages, classify constrained labels and cells as `table_cell`; use explicit `table_cell_zh/table_cell_en` or compact variants from D2, and do not merge these cells into `body_flow` |
-| dense page guard | when page extraction says `table_or_chart_dense` or `chart_or_dashboard`, `body_flow` is disabled unless D4 records a contrary page-local justification |
+| event cards | on mixed image/text timeline or milestone pages, classify narrow multi-line event descriptions as `event_card`; keep each event local, do not merge events into `body_flow`, and use event-card font/variant rules inside the source card slot |
+| dense page guard | when page extraction says `table_or_chart_dense` or `chart_or_dashboard`, table/chart labels stay out of `body_flow`; a lower-page body copy band may re-enter `body_flow` only when policy `allow_dense_page_body_below_y_ratio` and current-run geometry prove same-column article text |
+| target-language reflow | expand only declared `target_language_reflow.region_kinds`; obey `overlap_guard` so expanded frames do not invade the next same-column region |
+| textbox fit probe | test each candidate font size on a temporary page first; failed attempts must not draw on the real candidate page |
 | rotated navigation | execute `layout_policy.draw_modes.vertical_nav=rotated_horizontal_text_image` for narrow side navigation; target text must be laid out horizontally first and rotated as one unit, not inserted as one-character vertical writing |
 | preserve-line | preserve line-level insertion only for policy-defined compact labels, legends, vertical navigation, chart ticks, or single-line regions |
 | compact labels | consume explicit `layout_variants` from translation input; never invent document-specific abbreviations inside the generator; never reintroduce source-language residue such as `n/m` to make text fit |
+| constrained text image fit | after normal textbox probing fails, table cells, compact labels, short labels, legends, and dense-page single-line labels may be inserted as transparent text images with full target text preserved; evidence must record `status=constrained_text_image_fit`, `font_size`, target box, and `horizontal_compression_ratio` |
 | evidence | report both `inserted_unit_count` and `inserted_region_count`; unit count proves coverage, region count proves reflow happened; every insertion must also report `source_block_ids` and `source_line_indexes` so validators can detect cross-separator reflow |
 
 Required generation evidence:
@@ -127,6 +138,8 @@ Required generation evidence:
 ```json
 {
   "strategy": "redact_extractable_<source_language>_lines_and_insert_semantic_<target_language>_regions",
+  "language_pair_profile": "en_to_zh|zh_to_en|...",
+  "layout_strategy": "source_anchor_preserving_region_reflow",
   "layout_policy_json": "docs/reports/.../layout_policy.json",
   "layout_policy_sha256": "...",
   "layout_policy_version": "...",
@@ -134,13 +147,19 @@ Required generation evidence:
   "redacted_line_count": 209,
   "inserted_unit_count": 209,
   "inserted_region_count": 127,
+  "semantic_translated_unit_count": 209,
+  "preserved_target_language_unit_count": 0,
   "fit_warning_count": 0,
+  "allowed_non_warning_insert_statuses": ["fit", "point_fit", "rotated_fit", "rotated_horizontal_image_fit", "constrained_text_image_fit"],
   "insertions": [
     {
       "region_id": "region_p0_b2_018",
       "unit_ids": ["p0_b2_l3", "p0_b2_l4"],
       "source_block_ids": ["2"],
-      "source_line_indexes": [3, 4]
+      "source_line_indexes": [3, 4],
+      "target_composition_applied": false,
+      "target_composition_profile": null,
+      "source_anchor_bbox": null
     }
   ]
 }
@@ -166,6 +185,38 @@ python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
 This file is not produced by `generate_semantic_backfill.py`. It must be produced by a recorded visual review step that names input render/crop artifacts and returns dimensions such as `line_fragmentation`, `paragraph_density`, `internal_paragraph_gap`, `end_blank_allowed`, `source_anchor_order`, `region_crosses_untranslated_separator`, `font_hierarchy_ratio`, `sidebar_orientation`, `sidebar_orientation_group_consistency`, `sidebar_glyph_orientation`, `footnote_readability`, and `visual_similarity`.
 
 If the visual adjudication verdict is missing or not `PASS`, `visual_similarity` remains a blocking failure in product-quality mode.
+
+## Region-Level Visual Metrics Contract
+
+Before final `evaluate_pdf_quality.py` in product-quality mode, S8 must run:
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\collect_visual_region_metrics.py `
+  --source <source.pdf> `
+  --output <candidate.pdf> `
+  --generation-evidence docs\reports\<run_id>\candidate_generation_evidence.json `
+  --source-extraction docs\reports\<run_id>\source_extraction.json `
+  --out docs\reports\<run_id>\visual_region_metrics.json `
+  --crop-dir docs\reports\<run_id>\visual_region_crops
+```
+
+The output must contain:
+
+- `page_metrics`: image count and page-level color/dominant-color deltas;
+- `region_metrics`: one record per generated insertion with `quality_role`, `gate_id`, `font_size`, `source_median_font_size`, `output_to_source_font_ratio`, `generation_status`, `background_delta`, `crop_evidence`, reasons, and repair atoms;
+- `role_gates`: aggregated gates such as `source_relative_visual_baseline`, `hero_banner_text_readability`, `title_readability`, `body_paragraph_readability`, `table_text_legibility`, `footnote_readability`, `legend_label_alignment`, `sidebar_navigation_legibility`, `event_card_readability`, and `image_color_integrity`.
+
+`source_relative_visual_baseline` is mandatory in product-quality mode. It fails when `source_extraction.json` is missing or when too few generated regions can be tied back to source extraction font/line evidence. `evaluate_pdf_quality.py` must consume this file through `--visual-region-metrics`. A critical role gate with status `fail` is blocking even if `visual_similarity` is `PASS_WITH_WARN` or a full-page thumbnail looks acceptable.
+
+Repair routing should be generated by:
+
+```powershell
+python pdf_translation_workflow_core\tools\repairs\plan_visual_region_repairs.py `
+  --visual-region-metrics docs\reports\<run_id>\visual_region_metrics.json `
+  --out docs\reports\<run_id>\visual_repair_plan.json
+```
+
+This repair planner may select repair atoms such as `heading_frame_fit_or_short_title_variant`, `D2_constrained_slot_layout_variants`, `target_composition_body_reflow_repair`, `background_fill_resample`, or `image_redaction_exclusion_repair`. It must not rewrite candidate PDFs by itself.
 
 `evaluate_pdf_quality.py` also records per-page `source_font_hierarchy`, `output_font_hierarchy`, and `small_to_body_ratio_delta` metrics. These metrics do not replace visual judgement, but D7 must use them when deciding whether table notes, body copy, and headings still have source-like relative size.
 
@@ -223,7 +274,7 @@ Tools may read sample facts as input evidence, but tool behavior cannot branch o
 Official bilingual reference PDFs are not runtime evidence for translation, layout, or quality decisions. They may be used only after a run as offline evaluation data to identify generic process gaps. Reusable tools must not consume the reference pair to derive hardcoded translations, coordinates, page identities, or terminology exceptions.
 
 `tools\validators\scan_core_overfit.py` must be run before final acceptance in `S9_VerifyProcessContract`.
-It scans the reusable core using a run-local token list stored outside the core and fails if sample-specific tokens appear in `tools`, `contracts`, or `prompts`.
+It scans the reusable core using a run-local token list stored outside the core and fails if sample-specific tokens appear in `tools`, `contracts`, `prompts`, or `profiles`.
 
 Required output:
 

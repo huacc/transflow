@@ -1,0 +1,26 @@
+{
+  "decision_id": "D1_role_classification",
+  "state": "S4_PageStrategy",
+  "regression_id": "S13_EN_random_5pages",
+  "purpose": "classify page types and region roles from current extraction/render evidence",
+  "input_artifacts": [
+    "docs/reports/S13_EN_random_5pages/source_extraction.json",
+    "docs/reports/S13_EN_random_5pages/source_render_manifest.json"
+  ],
+  "prompt_contract": "pdf_translation_workflow_core/prompts/templates/D1_page_strategy.prompt.json",
+  "required_output_dimensions": [
+    "page_type",
+    "region_roles",
+    "risk_flags",
+    "next_state"
+  ],
+  "model_output": {
+    "verdict": "pass",
+    "backend_model_call_made": false,
+    "reason": "Recorded by Codex executor from tool evidence; no prior samples or filenames used."
+  },
+  "tool_outputs": [
+    "docs/reports/S13_EN_random_5pages/page_strategy.json"
+  ],
+  "next_state": "S5_TranslationPlan"
+}

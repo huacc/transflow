@@ -1,0 +1,33 @@
+{
+  "state": "Ax_AdaptiveChange",
+  "timestamp_local": "2026-07-06T06:52:00+08:00",
+  "changes": [
+    {
+      "area": "background fill sampling",
+      "files": [
+        "pdf_translation_workflow_core/tools/generators/generate_backfill_candidate.py",
+        "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py"
+      ],
+      "logic": "multi-distance surrounding-pixel cluster sample with fill_color_provenance; no filename/page/text/color branching"
+    },
+    {
+      "area": "prompt/contracts",
+      "files": [
+        "pdf_translation_workflow_core/prompts/templates/D2_translation.prompt.json",
+        "pdf_translation_workflow_core/prompts/templates/D5_D7_quality_gate.prompt.json",
+        "pdf_translation_workflow_core/prompts/templates/D8_repair_selection.prompt.json",
+        "pdf_translation_workflow_core/contracts/tool_contracts.md",
+        "pdf_translation_workflow_core/contracts/semantic_translation_contract.md"
+      ],
+      "logic": "background_delta and D2 constrained-slot variants made explicit"
+    },
+    {
+      "area": "process doc",
+      "files": [
+        "docs/????/PDF_????_??????.md"
+      ],
+      "logic": "S7 fill sampling order, background_delta, variant responsibility, evidence fields updated"
+    }
+  ],
+  "anti_overfit_statement": "All changes are open rules over current extraction, bbox, language direction, and rendered pixels; no sample filename/page/text/coordinate branches added."
+}

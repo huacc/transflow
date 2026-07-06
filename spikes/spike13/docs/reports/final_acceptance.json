@@ -1,0 +1,43 @@
+{
+  "spike": "spike13",
+  "input_purity": "PASS",
+  "target_reference_policy": "PASS",
+  "framework_mutation_policy": "PASS",
+  "state_machine_followed": "PASS",
+  "tool_orchestration_followed": "PASS",
+  "prompt_template_boundary_followed": "PASS",
+  "model_interaction_records_complete": "PASS",
+  "semantic_translation_validation": {
+    "S13_EN_random_5pages": "PASS",
+    "S13_ZH_random_5pages": "PASS"
+  },
+  "semantic_candidate_generation": {
+    "S13_EN_random_5pages": "PASS",
+    "S13_ZH_random_5pages": "PASS"
+  },
+  "source_relative_visual_baseline": {
+    "S13_EN_random_5pages": "PASS",
+    "S13_ZH_random_5pages": "PASS"
+  },
+  "anti_overfit_scan": "PASS",
+  "process_contract_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "terminal_state": "S_FAIL_QUALITY",
+  "adaptive_changes_made": "false",
+  "adaptive_change_summary": [],
+  "design_gaps_found": [
+    {
+      "gap_id": "EN_TO_ZH_TEXT_RESIDUE_POLICY",
+      "state": "S8_VerifyProductQuality",
+      "summary": "EN->ZH candidate still exposes ASCII tokens/proper nouns/footer-like source text; current workflow needs a stricter translate-cover-vs-preserve policy before product acceptance.",
+      "evidence": "docs/reports/S13_EN_random_5pages/product_quality_gates.json"
+    },
+    {
+      "gap_id": "ZH_TO_EN_DENSE_LAYOUT_FIT",
+      "state": "S8_VerifyProductQuality",
+      "summary": "ZH->EN candidate has 50 fit warnings and role-gate failures across title, body, table text and footnotes; current policy/generator is insufficient for this random dense zh->en package without broader repair.",
+      "evidence": "docs/reports/S13_ZH_random_5pages/product_quality_gates.json"
+    }
+  ],
+  "requires_core_revision": "true"
+}

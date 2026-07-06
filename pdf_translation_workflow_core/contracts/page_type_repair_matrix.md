@@ -18,28 +18,40 @@ Page type and region type must drive quality gates and repair atoms.
 
 ## Repair Atoms
 
-| Failure class | Applicable page/region | Repair atom | Tools | Verification |
+| Failure class | Applicable page/region | Repair atom | Target state | Verification |
 |---|---|---|---|---|
-| `semantic_translation_authenticity_fail` | all | regenerate_D2_translation_without_meta_description | D2 prompt, semantic validator | no placeholder or line-category pseudo translation patterns |
-| `ascii_residue` | all | retranslate_or_cover_residue | PyMuPDF text extraction, regex, render | no ASCII tokens unless allowed |
-| `text_fit_overflow` | all text slots | reduce_font_or_reflow | PyMuPDF insertion, font metrics | fit result non-negative; no clipping |
-| `visual_density_low` | body/notes/footnotes | expand_translation_or_adjust_line_height | translation plan, layout plan | text_area_ratio/y_span_ratio recover |
-| `source_anchor_order_mismatch` | timeline/body/notes/headings | split_region_at_source_separator | source line indexes, layout policy, generation evidence | no insertion region crosses skipped source lines inside one source block |
-| `paragraph_density_mismatch` | body paragraphs | body_flow_grouping | layout policy, source x/width/y-gap statistics, source-vs-output crop | active paragraph gaps shrink without creating overlap; end blank may remain |
-| `internal_paragraph_gap` | body paragraphs | body_flow_line_joining_or_line_height_adjust | layout policy `paragraph_gap_pt` and line joiners, render crop | same-paragraph continuations do not receive artificial paragraph breaks |
-| `font_hierarchy_ratio_mismatch` | notes/body/headings/table labels | role_font_profile_or_region_classification | layout policy, font hierarchy metrics, source-vs-output crop | note/body/title ratios remain close to source |
-| `sidebar_orientation_fail` | annual report side navigation | rotated_horizontal_text_image_draw_mode | layout policy draw_modes, rotated horizontal label image insertion, source-vs-output crop | rotated source labels remain rotated, not stacked character-by-character |
-| `sidebar_glyph_orientation_fail` | annual report side navigation | backrotated_crop_glyph_check | source-vs-output crop, back-rotated output crop | back-rotated output crop is readable horizontal Chinese |
-| `side_nav_group_consistency_fail` | annual report side navigation | side_nav_group_writing_mode_policy | source region grouping, layout policy draw modes | all labels in one side-nav group share the same writing mode |
-| `over_narrow_lines` | body/notes | increase_wrap_width_or_reduce_target_lines | layout plan | no near-vertical short lines |
-| `background_patch_visible` | colored/table/chart backgrounds | resample_fill_color_or_split_redaction | image sampling, PyMuPDF redaction | background_delta below threshold |
-| `table_cell_collision` | tables | table_cell_variant_or_cell_reflow | bbox, font metrics, D2 layout_variants | no cell overlap; numeric alignment preserved |
-| `table_grid_damage` | tables | preserve_or_redraw_grid | PyMuPDF drawing inspection/render | grid lines continuous |
-| `chart_label_overlap` | charts | local_label_reflow | bbox, render | labels readable; chart geometry intact |
-| `legend_mismatch` | pies/charts | legend_item_mapping_repair | extraction + visual review | colors and labels aligned |
-| `footnote_unreadable` | notes | footnote_microtype_adjust | font size/line height/wrap | minimum readable font and no overflow |
-| `side_nav_corruption` | annual report nav | side_nav_region_strategy | visual-only handling | nav preserved or translated consistently |
-| `image_collision` | image-adjacent text | avoid_region_reflow | image bbox + layout slots | no text-image collision |
+| `semantic_translation_authenticity_fail` | all | `regenerate_D2_translation_without_meta_description` | `S5_TranslationPlan` | no placeholder, metadata-style, or line-category pseudo translation patterns |
+| `semantic_coverage_fail` | all | `regenerate_missing_D2_units` | `S5_TranslationPlan` | every source-language unit has one semantic target-language unit |
+| `source_relative_visual_baseline_fail` | all generated text regions | `rerun_source_extraction_or_generation_evidence_linkage` | `S3_SourceExtract` or `S7_GenerateCandidate` | each generated region resolves to current-run source extraction font/line evidence |
+| `source_text_residue_fail` | all | `retranslate_or_cover_residue` | `S7_GenerateCandidate` | no source-language residue except explicitly preserved target-language spans |
+| `candidate_generation_fail` | all | `regenerate_semantic_backfill` | `S7_GenerateCandidate` | candidate evidence has real PDF, redaction count, insertion count, and unit linkage |
+| `text_fit_overflow` | all text slots | `reduce_font_or_reflow`; constrained slots may use `constrained_slot_text_image_fit` | `S6_LayoutPlan` or `S7_GenerateCandidate` | no overflow, clipping, or fallback insertion warning |
+| `source_anchor_order_mismatch` | timeline/body/notes/headings | `split_region_at_source_separator` | `S6_LayoutPlan` | no target region crosses visible skipped source anchors |
+| `failed_probe_residue` | all textbox regions | `textbox_probe_isolation_repair` | `S7_GenerateCandidate` | failed fit attempts are not visible in candidate output |
+| `line_fragmentation` | body paragraphs | `body_flow_region_reflow` | `S6_LayoutPlan` | target prose uses source-relative readable line lengths instead of inherited narrow bboxes |
+| `paragraph_density_mismatch` | body paragraphs | `body_flow_grouping` or `font_size_and_region_density_rebalance` | `S6_LayoutPlan` | active paragraph gaps match source rhythm; final blank may remain |
+| `internal_paragraph_gap` | body paragraphs | `body_flow_line_joining_or_line_height_adjust` | `S6_LayoutPlan` | same-paragraph continuations do not receive artificial paragraph breaks |
+| `single_dense_paragraph` | body paragraphs | `body_flow_paragraph_gap_rebalance` | `S6_LayoutPlan` | source paragraph gaps remain readable in target language |
+| `body_flow_fallback_truncation` | body paragraphs | `short_continuation_and_reflow_frame_repair` | `S6_LayoutPlan` | body flow fits without clipped point fallback |
+| `dense_page_body_band_fragmentation` | table/body pages | `dense_page_body_band_flow_repair` | `S6_LayoutPlan` | table cells stay preserved while lower-page body text becomes one readable flow |
+| `font_hierarchy_ratio_mismatch` | notes/body/headings/table labels | `role_font_profile_or_region_classification` | `S6_LayoutPlan` | note/body/title ratios remain close to source-relative hierarchy |
+| `hero_banner_text_readability_fail` | hero/banner titles | `heading_frame_fit_or_short_title_variant` | `S6_LayoutPlan` | banner/title text stays readable and visually proportional |
+| `title_readability_fail` | titles/headings | `heading_font_fit_curve_repair` | `S6_LayoutPlan` | title font remains above role floor and source-relative ratio floor |
+| `body_paragraph_readability_fail` | body/body_flow | `target_composition_body_reflow_repair` | `S6_LayoutPlan` | body text uses target composition before shrinking below readable floor |
+| `table_text_legibility_fail` | table cells/headers | `D2_constrained_slot_layout_variants` or `constrained_slot_text_image_fit` | `S5_TranslationPlan` or `S7_GenerateCandidate` | compact semantic variants or constrained text images preserve table grid and numeric alignment |
+| `footnote_readability_fail` | notes/footnotes | `footnote_fit_curve_repair` | `S6_LayoutPlan` | notes remain readable and source-relative to body/table text |
+| `legend_label_alignment_fail` | chart/pie legends | `D2_constrained_slot_layout_variants` or `constrained_slot_text_image_fit` | `S5_TranslationPlan` or `S7_GenerateCandidate` | swatch-label alignment and label readability pass |
+| `short_label_legibility_fail` | compact labels | `D2_constrained_slot_layout_variants` or `constrained_slot_text_image_fit` | `S5_TranslationPlan` or `S7_GenerateCandidate` | compact label variant or constrained text image fits without hardcoded abbreviations |
+| `sidebar_navigation_legibility_fail` | side navigation | `side_navigation_rotated_image_repair` | `S6_LayoutPlan` | side labels are drawn as rotated label units, not stacked glyphs |
+| `sidebar_glyph_orientation_fail` | side navigation | `rotated_horizontal_text_image_draw_mode` | `S6_LayoutPlan` | back-rotated crop is readable horizontal target-language text |
+| `side_nav_group_consistency_fail` | side navigation groups | `side_nav_group_writing_mode_policy` | `S6_LayoutPlan` | all labels in one navigation group share the same writing mode |
+| `event_card_readability_fail` | timeline/event cards | `event_card_local_fit_repair` | `S6_LayoutPlan` | event text remains local to its year/image anchor |
+| `image_color_integrity_fail` | image/chart/photo regions | `image_redaction_exclusion_repair` | `S7_GenerateCandidate` | source images are not removed, recolored, or covered by redaction fill |
+| `background_delta_fail` | colored/table/chart backgrounds | `background_fill_resample` | `S7_GenerateCandidate` | redaction fill samples local background, not glyph color or fixed color |
+| `text_image_collision_fail` | image-adjacent text | `avoid_region_reflow` or `image_redaction_exclusion_repair` | `S6_LayoutPlan` or `S7_GenerateCandidate` | no translated text overlaps image/color regions |
+| `visual_similarity_fail` | full page or crop | `visual_similarity_targeted_repair` | `S6_LayoutPlan` or `S7_GenerateCandidate` | D7 decomposes similarity failure into concrete gate evidence |
+| `table_integrity_fail` | tables | `table_cell_variant_or_grid_preserve_repair` | `S5_TranslationPlan`, `S6_LayoutPlan`, or `S7_GenerateCandidate` | table grid, cells, labels, and numeric alignment remain intact |
+| `chart_integrity_fail` | charts | `chart_region_preserve_or_label_reflow` | `S6_LayoutPlan` or `S7_GenerateCandidate` | chart geometry is preserved and labels remain readable |
 
 ## Generic Repair Loop
 

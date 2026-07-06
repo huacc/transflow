@@ -1,0 +1,1913 @@
+{
+  "tool": "evaluate_pdf_quality",
+  "source_pdf": "docs/input/round09/en_to_zh/source_pdfs/AIA_2020_Annual_Report_en_pages_08_09_24_25.pdf",
+  "output_pdf": "docs/output/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25_candidate.pdf",
+  "generation_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/candidate_generation_evidence.json",
+  "visual_adjudication": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_adjudication.json",
+  "visual_region_metrics": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_metrics.json",
+  "product_quality_verdict": "FAIL",
+  "gates": [
+    {
+      "gate_id": "page_count",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=4; output=4"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_1",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_2",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_3",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_4",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "text_residue",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "target_language": "zh",
+        "ascii_token_count": 0,
+        "cjk_unique_count": 339,
+        "sample": []
+      }
+    },
+    {
+      "gate_id": "backfill_generation",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "real_backfill_pdf": true,
+        "redacted_line_count": 209,
+        "inserted_line_count": 209,
+        "inserted_unit_count": 209,
+        "inserted_region_count": 119,
+        "generation_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "text_fit",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "fit_warning_count": 8,
+        "reason": "fallback insertion or overflow evidence blocks product-quality acceptance",
+        "generation_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "source_anchor_order",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "violation_count": 0,
+        "sample": [],
+        "reason": "a target-language reflow region must not cross untranslated visible source separators inside the same block",
+        "generation_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "translation_authenticity",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "translation_provider": "codex_gpt5_manual_semantic_translation",
+        "reason": "product-quality success requires a real translation provider, not deterministic placeholders",
+        "generation_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "semantic_translation_preflight",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "semantic_translation_validation": "PASS",
+        "reason": "product-quality success requires validated semantic translations before generation",
+        "generation_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "semantic_coverage",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "semantic_coverage": "full_semantic_translation",
+        "translation_quality": "semantic_translation",
+        "reason": "placeholder translations are valid generation evidence but not product-quality success",
+        "generation_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "visual_similarity",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_quality_adjudication": "FAIL",
+        "visual_adjudication": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_adjudication.json",
+        "reason": "automated structural checks are not enough for product-quality acceptance; source-vs-output PNG adjudication must be recorded",
+        "generation_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "body_paragraph_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 4,
+        "sample": [
+          {
+            "region_id": "region_p2_b19_050",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 9.12,
+            "source_median_font_size": 9.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 3,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              60.862,
+              477.005,
+              519.663,
+              520.66
+            ],
+            "source_union_bbox": [
+              62.362,
+              480.065,
+              518.163,
+              517.6
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "2019年新业务价值增长6%，达到4,154百万美元，因中国内地和其他市场非常强劲的增长，大部分被香港5%的下降所抵消，后者因下半年社会事件2019年导致中国内地访客客户分部大幅下降。"
+          },
+          {
+            "region_id": "region_p2_b20_051",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 9.12,
+            "source_median_font_size": 9.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 5,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              60.862,
+              531.003,
+              519.588,
+              601.657
+            ],
+            "source_union_bbox": [
+              62.362,
+              534.063,
+              518.088,
+              598.597
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "年化新保费增长2%至6,585百万美元，新业务价值利润率上升3.0个百分点至62.9%。按现值计算的新业务保费利润率由2018.年的10%升至11%。尽管利率环境在2019,年下半年走低，新业务价值利润率和按现值计算的新业务保费利润率均在2"
+          },
+          {
+            "region_id": "region_p2_b21_052",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 9.12,
+            "source_median_font_size": 9.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 6,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              60.862,
+              612.0,
+              519.653,
+              696.153
+            ],
+            "source_union_bbox": [
+              62.362,
+              615.06,
+              518.153,
+              693.093
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "代理分销占集团新业务价值总额的74%。我们持续执行卓越代理策略，推动新业务价值增长11%至3,243百万美元，并使活跃代理人数增加5%活跃代理人数增加。伙伴分销新业务价值下降1%至1,142百万美元。银行保险渠道的强劲增长被新业务显著下降所"
+          },
+          {
+            "region_id": "body_flow_000",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "body_flow",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 9.31,
+            "source_median_font_size": 9.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 31,
+            "output_to_source_font_ratio": 0.98,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              77.87,
+              92.663,
+              536.657,
+              622.299
+            ],
+            "source_union_bbox": [
+              79.37,
+              95.723,
+              535.157,
+              619.239
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "不包括香港，集团总新业务价值较2018.年强劲增长16%。同时不包括香港，集团代理分销的新业务价值增长16%，伙伴分销增长19%。\n\n香港2019.年报告新业务价值下降5%。本地客户分部的新业务价值实现双位数增长，但被中国内地访客客户分部新"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "footnote_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 17,
+        "sample": [
+          {
+            "region_id": "region_p0_b0_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              49.39,
+              812.944,
+              122.462,
+              821.696
+            ],
+            "source_union_bbox": [
+              49.89,
+              813.344,
+              121.962,
+              821.296
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "| 友邦保险控股有限公司"
+          },
+          {
+            "region_id": "region_p0_b65_023",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 4.018,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 2,
+            "output_to_source_font_ratio": 0.574,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              108.171,
+              545.476,
+              187.016,
+              557.189
+            ],
+            "source_union_bbox": [
+              109.171,
+              547.416,
+              186.016,
+              555.249
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "按年增长（实际汇率）按年增长（固定汇率）"
+          },
+          {
+            "region_id": "region_p0_b80_027",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 4.018,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 2,
+            "output_to_source_font_ratio": 0.574,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              263.62,
+              545.476,
+              342.465,
+              557.189
+            ],
+            "source_union_bbox": [
+              264.62,
+              547.416,
+              341.465,
+              555.249
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "按年增长（实际汇率）按年增长（固定汇率）"
+          },
+          {
+            "region_id": "region_p1_b0_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              463.309,
+              812.944,
+              561.337,
+              821.696
+            ],
+            "source_union_bbox": [
+              463.809,
+              813.344,
+              560.837,
+              821.296
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "2019年年报 | 005"
+          },
+          {
+            "region_id": "region_p1_b1_l3",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              515.535,
+              582.646,
+              601.311
+            ],
+            "source_union_bbox": [
+              574.194,
+              515.935,
+              582.146,
+              600.911
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "财务报表"
+          },
+          {
+            "region_id": "region_p1_b1_l4",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              657.704,
+              582.646,
+              751.104
+            ],
+            "source_union_bbox": [
+              574.194,
+              658.104,
+              582.146,
+              750.704
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "其他资料"
+          },
+          {
+            "region_id": "region_p1_b7_012",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 5,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              78.37,
+              631.222,
+              302.306,
+              674.869
+            ],
+            "source_union_bbox": [
+              79.37,
+              633.162,
+              301.306,
+              672.929
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "(2) 新业务价值是以销售时点计量的未来新售业务产生的预计税后法定利润的现值，减去为支持该业务而持有超出监管准备金要求的所需资本成本的金额。"
+          },
+          {
+            "region_id": "region_p1_b8_013",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 4,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              78.37,
+              679.228,
+              297.666,
+              714.874
+            ],
+            "source_union_bbox": [
+              79.37,
+              681.168,
+              296.666,
+              712.934
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "(3) 年化新保费是新业务活动指标，按年化首年保费的100%加一次性保费的10%计算，均为扣除分出再保险前。"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "sidebar_navigation_legibility",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 6,
+        "sample": [
+          {
+            "region_id": "region_p1_b1_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              90.115,
+              582.646,
+              128.153
+            ],
+            "source_union_bbox": [
+              574.194,
+              90.515,
+              582.146,
+              127.753
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "概览"
+          },
+          {
+            "region_id": "region_p1_b1_l1",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              184.787,
+              582.646,
+              311.28
+            ],
+            "source_union_bbox": [
+              574.194,
+              185.187,
+              582.146,
+              310.88
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "财务及营运回顾"
+          },
+          {
+            "region_id": "region_p1_b1_l2",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              367.67,
+              582.646,
+              460.044
+            ],
+            "source_union_bbox": [
+              574.194,
+              368.07,
+              582.146,
+              459.644
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "企业管治"
+          },
+          {
+            "region_id": "region_p3_b1_l0",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.672,
+              90.115,
+              582.624,
+              128.153
+            ],
+            "source_union_bbox": [
+              574.172,
+              90.515,
+              582.124,
+              127.753
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "概览"
+          },
+          {
+            "region_id": "region_p3_b1_l1",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.672,
+              184.787,
+              582.624,
+              311.28
+            ],
+            "source_union_bbox": [
+              574.172,
+              185.187,
+              582.124,
+              310.88
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "财务及营运回顾"
+          },
+          {
+            "region_id": "region_p3_b1_l2",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.672,
+              367.67,
+              582.624,
+              460.044
+            ],
+            "source_union_bbox": [
+              574.172,
+              368.07,
+              582.124,
+              459.644
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "企业管治"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_metrics.json",
+        "role_gate_status": "fail",
+        "failure_count": 8,
+        "warning_count": 3,
+        "region_count": 89,
+        "sample": [
+          {
+            "region_id": "region_p0_b19_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.8,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.543,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              160.526,
+              328.839,
+              186.515,
+              337.381
+            ],
+            "source_union_bbox": [
+              161.026,
+              329.239,
+              186.015,
+              336.981
+            ],
+            "source_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "output_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_crops/page_01_region_p0_b19_l0_table_text.png",
+            "target_text_sample": "按年增长（实际汇率）"
+          },
+          {
+            "region_id": "region_p0_b19_l1",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.8,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.543,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              108.67,
+              328.748,
+              134.123,
+              337.29
+            ],
+            "source_union_bbox": [
+              109.17,
+              329.148,
+              133.623,
+              336.89
+            ],
+            "source_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "output_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_crops/page_01_region_p0_b19_l1_table_text.png",
+            "target_text_sample": "按年增长（固定汇率）"
+          },
+          {
+            "region_id": "region_p0_b36_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.8,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.543,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              314.149,
+              328.839,
+              340.138,
+              337.381
+            ],
+            "source_union_bbox": [
+              314.649,
+              329.239,
+              339.638,
+              336.981
+            ],
+            "source_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "output_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_crops/page_01_region_p0_b36_l0_table_text.png",
+            "target_text_sample": "按年增长（实际汇率）"
+          },
+          {
+            "region_id": "region_p0_b36_l1",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.8,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.543,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              262.293,
+              328.748,
+              287.746,
+              337.29
+            ],
+            "source_union_bbox": [
+              262.793,
+              329.148,
+              287.246,
+              336.89
+            ],
+            "source_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "output_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_crops/page_01_region_p0_b36_l1_table_text.png",
+            "target_text_sample": "按年增长（固定汇率）"
+          },
+          {
+            "region_id": "region_p0_b50_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.8,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.543,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              469.125,
+              328.839,
+              495.115,
+              337.381
+            ],
+            "source_union_bbox": [
+              469.625,
+              329.239,
+              494.615,
+              336.981
+            ],
+            "source_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "output_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_crops/page_01_region_p0_b50_l0_table_text.png",
+            "target_text_sample": "按年增长（实际汇率）"
+          },
+          {
+            "region_id": "region_p0_b50_l1",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.8,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.543,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              417.27,
+              328.748,
+              442.723,
+              337.29
+            ],
+            "source_union_bbox": [
+              417.77,
+              329.148,
+              442.223,
+              336.89
+            ],
+            "source_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "output_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_crops/page_01_region_p0_b50_l1_table_text.png",
+            "target_text_sample": "按年增长（固定汇率）"
+          },
+          {
+            "region_id": "region_p2_b5_l4",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.8,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.447,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              295.029,
+              163.914,
+              312.57,
+              174.217
+            ],
+            "source_union_bbox": [
+              295.529,
+              164.314,
+              312.07,
+              173.817
+            ],
+            "source_background_rgb": [
+              240,
+              240,
+              224
+            ],
+            "output_background_rgb": [
+              240,
+              240,
+              224
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_crops/page_03_region_p2_b5_l4_table_text.png",
+            "target_text_sample": "年化新保费"
+          },
+          {
+            "region_id": "region_p2_b5_l8",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.8,
+            "source_median_font_size": 8.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.447,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              414.259,
+              163.99,
+              431.63,
+              174.217
+            ],
+            "source_union_bbox": [
+              414.759,
+              164.39,
+              431.13,
+              173.817
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              208
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              208
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_crops/page_03_region_p2_b5_l8_table_text.png",
+            "target_text_sample": "年化新保费"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "title_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 3,
+        "sample": [
+          {
+            "region_id": "region_p0_b98_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "heading",
+            "quality_role": "title",
+            "gate_id": "title_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 11.552,
+            "source_median_font_size": 16.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.722,
+            "fail_font_pt": 6.2,
+            "warn_font_pt": 7.0,
+            "fail_source_ratio": 0.3,
+            "warn_source_ratio": 0.42,
+            "bbox": [
+              61.862,
+              59.418,
+              279.964,
+              77.962
+            ],
+            "source_union_bbox": [
+              62.362,
+              59.818,
+              279.464,
+              77.562
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "2019年业绩一览(1)"
+          },
+          {
+            "region_id": "region_p1_b14_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "heading",
+            "quality_role": "title",
+            "gate_id": "title_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 11.552,
+            "source_median_font_size": 16.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.722,
+            "fail_font_pt": 6.2,
+            "warn_font_pt": 7.0,
+            "fail_source_ratio": 0.3,
+            "warn_source_ratio": 0.42,
+            "bbox": [
+              78.87,
+              59.418,
+              378.246,
+              77.962
+            ],
+            "source_union_bbox": [
+              79.37,
+              59.818,
+              377.746,
+              77.562
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "2019年按市场分部细分"
+          },
+          {
+            "region_id": "region_p2_b2_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "heading",
+            "quality_role": "title",
+            "gate_id": "title_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 10.108,
+            "source_median_font_size": 14.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.722,
+            "fail_font_pt": 6.2,
+            "warn_font_pt": 7.0,
+            "fail_source_ratio": 0.3,
+            "warn_source_ratio": 0.42,
+            "bbox": [
+              61.862,
+              91.369,
+              209.694,
+              107.653
+            ],
+            "source_union_bbox": [
+              62.362,
+              91.769,
+              209.194,
+              107.253
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "新业务表现"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "source_relative_visual_baseline",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 119,
+        "sample": [],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "image_color_integrity",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/round09/R09_EN_TO_ZH_AIA_pages_08_09_24_25/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 4,
+        "sample": [
+          {
+            "page_index": 0,
+            "page_number": 1,
+            "source_image_count": 0,
+            "output_image_count": 0,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              239.945,
+              228.176,
+              224.224
+            ],
+            "output_mean_rgb": [
+              240.542,
+              228.859,
+              224.866
+            ],
+            "mean_rgb_delta": 0.641,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              1.325,
+              1.848,
+              1.666
+            ]
+          },
+          {
+            "page_index": 1,
+            "page_number": 2,
+            "source_image_count": 0,
+            "output_image_count": 3,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              238.994,
+              230.544,
+              224.159
+            ],
+            "output_mean_rgb": [
+              240.183,
+              231.843,
+              225.39
+            ],
+            "mean_rgb_delta": 1.239,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              6.337,
+              6.538,
+              6.284
+            ]
+          },
+          {
+            "page_index": 2,
+            "page_number": 3,
+            "source_image_count": 0,
+            "output_image_count": 0,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              240.512,
+              238.299,
+              232.3
+            ],
+            "output_mean_rgb": [
+              239.935,
+              237.978,
+              231.917
+            ],
+            "mean_rgb_delta": 0.427,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              11.797,
+              12.368,
+              11.764
+            ]
+          },
+          {
+            "page_index": 3,
+            "page_number": 4,
+            "source_image_count": 0,
+            "output_image_count": 3,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              240.574,
+              239.39,
+              232.618
+            ],
+            "output_mean_rgb": [
+              239.811,
+              238.76,
+              231.986
+            ],
+            "mean_rgb_delta": 0.674,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              17.78,
+              17.896,
+              17.212
+            ]
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    }
+  ],
+  "page_metrics": [
+    {
+      "page_index": 0,
+      "source_metrics": {
+        "line_count": 163,
+        "text_area": 35922.007,
+        "y_span": 794.365,
+        "median_gap": -5.545,
+        "median_font_size": 5.0
+      },
+      "output_metrics": {
+        "line_count": 161,
+        "text_area": 27776.325,
+        "y_span": 794.764,
+        "median_gap": -5.435,
+        "median_font_size": 5.0
+      },
+      "source_font_hierarchy": {
+        "q10": 5.0,
+        "q25": 5.0,
+        "q50": 5.0,
+        "q75": 6.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 0.769,
+        "large_to_body_ratio": 1.461
+      },
+      "output_font_hierarchy": {
+        "q10": 3.864,
+        "q25": 5.0,
+        "q50": 5.0,
+        "q75": 6.5,
+        "q90": 6.8,
+        "small_to_body_ratio": 0.769,
+        "large_to_body_ratio": 1.046
+      },
+      "ratios": {
+        "text_area_ratio": 0.773,
+        "line_count_ratio": 0.988,
+        "y_span_ratio": 1.001,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": 0.0
+      }
+    },
+    {
+      "page_index": 1,
+      "source_metrics": {
+        "line_count": 85,
+        "text_area": 79232.82,
+        "y_span": 761.477,
+        "median_gap": -5.079,
+        "median_font_size": 7.0
+      },
+      "output_metrics": {
+        "line_count": 74,
+        "text_area": 42028.144,
+        "y_span": 760.642,
+        "median_gap": -3.114,
+        "median_font_size": 6.256
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 7.0,
+        "q50": 7.0,
+        "q75": 9.405,
+        "q90": 9.405,
+        "small_to_body_ratio": 0.744,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 5.74,
+        "q25": 5.74,
+        "q50": 6.256,
+        "q75": 9.405,
+        "q90": 9.405,
+        "small_to_body_ratio": 0.61,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.53,
+        "line_count_ratio": 0.871,
+        "y_span_ratio": 0.999,
+        "font_size_ratio": 0.894,
+        "small_to_body_ratio_delta": -0.134
+      }
+    },
+    {
+      "page_index": 2,
+      "source_metrics": {
+        "line_count": 155,
+        "text_area": 113833.218,
+        "y_span": 794.354,
+        "median_gap": -9.426,
+        "median_font_size": 8.5
+      },
+      "output_metrics": {
+        "line_count": 147,
+        "text_area": 87510.209,
+        "y_span": 796.993,
+        "median_gap": -7.929,
+        "median_font_size": 8.5
+      },
+      "source_font_hierarchy": {
+        "q10": 8.5,
+        "q25": 8.5,
+        "q50": 8.5,
+        "q75": 8.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.118
+      },
+      "output_font_hierarchy": {
+        "q10": 5.168,
+        "q25": 6.256,
+        "q50": 8.5,
+        "q75": 8.5,
+        "q90": 8.5,
+        "small_to_body_ratio": 0.736,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.769,
+        "line_count_ratio": 0.948,
+        "y_span_ratio": 1.003,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.264
+      }
+    },
+    {
+      "page_index": 3,
+      "source_metrics": {
+        "line_count": 37,
+        "text_area": 134708.04,
+        "y_span": 730.781,
+        "median_gap": 2.964,
+        "median_font_size": 9.5
+      },
+      "output_metrics": {
+        "line_count": 30,
+        "text_area": 94511.557,
+        "y_span": 727.397,
+        "median_gap": 0.722,
+        "median_font_size": 9.31
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 9.5,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 5.74,
+        "q25": 5.74,
+        "q50": 9.31,
+        "q75": 9.31,
+        "q90": 9.31,
+        "small_to_body_ratio": 0.617,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.702,
+        "line_count_ratio": 0.811,
+        "y_span_ratio": 0.995,
+        "font_size_ratio": 0.98,
+        "small_to_body_ratio_delta": -0.383
+      }
+    }
+  ],
+  "blocking_failure_count": 3
+}

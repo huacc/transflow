@@ -1,0 +1,73 @@
+{
+  "verdict": "PASS_WITH_WARN",
+  "summary": "Target-language body composition is visually improved and close to source rhythm; remaining warnings are constrained labels/footnotes/headings that need D2 layout variants or a targeted fit repair.",
+  "dimensions": [
+    {
+      "dimension": "line_fragmentation",
+      "status": "PASS",
+      "evidence": "Body pages use body_flow/target_composition instead of source-line wrapping."
+    },
+    {
+      "dimension": "paragraph_density",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Page 5 text density is acceptable, but page metrics show text_area_ratio above source because English expansion is expected."
+    },
+    {
+      "dimension": "internal_paragraph_gap",
+      "status": "PASS",
+      "evidence": "Paragraph breaks on body pages are visually coherent."
+    },
+    {
+      "dimension": "target_composition_used_for_fluid_body",
+      "status": "PASS",
+      "evidence": "candidate_generation_evidence records target_composition_applied for body_flow regions."
+    },
+    {
+      "dimension": "event_card_local_fit",
+      "status": "PASS",
+      "evidence": "Timeline/milestone page keeps event cards local and does not merge event text into body_flow."
+    },
+    {
+      "dimension": "background_delta",
+      "status": "PASS",
+      "evidence": "No visible redaction color blocks after surrounding-pixel cluster fill sampling."
+    },
+    {
+      "dimension": "font_hierarchy_ratio",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Table/footnote labels still have small fallback warnings; main body hierarchy is stable."
+    },
+    {
+      "dimension": "sidebar_orientation_group_consistency",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Side navigation is rendered as rotated image groups but some small labels remain fit-risk areas."
+    },
+    {
+      "dimension": "sidebar_glyph_orientation",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Back-rotated side navigation is readable enough for candidate review but not promoted to product pass while text_fit fails."
+    },
+    {
+      "dimension": "table_integrity",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Tables retain structure; constrained header labels need D2 variants to remove fallback warnings."
+    },
+    {
+      "dimension": "visual_similarity",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Overall layout is close enough for candidate comparison, not enough for product acceptance because fit warnings remain."
+    }
+  ],
+  "next_state": "Lx_RepairLoop",
+  "tool": "codex_visual_adjudication",
+  "state": "S8_VerifyProductQuality",
+  "source_preview_dir": "docs\\reports\\round08\\R08_ZH_TO_EN_AIA_pages_03_08_09_24_25\\source_previews",
+  "candidate_preview_dir": "docs\\reports\\round08\\R08_ZH_TO_EN_AIA_pages_03_08_09_24_25\\candidate_previews",
+  "basis": "manual rendered PNG inspection in current run; no offline reference used as runtime prompt input",
+  "repair_hints": [
+    "D2 constrained-slot layout_variants",
+    "background_fill_resample already applied",
+    "targeted side-navigation crop check",
+    "table_cell compact variant repair"
+  ]
+}

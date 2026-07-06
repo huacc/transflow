@@ -1,0 +1,37 @@
+{
+  "decision_id": "D7_similarity_gate",
+  "state": "S8_VerifyProductQuality",
+  "regression_id": "S13_ZH_random_5pages",
+  "purpose": "judge source-vs-output visual quality and blocking gates",
+  "input_artifacts": [
+    "docs/reports/S13_ZH_random_5pages/source_render_manifest.json",
+    "docs/reports/S13_ZH_random_5pages/candidate_render_manifest.json",
+    "docs/reports/S13_ZH_random_5pages/visual_region_metrics.json",
+    "docs/reports/S13_ZH_random_5pages/product_quality_gates.initial.json"
+  ],
+  "prompt_contract": "pdf_translation_workflow_core/prompts/templates/D5_D7_quality_gate.prompt.json",
+  "required_output_dimensions": [
+    "source_relative_visual_baseline",
+    "visual_similarity",
+    "text_fit",
+    "line_fragmentation",
+    "paragraph_density",
+    "font_hierarchy_ratio",
+    "table_integrity",
+    "chart_integrity",
+    "footnote_readability",
+    "sidebar_orientation",
+    "sidebar_glyph_orientation",
+    "source_anchor_order"
+  ],
+  "model_output": {
+    "verdict": "fail",
+    "backend_model_call_made": false,
+    "openai_api_call_made": false,
+    "reason": "Codex executor visual adjudication from current renders/crops/metrics"
+  },
+  "tool_outputs": [
+    "docs/reports/S13_ZH_random_5pages/visual_adjudication.json"
+  ],
+  "next_state": "Lx_RepairLoop"
+}

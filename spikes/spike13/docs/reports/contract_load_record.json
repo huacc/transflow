@@ -1,0 +1,124 @@
+{
+  "state": "S1_ContractLoad",
+  "run_mode": "product_quality",
+  "loaded_at_local": "2026-07-06 08:58:58",
+  "required_files": [
+    {
+      "path": "SPIKE13_PACKAGE_MANIFEST.md",
+      "exists": true,
+      "sha256": "49395c5ce2da38096ea2f4f348fc6ffb33bfaee8e88b94ef067bb6bf43bed600"
+    },
+    {
+      "path": "SPIKE13_PACKAGE_BUILD_CHECK.json",
+      "exists": true,
+      "sha256": "ecfff4c01e0feaf0743cd19b8033f45ac9bd68f5d7fabee4eeeb7c9824a8e9f4"
+    },
+    {
+      "path": "run_request.json",
+      "exists": true,
+      "sha256": "33e576fb2591fc1872778ef653247a1983ab9062ab3b35a35363adcc79e2769f"
+    },
+    {
+      "path": "docs/????/PDF_????_??????.md",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "path": "pdf_translation_workflow_core/README.md",
+      "exists": true,
+      "sha256": "df1079b73c514186c3b24885bb9e414dd0dce7164f45cf913a6994938b70264c"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/run_modes.md",
+      "exists": true,
+      "sha256": "399f962e028fd56e183f7c60d2eb6bb9e4ec96f02b99f2e8e371bb09b08cc379"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/state_machine.md",
+      "exists": true,
+      "sha256": "463538836ff4530209de35e5abc3997f0c3920195502c9ec5f0b5c2e3ff956e8"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/tool_contracts.md",
+      "exists": true,
+      "sha256": "0d8f50601ef9d3eb8191a294adc4fdbb01f8e3cc0c3ffa449088598a68800d5f"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/decision_contracts.md",
+      "exists": true,
+      "sha256": "b3c25ce0042031cf349a51f1df9ad643455bbfab0d8cb9a1226e90554ac22865"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/semantic_translation_contract.md",
+      "exists": true,
+      "sha256": "9471f2ad848ab0d08a76dac8c419373de2e41e51ef3fac726473340178bc89ec"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/product_quality_contract.md",
+      "exists": true,
+      "sha256": "885a97521b4718fa4c7f395471251a3212efa0d33e5755ad681f46ed072d88b3"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/page_type_repair_matrix.md",
+      "exists": true,
+      "sha256": "9f4ae02bf0218024ae64e0ef42018ba69eea6bca3eeeaf16c87079ac5c237463"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/change_control_contract.md",
+      "exists": true,
+      "sha256": "175bf490ff144cc462938200b7168cb62c07cf04338605c2a3f9a073a64225f3"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/README.md",
+      "exists": true,
+      "sha256": "d80d252f5ec10ed948532c6b14925c8b3e41865d90d4d1aea41e8200f7917261"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/prompt_manifest.json",
+      "exists": true,
+      "sha256": "8b246b6ef449a0b2ab8450ee33b396f69c64d6ebf760bbbb398cc300cfba52dd"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/prompt_tool_bindings.json",
+      "exists": true,
+      "sha256": "0c14bd9264c9015a59ebf5d500547eac08362f421482be05b512886396562001"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/model_tool_orchestration_contract.md",
+      "exists": true,
+      "sha256": "48995e2359783869a7473e66953bd4594f38f34292d77fe562e52f00efb3adf7"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D1_page_strategy.prompt.json",
+      "exists": true,
+      "sha256": "3bd17ec1594b7ce897fe7c6c021da8444ce82b950efad33b86c565030a13ebe1"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D2_translation.prompt.json",
+      "exists": true,
+      "sha256": "1009efc0f040b9d1bd67a5c87a7a573bfac622f7f4a7202b09e671eaa3456248"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D4_layout_plan.prompt.json",
+      "exists": true,
+      "sha256": "717761715de9e7b9664345d7535274e3c4631588abbe3164a5db7d6f330e8191"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D5_D7_quality_gate.prompt.json",
+      "exists": true,
+      "sha256": "82cb5370abeb68b454f704024c4346ea8de8b69984cd3cc0ca50e80f0509c5e8"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D8_repair_selection.prompt.json",
+      "exists": true,
+      "sha256": "f3cb05f8944cd4f6b270843aba2e1e0f74a192d7fe3d299ed2c03625ae854e98"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D9_final_acceptance.prompt.json",
+      "exists": true,
+      "sha256": "b5e1e98610c507315026cfe2294c5c0f1ca4f2591e5755a0cdc29fcdc1c9eac4"
+    }
+  ],
+  "verdict": "FAIL",
+  "framework_mutation_policy": "no framework files modified by executor"
+}

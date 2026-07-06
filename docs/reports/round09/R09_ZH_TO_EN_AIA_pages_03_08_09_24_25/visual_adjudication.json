@@ -1,0 +1,876 @@
+{
+  "tool": "codex_visual_adjudication_with_region_metrics",
+  "state": "S8_VerifyProductQuality",
+  "verdict": "FAIL",
+  "summary": "Region-level gates are now authoritative for title/body/table/footnote/sidebar/image/background roles. Product pass is blocked when any critical role gate fails.",
+  "basis": "Rendered PNG inspection plus visual_region_metrics role gates; no offline reference used as runtime input.",
+  "visual_region_metrics": "docs/reports/round09/R09_ZH_TO_EN_AIA_pages_03_08_09_24_25/visual_region_metrics.json",
+  "dimensions": [
+    {
+      "dimension": "body_paragraph_readability",
+      "status": "PASS",
+      "evidence": {
+        "failure_count": 0,
+        "warning_count": 0,
+        "sample": [
+          {
+            "region_id": "region_p1_b2_002",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 8.8,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "bbox": [
+              85.335,
+              145.027,
+              465.474,
+              164.467
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Value of new business(2)(8) Annualised new premiums(3)(8) Operating profit after tax(4)"
+          },
+          {
+            "region_id": "region_p1_b3_003",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 8.4,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "bbox": [
+              85.335,
+              377.467,
+              467.866,
+              396.908
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Total weighted premium income(5) Embedded value equity(6) Total assets and total liabilities"
+          },
+          {
+            "region_id": "body_flow_000",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "body_flow",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 8.16,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "bbox": [
+              61.862,
+              492.941,
+              516.449,
+              708.906
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Value of new business increased by 6% to US$4,154 million in 2019, driven by very strong growth in Mainland China and Ot"
+          }
+        ]
+      }
+    },
+    {
+      "dimension": "event_card_readability",
+      "status": "PASS",
+      "evidence": {
+        "failure_count": 0,
+        "warning_count": 0,
+        "sample": [
+          {
+            "region_id": "region_p0_b0_000",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "event_card",
+            "quality_role": "event_card",
+            "gate_id": "event_card_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 7.31,
+            "fail_font_pt": 3.8,
+            "warn_font_pt": 4.2,
+            "bbox": [
+              101.177,
+              305.455,
+              197.745,
+              368.101
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "AIA founder Mr. Starr Mr. Cornelius Vander Starr established a company in Shanghai as an insurance agency, laying the Gr"
+          },
+          {
+            "region_id": "region_p0_b1_001",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "event_card",
+            "quality_role": "event_card",
+            "gate_id": "event_card_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 7.31,
+            "fail_font_pt": 3.8,
+            "warn_font_pt": 4.2,
+            "bbox": [
+              113.511,
+              385.794,
+              196.105,
+              436.939
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Mr. Starr founded in Shanghai his first life insurance business, Asia Life Insurance Company。"
+          },
+          {
+            "region_id": "region_p0_b2_002",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "event_card",
+            "quality_role": "event_card",
+            "gate_id": "event_card_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 7.31,
+            "fail_font_pt": 3.8,
+            "warn_font_pt": 4.2,
+            "bbox": [
+              101.177,
+              454.633,
+              197.404,
+              505.778
+            ],
+            "source_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_background_rgb": [
+              224,
+              224,
+              224
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Mr. Starr founded in Shanghai a company called International Assurance Company, Limited (INTASCO)."
+          }
+        ]
+      }
+    },
+    {
+      "dimension": "footnote_readability",
+      "status": "FAIL",
+      "evidence": {
+        "failure_count": 11,
+        "warning_count": 0,
+        "sample": [
+          {
+            "region_id": "region_p1_b5_004",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.4,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "bbox": [
+              88.617,
+              558.471,
+              209.369,
+              569.735
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role footnote"
+            ],
+            "repair_atoms": [
+              "footnote_fit_curve_repair"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_ZH_TO_EN_AIA_pages_03_08_09_24_25/visual_region_crops/page_02_region_p1_b5_004_footnote.png",
+            "target_text_sample": "YoY change (actual exchange rates) YoY change (constant exchange rates)"
+          },
+          {
+            "region_id": "region_p1_b6_005",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.4,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "bbox": [
+              242.634,
+              558.471,
+              363.386,
+              569.735
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role footnote"
+            ],
+            "repair_atoms": [
+              "footnote_fit_curve_repair"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_ZH_TO_EN_AIA_pages_03_08_09_24_25/visual_region_crops/page_02_region_p1_b6_005_footnote.png",
+            "target_text_sample": "YoY change (actual exchange rates) YoY change (constant exchange rates)"
+          },
+          {
+            "region_id": "region_p1_b12_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.4,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "bbox": [
+              464.002,
+              559.791,
+              482.942,
+              568.415
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role footnote"
+            ],
+            "repair_atoms": [
+              "footnote_fit_curve_repair"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_ZH_TO_EN_AIA_pages_03_08_09_24_25/visual_region_crops/page_02_region_p1_b12_l0_footnote.png",
+            "target_text_sample": "Total liabilities"
+          }
+        ]
+      }
+    },
+    {
+      "dimension": "hero_banner_text_readability",
+      "status": "PASS",
+      "evidence": {
+        "failure_count": 0,
+        "warning_count": 0,
+        "sample": [
+          {
+            "region_id": "region_p0_b22_022",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "heading",
+            "quality_role": "hero_banner_title",
+            "gate_id": "hero_banner_text_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 15.84,
+            "fail_font_pt": 7.0,
+            "warn_font_pt": 7.0,
+            "bbox": [
+              32.516,
+              76.47,
+              207.228,
+              195.516
+            ],
+            "source_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "output_background_rgb": [
+              208,
+              0,
+              64
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Since 1919 committed to advancing Asia's economic and social development"
+          }
+        ]
+      }
+    },
+    {
+      "dimension": "short_label_legibility",
+      "status": "PASS",
+      "evidence": {
+        "failure_count": 0,
+        "warning_count": 0,
+        "sample": [
+          {
+            "region_id": "region_p4_b1_l0",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "compact_label",
+            "quality_role": "short_label",
+            "gate_id": "short_label_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.2,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.4,
+            "bbox": [
+              573.137,
+              99.809,
+              585.221,
+              118.459
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Overview"
+          }
+        ]
+      }
+    },
+    {
+      "dimension": "sidebar_navigation_legibility",
+      "status": "PASS",
+      "evidence": {
+        "failure_count": 0,
+        "warning_count": 0,
+        "sample": [
+          {
+            "region_id": "region_p2_b1_l1",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 9.35,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "bbox": [
+              573.137,
+              215.333,
+              585.221,
+              280.733
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Financial and Operating Review"
+          },
+          {
+            "region_id": "region_p2_b1_l2",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 9.35,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "bbox": [
+              573.137,
+              395.184,
+              585.221,
+              432.534
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Corporate Governance"
+          },
+          {
+            "region_id": "region_p4_b1_l1",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 9.35,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "bbox": [
+              573.137,
+              215.333,
+              585.221,
+              280.733
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "Financial and Operating Review"
+          }
+        ]
+      }
+    },
+    {
+      "dimension": "table_text_legibility",
+      "status": "FAIL",
+      "evidence": {
+        "failure_count": 12,
+        "warning_count": 51,
+        "sample": [
+          {
+            "region_id": "region_p1_b8_006",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "body",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.4,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "bbox": [
+              88.117,
+              322.599,
+              209.869,
+              334.583
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_ZH_TO_EN_AIA_pages_03_08_09_24_25/visual_region_crops/page_02_region_p1_b8_006_table_text.png",
+            "target_text_sample": "YoY change (actual exchange rates) YoY change (constant exchange rates)"
+          },
+          {
+            "region_id": "region_p1_b9_007",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "body",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.4,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "bbox": [
+              242.134,
+              322.599,
+              363.886,
+              334.583
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_ZH_TO_EN_AIA_pages_03_08_09_24_25/visual_region_crops/page_02_region_p1_b9_007_table_text.png",
+            "target_text_sample": "YoY change (actual exchange rates) YoY change (constant exchange rates)"
+          },
+          {
+            "region_id": "region_p1_b10_008",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "body",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "fail",
+            "generation_status": "fallback_insert_text",
+            "font_size": 3.4,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "bbox": [
+              396.149,
+              322.599,
+              517.901,
+              334.583
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "fallback_insert_text is not acceptable for role table_text"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/round09/R09_ZH_TO_EN_AIA_pages_03_08_09_24_25/visual_region_crops/page_02_region_p1_b10_008_table_text.png",
+            "target_text_sample": "YoY change (actual exchange rates) YoY change (constant exchange rates)"
+          }
+        ]
+      }
+    },
+    {
+      "dimension": "title_readability",
+      "status": "PASS",
+      "evidence": {
+        "failure_count": 0,
+        "warning_count": 0,
+        "sample": [
+          {
+            "region_id": "region_p1_b104_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "heading",
+            "quality_role": "title",
+            "gate_id": "title_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 13.2,
+            "fail_font_pt": 6.2,
+            "warn_font_pt": 7.0,
+            "bbox": [
+              61.862,
+              54.322,
+              229.754,
+              81.522
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "2019 results at a glance(1)"
+          },
+          {
+            "region_id": "region_p2_b20_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "heading",
+            "quality_role": "title",
+            "gate_id": "title_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 16.4,
+            "fail_font_pt": 6.2,
+            "warn_font_pt": 7.0,
+            "bbox": [
+              78.87,
+              54.322,
+              298.03,
+              81.522
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "By market segment in 2019"
+          }
+        ]
+      }
+    },
+    {
+      "dimension": "image_color_integrity",
+      "status": "PASS",
+      "evidence": {
+        "failure_count": 0,
+        "warning_count": 0,
+        "sample": [
+          {
+            "page_index": 0,
+            "page_number": 1,
+            "source_image_count": 3,
+            "output_image_count": 3,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              227.073,
+              189.002,
+              196.853
+            ],
+            "output_mean_rgb": [
+              227.512,
+              188.592,
+              196.56
+            ],
+            "mean_rgb_delta": 0.381,
+            "source_dominant_rgb": [
+              224,
+              224,
+              224
+            ],
+            "output_dominant_rgb": [
+              224,
+              224,
+              224
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              7.459,
+              7.983,
+              6.571
+            ]
+          },
+          {
+            "page_index": 1,
+            "page_number": 2,
+            "source_image_count": 0,
+            "output_image_count": 0,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              239.981,
+              227.276,
+              223.625
+            ],
+            "output_mean_rgb": [
+              240.435,
+              229.822,
+              225.49
+            ],
+            "mean_rgb_delta": 1.622,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              1.683,
+              3.838,
+              3.11
+            ]
+          },
+          {
+            "page_index": 2,
+            "page_number": 3,
+            "source_image_count": 0,
+            "output_image_count": 2,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              240.34,
+              231.956,
+              225.504
+            ],
+            "output_mean_rgb": [
+              240.12,
+              231.787,
+              225.325
+            ],
+            "mean_rgb_delta": 0.189,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              5.349,
+              5.492,
+              5.293
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "next_state": "Lx_RepairLoop"
+}

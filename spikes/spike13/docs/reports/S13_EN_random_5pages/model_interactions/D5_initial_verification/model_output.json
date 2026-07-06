@@ -1,0 +1,62 @@
+{
+  "verdict": "FAIL",
+  "findings": [
+    {
+      "gate_id": "text_residue",
+      "status": "FAIL",
+      "blocking": true,
+      "evidence": {
+        "target_language": "zh",
+        "ascii_token_count": 25,
+        "cjk_unique_count": 472,
+        "sample": [
+          "Amanah",
+          "Berhad",
+          "Berhad)",
+          "Bhd",
+          "Claire",
+          "DPF",
+          "Danaharta",
+          "Darby",
+          "Ekuiti",
+          "HK",
+          "Holdings",
+          "House",
+          "IFRS",
+          "Khazanah",
+          "Landau",
+          "Life",
+          "Nasional",
+          "Ralph",
+          "Ranhill",
+          "Sdn",
+          "Sime",
+          "Symphony",
+          "US",
+          "Yahya",
+          "and"
+        ]
+      }
+    },
+    {
+      "gate_id": "visual_similarity",
+      "status": "FAIL",
+      "blocking": true,
+      "evidence": {
+        "visual_quality_adjudication": null,
+        "visual_adjudication": null,
+        "reason": "automated structural checks are not enough for product-quality acceptance; source-vs-output PNG adjudication must be recorded",
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    }
+  ],
+  "blocking_failure_count": 2,
+  "confidence": 0.75,
+  "evidence_refs": [
+    "docs/reports/S13_EN_random_5pages/product_quality_gates.initial.json",
+    "docs/reports/S13_EN_random_5pages/visual_region_metrics.json"
+  ],
+  "next_state": "Lx_RepairLoop",
+  "backend_model_call_made": false,
+  "openai_api_call_made": false
+}

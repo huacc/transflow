@@ -1,0 +1,22 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "PASS",
+  "translation_provider": "codex_gpt5_semantic_translation_no_openai_api",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [],
+  "coverage": {
+    "source_unit_count": 271,
+    "translated_unit_count": 271,
+    "matched_unit_count": 271,
+    "missing_unit_ids": [],
+    "invalid_unit_count": 0
+  },
+  "invalid_units": [],
+  "warnings": [],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike13\\docs\\reports\\S13_EN_random_5pages\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\spikes\\spike13\\docs\\reports\\S13_EN_random_5pages\\semantic_translations.generated.json"
+}

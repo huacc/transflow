@@ -1,0 +1,21 @@
+{
+  "decision_id": "D6_user_feedback_adjudication",
+  "state": "S8_VerifyProductQuality",
+  "regression_id": "S13_EN_random_5pages",
+  "purpose": "incorporate user visual feedback if supplied",
+  "input_artifacts": [
+    "docs/reports/S13_EN_random_5pages/visual_region_metrics.json"
+  ],
+  "prompt_contract": "pdf_translation_workflow_core/prompts/templates/D5_D7_quality_gate.prompt.json",
+  "required_output_dimensions": [
+    "user_feedback_adjudication"
+  ],
+  "model_output": {
+    "verdict": "skipped",
+    "backend_model_call_made": false,
+    "openai_api_call_made": false,
+    "reason": "No separate user-provided visual feedback artifact was supplied for this S8 pass."
+  },
+  "tool_outputs": [],
+  "next_state": "D7_similarity_gate"
+}

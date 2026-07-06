@@ -1,0 +1,73 @@
+{
+  "verdict": "PASS_WITH_WARN",
+  "summary": "Background fill defect is fixed and chart/table/body pages retain structure; remaining warnings are compact chart/table headers and some navigation/header text behavior.",
+  "dimensions": [
+    {
+      "dimension": "line_fragmentation",
+      "status": "PASS",
+      "evidence": "Chinese body page uses paragraph flow rather than English line-by-line wrapping."
+    },
+    {
+      "dimension": "paragraph_density",
+      "status": "PASS",
+      "evidence": "Body page text density is visually stable and leaves acceptable end blank."
+    },
+    {
+      "dimension": "internal_paragraph_gap",
+      "status": "PASS",
+      "evidence": "Paragraph gaps are consistent with Chinese report style."
+    },
+    {
+      "dimension": "target_composition_used_for_fluid_body",
+      "status": "PASS",
+      "evidence": "Body flow region uses target-language composition."
+    },
+    {
+      "dimension": "event_card_local_fit",
+      "status": "PASS",
+      "evidence": "No event-card page in this sample scope."
+    },
+    {
+      "dimension": "background_delta",
+      "status": "PASS",
+      "evidence": "Earlier visible red block behind the table title is removed by surrounding-pixel cluster fill sampling."
+    },
+    {
+      "dimension": "font_hierarchy_ratio",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Table header cells and footnotes remain small; fit warnings remain in candidate_generation_evidence."
+    },
+    {
+      "dimension": "sidebar_orientation_group_consistency",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Right-side navigation remains grouped, but page 24 output has a visible top navigation/header artifact."
+    },
+    {
+      "dimension": "sidebar_glyph_orientation",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Rotated Chinese navigation is readable in side rail but still needs targeted crop validation for product pass."
+    },
+    {
+      "dimension": "table_integrity",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Tables/charts preserve geometry; several compact headers need D2 layout variants."
+    },
+    {
+      "dimension": "visual_similarity",
+      "status": "PASS_WITH_WARN",
+      "evidence": "Candidate is visually usable but product gate must remain failed until fit and navigation warnings are repaired."
+    }
+  ],
+  "next_state": "Lx_RepairLoop",
+  "tool": "codex_visual_adjudication",
+  "state": "S8_VerifyProductQuality",
+  "source_preview_dir": "docs\\reports\\round08\\R08_EN_TO_ZH_AIA_pages_08_09_24_25\\source_previews",
+  "candidate_preview_dir": "docs\\reports\\round08\\R08_EN_TO_ZH_AIA_pages_08_09_24_25\\candidate_previews",
+  "basis": "manual rendered PNG inspection in current run; no offline reference used as runtime prompt input",
+  "repair_hints": [
+    "D2 constrained-slot layout_variants",
+    "background_fill_resample already applied",
+    "targeted side-navigation crop check",
+    "table_cell compact variant repair"
+  ]
+}

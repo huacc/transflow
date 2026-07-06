@@ -1,0 +1,291 @@
+{
+  "tool": "plan_visual_region_repairs",
+  "visual_region_metrics": "docs/reports/S13_ZH_random_5pages/visual_region_metrics.json",
+  "repair_plan_count": 5,
+  "blocking_repair_count": 5,
+  "next_state": "Lx_RepairLoop",
+  "plans": [
+    {
+      "gate_id": "body_paragraph_readability",
+      "gate_status": "fail",
+      "failure_count": 5,
+      "warning_count": 0,
+      "repair_atom": "target_composition_body_reflow_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Recompose body frame from current page margins/body band before shrinking text.",
+      "sample_regions": [
+        {
+          "page_number": 4,
+          "region_id": "region_p3_b1_l0",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_04_region_p3_b1_l0_body.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role body",
+            "font_size 3.40pt is below body fail floor 5.20pt",
+            "output_to_source_font_ratio 0.31 is below body fail ratio 0.45"
+          ]
+        },
+        {
+          "page_number": 4,
+          "region_id": "body_flow_000",
+          "quality_role": "body",
+          "region_kind": "body_flow",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_04_body_flow_000_body.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role body",
+            "font_size 3.40pt is below body fail floor 5.20pt",
+            "output_to_source_font_ratio 0.38 is below body fail ratio 0.45"
+          ]
+        },
+        {
+          "page_number": 4,
+          "region_id": "region_p3_b7_l0",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_04_region_p3_b7_l0_body.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role body",
+            "font_size 3.40pt is below body fail floor 5.20pt"
+          ]
+        },
+        {
+          "page_number": 4,
+          "region_id": "body_flow_001",
+          "quality_role": "body",
+          "region_kind": "body_flow",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_04_body_flow_001_body.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role body",
+            "font_size 3.40pt is below body fail floor 5.20pt"
+          ]
+        },
+        {
+          "page_number": 4,
+          "region_id": "region_p3_b13_021",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_04_region_p3_b13_021_body.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role body",
+            "font_size 3.40pt is below body fail floor 5.20pt",
+            "output_to_source_font_ratio 0.38 is below body fail ratio 0.45"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "footnote_readability",
+      "gate_status": "fail",
+      "failure_count": 28,
+      "warning_count": 0,
+      "repair_atom": "footnote_fit_curve_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Tune footnote fit curve and paragraph grouping without changing table/body layout.",
+      "sample_regions": [
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b0_l0",
+          "quality_role": "footnote",
+          "region_kind": "footnote",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b0_l0_footnote.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role footnote"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b25_l0",
+          "quality_role": "footnote",
+          "region_kind": "footnote",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b25_l0_footnote.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role footnote"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b26_l0",
+          "quality_role": "footnote",
+          "region_kind": "footnote",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b26_l0_footnote.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role footnote"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b27_l0",
+          "quality_role": "footnote",
+          "region_kind": "footnote",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b27_l0_footnote.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role footnote"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b28_l0",
+          "quality_role": "footnote",
+          "region_kind": "footnote",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b28_l0_footnote.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role footnote"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "short_label_legibility",
+      "gate_status": "fail",
+      "failure_count": 2,
+      "warning_count": 23,
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan",
+      "description": "Generate compact display variant for short constrained label.",
+      "sample_regions": [
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b2_l0",
+          "quality_role": "short_label",
+          "region_kind": "short_label",
+          "generation_status": "point_fit",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_03_region_p2_b2_l0_short_label.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.31 is below short_label fail ratio 0.35"
+          ]
+        },
+        {
+          "page_number": 4,
+          "region_id": "region_p3_b2_l0",
+          "quality_role": "short_label",
+          "region_kind": "short_label",
+          "generation_status": "point_fit",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_04_region_p3_b2_l0_short_label.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.34 is below short_label fail ratio 0.35"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "gate_status": "fail",
+      "failure_count": 25,
+      "warning_count": 15,
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan",
+      "description": "Generate compact semantic variants for table cells/headers; generator must not invent abbreviations.",
+      "sample_regions": [
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b2_l0",
+          "quality_role": "table_text",
+          "region_kind": "body",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b2_l0_table_text.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role table_text",
+            "output_to_source_font_ratio 0.31 is below table_text fail ratio 0.35"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b15_l0",
+          "quality_role": "table_text",
+          "region_kind": "short_label",
+          "generation_status": "point_fit",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b15_l0_table_text.png",
+          "reasons": [
+            "point_fit is only a warning-level fit for critical role table_text"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b16_l0",
+          "quality_role": "table_text",
+          "region_kind": "body",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b16_l0_table_text.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role table_text"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b23_l0",
+          "quality_role": "table_text",
+          "region_kind": "body",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b23_l0_table_text.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role table_text"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b24_l0",
+          "quality_role": "table_text",
+          "region_kind": "body",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_01_region_p0_b24_l0_table_text.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role table_text"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "title_readability",
+      "gate_status": "fail",
+      "failure_count": 1,
+      "warning_count": 0,
+      "repair_atom": "heading_font_fit_curve_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Extend heading shrink curve down to the readable floor and retry textbox probing before fallback.",
+      "sample_regions": [
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b1_l0",
+          "quality_role": "title",
+          "region_kind": "heading",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.4,
+          "crop_evidence": "docs/reports/S13_ZH_random_5pages/visual_region_crops/page_03_region_p2_b1_l0_title.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role title",
+            "font_size 3.40pt is below title fail floor 6.20pt",
+            "output_to_source_font_ratio 0.28 is below title fail ratio 0.30"
+          ]
+        }
+      ]
+    }
+  ]
+}

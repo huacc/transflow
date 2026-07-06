@@ -1,0 +1,2339 @@
+{
+  "tool": "evaluate_pdf_quality",
+  "source_pdf": "input/AIA_2020_Annual_Report_en_pages_081_152_214_220_231.pdf",
+  "output_pdf": "docs/output/S13_EN_random_5pages_spike13_candidate.pdf",
+  "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json",
+  "visual_adjudication": "docs/reports/S13_EN_random_5pages/visual_adjudication.json",
+  "visual_region_metrics": "docs/reports/S13_EN_random_5pages/visual_region_metrics.json",
+  "product_quality_verdict": "FAIL",
+  "gates": [
+    {
+      "gate_id": "page_count",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=5; output=5"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_1",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_2",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_3",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_4",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "page_geometry",
+      "scope": "page_5",
+      "status": "pass",
+      "blocking": true,
+      "evidence": "source=[0.0, 0.0, 595.2760009765625, 841.8900146484375]; output=[0.0, 0.0, 595.2760009765625, 841.8900146484375]"
+    },
+    {
+      "gate_id": "text_residue",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "target_language": "zh",
+        "ascii_token_count": 25,
+        "cjk_unique_count": 472,
+        "sample": [
+          "Amanah",
+          "Berhad",
+          "Berhad)",
+          "Bhd",
+          "Claire",
+          "DPF",
+          "Danaharta",
+          "Darby",
+          "Ekuiti",
+          "HK",
+          "Holdings",
+          "House",
+          "IFRS",
+          "Khazanah",
+          "Landau",
+          "Life",
+          "Nasional",
+          "Ralph",
+          "Ranhill",
+          "Sdn",
+          "Sime",
+          "Symphony",
+          "US",
+          "Yahya",
+          "and"
+        ]
+      }
+    },
+    {
+      "gate_id": "backfill_generation",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "real_backfill_pdf": true,
+        "redacted_line_count": 271,
+        "inserted_line_count": 271,
+        "inserted_unit_count": 271,
+        "inserted_region_count": 164,
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "text_fit",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "fit_warning_count": 0,
+        "reason": "fallback insertion or overflow evidence blocks product-quality acceptance",
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "source_anchor_order",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "violation_count": 0,
+        "sample": [],
+        "reason": "a target-language reflow region must not cross untranslated visible source separators inside the same block",
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "translation_authenticity",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "translation_provider": "codex_gpt5_semantic_translation_no_openai_api",
+        "reason": "product-quality success requires a real translation provider, not deterministic placeholders",
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "semantic_translation_preflight",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "semantic_translation_validation": "PASS",
+        "reason": "product-quality success requires validated semantic translations before generation",
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "semantic_coverage",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "semantic_coverage": "full_semantic_translation",
+        "translation_quality": "semantic_translation",
+        "reason": "placeholder translations are valid generation evidence but not product-quality success",
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "visual_similarity",
+      "status": "fail",
+      "blocking": true,
+      "evidence": {
+        "visual_quality_adjudication": "PASS_WITH_WARN",
+        "visual_adjudication": "docs/reports/S13_EN_random_5pages/visual_adjudication.json",
+        "reason": "automated structural checks are not enough for product-quality acceptance; source-vs-output PNG adjudication must be recorded",
+        "generation_evidence": "docs/reports/S13_EN_random_5pages/candidate_generation_evidence.json"
+      }
+    },
+    {
+      "gate_id": "font_hierarchy_ratio",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "visual_dimension_status": "PASS_WITH_WARN",
+        "visual_adjudication": "docs/reports/S13_EN_random_5pages/visual_adjudication.json",
+        "reason": "translated PDF must preserve source-relative font hierarchy such as note/body/table/title proportions"
+      }
+    },
+    {
+      "gate_id": "sidebar_glyph_orientation",
+      "status": "pass",
+      "blocking": true,
+      "evidence": {
+        "visual_dimension_status": "PASS_WITH_WARN",
+        "visual_adjudication": "docs/reports/S13_EN_random_5pages/visual_adjudication.json",
+        "reason": "side navigation must preserve group writing mode and glyph orientation relative to the source"
+      }
+    },
+    {
+      "gate_id": "body_paragraph_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S13_EN_random_5pages/visual_region_metrics.json",
+        "role_gate_status": "warn",
+        "failure_count": 0,
+        "warning_count": 8,
+        "region_count": 65,
+        "sample": [
+          {
+            "region_id": "region_p1_b17_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 6.144,
+            "source_median_font_size": 8.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.768,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              50.524,
+              27.251,
+              150.308,
+              37.139
+            ],
+            "source_union_bbox": [
+              51.024,
+              27.651,
+              149.808,
+              36.739
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "font_size 6.14pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_02_region_p1_b17_l0_body.png",
+            "target_text_sample": "财务报表"
+          },
+          {
+            "region_id": "region_p3_b2_l0",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.76,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.768,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              350.737,
+              123.03,
+              414.618,
+              132.147
+            ],
+            "source_union_bbox": [
+              351.237,
+              123.43,
+              414.118,
+              131.747
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "font_size 5.76pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_04_region_p3_b2_l0_body.png",
+            "target_text_sample": "公允价值等级"
+          },
+          {
+            "region_id": "region_p3_b39_l0",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 6.144,
+            "source_median_font_size": 8.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.768,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              50.524,
+              27.251,
+              150.308,
+              37.139
+            ],
+            "source_union_bbox": [
+              51.024,
+              27.651,
+              149.808,
+              36.739
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "font_size 6.14pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_04_region_p3_b39_l0_body.png",
+            "target_text_sample": "财务报表"
+          },
+          {
+            "region_id": "region_p4_b3_l1",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.76,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.768,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              432.513,
+              124.457,
+              478.445,
+              133.642
+            ],
+            "source_union_bbox": [
+              433.013,
+              124.857,
+              477.945,
+              133.242
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "font_size 5.76pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_05_region_p4_b3_l1_body.png",
+            "target_text_sample": "12月31日"
+          },
+          {
+            "region_id": "region_p4_b4_l1",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.76,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.768,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              495.16,
+              124.517,
+              540.808,
+              133.635
+            ],
+            "source_union_bbox": [
+              495.66,
+              124.917,
+              540.308,
+              133.235
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "font_size 5.76pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_05_region_p4_b4_l1_body.png",
+            "target_text_sample": "12月31日"
+          },
+          {
+            "region_id": "region_p4_b9_l1",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.76,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.768,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              241.315,
+              263.73,
+              295.303,
+              272.848
+            ],
+            "source_union_bbox": [
+              241.815,
+              264.13,
+              294.803,
+              272.448
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "font_size 5.76pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_05_region_p4_b9_l1_body.png",
+            "target_text_sample": "名义金额"
+          },
+          {
+            "region_id": "region_p4_b9_l3",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.76,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.768,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              403.315,
+              263.73,
+              448.37,
+              272.848
+            ],
+            "source_union_bbox": [
+              403.815,
+              264.13,
+              447.87,
+              272.448
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "font_size 5.76pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_05_region_p4_b9_l3_body.png",
+            "target_text_sample": "有争议的男高音"
+          },
+          {
+            "region_id": "region_p4_b26_l0",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "body",
+            "quality_role": "body",
+            "gate_id": "body_paragraph_readability",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 6.144,
+            "source_median_font_size": 8.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.768,
+            "fail_font_pt": 5.2,
+            "warn_font_pt": 6.8,
+            "fail_source_ratio": 0.45,
+            "warn_source_ratio": 0.62,
+            "bbox": [
+              155.601,
+              27.323,
+              544.753,
+              37.067
+            ],
+            "source_union_bbox": [
+              156.101,
+              27.723,
+              544.253,
+              36.667
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "font_size 6.14pt is below body recommended floor 6.80pt"
+            ],
+            "repair_atoms": [
+              "target_composition_body_reflow_repair"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_05_region_p4_b26_l0_body.png",
+            "target_text_sample": "合并财务报表附注和重要会计政策"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "footnote_readability",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S13_EN_random_5pages/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 9,
+        "sample": [
+          {
+            "region_id": "region_p0_b0_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              463.309,
+              812.944,
+              561.151,
+              821.696
+            ],
+            "source_union_bbox": [
+              463.809,
+              813.344,
+              560.651,
+              821.296
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "2019 年年度报告 | 077"
+          },
+          {
+            "region_id": "region_p0_b1_l3",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              515.535,
+              582.646,
+              601.311
+            ],
+            "source_union_bbox": [
+              574.194,
+              515.935,
+              582.146,
+              600.911
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "财务报表"
+          },
+          {
+            "region_id": "region_p0_b1_l4",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              657.704,
+              582.646,
+              751.104
+            ],
+            "source_union_bbox": [
+              574.194,
+              658.104,
+              582.146,
+              750.704
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "附加信息"
+          },
+          {
+            "region_id": "region_p1_b16_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              49.39,
+              812.944,
+              122.462,
+              821.696
+            ],
+            "source_union_bbox": [
+              49.89,
+              813.344,
+              121.962,
+              821.296
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "|友邦保险集团有限公司"
+          },
+          {
+            "region_id": "region_p2_b30_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              49.39,
+              812.944,
+              122.462,
+              821.696
+            ],
+            "source_union_bbox": [
+              49.89,
+              813.344,
+              121.962,
+              821.296
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "|友邦保险集团有限公司"
+          },
+          {
+            "region_id": "region_p3_b38_l0",
+            "page_index": 3,
+            "page_number": 4,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              49.39,
+              812.944,
+              122.462,
+              821.696
+            ],
+            "source_union_bbox": [
+              49.89,
+              813.344,
+              121.962,
+              821.296
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "|友邦保险集团有限公司"
+          },
+          {
+            "region_id": "region_p4_b24_l0",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.396,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.771,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              463.309,
+              812.944,
+              547.497,
+              821.696
+            ],
+            "source_union_bbox": [
+              463.809,
+              813.344,
+              546.997,
+              821.296
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "2019 年年度报告 |"
+          },
+          {
+            "region_id": "region_p4_b25_l3",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "footnote",
+            "quality_role": "footnote",
+            "gate_id": "footnote_readability",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.74,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.82,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              574.324,
+              515.534,
+              583.276,
+              601.302
+            ],
+            "source_union_bbox": [
+              574.824,
+              515.934,
+              582.776,
+              600.902
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "财务报表"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "short_label_legibility",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S13_EN_random_5pages/visual_region_metrics.json",
+        "role_gate_status": "warn",
+        "failure_count": 0,
+        "warning_count": 5,
+        "region_count": 35,
+        "sample": [
+          {
+            "region_id": "region_p1_b11_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "compact_label",
+            "quality_role": "short_label",
+            "gate_id": "short_label_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.547,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.4,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.55,
+            "bbox": [
+              50.524,
+              463.045,
+              86.911,
+              474.38
+            ],
+            "source_union_bbox": [
+              51.024,
+              463.445,
+              86.411,
+              473.98
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.55 is below short_label warn ratio 0.55"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_02_region_p1_b11_l0_short_label.png",
+            "target_text_sample": "马来西亚"
+          },
+          {
+            "region_id": "region_p1_b13_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "compact_label",
+            "quality_role": "short_label",
+            "gate_id": "short_label_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.547,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.4,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.55,
+            "bbox": [
+              50.524,
+              492.039,
+              87.614,
+              503.374
+            ],
+            "source_union_bbox": [
+              51.024,
+              492.439,
+              87.114,
+              502.974
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.55 is below short_label warn ratio 0.55"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_02_region_p1_b13_l0_short_label.png",
+            "target_text_sample": "澳大利亚"
+          },
+          {
+            "region_id": "region_p1_b14_l0",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "compact_label",
+            "quality_role": "short_label",
+            "gate_id": "short_label_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.547,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.4,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.55,
+            "bbox": [
+              50.524,
+              506.536,
+              78.466,
+              517.871
+            ],
+            "source_union_bbox": [
+              51.024,
+              506.936,
+              77.966,
+              517.471
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.55 is below short_label warn ratio 0.55"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_02_region_p1_b14_l0_short_label.png",
+            "target_text_sample": "文莱"
+          },
+          {
+            "region_id": "region_p4_b3_l0",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "compact_label",
+            "quality_role": "short_label",
+            "gate_id": "short_label_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.2,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.693,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.4,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.55,
+            "bbox": [
+              459.49,
+              115.96,
+              478.445,
+              125.145
+            ],
+            "source_union_bbox": [
+              459.99,
+              116.36,
+              477.945,
+              124.745
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 31.0,
+            "reasons": [
+              "background_delta 31.0 exceeds warn threshold 26.0"
+            ],
+            "repair_atoms": [
+              "background_fill_resample"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_05_region_p4_b3_l0_short_label.png",
+            "target_text_sample": "正如在"
+          },
+          {
+            "region_id": "region_p4_b6_l0",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "compact_label",
+            "quality_role": "short_label",
+            "gate_id": "short_label_legibility",
+            "status": "warn",
+            "generation_status": "fit",
+            "font_size": 5.2,
+            "source_median_font_size": 9.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.547,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.4,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.55,
+            "bbox": [
+              56.193,
+              169.375,
+              77.352,
+              180.967
+            ],
+            "source_union_bbox": [
+              56.693,
+              169.775,
+              76.852,
+              180.567
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [
+              "output_to_source_font_ratio 0.55 is below short_label warn ratio 0.55"
+            ],
+            "repair_atoms": [
+              "D2_constrained_slot_layout_variants"
+            ],
+            "crop_evidence": "docs/reports/S13_EN_random_5pages/visual_region_crops/page_05_region_p4_b6_l0_short_label.png",
+            "target_text_sample": "全部的"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "sidebar_navigation_legibility",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S13_EN_random_5pages/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 6,
+        "sample": [
+          {
+            "region_id": "region_p0_b1_l0",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              90.115,
+              582.646,
+              128.153
+            ],
+            "source_union_bbox": [
+              574.194,
+              90.515,
+              582.146,
+              127.753
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "概述"
+          },
+          {
+            "region_id": "region_p0_b1_l1",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              184.787,
+              582.646,
+              311.28
+            ],
+            "source_union_bbox": [
+              574.194,
+              185.187,
+              582.146,
+              310.88
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "财务和运营审查"
+          },
+          {
+            "region_id": "region_p0_b1_l2",
+            "page_index": 0,
+            "page_number": 1,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              573.694,
+              367.67,
+              582.646,
+              460.044
+            ],
+            "source_union_bbox": [
+              574.194,
+              368.07,
+              582.146,
+              459.644
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "公司治理"
+          },
+          {
+            "region_id": "region_p4_b25_l0",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              574.324,
+              90.115,
+              583.276,
+              128.151
+            ],
+            "source_union_bbox": [
+              574.824,
+              90.515,
+              582.776,
+              127.751
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "概述"
+          },
+          {
+            "region_id": "region_p4_b25_l1",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              574.324,
+              184.788,
+              583.276,
+              311.271
+            ],
+            "source_union_bbox": [
+              574.824,
+              185.188,
+              582.776,
+              310.871
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "财务和运营审查"
+          },
+          {
+            "region_id": "region_p4_b25_l2",
+            "page_index": 4,
+            "page_number": 5,
+            "region_kind": "vertical_nav",
+            "quality_role": "sidebar",
+            "gate_id": "sidebar_navigation_legibility",
+            "status": "pass",
+            "generation_status": "rotated_horizontal_image_fit",
+            "font_size": 6.72,
+            "source_median_font_size": 7.0,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.96,
+            "fail_font_pt": 3.4,
+            "warn_font_pt": 4.0,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              574.324,
+              367.672,
+              583.276,
+              460.035
+            ],
+            "source_union_bbox": [
+              574.824,
+              368.072,
+              582.776,
+              459.635
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "公司治理"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S13_EN_random_5pages/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 49,
+        "sample": [
+          {
+            "region_id": "region_p1_b9_008",
+            "page_index": 1,
+            "page_number": 2,
+            "region_kind": "table_note",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 7.875,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 3,
+            "output_to_source_font_ratio": 1.05,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              49.524,
+              415.931,
+              536.138,
+              437.746
+            ],
+            "source_union_bbox": [
+              51.024,
+              418.431,
+              534.638,
+              435.246
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "国家当前保单持有人参与"
+          },
+          {
+            "region_id": "region_p2_b3_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.796,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.773,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              318.208,
+              203.462,
+              350.768,
+              212.647
+            ],
+            "source_union_bbox": [
+              318.708,
+              203.862,
+              350.268,
+              212.247
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "公允价值"
+          },
+          {
+            "region_id": "region_p2_b4_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 4.788,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.638,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              50.526,
+              233.942,
+              71.243,
+              243.922
+            ],
+            "source_union_bbox": [
+              51.026,
+              234.342,
+              70.743,
+              243.522
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "百万美元"
+          },
+          {
+            "region_id": "region_p2_b4_l1",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.292,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.706,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              250.176,
+              234.197,
+              269.791,
+              243.315
+            ],
+            "source_union_bbox": [
+              250.676,
+              234.597,
+              269.291,
+              242.915
+            ],
+            "source_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_background_rgb": [
+              208,
+              224,
+              240
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "笔记"
+          },
+          {
+            "region_id": "region_p2_b5_l0",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.796,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.773,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              296.758,
+              217.127,
+              331.043,
+              226.312
+            ],
+            "source_union_bbox": [
+              297.258,
+              217.527,
+              330.543,
+              225.912
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "公允价值"
+          },
+          {
+            "region_id": "region_p2_b5_l1",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.796,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.773,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              302.788,
+              225.625,
+              331.043,
+              234.81
+            ],
+            "source_union_bbox": [
+              303.288,
+              226.025,
+              330.543,
+              234.41
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "通过"
+          },
+          {
+            "region_id": "region_p2_b5_l2",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.796,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.773,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              287.653,
+              234.122,
+              329.318,
+              243.307
+            ],
+            "source_union_bbox": [
+              288.153,
+              234.522,
+              328.818,
+              242.907
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "利润或损失"
+          },
+          {
+            "region_id": "region_p2_b5_l3",
+            "page_index": 2,
+            "page_number": 3,
+            "region_kind": "table_cell",
+            "quality_role": "table_text",
+            "gate_id": "table_text_legibility",
+            "status": "pass",
+            "generation_status": "fit",
+            "font_size": 5.796,
+            "source_median_font_size": 7.5,
+            "source_font_source": "source_extraction",
+            "source_matched_line_count": 1,
+            "output_to_source_font_ratio": 0.773,
+            "fail_font_pt": 3.2,
+            "warn_font_pt": 3.8,
+            "fail_source_ratio": 0.35,
+            "warn_source_ratio": 0.5,
+            "bbox": [
+              349.701,
+              225.625,
+              382.066,
+              234.81
+            ],
+            "source_union_bbox": [
+              350.201,
+              226.025,
+              381.566,
+              234.41
+            ],
+            "source_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "output_background_rgb": [
+              255,
+              255,
+              255
+            ],
+            "background_delta": 0.0,
+            "reasons": [],
+            "repair_atoms": [],
+            "crop_evidence": null,
+            "target_text_sample": "可用的"
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "source_relative_visual_baseline",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S13_EN_random_5pages/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 164,
+        "sample": [],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    },
+    {
+      "gate_id": "image_color_integrity",
+      "status": "pass",
+      "blocking": false,
+      "evidence": {
+        "visual_region_metrics": "docs/reports/S13_EN_random_5pages/visual_region_metrics.json",
+        "role_gate_status": "pass",
+        "failure_count": 0,
+        "warning_count": 0,
+        "region_count": 5,
+        "sample": [
+          {
+            "page_index": 0,
+            "page_number": 1,
+            "source_image_count": 0,
+            "output_image_count": 3,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              234.143,
+              233.051,
+              226.546
+            ],
+            "output_mean_rgb": [
+              233.893,
+              232.869,
+              226.307
+            ],
+            "mean_rgb_delta": 0.224,
+            "source_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "output_dominant_rgb": [
+              255,
+              255,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              27.906,
+              27.93,
+              26.864
+            ]
+          },
+          {
+            "page_index": 1,
+            "page_number": 2,
+            "source_image_count": 0,
+            "output_image_count": 0,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              208.47,
+              223.15,
+              241.251
+            ],
+            "output_mean_rgb": [
+              208.912,
+              223.788,
+              241.901
+            ],
+            "mean_rgb_delta": 0.577,
+            "source_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              4.184,
+              5.845,
+              6.045
+            ]
+          },
+          {
+            "page_index": 2,
+            "page_number": 3,
+            "source_image_count": 0,
+            "output_image_count": 0,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              216.819,
+              228.627,
+              243.337
+            ],
+            "output_mean_rgb": [
+              217.331,
+              229.315,
+              244.02
+            ],
+            "mean_rgb_delta": 0.628,
+            "source_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              2.5,
+              3.369,
+              3.412
+            ]
+          },
+          {
+            "page_index": 3,
+            "page_number": 4,
+            "source_image_count": 0,
+            "output_image_count": 0,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              207.819,
+              222.231,
+              240.297
+            ],
+            "output_mean_rgb": [
+              208.46,
+              223.151,
+              241.239
+            ],
+            "mean_rgb_delta": 0.834,
+            "source_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              4.286,
+              5.992,
+              6.197
+            ]
+          },
+          {
+            "page_index": 4,
+            "page_number": 5,
+            "source_image_count": 0,
+            "output_image_count": 3,
+            "image_color_status": "pass",
+            "image_color_reasons": [],
+            "source_mean_rgb": [
+              208.621,
+              223.185,
+              241.186
+            ],
+            "output_mean_rgb": [
+              208.758,
+              223.321,
+              241.268
+            ],
+            "mean_rgb_delta": 0.118,
+            "source_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "output_dominant_rgb": [
+              208,
+              224,
+              240
+            ],
+            "dominant_rgb_delta": 0.0,
+            "pixel_diff_mean_rgb": [
+              4.259,
+              5.836,
+              5.972
+            ]
+          }
+        ],
+        "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+      }
+    }
+  ],
+  "page_metrics": [
+    {
+      "page_index": 0,
+      "source_metrics": {
+        "line_count": 53,
+        "text_area": 221432.018,
+        "y_span": 730.781,
+        "median_gap": 2.964,
+        "median_font_size": 9.5
+      },
+      "output_metrics": {
+        "line_count": 43,
+        "text_area": 155204.532,
+        "y_span": 728.727,
+        "median_gap": 0.707,
+        "median_font_size": 9.12
+      },
+      "source_font_hierarchy": {
+        "q10": 7.0,
+        "q25": 9.5,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 5.74,
+        "q25": 9.12,
+        "q50": 9.12,
+        "q75": 9.12,
+        "q90": 9.12,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.701,
+        "line_count_ratio": 0.811,
+        "y_span_ratio": 0.997,
+        "font_size_ratio": 0.96,
+        "small_to_body_ratio_delta": 0.0
+      }
+    },
+    {
+      "page_index": 1,
+      "source_metrics": {
+        "line_count": 41,
+        "text_area": 88397.593,
+        "y_span": 793.645,
+        "median_gap": 2.964,
+        "median_font_size": 9.5
+      },
+      "output_metrics": {
+        "line_count": 33,
+        "text_area": 51526.757,
+        "y_span": 794.044,
+        "median_gap": 2.135,
+        "median_font_size": 9.12
+      },
+      "source_font_hierarchy": {
+        "q10": 7.5,
+        "q25": 9.5,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 5.396,
+        "q25": 6.931,
+        "q50": 9.12,
+        "q75": 9.12,
+        "q90": 9.5,
+        "small_to_body_ratio": 0.76,
+        "large_to_body_ratio": 1.042
+      },
+      "ratios": {
+        "text_area_ratio": 0.583,
+        "line_count_ratio": 0.805,
+        "y_span_ratio": 1.001,
+        "font_size_ratio": 0.96,
+        "small_to_body_ratio_delta": -0.24
+      }
+    },
+    {
+      "page_index": 2,
+      "source_metrics": {
+        "line_count": 136,
+        "text_area": 64650.324,
+        "y_span": 793.645,
+        "median_gap": -10.621,
+        "median_font_size": 9.5
+      },
+      "output_metrics": {
+        "line_count": 134,
+        "text_area": 41359.925,
+        "y_span": 794.044,
+        "median_gap": -8.738,
+        "median_font_size": 9.5
+      },
+      "source_font_hierarchy": {
+        "q10": 7.5,
+        "q25": 7.5,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 0.789,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 5.796,
+        "q25": 6.8,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 0.716,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.64,
+        "line_count_ratio": 0.985,
+        "y_span_ratio": 1.001,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.073
+      }
+    },
+    {
+      "page_index": 3,
+      "source_metrics": {
+        "line_count": 139,
+        "text_area": 107673.173,
+        "y_span": 793.645,
+        "median_gap": -10.535,
+        "median_font_size": 9.5
+      },
+      "output_metrics": {
+        "line_count": 135,
+        "text_area": 67117.164,
+        "y_span": 794.044,
+        "median_gap": -8.743,
+        "median_font_size": 9.5
+      },
+      "source_font_hierarchy": {
+        "q10": 9.5,
+        "q25": 9.5,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 6.859,
+        "q25": 6.931,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 0.73,
+        "large_to_body_ratio": 1.0
+      },
+      "ratios": {
+        "text_area_ratio": 0.623,
+        "line_count_ratio": 0.971,
+        "y_span_ratio": 1.001,
+        "font_size_ratio": 1.0,
+        "small_to_body_ratio_delta": -0.27
+      }
+    },
+    {
+      "page_index": 4,
+      "source_metrics": {
+        "line_count": 95,
+        "text_area": 84845.141,
+        "y_span": 793.573,
+        "median_gap": -10.533,
+        "median_font_size": 9.5
+      },
+      "output_metrics": {
+        "line_count": 70,
+        "text_area": 67741.128,
+        "y_span": 793.972,
+        "median_gap": -5.748,
+        "median_font_size": 9.12
+      },
+      "source_font_hierarchy": {
+        "q10": 7.5,
+        "q25": 9.5,
+        "q50": 9.5,
+        "q75": 9.5,
+        "q90": 9.5,
+        "small_to_body_ratio": 1.0,
+        "large_to_body_ratio": 1.0
+      },
+      "output_font_hierarchy": {
+        "q10": 5.396,
+        "q25": 5.76,
+        "q50": 9.12,
+        "q75": 9.12,
+        "q90": 9.5,
+        "small_to_body_ratio": 0.632,
+        "large_to_body_ratio": 1.042
+      },
+      "ratios": {
+        "text_area_ratio": 0.798,
+        "line_count_ratio": 0.737,
+        "y_span_ratio": 1.001,
+        "font_size_ratio": 0.96,
+        "small_to_body_ratio_delta": -0.368
+      }
+    }
+  ],
+  "blocking_failure_count": 2
+}

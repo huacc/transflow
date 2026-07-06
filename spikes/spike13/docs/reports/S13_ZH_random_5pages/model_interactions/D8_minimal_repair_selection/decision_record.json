@@ -1,0 +1,28 @@
+{
+  "decision_id": "D8_minimal_repair_selection",
+  "state": "Lx_RepairLoop",
+  "regression_id": "S13_ZH_random_5pages",
+  "purpose": "select minimal repair atom for current blocking quality failure",
+  "input_artifacts": [
+    "docs/reports/S13_ZH_random_5pages/product_quality_gates.json",
+    "docs/reports/S13_ZH_random_5pages/visual_repair_plan.json",
+    "docs/reports/S13_ZH_random_5pages/page_strategy.json"
+  ],
+  "prompt_contract": "pdf_translation_workflow_core/prompts/templates/D8_repair_selection.prompt.json",
+  "required_output_dimensions": [
+    "failure_class",
+    "repair_atom",
+    "target_state",
+    "verification_to_run"
+  ],
+  "model_output": {
+    "verdict": "fail",
+    "backend_model_call_made": false,
+    "openai_api_call_made": false,
+    "reason": "50 fit warnings and 61 failed visual regions across multiple roles cannot be resolved by one safe result-file-only repair loop."
+  },
+  "tool_outputs": [
+    "docs/reports/S13_ZH_random_5pages/repair_loop_1.json"
+  ],
+  "next_state": "S_FAIL_QUALITY"
+}

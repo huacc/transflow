@@ -17,7 +17,7 @@ Run all commands from this round root. Use relative paths inside this package. D
 Validate whether the workflow design in:
 
 ```text
-docs\业务流程\PDF_中文回填_标准流程设计.md
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md
 ```
 
 is executable and sufficiently complete to guide:
@@ -40,7 +40,7 @@ Before generating or judging any PDF, read these files:
 
 ```text
 ROUND10_PACKAGE_MANIFEST.md
-docs\业务流程\PDF_中文回填_标准流程设计.md
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md
 pdf_translation_workflow_core\README.md
 pdf_translation_workflow_core\contracts\run_modes.md
 pdf_translation_workflow_core\contracts\state_machine.md
@@ -60,17 +60,17 @@ The state-to-tool orchestration source of truth is:
 
 ```text
 pdf_translation_workflow_core\prompts\prompt_tool_bindings.json
-docs\业务流程\PDF_中文回填_标准流程设计.md
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md
 ```
 
 Before executing `S0_Request`, inspect these process-design sections and use them as the transition source of truth:
 
 ```text
-docs\业务流程\PDF_中文回填_标准流程设计.md section 4.1 主状态机图
-docs\业务流程\PDF_中文回填_标准流程设计.md section 4.2 Loop 与主状态机调用关系图
-docs\业务流程\PDF_中文回填_标准流程设计.md section 4.3 Loop 内部状态图
-docs\业务流程\PDF_中文回填_标准流程设计.md section 15 状态机详细设计
-docs\业务流程\PDF_中文回填_标准流程设计.md section 16 活动流详细设计
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md section 4.1 主状态机图
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md section 4.2 Loop 与主状态机调用关系图
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md section 4.3 Loop 内部状态图
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md section 15 状态机详细设计
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md section 16 活动流详细设计
 ```
 
 The table in section 4 is an index. The diagrams and section 15 define the transition semantics. If a table row, tool instruction, or local judgement conflicts with the diagrams, follow the diagrams/section 15 and record the conflict as a process-contract issue.
@@ -333,7 +333,7 @@ Use:
 
 ```text
 pdf_translation_workflow_core\contracts\page_type_repair_matrix.md
-docs\业务流程\PDF_中文回填_标准流程设计.md sections 4.2, 4.3, 9, 10 and 15.2
+docs\业务流程\PDF_语义翻译回填_标准流程设计.md sections 4.2, 4.3, 9, 10 and 15.2
 ```
 
 Each loop must create:
@@ -406,7 +406,7 @@ python pdf_translation_workflow_core\tools\run_state_machine_selftest.py `
   --modes product_quality `
   --generator semantic_backfill `
   --semantic-translations-dir docs\input\semantic_translations `
-  --process-doc docs\业务流程\PDF_中文回填_标准流程设计.md `
+  --process-doc docs\业务流程\PDF_语义翻译回填_标准流程设计.md `
   --out-dir docs\reports\selftest
 ```
 

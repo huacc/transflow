@@ -1,0 +1,282 @@
+{
+  "tool": "offline_reference_comparison",
+  "runtime_boundary": "offline_reference_only_after_candidate_generation",
+  "reference_pdfs": {
+    "en": "样本\\英文\\AIA_2020_Annual_Report_en.pdf",
+    "zh": "样本\\中文\\AIA_2020_Annual_Report_zh.pdf"
+  },
+  "cases": [
+    {
+      "case_id": "R08_ZH_TO_EN_AIA_pages_03_08_09_24_25",
+      "target_language": "en",
+      "candidate_pdf": "docs\\output\\round08\\R08_ZH_TO_EN_AIA_pages_03_08_09_24_25_candidate.pdf",
+      "reference_pdf": "样本\\英文\\AIA_2020_Annual_Report_en.pdf",
+      "page_mapping": [
+        3,
+        8,
+        9,
+        24,
+        25
+      ],
+      "page_results": [
+        {
+          "candidate_page": 1,
+          "official_reference_page": 3,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_ZH_TO_EN_AIA_pages_03_08_09_24_25\\compare_candidate_p1_official_p3.png",
+          "candidate_content": {
+            "bbox": [
+              0,
+              51,
+              539,
+              717
+            ],
+            "bbox_area_ratio": 0.7709,
+            "ink_ratio": 0.6849
+          },
+          "reference_content": {
+            "bbox": [
+              0,
+              51,
+              539,
+              717
+            ],
+            "bbox_area_ratio": 0.7709,
+            "ink_ratio": 0.6802
+          },
+          "bbox_area_ratio_delta": 0.0,
+          "ink_ratio_delta": 0.0047
+        },
+        {
+          "candidate_page": 2,
+          "official_reference_page": 8,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_ZH_TO_EN_AIA_pages_03_08_09_24_25\\compare_candidate_p2_official_p8.png",
+          "candidate_content": {
+            "bbox": [
+              34,
+              26,
+              516,
+              821
+            ],
+            "bbox_area_ratio": 0.7636,
+            "ink_ratio": 0.1285
+          },
+          "reference_content": {
+            "bbox": [
+              34,
+              28,
+              516,
+              821
+            ],
+            "bbox_area_ratio": 0.7617,
+            "ink_ratio": 0.1367
+          },
+          "bbox_area_ratio_delta": 0.0019,
+          "ink_ratio_delta": -0.0082
+        },
+        {
+          "candidate_page": 3,
+          "official_reference_page": 9,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_ZH_TO_EN_AIA_pages_03_08_09_24_25\\compare_candidate_p3_official_p9.png",
+          "candidate_content": {
+            "bbox": [
+              78,
+              58,
+              596,
+              823
+            ],
+            "bbox_area_ratio": 0.7896,
+            "ink_ratio": 0.1344
+          },
+          "reference_content": {
+            "bbox": [
+              79,
+              62,
+              596,
+              821
+            ],
+            "bbox_area_ratio": 0.7819,
+            "ink_ratio": 0.1498
+          },
+          "bbox_area_ratio_delta": 0.0077,
+          "ink_ratio_delta": -0.0154
+        },
+        {
+          "candidate_page": 4,
+          "official_reference_page": 24,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_ZH_TO_EN_AIA_pages_03_08_09_24_25\\compare_candidate_p4_official_p24.png",
+          "candidate_content": {
+            "bbox": [
+              34,
+              25,
+              517,
+              821
+            ],
+            "bbox_area_ratio": 0.7661,
+            "ink_ratio": 0.1449
+          },
+          "reference_content": {
+            "bbox": [
+              34,
+              28,
+              516,
+              821
+            ],
+            "bbox_area_ratio": 0.7617,
+            "ink_ratio": 0.1253
+          },
+          "bbox_area_ratio_delta": 0.0044,
+          "ink_ratio_delta": 0.0196
+        },
+        {
+          "candidate_page": 5,
+          "official_reference_page": 25,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_ZH_TO_EN_AIA_pages_03_08_09_24_25\\compare_candidate_p5_official_p25.png",
+          "candidate_content": {
+            "bbox": [
+              78,
+              96,
+              596,
+              823
+            ],
+            "bbox_area_ratio": 0.7504,
+            "ink_ratio": 0.1292
+          },
+          "reference_content": {
+            "bbox": [
+              79,
+              90,
+              596,
+              821
+            ],
+            "bbox_area_ratio": 0.7531,
+            "ink_ratio": 0.0959
+          },
+          "bbox_area_ratio_delta": -0.0027,
+          "ink_ratio_delta": 0.0333
+        }
+      ]
+    },
+    {
+      "case_id": "R08_EN_TO_ZH_AIA_pages_08_09_24_25",
+      "target_language": "zh",
+      "candidate_pdf": "docs\\output\\round08\\R08_EN_TO_ZH_AIA_pages_08_09_24_25_candidate.pdf",
+      "reference_pdf": "样本\\中文\\AIA_2020_Annual_Report_zh.pdf",
+      "page_mapping": [
+        8,
+        9,
+        24,
+        25
+      ],
+      "page_results": [
+        {
+          "candidate_page": 1,
+          "official_reference_page": 8,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_EN_TO_ZH_AIA_pages_08_09_24_25\\compare_candidate_p1_official_p8.png",
+          "candidate_content": {
+            "bbox": [
+              34,
+              28,
+              516,
+              820
+            ],
+            "bbox_area_ratio": 0.7607,
+            "ink_ratio": 0.1318
+          },
+          "reference_content": {
+            "bbox": [
+              34,
+              27,
+              516,
+              821
+            ],
+            "bbox_area_ratio": 0.7626,
+            "ink_ratio": 0.139
+          },
+          "bbox_area_ratio_delta": -0.0019,
+          "ink_ratio_delta": -0.0072
+        },
+        {
+          "candidate_page": 2,
+          "official_reference_page": 9,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_EN_TO_ZH_AIA_pages_08_09_24_25\\compare_candidate_p2_official_p9.png",
+          "candidate_content": {
+            "bbox": [
+              77,
+              62,
+              596,
+              820
+            ],
+            "bbox_area_ratio": 0.7839,
+            "ink_ratio": 0.1341
+          },
+          "reference_content": {
+            "bbox": [
+              79,
+              60,
+              596,
+              821
+            ],
+            "bbox_area_ratio": 0.784,
+            "ink_ratio": 0.1403
+          },
+          "bbox_area_ratio_delta": -0.0001,
+          "ink_ratio_delta": -0.0062
+        },
+        {
+          "candidate_page": 3,
+          "official_reference_page": 24,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_EN_TO_ZH_AIA_pages_08_09_24_25\\compare_candidate_p3_official_p24.png",
+          "candidate_content": {
+            "bbox": [
+              34,
+              26,
+              520,
+              820
+            ],
+            "bbox_area_ratio": 0.769,
+            "ink_ratio": 0.1328
+          },
+          "reference_content": {
+            "bbox": [
+              34,
+              27,
+              516,
+              821
+            ],
+            "bbox_area_ratio": 0.7626,
+            "ink_ratio": 0.1358
+          },
+          "bbox_area_ratio_delta": 0.0064,
+          "ink_ratio_delta": -0.003
+        },
+        {
+          "candidate_page": 4,
+          "official_reference_page": 25,
+          "comparison_png": "docs\\reports\\round08\\offline_reference_comparison\\R08_EN_TO_ZH_AIA_pages_08_09_24_25\\compare_candidate_p4_official_p25.png",
+          "candidate_content": {
+            "bbox": [
+              77,
+              95,
+              596,
+              820
+            ],
+            "bbox_area_ratio": 0.7498,
+            "ink_ratio": 0.1
+          },
+          "reference_content": {
+            "bbox": [
+              79,
+              96,
+              596,
+              821
+            ],
+            "bbox_area_ratio": 0.7469,
+            "ink_ratio": 0.0884
+          },
+          "bbox_area_ratio_delta": 0.0029,
+          "ink_ratio_delta": 0.0116
+        }
+      ]
+    }
+  ]
+}

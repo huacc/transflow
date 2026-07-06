@@ -1,0 +1,38 @@
+{
+  "state": "S1_ContractLoad",
+  "timestamp_local": "2026-07-06T06:52:00+08:00",
+  "contracts": [
+    {
+      "path": "pdf_translation_workflow_core/contracts/tool_contracts.md",
+      "sha256": "b86012e5681de879e2dccdcee5a4b42b85c05c1215225731279d639f50d5c2fd"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/semantic_translation_contract.md",
+      "sha256": "9471f2ad848ab0d08a76dac8c419373de2e41e51ef3fac726473340178bc89ec"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/product_quality_contract.md",
+      "sha256": "678f42683fde0be90028821bc0e600a32f4c9444254b589d0b8a25802ffb8cdf"
+    },
+    {
+      "path": "pdf_translation_workflow_core/contracts/state_machine.md",
+      "sha256": "463538836ff4530209de35e5abc3997f0c3920195502c9ec5f0b5c2e3ff956e8"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D2_translation.prompt.json",
+      "sha256": "1009efc0f040b9d1bd67a5c87a7a573bfac622f7f4a7202b09e671eaa3456248"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D4_layout_plan.prompt.json",
+      "sha256": "717761715de9e7b9664345d7535274e3c4631588abbe3164a5db7d6f330e8191"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D5_D7_quality_gate.prompt.json",
+      "sha256": "9f36278fc7e025173ace25c0c1c5c82e74dc42f996592d4380bc712f47301cee"
+    },
+    {
+      "path": "pdf_translation_workflow_core/prompts/templates/D8_repair_selection.prompt.json",
+      "sha256": "fa1a4c952e4d80abaf52bf13e710e7e4801e1d8a031ae4ec57aa033fe5cad975"
+    }
+  ]
+}

@@ -18,9 +18,20 @@ A run cannot claim product success merely because source-language residue appear
 | clipping | output PNG and bbox checks | D5 | yes |
 | collision | bbox intersections and PNG review | D5/D7 | yes |
 | visual_similarity | metrics + PNG review | D7 | yes |
+| source_relative_visual_baseline | `collect_visual_region_metrics.py` source-extraction coverage gate | D7 | yes |
+| hero_banner_text_readability | `collect_visual_region_metrics.py` role gate | D7 | yes when hero/banner title exists |
+| title_readability | `collect_visual_region_metrics.py` role gate | D7 | yes when title/heading exists |
+| body_paragraph_readability | `collect_visual_region_metrics.py` role gate | D7 | yes when body/body_flow exists |
+| table_text_legibility | `collect_visual_region_metrics.py` role gate | D7 | yes when table cells/headers exist |
+| legend_label_alignment | `collect_visual_region_metrics.py` role gate | D7 | yes when legends exist |
+| image_color_integrity | `collect_visual_region_metrics.py` page gate | D7 | yes |
 | line_fragmentation | target-language line length and region width usage compared with source role | D7 | yes for paragraph/footnote pages |
 | paragraph_density | active paragraph text area and line density compared with source | D7 | yes for body-text pages |
 | internal_paragraph_gap | gap between active paragraphs, separated from end-of-article blank space | D7 | yes for body-text pages |
+| single_dense_paragraph | source paragraph gaps collapse into one uninterrupted paragraph | D7 | yes for body-text pages |
+| body_flow_fallback_truncation | body_flow cannot fit and falls back to clipped point insertion | generation evidence + D7 | yes |
+| target_composition_used_for_fluid_body | expanding-language body copy uses target visual composition instead of hard source-bbox fitting | generation evidence + D7 | yes for expanding-language body pages |
+| failed_probe_residue | failed textbox fit attempts leave visible residue or overlapped text | PNG review + generation evidence | yes |
 | font_hierarchy_ratio | source-relative font scale between note/body/table/title roles | D7 | yes |
 | sidebar_orientation | source-relative orientation for rotated navigation labels | D7 | yes when side navigation exists |
 | sidebar_orientation_group_consistency | all labels in the same side-navigation group share the source writing mode | D7 | yes when side navigation exists |
@@ -50,6 +61,7 @@ At minimum:
 | `small_to_body_ratio_delta` | output small/body ratio minus source small/body ratio | fail/warn when role hierarchy changes visibly |
 | `blank_area_delta` | output blank area - source blank area | fail if visible holes emerge |
 | `background_delta` | sampled fill color difference | fail if visible redaction blocks |
+| `role_gate_status` | title/body/table/footnote/sidebar/image role gate status | fail if a critical role is `fail`; warn only for non-critical fit risks |
 | `fragmentation_ratio` | output median line width / source median line width in the same region role | fail if target-language paragraphs are broken into visibly short lines without a source-layout reason |
 | `region_reflow_ratio` | inserted region count / inserted unit count | warn if paragraph pages are near 1.0, because that usually means line-by-line copy layout |
 | `source_line_index_gap` | line-index jump inside one inserted region for one source block | fail if gap > 1 and no explicit ignorable separator evidence exists |
@@ -122,7 +134,7 @@ python pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py `
     {"dimension": "footnote_readability", "status": "PASS|FAIL|PASS_WITH_WARN"},
     {"dimension": "visual_similarity", "status": "PASS|FAIL|PASS_WITH_WARN"}
   ],
-  "next_state": "S9_VerifyProcessContract|Lx_RepairLoop|S_FAIL_QUALITY"
+  "next_state": "S9_VerifyProcessContract|Lx_RepairLoop|S3_SourceExtract|S5_TranslationPlan|S_FAIL_QUALITY|S_FAIL_CAPABILITY"
 }
 ```
 
@@ -150,9 +162,19 @@ Current blocking automation coverage:
 | `clipping` | no | requires bbox-plus-PNG validator |
 | `collision` | no | requires region intersection validator |
 | `visual_similarity` | partial/yes if adjudication evidence is supplied | blocks success unless source-vs-output PNG adjudication is recorded as PASS |
+| `source_relative_visual_baseline` | yes if `visual_region_metrics` is supplied | blocks when source extraction is missing or generated regions cannot be compared to source font/line evidence |
+| `hero_banner_text_readability` | yes if `visual_region_metrics` is supplied | blocks when a banner/title region falls back to tiny point text or below role font floor |
+| `title_readability` | yes if `visual_region_metrics` is supplied | blocks when heading/title text is unreadable, too small, or fallback-rendered |
+| `body_paragraph_readability` | yes if `visual_region_metrics` is supplied | blocks body/body_flow fallback, unreadable font floor, or severe background mismatch |
+| `table_text_legibility` | yes if `visual_region_metrics` is supplied | blocks table cell/header fallback or unreadable compact text |
+| `footnote_readability` | yes if `visual_region_metrics` is supplied | blocks unreadable notes or footnotes that fall below source-relative role floors |
+| `legend_label_alignment` | yes if `visual_region_metrics` is supplied | blocks unreadable or misaligned legend labels when present |
+| `short_label_legibility` | yes if `visual_region_metrics` is supplied | blocks constrained labels that cannot be read at generated size |
+| `sidebar_navigation_legibility` | yes if `visual_region_metrics` is supplied | blocks unreadable side navigation labels or wrong writing mode evidence when present |
+| `event_card_readability` | yes if `visual_region_metrics` is supplied | blocks timeline/event text that no longer stays readable and local to its anchor |
+| `image_color_integrity` | yes if `visual_region_metrics` is supplied | blocks missing source images or excessive page color delta |
 | `table_integrity` | no | requires grid/cell-specific validator |
 | `chart_integrity` | no | requires chart-region-specific validator |
-| `footnote_readability` | partial/no | metrics recorded; readability review still required |
 
 Therefore an automated `PASS` from `evaluate_pdf_quality.py` is only a partial gate pass. A delivery report must add either deterministic evidence for the missing gates or a clearly labelled model/human visual adjudication record.
 
@@ -172,7 +194,21 @@ multiple source paragraph regions -> one flowing target-language article region,
 
 Within `body_flow`, adjacent source regions are joined as same-paragraph continuations when their y-gap is below `flow_grouping.body.paragraph_gap_pt`; only larger gaps use `paragraph_separator`. This prevents artificial blank lines between every source-wrapped line.
 
-On dense table/chart pages, compact labels and cell text should be `table_cell` and excluded from `body_flow` unless D4 records a page-local exception.
+Short same-column continuation lines may join an active `body_flow` when `allow_short_continuation_lines=true`, x/y geometry matches the current flow, and width exceeds `min_continuation_width_page_ratio`. This prevents a source-wrapped final word or phrase from breaking the article into multiple regions.
+
+On dense table/chart pages, compact labels and cell text should be `table_cell` and excluded from `body_flow`. A lower-page body copy band may re-enter `body_flow` only when `allow_dense_page_body_below_y_ratio` is set and current-run geometry proves same-column article text below the dense table/chart area.
+
+On mixed image/text timeline or milestone pages, narrow event descriptions should be `event_card`, not `body_flow`. Product quality for event cards is local: each card must remain tied to its year/image anchor, avoid overlap with adjacent cards, and use a readable constrained-slot font or compact event variant.
+
+When target-language expansion is enabled, `target_language_reflow` may expand only declared region kinds and must apply `overlap_guard` against the next same-column region.
+
+When `target_composition` is enabled, `body_flow` source bboxes become anchors rather than hard containers. The output frame must be computed from the current page's body band, margins, lower safe boundary, region kind, and overlap guard. This rule is required for language directions where target prose usually expands. It is forbidden for constrained slots such as table cells, legends, chart labels, and side navigation unless a future contract defines a specific constrained-slot composition mode.
+
+If source text already appears in the target language and would remain under a recomposed body frame, the generator must redact/redraw it as `preserve_already_target_language_span` or D7 must fail `failed_probe_residue` / `collision`. This is preservation, not semantic translation.
+
+Generation must preflight textbox fit on a temporary page. Failed font-size attempts must not render into the real candidate PDF; otherwise `failed_probe_residue` blocks quality.
+
+For constrained slots, `constrained_text_image_fit` is allowed only after normal textbox probing fails. It is a non-warning generation status when it preserves full target text and records compression evidence, but D7 may still fail the region if the rendered label is visually unreadable.
 
 For wide `Note:` / `Notes:` blocks near tables, product quality requires `table_note` instead of `body_flow`; the note/body font hierarchy must remain close to the source.
 
@@ -205,6 +241,7 @@ Passing evidence must include:
     "paragraph_rhythm",
     "paragraph_density",
     "internal_paragraph_gap",
+    "target_composition_used_for_fluid_body",
     "font_hierarchy_ratio",
     "sidebar_orientation",
     "footnote_readability",

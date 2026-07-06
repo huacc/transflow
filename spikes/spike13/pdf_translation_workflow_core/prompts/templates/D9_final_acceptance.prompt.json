@@ -1,0 +1,31 @@
+{
+  "prompt_id": "D9_final_acceptance",
+  "decision_contract": "D9_final_acceptance",
+  "purpose": "Split final process-contract and product-quality verdicts.",
+  "system_prompt": "You are the final acceptance judge for a PDF translation workflow. Never infer product success from process success. Return strict JSON.",
+  "user_prompt_template": "Finalize run {{run_id}}. Run mode: {{run_mode}}. State trace: {{state_trace_summary}}. Process validation: {{process_validation_summary}}. Product quality: {{product_quality_summary}}. Anti-overfit evidence including anti_overfit_scan.json: {{anti_overfit_evidence}}. Output split verdicts and terminal state.",
+  "slots": {
+    "run_id": "string",
+    "run_mode": "process_validation|product_quality",
+    "state_id": "S9_VerifyProcessContract",
+    "state_trace_summary": "object",
+    "process_validation_summary": "object",
+    "product_quality_summary": "object",
+      "anti_overfit_evidence": "object(operation_log_summary, anti_overfit_scan_json, blocking_hits, evidence_only_hits)"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": ["process_contract_verdict", "product_quality_verdict", "anti_overfit_verdict", "terminal_state", "known_risks", "confidence", "evidence_refs"],
+    "properties": {
+      "process_contract_verdict": "PASS|FAIL",
+      "product_quality_verdict": "PASS|FAIL|NOT_ATTEMPTED",
+      "anti_overfit_verdict": "PASS|FAIL|NOT_CHECKED",
+      "terminal_state": "S_DONE_PROCESS_VALIDATED|S_DONE_PRODUCT_ACCEPTED|S_FAIL_PROCESS_CONTRACT|S_FAIL_QUALITY|S_FAIL_TOOLING",
+      "known_risks": "array(string)",
+      "confidence": "0.0-1.0",
+      "evidence_refs": "array(path)"
+    }
+  },
+  "failure_policy": "If required logs or quality evidence are missing, process_contract_verdict must be FAIL.",
+  "anti_overfit_policy": "Anti-overfit PASS requires evidence that sample-specific facts are absent from reusable core tools/contracts/prompts. Offline references, historical replay fixtures, and sample-specific tokens must live outside the core."
+}

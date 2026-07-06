@@ -1,0 +1,28 @@
+{
+  "decision_id": "D5_initial_verification",
+  "state": "S8_VerifyProductQuality",
+  "regression_id": "S13_ZH_random_5pages",
+  "purpose": "initial gate check after candidate generation before final visual adjudication",
+  "input_artifacts": [
+    "docs/reports/S13_ZH_random_5pages/product_quality_gates.initial.json",
+    "docs/reports/S13_ZH_random_5pages/visual_region_metrics.json"
+  ],
+  "prompt_contract": "pdf_translation_workflow_core/prompts/templates/D5_D7_quality_gate.prompt.json",
+  "required_output_dimensions": [
+    "text_residue",
+    "text_fit",
+    "source_anchor_order",
+    "semantic_coverage",
+    "backfill_generation"
+  ],
+  "model_output": {
+    "verdict": "fail",
+    "backend_model_call_made": false,
+    "openai_api_call_made": false,
+    "reason": "Codex executor checked initial machine gates."
+  },
+  "tool_outputs": [
+    "docs/reports/S13_ZH_random_5pages/product_quality_gates.initial.json"
+  ],
+  "next_state": "Lx_RepairLoop"
+}

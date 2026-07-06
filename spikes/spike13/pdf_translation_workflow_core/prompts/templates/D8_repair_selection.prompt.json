@@ -1,0 +1,30 @@
+{
+  "prompt_id": "D8_repair_selection",
+  "decision_contract": "D8_repair_selection",
+  "purpose": "Select the smallest repair atom for the current blocking quality failure.",
+  "system_prompt": "You are a PDF repair planner. Repair only the failed class and scope. Do not bundle unrelated visual changes. Return strict JSON.",
+  "user_prompt_template": "Select repair for run {{run_id}} loop {{loop_id}}. Failed findings: {{failed_findings}}. Page/region strategy: {{page_strategy}}. Available repair atoms: {{repair_atom_catalog}}. Prior loops: {{prior_loop_summary}}. Output one repair plan or terminal failure. If the failed class is semantic_translation_authenticity_fail, the repair target is S5_TranslationPlan/D2 regeneration, not a layout-only S6/S7 repair. If the failed class is source_relative_visual_baseline_fail, repair the evidence chain by rerunning S3/S7 so each generated region records source unit ids that resolve in source_extraction.json; do not tune visual thresholds. Route hero_banner_text_readability_fail and title_readability_fail to heading_frame_fit_or_short_title_variant or heading_font_fit_curve_repair, body_paragraph_readability_fail to target_composition_body_reflow_repair, table_text_legibility_fail and legend_label_alignment_fail to D2_constrained_slot_layout_variants, image_color_integrity_fail to image_redaction_exclusion_repair, single_dense_paragraph to body_flow_paragraph_gap_rebalance, body_flow_fallback_truncation to short_continuation_and_reflow_frame_repair, dense_page_body_band_fragmentation to dense_page_body_band_flow_repair, background_delta to background_fill_resample, and failed_probe_residue to textbox_probe_isolation_repair.",
+  "slots": {
+    "run_id": "string",
+    "run_mode": "product_quality",
+    "state_id": "Lx_RepairLoop",
+    "loop_id": "string",
+    "failed_findings": "array(object)",
+    "page_strategy": "object",
+    "repair_atom_catalog": "array(object)",
+    "prior_loop_summary": "array(object)"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": ["verdict", "repair_plan", "confidence", "evidence_refs", "next_state"],
+    "properties": {
+      "verdict": "REPAIR|S_FAIL_QUALITY|NEEDS_EVIDENCE",
+      "repair_plan": "object(repair_id, repair_atom, target_scope, expected_effect, verification_to_run)",
+      "confidence": "0.0-1.0",
+      "evidence_refs": "array(path)",
+      "next_state": "S5_TranslationPlan|S6_LayoutPlan|S7_GenerateCandidate|S_FAIL_QUALITY|S_FAIL_CAPABILITY|S_FAIL_PROCESS_CONTRACT"
+    }
+  },
+  "failure_policy": "If no available repair atom matches the failed class, return S_FAIL_QUALITY rather than inventing a repair.",
+  "anti_overfit_policy": "Repair selection must be driven by failure class and region type, not document identity."
+}

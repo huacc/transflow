@@ -19,6 +19,7 @@
       "body": {
         "enabled": true,
         "min_region_count": 4,
+        "paragraph_gap_pt": 8.0,
         "paragraph_separator": "\n\n",
         "line_joiner_zh": "",
         "line_joiner_en": " "
@@ -45,14 +46,15 @@
       },
       "table_cell": {
         "source_scale": 0.84,
-        "min_pt": 3.8,
+        "min_pt": 3.2,
+        "min_insert_pt": 3.2,
         "max_pt": 6.8,
-        "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.6]
+        "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.6, 0.52, 0.48]
       }
     },
     "fallback": {
-      "min_insert_pt": 3.8,
-      "fallback_insert_font_pt": 3.8
+      "min_insert_pt": 3.2,
+      "fallback_insert_font_pt": 3.2
     }
   },
   "prompt_overlay": {

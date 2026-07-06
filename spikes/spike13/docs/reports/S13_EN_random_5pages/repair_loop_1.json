@@ -1,0 +1,23 @@
+{
+  "loop_iteration": 1,
+  "entered_from_state": "S8_VerifyProductQuality",
+  "regression_id": "S13_EN_random_5pages",
+  "failure_class": "ascii_residue_and_visual_warn",
+  "failed_gate_ids": [
+    "text_residue",
+    "visual_similarity"
+  ],
+  "repair_atom": "retranslate_or_cover_residue",
+  "changed_files": [],
+  "expected_effect": "Translate/cover remaining ASCII source-language tokens and rerun S7/S8; visual_similarity also needs adjudication to PASS, not PASS_WITH_WARN.",
+  "verification_to_run": [
+    "rerun generate_semantic_backfill.py",
+    "rerun render_pdf.py",
+    "rerun collect_visual_region_metrics.py",
+    "rerun evaluate_pdf_quality.py"
+  ],
+  "exit_state": "S_FAIL_QUALITY",
+  "result": "terminal",
+  "requires_core_revision": true,
+  "reason": "Remaining ASCII residue includes proper nouns/company/footer-like text that current validator/generator policy does not distinguish from allowed preservation; fixing without weakening gates requires explicit residue/preservation policy and rerun."
+}

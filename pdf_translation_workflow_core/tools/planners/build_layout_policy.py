@@ -2,9 +2,9 @@
 
 tool_name: build_layout_policy
 category: planners
-input_contract: source extraction JSON, optional semantic translations JSON, output policy path
-output_contract: layout policy JSON consumed by generate_semantic_backfill.py
-failure_signals: missing extraction, empty translatable units, invalid JSON
+input_contract: source extraction JSON, optional semantic translations JSON, optional generic language profile JSON, output policy path
+output_contract: layout policy JSON consumed by generate_semantic_backfill.py, including language_pair_profile/layout_strategy when profile is supplied
+failure_signals: missing extraction, empty translatable units, invalid JSON, language profile mismatch
 fallback: caller records S_FAIL_PROCESS_CONTRACT or requests D4/model policy revision
 anti_overfit_statement: derives parameters from current-run geometry/font statistics and never branches on sample filename, known page number, exact text, or document identity
 """
@@ -197,6 +197,13 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "max_median_font_size": round(max(font_q25, min(font_q50, font_q25 + 0.75)), 3),
                 "min_y_ratio": 0.60,
             },
+            "event_card": {
+                "page_type_guesses": ["mixed_image_text"],
+                "max_line_count": 6,
+                "max_region_width_page_ratio": 0.24,
+                "min_y_ratio": 0.12,
+                "max_y_ratio": 0.92,
+            },
             "vertical_nav": {
                 "max_region_width_pt": round(max(12.0, min(width_q25, 22.0)), 3),
                 "min_height_width_ratio": 1.8,
@@ -218,7 +225,7 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
             "table_cell": {
                 "page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard"],
                 "max_line_count": 2,
-                "max_region_width_pt": round(max(40.0, min(width_q50 * 1.10, 130.0)), 3),
+                "max_region_width_pt": round(max(70.0, min(width_q50 * 1.85, 160.0)), 3),
                 "max_median_font_size": round(max(font_q50, font_q75), 3),
             },
             "heading": {
@@ -230,7 +237,7 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
             "footnote": {"x_pad_pt": 0.5, "y_pad_min_pt": 0.45, "y_pad_source_size_ratio": 0.22},
         },
         "reflow": {
-            "reflow_kinds": ["body", "body_flow", "table_note", "footnote", "heading", "short_label"],
+            "reflow_kinds": ["body", "body_flow", "event_card", "table_note", "footnote", "heading", "short_label"],
             "preserve_line_kinds": ["vertical_nav", "legend", "compact_label", "table_cell"],
             "min_items_for_reflow": 2,
         },
@@ -268,6 +275,14 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "center_on_source_bbox": True,
             }
         },
+        "constrained_text_image_fit": {
+            "enabled": True,
+            "region_kinds": ["table_cell", "compact_label", "short_label", "legend"],
+            "dense_single_line_body_page_types": ["table_or_chart_dense", "chart_or_dashboard"],
+            "min_font_pt": 3.2,
+            "max_font_pt": 5.2,
+            "reason": "Use a transparent text image only for constrained label slots after textbox probing fails; preserve full target text and record compression evidence.",
+        },
         "layout_text_variants": {
             "compact_label": ["compact_label_zh", "compact_zh", "display_zh"],
             "short_label": ["short_label_zh", "compact_zh", "display_zh"],
@@ -277,13 +292,15 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
             "short_label_en": ["short_label_en", "compact_en", "display_en"],
             "table_cell_en": ["table_cell_en", "compact_label_en", "compact_en", "display_en"],
             "legend_en": ["legend_en", "compact_label_en", "compact_en", "display_en"],
+            "event_card_en": ["event_card_en", "short_label_en", "compact_en", "display_en"],
+            "event_card_zh": ["event_card_zh", "short_label_zh", "compact_zh", "display_zh"],
         },
         "font_profiles": {
             "footnote": {
                 "source_scale": round(footnote_scale, 3),
                 "min_pt": 3.8,
                 "max_pt": round(max(4.8, min(font_q25 * footnote_scale, 5.8)), 3),
-                "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64],
+                "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64, 0.58],
             },
             "table_note": {
                 "source_scale": 1.05,
@@ -299,9 +316,9 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
             },
             "table_cell": {
                 "source_scale": round(max(0.72, min(0.92, compact_scale + 0.14)), 3),
-                "min_pt": 3.6,
+                "min_pt": 3.2,
                 "max_pt": round(max(4.8, min(font_q50 * 0.92, 7.4)), 3),
-                "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60, 0.54],
+                "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60, 0.54, 0.48],
             },
             "legend": {
                 "source_scale": round(max(0.78, min(0.98, compact_scale + 0.18)), 3),
@@ -312,14 +329,22 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
             "heading": {
                 "source_scale": 0.95,
                 "min_pt": 5.0,
+                "min_insert_pt": 6.2,
                 "max_pt": round(max(8.0, min(max(font_q95 * 1.05, font_max * 0.98), font_max)), 3),
-                "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68],
+                "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60, 0.52, 0.44, 0.36, 0.30],
             },
             "short_label": {
                 "source_scale": 0.95,
                 "min_pt": 5.0,
                 "max_pt": round(max(6.0, min(font_q50 * 1.05, 11.0)), 3),
                 "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68],
+            },
+            "event_card": {
+                "source_scale": 0.86,
+                "min_pt": 4.4,
+                "min_insert_pt": 4.0,
+                "max_pt": round(max(5.8, min(font_q50 * 0.92, 7.4)), 3),
+                "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60],
             },
             "body": {
                 "source_scale": round(body_scale, 3),

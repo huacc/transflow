@@ -1,0 +1,20 @@
+{
+  "state": "S5_TranslationPlan",
+  "terminal_state": "S_FAIL_CAPABILITY",
+  "regression_id": "S13_EN_random_5pages",
+  "source_pdf": "input\\AIA_2020_Annual_Report_en_pages_081_152_214_220_231.pdf",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "required_source_unit_count": 271,
+  "backend_model_provider_requested": "codex_gpt5_semantic_translation",
+  "backend_model_call_made": false,
+  "failure_class": "backend_model_authentication_failed",
+  "model_provider_probe": "docs/reports/model_provider_probe.json",
+  "forbidden_fallbacks_not_used": [
+    "placeholder translations",
+    "line-category pseudo translations",
+    "deep_translator fallback as if it were codex_gpt5"
+  ],
+  "next_state": "S9_VerifyProcessContract"
+}

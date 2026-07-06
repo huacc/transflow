@@ -1,0 +1,39 @@
+{
+  "round": "round08",
+  "run_mode": "product_quality",
+  "workspace_root": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试",
+  "output_root": "docs/output/round08",
+  "report_root": "docs/reports/round08",
+  "goal": "Retest zh_to_en and en_to_zh layout/backfill using generic core workflow; use official bilingual reports only as post-run reference comparison.",
+  "cases": [
+    {
+      "id": "R08_ZH_TO_EN_AIA_pages_03_08_09_24_25",
+      "direction": "zh_to_en",
+      "source": "docs/input/round08/zh_to_en/source_pdfs/AIA_2020_Annual_Report_zh_pages_03_08_09_24_25.pdf",
+      "translations": "docs/input/round08/zh_to_en/semantic_translations/R07_ZH_TO_EN_AIA_pages_03_08_09_24_25.translations.json",
+      "profile": "pdf_translation_workflow_core/profiles/zh_to_en.layout_profile.json",
+      "output": "docs/output/round08/R08_ZH_TO_EN_AIA_pages_03_08_09_24_25_candidate.pdf",
+      "source_sha256": "b0e9b8a32931b5cd7d0c18daf69e7a4ef5c63bad4e90e03aa172bba47c7f6e20",
+      "translations_sha256": "5def2cb7fe5fe1e6b33f9da4374cca23a557a8d756bf9d1447513d7866995299",
+      "profile_sha256": "9db212fb756aee3ab145712b404499d2401835a97be9f1cddaa2be9cbc731ed9",
+      "output_sha256": "736537329905b7842fca9b4b8854b6ec49ddc7bbaaa892bf40c2b7b0376e7824"
+    },
+    {
+      "id": "R08_EN_TO_ZH_AIA_pages_08_09_24_25",
+      "direction": "en_to_zh",
+      "source": "docs/input/round08/en_to_zh/source_pdfs/AIA_2020_Annual_Report_en_pages_08_09_24_25.pdf",
+      "translations": "docs/input/round08/en_to_zh/semantic_translations/R07_EN_TO_ZH_AIA_pages_08_09_24_25.translations.json",
+      "profile": "pdf_translation_workflow_core/profiles/en_to_zh.layout_profile.json",
+      "output": "docs/output/round08/R08_EN_TO_ZH_AIA_pages_08_09_24_25_candidate.pdf",
+      "source_sha256": "a7a15c3e81056cbe2eb543d4afceabfef55a0a17cdc363b5fca4d3be625652c9",
+      "translations_sha256": "e507b9b6f5436e5d4419331240e89ee2d96d8d2ec27ea1ae0398bf69fddf4135",
+      "profile_sha256": "0946d817330bff285f2cdd02db9a28b9c7ba19c9f70a82a8b028254c2b240289",
+      "output_sha256": "c7eb6948d4d4c75021ad84f6fcc5f4fbc7feeb96eacf92c171c6c04c18a780a0"
+    }
+  ],
+  "constraints": [
+    "Do not edit spikes/round* outputs",
+    "Core must not contain sample filenames/page numbers/text/coordinates",
+    "Official reference PDFs are offline comparison only, not runtime prompt input"
+  ]
+}
