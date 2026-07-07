@@ -1,0 +1,26 @@
+{
+  "failed_batch_count": 1,
+  "failed": [
+    "batch_0157.model_output"
+  ],
+  "examples": [
+    {
+      "batch": "batch_0157.model_output.json",
+      "unit_id": "p349_b26_l0",
+      "source": "Household International Europe Limited（清",
+      "target": "Household International Europe Limited（清 (manual review required)",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0157.model_output.json",
+      "unit_id": "p349_b26_l0",
+      "source": "Household International Europe Limited（清",
+      "target": "Household International Europe Limited（清 (manual review required)",
+      "errors": [
+        "target_script_validation_failed_after_token_repair"
+      ]
+    }
+  ]
+}

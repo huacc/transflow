@@ -1,0 +1,6941 @@
+{
+  "run_id": "round14",
+  "case_id": "R14_00005_2025_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0008",
+  "batch_index": 8,
+  "batch_count": 196,
+  "source_extraction_ref": "docs/reports/round14/source_extraction_en.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p11_b9_l0",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "International Wealth and Premier",
+      "bbox": [
+        217.15,
+        369.956,
+        352.23,
+        380.356
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "International",
+        "Premier",
+        "Wealth",
+        "and"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l1",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "Banking",
+      "bbox": [
+        217.15,
+        379.556,
+        249.83,
+        389.956
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Banking"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b9_l2",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "In IWPB, revenue was $14.5bn, an increase of",
+      "bbox": [
+        217.15,
+        389.664,
+        380.67,
+        399.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "IWPB",
+        "In",
+        "an",
+        "bn",
+        "increase",
+        "of",
+        "revenue",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "14"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l3",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 3,
+      "source_text": "5% compared with 2024 on a constant",
+      "bbox": [
+        217.15,
+        399.264,
+        354.726,
+        408.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "compared",
+        "constant",
+        "on",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "percentage",
+          "value": "5%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l4",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 4,
+      "source_text": "currency basis. We continued to execute our",
+      "bbox": [
+        217.15,
+        408.864,
+        374.958,
+        418.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "basis.",
+        "continued",
+        "currency",
+        "execute",
+        "our",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l5",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 5,
+      "source_text": "bank-wide Wealth strategy in 2025. Our",
+      "bbox": [
+        217.15,
+        418.464,
+        357.598,
+        428.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Our",
+        "Wealth",
+        "bank-wide",
+        "in",
+        "strategy"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l6",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 6,
+      "source_text": "Premier 3.0 service is now live in seven",
+      "bbox": [
+        217.15,
+        428.064,
+        356.99,
+        437.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Premier",
+        "in",
+        "is",
+        "live",
+        "now",
+        "service",
+        "seven"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3.0 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l7",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 7,
+      "source_text": "markets and we opened 29 new Wealth",
+      "bbox": [
+        217.15,
+        437.664,
+        359.166,
+        447.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Wealth",
+        "and",
+        "markets",
+        "new",
+        "opened",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "29 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l8",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 8,
+      "source_text": "Centres across the Group, including seven in",
+      "bbox": [
+        217.15,
+        447.264,
+        374.878,
+        456.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Centres",
+        "Group",
+        "across",
+        "in",
+        "including",
+        "seven",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l9",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 9,
+      "source_text": "our home markets. Bank-wide Wealth fee and",
+      "bbox": [
+        217.15,
+        456.864,
+        379.502,
+        466.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank-wide",
+        "Wealth",
+        "and",
+        "fee",
+        "home",
+        "markets.",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l10",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 10,
+      "source_text": "other income was $9.4bn, up 24% on a",
+      "bbox": [
+        217.15,
+        466.464,
+        356.87,
+        476.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "bn",
+        "income",
+        "on",
+        "other",
+        "up",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "24%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "9"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l11",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 11,
+      "source_text": "constant currency basis, delivering on our",
+      "bbox": [
+        217.15,
+        476.064,
+        363.486,
+        485.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "basis",
+        "constant",
+        "currency",
+        "delivering",
+        "on",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l12",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 12,
+      "source_text": "ambition of ‘double-digit’ growth. At 31",
+      "bbox": [
+        217.15,
+        485.664,
+        355.206,
+        495.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "ambition",
+        "double-digit",
+        "growth.",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "31"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l13",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 13,
+      "source_text": "December 2025, wealth balances across all",
+      "bbox": [
+        217.15,
+        495.264,
+        370.246,
+        504.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "December",
+        "across",
+        "all",
+        "balances",
+        "wealth"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l14",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 14,
+      "source_text": "our businesses were $2.1tn, of which $1.2tn",
+      "bbox": [
+        217.15,
+        504.864,
+        374.95,
+        514.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "businesses",
+        "of",
+        "our",
+        "tn",
+        "were",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l15",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 15,
+      "source_text": "was booked in Asia, making us a leading",
+      "bbox": [
+        217.15,
+        514.464,
+        359.758,
+        524.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Asia",
+        "a",
+        "booked",
+        "in",
+        "leading",
+        "making",
+        "us",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l16",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 16,
+      "source_text": "wealth manager in the region. We attracted",
+      "bbox": [
+        217.15,
+        524.064,
+        370.598,
+        533.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "attracted",
+        "in",
+        "manager",
+        "region.",
+        "the",
+        "wealth"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l17",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 17,
+      "source_text": "bank-wide net new invested assets of $80bn",
+      "bbox": [
+        217.15,
+        533.664,
+        375.478,
+        543.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "assets",
+        "bank-wide",
+        "bn",
+        "invested",
+        "net",
+        "new",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l18",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 18,
+      "source_text": "in 2025, with $39bn booked in Asia. In our",
+      "bbox": [
+        217.15,
+        543.264,
+        365.71,
+        552.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Asia.",
+        "In",
+        "bn",
+        "booked",
+        "in",
+        "our",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l19",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 19,
+      "source_text": "insurance business, our insurance",
+      "bbox": [
+        217.15,
+        552.864,
+        337.11,
+        562.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "business",
+        "insurance",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l20",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 20,
+      "source_text": "manufacturing contractual service margin",
+      "bbox": [
+        217.15,
+        562.464,
+        362.766,
+        572.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "contractual",
+        "manufacturing",
+        "margin",
+        "service"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l21",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 21,
+      "source_text": "(‘CSM’) grew by 21% to $14.6bn, which is a",
+      "bbox": [
+        217.15,
+        572.064,
+        373.286,
+        581.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CSM",
+        "a",
+        "bn",
+        "by",
+        "grew",
+        "is",
+        "to",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "21%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "14"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b9_l22",
+      "page_index": 11,
+      "block_id": 9,
+      "line_index": 22,
+      "source_text": "store of potential future revenue for us.",
+      "bbox": [
+        217.15,
+        581.664,
+        353.854,
+        591.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "for",
+        "future",
+        "of",
+        "potential",
+        "revenue",
+        "store",
+        "us."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b10_l0",
+      "page_index": 11,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "c.$900bn",
+      "bbox": [
+        391.78,
+        363.34,
+        517.69,
+        402.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 30.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "bn",
+        "c."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p11_b11_l0",
+      "page_index": 11,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "Trade volumes facilitated6",
+      "bbox": [
+        391.78,
+        401.964,
+        481.461,
+        411.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Trade",
+        "facilitated6",
+        "volumes"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b12_l0",
+      "page_index": 11,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Wealth balances",
+      "bbox": [
+        391.78,
+        456.164,
+        449.3,
+        465.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Wealth",
+        "balances"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b12_l1",
+      "page_index": 11,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "increased by 16% compared with 2024",
+      "bbox": [
+        391.78,
+        465.764,
+        528.548,
+        475.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "by",
+        "compared",
+        "increased",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "percentage",
+          "value": "16%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b13_l0",
+      "page_index": 11,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "6 HSBC internal management information.",
+      "bbox": [
+        391.78,
+        484.754,
+        528.742,
+        493.854
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "HSBC",
+        "information.",
+        "internal",
+        "management"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "6 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b13_l1",
+      "page_index": 11,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "7    Source: Euromoney Trade Finance Survey in",
+      "bbox": [
+        391.78,
+        493.154,
+        542.021,
+        502.254
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Euromoney",
+        "Finance",
+        "Source",
+        "Survey",
+        "Trade",
+        "in"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "7    "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b13_l3",
+      "page_index": 11,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "8 Source: Euromoney Cash Management Survey",
+      "bbox": [
+        391.78,
+        509.954,
+        549.917,
+        519.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Cash",
+        "Euromoney",
+        "Management",
+        "Source",
+        "Survey"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "8 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b13_l5",
+      "page_index": 11,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "9 Source: Euromoney Foreign Exchange Awards",
+      "bbox": [
+        391.78,
+        526.754,
+        549.287,
+        535.854
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Awards",
+        "Euromoney",
+        "Exchange",
+        "Foreign",
+        "Source"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "9 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b14_l0",
+      "page_index": 11,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "Performance across geographies",
+      "bbox": [
+        42.52,
+        636.748,
+        256.902,
+        654.948
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Performance",
+        "across",
+        "geographies"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p11_b15_l0",
+      "page_index": 11,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "We have an established presence in a number",
+      "bbox": [
+        42.52,
+        662.364,
+        205.664,
+        672.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "a",
+        "an",
+        "established",
+        "have",
+        "in",
+        "number",
+        "presence"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b15_l1",
+      "page_index": 11,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "of markets globally. We are particularly",
+      "bbox": [
+        42.52,
+        671.964,
+        179.264,
+        681.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "are",
+        "globally.",
+        "markets",
+        "of",
+        "particularly"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b15_l2",
+      "page_index": 11,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "focused on mainland China, India, Singapore",
+      "bbox": [
+        42.52,
+        681.564,
+        198.552,
+        691.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "China",
+        "India",
+        "Singapore",
+        "focused",
+        "mainland",
+        "on"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b15_l3",
+      "page_index": 11,
+      "block_id": 15,
+      "line_index": 3,
+      "source_text": "and the UAE. These markets are especially",
+      "bbox": [
+        42.52,
+        691.164,
+        193.84,
+        700.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "These",
+        "UAE.",
+        "and",
+        "are",
+        "especially",
+        "markets",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b15_l4",
+      "page_index": 11,
+      "block_id": 15,
+      "line_index": 4,
+      "source_text": "well connected to international trade, wealth",
+      "bbox": [
+        42.52,
+        700.764,
+        199.264,
+        710.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "connected",
+        "international",
+        "to",
+        "trade",
+        "wealth",
+        "well"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b15_l5",
+      "page_index": 11,
+      "block_id": 15,
+      "line_index": 5,
+      "source_text": "and investment flows and are key to our",
+      "bbox": [
+        42.52,
+        710.364,
+        184.664,
+        720.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "are",
+        "flows",
+        "investment",
+        "key",
+        "our",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b15_l6",
+      "page_index": 11,
+      "block_id": 15,
+      "line_index": 6,
+      "source_text": "strategy.",
+      "bbox": [
+        42.52,
+        719.964,
+        72.976,
+        729.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "strategy."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b16_l0",
+      "page_index": 11,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "In 2025, we reported profit before tax of",
+      "bbox": [
+        42.52,
+        736.064,
+        184.48,
+        745.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "before",
+        "of",
+        "profit",
+        "reported",
+        "tax",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b16_l1",
+      "page_index": 11,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "$1.1bn in our mainland China business,",
+      "bbox": [
+        42.52,
+        745.664,
+        180.744,
+        755.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "China",
+        "bn",
+        "business",
+        "in",
+        "mainland",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b16_l2",
+      "page_index": 11,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "including a loss of $2.1bn related to the",
+      "bbox": [
+        42.52,
+        755.264,
+        181.376,
+        764.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "bn",
+        "including",
+        "loss",
+        "of",
+        "related",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b16_l3",
+      "page_index": 11,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "dilution and impairment of our associate",
+      "bbox": [
+        42.52,
+        764.864,
+        183.688,
+        774.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "associate",
+        "dilution",
+        "impairment",
+        "of",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b16_l4",
+      "page_index": 11,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "BoCom. We continued to support our",
+      "bbox": [
+        42.52,
+        774.464,
+        175.288,
+        784.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "BoCom.",
+        "We",
+        "continued",
+        "our",
+        "support",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b16_l5",
+      "page_index": 11,
+      "block_id": 16,
+      "line_index": 5,
+      "source_text": "customers expanding internationally, where",
+      "bbox": [
+        42.52,
+        784.064,
+        196.4,
+        793.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "customers",
+        "expanding",
+        "internationally",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b17_l0",
+      "page_index": 11,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "we serve approximately half of Fortune Global",
+      "bbox": [
+        217.15,
+        662.364,
+        379.238,
+        672.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fortune",
+        "Global",
+        "approximately",
+        "half",
+        "of",
+        "serve",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b17_l1",
+      "page_index": 11,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "500 companies. We were recognised as the",
+      "bbox": [
+        217.15,
+        671.964,
+        372.982,
+        681.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "as",
+        "companies.",
+        "recognised",
+        "the",
+        "were"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "500 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b17_l2",
+      "page_index": 11,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "‘Best International Bank’ by Euromoney in",
+      "bbox": [
+        217.15,
+        681.564,
+        365.358,
+        691.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank",
+        "Best",
+        "Euromoney",
+        "International",
+        "by",
+        "in"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b17_l3",
+      "page_index": 11,
+      "block_id": 17,
+      "line_index": 3,
+      "source_text": "2025. We continued to perform strongly in",
+      "bbox": [
+        217.15,
+        691.164,
+        367.11,
+        700.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "continued",
+        "in",
+        "perform",
+        "strongly",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b17_l4",
+      "page_index": 11,
+      "block_id": 17,
+      "line_index": 4,
+      "source_text": "Wealth, where Wealth invested assets grew",
+      "bbox": [
+        217.15,
+        700.764,
+        374.238,
+        710.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Wealth",
+        "assets",
+        "grew",
+        "invested",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b17_l5",
+      "page_index": 11,
+      "block_id": 17,
+      "line_index": 5,
+      "source_text": "by 37% compared with 2024, driven by strong",
+      "bbox": [
+        217.15,
+        710.364,
+        380.734,
+        720.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "by",
+        "compared",
+        "driven",
+        "strong",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "percentage",
+          "value": "37%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b17_l6",
+      "page_index": 11,
+      "block_id": 17,
+      "line_index": 6,
+      "source_text": "wealth distribution and growth in Private",
+      "bbox": [
+        217.15,
+        719.964,
+        359.55,
+        729.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Private",
+        "and",
+        "distribution",
+        "growth",
+        "in",
+        "wealth"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b17_l7",
+      "page_index": 11,
+      "block_id": 17,
+      "line_index": 7,
+      "source_text": "Banking.",
+      "bbox": [
+        217.15,
+        729.564,
+        247.246,
+        739.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Banking."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b18_l0",
+      "page_index": 11,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "In Singapore, we generated profit before tax of",
+      "bbox": [
+        217.15,
+        745.664,
+        376.526,
+        755.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "Singapore",
+        "before",
+        "generated",
+        "of",
+        "profit",
+        "tax",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b18_l1",
+      "page_index": 11,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "$1.5bn, and we remain the largest foreign",
+      "bbox": [
+        217.15,
+        755.264,
+        359.974,
+        764.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "bn",
+        "foreign",
+        "largest",
+        "remain",
+        "the",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b18_l2",
+      "page_index": 11,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "bank10. Singapore is our primary wholesale",
+      "bbox": [
+        217.15,
+        764.864,
+        362.59,
+        774.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Singapore",
+        "bank10.",
+        "is",
+        "our",
+        "primary",
+        "wholesale"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b18_l3",
+      "page_index": 11,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "offshore booking centre and wealth hub within",
+      "bbox": [
+        217.15,
+        774.464,
+        376.038,
+        784.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "booking",
+        "centre",
+        "hub",
+        "offshore",
+        "wealth",
+        "within"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b18_l4",
+      "page_index": 11,
+      "block_id": 18,
+      "line_index": 4,
+      "source_text": "the ASEAN region. In 2025, we were",
+      "bbox": [
+        217.15,
+        784.064,
+        344.054,
+        793.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ASEAN",
+        "In",
+        "region.",
+        "the",
+        "we",
+        "were"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b19_l0",
+      "page_index": 11,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "recognised by Euromoney as the ‘Best Bank for",
+      "bbox": [
+        391.78,
+        662.364,
+        554.7,
+        672.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank",
+        "Best",
+        "Euromoney",
+        "as",
+        "by",
+        "for",
+        "recognised",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b19_l1",
+      "page_index": 11,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "Large Corporates’. Singapore, where we",
+      "bbox": [
+        391.78,
+        671.964,
+        530.316,
+        681.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporates",
+        "Large",
+        "Singapore",
+        "we",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b19_l2",
+      "page_index": 11,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "opened two new Wealth Centres, is our largest",
+      "bbox": [
+        391.78,
+        681.564,
+        553.356,
+        691.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Centres",
+        "Wealth",
+        "is",
+        "largest",
+        "new",
+        "opened",
+        "our",
+        "two"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b19_l3",
+      "page_index": 11,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "Wealth business outside our home markets and",
+      "bbox": [
+        391.78,
+        691.164,
+        555.34,
+        700.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Wealth",
+        "and",
+        "business",
+        "home",
+        "markets",
+        "our",
+        "outside"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b19_l4",
+      "page_index": 11,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "fast growing. Wealth fee and other income",
+      "bbox": [
+        391.78,
+        700.764,
+        538.164,
+        710.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Wealth",
+        "and",
+        "fast",
+        "fee",
+        "growing.",
+        "income",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b19_l5",
+      "page_index": 11,
+      "block_id": 19,
+      "line_index": 5,
+      "source_text": "grew by 27% and our Wealth invested assets",
+      "bbox": [
+        391.78,
+        710.364,
+        547.748,
+        720.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Wealth",
+        "and",
+        "assets",
+        "by",
+        "grew",
+        "invested",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "27%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b19_l6",
+      "page_index": 11,
+      "block_id": 19,
+      "line_index": 6,
+      "source_text": "surpassed $100bn for the first time.",
+      "bbox": [
+        391.78,
+        719.964,
+        512.26,
+        729.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "first",
+        "for",
+        "surpassed",
+        "the",
+        "time."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b20_l0",
+      "page_index": 11,
+      "block_id": 20,
+      "line_index": 0,
+      "source_text": "10 Based on 9M25 profit before tax, using peers’",
+      "bbox": [
+        391.78,
+        735.854,
+        546.298,
+        744.954
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Based",
+        "M25",
+        "before",
+        "on",
+        "peers",
+        "profit",
+        "tax",
+        "using"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "10 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p11_b20_l1",
+      "page_index": 11,
+      "block_id": 20,
+      "line_index": 1,
+      "source_text": "published results.",
+      "bbox": [
+        403.12,
+        744.254,
+        457.237,
+        753.354
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "published",
+        "results."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l0",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.68,
+        14.764,
+        100.539,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l1",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        119.18,
+        14.764,
+        155.503,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l2",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.68,
+        14.764,
+        243.472,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l3",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        266.18,
+        14.764,
+        302.181,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l4",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.68,
+        14.764,
+        370.298,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l5",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.68,
+        23.164,
+        395.974,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l6",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        413.18,
+        14.764,
+        445.1,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l7",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        413.18,
+        23.164,
+        448.187,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l8",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.68,
+        14.764,
+        520.595,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b21_l9",
+      "page_index": 11,
+      "block_id": 21,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.68,
+        23.164,
+        522.912,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p11_b22_l0",
+      "page_index": 11,
+      "block_id": 22,
+      "line_index": 0,
+      "source_text": "Strategy",
+      "bbox": [
+        45.68,
+        34.324,
+        73.057,
+        43.424
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Strategy"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b0_l0",
+      "page_index": 12,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Performance across geographies (continued)",
+      "bbox": [
+        42.52,
+        66.648,
+        334.336,
+        84.848
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Performance",
+        "across",
+        "continued)",
+        "geographies"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p12_b1_l0",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "In India, we reported a profit before tax of",
+      "bbox": [
+        42.52,
+        92.264,
+        184.304,
+        101.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "India",
+        "a",
+        "before",
+        "of",
+        "profit",
+        "reported",
+        "tax",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l1",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "$1.9bn and continued to be the largest foreign",
+      "bbox": [
+        42.52,
+        101.864,
+        199.872,
+        111.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "be",
+        "bn",
+        "continued",
+        "foreign",
+        "largest",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l2",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "bank1. We are the leading bank for multinational",
+      "bbox": [
+        42.52,
+        111.464,
+        205.128,
+        121.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "are",
+        "bank",
+        "bank1.",
+        "for",
+        "leading",
+        "multinational",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l3",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "companies, of which around 50% bank with us2.",
+      "bbox": [
+        42.52,
+        121.064,
+        207.888,
+        130.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "around",
+        "bank",
+        "companies",
+        "of",
+        "us2.",
+        "which",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l4",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "We launched HSBC Innovation Bank with a",
+      "bbox": [
+        42.52,
+        130.664,
+        190.216,
+        140.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank",
+        "HSBC",
+        "Innovation",
+        "We",
+        "a",
+        "launched",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l5",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 5,
+      "source_text": "$1bn financing pool and launched new digital",
+      "bbox": [
+        42.52,
+        140.264,
+        195.392,
+        149.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "bn",
+        "digital",
+        "financing",
+        "launched",
+        "new",
+        "pool"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l6",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 6,
+      "source_text": "propositions in Payments and Trade. Our ECM",
+      "bbox": [
+        42.52,
+        149.864,
+        200.944,
+        159.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECM",
+        "Our",
+        "Payments",
+        "Trade.",
+        "and",
+        "in",
+        "propositions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l7",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 7,
+      "source_text": "issuance grew more than 60% in 2025. We",
+      "bbox": [
+        42.52,
+        159.464,
+        191.536,
+        169.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "grew",
+        "in",
+        "issuance",
+        "more",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "percentage",
+          "value": "60%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l8",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 8,
+      "source_text": "expanded to four new cities with wealth and",
+      "bbox": [
+        42.52,
+        169.064,
+        194.272,
+        178.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "cities",
+        "expanded",
+        "four",
+        "new",
+        "to",
+        "wealth",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l9",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 9,
+      "source_text": "international potential, remained the top wealth",
+      "bbox": [
+        42.52,
+        178.664,
+        203.032,
+        188.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "international",
+        "potential",
+        "remained",
+        "the",
+        "top",
+        "wealth"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l10",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 10,
+      "source_text": "manager across foreign banks3 and were the",
+      "bbox": [
+        42.52,
+        188.263,
+        195.188,
+        197.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "across",
+        "and",
+        "banks3",
+        "foreign",
+        "manager",
+        "the",
+        "were"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l11",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 11,
+      "source_text": "first bank to launch international wealth",
+      "bbox": [
+        42.52,
+        197.864,
+        176.016,
+        207.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bank",
+        "first",
+        "international",
+        "launch",
+        "to",
+        "wealth"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b1_l12",
+      "page_index": 12,
+      "block_id": 1,
+      "line_index": 12,
+      "source_text": "solutions in GIFT City4.",
+      "bbox": [
+        42.52,
+        207.463,
+        118.564,
+        217.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "City4.",
+        "GIFT",
+        "in",
+        "solutions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b2_l0",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "In the UAE, we generated $0.8bn in profit",
+      "bbox": [
+        217.15,
+        92.264,
+        359.526,
+        101.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "UAE",
+        "bn",
+        "generated",
+        "in",
+        "profit",
+        "the",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "0"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l1",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "before tax, and are the largest foreign bank5 .",
+      "bbox": [
+        217.15,
+        101.863,
+        369.388,
+        111.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "are",
+        "bank5",
+        "before",
+        "foreign",
+        "largest",
+        "tax",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l2",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "We continued to further strengthen our",
+      "bbox": [
+        217.15,
+        111.464,
+        351.67,
+        121.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "continued",
+        "further",
+        "our",
+        "strengthen",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l3",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "leadership in Corporate and Institutional",
+      "bbox": [
+        217.15,
+        121.064,
+        351.974,
+        130.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate",
+        "Institutional",
+        "and",
+        "in",
+        "leadership"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l4",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "Banking. We were named ‘Best Investment",
+      "bbox": [
+        217.15,
+        130.664,
+        367.518,
+        140.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Banking.",
+        "Best",
+        "Investment",
+        "We",
+        "named",
+        "were"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l5",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "Bank’ in the Middle East6, including being top",
+      "bbox": [
+        217.15,
+        140.263,
+        371.208,
+        149.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank",
+        "East6",
+        "Middle",
+        "being",
+        "in",
+        "including",
+        "the",
+        "top"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l6",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 6,
+      "source_text": "ranked in debt capital markets in the region for",
+      "bbox": [
+        217.15,
+        149.864,
+        375.014,
+        159.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "capital",
+        "debt",
+        "for",
+        "in",
+        "markets",
+        "ranked",
+        "region",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l7",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 7,
+      "source_text": "the fifth consecutive year7. Our UAE wealth",
+      "bbox": [
+        217.15,
+        159.463,
+        366.054,
+        169.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Our",
+        "UAE",
+        "consecutive",
+        "fifth",
+        "the",
+        "wealth",
+        "year7."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l8",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 8,
+      "source_text": "business saw strong growth, with invested",
+      "bbox": [
+        217.15,
+        169.064,
+        364.422,
+        178.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "business",
+        "growth",
+        "invested",
+        "saw",
+        "strong",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l9",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 9,
+      "source_text": "assets up 33% and international new-to-bank",
+      "bbox": [
+        217.15,
+        178.663,
+        371.134,
+        188.359
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "assets",
+        "international",
+        "new-to-bank",
+        "up"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "33%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l10",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 10,
+      "source_text": "customers up 12%. In 2025, we launched",
+      "bbox": [
+        217.15,
+        188.263,
+        360.59,
+        197.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "customers",
+        "launched",
+        "up",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "percentage",
+          "value": "12%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l11",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 11,
+      "source_text": "Premier 3.0, opened a new Wealth Centre, and",
+      "bbox": [
+        217.15,
+        197.863,
+        378.038,
+        207.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Centre",
+        "Premier",
+        "Wealth",
+        "a",
+        "and",
+        "new",
+        "opened"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3.0"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b2_l12",
+      "page_index": 12,
+      "block_id": 2,
+      "line_index": 12,
+      "source_text": "introduced 10 new asset management funds.",
+      "bbox": [
+        217.15,
+        207.463,
+        370.838,
+        217.159
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "asset",
+        "funds.",
+        "introduced",
+        "management",
+        "new"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "10 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b3_l0",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "1    HSBC internal analysis based on 1H25 revenue,",
+      "bbox": [
+        391.78,
+        92.053,
+        552.129,
+        101.153
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "H25",
+        "HSBC",
+        "analysis",
+        "based",
+        "internal",
+        "on",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1    "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b3_l1",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "deposits and advances, using peers’ published",
+      "bbox": [
+        403.12,
+        100.453,
+        549.007,
+        109.553
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "advances",
+        "and",
+        "deposits",
+        "peers",
+        "published",
+        "using"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b3_l2",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "results.",
+      "bbox": [
+        403.12,
+        108.853,
+        425.38,
+        117.953
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "results."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b3_l3",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "2    Source: Ministry of Commerce of India.",
+      "bbox": [
+        391.78,
+        117.253,
+        524.43,
+        126.353
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Commerce",
+        "India.",
+        "Ministry",
+        "Source",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2    "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b3_l5",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "Industry.",
+      "bbox": [
+        403.12,
+        134.054,
+        430.126,
+        143.154
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Industry."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b3_l6",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 6,
+      "source_text": "4    Gujarat International Finance Tec-City.",
+      "bbox": [
+        391.78,
+        142.454,
+        520.951,
+        151.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Finance",
+        "Gujarat",
+        "International",
+        "Tec-City."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "4    "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b3_l7",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 7,
+      "source_text": "5    HSBC internal analysis based on 9M25 revenue,",
+      "bbox": [
+        391.78,
+        150.854,
+        553.536,
+        159.954
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "HSBC",
+        "M25",
+        "analysis",
+        "based",
+        "internal",
+        "on",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "5    "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b3_l8",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 8,
+      "source_text": "deposits and advances, using peers’ published",
+      "bbox": [
+        403.12,
+        159.254,
+        549.007,
+        168.354
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "advances",
+        "and",
+        "deposits",
+        "peers",
+        "published",
+        "using"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b3_l9",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 9,
+      "source_text": "results.",
+      "bbox": [
+        403.12,
+        167.654,
+        425.38,
+        176.754
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "results."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b3_l10",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 10,
+      "source_text": "6    Euromoney Awards for Excellence 2025.",
+      "bbox": [
+        391.78,
+        176.054,
+        528.672,
+        185.154
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Awards",
+        "Euromoney",
+        "Excellence",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "6    "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b3_l11",
+      "page_index": 12,
+      "block_id": 3,
+      "line_index": 11,
+      "source_text": "7    Source: Bloomberg league table.",
+      "bbox": [
+        391.78,
+        184.454,
+        504.256,
+        193.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Bloomberg",
+        "Source",
+        "league",
+        "table."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "7    "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b4_l0",
+      "page_index": 12,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Deposit strength core to our strategy",
+      "bbox": [
+        42.52,
+        230.248,
+        283.096,
+        248.448
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Deposit",
+        "core",
+        "our",
+        "strategy",
+        "strength",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p12_b5_l0",
+      "page_index": 12,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "The strength of our franchise is built on the",
+      "bbox": [
+        42.52,
+        255.864,
+        197.976,
+        265.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "built",
+        "franchise",
+        "is",
+        "of",
+        "on",
+        "our",
+        "strength",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b5_l1",
+      "page_index": 12,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "solid foundation of our $1.8tn deposit base,",
+      "bbox": [
+        42.52,
+        265.464,
+        198.864,
+        275.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "base",
+        "deposit",
+        "foundation",
+        "of",
+        "our",
+        "solid",
+        "tn"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b5_l2",
+      "page_index": 12,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "which is comprised primarily of current and",
+      "bbox": [
+        42.52,
+        275.064,
+        198.0,
+        284.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "comprised",
+        "current",
+        "is",
+        "of",
+        "primarily",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b5_l3",
+      "page_index": 12,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "savings accounts. We are proud of our",
+      "bbox": [
+        42.52,
+        284.664,
+        181.568,
+        294.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "accounts.",
+        "are",
+        "of",
+        "our",
+        "proud",
+        "savings"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b5_l4",
+      "page_index": 12,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "deposit strength, which is a product of the",
+      "bbox": [
+        42.52,
+        294.264,
+        195.32,
+        303.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "deposit",
+        "is",
+        "of",
+        "product",
+        "strength",
+        "the",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b5_l5",
+      "page_index": 12,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "trust of our customers and an important",
+      "bbox": [
+        42.52,
+        303.864,
+        186.448,
+        313.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "an",
+        "and",
+        "customers",
+        "important",
+        "of",
+        "our",
+        "trust"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b5_l6",
+      "page_index": 12,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "source of funding for us, and forms the",
+      "bbox": [
+        42.52,
+        313.464,
+        183.776,
+        323.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "for",
+        "forms",
+        "funding",
+        "of",
+        "source",
+        "the",
+        "us"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b5_l7",
+      "page_index": 12,
+      "block_id": 5,
+      "line_index": 7,
+      "source_text": "foundation of our financial stability.",
+      "bbox": [
+        42.52,
+        323.064,
+        166.0,
+        332.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "financial",
+        "foundation",
+        "of",
+        "our",
+        "stability."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b6_l0",
+      "page_index": 12,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "We have customer loans of $1.0tn, excluding",
+      "bbox": [
+        218.09,
+        255.864,
+        381.122,
+        265.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "customer",
+        "excluding",
+        "have",
+        "loans",
+        "of",
+        "tn"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b6_l1",
+      "page_index": 12,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "held for sale assets, representing 55% of",
+      "bbox": [
+        218.09,
+        265.464,
+        366.898,
+        275.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "assets",
+        "for",
+        "held",
+        "of",
+        "representing",
+        "sale"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "55%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b6_l2",
+      "page_index": 12,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "customer deposits. We operate with a",
+      "bbox": [
+        218.09,
+        275.064,
+        356.69,
+        284.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "a",
+        "customer",
+        "deposits.",
+        "operate",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b6_l3",
+      "page_index": 12,
+      "block_id": 6,
+      "line_index": 3,
+      "source_text": "surplus of customer deposits relative to",
+      "bbox": [
+        218.09,
+        284.664,
+        361.122,
+        294.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "customer",
+        "deposits",
+        "of",
+        "relative",
+        "surplus",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b6_l4",
+      "page_index": 12,
+      "block_id": 6,
+      "line_index": 4,
+      "source_text": "loans in each of our four franchises and in",
+      "bbox": [
+        218.09,
+        294.264,
+        368.234,
+        303.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "each",
+        "four",
+        "franchises",
+        "in",
+        "loans",
+        "of",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b6_l5",
+      "page_index": 12,
+      "block_id": 6,
+      "line_index": 5,
+      "source_text": "our major operating entities, including The",
+      "bbox": [
+        218.09,
+        303.864,
+        369.546,
+        313.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "entities",
+        "including",
+        "major",
+        "operating",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b8_l0",
+      "page_index": 12,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "Customer deposit balances",
+      "bbox": [
+        393.66,
+        290.864,
+        488.58,
+        300.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Customer",
+        "balances",
+        "deposit"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b9_l0",
+      "page_index": 12,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Improving operational excellence through artificial intelligence",
+      "bbox": [
+        42.52,
+        342.848,
+        448.142,
+        361.048
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Improving",
+        "artificial",
+        "excellence",
+        "intelligence",
+        "operational",
+        "through"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p12_b10_l0",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "In 2025, we accelerated the adoption of",
+      "bbox": [
+        42.52,
+        368.464,
+        185.992,
+        378.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "accelerated",
+        "adoption",
+        "of",
+        "the",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l1",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "Generative AI (‘GenAI’) across HSBC, moving",
+      "bbox": [
+        42.52,
+        378.064,
+        206.04,
+        387.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "GenAI",
+        "Generative",
+        "HSBC",
+        "across",
+        "moving"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l2",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "from experimentation to scaled delivery.",
+      "bbox": [
+        42.52,
+        387.664,
+        187.776,
+        397.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "delivery.",
+        "experimentation",
+        "from",
+        "scaled",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l3",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "Today, we have over 100 GenAI solutions in",
+      "bbox": [
+        42.52,
+        397.264,
+        201.112,
+        406.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "GenAI",
+        "Today",
+        "have",
+        "in",
+        "over",
+        "solutions",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "100 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l4",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "use and a strong pipeline of use cases in",
+      "bbox": [
+        42.52,
+        406.864,
+        189.112,
+        416.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "and",
+        "cases",
+        "in",
+        "of",
+        "pipeline",
+        "strong",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l5",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "development. Our adoption of AI is",
+      "bbox": [
+        42.52,
+        416.464,
+        169.128,
+        426.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "Our",
+        "adoption",
+        "development.",
+        "is",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l6",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "underpinned by our people, and we continue",
+      "bbox": [
+        42.52,
+        426.064,
+        203.296,
+        435.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "by",
+        "continue",
+        "our",
+        "people",
+        "underpinned",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l7",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 7,
+      "source_text": "to invest in training and tooling to support",
+      "bbox": [
+        42.52,
+        435.664,
+        192.2,
+        445.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "in",
+        "invest",
+        "support",
+        "to",
+        "tooling",
+        "training"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l8",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 8,
+      "source_text": "staff in their roles. Around the globe, around",
+      "bbox": [
+        42.52,
+        445.264,
+        201.536,
+        454.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Around",
+        "around",
+        "globe",
+        "in",
+        "roles.",
+        "staff",
+        "the",
+        "their"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l9",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 9,
+      "source_text": "85% of our colleagues have access to our",
+      "bbox": [
+        42.52,
+        454.864,
+        193.56,
+        464.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "access",
+        "colleagues",
+        "have",
+        "of",
+        "our",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "85%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b10_l10",
+      "page_index": 12,
+      "block_id": 10,
+      "line_index": 10,
+      "source_text": "large language model-based productivity",
+      "bbox": [
+        42.52,
+        464.464,
+        185.544,
+        474.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "language",
+        "large",
+        "model-based",
+        "productivity"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b11_l0",
+      "page_index": 12,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "tool, HSBC Productivity Suite, which helps",
+      "bbox": [
+        217.15,
+        368.464,
+        369.95,
+        378.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "Productivity",
+        "Suite",
+        "helps",
+        "tool",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b11_l1",
+      "page_index": 12,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "them to analyse and translate documents,",
+      "bbox": [
+        217.15,
+        378.064,
+        368.638,
+        387.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "analyse",
+        "and",
+        "documents",
+        "them",
+        "to",
+        "translate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b11_l2",
+      "page_index": 12,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "summarise information and generate insights.",
+      "bbox": [
+        217.15,
+        387.664,
+        380.174,
+        397.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "generate",
+        "information",
+        "insights.",
+        "summarise"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b12_l0",
+      "page_index": 12,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "While the progress this year has been",
+      "bbox": [
+        217.15,
+        403.764,
+        353.966,
+        413.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "While",
+        "been",
+        "has",
+        "progress",
+        "the",
+        "this",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b12_l1",
+      "page_index": 12,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "significant, the opportunity ahead is far",
+      "bbox": [
+        217.15,
+        413.364,
+        357.07,
+        423.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ahead",
+        "far",
+        "is",
+        "opportunity",
+        "significant",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b12_l2",
+      "page_index": 12,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "greater. Our strategic partnership with Mistral",
+      "bbox": [
+        217.15,
+        422.964,
+        381.95,
+        432.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Mistral",
+        "Our",
+        "greater.",
+        "partnership",
+        "strategic",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b12_l3",
+      "page_index": 12,
+      "block_id": 12,
+      "line_index": 3,
+      "source_text": "strengthens our commitment to scale GenAI",
+      "bbox": [
+        217.15,
+        432.564,
+        377.966,
+        442.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "GenAI",
+        "commitment",
+        "our",
+        "scale",
+        "strengthens",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b12_l4",
+      "page_index": 12,
+      "block_id": 12,
+      "line_index": 4,
+      "source_text": "capabilities and we will continue to prioritise",
+      "bbox": [
+        217.15,
+        442.164,
+        376.166,
+        451.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "capabilities",
+        "continue",
+        "prioritise",
+        "to",
+        "we",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b12_l5",
+      "page_index": 12,
+      "block_id": 12,
+      "line_index": 5,
+      "source_text": "areas that matter most to our customers and",
+      "bbox": [
+        217.15,
+        451.764,
+        378.862,
+        461.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "areas",
+        "customers",
+        "matter",
+        "most",
+        "our",
+        "that",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b13_l0",
+      "page_index": 12,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "colleagues, and drive performance. Through",
+      "bbox": [
+        391.78,
+        368.464,
+        549.908,
+        378.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Through",
+        "and",
+        "colleagues",
+        "drive",
+        "performance."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b13_l1",
+      "page_index": 12,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "2026, we intend to expand enterprise-wide",
+      "bbox": [
+        391.78,
+        378.064,
+        546.788,
+        387.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "enterprise-wide",
+        "expand",
+        "intend",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2026"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b13_l2",
+      "page_index": 12,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "adoption of AI tools and strive to embed AI",
+      "bbox": [
+        391.78,
+        387.664,
+        546.38,
+        397.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "adoption",
+        "and",
+        "embed",
+        "of",
+        "strive",
+        "to",
+        "tools"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b13_l3",
+      "page_index": 12,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "deeper into our core processes.",
+      "bbox": [
+        391.78,
+        397.264,
+        504.596,
+        406.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "core",
+        "deeper",
+        "into",
+        "our",
+        "processes."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b14_l0",
+      "page_index": 12,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "GenAI solutions in use",
+      "bbox": [
+        391.78,
+        451.364,
+        470.068,
+        461.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "GenAI",
+        "in",
+        "solutions",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b15_l0",
+      "page_index": 12,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "Our ambitions",
+      "bbox": [
+        42.52,
+        488.248,
+        134.78,
+        506.448
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Our",
+        "ambitions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p12_b16_l0",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "Revenue growth rising to 5% YoY",
+      "bbox": [
+        42.52,
+        513.356,
+        176.92,
+        523.756
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Revenue",
+        "YoY",
+        "growth",
+        "rising",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "5%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l1",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "We are focused on growth opportunities",
+      "bbox": [
+        42.52,
+        523.464,
+        185.608,
+        533.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "are",
+        "focused",
+        "growth",
+        "on",
+        "opportunities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l2",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "within our strategy that play to our strengths,",
+      "bbox": [
+        42.52,
+        533.064,
+        201.336,
+        542.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "our",
+        "play",
+        "strategy",
+        "strengths",
+        "that",
+        "to",
+        "within"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l3",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "while maintaining tight cost discipline and",
+      "bbox": [
+        42.52,
+        542.664,
+        189.216,
+        552.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "cost",
+        "discipline",
+        "maintaining",
+        "tight",
+        "while"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l4",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "continuing to invest in growth and efficiency.",
+      "bbox": [
+        42.52,
+        552.264,
+        200.52,
+        561.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "continuing",
+        "efficiency.",
+        "growth",
+        "in",
+        "invest",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l5",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 5,
+      "source_text": "We are targeting revenue growth rising to 5%",
+      "bbox": [
+        42.52,
+        561.864,
+        204.68,
+        571.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "are",
+        "growth",
+        "revenue",
+        "rising",
+        "targeting",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "5%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l6",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 6,
+      "source_text": "year-on-year by 2028 on a constant currency",
+      "bbox": [
+        42.52,
+        571.464,
+        198.56,
+        581.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "by",
+        "constant",
+        "currency",
+        "on",
+        "year-on-year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2028"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l7",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 7,
+      "source_text": "basis excluding notable items. We see growth",
+      "bbox": [
+        42.52,
+        581.064,
+        205.584,
+        590.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "basis",
+        "excluding",
+        "growth",
+        "items.",
+        "notable",
+        "see"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l8",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 8,
+      "source_text": "opportunities in each of our four businesses. In",
+      "bbox": [
+        42.52,
+        590.664,
+        207.912,
+        600.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "businesses.",
+        "each",
+        "four",
+        "in",
+        "of",
+        "opportunities",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l9",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 9,
+      "source_text": "Hong Kong, we intend to consolidate market",
+      "bbox": [
+        42.52,
+        600.264,
+        199.952,
+        609.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Hong",
+        "Kong",
+        "consolidate",
+        "intend",
+        "market",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l10",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 10,
+      "source_text": "leadership with the privatisation of Hang Seng",
+      "bbox": [
+        42.52,
+        609.864,
+        204.512,
+        619.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Hang",
+        "Seng",
+        "leadership",
+        "of",
+        "privatisation",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l11",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 11,
+      "source_text": "Bank. In the UK, we see the opportunity to",
+      "bbox": [
+        42.52,
+        619.464,
+        193.304,
+        629.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank.",
+        "In",
+        "UK",
+        "opportunity",
+        "see",
+        "the",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l12",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 12,
+      "source_text": "continue building our mortgage franchise and",
+      "bbox": [
+        42.52,
+        629.064,
+        201.56,
+        638.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "building",
+        "continue",
+        "franchise",
+        "mortgage",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l13",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 13,
+      "source_text": "build share in SME banking. In IWPB, we",
+      "bbox": [
+        42.52,
+        638.664,
+        187.328,
+        648.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "IWPB",
+        "In",
+        "SME",
+        "banking.",
+        "build",
+        "in",
+        "share",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l14",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 14,
+      "source_text": "intend to particularly focus on building our",
+      "bbox": [
+        42.52,
+        648.264,
+        189.568,
+        657.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "building",
+        "focus",
+        "intend",
+        "on",
+        "our",
+        "particularly",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l15",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 15,
+      "source_text": "successful wealth business, especially in Asia",
+      "bbox": [
+        42.52,
+        657.864,
+        203.664,
+        667.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Asia",
+        "business",
+        "especially",
+        "in",
+        "successful",
+        "wealth"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l16",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 16,
+      "source_text": "and the Middle East. In CIB, the opportunities",
+      "bbox": [
+        42.52,
+        667.464,
+        203.2,
+        677.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CIB",
+        "East.",
+        "In",
+        "Middle",
+        "and",
+        "opportunities",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l17",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 17,
+      "source_text": "include further expanding our international",
+      "bbox": [
+        42.52,
+        677.064,
+        190.968,
+        686.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "expanding",
+        "further",
+        "include",
+        "international",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l18",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 18,
+      "source_text": "network business and transaction banking.",
+      "bbox": [
+        42.52,
+        686.664,
+        192.936,
+        696.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "banking.",
+        "business",
+        "network",
+        "transaction"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l19",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 19,
+      "source_text": "Having simplified our approach to now include",
+      "bbox": [
+        42.52,
+        696.264,
+        205.048,
+        705.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Having",
+        "approach",
+        "include",
+        "now",
+        "our",
+        "simplified",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l20",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 20,
+      "source_text": "a revenue growth target, we no longer provide",
+      "bbox": [
+        42.52,
+        705.864,
+        206.368,
+        715.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "growth",
+        "longer",
+        "no",
+        "provide",
+        "revenue",
+        "target",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l21",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 21,
+      "source_text": "separate guidance on Wealth fee and other",
+      "bbox": [
+        42.52,
+        715.464,
+        194.704,
+        725.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Wealth",
+        "and",
+        "fee",
+        "guidance",
+        "on",
+        "other",
+        "separate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b16_l22",
+      "page_index": 12,
+      "block_id": 16,
+      "line_index": 22,
+      "source_text": "income growth.",
+      "bbox": [
+        42.52,
+        725.064,
+        97.448,
+        734.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "growth.",
+        "income"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b17_l0",
+      "page_index": 12,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "RoTE of 17% or better",
+      "bbox": [
+        42.52,
+        740.656,
+        130.616,
+        751.056
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "RoTE",
+        "better",
+        "of",
+        "or"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "17%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b17_l1",
+      "page_index": 12,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "Underpinned by the momentum in our earnings",
+      "bbox": [
+        42.52,
+        750.764,
+        206.06,
+        760.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Underpinned",
+        "by",
+        "earnings",
+        "in",
+        "momentum",
+        "our",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b17_l2",
+      "page_index": 12,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "and the positive progress we are making in our",
+      "bbox": [
+        42.52,
+        760.364,
+        200.28,
+        770.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "are",
+        "in",
+        "making",
+        "our",
+        "positive",
+        "progress",
+        "the",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b17_l3",
+      "page_index": 12,
+      "block_id": 17,
+      "line_index": 3,
+      "source_text": "strategic execution, we are targeting a RoTE",
+      "bbox": [
+        42.52,
+        769.964,
+        195.512,
+        779.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "RoTE",
+        "a",
+        "are",
+        "execution",
+        "strategic",
+        "targeting",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b17_l4",
+      "page_index": 12,
+      "block_id": 17,
+      "line_index": 4,
+      "source_text": "excluding notable items of 17% or better for",
+      "bbox": [
+        42.52,
+        779.564,
+        198.904,
+        789.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "better",
+        "excluding",
+        "for",
+        "items",
+        "notable",
+        "of",
+        "or"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "17%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b17_l5",
+      "page_index": 12,
+      "block_id": 17,
+      "line_index": 5,
+      "source_text": "each of 2026, 2027 and 2028.",
+      "bbox": [
+        42.52,
+        789.164,
+        146.072,
+        798.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "each",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2026"
+        },
+        {
+          "type": "year",
+          "value": "2027"
+        },
+        {
+          "type": "year",
+          "value": "2028"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l0",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "Capital generation",
+      "bbox": [
+        217.15,
+        513.356,
+        290.094,
+        523.756
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Capital",
+        "generation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p12_b18_l1",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "Our business model is designed to be highly",
+      "bbox": [
+        217.15,
+        523.464,
+        373.622,
+        533.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Our",
+        "be",
+        "business",
+        "designed",
+        "highly",
+        "is",
+        "model",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l2",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "capital generative. In 2025, our CET1 capital",
+      "bbox": [
+        217.15,
+        533.064,
+        371.246,
+        542.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CET1",
+        "In",
+        "capital",
+        "generative.",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l3",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "ratio was 14.9%, remaining stable compared",
+      "bbox": [
+        217.15,
+        542.664,
+        375.054,
+        552.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "compared",
+        "ratio",
+        "remaining",
+        "stable",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "14.9%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l4",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 4,
+      "source_text": "with 31 December 2024. During the calendar",
+      "bbox": [
+        217.15,
+        552.264,
+        375.918,
+        561.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "December",
+        "During",
+        "calendar",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l5",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 5,
+      "source_text": "year, we paid $5.2bn ordinary dividends with",
+      "bbox": [
+        217.15,
+        561.864,
+        374.43,
+        571.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "dividends",
+        "ordinary",
+        "paid",
+        "we",
+        "with",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "5"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l6",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 6,
+      "source_text": "respect to 2025, and we expect to pay a",
+      "bbox": [
+        217.15,
+        571.464,
+        359.294,
+        581.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "and",
+        "expect",
+        "pay",
+        "respect",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l7",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 7,
+      "source_text": "further $7.7bn through the fourth interim",
+      "bbox": [
+        217.15,
+        581.064,
+        360.87,
+        590.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "fourth",
+        "further",
+        "interim",
+        "the",
+        "through"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "7"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l8",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 8,
+      "source_text": "dividend with respect to 2025. We aim to",
+      "bbox": [
+        217.15,
+        590.664,
+        363.206,
+        600.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "aim",
+        "dividend",
+        "respect",
+        "to",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l9",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 9,
+      "source_text": "maintain a CET1 capital ratio in the range of",
+      "bbox": [
+        217.15,
+        600.264,
+        369.918,
+        609.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CET1",
+        "a",
+        "capital",
+        "in",
+        "maintain",
+        "of",
+        "range",
+        "ratio",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l10",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 10,
+      "source_text": "14-14.5% over the medium term8. Capital may",
+      "bbox": [
+        217.15,
+        609.864,
+        381.41,
+        619.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Capital",
+        "may",
+        "medium",
+        "over",
+        "term8.",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "14.5%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "14"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p12_b18_l11",
+      "page_index": 12,
+      "block_id": 18,
+      "line_index": 11,
+      "source_text": "fall below our target range during the first half",
+      "bbox": [
+        217.15,
+        619.464,
+        378.014,
+        629.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "below",
+        "during",
+        "fall",
+        "first",
+        "half",
+        "our",
+        "range",
+        "target",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round14/translation_batches/batch_0008.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round14/translation_batches/batch_0008.model_output.json",
+    "required_units": [
+      "p11_b9_l0",
+      "p11_b9_l1",
+      "p11_b9_l2",
+      "p11_b9_l3",
+      "p11_b9_l4",
+      "p11_b9_l5",
+      "p11_b9_l6",
+      "p11_b9_l7",
+      "p11_b9_l8",
+      "p11_b9_l9",
+      "p11_b9_l10",
+      "p11_b9_l11",
+      "p11_b9_l12",
+      "p11_b9_l13",
+      "p11_b9_l14",
+      "p11_b9_l15",
+      "p11_b9_l16",
+      "p11_b9_l17",
+      "p11_b9_l18",
+      "p11_b9_l19",
+      "p11_b9_l20",
+      "p11_b9_l21",
+      "p11_b9_l22",
+      "p11_b10_l0",
+      "p11_b11_l0",
+      "p11_b12_l0",
+      "p11_b12_l1",
+      "p11_b13_l0",
+      "p11_b13_l1",
+      "p11_b13_l3",
+      "p11_b13_l5",
+      "p11_b14_l0",
+      "p11_b15_l0",
+      "p11_b15_l1",
+      "p11_b15_l2",
+      "p11_b15_l3",
+      "p11_b15_l4",
+      "p11_b15_l5",
+      "p11_b15_l6",
+      "p11_b16_l0",
+      "p11_b16_l1",
+      "p11_b16_l2",
+      "p11_b16_l3",
+      "p11_b16_l4",
+      "p11_b16_l5",
+      "p11_b17_l0",
+      "p11_b17_l1",
+      "p11_b17_l2",
+      "p11_b17_l3",
+      "p11_b17_l4",
+      "p11_b17_l5",
+      "p11_b17_l6",
+      "p11_b17_l7",
+      "p11_b18_l0",
+      "p11_b18_l1",
+      "p11_b18_l2",
+      "p11_b18_l3",
+      "p11_b18_l4",
+      "p11_b19_l0",
+      "p11_b19_l1",
+      "p11_b19_l2",
+      "p11_b19_l3",
+      "p11_b19_l4",
+      "p11_b19_l5",
+      "p11_b19_l6",
+      "p11_b20_l0",
+      "p11_b20_l1",
+      "p11_b21_l0",
+      "p11_b21_l1",
+      "p11_b21_l2",
+      "p11_b21_l3",
+      "p11_b21_l4",
+      "p11_b21_l5",
+      "p11_b21_l6",
+      "p11_b21_l7",
+      "p11_b21_l8",
+      "p11_b21_l9",
+      "p11_b22_l0",
+      "p12_b0_l0",
+      "p12_b1_l0",
+      "p12_b1_l1",
+      "p12_b1_l2",
+      "p12_b1_l3",
+      "p12_b1_l4",
+      "p12_b1_l5",
+      "p12_b1_l6",
+      "p12_b1_l7",
+      "p12_b1_l8",
+      "p12_b1_l9",
+      "p12_b1_l10",
+      "p12_b1_l11",
+      "p12_b1_l12",
+      "p12_b2_l0",
+      "p12_b2_l1",
+      "p12_b2_l2",
+      "p12_b2_l3",
+      "p12_b2_l4",
+      "p12_b2_l5",
+      "p12_b2_l6",
+      "p12_b2_l7",
+      "p12_b2_l8",
+      "p12_b2_l9",
+      "p12_b2_l10",
+      "p12_b2_l11",
+      "p12_b2_l12",
+      "p12_b3_l0",
+      "p12_b3_l1",
+      "p12_b3_l2",
+      "p12_b3_l3",
+      "p12_b3_l5",
+      "p12_b3_l6",
+      "p12_b3_l7",
+      "p12_b3_l8",
+      "p12_b3_l9",
+      "p12_b3_l10",
+      "p12_b3_l11",
+      "p12_b4_l0",
+      "p12_b5_l0",
+      "p12_b5_l1",
+      "p12_b5_l2",
+      "p12_b5_l3",
+      "p12_b5_l4",
+      "p12_b5_l5",
+      "p12_b5_l6",
+      "p12_b5_l7",
+      "p12_b6_l0",
+      "p12_b6_l1",
+      "p12_b6_l2",
+      "p12_b6_l3",
+      "p12_b6_l4",
+      "p12_b6_l5",
+      "p12_b8_l0",
+      "p12_b9_l0",
+      "p12_b10_l0",
+      "p12_b10_l1",
+      "p12_b10_l2",
+      "p12_b10_l3",
+      "p12_b10_l4",
+      "p12_b10_l5",
+      "p12_b10_l6",
+      "p12_b10_l7",
+      "p12_b10_l8",
+      "p12_b10_l9",
+      "p12_b10_l10",
+      "p12_b11_l0",
+      "p12_b11_l1",
+      "p12_b11_l2",
+      "p12_b12_l0",
+      "p12_b12_l1",
+      "p12_b12_l2",
+      "p12_b12_l3",
+      "p12_b12_l4",
+      "p12_b12_l5",
+      "p12_b13_l0",
+      "p12_b13_l1",
+      "p12_b13_l2",
+      "p12_b13_l3",
+      "p12_b14_l0",
+      "p12_b15_l0",
+      "p12_b16_l0",
+      "p12_b16_l1",
+      "p12_b16_l2",
+      "p12_b16_l3",
+      "p12_b16_l4",
+      "p12_b16_l5",
+      "p12_b16_l6",
+      "p12_b16_l7",
+      "p12_b16_l8",
+      "p12_b16_l9",
+      "p12_b16_l10",
+      "p12_b16_l11",
+      "p12_b16_l12",
+      "p12_b16_l13",
+      "p12_b16_l14",
+      "p12_b16_l15",
+      "p12_b16_l16",
+      "p12_b16_l17",
+      "p12_b16_l18",
+      "p12_b16_l19",
+      "p12_b16_l20",
+      "p12_b16_l21",
+      "p12_b16_l22",
+      "p12_b17_l0",
+      "p12_b17_l1",
+      "p12_b17_l2",
+      "p12_b17_l3",
+      "p12_b17_l4",
+      "p12_b17_l5",
+      "p12_b18_l0",
+      "p12_b18_l1",
+      "p12_b18_l2",
+      "p12_b18_l3",
+      "p12_b18_l4",
+      "p12_b18_l5",
+      "p12_b18_l6",
+      "p12_b18_l7",
+      "p12_b18_l8",
+      "p12_b18_l9",
+      "p12_b18_l10",
+      "p12_b18_l11"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

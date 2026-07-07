@@ -1,0 +1,6106 @@
+{
+  "run_id": "round14",
+  "case_id": "R14_00005_2025_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0088",
+  "batch_index": 88,
+  "batch_count": 196,
+  "source_extraction_ref": "docs/reports/round14/source_extraction_en.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p149_b11_l1",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "Credit impaired",
+      "bbox": [
+        402.81,
+        474.946,
+        450.256,
+        483.43
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Credit",
+        "impaired"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l2",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "Stage 1",
+      "bbox": [
+        243.66,
+        484.696,
+        267.39,
+        493.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l3",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "Stage 2",
+      "bbox": [
+        329.16,
+        484.696,
+        352.89,
+        493.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l4",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 4,
+      "source_text": "Stage 3",
+      "bbox": [
+        414.66,
+        484.696,
+        438.39,
+        493.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l5",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 5,
+      "source_text": "Total",
+      "bbox": [
+        504.44,
+        484.696,
+        519.609,
+        493.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Total"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l6",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 6,
+      "source_text": "Gross",
+      "bbox": [
+        234.62,
+        495.126,
+        254.843,
+        503.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l7",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 7,
+      "source_text": "carrying/",
+      "bbox": [
+        226.46,
+        503.526,
+        254.852,
+        512.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l8",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 8,
+      "source_text": "nominal",
+      "bbox": [
+        228.4,
+        511.926,
+        254.853,
+        520.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l9",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 9,
+      "source_text": "amount",
+      "bbox": [
+        229.17,
+        520.326,
+        252.9,
+        528.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l10",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 10,
+      "source_text": "Allowance",
+      "bbox": [
+        263.38,
+        510.856,
+        297.603,
+        519.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b11_l11",
+      "page_index": 149,
+      "block_id": 11,
+      "line_index": 11,
+      "source_text": "for ECL",
+      "bbox": [
+        272.33,
+        519.256,
+        295.661,
+        527.74
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b12_l0",
+      "page_index": 149,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        320.12,
+        495.126,
+        340.343,
+        503.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b12_l1",
+      "page_index": 149,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        311.96,
+        503.526,
+        340.352,
+        512.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b12_l2",
+      "page_index": 149,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        313.9,
+        511.926,
+        340.353,
+        520.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b12_l3",
+      "page_index": 149,
+      "block_id": 12,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        314.67,
+        520.326,
+        338.4,
+        528.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b12_l4",
+      "page_index": 149,
+      "block_id": 12,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        348.88,
+        510.856,
+        383.103,
+        519.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b12_l5",
+      "page_index": 149,
+      "block_id": 12,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        357.83,
+        519.256,
+        381.161,
+        527.74
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b13_l0",
+      "page_index": 149,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        405.62,
+        495.126,
+        425.843,
+        503.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b13_l1",
+      "page_index": 149,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        397.46,
+        503.526,
+        425.852,
+        512.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b13_l2",
+      "page_index": 149,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        399.4,
+        511.926,
+        425.853,
+        520.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b13_l3",
+      "page_index": 149,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        400.17,
+        520.326,
+        423.9,
+        528.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b13_l4",
+      "page_index": 149,
+      "block_id": 13,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        434.38,
+        510.856,
+        468.603,
+        519.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b13_l5",
+      "page_index": 149,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        443.33,
+        519.256,
+        466.661,
+        527.74
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b14_l0",
+      "page_index": 149,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        491.12,
+        495.126,
+        511.343,
+        503.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b14_l1",
+      "page_index": 149,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        482.96,
+        503.526,
+        511.352,
+        512.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b14_l2",
+      "page_index": 149,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        484.9,
+        511.926,
+        511.353,
+        520.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b14_l3",
+      "page_index": 149,
+      "block_id": 14,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        485.67,
+        520.326,
+        509.4,
+        528.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b14_l4",
+      "page_index": 149,
+      "block_id": 14,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        519.88,
+        510.856,
+        554.103,
+        519.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b14_l5",
+      "page_index": 149,
+      "block_id": 14,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        528.83,
+        519.256,
+        552.161,
+        527.74
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l0",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "$m",
+      "bbox": [
+        242.78,
+        530.376,
+        252.895,
+        538.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l1",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "$m",
+      "bbox": [
+        285.53,
+        530.376,
+        295.645,
+        538.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l2",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        328.28,
+        530.376,
+        338.395,
+        538.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l3",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        371.03,
+        530.376,
+        381.145,
+        538.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l4",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 4,
+      "source_text": "$m",
+      "bbox": [
+        413.78,
+        530.376,
+        423.895,
+        538.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l5",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 5,
+      "source_text": "$m",
+      "bbox": [
+        456.53,
+        530.376,
+        466.645,
+        538.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l6",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 6,
+      "source_text": "$m",
+      "bbox": [
+        499.28,
+        530.376,
+        509.395,
+        538.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l7",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 7,
+      "source_text": "$m",
+      "bbox": [
+        542.03,
+        530.376,
+        552.145,
+        538.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l8",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 8,
+      "source_text": "At 1 Jan 2024",
+      "bbox": [
+        45.15,
+        540.126,
+        88.308,
+        548.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "Jan"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l18",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 18,
+      "source_text": "Transfers of financial instruments:",
+      "bbox": [
+        45.15,
+        549.876,
+        150.941,
+        558.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Transfers",
+        "financial",
+        "instruments",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b15_l28",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 28,
+      "source_text": "–  transfers from stage 1 to stage 2",
+      "bbox": [
+        45.15,
+        559.626,
+        154.84,
+        568.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b15_l38",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 38,
+      "source_text": "–  transfers from stage 2 to stage 1",
+      "bbox": [
+        45.15,
+        569.376,
+        154.84,
+        577.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b15_l48",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 48,
+      "source_text": "–  transfers to stage 3",
+      "bbox": [
+        45.15,
+        579.126,
+        113.218,
+        587.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b15_l58",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 58,
+      "source_text": "–  transfers from stage 3",
+      "bbox": [
+        45.15,
+        588.876,
+        121.772,
+        597.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b15_l68",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 68,
+      "source_text": "Net remeasurement of ECL arising from transfer of",
+      "bbox": [
+        45.15,
+        598.626,
+        206.171,
+        607.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "Net",
+        "arising",
+        "from",
+        "of",
+        "remeasurement",
+        "transfer"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b15_l69",
+      "page_index": 149,
+      "block_id": 15,
+      "line_index": 69,
+      "source_text": "stage",
+      "bbox": [
+        45.15,
+        607.026,
+        62.265,
+        615.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b16_l0",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "Net new and further lending/repayments",
+      "bbox": [
+        45.15,
+        617.376,
+        171.577,
+        625.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Net",
+        "and",
+        "further",
+        "lending/repayments",
+        "new"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b16_l10",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 10,
+      "source_text": "Change to risk parameters – credit quality",
+      "bbox": [
+        45.15,
+        627.126,
+        176.225,
+        635.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Change",
+        "credit",
+        "parameters",
+        "quality",
+        "risk",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b16_l20",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 20,
+      "source_text": "Changes to models used for ECL calculation",
+      "bbox": [
+        45.15,
+        636.876,
+        182.462,
+        645.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Changes",
+        "ECL",
+        "calculation",
+        "for",
+        "models",
+        "to",
+        "used"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b16_l30",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 30,
+      "source_text": "Assets written off",
+      "bbox": [
+        45.15,
+        646.626,
+        101.143,
+        655.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Assets",
+        "off",
+        "written"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b16_l40",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 40,
+      "source_text": "Foreign exchange and others",
+      "bbox": [
+        45.15,
+        656.376,
+        135.415,
+        664.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Foreign",
+        "and",
+        "exchange",
+        "others"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b16_l50",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 50,
+      "source_text": "At 31 Dec 2024",
+      "bbox": [
+        45.15,
+        666.126,
+        93.748,
+        674.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b16_l60",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 60,
+      "source_text": "ECL income statement change for the period",
+      "bbox": [
+        45.15,
+        675.876,
+        185.192,
+        684.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "change",
+        "for",
+        "income",
+        "period",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b16_l69",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 69,
+      "source_text": "Recoveries",
+      "bbox": [
+        45.15,
+        685.626,
+        79.765,
+        694.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Recoveries"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b16_l72",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 72,
+      "source_text": "Others",
+      "bbox": [
+        45.15,
+        695.376,
+        66.542,
+        703.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Others"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b16_l75",
+      "page_index": 149,
+      "block_id": 16,
+      "line_index": 75,
+      "source_text": "Total ECL income statement change for the period",
+      "bbox": [
+        45.15,
+        705.126,
+        202.307,
+        713.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "Total",
+        "change",
+        "for",
+        "income",
+        "period",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p149_b17_l0",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.15,
+        15.206,
+        93.373,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l1",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        118.65,
+        15.206,
+        155.204,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l2",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.15,
+        15.206,
+        241.934,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l3",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        265.65,
+        16.872,
+        304.164,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l4",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.15,
+        15.206,
+        370.888,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l5",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.15,
+        23.606,
+        394.842,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l6",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        412.65,
+        15.206,
+        443.38,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l7",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        412.65,
+        23.606,
+        448.042,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l8",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.15,
+        15.206,
+        518.819,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b17_l9",
+      "page_index": 149,
+      "block_id": 17,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.15,
+        23.606,
+        521.542,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p149_b18_l0",
+      "page_index": 149,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "Credit risk",
+      "bbox": [
+        265.65,
+        34.766,
+        297.143,
+        43.25
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Credit",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b0_l0",
+      "page_index": 150,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Credit cards – reconciliation of changes in gross carrying/nominal amount and allowances for loans and advances to customers including loan",
+      "bbox": [
+        42.6,
+        71.624,
+        544.136,
+        81.32
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Credit",
+        "advances",
+        "allowances",
+        "amount",
+        "and",
+        "cards",
+        "carrying/nominal",
+        "changes",
+        "customers",
+        "for",
+        "gross",
+        "in",
+        "including",
+        "loan",
+        "loans",
+        "of",
+        "reconciliation",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b0_l1",
+      "page_index": 150,
+      "block_id": 0,
+      "line_index": 1,
+      "source_text": "commitments",
+      "bbox": [
+        42.6,
+        81.224,
+        92.36,
+        90.92
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "commitments"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l0",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Non-credit impaired",
+      "bbox": [
+        260.36,
+        94.562,
+        327.252,
+        101.562
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Non-credit",
+        "impaired"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l1",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "Credit impaired",
+      "bbox": [
+        398.44,
+        94.562,
+        450.163,
+        101.562
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Credit",
+        "impaired"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l2",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "Stage 1",
+      "bbox": [
+        237.64,
+        104.312,
+        262.924,
+        111.312
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l3",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "Stage 2",
+      "bbox": [
+        324.64,
+        104.312,
+        349.924,
+        111.312
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l4",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "Stage 3",
+      "bbox": [
+        411.64,
+        104.312,
+        436.924,
+        111.312
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l5",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 5,
+      "source_text": "Total",
+      "bbox": [
+        502.72,
+        104.312,
+        519.835,
+        111.312
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Total"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l6",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 6,
+      "source_text": "Gross",
+      "bbox": [
+        228.21,
+        114.742,
+        249.602,
+        121.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l7",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 7,
+      "source_text": "carrying/",
+      "bbox": [
+        217.34,
+        123.142,
+        249.617,
+        130.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l8",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 8,
+      "source_text": "nominal",
+      "bbox": [
+        220.46,
+        131.542,
+        249.622,
+        138.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l9",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 9,
+      "source_text": "amount",
+      "bbox": [
+        221.62,
+        139.942,
+        247.667,
+        146.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l10",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 10,
+      "source_text": "Allowance",
+      "bbox": [
+        256.17,
+        130.472,
+        293.123,
+        137.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b1_l11",
+      "page_index": 150,
+      "block_id": 1,
+      "line_index": 11,
+      "source_text": "for ECL",
+      "bbox": [
+        267.06,
+        138.872,
+        291.168,
+        145.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b2_l0",
+      "page_index": 150,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        315.21,
+        114.742,
+        336.602,
+        121.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b2_l1",
+      "page_index": 150,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        304.34,
+        123.142,
+        336.617,
+        130.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b2_l2",
+      "page_index": 150,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        307.46,
+        131.542,
+        336.622,
+        138.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b2_l3",
+      "page_index": 150,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        308.62,
+        139.942,
+        334.667,
+        146.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b2_l4",
+      "page_index": 150,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        343.17,
+        130.472,
+        380.123,
+        137.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b2_l5",
+      "page_index": 150,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        354.06,
+        138.872,
+        378.168,
+        145.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b3_l0",
+      "page_index": 150,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        402.21,
+        114.742,
+        423.602,
+        121.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b3_l1",
+      "page_index": 150,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        391.34,
+        123.142,
+        423.617,
+        130.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b3_l2",
+      "page_index": 150,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        394.46,
+        131.542,
+        423.622,
+        138.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b3_l3",
+      "page_index": 150,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        395.62,
+        139.942,
+        421.667,
+        146.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b3_l4",
+      "page_index": 150,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        430.17,
+        130.472,
+        467.123,
+        137.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b3_l5",
+      "page_index": 150,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        441.06,
+        138.872,
+        465.168,
+        145.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b4_l0",
+      "page_index": 150,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        489.21,
+        114.742,
+        510.602,
+        121.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b4_l1",
+      "page_index": 150,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        478.34,
+        123.142,
+        510.617,
+        130.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b4_l2",
+      "page_index": 150,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        481.46,
+        131.542,
+        510.622,
+        138.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b4_l3",
+      "page_index": 150,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        482.62,
+        139.942,
+        508.667,
+        146.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b4_l4",
+      "page_index": 150,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        517.17,
+        130.472,
+        554.123,
+        137.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b4_l5",
+      "page_index": 150,
+      "block_id": 4,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        528.06,
+        138.872,
+        552.168,
+        145.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l0",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "$m",
+      "bbox": [
+        237.15,
+        149.992,
+        247.65,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l1",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "$m",
+      "bbox": [
+        280.65,
+        149.992,
+        291.15,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l2",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        324.15,
+        149.992,
+        334.65,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l3",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        367.65,
+        149.992,
+        378.15,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l4",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "$m",
+      "bbox": [
+        411.15,
+        149.992,
+        421.65,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l5",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "$m",
+      "bbox": [
+        454.65,
+        149.992,
+        465.15,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l6",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "$m",
+      "bbox": [
+        498.15,
+        149.992,
+        508.65,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l7",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 7,
+      "source_text": "$m",
+      "bbox": [
+        541.65,
+        149.992,
+        552.15,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l8",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 8,
+      "source_text": "At 1 Jan 2025",
+      "bbox": [
+        45.15,
+        159.742,
+        90.248,
+        166.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Jan"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l18",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 18,
+      "source_text": "Transfers of financial instruments:",
+      "bbox": [
+        45.15,
+        167.826,
+        150.941,
+        176.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Transfers",
+        "financial",
+        "instruments",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b5_l28",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 28,
+      "source_text": "–  transfers from stage 1 to stage 2",
+      "bbox": [
+        45.15,
+        177.576,
+        154.84,
+        186.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b5_l38",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 38,
+      "source_text": "–  transfers from stage 2 to stage 1",
+      "bbox": [
+        45.15,
+        187.326,
+        154.84,
+        195.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b5_l48",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 48,
+      "source_text": "–  transfers to stage 3",
+      "bbox": [
+        45.15,
+        197.076,
+        113.218,
+        205.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b5_l58",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 58,
+      "source_text": "–  transfers from stage 3",
+      "bbox": [
+        45.15,
+        206.826,
+        121.772,
+        215.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b5_l68",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 68,
+      "source_text": "Net remeasurement of ECL arising from transfer of",
+      "bbox": [
+        45.15,
+        216.576,
+        206.171,
+        225.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "Net",
+        "arising",
+        "from",
+        "of",
+        "remeasurement",
+        "transfer"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b5_l69",
+      "page_index": 150,
+      "block_id": 5,
+      "line_index": 69,
+      "source_text": "stage",
+      "bbox": [
+        45.15,
+        224.977,
+        62.265,
+        233.461
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b6_l0",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Changes due to modifications not derecognised",
+      "bbox": [
+        45.15,
+        235.326,
+        193.76,
+        243.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Changes",
+        "derecognised",
+        "due",
+        "modifications",
+        "not",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b6_l10",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 10,
+      "source_text": "Net new and further lending/repayments",
+      "bbox": [
+        45.15,
+        245.076,
+        171.577,
+        253.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Net",
+        "and",
+        "further",
+        "lending/repayments",
+        "new"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b6_l20",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 20,
+      "source_text": "Change to risk parameters – credit quality",
+      "bbox": [
+        45.15,
+        254.826,
+        176.225,
+        263.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Change",
+        "credit",
+        "parameters",
+        "quality",
+        "risk",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b6_l30",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 30,
+      "source_text": "Changes to models used for ECL calculation",
+      "bbox": [
+        45.15,
+        264.576,
+        182.462,
+        273.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Changes",
+        "ECL",
+        "calculation",
+        "for",
+        "models",
+        "to",
+        "used"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b6_l40",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 40,
+      "source_text": "Assets written off",
+      "bbox": [
+        45.15,
+        274.326,
+        101.143,
+        282.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Assets",
+        "off",
+        "written"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b6_l50",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 50,
+      "source_text": "Foreign exchange and others",
+      "bbox": [
+        45.15,
+        284.076,
+        135.415,
+        292.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Foreign",
+        "and",
+        "exchange",
+        "others"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b6_l60",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 60,
+      "source_text": "At 31 Dec 2025",
+      "bbox": [
+        45.15,
+        295.492,
+        94.528,
+        302.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b6_l70",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 70,
+      "source_text": "ECL income statement change for the period",
+      "bbox": [
+        45.15,
+        303.576,
+        185.192,
+        312.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "change",
+        "for",
+        "income",
+        "period",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b6_l79",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 79,
+      "source_text": "Recoveries",
+      "bbox": [
+        45.15,
+        313.326,
+        79.765,
+        321.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Recoveries"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b6_l82",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 82,
+      "source_text": "Others",
+      "bbox": [
+        45.15,
+        323.076,
+        66.542,
+        331.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Others"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b6_l85",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 85,
+      "source_text": "Total ECL income statement change for the",
+      "bbox": [
+        45.15,
+        334.492,
+        191.772,
+        341.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "Total",
+        "change",
+        "for",
+        "income",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b6_l86",
+      "page_index": 150,
+      "block_id": 6,
+      "line_index": 86,
+      "source_text": "period",
+      "bbox": [
+        45.15,
+        342.892,
+        66.542,
+        349.892
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "period"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b7_l0",
+      "page_index": 150,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "At 1 Jan 2024",
+      "bbox": [
+        45.15,
+        359.576,
+        88.308,
+        368.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "Jan"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b7_l10",
+      "page_index": 150,
+      "block_id": 7,
+      "line_index": 10,
+      "source_text": "Transfers of financial instruments:",
+      "bbox": [
+        45.15,
+        369.326,
+        150.941,
+        377.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Transfers",
+        "financial",
+        "instruments",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b7_l20",
+      "page_index": 150,
+      "block_id": 7,
+      "line_index": 20,
+      "source_text": "–  transfers from stage 1 to stage 2",
+      "bbox": [
+        45.15,
+        379.076,
+        154.84,
+        387.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b7_l30",
+      "page_index": 150,
+      "block_id": 7,
+      "line_index": 30,
+      "source_text": "–  transfers from stage 2 to stage 1",
+      "bbox": [
+        45.15,
+        388.826,
+        154.84,
+        397.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b7_l40",
+      "page_index": 150,
+      "block_id": 7,
+      "line_index": 40,
+      "source_text": "–  transfers to stage 3",
+      "bbox": [
+        45.15,
+        398.576,
+        113.218,
+        407.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "stage",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b7_l50",
+      "page_index": 150,
+      "block_id": 7,
+      "line_index": 50,
+      "source_text": "–  transfers from stage 3",
+      "bbox": [
+        45.15,
+        408.326,
+        121.772,
+        416.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "stage",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b7_l60",
+      "page_index": 150,
+      "block_id": 7,
+      "line_index": 60,
+      "source_text": "Net remeasurement of ECL arising from transfer of",
+      "bbox": [
+        45.15,
+        418.076,
+        206.171,
+        426.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "Net",
+        "arising",
+        "from",
+        "of",
+        "remeasurement",
+        "transfer"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b7_l61",
+      "page_index": 150,
+      "block_id": 7,
+      "line_index": 61,
+      "source_text": "stage",
+      "bbox": [
+        45.15,
+        426.476,
+        62.265,
+        434.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b8_l0",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "Changes due to modifications not derecognised",
+      "bbox": [
+        45.15,
+        436.826,
+        193.76,
+        445.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Changes",
+        "derecognised",
+        "due",
+        "modifications",
+        "not",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b8_l10",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 10,
+      "source_text": "Net new and further lending/repayments",
+      "bbox": [
+        45.15,
+        446.576,
+        171.577,
+        455.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Net",
+        "and",
+        "further",
+        "lending/repayments",
+        "new"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b8_l20",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 20,
+      "source_text": "Change to risk parameters – credit quality",
+      "bbox": [
+        45.15,
+        456.326,
+        176.225,
+        464.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Change",
+        "credit",
+        "parameters",
+        "quality",
+        "risk",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b8_l30",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 30,
+      "source_text": "Changes to models used for ECL calculation",
+      "bbox": [
+        45.15,
+        466.076,
+        182.462,
+        474.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Changes",
+        "ECL",
+        "calculation",
+        "for",
+        "models",
+        "to",
+        "used"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b8_l40",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 40,
+      "source_text": "Assets written off",
+      "bbox": [
+        45.15,
+        475.826,
+        101.143,
+        484.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Assets",
+        "off",
+        "written"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b8_l50",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 50,
+      "source_text": "Foreign exchange and others1",
+      "bbox": [
+        45.15,
+        485.576,
+        137.89,
+        494.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Foreign",
+        "and",
+        "exchange",
+        "others1"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b8_l60",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 60,
+      "source_text": "At 31 Dec 2024",
+      "bbox": [
+        45.15,
+        495.326,
+        93.748,
+        503.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b8_l70",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 70,
+      "source_text": "ECL income statement change for the period",
+      "bbox": [
+        45.15,
+        505.076,
+        185.192,
+        513.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "change",
+        "for",
+        "income",
+        "period",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b8_l79",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 79,
+      "source_text": "Recoveries",
+      "bbox": [
+        45.15,
+        514.826,
+        79.765,
+        523.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Recoveries"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b8_l82",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 82,
+      "source_text": "Others",
+      "bbox": [
+        45.15,
+        524.576,
+        66.542,
+        533.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Others"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b8_l85",
+      "page_index": 150,
+      "block_id": 8,
+      "line_index": 85,
+      "source_text": "Total ECL income statement change for the period",
+      "bbox": [
+        45.15,
+        534.326,
+        202.307,
+        542.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "Total",
+        "change",
+        "for",
+        "income",
+        "period",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b9_l0",
+      "page_index": 150,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "1 Total includes $4.5bn of nominal amount related to derecognition of loan commitments and financial guarantees following the sale of our banking business in",
+      "bbox": [
+        42.52,
+        549.446,
+        543.577,
+        557.93
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Total",
+        "amount",
+        "and",
+        "banking",
+        "bn",
+        "business",
+        "commitments",
+        "derecognition",
+        "financial",
+        "following",
+        "guarantees",
+        "in",
+        "includes",
+        "loan",
+        "nominal",
+        "of",
+        "our",
+        "related",
+        "sale",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "4"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b9_l1",
+      "page_index": 150,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "Canada and our business in Argentina during 2024.",
+      "bbox": [
+        53.86,
+        557.846,
+        211.808,
+        566.33
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Argentina",
+        "Canada",
+        "and",
+        "business",
+        "during",
+        "in",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p150_b10_l0",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.15,
+        15.206,
+        93.373,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l1",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        118.65,
+        15.206,
+        155.204,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l2",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.15,
+        15.206,
+        241.934,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l3",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        265.65,
+        16.872,
+        304.164,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l4",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.15,
+        15.206,
+        370.888,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l5",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.15,
+        23.606,
+        394.842,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l6",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        412.65,
+        15.206,
+        443.38,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l7",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        412.65,
+        23.606,
+        448.042,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l8",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.15,
+        15.206,
+        518.819,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b10_l9",
+      "page_index": 150,
+      "block_id": 10,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.15,
+        23.606,
+        521.542,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p150_b11_l0",
+      "page_index": 150,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "Credit risk",
+      "bbox": [
+        265.65,
+        34.766,
+        297.143,
+        43.25
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Credit",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b0_l0",
+      "page_index": 151,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Other personal lending – reconciliation of changes in gross carrying/nominal amount and allowances for loans and advances to customers",
+      "bbox": [
+        42.6,
+        71.624,
+        531.688,
+        81.32
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other",
+        "advances",
+        "allowances",
+        "amount",
+        "and",
+        "carrying/nominal",
+        "changes",
+        "customers",
+        "for",
+        "gross",
+        "in",
+        "lending",
+        "loans",
+        "of",
+        "personal",
+        "reconciliation",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p151_b0_l1",
+      "page_index": 151,
+      "block_id": 0,
+      "line_index": 1,
+      "source_text": "including loan commitments and financial guarantees",
+      "bbox": [
+        42.6,
+        81.224,
+        230.944,
+        90.92
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "commitments",
+        "financial",
+        "guarantees",
+        "including",
+        "loan"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p151_b1_l0",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Non-credit impaired",
+      "bbox": [
+        264.86,
+        94.562,
+        331.752,
+        101.562
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Non-credit",
+        "impaired"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l1",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "Credit impaired",
+      "bbox": [
+        400.69,
+        94.562,
+        452.413,
+        101.562
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Credit",
+        "impaired"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l2",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "Stage 1",
+      "bbox": [
+        242.89,
+        104.312,
+        268.174,
+        111.312
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l3",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "Stage 2",
+      "bbox": [
+        328.39,
+        104.312,
+        353.674,
+        111.312
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l4",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "Stage 3",
+      "bbox": [
+        413.89,
+        104.312,
+        439.174,
+        111.312
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l5",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 5,
+      "source_text": "Total",
+      "bbox": [
+        503.47,
+        104.312,
+        520.585,
+        111.312
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Total"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l6",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 6,
+      "source_text": "Gross",
+      "bbox": [
+        233.46,
+        114.742,
+        254.852,
+        121.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l7",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 7,
+      "source_text": "carrying/",
+      "bbox": [
+        222.59,
+        123.142,
+        254.867,
+        130.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l8",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 8,
+      "source_text": "nominal",
+      "bbox": [
+        225.71,
+        131.542,
+        254.872,
+        138.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l9",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 9,
+      "source_text": "amount",
+      "bbox": [
+        226.87,
+        139.942,
+        252.917,
+        146.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l10",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 10,
+      "source_text": "Allowance",
+      "bbox": [
+        260.67,
+        130.472,
+        297.623,
+        137.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b1_l11",
+      "page_index": 151,
+      "block_id": 1,
+      "line_index": 11,
+      "source_text": "for ECL",
+      "bbox": [
+        271.56,
+        138.872,
+        295.668,
+        145.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b2_l0",
+      "page_index": 151,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        318.96,
+        114.742,
+        340.352,
+        121.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b2_l1",
+      "page_index": 151,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        308.09,
+        123.142,
+        340.367,
+        130.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b2_l2",
+      "page_index": 151,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        311.21,
+        131.542,
+        340.372,
+        138.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b2_l3",
+      "page_index": 151,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        312.37,
+        139.942,
+        338.417,
+        146.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b2_l4",
+      "page_index": 151,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        346.17,
+        130.472,
+        383.123,
+        137.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b2_l5",
+      "page_index": 151,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        357.06,
+        138.872,
+        381.168,
+        145.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b3_l0",
+      "page_index": 151,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        404.46,
+        114.742,
+        425.852,
+        121.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b3_l1",
+      "page_index": 151,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        393.59,
+        123.142,
+        425.867,
+        130.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b3_l2",
+      "page_index": 151,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        396.71,
+        131.542,
+        425.872,
+        138.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b3_l3",
+      "page_index": 151,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        397.87,
+        139.942,
+        423.917,
+        146.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b3_l4",
+      "page_index": 151,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        431.67,
+        130.472,
+        468.623,
+        137.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b3_l5",
+      "page_index": 151,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        442.56,
+        138.872,
+        466.668,
+        145.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b4_l0",
+      "page_index": 151,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Gross",
+      "bbox": [
+        489.96,
+        114.742,
+        511.352,
+        121.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b4_l1",
+      "page_index": 151,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "carrying/",
+      "bbox": [
+        479.09,
+        123.142,
+        511.367,
+        130.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "carrying/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b4_l2",
+      "page_index": 151,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "nominal",
+      "bbox": [
+        482.21,
+        131.542,
+        511.372,
+        138.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b4_l3",
+      "page_index": 151,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "amount",
+      "bbox": [
+        483.37,
+        139.942,
+        509.417,
+        146.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b4_l4",
+      "page_index": 151,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "Allowance",
+      "bbox": [
+        517.17,
+        130.472,
+        554.123,
+        137.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Allowance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b4_l5",
+      "page_index": 151,
+      "block_id": 4,
+      "line_index": 5,
+      "source_text": "for ECL",
+      "bbox": [
+        528.06,
+        138.872,
+        552.168,
+        145.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l0",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "$m",
+      "bbox": [
+        242.4,
+        149.992,
+        252.9,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l1",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "$m",
+      "bbox": [
+        285.15,
+        149.992,
+        295.65,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l2",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        327.9,
+        149.992,
+        338.4,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l3",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        370.65,
+        149.992,
+        381.15,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l4",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "$m",
+      "bbox": [
+        413.4,
+        149.992,
+        423.9,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l5",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "$m",
+      "bbox": [
+        456.15,
+        149.992,
+        466.65,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l6",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "$m",
+      "bbox": [
+        498.9,
+        149.992,
+        509.4,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l7",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 7,
+      "source_text": "$m",
+      "bbox": [
+        541.65,
+        149.992,
+        552.15,
+        156.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l8",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 8,
+      "source_text": "At 1 Jan 2025",
+      "bbox": [
+        45.15,
+        159.742,
+        90.248,
+        166.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Jan"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p151_b5_l18",
+      "page_index": 151,
+      "block_id": 5,
+      "line_index": 18,
+      "source_text": "Transfers of financial instruments:",
+      "bbox": [
+        45.15,
+        167.826,
+        150.941,
+        176.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Transfers",
+        "financial",
+        "instruments",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round14/translation_batches/batch_0088.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round14/translation_batches/batch_0088.model_output.json",
+    "required_units": [
+      "p149_b11_l1",
+      "p149_b11_l2",
+      "p149_b11_l3",
+      "p149_b11_l4",
+      "p149_b11_l5",
+      "p149_b11_l6",
+      "p149_b11_l7",
+      "p149_b11_l8",
+      "p149_b11_l9",
+      "p149_b11_l10",
+      "p149_b11_l11",
+      "p149_b12_l0",
+      "p149_b12_l1",
+      "p149_b12_l2",
+      "p149_b12_l3",
+      "p149_b12_l4",
+      "p149_b12_l5",
+      "p149_b13_l0",
+      "p149_b13_l1",
+      "p149_b13_l2",
+      "p149_b13_l3",
+      "p149_b13_l4",
+      "p149_b13_l5",
+      "p149_b14_l0",
+      "p149_b14_l1",
+      "p149_b14_l2",
+      "p149_b14_l3",
+      "p149_b14_l4",
+      "p149_b14_l5",
+      "p149_b15_l0",
+      "p149_b15_l1",
+      "p149_b15_l2",
+      "p149_b15_l3",
+      "p149_b15_l4",
+      "p149_b15_l5",
+      "p149_b15_l6",
+      "p149_b15_l7",
+      "p149_b15_l8",
+      "p149_b15_l18",
+      "p149_b15_l28",
+      "p149_b15_l38",
+      "p149_b15_l48",
+      "p149_b15_l58",
+      "p149_b15_l68",
+      "p149_b15_l69",
+      "p149_b16_l0",
+      "p149_b16_l10",
+      "p149_b16_l20",
+      "p149_b16_l30",
+      "p149_b16_l40",
+      "p149_b16_l50",
+      "p149_b16_l60",
+      "p149_b16_l69",
+      "p149_b16_l72",
+      "p149_b16_l75",
+      "p149_b17_l0",
+      "p149_b17_l1",
+      "p149_b17_l2",
+      "p149_b17_l3",
+      "p149_b17_l4",
+      "p149_b17_l5",
+      "p149_b17_l6",
+      "p149_b17_l7",
+      "p149_b17_l8",
+      "p149_b17_l9",
+      "p149_b18_l0",
+      "p150_b0_l0",
+      "p150_b0_l1",
+      "p150_b1_l0",
+      "p150_b1_l1",
+      "p150_b1_l2",
+      "p150_b1_l3",
+      "p150_b1_l4",
+      "p150_b1_l5",
+      "p150_b1_l6",
+      "p150_b1_l7",
+      "p150_b1_l8",
+      "p150_b1_l9",
+      "p150_b1_l10",
+      "p150_b1_l11",
+      "p150_b2_l0",
+      "p150_b2_l1",
+      "p150_b2_l2",
+      "p150_b2_l3",
+      "p150_b2_l4",
+      "p150_b2_l5",
+      "p150_b3_l0",
+      "p150_b3_l1",
+      "p150_b3_l2",
+      "p150_b3_l3",
+      "p150_b3_l4",
+      "p150_b3_l5",
+      "p150_b4_l0",
+      "p150_b4_l1",
+      "p150_b4_l2",
+      "p150_b4_l3",
+      "p150_b4_l4",
+      "p150_b4_l5",
+      "p150_b5_l0",
+      "p150_b5_l1",
+      "p150_b5_l2",
+      "p150_b5_l3",
+      "p150_b5_l4",
+      "p150_b5_l5",
+      "p150_b5_l6",
+      "p150_b5_l7",
+      "p150_b5_l8",
+      "p150_b5_l18",
+      "p150_b5_l28",
+      "p150_b5_l38",
+      "p150_b5_l48",
+      "p150_b5_l58",
+      "p150_b5_l68",
+      "p150_b5_l69",
+      "p150_b6_l0",
+      "p150_b6_l10",
+      "p150_b6_l20",
+      "p150_b6_l30",
+      "p150_b6_l40",
+      "p150_b6_l50",
+      "p150_b6_l60",
+      "p150_b6_l70",
+      "p150_b6_l79",
+      "p150_b6_l82",
+      "p150_b6_l85",
+      "p150_b6_l86",
+      "p150_b7_l0",
+      "p150_b7_l10",
+      "p150_b7_l20",
+      "p150_b7_l30",
+      "p150_b7_l40",
+      "p150_b7_l50",
+      "p150_b7_l60",
+      "p150_b7_l61",
+      "p150_b8_l0",
+      "p150_b8_l10",
+      "p150_b8_l20",
+      "p150_b8_l30",
+      "p150_b8_l40",
+      "p150_b8_l50",
+      "p150_b8_l60",
+      "p150_b8_l70",
+      "p150_b8_l79",
+      "p150_b8_l82",
+      "p150_b8_l85",
+      "p150_b9_l0",
+      "p150_b9_l1",
+      "p150_b10_l0",
+      "p150_b10_l1",
+      "p150_b10_l2",
+      "p150_b10_l3",
+      "p150_b10_l4",
+      "p150_b10_l5",
+      "p150_b10_l6",
+      "p150_b10_l7",
+      "p150_b10_l8",
+      "p150_b10_l9",
+      "p150_b11_l0",
+      "p151_b0_l0",
+      "p151_b0_l1",
+      "p151_b1_l0",
+      "p151_b1_l1",
+      "p151_b1_l2",
+      "p151_b1_l3",
+      "p151_b1_l4",
+      "p151_b1_l5",
+      "p151_b1_l6",
+      "p151_b1_l7",
+      "p151_b1_l8",
+      "p151_b1_l9",
+      "p151_b1_l10",
+      "p151_b1_l11",
+      "p151_b2_l0",
+      "p151_b2_l1",
+      "p151_b2_l2",
+      "p151_b2_l3",
+      "p151_b2_l4",
+      "p151_b2_l5",
+      "p151_b3_l0",
+      "p151_b3_l1",
+      "p151_b3_l2",
+      "p151_b3_l3",
+      "p151_b3_l4",
+      "p151_b3_l5",
+      "p151_b4_l0",
+      "p151_b4_l1",
+      "p151_b4_l2",
+      "p151_b4_l3",
+      "p151_b4_l4",
+      "p151_b4_l5",
+      "p151_b5_l0",
+      "p151_b5_l1",
+      "p151_b5_l2",
+      "p151_b5_l3",
+      "p151_b5_l4",
+      "p151_b5_l5",
+      "p151_b5_l6",
+      "p151_b5_l7",
+      "p151_b5_l8",
+      "p151_b5_l18"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

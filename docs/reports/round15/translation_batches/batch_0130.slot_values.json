@@ -1,0 +1,5245 @@
+{
+  "run_id": "round15",
+  "case_id": "R15_00005_2025_annual_report_zh",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0130",
+  "batch_index": 130,
+  "batch_count": 166,
+  "source_extraction_ref": "docs/reports/round15/source_extraction_zh.json",
+  "source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "translation_units": [
+    {
+      "unit_id": "p280_b1_l0",
+      "page_index": 280,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "(h) 指定按公允值計入損益賬之⾦融⼯具",
+      "bbox": [
+        42.37,
+        110.002,
+        257.04,
+        125.963
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "h)"
+      ],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b1_l1",
+      "page_index": 280,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "符合下列⼀項或多項準則的⾦融⼯具（不包括持作交易⽤途之⾦融⼯具）均會歸入此類別，並會於⾸次訂立時不可撤回地指定按此⽅式列賬：",
+      "bbox": [
+        42.37,
+        126.145,
+        533.49,
+        136.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 50,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b2_l1",
+      "page_index": 280,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "指定按公允值列賬可消除或⼤幅減少會計錯配。",
+      "bbox": [
+        53.71,
+        142.245,
+        220.11,
+        152.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b2_l3",
+      "page_index": 280,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "該組⾦融資產和負債或該組⾦融負債乃根據明文規定之風險管理或投資策略，按公允值基準管理並評估其表現。",
+      "bbox": [
+        53.71,
+        153.845,
+        441.87,
+        164.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 45,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b2_l5",
+      "page_index": 280,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "⾦融負債內含⼀項或多項非密切相關之衍⽣⼯具。",
+      "bbox": [
+        53.71,
+        165.444,
+        228.03,
+        176.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b3_l0",
+      "page_index": 280,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "指定此列賬⽅式之⾦融資產會於滙豐與交易對⼿訂立合約時（⼀般為交易⽇）確認，且⼀般會於現⾦流的權利屆滿或轉讓時撤銷確認。",
+      "bbox": [
+        42.37,
+        181.544,
+        509.73,
+        192.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 48,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b4_l0",
+      "page_index": 280,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "指定此列賬⽅式之⾦融負債會於滙豐與交易對⼿訂立合約時（⼀般為結算⽇）確認，且⼀般會於償清款額時撤銷確認。其後公允值變動於收益表內",
+      "bbox": [
+        42.37,
+        197.644,
+        549.33,
+        208.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b4_l1",
+      "page_index": 280,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "確認，但負債的信貸風險變動之影響除外，後者於「其他全⾯收益」項內呈列，除非有關處理⽅法會造成或擴⼤損益賬中的會計錯配。",
+      "bbox": [
+        42.37,
+        207.244,
+        509.73,
+        217.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 50,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b5_l0",
+      "page_index": 280,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "根據上述準則，滙豐指定按公允值列賬之⾦融⼯具的主要類別為：",
+      "bbox": [
+        42.37,
+        223.344,
+        272.13,
+        233.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 25,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b6_l1",
+      "page_index": 280,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "指定按公允值列賬以減少會計錯配且作融資⽤途的債務⼯具：若⼲已發⾏定息債務證券的利息及／或匯兌風險承擔，已與若⼲掉期的利息及／",
+      "bbox": [
+        53.71,
+        239.444,
+        544.83,
+        250.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 53,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b6_l2",
+      "page_index": 280,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "或匯兌風險承擔配對，此為明文規定的風險管理策略⼀環。",
+      "bbox": [
+        53.71,
+        249.044,
+        259.71,
+        259.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 23,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b6_l4",
+      "page_index": 280,
+      "block_id": 6,
+      "line_index": 4,
+      "source_text": "單位掛鈎及非掛鈎投資合約的⾦融資產及⾦融負債：滙豐不為另⼀⽅承擔重⼤保險風險的合約不會分類為保單（唯附有酌情參與條款的投資合",
+      "bbox": [
+        53.71,
+        260.644,
+        544.83,
+        271.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b6_l5",
+      "page_index": 280,
+      "block_id": 6,
+      "line_index": 5,
+      "source_text": "約除外），但會入賬列為⾦融負債。由保險附屬公司簽發之掛鈎及若⼲非掛鈎投資合約相關客⼾負債，乃根據掛鈎基⾦持有資產的公允值或估",
+      "bbox": [
+        53.71,
+        270.244,
+        544.83,
+        280.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b6_l6",
+      "page_index": 280,
+      "block_id": 6,
+      "line_index": 6,
+      "source_text": "值⽅法釐定。相關⾦融資產和負債按公允值進⾏管理並向管理層報告。⾦融資產及相關負債指定按公允值列賬可將公允值的變動計入收益表，",
+      "bbox": [
+        53.71,
+        279.844,
+        544.83,
+        290.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b6_l7",
+      "page_index": 280,
+      "block_id": 6,
+      "line_index": 7,
+      "source_text": "並在同⼀⾏呈列。",
+      "bbox": [
+        53.71,
+        289.444,
+        117.15,
+        300.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b6_l9",
+      "page_index": 280,
+      "block_id": 6,
+      "line_index": 9,
+      "source_text": "內含存款及衍⽣⼯具成分的⾦融負債：此類⾦融負債按公允值基準管理並評估其表現。",
+      "bbox": [
+        53.71,
+        301.044,
+        354.75,
+        311.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 32,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b7_l1",
+      "page_index": 280,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "衍⽣⼯具",
+      "bbox": [
+        65.04,
+        316.401,
+        113.04,
+        332.362
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b7_l2",
+      "page_index": 280,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "衍⽣⼯具是⼀種⾦融⼯具，價值來⾃相關項⽬（例如股票、利率或其他指數）之價格。衍⽣⼯具⾸次列賬會按公允值確認，其後亦會按公允值計入",
+      "bbox": [
+        42.37,
+        332.544,
+        549.33,
+        343.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 48,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b7_l3",
+      "page_index": 280,
+      "block_id": 7,
+      "line_index": 3,
+      "source_text": "損益賬。若衍⽣⼯具的公允值為正數，則分類為資產，若為負數則分類為負債。此類⼯具包括在符合獨立衍⽣⼯具定義之情況下與主體合約分開計",
+      "bbox": [
+        42.37,
+        342.144,
+        549.33,
+        352.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b7_l4",
+      "page_index": 280,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "量的⾦融負債內含的衍⽣⼯具。",
+      "bbox": [
+        42.37,
+        351.744,
+        153.33,
+        362.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 10,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b8_l0",
+      "page_index": 280,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "若能減少會計錯配，衍⽣⼯具會與滙豐發⾏的指定按公允值列賬之債務證券⼀併管理，在此情況下，合約利息則連同已發⾏債務應付利息⼀併於",
+      "bbox": [
+        42.37,
+        367.844,
+        541.41,
+        378.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b8_l1",
+      "page_index": 280,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "「利息⽀出」項內列賬。",
+      "bbox": [
+        42.37,
+        377.444,
+        129.57,
+        388.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b9_l0",
+      "page_index": 280,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "對沖會計法",
+      "bbox": [
+        42.37,
+        393.544,
+        82.37,
+        404.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b9_l1",
+      "page_index": 280,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "對於並非按公允值指定關係入賬的衍⽣⼯具，如持有⽤作風險管理⽤途，當符合明文規定及對沖效益之指定條件時指定按對沖會計關係入賬。滙豐",
+      "bbox": [
+        42.37,
+        404.144,
+        549.33,
+        414.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 57,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b9_l2",
+      "page_index": 280,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "在公允值對沖、現⾦流對沖或海外業務投資淨額的對沖中，因應對沖的風險選⽤適當的衍⽣⼯具或（如獲准）其他非衍⽣對沖⼯具。",
+      "bbox": [
+        42.37,
+        413.744,
+        501.81,
+        424.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 47,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b10_l0",
+      "page_index": 280,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "公允值對沖",
+      "bbox": [
+        42.37,
+        429.844,
+        82.37,
+        440.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b10_l1",
+      "page_index": 280,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "公允值對沖會計法不會改變衍⽣⼯具及其他對沖⼯具之損益的入賬⽅式，但會導致原本不會於收益表中確認的對沖風險所致之已對沖資產或負債公",
+      "bbox": [
+        42.37,
+        440.444,
+        549.33,
+        451.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 59,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b10_l2",
+      "page_index": 280,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "允值變動被確認。如對沖關係不再符合採⽤對沖會計法的條件，則不再採⽤對沖會計法，⽽使⽤實際利率⽅法的對沖項⽬賬⾯值的累計調整將按重",
+      "bbox": [
+        42.37,
+        450.044,
+        549.33,
+        460.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b10_l3",
+      "page_index": 280,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "新計算之實際利率在收益表內攤銷，但如果對沖項⽬已撤銷確認，有關數額便會即時於收益表內確認。",
+      "bbox": [
+        42.37,
+        459.644,
+        398.85,
+        470.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 41,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b11_l0",
+      "page_index": 280,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "現⾦流對沖",
+      "bbox": [
+        42.37,
+        475.744,
+        82.37,
+        486.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b11_l1",
+      "page_index": 280,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "對沖⼯具損益的有效部分會於其他全⾯收益項內確認，⽽屬於現⾦流對沖關係的衍⽣對沖⼯具的公允值變動之低效⽤部分，則會即時在收益表內確",
+      "bbox": [
+        42.37,
+        486.344,
+        549.33,
+        496.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b11_l2",
+      "page_index": 280,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "認。在其他全⾯收益項內確認的累計損益，在對沖項⽬影響利潤或虧損的相同期間重新分類⾄收益表內。當對沖關係終⽌或部分終⽌時，在其他全",
+      "bbox": [
+        42.37,
+        495.944,
+        549.33,
+        506.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b11_l3",
+      "page_index": 280,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "⾯收益項內確認的任何累計損益仍會繼續保留在股東權益項內，直⾄預計交易於收益表內確認。如預計交易不再預期落實，先前在其他全⾯收益項",
+      "bbox": [
+        42.37,
+        505.544,
+        549.33,
+        516.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 58,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b11_l4",
+      "page_index": 280,
+      "block_id": 11,
+      "line_index": 4,
+      "source_text": "內確認的累計損益會重新分類⾄收益表。",
+      "bbox": [
+        42.37,
+        515.144,
+        185.01,
+        525.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b12_l0",
+      "page_index": 280,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "投資淨額對沖",
+      "bbox": [
+        42.37,
+        531.244,
+        90.37,
+        541.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b12_l1",
+      "page_index": 280,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "海外業務投資淨額對沖的列賬⽅式與現⾦流對沖相若。對沖⼯具損益的有效部分會於其他全⾯收益項內確認，⽽其他損益則即時於收益表內確認。",
+      "bbox": [
+        42.37,
+        541.844,
+        549.33,
+        552.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 56,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b12_l2",
+      "page_index": 280,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "先前在其他全⾯收益項內確認的損益會於出售全部或部分海外業務時重新分類⾄收益表內。",
+      "bbox": [
+        42.37,
+        551.444,
+        359.25,
+        562.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 37,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p280_b13_l0",
+      "page_index": 280,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "策略報告",
+      "bbox": [
+        44.23,
+        15.84,
+        72.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b13_l1",
+      "page_index": 280,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "環境、社會及",
+      "bbox": [
+        117.73,
+        15.84,
+        159.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b13_l2",
+      "page_index": 280,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "管治報告",
+      "bbox": [
+        117.73,
+        24.24,
+        145.73,
+        33.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b13_l3",
+      "page_index": 280,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "財務回顧",
+      "bbox": [
+        191.23,
+        15.84,
+        219.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b13_l4",
+      "page_index": 280,
+      "block_id": 13,
+      "line_index": 4,
+      "source_text": "風險回顧",
+      "bbox": [
+        264.73,
+        15.84,
+        292.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b13_l5",
+      "page_index": 280,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "企業管治報告",
+      "bbox": [
+        338.23,
+        15.84,
+        378.795,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b13_l6",
+      "page_index": 280,
+      "block_id": 13,
+      "line_index": 6,
+      "source_text": "財務報表",
+      "bbox": [
+        411.73,
+        15.84,
+        439.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b13_l7",
+      "page_index": 280,
+      "block_id": 13,
+      "line_index": 7,
+      "source_text": "補充資料",
+      "bbox": [
+        485.23,
+        15.84,
+        513.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b14_l0",
+      "page_index": 280,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "財務報表附註",
+      "bbox": [
+        411.73,
+        36.09,
+        453.73,
+        45.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p280_b15_l0",
+      "page_index": 280,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "滙豐控股有限公司 2025年報及賬⽬",
+      "bbox": [
+        242.87,
+        808.67,
+        351.832,
+        817.981
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b0_l0",
+      "page_index": 281,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "(j) 按已攤銷成本計量及按公允值計入其他全⾯收益之⾦融資產減值",
+      "bbox": [
+        42.37,
+        68.902,
+        400.87,
+        84.863
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "j)"
+      ],
+      "cjk_char_count": 26,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b1_l0",
+      "page_index": 281,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "同業及客⼾貸款、非交易⽤途反向回購協議、按已攤銷成本持有的其他⾦融資產、按公允值計入其他全⾯收益之債務⼯具，以及若⼲貸款承諾和⾦",
+      "bbox": [
+        42.37,
+        90.545,
+        549.33,
+        101.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 53,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b1_l1",
+      "page_index": 281,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "融擔保合約均會確認預期信貸損失。於⾸次確認入賬時，須就可能於未來12個⽉或較短期間（如尚餘期限少於12個⽉）內發⽣的違責事件所導致的",
+      "bbox": [
+        42.37,
+        100.145,
+        551.698,
+        110.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b1_l2",
+      "page_index": 281,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "預期信貸損失（「12個⽉預期信貸損失」）確認準備（如為某些貸款承諾及⾦融擔保則確認撥備）。倘若信貸風險⼤幅增加，則須就⾦融⼯具預計",
+      "bbox": [
+        42.37,
+        109.745,
+        550.514,
+        120.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 50,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b1_l3",
+      "page_index": 281,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "期限內可能發⽣的所有違責事件所導致的預期信貸損失（「期限內預期信貸損失」）確認準備（或撥備）。已確認12個⽉預期信貸損失的⾦融資產",
+      "bbox": [
+        42.37,
+        119.345,
+        550.514,
+        129.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 53,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b1_l4",
+      "page_index": 281,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "被視為屬「第⼀級」；被視為信貸風險⼤幅增加的⾦融資產屬「第⼆級」；⽽有客觀減值證據且因⽽被視為違責或信貸已減值的⾦融資產屬於「第",
+      "bbox": [
+        42.37,
+        128.944,
+        549.33,
+        139.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 50,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b1_l5",
+      "page_index": 281,
+      "block_id": 1,
+      "line_index": 5,
+      "source_text": "三級」。購入或承辦信貸已減值之⾦融資產的處理⽅式有所不同，如下文所述。",
+      "bbox": [
+        42.37,
+        138.544,
+        319.65,
+        149.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 29,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b2_l0",
+      "page_index": 281,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "未減值且信貸風險無⼤幅增加（第⼀級）",
+      "bbox": [
+        42.37,
+        154.644,
+        186.37,
+        165.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b2_l1",
+      "page_index": 281,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "集團會就仍屬第⼀級的⾦融⼯具確認未來12個⽉內可能發⽣的違責事件⽽導致的預期信貸損失（「12個⽉預期信貸損失」）。",
+      "bbox": [
+        42.37,
+        165.244,
+        480.418,
+        175.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 41,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b3_l0",
+      "page_index": 281,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "信貸風險⼤幅增加（第⼆級）",
+      "bbox": [
+        42.37,
+        181.344,
+        146.37,
+        191.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b3_l1",
+      "page_index": 281,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "我們於每個業績報告期均會考慮⾦融⼯具於尚餘期限內的違責風險變動，以評估信貸風險是否已較⾸次確認入賬時⼤幅增加。",
+      "bbox": [
+        42.37,
+        191.944,
+        479.97,
+        202.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 49,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b4_l0",
+      "page_index": 281,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "評估會以明確或隱含⽅式比較業績報告⽇期與⾸次確認入賬時的違責風險，並考慮合理和有依據的資料，包括有關過往事件、當前狀況及⽇後經濟",
+      "bbox": [
+        42.37,
+        208.044,
+        549.33,
+        218.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 57,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b4_l1",
+      "page_index": 281,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "狀況的資料。評估不偏不倚地採⽤或然率加權的⽅式進⾏，在相關情況下使⽤與計量預期信貸損失所⽤資料⼀致的前瞻性資料。信貸風險分析涵蓋",
+      "bbox": [
+        42.37,
+        217.644,
+        549.33,
+        228.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b4_l2",
+      "page_index": 281,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "多重因素。釐定特定因素是否相關及相對於其他因素的權重時，會視乎產品類別、⾦融⼯具特點和相關借款⼈，以及所在地區⽽定。因此，並不可",
+      "bbox": [
+        42.37,
+        227.244,
+        549.33,
+        237.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b4_l3",
+      "page_index": 281,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "能就釐定何謂信貸風險⼤幅增加設立單⼀標準組合，⽽有關標準亦會因貸款類別⽽異，零售貸款與批發貸款之間差異尤甚。然⽽，除非已在較早階",
+      "bbox": [
+        42.37,
+        236.844,
+        549.33,
+        247.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b4_l4",
+      "page_index": 281,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "段識別，否則所有⾦融資產均會在逾期30⽇時被視為信貸風險⼤幅增加。此外，被個別評估（通常為企業和⼯商客⼾）並列入觀察或關注名單的批",
+      "bbox": [
+        42.37,
+        246.444,
+        550.514,
+        257.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 53,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b4_l5",
+      "page_index": 281,
+      "block_id": 4,
+      "line_index": 5,
+      "source_text": "發貸款均納入第⼆級。",
+      "bbox": [
+        42.37,
+        256.044,
+        121.65,
+        266.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b5_l0",
+      "page_index": 281,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "對於批發貸款組合，定量比較會採⽤期限內違責或然率評估違責風險，當中涵蓋多項資料，包括債務⼈的客⼾風險評級、宏觀經濟狀況預測和信貸",
+      "bbox": [
+        42.37,
+        272.144,
+        549.33,
+        282.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 57,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b5_l1",
+      "page_index": 281,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "變動或然率。就承辦時客⼾風險評級不⾼於3.3的貸款⽽⾔，對信貸風險⼤幅增加的計量⽅法為比較承辦時估算的尚餘期限平均違責或然率，以及於",
+      "bbox": [
+        42.37,
+        281.744,
+        552.274,
+        292.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b5_l2",
+      "page_index": 281,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "業績報告⽇期相同估算的平均違責或然率。",
+      "bbox": [
+        42.37,
+        291.344,
+        192.93,
+        301.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b6_l0",
+      "page_index": 281,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "⼤幅變動的定量指標因承辦時的信貸質素⽽異，詳情如下：",
+      "bbox": [
+        42.37,
+        307.444,
+        248.37,
+        318.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 22,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b7_l0",
+      "page_index": 281,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "承辦時客⼾風險評級",
+      "bbox": [
+        45.0,
+        327.17,
+        108.0,
+        336.48
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b7_l1",
+      "page_index": 281,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "⼤幅變動觸發點 – 違責或然率增幅",
+      "bbox": [
+        302.25,
+        327.17,
+        407.53,
+        336.48
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b8_l1",
+      "page_index": 281,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "15個基點",
+      "bbox": [
+        302.25,
+        337.74,
+        331.356,
+        347.05
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b8_l3",
+      "page_index": 281,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "30個基點",
+      "bbox": [
+        302.25,
+        347.49,
+        331.356,
+        356.8
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b9_l0",
+      "page_index": 281,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "對於客⼾風險評級超過3.3但並非已減值的貸款，若承辦時違責或然率上升⼀倍，則被視為信貸風險⼤幅增加。違責或然率的⼤幅變動以信貸風險的",
+      "bbox": [
+        42.37,
+        365.795,
+        552.274,
+        376.435
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 56,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b9_l1",
+      "page_index": 281,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "專業判斷為依據，並參考過往信貸質素變化和外圍市場利率的相對變動。",
+      "bbox": [
+        42.37,
+        375.395,
+        295.89,
+        386.035
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 30,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b10_l0",
+      "page_index": 281,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "對於IFRS 9實施前承辦的貸款，承辦時違責或然率並無計及反映對⽇後宏觀經濟預期的調整，因為有關預期僅能依據過往資料。由於並無此項數",
+      "bbox": [
+        42.37,
+        391.495,
+        539.978,
+        402.135
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "IFRS"
+      ],
+      "cjk_char_count": 56,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b10_l1",
+      "page_index": 281,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "據，因此在承辦時的違責或然率，必須採⽤假設的整個周期違責或然率和整個周期質素變化或然率進⾏估算，並與該⼯具的相關模型計算法和承辦",
+      "bbox": [
+        42.37,
+        401.095,
+        549.33,
+        411.735
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 58,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b10_l2",
+      "page_index": 281,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "時客⼾風險評級⼀致。",
+      "bbox": [
+        42.37,
+        410.695,
+        121.65,
+        421.335
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b11_l0",
+      "page_index": 281,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "定量比較會以額外的客⼾風險評級惡化界限作為補充，詳情載於下表：",
+      "bbox": [
+        42.37,
+        426.795,
+        287.97,
+        437.435
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 28,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b12_l0",
+      "page_index": 281,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "承辦時客⼾風險評級",
+      "bbox": [
+        45.0,
+        453.34,
+        108.0,
+        462.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b13_l0",
+      "page_index": 281,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "額外⼤幅變動標準－識別為重⼤信貸惡化（第⼆級）",
+      "bbox": [
+        300.75,
+        444.94,
+        461.75,
+        454.251
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b13_l1",
+      "page_index": 281,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "所需的客⼾風險評級下調級別數量（⼤於或等於）",
+      "bbox": [
+        300.75,
+        453.34,
+        454.75,
+        462.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b13_l3",
+      "page_index": 281,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "5級",
+      "bbox": [
+        300.75,
+        463.09,
+        311.803,
+        472.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b13_l5",
+      "page_index": 281,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "4級",
+      "bbox": [
+        300.75,
+        472.84,
+        311.803,
+        482.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b13_l7",
+      "page_index": 281,
+      "block_id": 13,
+      "line_index": 7,
+      "source_text": "3級",
+      "bbox": [
+        300.75,
+        482.59,
+        311.803,
+        491.901
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b13_l9",
+      "page_index": 281,
+      "block_id": 13,
+      "line_index": 9,
+      "source_text": "2級",
+      "bbox": [
+        300.75,
+        492.34,
+        311.803,
+        501.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b13_l11",
+      "page_index": 281,
+      "block_id": 13,
+      "line_index": 11,
+      "source_text": "1級",
+      "bbox": [
+        300.75,
+        502.09,
+        311.803,
+        511.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b13_l13",
+      "page_index": 281,
+      "block_id": 13,
+      "line_index": 13,
+      "source_text": "0級",
+      "bbox": [
+        300.75,
+        511.84,
+        311.803,
+        521.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b14_l0",
+      "page_index": 281,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "就零售貸款組合⽽⾔，違責風險乃採⽤來⾃內部模型的業績報告⽇期12個⽉違責或然率予以評估，⽽該內部模型包括有關客⼾的所有可得資料。該",
+      "bbox": [
+        42.37,
+        530.145,
+        550.514,
+        540.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 52,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b14_l1",
+      "page_index": 281,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "違責或然率會就超過12個⽉期間的宏觀經濟預測影響作出調整，並被視為與期限內違責或然率計量指標合理相若。零售貸款風險承擔⼀般先按國家",
+      "bbox": [
+        42.37,
+        539.745,
+        550.514,
+        550.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 59,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b14_l2",
+      "page_index": 281,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "／地區、產品及品牌分類⾄同類組合。於各組合內，屬第⼆級的貸款包括經調整12個⽉違責或然率⼤於該組合截⾄貸款逾期30⽇⽌12個⽉內的平",
+      "bbox": [
+        42.37,
+        549.345,
+        544.962,
+        559.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 48,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b14_l3",
+      "page_index": 281,
+      "block_id": 14,
+      "line_index": 3,
+      "source_text": "均12個⽉違責或然率之賬項。信貸風險的專業判斷為信貸風險之前的增幅並不重⼤。此組合特定界限因此識別違責或然率⾼於按原本預期履約貸款",
+      "bbox": [
+        42.37,
+        558.945,
+        550.514,
+        569.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 58,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b14_l4",
+      "page_index": 281,
+      "block_id": 14,
+      "line_index": 4,
+      "source_text": "的預期違責或然率以及⾼於承辦時可接受的違責或然率之貸款，因此與比較承辦時與業績報告⽇期的違責或然率近似。",
+      "bbox": [
+        42.37,
+        568.545,
+        454.29,
+        579.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 48,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b15_l0",
+      "page_index": 281,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "我們已於英國實⾏此⽅針，並會因應所得數據增加⽽不斷改良若⼲貸款組合的零售轉撥準則⽅針，藉以使⽤較相對的⽅法。此等改良能於評估信貸",
+      "bbox": [
+        42.37,
+        584.645,
+        549.33,
+        595.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b15_l1",
+      "page_index": 281,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "風險是否⼤幅增加時，利⽤更多新造貸款相關數據，按組合特定新造貸款類別，對剩餘貸款期違責或然率與剩餘貸款期相近的貸款新造時違責或然",
+      "bbox": [
+        42.37,
+        594.245,
+        549.33,
+        604.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 59,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p281_b15_l2",
+      "page_index": 281,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "率進⾏比較。",
+      "bbox": [
+        42.37,
+        603.845,
+        89.97,
+        614.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b16_l0",
+      "page_index": 281,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "策略報告",
+      "bbox": [
+        44.23,
+        15.84,
+        72.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b16_l1",
+      "page_index": 281,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "環境、社會及",
+      "bbox": [
+        117.73,
+        15.84,
+        159.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b16_l2",
+      "page_index": 281,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "管治報告",
+      "bbox": [
+        117.73,
+        24.24,
+        145.73,
+        33.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b16_l3",
+      "page_index": 281,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "財務回顧",
+      "bbox": [
+        191.23,
+        15.84,
+        219.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b16_l4",
+      "page_index": 281,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "風險回顧",
+      "bbox": [
+        264.73,
+        15.84,
+        292.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b16_l5",
+      "page_index": 281,
+      "block_id": 16,
+      "line_index": 5,
+      "source_text": "企業管治報告",
+      "bbox": [
+        338.23,
+        15.84,
+        378.795,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b16_l6",
+      "page_index": 281,
+      "block_id": 16,
+      "line_index": 6,
+      "source_text": "財務報表",
+      "bbox": [
+        411.73,
+        15.84,
+        439.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b16_l7",
+      "page_index": 281,
+      "block_id": 16,
+      "line_index": 7,
+      "source_text": "補充資料",
+      "bbox": [
+        485.23,
+        15.84,
+        513.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b17_l0",
+      "page_index": 281,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "財務報表附註",
+      "bbox": [
+        411.73,
+        36.09,
+        453.73,
+        45.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p281_b18_l0",
+      "page_index": 281,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "滙豐控股有限公司 2025年報及賬⽬",
+      "bbox": [
+        242.87,
+        808.67,
+        351.832,
+        817.981
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b0_l0",
+      "page_index": 282,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "信貸已減值（第三級）",
+      "bbox": [
+        42.37,
+        69.645,
+        122.37,
+        80.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b0_l1",
+      "page_index": 282,
+      "block_id": 0,
+      "line_index": 1,
+      "source_text": "滙豐釐定⾦融⼯具是否信貸已減值及屬於第三級時，會考慮相關客觀證據，主要包括是否存在以下情況：本⾦或利息的合約還款逾期超過90⽇；有",
+      "bbox": [
+        42.37,
+        80.245,
+        550.514,
+        90.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b0_l2",
+      "page_index": 282,
+      "block_id": 0,
+      "line_index": 2,
+      "source_text": "其他跡象顯⽰借款⼈不太可能還款，例如已就有關借款⼈財務狀況的經濟或法律原因，向借款⼈授予還款寬減；或貸款因其他原因被視為違責。",
+      "bbox": [
+        42.37,
+        89.845,
+        541.41,
+        100.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b1_l0",
+      "page_index": 282,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "倘未能於較早階段識別不能還款的情況，滙豐會於貸款逾期90⽇時視之為違責。因此，信貸已減值與違責的界定盡可能⼀致，以使第三級貸款代表",
+      "bbox": [
+        42.37,
+        105.944,
+        550.514,
+        116.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 57,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b1_l1",
+      "page_index": 282,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "所有被視為已違責或信貸已減值的貸款。",
+      "bbox": [
+        42.37,
+        115.544,
+        185.01,
+        126.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b2_l0",
+      "page_index": 282,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "確認利息收益時乃應⽤實質利率，按已攤銷成本（即賬⾯總值減預期信貸損失準備）計算。",
+      "bbox": [
+        42.37,
+        131.644,
+        359.25,
+        142.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 34,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b3_l0",
+      "page_index": 282,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "撇銷",
+      "bbox": [
+        42.37,
+        147.744,
+        58.37,
+        158.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b3_l1",
+      "page_index": 282,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "倘收回機會渺茫，⾦融資產（及相關減值準備）通常會部分或全數撇銷。倘屬有抵押貸款，⼀般會在收取抵押品變現所得款項後再撇銷。倘任何抵",
+      "bbox": [
+        42.37,
+        158.344,
+        549.33,
+        168.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 56,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b3_l2",
+      "page_index": 282,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "押品的可變現淨值已經釐定，且並無合理期望可於⽇後進⼀步收回款項，則可能提早撇銷。",
+      "bbox": [
+        42.37,
+        167.944,
+        359.25,
+        178.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 35,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b4_l0",
+      "page_index": 282,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "暫緩還款",
+      "bbox": [
+        42.37,
+        184.044,
+        74.37,
+        194.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b4_l1",
+      "page_index": 282,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "倘滙豐因借款⼈⾯對財務壓⼒⽽修訂合約條款，則貸款會識別為暫緩還款，並分類為履約或不履約。不履約暫緩還款的貸款屬第三級，於符合適⽤",
+      "bbox": [
+        42.37,
+        194.644,
+        549.33,
+        205.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b4_l2",
+      "page_index": 282,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "信貸風險政策指定的補救準則（例如貸款須不再違責、最少12個⽉並無出現其他違責指標）前會⼀直分類為不履約。倘暫緩還款訂立時有任何合約",
+      "bbox": [
+        42.37,
+        204.244,
+        550.514,
+        214.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 57,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b4_l3",
+      "page_index": 282,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "條款修訂導致出現任何款項撇賬，則該等款項不會撥回。",
+      "bbox": [
+        42.37,
+        213.844,
+        240.45,
+        224.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 23,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b5_l0",
+      "page_index": 282,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "集團就零售貸款組合採⽤歐洲銀⾏管理局「應⽤違責定義的指引」，該指引影響信貸風險政策及如何呈報主要因暫緩還款（或其補救）⽽狀況屬信",
+      "bbox": [
+        42.37,
+        229.944,
+        549.33,
+        240.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b5_l1",
+      "page_index": 282,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "貸已減值的貸款。詳情載於第108⾴「暫緩償還貸款」。",
+      "bbox": [
+        42.37,
+        239.544,
+        238.26,
+        250.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b6_l0",
+      "page_index": 282,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "履約暫緩償還的貸款起初屬第⼆級，於符合適⽤補救準則（例如貸款須持續不再違責、最少24個⽉並無出現其他違責指標）前會⼀直分類為暫緩還",
+      "bbox": [
+        42.37,
+        255.644,
+        550.514,
+        266.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b6_l1",
+      "page_index": 282,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "款。⾃符合準則起，視乎於業績報告⽇期違責風險（根據經修訂合約條款計算）與⾸次確認入賬違責風險（根據未經修訂原有合約條款計算）的比",
+      "bbox": [
+        42.37,
+        265.244,
+        549.33,
+        275.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b6_l2",
+      "page_index": 282,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "較，貸款會歸入第⼀級或第⼆級。",
+      "bbox": [
+        42.37,
+        274.844,
+        161.25,
+        285.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b7_l0",
+      "page_index": 282,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "倘現有協議被取消，且所訂新協議在條款⽅⾯存在顯著差異，或現有協議的條款經修訂，以致暫緩償還的貸款成為截然不同的⾦融⼯具，則該暫緩",
+      "bbox": [
+        42.37,
+        290.944,
+        549.33,
+        301.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 56,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b7_l1",
+      "page_index": 282,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "償還的貸款將撤銷確認。在此等情況下，撤銷確認事件後產⽣的新造貸款⼀般分類為購入或承辦信貸已減值之⾦融資產，並繼續作為暫緩償還的貸",
+      "bbox": [
+        42.37,
+        300.544,
+        549.33,
+        311.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 58,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b7_l2",
+      "page_index": 282,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "款予以披露。",
+      "bbox": [
+        42.37,
+        310.144,
+        89.97,
+        320.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b8_l0",
+      "page_index": 282,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "暫緩償還貸款以外的修訂貸款",
+      "bbox": [
+        42.37,
+        326.244,
+        146.37,
+        336.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b8_l1",
+      "page_index": 282,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "未識別為暫緩還款的貸款修訂被視為商業重組。倘商業重組引發修訂（無論透過修訂現有條款或訂立新貸款合約使之合法），以致滙豐根據原有合",
+      "bbox": [
+        42.37,
+        336.844,
+        549.33,
+        347.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 60,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b8_l2",
+      "page_index": 282,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "約收取現⾦流的權利屆滿，則會撤銷確認原有貸款，並按公允值確認新造貸款。倘商業重組以市場利率進⾏，且並無提供還款相關寬減，則收取現",
+      "bbox": [
+        42.37,
+        346.444,
+        549.33,
+        357.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 57,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b8_l3",
+      "page_index": 282,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "⾦流的權利通常視為已屆滿。若⼲信貸風險較⾼的批發貸款如有修訂，會評估是否須撤銷確認，當中會考慮合約條款的修訂個別或合計是否評定為",
+      "bbox": [
+        42.37,
+        356.044,
+        549.33,
+        366.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 58,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b8_l4",
+      "page_index": 282,
+      "block_id": 8,
+      "line_index": 4,
+      "source_text": "會令貸款成為截然不同的⾦融⼯具。並無指定借款⼈的強制性及全⾯要約貸款修訂，例如涵蓋整個市場的客⼾紓困計劃，⼀般不會導致撤銷確認，",
+      "bbox": [
+        42.37,
+        365.644,
+        549.33,
+        376.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b8_l5",
+      "page_index": 282,
+      "block_id": 8,
+      "line_index": 5,
+      "source_text": "但其級別分配須根據滙豐預期信貸損失減值政策經考慮所有可得且可靠的資料⽽釐定。",
+      "bbox": [
+        42.37,
+        375.244,
+        343.41,
+        385.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 36,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b9_l0",
+      "page_index": 282,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "購入或承辦信貸已減值資產",
+      "bbox": [
+        42.37,
+        391.344,
+        138.37,
+        401.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b9_l1",
+      "page_index": 282,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "按反映已產⽣信貸損失的⼤幅折讓購入或承辦之⾦融資產被視為購入或承辦信貸已減值之⾦融資產。此等資產包括於暫緩償還的貸款撤銷確認後普",
+      "bbox": [
+        42.37,
+        401.944,
+        549.33,
+        412.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 59,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b9_l2",
+      "page_index": 282,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "遍會確認的新⾦融⼯具。即使期限內預期信貸損失少於⾸次確認入賬時估計現⾦流內包含的預期信貸損失數額，購入或承辦信貸已減值貸款期限內",
+      "bbox": [
+        42.37,
+        411.544,
+        549.33,
+        422.185
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 58,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b9_l3",
+      "page_index": 282,
+      "block_id": 9,
+      "line_index": 3,
+      "source_text": "預期信貸損失變動亦會在損益賬中確認，直⾄購入或承辦信貸已減值貸款撤銷確認為⽌。",
+      "bbox": [
+        42.37,
+        421.144,
+        351.33,
+        431.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 35,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b10_l0",
+      "page_index": 282,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "各級間之轉撥",
+      "bbox": [
+        42.37,
+        437.244,
+        90.37,
+        447.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b10_l1",
+      "page_index": 282,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "⾦融資產可視乎信貸風險⾃⾸次確認入賬以來的相對增幅⽽在不同類別（購入或承辦信貸已減值之⾦融資產除外）之間轉撥。按照上文所述評估，",
+      "bbox": [
+        42.37,
+        447.844,
+        549.33,
+        458.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b10_l2",
+      "page_index": 282,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "倘⾦融⼯具的信貸風險不再視為⾃⾸次確認入賬以來⼤幅增加，則該等⾦融⼯具會⾃第⼆級撥出。若為不履約暫緩償還的貸款，當該等⾦融⼯具如",
+      "bbox": [
+        42.37,
+        457.444,
+        549.33,
+        468.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 50,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b10_l3",
+      "page_index": 282,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "上文所述不再出現任何信貸減值證據，並符合補救準則，則該等⾦融⼯具會⾃第三級撥出。",
+      "bbox": [
+        42.37,
+        467.044,
+        359.25,
+        477.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 34,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b11_l0",
+      "page_index": 282,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "預期信貸損失的計量",
+      "bbox": [
+        42.37,
+        483.144,
+        114.37,
+        493.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b11_l1",
+      "page_index": 282,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "信貸風險之評估及預期信貸損失之估算均不偏不倚地採⽤或然率加權⽅式進⾏，並整合評估相關所有可得資料，包括有關過往事件、當前狀況，以",
+      "bbox": [
+        42.37,
+        493.744,
+        549.33,
+        504.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 57,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b11_l2",
+      "page_index": 282,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "及於業績報告⽇期對未來事件及經濟狀況之合理及有依據預測的資料。此外，預期信貸損失之估算應計及⾦錢時間價值，並考慮氣候相關風險等其",
+      "bbox": [
+        42.37,
+        503.344,
+        549.33,
+        513.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 59,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b11_l3",
+      "page_index": 282,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "他因素。",
+      "bbox": [
+        42.37,
+        512.944,
+        74.13,
+        523.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b12_l0",
+      "page_index": 282,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "⼀般⽽⾔，滙豐採⽤三⼤成分計算預期信貸損失：違責或然率、違責損失率及違責風險承擔。",
+      "bbox": [
+        42.37,
+        529.044,
+        367.17,
+        539.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 32,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b13_l0",
+      "page_index": 282,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "12個⽉預期信貸損失乃按12個⽉違責或然率乘以違責損失率及違責風險承擔計算。期限內預期信貸損失則採⽤期限內違責或然率計算，⽽12個⽉",
+      "bbox": [
+        42.37,
+        545.144,
+        544.962,
+        555.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 53,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b13_l1",
+      "page_index": 282,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "違責或然率及期限內違責或然率分別指未來12個⽉及有關⼯具尚餘期限內的違責或然率。",
+      "bbox": [
+        42.37,
+        554.744,
+        352.514,
+        565.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 35,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b14_l0",
+      "page_index": 282,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "違責風險承擔指預期違責結⽋，經計及⾃結算⽇起⾄發⽣違責事件的本⾦及利息還款，連同任何預期取⽤的承諾貸款。違責損失率指違責風險承擔",
+      "bbox": [
+        42.37,
+        570.844,
+        549.33,
+        581.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 54,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b14_l1",
+      "page_index": 282,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "因違責事件⽽產⽣的預期損失，乃經計及（其中包括）抵押品預期變現時的價值對減少損失的作⽤及⾦錢的時間價值。",
+      "bbox": [
+        42.37,
+        580.444,
+        454.29,
+        591.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 44,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p282_b15_l0",
+      "page_index": 282,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "策略報告",
+      "bbox": [
+        44.23,
+        15.84,
+        72.23,
+        25.15
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b15_l1",
+      "page_index": 282,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "環境、社會及",
+      "bbox": [
+        117.73,
+        15.84,
+        159.73,
+        25.15
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b15_l2",
+      "page_index": 282,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "管治報告",
+      "bbox": [
+        117.73,
+        24.24,
+        145.73,
+        33.55
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b15_l3",
+      "page_index": 282,
+      "block_id": 15,
+      "line_index": 3,
+      "source_text": "財務回顧",
+      "bbox": [
+        191.23,
+        15.84,
+        219.23,
+        25.15
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b15_l4",
+      "page_index": 282,
+      "block_id": 15,
+      "line_index": 4,
+      "source_text": "風險回顧",
+      "bbox": [
+        264.73,
+        15.84,
+        292.73,
+        25.15
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b15_l5",
+      "page_index": 282,
+      "block_id": 15,
+      "line_index": 5,
+      "source_text": "企業管治報告",
+      "bbox": [
+        338.23,
+        15.84,
+        378.795,
+        25.15
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b15_l6",
+      "page_index": 282,
+      "block_id": 15,
+      "line_index": 6,
+      "source_text": "財務報表",
+      "bbox": [
+        411.73,
+        15.84,
+        439.73,
+        25.15
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b15_l7",
+      "page_index": 282,
+      "block_id": 15,
+      "line_index": 7,
+      "source_text": "補充資料",
+      "bbox": [
+        485.23,
+        15.84,
+        513.23,
+        25.15
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b16_l0",
+      "page_index": 282,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "財務報表附註",
+      "bbox": [
+        411.73,
+        36.09,
+        453.73,
+        45.4
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p282_b17_l0",
+      "page_index": 282,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "滙豐控股有限公司 2025年報及賬⽬",
+      "bbox": [
+        242.87,
+        808.67,
+        351.832,
+        817.981
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b0_l0",
+      "page_index": 283,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "滙豐盡可能使⽤內部評級基準架構，並予以重新校準以符合IFRS 9的不同要求，詳情載於下表：",
+      "bbox": [
+        42.37,
+        69.645,
+        373.658,
+        80.285
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "IFRS"
+      ],
+      "cjk_char_count": 35,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b1_l0",
+      "page_index": 283,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "模型",
+      "bbox": [
+        45.0,
+        87.19,
+        59.0,
+        96.501
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b1_l1",
+      "page_index": 283,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "監管規定資本",
+      "bbox": [
+        104.25,
+        87.19,
+        146.25,
+        96.501
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b2_l0",
+      "page_index": 283,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "違責或然率",
+      "bbox": [
+        45.0,
+        124.25,
+        80.0,
+        133.561
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b3_l1",
+      "page_index": 283,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "反映整個經濟周期的⻑期平均違責或然率（對於按揭貸款組合，根",
+      "bbox": [
+        115.59,
+        98.31,
+        318.59,
+        107.621
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 26,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b3_l2",
+      "page_index": 283,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "據審慎監管局的要求，採⽤介乎時點法與整個周期法兩種極端⽅法",
+      "bbox": [
+        115.59,
+        107.91,
+        318.59,
+        117.221
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 26,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b3_l3",
+      "page_index": 283,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "之間的混合⽅法計算⻑期平均值）",
+      "bbox": [
+        115.59,
+        117.51,
+        220.59,
+        126.821
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b3_l5",
+      "page_index": 283,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "違責標準指標為逾期90⽇以上，適⽤於所有貸款組合（包括符合內",
+      "bbox": [
+        115.59,
+        128.11,
+        319.696,
+        137.421
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 24,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b3_l6",
+      "page_index": 283,
+      "block_id": 3,
+      "line_index": 6,
+      "source_text": "部政策的「不太可能還款」標準）",
+      "bbox": [
+        115.59,
+        137.71,
+        220.59,
+        147.021
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b3_l8",
+      "page_index": 283,
+      "block_id": 3,
+      "line_index": 8,
+      "source_text": "可能須限於主權上限",
+      "bbox": [
+        115.59,
+        148.31,
+        178.59,
+        157.621
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b4_l1",
+      "page_index": 283,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "反映⽬前貸款組合的質素和表現，並根據多個前瞻性宏觀經濟境況的",
+      "bbox": [
+        340.59,
+        98.31,
+        550.59,
+        107.621
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 28,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b4_l2",
+      "page_index": 283,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "影響作調整",
+      "bbox": [
+        340.59,
+        107.91,
+        375.59,
+        117.221
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b4_l4",
+      "page_index": 283,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "違責標準指標為逾期90⽇以上，適⽤於所有貸款組合（包括符合內部",
+      "bbox": [
+        340.59,
+        118.51,
+        551.696,
+        127.821
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 25,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b4_l5",
+      "page_index": 283,
+      "block_id": 4,
+      "line_index": 5,
+      "source_text": "政策的「不太可能還款」標準）",
+      "bbox": [
+        340.59,
+        128.11,
+        438.59,
+        137.421
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b5_l0",
+      "page_index": 283,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "違責風險承擔",
+      "bbox": [
+        45.0,
+        161.31,
+        87.0,
+        170.621
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b5_l2",
+      "page_index": 283,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "不可低於當前結⽋",
+      "bbox": [
+        115.59,
+        161.31,
+        171.59,
+        170.621
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b5_l4",
+      "page_index": 283,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "有期產品的攤銷數額",
+      "bbox": [
+        340.59,
+        161.31,
+        403.59,
+        170.621
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b5_l6",
+      "page_index": 283,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "循環產品未來提取的數額",
+      "bbox": [
+        340.59,
+        171.91,
+        417.59,
+        181.221
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b6_l0",
+      "page_index": 283,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "違責損失率",
+      "bbox": [
+        45.0,
+        210.87,
+        80.0,
+        220.181
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b7_l1",
+      "page_index": 283,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "衰退下的違責損失率（相當於預期在嚴重但合理的經濟衰退期間遭",
+      "bbox": [
+        115.59,
+        184.56,
+        318.59,
+        193.871
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 28,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b7_l2",
+      "page_index": 283,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "受的損失）",
+      "bbox": [
+        115.59,
+        194.16,
+        150.59,
+        203.471
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b7_l4",
+      "page_index": 283,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "可能採⽤監管規定下限，以減輕因缺乏歷史數據⽽低估衰退下違責",
+      "bbox": [
+        115.59,
+        204.76,
+        318.59,
+        214.07
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 26,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b7_l5",
+      "page_index": 283,
+      "block_id": 7,
+      "line_index": 5,
+      "source_text": "損失率的風險",
+      "bbox": [
+        115.59,
+        214.36,
+        157.59,
+        223.67
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b7_l7",
+      "page_index": 283,
+      "block_id": 7,
+      "line_index": 7,
+      "source_text": "按合適指數折現（最少9%）",
+      "bbox": [
+        115.59,
+        224.96,
+        202.803,
+        234.27
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "9%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b7_l9",
+      "page_index": 283,
+      "block_id": 7,
+      "line_index": 9,
+      "source_text": "包含追收⽋款產⽣的所有成本",
+      "bbox": [
+        115.59,
+        235.56,
+        206.59,
+        244.87
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b8_l1",
+      "page_index": 283,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "違責損失率基於近期貸款組合表現相關數據，並包括未來經濟狀況的",
+      "bbox": [
+        340.59,
+        184.56,
+        550.59,
+        193.87
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 29,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b8_l2",
+      "page_index": 283,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "預期影響，例如抵押品價值的變化",
+      "bbox": [
+        340.59,
+        194.16,
+        445.59,
+        203.47
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b8_l4",
+      "page_index": 283,
+      "block_id": 8,
+      "line_index": 4,
+      "source_text": "不設下限，按原訂實質利率折現",
+      "bbox": [
+        340.59,
+        204.76,
+        438.59,
+        214.07
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b8_l6",
+      "page_index": 283,
+      "block_id": 8,
+      "line_index": 6,
+      "source_text": "僅包括銷售抵押品相關成本和部分第三⽅成本",
+      "bbox": [
+        340.59,
+        215.36,
+        480.59,
+        224.67
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b9_l0",
+      "page_index": 283,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "其他",
+      "bbox": [
+        45.0,
+        248.44,
+        59.0,
+        257.75
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b9_l2",
+      "page_index": 283,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "⾃違責當⽇⾄結算⽇的折現",
+      "bbox": [
+        340.59,
+        247.0,
+        424.59,
+        256.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b10_l0",
+      "page_index": 283,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "12個⽉違責或然率盡可能按內部評級基準模型重新校準，⽽期限內違責或然率乃透過使⽤期限結構預測12個⽉違責或然率⽽釐定。就批發貸款的計",
+      "bbox": [
+        42.37,
+        266.745,
+        551.698,
+        277.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 55,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b10_l1",
+      "page_index": 283,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "算⽅法⽽⾔，期限內違責或然率亦計及賬項信貸質素的變化，即客⼾於期限內在不同客⼾風險評級之間的變動。",
+      "bbox": [
+        42.37,
+        276.345,
+        430.53,
+        286.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 41,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b11_l0",
+      "page_index": 283,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "第三級批發貸款預期信貸損失主要透過使⽤現⾦流折現法按個別基準釐定。預計⽇後現⾦流根據業績報告⽇期當天的估算⽽定，反映對未來收回額",
+      "bbox": [
+        42.37,
+        292.445,
+        549.33,
+        303.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 56,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b11_l1",
+      "page_index": 283,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "及預計⽇後利息收入合理⽽有依據的假設及預測。",
+      "bbox": [
+        42.37,
+        302.045,
+        216.69,
+        312.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p283_b12_l0",
+      "page_index": 283,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "如果未償還⾦額的收回很可能包括變現抵押品，則將抵押品納入考慮，⽅式為以預期變現時抵押品的估計公允值，減去獲取和出售抵押品的成本。",
+      "bbox": [
+        42.37,
+        318.145,
+        549.33,
+        328.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 58,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b13_l0",
+      "page_index": 283,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "現⾦流按原訂實質利率折現。對於重⼤情況，則透過參考借款⼈狀況、集團更普遍應⽤的各種經濟境況，以及對重組貸款策略成功或需要接管的可",
+      "bbox": [
+        42.37,
+        334.245,
+        549.33,
+        344.885
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 56,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b13_l1",
+      "page_index": 283,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "能性的判斷，採⽤或然率加權的⽅式計算最多四種不同境況下的現⾦流。對於須進⾏個別評估但重要程度較低的情況，不同經濟境況和重組貸款策",
+      "bbox": [
+        42.37,
+        343.845,
+        549.33,
+        354.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 57,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b13_l2",
+      "page_index": 283,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "略的影響導致須根據最可能出現的結果計算預期信貸損失，所得結果須作出調整，以反映機會較低但仍有可能出現結果導致的虧損。對於若⼲重要",
+      "bbox": [
+        42.37,
+        353.445,
+        549.33,
+        364.085
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 60,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b13_l3",
+      "page_index": 283,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "程度較低的情況，本⾏或會使⽤以違責損失率為基礎的模型計算法評估預期信貸損失，當中已計及⼀系列經濟境況。",
+      "bbox": [
+        42.37,
+        363.045,
+        446.37,
+        373.685
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 45,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p283_b14_l0",
+      "page_index": 283,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "預期信貸損失的計量期間",
+      "bbox": [
+        42.37,
+        379.145,
+        130.37,
+        389.785
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round15/translation_batches/batch_0130.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round15/translation_batches/batch_0130.model_output.json",
+    "required_units": [
+      "p280_b1_l0",
+      "p280_b1_l1",
+      "p280_b2_l1",
+      "p280_b2_l3",
+      "p280_b2_l5",
+      "p280_b3_l0",
+      "p280_b4_l0",
+      "p280_b4_l1",
+      "p280_b5_l0",
+      "p280_b6_l1",
+      "p280_b6_l2",
+      "p280_b6_l4",
+      "p280_b6_l5",
+      "p280_b6_l6",
+      "p280_b6_l7",
+      "p280_b6_l9",
+      "p280_b7_l1",
+      "p280_b7_l2",
+      "p280_b7_l3",
+      "p280_b7_l4",
+      "p280_b8_l0",
+      "p280_b8_l1",
+      "p280_b9_l0",
+      "p280_b9_l1",
+      "p280_b9_l2",
+      "p280_b10_l0",
+      "p280_b10_l1",
+      "p280_b10_l2",
+      "p280_b10_l3",
+      "p280_b11_l0",
+      "p280_b11_l1",
+      "p280_b11_l2",
+      "p280_b11_l3",
+      "p280_b11_l4",
+      "p280_b12_l0",
+      "p280_b12_l1",
+      "p280_b12_l2",
+      "p280_b13_l0",
+      "p280_b13_l1",
+      "p280_b13_l2",
+      "p280_b13_l3",
+      "p280_b13_l4",
+      "p280_b13_l5",
+      "p280_b13_l6",
+      "p280_b13_l7",
+      "p280_b14_l0",
+      "p280_b15_l0",
+      "p281_b0_l0",
+      "p281_b1_l0",
+      "p281_b1_l1",
+      "p281_b1_l2",
+      "p281_b1_l3",
+      "p281_b1_l4",
+      "p281_b1_l5",
+      "p281_b2_l0",
+      "p281_b2_l1",
+      "p281_b3_l0",
+      "p281_b3_l1",
+      "p281_b4_l0",
+      "p281_b4_l1",
+      "p281_b4_l2",
+      "p281_b4_l3",
+      "p281_b4_l4",
+      "p281_b4_l5",
+      "p281_b5_l0",
+      "p281_b5_l1",
+      "p281_b5_l2",
+      "p281_b6_l0",
+      "p281_b7_l0",
+      "p281_b7_l1",
+      "p281_b8_l1",
+      "p281_b8_l3",
+      "p281_b9_l0",
+      "p281_b9_l1",
+      "p281_b10_l0",
+      "p281_b10_l1",
+      "p281_b10_l2",
+      "p281_b11_l0",
+      "p281_b12_l0",
+      "p281_b13_l0",
+      "p281_b13_l1",
+      "p281_b13_l3",
+      "p281_b13_l5",
+      "p281_b13_l7",
+      "p281_b13_l9",
+      "p281_b13_l11",
+      "p281_b13_l13",
+      "p281_b14_l0",
+      "p281_b14_l1",
+      "p281_b14_l2",
+      "p281_b14_l3",
+      "p281_b14_l4",
+      "p281_b15_l0",
+      "p281_b15_l1",
+      "p281_b15_l2",
+      "p281_b16_l0",
+      "p281_b16_l1",
+      "p281_b16_l2",
+      "p281_b16_l3",
+      "p281_b16_l4",
+      "p281_b16_l5",
+      "p281_b16_l6",
+      "p281_b16_l7",
+      "p281_b17_l0",
+      "p281_b18_l0",
+      "p282_b0_l0",
+      "p282_b0_l1",
+      "p282_b0_l2",
+      "p282_b1_l0",
+      "p282_b1_l1",
+      "p282_b2_l0",
+      "p282_b3_l0",
+      "p282_b3_l1",
+      "p282_b3_l2",
+      "p282_b4_l0",
+      "p282_b4_l1",
+      "p282_b4_l2",
+      "p282_b4_l3",
+      "p282_b5_l0",
+      "p282_b5_l1",
+      "p282_b6_l0",
+      "p282_b6_l1",
+      "p282_b6_l2",
+      "p282_b7_l0",
+      "p282_b7_l1",
+      "p282_b7_l2",
+      "p282_b8_l0",
+      "p282_b8_l1",
+      "p282_b8_l2",
+      "p282_b8_l3",
+      "p282_b8_l4",
+      "p282_b8_l5",
+      "p282_b9_l0",
+      "p282_b9_l1",
+      "p282_b9_l2",
+      "p282_b9_l3",
+      "p282_b10_l0",
+      "p282_b10_l1",
+      "p282_b10_l2",
+      "p282_b10_l3",
+      "p282_b11_l0",
+      "p282_b11_l1",
+      "p282_b11_l2",
+      "p282_b11_l3",
+      "p282_b12_l0",
+      "p282_b13_l0",
+      "p282_b13_l1",
+      "p282_b14_l0",
+      "p282_b14_l1",
+      "p282_b15_l0",
+      "p282_b15_l1",
+      "p282_b15_l2",
+      "p282_b15_l3",
+      "p282_b15_l4",
+      "p282_b15_l5",
+      "p282_b15_l6",
+      "p282_b15_l7",
+      "p282_b16_l0",
+      "p282_b17_l0",
+      "p283_b0_l0",
+      "p283_b1_l0",
+      "p283_b1_l1",
+      "p283_b2_l0",
+      "p283_b3_l1",
+      "p283_b3_l2",
+      "p283_b3_l3",
+      "p283_b3_l5",
+      "p283_b3_l6",
+      "p283_b3_l8",
+      "p283_b4_l1",
+      "p283_b4_l2",
+      "p283_b4_l4",
+      "p283_b4_l5",
+      "p283_b5_l0",
+      "p283_b5_l2",
+      "p283_b5_l4",
+      "p283_b5_l6",
+      "p283_b6_l0",
+      "p283_b7_l1",
+      "p283_b7_l2",
+      "p283_b7_l4",
+      "p283_b7_l5",
+      "p283_b7_l7",
+      "p283_b7_l9",
+      "p283_b8_l1",
+      "p283_b8_l2",
+      "p283_b8_l4",
+      "p283_b8_l6",
+      "p283_b9_l0",
+      "p283_b9_l2",
+      "p283_b10_l0",
+      "p283_b10_l1",
+      "p283_b11_l0",
+      "p283_b11_l1",
+      "p283_b12_l0",
+      "p283_b13_l0",
+      "p283_b13_l1",
+      "p283_b13_l2",
+      "p283_b13_l3",
+      "p283_b14_l0"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "round_id": "R14",
+  "input_count": 1,
+  "process_contract_verdict": "PASS",
+  "semantic_translation_verdict": "PASS",
+  "generation_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "terminal_state": "S_FAIL_QUALITY",
+  "cases": [
+    {
+      "case_id": "R14_00005_2025_annual_report_en",
+      "source_pdf": "docs/input/round14/source_pdfs/00005_2025_annual_report_en.pdf",
+      "target_language": "zh",
+      "candidate_pdf": "docs/output/round14/R14_00005_2025_annual_report_en_candidate.pdf",
+      "product_quality_verdict": "FAIL",
+      "failed_gate_ids": [
+        "text_residue",
+        "text_fit",
+        "source_anchor_order",
+        "visual_similarity",
+        "body_paragraph_readability",
+        "footnote_readability",
+        "short_label_legibility",
+        "table_text_legibility",
+        "title_readability",
+        "background_residue_artifact",
+        "matrix_diagram_integrity"
+      ],
+      "blocking_repair_count": 7,
+      "repair_loop_records": [
+        "docs/reports/round14/R14_00005_2025_annual_report_en/repair_loop_0001.json"
+      ],
+      "report_dir": "docs/reports/round14/R14_00005_2025_annual_report_en"
+    }
+  ],
+  "process_validation": "docs/reports/round14/process_validation.json",
+  "process_validation_errors": []
+}

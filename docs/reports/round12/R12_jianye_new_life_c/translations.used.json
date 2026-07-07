@@ -1,0 +1,4469 @@
+{
+  "translation_provider": "google_translate_web_gtx",
+  "source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "prompt_artifacts": [
+    {
+      "batch_id": "batch_0001",
+      "slot_values": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0001.slot_values.json",
+      "prompt_instance": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0001.prompt_instance.json",
+      "model_output": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0001.model_output.json",
+      "batch_validation": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0001.validation.json",
+      "decision_record": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0001.decision_record.json",
+      "unit_count": 40
+    },
+    {
+      "batch_id": "batch_0002",
+      "slot_values": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0002.slot_values.json",
+      "prompt_instance": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0002.prompt_instance.json",
+      "model_output": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0002.model_output.json",
+      "batch_validation": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0002.validation.json",
+      "decision_record": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0002.decision_record.json",
+      "unit_count": 40
+    },
+    {
+      "batch_id": "batch_0003",
+      "slot_values": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0003.slot_values.json",
+      "prompt_instance": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0003.prompt_instance.json",
+      "model_output": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0003.model_output.json",
+      "batch_validation": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0003.validation.json",
+      "decision_record": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0003.decision_record.json",
+      "unit_count": 40
+    },
+    {
+      "batch_id": "batch_0004",
+      "slot_values": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0004.slot_values.json",
+      "prompt_instance": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0004.prompt_instance.json",
+      "model_output": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0004.model_output.json",
+      "batch_validation": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0004.validation.json",
+      "decision_record": "docs/reports/round12/R12_jianye_new_life_c/translation_batches/batch_0004.decision_record.json",
+      "unit_count": 12
+    }
+  ],
+  "unit_count": 133,
+  "semantic_translated_unit_count": 132,
+  "preserved_target_language_unit_count": 1,
+  "units": [
+    {
+      "unit_id": "p0_b1_l0",
+      "page_index": 0,
+      "source_text": "香港交易及結算所有限公司及香港聯合交易所有限公司對本通告之內",
+      "translation_zh": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited have regard to the contents of this announcement",
+      "target_text": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited have regard to the contents of this announcement",
+      "translation_en": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited have regard to the contents of this announcement",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        55.049,
+        54.379,
+        540.582,
+        71.058
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Hong Kong Exchanges and Clearing Limited and The Stock Exchange of Hong Kong Limited have regard to the contents of this announcement"
+      },
+      "layout_risk": {
+        "length_ratio": 4.433,
+        "bbox_width": 485.533,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b1_l1",
+      "page_index": 0,
+      "source_text": "容概不負責，對其準確性或完整性亦不發表任何聲明，並明確表示，概",
+      "translation_zh": "is not responsible for the content, makes no representation as to its accuracy or completeness, and expressly disclaims any",
+      "target_text": "is not responsible for the content, makes no representation as to its accuracy or completeness, and expressly disclaims any",
+      "translation_en": "is not responsible for the content, makes no representation as to its accuracy or completeness, and expressly disclaims any",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        55.052,
+        73.385,
+        540.586,
+        90.064
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "is not responsible for the content, makes no representation as to its accuracy or completeness, and expressly disclaims any"
+      },
+      "layout_risk": {
+        "length_ratio": 3.968,
+        "bbox_width": 485.534,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b1_l2",
+      "page_index": 0,
+      "source_text": "不對因本通告全部或任何部分內容而產生或因倚賴該等內容而引致之",
+      "translation_zh": "shall not be liable for any liability arising out of or in reliance upon the whole or any part of the contents of this announcement.",
+      "target_text": "shall not be liable for any liability arising out of or in reliance upon the whole or any part of the contents of this announcement.",
+      "translation_en": "shall not be liable for any liability arising out of or in reliance upon the whole or any part of the contents of this announcement.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        55.055,
+        92.391,
+        540.588,
+        109.07
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "shall not be liable for any liability arising out of or in reliance upon the whole or any part of the contents of this announcement."
+      },
+      "layout_risk": {
+        "length_ratio": 4.4,
+        "bbox_width": 485.533,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b1_l3",
+      "page_index": 0,
+      "source_text": "任何損失承擔任何責任。",
+      "translation_zh": "No liability for any losses.",
+      "target_text": "No liability for any losses.",
+      "translation_en": "No liability for any losses.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        55.058,
+        111.397,
+        228.252,
+        128.076
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "No liability for any losses.",
+        "short_label_en": "No liability for any losses."
+      },
+      "layout_risk": {
+        "length_ratio": 2.545,
+        "bbox_width": 173.194,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b2_l0",
+      "page_index": 0,
+      "source_text": "建業新生活有限公司",
+      "translation_zh": "Jianye New Life Co., Ltd.",
+      "target_text": "Jianye New Life Co., Ltd.",
+      "translation_en": "Jianye New Life Co., Ltd.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        209.958,
+        209.041,
+        385.318,
+        229.537
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Jianye New Life Co., Ltd.",
+        "short_label_en": "Jianye New Life Co., Ltd."
+      },
+      "layout_risk": {
+        "length_ratio": 2.778,
+        "bbox_width": 175.36,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b2_l1",
+      "page_index": 0,
+      "source_text": "Central China New Life Limited",
+      "translation_zh": "Central China New Life Limited",
+      "target_text": "Central China New Life Limited",
+      "translation_en": "Central China New Life Limited",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "preserve_already_target_language_span",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        180.742,
+        231.585,
+        414.55,
+        250.033
+      ],
+      "text_role": "body",
+      "term_decisions": [],
+      "layout_variants": {},
+      "layout_risk": "already_target_language_visible_span"
+    },
+    {
+      "unit_id": "p0_b3_l0",
+      "page_index": 0,
+      "source_text": "（於開曼群島註冊成立的有限公司）",
+      "translation_zh": "(Incorporated in the Cayman Islands with limited liability)",
+      "target_text": "(Incorporated in the Cayman Islands with limited liability)",
+      "translation_en": "(Incorporated in the Cayman Islands with limited liability)",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        201.498,
+        251.835,
+        393.975,
+        264.665
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(Incorporated in the Cayman Islands with limited liability)",
+        "short_label_en": "(Incorporated in the Cayman"
+      },
+      "layout_risk": {
+        "length_ratio": 3.688,
+        "bbox_width": 192.477,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b3_l1",
+      "page_index": 0,
+      "source_text": "（股份代號：9983）",
+      "translation_zh": "(Stock code: 9983)",
+      "target_text": "(Stock code: 9983)",
+      "translation_en": "(Stock code: 9983)",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        233.613,
+        267.323,
+        361.663,
+        284.379
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(Stock code: 9983)",
+        "short_label_en": "(Stock code: 9983)"
+      },
+      "layout_risk": {
+        "length_ratio": 1.636,
+        "bbox_width": 128.05,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p0_b4_l0",
+      "page_index": 0,
+      "source_text": "股東週年大會通告",
+      "translation_zh": "Notice of Annual General Meeting",
+      "target_text": "Notice of Annual General Meeting",
+      "translation_en": "Notice of Annual General Meeting",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        230.613,
+        304.229,
+        364.663,
+        322.163
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Notice of Annual General Meeting",
+        "short_label_en": "Notice of Annual General Meeting"
+      },
+      "layout_risk": {
+        "length_ratio": 4.0,
+        "bbox_width": 134.05,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b5_l0",
+      "page_index": 0,
+      "source_text": "茲通告建業新生活有限公司（「本公司」）謹訂於2026年6 月1 日（星期一）上",
+      "translation_zh": "This is to inform that Jianye New Life Co., Ltd. (the \"Company\") is hereby scheduled to start on June 1, 2026 (Monday)",
+      "target_text": "This is to inform that Jianye New Life Co., Ltd. (the \"Company\") is hereby scheduled to start on June 1, 2026 (Monday)",
+      "translation_en": "This is to inform that Jianye New Life Co., Ltd. (the \"Company\") is hereby scheduled to start on June 1, 2026 (Monday)",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.693,
+        343.323,
+        538.611,
+        360.379
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "This is to inform that Jianye New Life Co., Ltd. (the \"Company\") is hereby scheduled to start on June 1, 2026 (Monday)"
+      },
+      "layout_risk": {
+        "length_ratio": 3.026,
+        "bbox_width": 481.918,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b5_l1",
+      "page_index": 0,
+      "source_text": "午十時正假座香港九龍尖沙咀廣東道25號海港城港威大廈2 座16 樓",
+      "translation_zh": "10:00 Noon: 16th Floor, Tower 2, Gateway Tower, Harbor City, 25 Canton Road, Tsim Sha Tsui, Kowloon, Hong Kong",
+      "target_text": "10:00 Noon: 16th Floor, Tower 2, Gateway Tower, Harbor City, 25 Canton Road, Tsim Sha Tsui, Kowloon, Hong Kong",
+      "translation_en": "10:00 Noon: 16th Floor, Tower 2, Gateway Tower, Harbor City, 25 Canton Road, Tsim Sha Tsui, Kowloon, Hong Kong",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.706,
+        362.628,
+        538.59,
+        379.385
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "10:00 Noon: 16th Floor, Tower 2, Gateway Tower, Harbor City, 25 Canton Road, Tsim Sha Tsui, Kowloon, Hong Kong"
+      },
+      "layout_risk": {
+        "length_ratio": 3.333,
+        "bbox_width": 481.884,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b5_l2",
+      "page_index": 0,
+      "source_text": "1602–1605 室舉行股東週年大會（「大會」），藉以處理下列事項：",
+      "translation_zh": "The Annual General Meeting (the “Meeting”) is held in Rooms 1602–1605 to deal with the following matters:",
+      "target_text": "The Annual General Meeting (the “Meeting”) is held in Rooms 1602–1605 to deal with the following matters:",
+      "translation_en": "The Annual General Meeting (the “Meeting”) is held in Rooms 1602–1605 to deal with the following matters:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.706,
+        381.335,
+        469.196,
+        398.391
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The Annual General Meeting (the “Meeting”) is held in Rooms 1602–1605 to deal with the following matters:"
+      },
+      "layout_risk": {
+        "length_ratio": 3.0,
+        "bbox_width": 412.49,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b6_l0",
+      "page_index": 0,
+      "source_text": "1. 審議及批准截至2025 年12月31日止財政年度經審核綜合財務報表及",
+      "translation_zh": "1. To review and approve the audited consolidated financial statements for the financial year ended December 31, 2025 and",
+      "target_text": "1. To review and approve the audited consolidated financial statements for the financial year ended December 31, 2025 and",
+      "translation_en": "1. To review and approve the audited consolidated financial statements for the financial year ended December 31, 2025 and",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.706,
+        419.633,
+        538.525,
+        436.39
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "1. To review and approve the audited consolidated financial statements for the financial year ended December 31, 2025 and"
+      },
+      "layout_risk": {
+        "length_ratio": 3.27,
+        "bbox_width": 481.819,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b6_l1",
+      "page_index": 0,
+      "source_text": "本公司董事（「董事」）會報告以及本公司獨立核數師報告。",
+      "translation_zh": "The report of the directors of the Company (the “Directors”) and the report of the Company’s independent auditors.",
+      "target_text": "The report of the directors of the Company (the “Directors”) and the report of the Company’s independent auditors.",
+      "translation_en": "The report of the directors of the Company (the “Directors”) and the report of the Company’s independent auditors.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.378,
+        438.34,
+        464.308,
+        455.318
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The report of the directors of the Company (the “Directors”) and the report of the Company’s independent auditors."
+      },
+      "layout_risk": {
+        "length_ratio": 4.222,
+        "bbox_width": 384.93,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b7_l0",
+      "page_index": 0,
+      "source_text": "2. (A) 重選閆學文先生為執行董事。",
+      "translation_zh": "2. (A) To re-elect Mr. Yan Xuewen as executive director.",
+      "target_text": "2. (A) To re-elect Mr. Yan Xuewen as executive director.",
+      "translation_en": "2. (A) To re-elect Mr. Yan Xuewen as executive director.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.706,
+        476.638,
+        303.563,
+        493.395
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "2. (A) To re-elect Mr. Yan Xuewen as executive director.",
+        "short_label_en": "2. (A) To re-elect"
+      },
+      "layout_risk": {
+        "length_ratio": 2.8,
+        "bbox_width": 246.857,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b8_l0",
+      "page_index": 0,
+      "source_text": "(B) 重選梁翔先生為獨立非執行董事。",
+      "translation_zh": "(B) To re-elect Mr. Liang Xiang as an independent non-executive director.",
+      "target_text": "(B) To re-elect Mr. Liang Xiang as an independent non-executive director.",
+      "translation_en": "(B) To re-elect Mr. Liang Xiang as an independent non-executive director.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.391,
+        514.637,
+        335.413,
+        531.394
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(B) To re-elect Mr. Liang Xiang as an independent non-executive director.",
+        "short_label_en": "(B) To re-elect Mr."
+      },
+      "layout_risk": {
+        "length_ratio": 3.842,
+        "bbox_width": 256.022,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b9_l0",
+      "page_index": 0,
+      "source_text": "(C) 重選羅瑩女士為獨立非執行董事。",
+      "translation_zh": "(C) To re-elect Ms. Luo Ying as an independent non-executive director.",
+      "target_text": "(C) To re-elect Ms. Luo Ying as an independent non-executive director.",
+      "translation_en": "(C) To re-elect Ms. Luo Ying as an independent non-executive director.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.391,
+        552.636,
+        335.413,
+        569.393
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(C) To re-elect Ms. Luo Ying as an independent non-executive director.",
+        "short_label_en": "(C) To re-elect Ms."
+      },
+      "layout_risk": {
+        "length_ratio": 3.684,
+        "bbox_width": 256.022,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b10_l0",
+      "page_index": 0,
+      "source_text": "(D) 授權董事會（「董事會」）釐定各董事的酬金。",
+      "translation_zh": "(D) Authorize the board of directors (the \"Board\") to determine the remuneration of each Director.",
+      "target_text": "(D) Authorize the board of directors (the \"Board\") to determine the remuneration of each Director.",
+      "translation_en": "(D) Authorize the board of directors (the \"Board\") to determine the remuneration of each Director.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.391,
+        590.336,
+        391.443,
+        607.392
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(D) Authorize the board of directors (the \"Board\") to determine the remuneration of each Director."
+      },
+      "layout_risk": {
+        "length_ratio": 3.92,
+        "bbox_width": 312.052,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l0",
+      "page_index": 0,
+      "source_text": "3. 續聘栢淳會計師事務所有限公司為本公司核數師及授權董事會釐定",
+      "translation_zh": "3. Re-appoint Bochun Certified Public Accountants Co., Ltd. as the company’s auditor and authorize the Board of Directors to make the decision",
+      "target_text": "3. Re-appoint Bochun Certified Public Accountants Co., Ltd. as the company’s auditor and authorize the Board of Directors to make the decision",
+      "translation_en": "3. Re-appoint Bochun Certified Public Accountants Co., Ltd. as the company’s auditor and authorize the Board of Directors to make the decision",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.706,
+        628.634,
+        538.642,
+        645.391
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "3. Re-appoint Bochun Certified Public Accountants Co., Ltd. as the company’s auditor and authorize the Board of Directors to make the decision"
+      },
+      "layout_risk": {
+        "length_ratio": 4.438,
+        "bbox_width": 481.936,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p0_b11_l1",
+      "page_index": 0,
+      "source_text": "其截至2026 年12月31日止年度酬金。",
+      "translation_zh": "Its remuneration for the year ending December 31, 2026.",
+      "target_text": "Its remuneration for the year ending December 31, 2026.",
+      "translation_en": "Its remuneration for the year ending December 31, 2026.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.378,
+        647.64,
+        321.503,
+        664.397
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Its remuneration for the year ending December 31, 2026.",
+        "short_label_en": "Its remuneration for the"
+      },
+      "layout_risk": {
+        "length_ratio": 2.619,
+        "bbox_width": 242.125,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b1_l0",
+      "page_index": 1,
+      "source_text": "4. 考慮及酌情通過（不論有否修訂）下列以特別事項方式提呈之決議案",
+      "translation_zh": "4. Consider and, as appropriate, pass (with or without amendments) the following resolutions proposed in the form of special matters",
+      "target_text": "4. Consider and, as appropriate, pass (with or without amendments) the following resolutions proposed in the form of special matters",
+      "translation_en": "4. Consider and, as appropriate, pass (with or without amendments) the following resolutions proposed in the form of special matters",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.693,
+        54.379,
+        538.49,
+        71.136
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "4. Consider and, as appropriate, pass (with or without amendments) the following resolutions proposed in the form of special matters"
+      },
+      "layout_risk": {
+        "length_ratio": 4.0,
+        "bbox_width": 481.797,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b1_l1",
+      "page_index": 1,
+      "source_text": "為普通決議案：",
+      "translation_zh": "For ordinary resolutions:",
+      "target_text": "For ordinary resolutions:",
+      "translation_en": "For ordinary resolutions:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.365,
+        73.385,
+        185.315,
+        90.064
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "For ordinary resolutions:",
+        "short_label_en": "For ordinary resolutions:"
+      },
+      "layout_risk": {
+        "length_ratio": 3.571,
+        "bbox_width": 105.95,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b2_l0",
+      "page_index": 1,
+      "source_text": "(A) 「動議：",
+      "translation_zh": "(A) \"Motion:",
+      "target_text": "(A) \"Motion:",
+      "translation_en": "(A) \"Motion:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.365,
+        111.085,
+        151.112,
+        128.141
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(A) \"Motion:",
+        "short_label_en": "(A) \"Motion:"
+      },
+      "layout_risk": {
+        "length_ratio": 1.5,
+        "bbox_width": 71.747,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p1_b3_l0",
+      "page_index": 1,
+      "source_text": "(i) 在下文第(iii)段之規限下，一般及無條件批准董事在有關期間",
+      "translation_zh": "(i) Subject to paragraph (iii) below, give general and unconditional approval to the directors for the relevant period",
+      "target_text": "(i) Subject to paragraph (iii) below, give general and unconditional approval to the directors for the relevant period",
+      "translation_en": "(i) Subject to paragraph (iii) below, give general and unconditional approval to the directors for the relevant period",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.037,
+        149.383,
+        538.578,
+        166.14
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(i) Subject to paragraph (iii) below, give general and unconditional approval to the directors for the relevant period"
+      },
+      "layout_risk": {
+        "length_ratio": 3.471,
+        "bbox_width": 436.541,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b3_l1",
+      "page_index": 1,
+      "source_text": "（定義見下文）內行使本公司一切權力，配發、發行及處理本公",
+      "translation_zh": "(as defined below) shall exercise all the powers of the Company to allot, issue and process the Company’s",
+      "target_text": "(as defined below) shall exercise all the powers of the Company to allot, issue and process the Company’s",
+      "translation_en": "(as defined below) shall exercise all the powers of the Company to allot, issue and process the Company’s",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        118.209,
+        168.389,
+        538.551,
+        185.068
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(as defined below) shall exercise all the powers of the Company to allot, issue and process the Company’s"
+      },
+      "layout_risk": {
+        "length_ratio": 3.75,
+        "bbox_width": 420.342,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b3_l2",
+      "page_index": 1,
+      "source_text": "司股本中之新增股份，以及作出或授予可能需行使該等權力",
+      "translation_zh": "new shares in the company's share capital and the making or granting of such powers as may be required to exercise",
+      "target_text": "new shares in the company's share capital and the making or granting of such powers as may be required to exercise",
+      "translation_en": "new shares in the company's share capital and the making or granting of such powers as may be required to exercise",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.709,
+        187.395,
+        538.518,
+        204.074
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "new shares in the company's share capital and the making or granting of such powers as may be required to exercise"
+      },
+      "layout_risk": {
+        "length_ratio": 4.385,
+        "bbox_width": 413.809,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b3_l3",
+      "page_index": 1,
+      "source_text": "之售股建議、協議、購股權（包括債券、認股權證及可轉換為",
+      "translation_zh": "share sale proposals, agreements, share options (including bonds, warrants and convertible",
+      "target_text": "share sale proposals, agreements, share options (including bonds, warrants and convertible",
+      "translation_en": "share sale proposals, agreements, share options (including bonds, warrants and convertible",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.709,
+        206.401,
+        538.638,
+        223.08
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "share sale proposals, agreements, share options (including bonds, warrants and convertible"
+      },
+      "layout_risk": {
+        "length_ratio": 3.333,
+        "bbox_width": 413.929,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b3_l4",
+      "page_index": 1,
+      "source_text": "本公司股份之債權證）及交換或轉換權，惟須遵守及按照所有",
+      "translation_zh": "debentures of the Company’s shares) and rights of exchange or conversion, subject to compliance with and in accordance with all",
+      "target_text": "debentures of the Company’s shares) and rights of exchange or conversion, subject to compliance with and in accordance with all",
+      "translation_en": "debentures of the Company’s shares) and rights of exchange or conversion, subject to compliance with and in accordance with all",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.709,
+        225.407,
+        538.576,
+        242.086
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "debentures of the Company’s shares) and rights of exchange or conversion, subject to compliance with and in accordance with all"
+      },
+      "layout_risk": {
+        "length_ratio": 4.704,
+        "bbox_width": 413.867,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b3_l5",
+      "page_index": 1,
+      "source_text": "適用法例及經不時修訂之香港聯合交易所有限公司（「聯交所」）",
+      "translation_zh": "Applicable Laws and Regulations of The Stock Exchange of Hong Kong Limited (the “Exchange”) as amended from time to time",
+      "target_text": "Applicable Laws and Regulations of The Stock Exchange of Hong Kong Limited (the “Exchange”) as amended from time to time",
+      "translation_en": "Applicable Laws and Regulations of The Stock Exchange of Hong Kong Limited (the “Exchange”) as amended from time to time",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.709,
+        244.114,
+        545.077,
+        261.092
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Applicable Laws and Regulations of The Stock Exchange of Hong Kong Limited (the “Exchange”) as amended from time to time"
+      },
+      "layout_risk": {
+        "length_ratio": 4.138,
+        "bbox_width": 420.368,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b3_l6",
+      "page_index": 1,
+      "source_text": "證券上市規則（「上市規則」）之規定；",
+      "translation_zh": "the requirements of the Rules Governing the Listing of Securities (the \"Listing Rules\");",
+      "target_text": "the requirements of the Rules Governing the Listing of Securities (the \"Listing Rules\");",
+      "translation_en": "the requirements of the Rules Governing the Listing of Securities (the \"Listing Rules\");",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.722,
+        263.12,
+        366.327,
+        280.098
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "the requirements of the Rules Governing the Listing of Securities (the \"Listing Rules\");",
+        "short_label_en": "the requirements of the"
+      },
+      "layout_risk": {
+        "length_ratio": 4.889,
+        "bbox_width": 241.605,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b4_l0",
+      "page_index": 1,
+      "source_text": "(ii) 批准上文(i) 段，即授權董事於有關期間作出或授予可能需於",
+      "translation_zh": "(ii) approve paragraph (i) above, which authorizes the directors to make or grant during the relevant period which may require",
+      "target_text": "(ii) approve paragraph (i) above, which authorizes the directors to make or grant during the relevant period which may require",
+      "translation_en": "(ii) approve paragraph (i) above, which authorizes the directors to make or grant during the relevant period which may require",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.05,
+        301.418,
+        538.508,
+        318.175
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(ii) approve paragraph (i) above, which authorizes the directors to make or grant during the relevant period which may require"
+      },
+      "layout_risk": {
+        "length_ratio": 3.706,
+        "bbox_width": 436.458,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b4_l1",
+      "page_index": 1,
+      "source_text": "有關期間結束後行使該等權力之售股建議、協議、購股權（包",
+      "translation_zh": "Share sale proposals, agreements, share options (including",
+      "target_text": "Share sale proposals, agreements, share options (including",
+      "translation_en": "Share sale proposals, agreements, share options (including",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.722,
+        320.424,
+        538.578,
+        337.103
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Share sale proposals, agreements, share options (including"
+      },
+      "layout_risk": {
+        "length_ratio": 2.148,
+        "bbox_width": 413.856,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p1_b4_l2",
+      "page_index": 1,
+      "source_text": "括債券、認股權證及可轉換為本公司股份之債權證）及交換或",
+      "translation_zh": "including bonds, warrants and debentures convertible into shares of the Company) and exchange or",
+      "target_text": "including bonds, warrants and debentures convertible into shares of the Company) and exchange or",
+      "translation_en": "including bonds, warrants and debentures convertible into shares of the Company) and exchange or",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.722,
+        339.43,
+        538.589,
+        356.109
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "including bonds, warrants and debentures convertible into shares of the Company) and exchange or"
+      },
+      "layout_risk": {
+        "length_ratio": 3.556,
+        "bbox_width": 413.867,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b4_l3",
+      "page_index": 1,
+      "source_text": "轉換權；",
+      "translation_zh": "right of conversion;",
+      "target_text": "right of conversion;",
+      "translation_en": "right of conversion;",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.722,
+        358.436,
+        182.897,
+        375.115
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "right of conversion;",
+        "short_label_en": "right of conversion;"
+      },
+      "layout_risk": {
+        "length_ratio": 5.0,
+        "bbox_width": 58.175,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l0",
+      "page_index": 1,
+      "source_text": "(iii) 董事依據上文(i) 段之批准而配發或發行或同意有條件或無條",
+      "translation_zh": "(iii) The directors allot or issue or agree conditionally or unconditionally pursuant to the approval in paragraph (i) above",
+      "target_text": "(iii) The directors allot or issue or agree conditionally or unconditionally pursuant to the approval in paragraph (i) above",
+      "translation_en": "(iii) The directors allot or issue or agree conditionally or unconditionally pursuant to the approval in paragraph (i) above",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.05,
+        396.435,
+        538.616,
+        413.192
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(iii) The directors allot or issue or agree conditionally or unconditionally pursuant to the approval in paragraph (i) above"
+      },
+      "layout_risk": {
+        "length_ratio": 3.543,
+        "bbox_width": 436.566,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l1",
+      "page_index": 1,
+      "source_text": "件配發及發行（不論是否根據購股權或其他方式配發）之股本",
+      "translation_zh": "share capital allotted and issued (whether allotted under share options or otherwise)",
+      "target_text": "share capital allotted and issued (whether allotted under share options or otherwise)",
+      "translation_en": "share capital allotted and issued (whether allotted under share options or otherwise)",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.722,
+        415.441,
+        538.499,
+        432.12
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "share capital allotted and issued (whether allotted under share options or otherwise)"
+      },
+      "layout_risk": {
+        "length_ratio": 3.148,
+        "bbox_width": 413.777,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l2",
+      "page_index": 1,
+      "source_text": "面值總額不得超過於本決議案獲通過當日之本公司已發行股",
+      "translation_zh": "The total par value shall not exceed the number of issued shares of the Company on the date this resolution is passed.",
+      "target_text": "The total par value shall not exceed the number of issued shares of the Company on the date this resolution is passed.",
+      "translation_en": "The total par value shall not exceed the number of issued shares of the Company on the date this resolution is passed.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.722,
+        434.447,
+        538.447,
+        451.126
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The total par value shall not exceed the number of issued shares of the Company on the date this resolution is passed."
+      },
+      "layout_risk": {
+        "length_ratio": 4.538,
+        "bbox_width": 413.725,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l3",
+      "page_index": 1,
+      "source_text": "本面值總額之20%，惟根據(a) 供股（定義見下文），或(b) 按本公",
+      "translation_zh": "20% of the aggregate nominal value of the Company, subject to (a) the Rights Issue (as defined below), or (b) the Company’s",
+      "target_text": "20% of the aggregate nominal value of the Company, subject to (a) the Rights Issue (as defined below), or (b) the Company’s",
+      "translation_en": "20% of the aggregate nominal value of the Company, subject to (a) the Rights Issue (as defined below), or (b) the Company’s",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.722,
+        453.453,
+        538.596,
+        470.21
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "20% of the aggregate nominal value of the Company, subject to (a) the Rights Issue (as defined below), or (b) the Company’s"
+      },
+      "layout_risk": {
+        "length_ratio": 3.514,
+        "bbox_width": 413.874,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l4",
+      "page_index": 1,
+      "source_text": "司已採納之任何購股權計劃或類似安排行使購股權，以授予",
+      "translation_zh": "any share option scheme or similar arrangement adopted by the Company to exercise share options to grant",
+      "target_text": "any share option scheme or similar arrangement adopted by the Company to exercise share options to grant",
+      "translation_en": "any share option scheme or similar arrangement adopted by the Company to exercise share options to grant",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.735,
+        472.459,
+        538.543,
+        489.138
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "any share option scheme or similar arrangement adopted by the Company to exercise share options to grant"
+      },
+      "layout_risk": {
+        "length_ratio": 4.0,
+        "bbox_width": 413.808,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l5",
+      "page_index": 1,
+      "source_text": "或發行予本公司及╱或其任何附屬公司之僱員及董事及╱或",
+      "translation_zh": "or issued to the employees and directors of the Company and/or any of its subsidiaries and/or",
+      "target_text": "or issued to the employees and directors of the Company and/or any of its subsidiaries and/or",
+      "translation_en": "or issued to the employees and directors of the Company and/or any of its subsidiaries and/or",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.735,
+        491.465,
+        538.634,
+        508.144
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "or issued to the employees and directors of the Company and/or any of its subsidiaries and/or"
+      },
+      "layout_risk": {
+        "length_ratio": 3.577,
+        "bbox_width": 413.899,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l6",
+      "page_index": 1,
+      "source_text": "有關計劃或安排所指定的其他合資格參與者認購股份之購股",
+      "translation_zh": "Purchase of shares by other eligible participants specified in the relevant scheme or arrangement",
+      "target_text": "Purchase of shares by other eligible participants specified in the relevant scheme or arrangement",
+      "translation_en": "Purchase of shares by other eligible participants specified in the relevant scheme or arrangement",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.735,
+        510.471,
+        538.46,
+        527.15
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Purchase of shares by other eligible participants specified in the relevant scheme or arrangement"
+      },
+      "layout_risk": {
+        "length_ratio": 3.731,
+        "bbox_width": 413.725,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l7",
+      "page_index": 1,
+      "source_text": "權或收購股份之權利，或(c) 按本公司可能發行之任何認股權",
+      "translation_zh": "rights or rights to acquire shares, or (c) pursuant to any share options that may be issued by the Company",
+      "target_text": "rights or rights to acquire shares, or (c) pursuant to any share options that may be issued by the Company",
+      "translation_en": "rights or rights to acquire shares, or (c) pursuant to any share options that may be issued by the Company",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.735,
+        529.477,
+        538.616,
+        546.234
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "rights or rights to acquire shares, or (c) pursuant to any share options that may be issued by the Company"
+      },
+      "layout_risk": {
+        "length_ratio": 3.655,
+        "bbox_width": 413.881,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l8",
+      "page_index": 1,
+      "source_text": "證所附之認購權獲行使而發行股份，或(d) 根據本公司組織章",
+      "translation_zh": "shares are issued upon the exercise of the subscription rights attached to the certificates, or (d) in accordance with the Company’s articles of association",
+      "target_text": "shares are issued upon the exercise of the subscription rights attached to the certificates, or (d) in accordance with the Company’s articles of association",
+      "translation_en": "shares are issued upon the exercise of the subscription rights attached to the certificates, or (d) in accordance with the Company’s articles of association",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.735,
+        548.483,
+        538.564,
+        565.24
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "shares are issued upon the exercise of the subscription rights attached to the certificates, or (d) in accordance with the Company’s articles of association"
+      },
+      "layout_risk": {
+        "length_ratio": 5.379,
+        "bbox_width": 413.829,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l9",
+      "page_index": 1,
+      "source_text": "程大綱及組織章程細則發行股份作為代息股份或類似安排除",
+      "translation_zh": "The memorandum and articles of association exclude the issue of shares as scrip shares or similar arrangements.",
+      "target_text": "The memorandum and articles of association exclude the issue of shares as scrip shares or similar arrangements.",
+      "translation_en": "The memorandum and articles of association exclude the issue of shares as scrip shares or similar arrangements.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.735,
+        567.489,
+        538.46,
+        584.168
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The memorandum and articles of association exclude the issue of shares as scrip shares or similar arrangements."
+      },
+      "layout_risk": {
+        "length_ratio": 4.269,
+        "bbox_width": 413.725,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p1_b5_l10",
+      "page_index": 1,
+      "source_text": "外，而上述批准亦須受此數額限制；及",
+      "translation_zh": "In addition, the above approval shall also be subject to this amount; and",
+      "target_text": "In addition, the above approval shall also be subject to this amount; and",
+      "translation_en": "In addition, the above approval shall also be subject to this amount; and",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.735,
+        586.495,
+        382.135,
+        603.174
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "In addition, the above approval shall also be subject to this amount; and",
+        "short_label_en": "In addition, the above"
+      },
+      "layout_risk": {
+        "length_ratio": 4.294,
+        "bbox_width": 257.4,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b1_l0",
+      "page_index": 2,
+      "source_text": "(iv) 就本決議案而言：",
+      "translation_zh": "(iv) For the purpose of this resolution:",
+      "target_text": "(iv) For the purpose of this resolution:",
+      "translation_en": "(iv) For the purpose of this resolution:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.047,
+        54.379,
+        246.594,
+        71.136
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(iv) For the purpose of this resolution:",
+        "short_label_en": "(iv) For the purpose"
+      },
+      "layout_risk": {
+        "length_ratio": 3.077,
+        "bbox_width": 144.547,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b2_l0",
+      "page_index": 2,
+      "source_text": "「有關期間」乃指由本決議案獲通過當日起至下列三者中最早",
+      "translation_zh": "\"Relevant Period\" means from the date of passing this resolution to the earliest of the following three",
+      "target_text": "\"Relevant Period\" means from the date of passing this resolution to the earliest of the following three",
+      "translation_en": "\"Relevant Period\" means from the date of passing this resolution to the earliest of the following three",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        118.219,
+        92.378,
+        538.607,
+        109.057
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "\"Relevant Period\" means from the date of passing this resolution to the earliest of the following three"
+      },
+      "layout_risk": {
+        "length_ratio": 3.815,
+        "bbox_width": 420.388,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b2_l1",
+      "page_index": 2,
+      "source_text": "之日期止之期間：",
+      "translation_zh": "Period ending on date:",
+      "target_text": "Period ending on date:",
+      "translation_en": "Period ending on date:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        111.384,
+        246.594,
+        128.063
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Period ending on date:",
+        "short_label_en": "Period ending on date:"
+      },
+      "layout_risk": {
+        "length_ratio": 2.75,
+        "bbox_width": 121.875,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b3_l0",
+      "page_index": 2,
+      "source_text": "(a) 本公司下屆股東週年大會結束時，除非授權於大會上以普",
+      "translation_zh": "(a) At the end of the next annual general meeting of the Company, unless the general meeting is authorized to",
+      "target_text": "(a) At the end of the next annual general meeting of the Company, unless the general meeting is authorized to",
+      "translation_en": "(a) At the end of the next annual general meeting of the Company, unless the general meeting is authorized to",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        149.383,
+        538.597,
+        166.14
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(a) At the end of the next annual general meeting of the Company, unless the general meeting is authorized to"
+      },
+      "layout_risk": {
+        "length_ratio": 3.759,
+        "bbox_width": 413.878,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b3_l1",
+      "page_index": 2,
+      "source_text": "通決議案方式獲無條件或有條件重續；",
+      "translation_zh": "The method of passing the resolution is renewed unconditionally or conditionally;",
+      "target_text": "The method of passing the resolution is renewed unconditionally or conditionally;",
+      "translation_en": "The method of passing the resolution is renewed unconditionally or conditionally;",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        147.391,
+        168.389,
+        412.591,
+        185.068
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The method of passing the resolution is renewed unconditionally or conditionally;",
+        "short_label_en": "The method of passing"
+      },
+      "layout_risk": {
+        "length_ratio": 4.765,
+        "bbox_width": 265.2,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b4_l0",
+      "page_index": 2,
+      "source_text": "(b) 本公司根據任何適用開曼群島法律或組織章程細則規定",
+      "translation_zh": "(b) The Company shall, in accordance with any applicable Cayman Islands law or Articles of Association,",
+      "target_text": "(b) The Company shall, in accordance with any applicable Cayman Islands law or Articles of Association,",
+      "translation_en": "(b) The Company shall, in accordance with any applicable Cayman Islands law or Articles of Association,",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        206.388,
+        538.626,
+        223.145
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(b) The Company shall, in accordance with any applicable Cayman Islands law or Articles of Association,"
+      },
+      "layout_risk": {
+        "length_ratio": 3.679,
+        "bbox_width": 413.907,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b4_l1",
+      "page_index": 2,
+      "source_text": "須舉行下屆股東週年大會之期限屆滿時；或",
+      "translation_zh": "When the period within which the next annual general meeting is required to be held expires; or",
+      "target_text": "When the period within which the next annual general meeting is required to be held expires; or",
+      "translation_en": "When the period within which the next annual general meeting is required to be held expires; or",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        147.391,
+        225.394,
+        441.841,
+        242.073
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "When the period within which the next annual general meeting is required to be held expires; or",
+        "short_label_en": "When the period within"
+      },
+      "layout_risk": {
+        "length_ratio": 5.0,
+        "bbox_width": 294.45,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b5_l0",
+      "page_index": 2,
+      "source_text": "(c) 本決議案所述之授權於股東大會上藉通過本公司普通決",
+      "translation_zh": "(c) The authorization mentioned in this resolution shall be passed by ordinary resolution of the Company at the general meeting of shareholders.",
+      "target_text": "(c) The authorization mentioned in this resolution shall be passed by ordinary resolution of the Company at the general meeting of shareholders.",
+      "translation_en": "(c) The authorization mentioned in this resolution shall be passed by ordinary resolution of the Company at the general meeting of shareholders.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        263.393,
+        538.626,
+        280.15
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(c) The authorization mentioned in this resolution shall be passed by ordinary resolution of the Company at the general meeting of shareholders."
+      },
+      "layout_risk": {
+        "length_ratio": 5.143,
+        "bbox_width": 413.907,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b5_l1",
+      "page_index": 2,
+      "source_text": "議案予以撤銷、修訂或重續之日。",
+      "translation_zh": "The date on which the proposal is withdrawn, revised or renewed.",
+      "target_text": "The date on which the proposal is withdrawn, revised or renewed.",
+      "translation_en": "The date on which the proposal is withdrawn, revised or renewed.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        147.391,
+        282.399,
+        375.541,
+        299.078
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The date on which the proposal is withdrawn, revised or renewed.",
+        "short_label_en": "The date on which"
+      },
+      "layout_risk": {
+        "length_ratio": 4.267,
+        "bbox_width": 228.15,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b6_l0",
+      "page_index": 2,
+      "source_text": "「供股」乃指董事於所定期間內根據於某一指定記錄日期名列",
+      "translation_zh": "\"Rights Issue\" means a Director's appointment on a specified record date for a specified period",
+      "target_text": "\"Rights Issue\" means a Director's appointment on a specified record date for a specified period",
+      "translation_en": "\"Rights Issue\" means a Director's appointment on a specified record date for a specified period",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        118.219,
+        320.398,
+        538.612,
+        337.077
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "\"Rights Issue\" means a Director's appointment on a specified record date for a specified period"
+      },
+      "layout_risk": {
+        "length_ratio": 3.519,
+        "bbox_width": 420.393,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b6_l1",
+      "page_index": 2,
+      "source_text": "本公司股東名冊之股東於該日持有股份之比例向彼等提出發",
+      "translation_zh": "Shareholders on the company's shareholder list hold shares in proportion to their shares on that date.",
+      "target_text": "Shareholders on the company's shareholder list hold shares in proportion to their shares on that date.",
+      "translation_en": "Shareholders on the company's shareholder list hold shares in proportion to their shares on that date.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        339.404,
+        538.444,
+        356.083
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Shareholders on the company's shareholder list hold shares in proportion to their shares on that date."
+      },
+      "layout_risk": {
+        "length_ratio": 3.923,
+        "bbox_width": 413.725,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b6_l2",
+      "page_index": 2,
+      "source_text": "售股份之建議（惟董事可就零碎股權或任何有關司法權區法",
+      "translation_zh": "proposal to sell shares (but the directors may",
+      "target_text": "proposal to sell shares (but the directors may",
+      "translation_en": "proposal to sell shares (but the directors may",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        358.41,
+        538.576,
+        375.089
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "proposal to sell shares (but the directors may"
+      },
+      "layout_risk": {
+        "length_ratio": 1.769,
+        "bbox_width": 413.857,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p2_b6_l3",
+      "page_index": 2,
+      "source_text": "例之任何法律限制，或香港以外任何地區之任何認可監管機",
+      "translation_zh": "any legal restrictions, or any recognized regulatory authority in any area outside Hong Kong",
+      "target_text": "any legal restrictions, or any recognized regulatory authority in any area outside Hong Kong",
+      "translation_en": "any legal restrictions, or any recognized regulatory authority in any area outside Hong Kong",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        377.416,
+        538.527,
+        394.095
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "any legal restrictions, or any recognized regulatory authority in any area outside Hong Kong"
+      },
+      "layout_risk": {
+        "length_ratio": 3.538,
+        "bbox_width": 413.808,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b6_l4",
+      "page_index": 2,
+      "source_text": "構或任何證券交易所之適用於本公司的規定，作出其認為必",
+      "translation_zh": "regulations of any institution or any stock exchange applicable to the Company and make any decisions it deems necessary.",
+      "target_text": "regulations of any institution or any stock exchange applicable to the Company and make any decisions it deems necessary.",
+      "translation_en": "regulations of any institution or any stock exchange applicable to the Company and make any decisions it deems necessary.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        396.422,
+        538.527,
+        413.101
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "regulations of any institution or any stock exchange applicable to the Company and make any decisions it deems necessary."
+      },
+      "layout_risk": {
+        "length_ratio": 4.654,
+        "bbox_width": 413.808,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b6_l5",
+      "page_index": 2,
+      "source_text": "須或權宜之豁免或其他安排）。」",
+      "translation_zh": "exemptions or other arrangements that are necessary or expedient). \"",
+      "target_text": "exemptions or other arrangements that are necessary or expedient). \"",
+      "translation_en": "exemptions or other arrangements that are necessary or expedient). \"",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        415.428,
+        346.369,
+        432.107
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "exemptions or other arrangements that are necessary or expedient). \"",
+        "short_label_en": "exemptions or other arrangements"
+      },
+      "layout_risk": {
+        "length_ratio": 4.533,
+        "bbox_width": 221.65,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b7_l0",
+      "page_index": 2,
+      "source_text": "(B) 「動議：",
+      "translation_zh": "(B) \"Motion:",
+      "target_text": "(B) \"Motion:",
+      "translation_en": "(B) \"Motion:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.362,
+        453.128,
+        151.109,
+        470.184
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(B) \"Motion:",
+        "short_label_en": "(B) \"Motion:"
+      },
+      "layout_risk": {
+        "length_ratio": 1.5,
+        "bbox_width": 71.747,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p2_b8_l0",
+      "page_index": 2,
+      "source_text": "(i) 在下文(ii)段之規限下，一般及無條件批准董事在有關期間內",
+      "translation_zh": "(i) Subject to paragraph (ii) below, give general and unconditional approval to the directors during the relevant period",
+      "target_text": "(i) Subject to paragraph (ii) below, give general and unconditional approval to the directors during the relevant period",
+      "translation_en": "(i) Subject to paragraph (ii) below, give general and unconditional approval to the directors during the relevant period",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.034,
+        491.426,
+        538.521,
+        508.183
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(i) Subject to paragraph (ii) below, give general and unconditional approval to the directors during the relevant period"
+      },
+      "layout_risk": {
+        "length_ratio": 3.636,
+        "bbox_width": 436.487,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b8_l1",
+      "page_index": 2,
+      "source_text": "行使本公司一切權力在聯交所或股份可能上市並經由聯交所",
+      "translation_zh": "The exercise of all the powers of the Company on the Stock Exchange or the shares may be listed on and through the Stock Exchange",
+      "target_text": "The exercise of all the powers of the Company on the Stock Exchange or the shares may be listed on and through the Stock Exchange",
+      "translation_en": "The exercise of all the powers of the Company on the Stock Exchange or the shares may be listed on and through the Stock Exchange",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.693,
+        510.432,
+        538.418,
+        527.111
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The exercise of all the powers of the Company on the Stock Exchange or the shares may be listed on and through the Stock Exchange"
+      },
+      "layout_risk": {
+        "length_ratio": 4.962,
+        "bbox_width": 413.725,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b8_l2",
+      "page_index": 2,
+      "source_text": "及香港證券及期貨事務監察委員會（「證監會」）就此認可之任",
+      "translation_zh": "and the Hong Kong Securities and Futures Commission (the “SFC”)",
+      "target_text": "and the Hong Kong Securities and Futures Commission (the “SFC”)",
+      "translation_en": "and the Hong Kong Securities and Futures Commission (the “SFC”)",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.693,
+        529.139,
+        538.527,
+        546.117
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "and the Hong Kong Securities and Futures Commission (the “SFC”)"
+      },
+      "layout_risk": {
+        "length_ratio": 2.25,
+        "bbox_width": 413.834,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p2_b8_l3",
+      "page_index": 2,
+      "source_text": "何其他證券交易所購買或以其他方式收購本公司股本之股份，",
+      "translation_zh": "purchase or otherwise acquire shares of the Company’s capital stock on any other stock exchange,",
+      "target_text": "purchase or otherwise acquire shares of the Company’s capital stock on any other stock exchange,",
+      "translation_en": "purchase or otherwise acquire shares of the Company’s capital stock on any other stock exchange,",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.693,
+        548.444,
+        538.418,
+        565.123
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "purchase or otherwise acquire shares of the Company’s capital stock on any other stock exchange,"
+      },
+      "layout_risk": {
+        "length_ratio": 3.556,
+        "bbox_width": 413.725,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b8_l4",
+      "page_index": 2,
+      "source_text": "惟須遵守及按照證監會、聯交所或任何其他證券交易所不時",
+      "translation_zh": "Subject to and in accordance with the provisions of the Securities and Futures Commission, the Stock Exchange or any other stock exchange from time to time",
+      "target_text": "Subject to and in accordance with the provisions of the Securities and Futures Commission, the Stock Exchange or any other stock exchange from time to time",
+      "translation_en": "Subject to and in accordance with the provisions of the Securities and Futures Commission, the Stock Exchange or any other stock exchange from time to time",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.693,
+        567.45,
+        538.501,
+        584.129
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Subject to and in accordance with the provisions of the Securities and Futures Commission, the Stock Exchange or any other stock exchange from time to time"
+      },
+      "layout_risk": {
+        "length_ratio": 5.962,
+        "bbox_width": 413.808,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b8_l5",
+      "page_index": 2,
+      "source_text": "修訂之所有適用規則及法規以及所有相關適用法例；",
+      "translation_zh": "All applicable rules and regulations as amended and all relevant applicable legislation;",
+      "target_text": "All applicable rules and regulations as amended and all relevant applicable legislation;",
+      "translation_en": "All applicable rules and regulations as amended and all relevant applicable legislation;",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.693,
+        586.456,
+        485.443,
+        603.135
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "All applicable rules and regulations as amended and all relevant applicable legislation;",
+        "short_label_en": "All applicable rules and"
+      },
+      "layout_risk": {
+        "length_ratio": 3.826,
+        "bbox_width": 360.75,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b9_l0",
+      "page_index": 2,
+      "source_text": "(ii) 上文(i) 段之批准授權購買本公司股份之面值總額不得超過本",
+      "translation_zh": "(ii) The total par value of the authorized authorization to purchase the Company’s shares in paragraph (i) above shall not exceed the",
+      "target_text": "(ii) The total par value of the authorized authorization to purchase the Company’s shares in paragraph (i) above shall not exceed the",
+      "translation_en": "(ii) The total par value of the authorized authorization to purchase the Company’s shares in paragraph (i) above shall not exceed the",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.021,
+        624.455,
+        538.6,
+        641.212
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(ii) The total par value of the authorized authorization to purchase the Company’s shares in paragraph (i) above shall not exceed the"
+      },
+      "layout_risk": {
+        "length_ratio": 3.912,
+        "bbox_width": 436.579,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b9_l1",
+      "page_index": 2,
+      "source_text": "公司於本決議案通過當日已發行股本面值總額之10%，而上",
+      "translation_zh": "10% of the total face value of the company’s issued share capital on the day this resolution is passed, and",
+      "target_text": "10% of the total face value of the company’s issued share capital on the day this resolution is passed, and",
+      "translation_en": "10% of the total face value of the company’s issued share capital on the day this resolution is passed, and",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.693,
+        643.461,
+        538.551,
+        660.218
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "10% of the total face value of the company’s issued share capital on the day this resolution is passed, and"
+      },
+      "layout_risk": {
+        "length_ratio": 3.963,
+        "bbox_width": 413.858,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p2_b9_l2",
+      "page_index": 2,
+      "source_text": "述批准亦須受此數額限制；及",
+      "translation_zh": "Such approval shall also be subject to this amount; and",
+      "target_text": "Such approval shall also be subject to this amount; and",
+      "translation_en": "Such approval shall also be subject to this amount; and",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.693,
+        662.467,
+        323.593,
+        679.146
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Such approval shall also be subject to this amount; and",
+        "short_label_en": "Such approval shall also"
+      },
+      "layout_risk": {
+        "length_ratio": 4.231,
+        "bbox_width": 198.9,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b1_l0",
+      "page_index": 3,
+      "source_text": "(iii) 就本決議案而言：「有關期間」乃指由本決議案獲通過當日起",
+      "translation_zh": "(iii) For the purpose of this resolution: “relevant period” means from the date this resolution is passed",
+      "target_text": "(iii) For the purpose of this resolution: “relevant period” means from the date this resolution is passed",
+      "translation_en": "(iii) For the purpose of this resolution: “relevant period” means from the date this resolution is passed",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.047,
+        54.379,
+        538.657,
+        71.136
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(iii) For the purpose of this resolution: “relevant period” means from the date this resolution is passed"
+      },
+      "layout_risk": {
+        "length_ratio": 3.182,
+        "bbox_width": 436.61,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b1_l1",
+      "page_index": 3,
+      "source_text": "至下列三者中最早之日期止之期間：",
+      "translation_zh": "The period ending on the earliest of the following three dates:",
+      "target_text": "The period ending on the earliest of the following three dates:",
+      "translation_en": "The period ending on the earliest of the following three dates:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        73.385,
+        373.994,
+        90.064
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The period ending on the earliest of the following three dates:",
+        "short_label_en": "The period ending on"
+      },
+      "layout_risk": {
+        "length_ratio": 3.938,
+        "bbox_width": 249.275,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b2_l0",
+      "page_index": 3,
+      "source_text": "(a) 本公司下屆股東週年大會結束時，除非授權於大會上以普",
+      "translation_zh": "(a) At the end of the next annual general meeting of the Company, unless the general meeting is authorized to",
+      "target_text": "(a) At the end of the next annual general meeting of the Company, unless the general meeting is authorized to",
+      "translation_en": "(a) At the end of the next annual general meeting of the Company, unless the general meeting is authorized to",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        111.384,
+        538.597,
+        128.141
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(a) At the end of the next annual general meeting of the Company, unless the general meeting is authorized to"
+      },
+      "layout_risk": {
+        "length_ratio": 3.759,
+        "bbox_width": 413.878,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b2_l1",
+      "page_index": 3,
+      "source_text": "通決議案方式獲無條件或有條件重續；",
+      "translation_zh": "The method of passing the resolution is renewed unconditionally or conditionally;",
+      "target_text": "The method of passing the resolution is renewed unconditionally or conditionally;",
+      "translation_en": "The method of passing the resolution is renewed unconditionally or conditionally;",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        147.391,
+        130.39,
+        412.591,
+        147.069
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The method of passing the resolution is renewed unconditionally or conditionally;",
+        "short_label_en": "The method of passing"
+      },
+      "layout_risk": {
+        "length_ratio": 4.765,
+        "bbox_width": 265.2,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b3_l0",
+      "page_index": 3,
+      "source_text": "(b) 本公司根據任何適用開曼群島法律或組織章程細則規定",
+      "translation_zh": "(b) The Company shall, in accordance with any applicable Cayman Islands law or Articles of Association,",
+      "target_text": "(b) The Company shall, in accordance with any applicable Cayman Islands law or Articles of Association,",
+      "translation_en": "(b) The Company shall, in accordance with any applicable Cayman Islands law or Articles of Association,",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        168.389,
+        538.626,
+        185.146
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(b) The Company shall, in accordance with any applicable Cayman Islands law or Articles of Association,"
+      },
+      "layout_risk": {
+        "length_ratio": 3.679,
+        "bbox_width": 413.907,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b3_l1",
+      "page_index": 3,
+      "source_text": "須舉行下屆股東週年大會之期限屆滿時；或",
+      "translation_zh": "When the period within which the next annual general meeting is required to be held expires; or",
+      "target_text": "When the period within which the next annual general meeting is required to be held expires; or",
+      "translation_en": "When the period within which the next annual general meeting is required to be held expires; or",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        147.391,
+        187.395,
+        441.841,
+        204.074
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "When the period within which the next annual general meeting is required to be held expires; or",
+        "short_label_en": "When the period within"
+      },
+      "layout_risk": {
+        "length_ratio": 5.0,
+        "bbox_width": 294.45,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b4_l0",
+      "page_index": 3,
+      "source_text": "(c) 本決議案所述之授權於股東大會上藉通過本公司普通決",
+      "translation_zh": "(c) The authorization mentioned in this resolution shall be passed by ordinary resolution of the Company at the general meeting of shareholders.",
+      "target_text": "(c) The authorization mentioned in this resolution shall be passed by ordinary resolution of the Company at the general meeting of shareholders.",
+      "translation_en": "(c) The authorization mentioned in this resolution shall be passed by ordinary resolution of the Company at the general meeting of shareholders.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        124.719,
+        225.394,
+        538.626,
+        242.151
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(c) The authorization mentioned in this resolution shall be passed by ordinary resolution of the Company at the general meeting of shareholders."
+      },
+      "layout_risk": {
+        "length_ratio": 5.143,
+        "bbox_width": 413.907,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b4_l1",
+      "page_index": 3,
+      "source_text": "議案予以撤銷、修訂或重續之日。」",
+      "translation_zh": "The date on which the proposal is withdrawn, revised or renewed. \"",
+      "target_text": "The date on which the proposal is withdrawn, revised or renewed. \"",
+      "translation_en": "The date on which the proposal is withdrawn, revised or renewed. \"",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        147.391,
+        244.4,
+        388.866,
+        261.079
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The date on which the proposal is withdrawn, revised or renewed. \"",
+        "short_label_en": "The date on which"
+      },
+      "layout_risk": {
+        "length_ratio": 4.125,
+        "bbox_width": 241.475,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b5_l0",
+      "page_index": 3,
+      "source_text": "(C) 「動議：",
+      "translation_zh": "(C) \"Motion:",
+      "target_text": "(C) \"Motion:",
+      "translation_en": "(C) \"Motion:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.362,
+        282.1,
+        151.109,
+        299.156
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(C) \"Motion:",
+        "short_label_en": "(C) \"Motion:"
+      },
+      "layout_risk": {
+        "length_ratio": 1.5,
+        "bbox_width": 71.747,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p3_b6_l0",
+      "page_index": 3,
+      "source_text": "待召開本大會之通告所載之第4(A) 段及4(B) 段決議案獲通過後，",
+      "translation_zh": "Subject to the passing of the resolutions in paragraphs 4(A) and 4(B) of the notice convening this meeting,",
+      "target_text": "Subject to the passing of the resolutions in paragraphs 4(A) and 4(B) of the notice convening this meeting,",
+      "translation_en": "Subject to the passing of the resolutions in paragraphs 4(A) and 4(B) of the notice convening this meeting,",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.034,
+        320.398,
+        538.6,
+        337.155
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Subject to the passing of the resolutions in paragraphs 4(A) and 4(B) of the notice convening this meeting,"
+      },
+      "layout_risk": {
+        "length_ratio": 3.147,
+        "bbox_width": 436.566,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b6_l1",
+      "page_index": 3,
+      "source_text": "將根據召開本大會之通告所載第4(A) 段決議案而授予董事行使",
+      "translation_zh": "To be exercised by the Directors pursuant to the resolution set out in paragraph 4(A) of the notice convening this meeting",
+      "target_text": "To be exercised by the Directors pursuant to the resolution set out in paragraph 4(A) of the notice convening this meeting",
+      "translation_en": "To be exercised by the Directors pursuant to the resolution set out in paragraph 4(A) of the notice convening this meeting",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.034,
+        339.404,
+        538.594,
+        356.161
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "To be exercised by the Directors pursuant to the resolution set out in paragraph 4(A) of the notice convening this meeting"
+      },
+      "layout_risk": {
+        "length_ratio": 4.067,
+        "bbox_width": 436.56,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b6_l2",
+      "page_index": 3,
+      "source_text": "本公司權力以配發、發行及以其他方式處理本公司股份之一般",
+      "translation_zh": "The general power of the Company to allot, issue and otherwise deal with the shares of the Company",
+      "target_text": "The general power of the Company to allot, issue and otherwise deal with the shares of the Company",
+      "translation_en": "The general power of the Company to allot, issue and otherwise deal with the shares of the Company",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.034,
+        358.41,
+        538.652,
+        375.089
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The general power of the Company to allot, issue and otherwise deal with the shares of the Company"
+      },
+      "layout_risk": {
+        "length_ratio": 3.63,
+        "bbox_width": 436.618,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b6_l3",
+      "page_index": 3,
+      "source_text": "授權，並透過加入相當於本公司根據上文第4(B) 段所述決議案授",
+      "translation_zh": "Authorization and by joining an agreement equivalent to the authorization of the Company pursuant to the resolution mentioned in paragraph 4(B) above",
+      "target_text": "Authorization and by joining an agreement equivalent to the authorization of the Company pursuant to the resolution mentioned in paragraph 4(B) above",
+      "translation_en": "Authorization and by joining an agreement equivalent to the authorization of the Company pursuant to the resolution mentioned in paragraph 4(B) above",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.034,
+        377.416,
+        538.574,
+        394.173
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Authorization and by joining an agreement equivalent to the authorization of the Company pursuant to the resolution mentioned in paragraph 4(B) above"
+      },
+      "layout_risk": {
+        "length_ratio": 4.806,
+        "bbox_width": 436.54,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b6_l4",
+      "page_index": 3,
+      "source_text": "予本公司董事之授權而購買或以其他方式收購之本公司股份面",
+      "translation_zh": "The number of shares of the Company purchased or otherwise acquired with the authorization of the directors of the Company",
+      "target_text": "The number of shares of the Company purchased or otherwise acquired with the authorization of the directors of the Company",
+      "translation_en": "The number of shares of the Company purchased or otherwise acquired with the authorization of the directors of the Company",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.034,
+        396.422,
+        538.548,
+        413.101
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The number of shares of the Company purchased or otherwise acquired with the authorization of the directors of the Company"
+      },
+      "layout_risk": {
+        "length_ratio": 4.519,
+        "bbox_width": 436.514,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b6_l5",
+      "page_index": 3,
+      "source_text": "值總額之數目之股份，從而擴大一般授權；惟該數額不得超過本",
+      "translation_zh": "number of shares of total value, thereby extending the general mandate; but such amount shall not exceed the principal",
+      "target_text": "number of shares of total value, thereby extending the general mandate; but such amount shall not exceed the principal",
+      "translation_en": "number of shares of total value, thereby extending the general mandate; but such amount shall not exceed the principal",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.034,
+        415.428,
+        538.585,
+        432.107
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "number of shares of total value, thereby extending the general mandate; but such amount shall not exceed the principal"
+      },
+      "layout_risk": {
+        "length_ratio": 4.214,
+        "bbox_width": 436.551,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b6_l6",
+      "page_index": 3,
+      "source_text": "決議案通過當日本公司已發行股本面值總額之10%。」",
+      "translation_zh": "10% of the total face value of the company's issued share capital on the day the resolution is passed. \"",
+      "target_text": "10% of the total face value of the company's issued share capital on the day the resolution is passed. \"",
+      "translation_en": "10% of the total face value of the company's issued share capital on the day the resolution is passed. \"",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        102.034,
+        434.434,
+        470.688,
+        451.191
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "10% of the total face value of the company's issued share capital on the day the resolution is passed. \""
+      },
+      "layout_risk": {
+        "length_ratio": 4.16,
+        "bbox_width": 368.654,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b7_l0",
+      "page_index": 3,
+      "source_text": "承董事會命",
+      "translation_zh": "By order of the board of directors",
+      "target_text": "By order of the board of directors",
+      "translation_en": "By order of the board of directors",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        415.178,
+        472.433,
+        491.878,
+        489.112
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "By order of the board of directors",
+        "short_label_en": "By order of the board of directors"
+      },
+      "layout_risk": {
+        "length_ratio": 6.8,
+        "bbox_width": 76.7,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b7_l1",
+      "page_index": 3,
+      "source_text": "建業新生活有限公司",
+      "translation_zh": "Jianye New Life Co., Ltd.",
+      "target_text": "Jianye New Life Co., Ltd.",
+      "translation_en": "Jianye New Life Co., Ltd.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        383.328,
+        491.14,
+        523.728,
+        507.793
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Jianye New Life Co., Ltd.",
+        "short_label_en": "Jianye New Life Co., Ltd."
+      },
+      "layout_risk": {
+        "length_ratio": 2.778,
+        "bbox_width": 140.4,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b7_l2",
+      "page_index": 3,
+      "source_text": "主席",
+      "translation_zh": "President",
+      "target_text": "President",
+      "translation_en": "President",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        437.437,
+        510.379,
+        469.907,
+        527.058
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "President",
+        "short_label_en": "President"
+      },
+      "layout_risk": {
+        "length_ratio": 4.5,
+        "bbox_width": 32.47,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b7_l3",
+      "page_index": 3,
+      "source_text": "王俊",
+      "translation_zh": "Wang Jun",
+      "target_text": "Wang Jun",
+      "translation_en": "Wang Jun",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        439.081,
+        529.08,
+        468.006,
+        545.733
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Wang Jun",
+        "short_label_en": "Wang Jun"
+      },
+      "layout_risk": {
+        "length_ratio": 4.0,
+        "bbox_width": 28.925,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b8_l0",
+      "page_index": 3,
+      "source_text": "香港，2026 年4月20日",
+      "translation_zh": "Hong Kong, April 20, 2026",
+      "target_text": "Hong Kong, April 20, 2026",
+      "translation_en": "Hong Kong, April 20, 2026",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.699,
+        567.378,
+        194.824,
+        584.135
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Hong Kong, April 20, 2026",
+        "short_label_en": "Hong Kong, April 20, 2026"
+      },
+      "layout_risk": {
+        "length_ratio": 1.786,
+        "bbox_width": 138.125,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p3_b9_l0",
+      "page_index": 3,
+      "source_text": "附註：",
+      "translation_zh": "P.S.:",
+      "target_text": "P.S.:",
+      "translation_en": "P.S.:",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        55.302,
+        603.521,
+        94.052,
+        617.634
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "P.S.:",
+        "short_label_en": "P.S.:"
+      },
+      "layout_risk": {
+        "length_ratio": 1.667,
+        "bbox_width": 38.75,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p3_b10_l0",
+      "page_index": 3,
+      "source_text": "(a) 在會議上，大會主席將根據組織章程細則第66條的規定，以投票方式對上述各項",
+      "translation_zh": "(a) At the meeting, the Chairman of the General Assembly will vote on the above items in accordance with Article 66 of the Articles of Association.",
+      "target_text": "(a) At the meeting, the Chairman of the General Assembly will vote on the above items in accordance with Article 66 of the Articles of Association.",
+      "translation_en": "(a) At the meeting, the Chairman of the General Assembly will vote on the above items in accordance with Article 66 of the Articles of Association.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.693,
+        633.521,
+        538.624,
+        647.7
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(a) At the meeting, the Chairman of the General Assembly will vote on the above items in accordance with Article 66 of the Articles of Association."
+      },
+      "layout_risk": {
+        "length_ratio": 3.675,
+        "bbox_width": 481.931,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b10_l1",
+      "page_index": 3,
+      "source_text": "決議案進行表決。",
+      "translation_zh": "The resolution is voted on.",
+      "target_text": "The resolution is voted on.",
+      "translation_en": "The resolution is voted on.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.375,
+        648.525,
+        182.5,
+        662.638
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The resolution is voted on.",
+        "short_label_en": "The resolution is voted on."
+      },
+      "layout_risk": {
+        "length_ratio": 3.375,
+        "bbox_width": 103.125,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b11_l0",
+      "page_index": 3,
+      "source_text": "(b) 本公司將由2026 年5月27 日（星期三）至2026 年6月1日（星期一）（包括首尾兩日）暫停",
+      "translation_zh": "(b) The company will be suspended from May 27, 2026 (Wednesday) to June 1, 2026 (Monday) (both days inclusive)",
+      "target_text": "(b) The company will be suspended from May 27, 2026 (Wednesday) to June 1, 2026 (Monday) (both days inclusive)",
+      "translation_en": "(b) The company will be suspended from May 27, 2026 (Wednesday) to June 1, 2026 (Monday) (both days inclusive)",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.693,
+        678.522,
+        538.592,
+        692.701
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(b) The company will be suspended from May 27, 2026 (Wednesday) to June 1, 2026 (Monday) (both days inclusive)"
+      },
+      "layout_risk": {
+        "length_ratio": 2.115,
+        "bbox_width": 481.899,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p3_b11_l1",
+      "page_index": 3,
+      "source_text": "辦理股份過戶登記手續，期間將不會進行任何股份之過戶登記。確定股東出席",
+      "translation_zh": "During the share transfer registration procedures, no transfer registration of shares will be carried out. Confirm shareholder attendance",
+      "target_text": "During the share transfer registration procedures, no transfer registration of shares will be carried out. Confirm shareholder attendance",
+      "translation_en": "During the share transfer registration procedures, no transfer registration of shares will be carried out. Confirm shareholder attendance",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.375,
+        693.526,
+        538.714,
+        707.639
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "During the share transfer registration procedures, no transfer registration of shares will be carried out. Confirm shareholder attendance"
+      },
+      "layout_risk": {
+        "length_ratio": 4.029,
+        "bbox_width": 459.339,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p3_b11_l2",
+      "page_index": 3,
+      "source_text": "股東週年大會並於會上投票資格的記錄日期為2026 年6月1日（星期一）。為符合資",
+      "translation_zh": "The record date for the AGM and eligibility to vote at the meeting is Monday, June 1, 2026. To qualify",
+      "target_text": "The record date for the AGM and eligibility to vote at the meeting is Monday, June 1, 2026. To qualify",
+      "translation_en": "The record date for the AGM and eligibility to vote at the meeting is Monday, June 1, 2026. To qualify",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.375,
+        708.53,
+        538.586,
+        722.709
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The record date for the AGM and eligibility to vote at the meeting is Monday, June 1, 2026. To qualify"
+      },
+      "layout_risk": {
+        "length_ratio": 2.55,
+        "bbox_width": 459.211,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b1_l0",
+      "page_index": 4,
+      "source_text": "格出席大會，所有填妥的過戶表格連同有關股票須於2026 年5月26日（星期二）下",
+      "translation_zh": "To be eligible to attend the meeting, all completed transfer forms together with the relevant stock certificates must be submitted on May 26, 2026 (Tuesday).",
+      "target_text": "To be eligible to attend the meeting, all completed transfer forms together with the relevant stock certificates must be submitted on May 26, 2026 (Tuesday).",
+      "translation_en": "To be eligible to attend the meeting, all completed transfer forms together with the relevant stock certificates must be submitted on May 26, 2026 (Tuesday).",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        54.735,
+        538.585,
+        68.914
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "To be eligible to attend the meeting, all completed transfer forms together with the relevant stock certificates must be submitted on May 26, 2026 (Tuesday)."
+      },
+      "layout_risk": {
+        "length_ratio": 3.925,
+        "bbox_width": 459.215,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b1_l1",
+      "page_index": 4,
+      "source_text": "午四時三十分前送達本公司之香港股份過戶登記分處香港中央證券登記有限公司，",
+      "translation_zh": "be delivered to Computershare Hong Kong Investor Services Limited, the Company’s branch share registrar and transfer office in Hong Kong, before 4:30 noon,",
+      "target_text": "be delivered to Computershare Hong Kong Investor Services Limited, the Company’s branch share registrar and transfer office in Hong Kong, before 4:30 noon,",
+      "translation_en": "be delivered to Computershare Hong Kong Investor Services Limited, the Company’s branch share registrar and transfer office in Hong Kong, before 4:30 noon,",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        69.739,
+        538.477,
+        83.852
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "be delivered to Computershare Hong Kong Investor Services Limited, the Company’s branch share registrar and transfer office in Hong Kong, before 4:30 noon,"
+      },
+      "layout_risk": {
+        "length_ratio": 4.306,
+        "bbox_width": 459.107,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b1_l2",
+      "page_index": 4,
+      "source_text": "地址為香港灣仔皇后大道東183號合和中心17樓1712至1716號舖，以辦理登記手續。",
+      "translation_zh": "The address is Shop 1712-1716, 17th Floor, Hopewell Centre, 183 Queen's Road East, Wan Chai, Hong Kong for registration procedures.",
+      "target_text": "The address is Shop 1712-1716, 17th Floor, Hopewell Centre, 183 Queen's Road East, Wan Chai, Hong Kong for registration procedures.",
+      "translation_en": "The address is Shop 1712-1716, 17th Floor, Hopewell Centre, 183 Queen's Road East, Wan Chai, Hong Kong for registration procedures.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.37,
+        84.743,
+        538.554,
+        98.922
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The address is Shop 1712-1716, 17th Floor, Hopewell Centre, 183 Queen's Road East, Wan Chai, Hong Kong for registration procedures."
+      },
+      "layout_risk": {
+        "length_ratio": 3.047,
+        "bbox_width": 459.184,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b2_l0",
+      "page_index": 4,
+      "source_text": "(c) 凡有權出席大會並可於會上投票之股東，均有權委派一名代理人出席並代其投票。",
+      "translation_zh": "(c) Every shareholder entitled to attend and vote at the meeting is entitled to appoint a proxy to attend and vote on his behalf.",
+      "target_text": "(c) Every shareholder entitled to attend and vote at the meeting is entitled to appoint a proxy to attend and vote on his behalf.",
+      "translation_en": "(c) Every shareholder entitled to attend and vote at the meeting is entitled to appoint a proxy to attend and vote on his behalf.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.699,
+        114.74,
+        538.51,
+        128.919
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(c) Every shareholder entitled to attend and vote at the meeting is entitled to appoint a proxy to attend and vote on his behalf."
+      },
+      "layout_risk": {
+        "length_ratio": 3.225,
+        "bbox_width": 481.811,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b2_l1",
+      "page_index": 4,
+      "source_text": "凡有權出席大會並可於會上投票之持有兩股或以上股份之股東，均有權委派一",
+      "translation_zh": "Every shareholder holding two or more shares entitled to attend and vote at the meeting has the right to appoint a",
+      "target_text": "Every shareholder holding two or more shares entitled to attend and vote at the meeting has the right to appoint a",
+      "translation_en": "Every shareholder holding two or more shares entitled to attend and vote at the meeting has the right to appoint a",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        129.744,
+        538.466,
+        143.857
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Every shareholder holding two or more shares entitled to attend and vote at the meeting has the right to appoint a"
+      },
+      "layout_risk": {
+        "length_ratio": 3.353,
+        "bbox_width": 459.085,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b2_l2",
+      "page_index": 4,
+      "source_text": "名或多名代理人出席並代其投票。受委任代理人毌須為本公司股東，但按指定",
+      "translation_zh": "One or more proxies shall be present and vote on his behalf. The appointed agent does not need to be a shareholder of the company, but as designated",
+      "target_text": "One or more proxies shall be present and vote on his behalf. The appointed agent does not need to be a shareholder of the company, but as designated",
+      "translation_en": "One or more proxies shall be present and vote on his behalf. The appointed agent does not need to be a shareholder of the company, but as designated",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        144.748,
+        538.719,
+        158.861
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "One or more proxies shall be present and vote on his behalf. The appointed agent does not need to be a shareholder of the company, but as designated"
+      },
+      "layout_risk": {
+        "length_ratio": 4.353,
+        "bbox_width": 459.338,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b2_l3",
+      "page_index": 4,
+      "source_text": "格式擬備之代表委任表格連同簽署人之授權書或其他授權文件（如有）或由公證",
+      "translation_zh": "The form of proxy prepared in the format together with the power of attorney or other authorization documents of the signer (if any) or notarized",
+      "target_text": "The form of proxy prepared in the format together with the power of attorney or other authorization documents of the signer (if any) or notarized",
+      "translation_en": "The form of proxy prepared in the format together with the power of attorney or other authorization documents of the signer (if any) or notarized",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        159.752,
+        538.652,
+        173.865
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The form of proxy prepared in the format together with the power of attorney or other authorization documents of the signer (if any) or notarized"
+      },
+      "layout_risk": {
+        "length_ratio": 4.143,
+        "bbox_width": 459.271,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b2_l4",
+      "page_index": 4,
+      "source_text": "人簽署證明之該等文件副本，須於大會或任何續會指定舉行時間48小時前（即不",
+      "translation_zh": "Copies of these documents certified by the person's signature must be provided 48 hours before the time appointed for the meeting or any adjourned meeting (i.e. not",
+      "target_text": "Copies of these documents certified by the person's signature must be provided 48 hours before the time appointed for the meeting or any adjourned meeting (i.e. not",
+      "translation_en": "Copies of these documents certified by the person's signature must be provided 48 hours before the time appointed for the meeting or any adjourned meeting (i.e. not",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        174.756,
+        538.593,
+        188.935
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Copies of these documents certified by the person's signature must be provided 48 hours before the time appointed for the meeting or any adjourned meeting (i.e. not"
+      },
+      "layout_risk": {
+        "length_ratio": 4.556,
+        "bbox_width": 459.212,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b2_l5",
+      "page_index": 4,
+      "source_text": "遲於2026年5月30 日（星期六）上午10時正（香港時間））送達本公司之香港股份過戶",
+      "translation_zh": "The transfer of Hong Kong shares of the Company was delivered to the Company later than 10:00 a.m. (Hong Kong time) on May 30, 2026 (Saturday)",
+      "target_text": "The transfer of Hong Kong shares of the Company was delivered to the Company later than 10:00 a.m. (Hong Kong time) on May 30, 2026 (Saturday)",
+      "translation_en": "The transfer of Hong Kong shares of the Company was delivered to the Company later than 10:00 a.m. (Hong Kong time) on May 30, 2026 (Saturday)",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        189.76,
+        538.643,
+        203.939
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The transfer of Hong Kong shares of the Company was delivered to the Company later than 10:00 a.m. (Hong Kong time) on May 30, 2026 (Saturday)"
+      },
+      "layout_risk": {
+        "length_ratio": 3.302,
+        "bbox_width": 459.262,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b2_l6",
+      "page_index": 4,
+      "source_text": "登記分處香港中央證券登記有限公司，地址為香港灣仔皇后大道東183 號合和中",
+      "translation_zh": "Branch Registration Office Computershare Hong Kong Investor Services Limited, Hopewell Center, 183 Queen's Road East, Wan Chai, Hong Kong",
+      "target_text": "Branch Registration Office Computershare Hong Kong Investor Services Limited, Hopewell Center, 183 Queen's Road East, Wan Chai, Hong Kong",
+      "translation_en": "Branch Registration Office Computershare Hong Kong Investor Services Limited, Hopewell Center, 183 Queen's Road East, Wan Chai, Hong Kong",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        204.764,
+        538.609,
+        218.943
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Branch Registration Office Computershare Hong Kong Investor Services Limited, Hopewell Center, 183 Queen's Road East, Wan Chai, Hong Kong"
+      },
+      "layout_risk": {
+        "length_ratio": 3.703,
+        "bbox_width": 459.228,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b2_l7",
+      "page_index": 4,
+      "source_text": "心17M樓，方為有效。",
+      "translation_zh": "Heart 17M floor, it is effective.",
+      "target_text": "Heart 17M floor, it is effective.",
+      "translation_en": "Heart 17M floor, it is effective.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        219.768,
+        200.26,
+        233.947
+      ],
+      "text_role": "title_or_label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Heart 17M floor, it is effective.",
+        "short_label_en": "Heart 17M floor, it is effective."
+      },
+      "layout_risk": {
+        "length_ratio": 3.0,
+        "bbox_width": 120.879,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b3_l0",
+      "page_index": 4,
+      "source_text": "(d) 本公司股東於填妥及交回代表委任表格後，屆時仍可依願出席大會或續會，並",
+      "translation_zh": "(d) After completing and returning the proxy form, shareholders of the Company may still attend the general meeting or adjourned meeting as they wish, and",
+      "target_text": "(d) After completing and returning the proxy form, shareholders of the Company may still attend the general meeting or adjourned meeting as they wish, and",
+      "translation_en": "(d) After completing and returning the proxy form, shareholders of the Company may still attend the general meeting or adjourned meeting as they wish, and",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.699,
+        249.765,
+        538.72,
+        263.944
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(d) After completing and returning the proxy form, shareholders of the Company may still attend the general meeting or adjourned meeting as they wish, and"
+      },
+      "layout_risk": {
+        "length_ratio": 4.053,
+        "bbox_width": 482.021,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b3_l1",
+      "page_index": 4,
+      "source_text": "於會上表決投票，在此情況下，代表委任表格將被視作撤銷論。",
+      "translation_zh": "A vote is taken at the meeting, in which case the form of proxy will be deemed to have been revoked.",
+      "target_text": "A vote is taken at the meeting, in which case the form of proxy will be deemed to have been revoked.",
+      "translation_en": "A vote is taken at the meeting, in which case the form of proxy will be deemed to have been revoked.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        264.769,
+        443.206,
+        278.882
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "A vote is taken at the meeting, in which case the form of proxy will be deemed to have been revoked."
+      },
+      "layout_risk": {
+        "length_ratio": 3.571,
+        "bbox_width": 363.825,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b4_l0",
+      "page_index": 4,
+      "source_text": "(e) 倘為任何股份的聯名登記持有人，其中任何一人可在大會（或其任何續會）上親",
+      "translation_zh": "(e) If jointly registered holders of any shares, any one of them may personally",
+      "target_text": "(e) If jointly registered holders of any shares, any one of them may personally",
+      "translation_en": "(e) If jointly registered holders of any shares, any one of them may personally",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.699,
+        294.766,
+        538.458,
+        308.945
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(e) If jointly registered holders of any shares, any one of them may personally"
+      },
+      "layout_risk": {
+        "length_ratio": 2.026,
+        "bbox_width": 481.759,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p4_b4_l1",
+      "page_index": 4,
+      "source_text": "自或由代表就該股份投票，猶如其為唯一有權投票的人；倘多於一名聯名登記",
+      "translation_zh": "vote for the shares freely or by proxy as if he were the only person entitled to vote; if more than one person registers jointly",
+      "target_text": "vote for the shares freely or by proxy as if he were the only person entitled to vote; if more than one person registers jointly",
+      "translation_en": "vote for the shares freely or by proxy as if he were the only person entitled to vote; if more than one person registers jointly",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        309.77,
+        538.72,
+        323.883
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "vote for the shares freely or by proxy as if he were the only person entitled to vote; if more than one person registers jointly"
+      },
+      "layout_risk": {
+        "length_ratio": 3.765,
+        "bbox_width": 459.339,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b4_l2",
+      "page_index": 4,
+      "source_text": "持有人親身或委派代表出席大會，則股東名冊內排名首位的有關聯名登記持有",
+      "translation_zh": "If the holder attends the meeting in person or by proxy, the relevant joint-name registration holder ranked first in the shareholder list will",
+      "target_text": "If the holder attends the meeting in person or by proxy, the relevant joint-name registration holder ranked first in the shareholder list will",
+      "translation_en": "If the holder attends the meeting in person or by proxy, the relevant joint-name registration holder ranked first in the shareholder list will",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        324.774,
+        538.465,
+        338.887
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "If the holder attends the meeting in person or by proxy, the relevant joint-name registration holder ranked first in the shareholder list will"
+      },
+      "layout_risk": {
+        "length_ratio": 4.176,
+        "bbox_width": 459.084,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b4_l3",
+      "page_index": 4,
+      "source_text": "人方可就共同持有的相關股份投票，而其他聯名持有人概不得投票。",
+      "translation_zh": "Only one person can vote on the relevant shares held jointly, and no other joint holders are allowed to vote.",
+      "target_text": "Only one person can vote on the relevant shares held jointly, and no other joint holders are allowed to vote.",
+      "translation_en": "Only one person can vote on the relevant shares held jointly, and no other joint holders are allowed to vote.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        339.778,
+        474.556,
+        353.891
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Only one person can vote on the relevant shares held jointly, and no other joint holders are allowed to vote."
+      },
+      "layout_risk": {
+        "length_ratio": 3.633,
+        "bbox_width": 395.175,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b5_l0",
+      "page_index": 4,
+      "source_text": "(f) 就上述所提呈之第2(A)、(B)及(C)項決議案而言，閆學文先生、梁翔先生及羅瑩女",
+      "translation_zh": "(f) For the above-mentioned resolutions 2(A), (B) and (C), Mr. Yan Xuewen, Mr. Liang Xiang and Ms. Luo Ying",
+      "target_text": "(f) For the above-mentioned resolutions 2(A), (B) and (C), Mr. Yan Xuewen, Mr. Liang Xiang and Ms. Luo Ying",
+      "translation_en": "(f) For the above-mentioned resolutions 2(A), (B) and (C), Mr. Yan Xuewen, Mr. Liang Xiang and Ms. Luo Ying",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.699,
+        369.775,
+        538.65,
+        383.954
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(f) For the above-mentioned resolutions 2(A), (B) and (C), Mr. Yan Xuewen, Mr. Liang Xiang and Ms. Luo Ying"
+      },
+      "layout_risk": {
+        "length_ratio": 2.378,
+        "bbox_width": 481.951,
+        "risk": "normal"
+      }
+    },
+    {
+      "unit_id": "p4_b5_l1",
+      "page_index": 4,
+      "source_text": "士將於大會上退任彼等的董事職務，惟彼等符合資格重選並願意膺選連任。願",
+      "translation_zh": "Members will retire from their positions as directors at the meeting, provided they are eligible for re-election and are willing to stand for re-election. wish",
+      "target_text": "Members will retire from their positions as directors at the meeting, provided they are eligible for re-election and are willing to stand for re-election. wish",
+      "translation_en": "Members will retire from their positions as directors at the meeting, provided they are eligible for re-election and are willing to stand for re-election. wish",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        384.779,
+        538.72,
+        398.892
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Members will retire from their positions as directors at the meeting, provided they are eligible for re-election and are willing to stand for re-election. wish"
+      },
+      "layout_risk": {
+        "length_ratio": 4.676,
+        "bbox_width": 459.339,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b5_l2",
+      "page_index": 4,
+      "source_text": "意膺選連任的退任董事的詳細資料載於通函附錄二。",
+      "translation_zh": "Details of the retiring Directors who intend to stand for re-election are set out in Appendix II of the Circular.",
+      "target_text": "Details of the retiring Directors who intend to stand for re-election are set out in Appendix II of the Circular.",
+      "translation_en": "Details of the retiring Directors who intend to stand for re-election are set out in Appendix II of the Circular.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.381,
+        399.783,
+        384.631,
+        413.896
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Details of the retiring Directors who intend to stand for re-election are set out in Appendix II of the Circular.",
+        "short_label_en": "Details of the retiring"
+      },
+      "layout_risk": {
+        "length_ratio": 4.913,
+        "bbox_width": 305.25,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b6_l0",
+      "page_index": 4,
+      "source_text": "(g) 就上述所提呈之第4(A) 項及第4(C)項決議案而言，須取得股東同意給予董事一般",
+      "translation_zh": "(g) For the above-mentioned resolutions 4(A) and 4(C), it is necessary to obtain the consent of the shareholders to give the directors general",
+      "target_text": "(g) For the above-mentioned resolutions 4(A) and 4(C), it is necessary to obtain the consent of the shareholders to give the directors general",
+      "translation_en": "(g) For the above-mentioned resolutions 4(A) and 4(C), it is necessary to obtain the consent of the shareholders to give the directors general",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.699,
+        429.78,
+        538.608,
+        443.96
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(g) For the above-mentioned resolutions 4(A) and 4(C), it is necessary to obtain the consent of the shareholders to give the directors general"
+      },
+      "layout_risk": {
+        "length_ratio": 3.227,
+        "bbox_width": 481.909,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b6_l1",
+      "page_index": 4,
+      "source_text": "授權，以授權其根據上市規則配發及發行股份。董事會並無即時計劃發行任何",
+      "translation_zh": "Authorization to authorize it to allot and issue shares in accordance with the Listing Rules. The Board has no immediate plans to issue any",
+      "target_text": "Authorization to authorize it to allot and issue shares in accordance with the Listing Rules. The Board has no immediate plans to issue any",
+      "translation_en": "Authorization to authorize it to allot and issue shares in accordance with the Listing Rules. The Board has no immediate plans to issue any",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.392,
+        444.784,
+        538.73,
+        458.897
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Authorization to authorize it to allot and issue shares in accordance with the Listing Rules. The Board has no immediate plans to issue any"
+      },
+      "layout_risk": {
+        "length_ratio": 4.088,
+        "bbox_width": 459.338,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b6_l2",
+      "page_index": 4,
+      "source_text": "根據本公司的股份計劃或任何取得股東同意的以股代息計劃之新股。",
+      "translation_zh": "New shares issued under the Company’s share plan or any scrip dividend plan with shareholder consent.",
+      "target_text": "New shares issued under the Company’s share plan or any scrip dividend plan with shareholder consent.",
+      "translation_en": "New shares issued under the Company’s share plan or any scrip dividend plan with shareholder consent.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.392,
+        459.788,
+        478.967,
+        473.901
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "New shares issued under the Company’s share plan or any scrip dividend plan with shareholder consent."
+      },
+      "layout_risk": {
+        "length_ratio": 3.367,
+        "bbox_width": 399.575,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b7_l0",
+      "page_index": 4,
+      "source_text": "(h) 就上述所提呈之第4(B)項決議案而言，董事謹聲明，彼等將在適當的情況下，出",
+      "translation_zh": "(h) In relation to resolution 4(B) proposed above, the Directors would like to declare that they will, in appropriate circumstances,",
+      "target_text": "(h) In relation to resolution 4(B) proposed above, the Directors would like to declare that they will, in appropriate circumstances,",
+      "translation_en": "(h) In relation to resolution 4(B) proposed above, the Directors would like to declare that they will, in appropriate circumstances,",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.71,
+        489.785,
+        538.667,
+        503.965
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(h) In relation to resolution 4(B) proposed above, the Directors would like to declare that they will, in appropriate circumstances,"
+      },
+      "layout_risk": {
+        "length_ratio": 3.22,
+        "bbox_width": 481.957,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b7_l1",
+      "page_index": 4,
+      "source_text": "於本公司股東利益而行使所賦予的權力以購回本公司股份。根據上市規則的規定，",
+      "translation_zh": "exercise the conferred power to repurchase the Company's shares in the interests of the Company's shareholders. According to the provisions of the Listing Rules,",
+      "target_text": "exercise the conferred power to repurchase the Company's shares in the interests of the Company's shareholders. According to the provisions of the Listing Rules,",
+      "translation_en": "exercise the conferred power to repurchase the Company's shares in the interests of the Company's shareholders. According to the provisions of the Listing Rules,",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.392,
+        504.789,
+        538.521,
+        518.902
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "exercise the conferred power to repurchase the Company's shares in the interests of the Company's shareholders. According to the provisions of the Listing Rules,"
+      },
+      "layout_risk": {
+        "length_ratio": 4.472,
+        "bbox_width": 459.129,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b7_l2",
+      "page_index": 4,
+      "source_text": "通函附錄一已提供說明函件，內容包含了令本公司股東能對所提呈決議案作出",
+      "translation_zh": "Appendix 1 to the circular has provided an explanatory letter containing information that will enable shareholders of the Company to respond to the proposed resolution.",
+      "target_text": "Appendix 1 to the circular has provided an explanatory letter containing information that will enable shareholders of the Company to respond to the proposed resolution.",
+      "translation_en": "Appendix 1 to the circular has provided an explanatory letter containing information that will enable shareholders of the Company to respond to the proposed resolution.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.392,
+        519.793,
+        538.477,
+        533.906
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Appendix 1 to the circular has provided an explanatory letter containing information that will enable shareholders of the Company to respond to the proposed resolution."
+      },
+      "layout_risk": {
+        "length_ratio": 4.941,
+        "bbox_width": 459.085,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p4_b7_l3",
+      "page_index": 4,
+      "source_text": "知情的投票決定所需的資料。",
+      "translation_zh": "Information needed for informed voting decisions.",
+      "target_text": "Information needed for informed voting decisions.",
+      "translation_en": "Information needed for informed voting decisions.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.392,
+        534.797,
+        249.892,
+        548.91
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Information needed for informed voting decisions.",
+        "short_label_en": "Info. needed for informed"
+      },
+      "layout_risk": {
+        "length_ratio": 3.769,
+        "bbox_width": 170.5,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b1_l0",
+      "page_index": 5,
+      "source_text": "(i) 倘若預料於股東大會當日上午六時正後，將懸掛八號或以上颱風信號，或黑色",
+      "translation_zh": "(i) If typhoon signal No. 8 or above is expected to be hoisted after 6:00 a.m. on the day of the general meeting, or black",
+      "target_text": "(i) If typhoon signal No. 8 or above is expected to be hoisted after 6:00 a.m. on the day of the general meeting, or black",
+      "translation_en": "(i) If typhoon signal No. 8 or above is expected to be hoisted after 6:00 a.m. on the day of the general meeting, or black",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        56.693,
+        54.735,
+        538.713,
+        68.914
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "(i) If typhoon signal No. 8 or above is expected to be hoisted after 6:00 a.m. on the day of the general meeting, or black"
+      },
+      "layout_risk": {
+        "length_ratio": 3.211,
+        "bbox_width": 482.02,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b1_l1",
+      "page_index": 5,
+      "source_text": "暴雨警告訊號將會生效，則股東大會將會延期舉行，而本公司會於本公司網站",
+      "translation_zh": "The rainstorm warning signal will come into effect, the general meeting of shareholders will be postponed, and the company will announce it on the company's website",
+      "target_text": "The rainstorm warning signal will come into effect, the general meeting of shareholders will be postponed, and the company will announce it on the company's website",
+      "translation_en": "The rainstorm warning signal will come into effect, the general meeting of shareholders will be postponed, and the company will announce it on the company's website",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.375,
+        69.739,
+        538.714,
+        83.852
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "The rainstorm warning signal will come into effect, the general meeting of shareholders will be postponed, and the company will announce it on the company's website"
+      },
+      "layout_risk": {
+        "length_ratio": 4.824,
+        "bbox_width": 459.339,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b1_l2",
+      "page_index": 5,
+      "source_text": "或聯交所網站登載補充通告，通知各股東有關延會日期、時間及地點。",
+      "translation_zh": "Or publish a supplementary notice on the website of the Stock Exchange to inform shareholders of the date, time and location of the postponed meeting.",
+      "target_text": "Or publish a supplementary notice on the website of the Stock Exchange to inform shareholders of the date, time and location of the postponed meeting.",
+      "translation_en": "Or publish a supplementary notice on the website of the Stock Exchange to inform shareholders of the date, time and location of the postponed meeting.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.375,
+        84.743,
+        483.624,
+        98.856
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Or publish a supplementary notice on the website of the Stock Exchange to inform shareholders of the date, time and location of the postponed meeting."
+      },
+      "layout_risk": {
+        "length_ratio": 4.839,
+        "bbox_width": 404.249,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b2_l0",
+      "page_index": 5,
+      "source_text": "在黃色或紅色暴雨警告生效期間，股東大會將會如期舉行。於惡劣天氣情況下，",
+      "translation_zh": "While the yellow or red rainstorm warning is in effect, the general meeting will be held as scheduled. In bad weather conditions,",
+      "target_text": "While the yellow or red rainstorm warning is in effect, the general meeting will be held as scheduled. In bad weather conditions,",
+      "translation_en": "While the yellow or red rainstorm warning is in effect, the general meeting will be held as scheduled. In bad weather conditions,",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.375,
+        118.744,
+        538.567,
+        132.857
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "While the yellow or red rainstorm warning is in effect, the general meeting will be held as scheduled. In bad weather conditions,"
+      },
+      "layout_risk": {
+        "length_ratio": 3.686,
+        "bbox_width": 459.192,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b2_l1",
+      "page_index": 5,
+      "source_text": "股東需自行決定應否出席股東大會。決定出席者亦應留意自身情況，並建議需",
+      "translation_zh": "Shareholders need to decide for themselves whether they should attend the general meeting. Those who decide to attend should also pay attention to their own situation and advise if they need",
+      "target_text": "Shareholders need to decide for themselves whether they should attend the general meeting. Those who decide to attend should also pay attention to their own situation and advise if they need",
+      "translation_en": "Shareholders need to decide for themselves whether they should attend the general meeting. Those who decide to attend should also pay attention to their own situation and advise if they need",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.375,
+        133.748,
+        538.713,
+        147.861
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Shareholders need to decide for themselves whether they should attend the general meeting. Those who decide to attend should also pay attention to their own situation and advise if they need"
+      },
+      "layout_risk": {
+        "length_ratio": 5.588,
+        "bbox_width": 459.338,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b2_l2",
+      "page_index": 5,
+      "source_text": "加倍留意及小心。",
+      "translation_zh": "Be extra careful and careful.",
+      "target_text": "Be extra careful and careful.",
+      "translation_en": "Be extra careful and careful.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        79.375,
+        148.752,
+        182.5,
+        162.865
+      ],
+      "text_role": "label",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Be extra careful and careful.",
+        "short_label_en": "Be extra careful and careful."
+      },
+      "layout_risk": {
+        "length_ratio": 3.625,
+        "bbox_width": 103.125,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b3_l0",
+      "page_index": 5,
+      "source_text": "本通告中英版本如有任何歧義，概以英文版為準。",
+      "translation_zh": "If there is any discrepancy between the Chinese and English versions of this notice, the English version shall prevail.",
+      "target_text": "If there is any discrepancy between the Chinese and English versions of this notice, the English version shall prevail.",
+      "translation_en": "If there is any discrepancy between the Chinese and English versions of this notice, the English version shall prevail.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        55.049,
+        184.593,
+        398.219,
+        201.272
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "If there is any discrepancy between the Chinese and English versions of this notice, the English version shall prevail.",
+        "short_label_en": "If there is any"
+      },
+      "layout_risk": {
+        "length_ratio": 5.409,
+        "bbox_width": 343.17,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b4_l0",
+      "page_index": 5,
+      "source_text": "於本通告日期，董事會包括：(i) 執行董事王俊先生（主席）、閆學文先生及",
+      "translation_zh": "As at the date of this announcement, the Board of Directors includes: (i) Executive Directors Mr. Wang Jun (Chairman), Mr. Yan Xuewen and",
+      "target_text": "As at the date of this announcement, the Board of Directors includes: (i) Executive Directors Mr. Wang Jun (Chairman), Mr. Yan Xuewen and",
+      "translation_en": "As at the date of this announcement, the Board of Directors includes: (i) Executive Directors Mr. Wang Jun (Chairman), Mr. Yan Xuewen and",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        55.175,
+        214.464,
+        543.196,
+        229.932
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "As at the date of this announcement, the Board of Directors includes: (i) Executive Directors Mr. Wang Jun (Chairman), Mr. Yan Xuewen and"
+      },
+      "layout_risk": {
+        "length_ratio": 3.806,
+        "bbox_width": 488.021,
+        "risk": "high"
+      }
+    },
+    {
+      "unit_id": "p5_b4_l1",
+      "page_index": 5,
+      "source_text": "郭立圓先生；及(ii)獨立非執行董事梁翔先生、羅瑩女士及辛珠女士。",
+      "translation_zh": "Mr. Guo Liyuan; and (ii) independent non-executive directors Mr. Liang Xiang, Ms. Luo Ying and Ms. Xin Zhu.",
+      "target_text": "Mr. Guo Liyuan; and (ii) independent non-executive directors Mr. Liang Xiang, Ms. Luo Ying and Ms. Xin Zhu.",
+      "translation_en": "Mr. Guo Liyuan; and (ii) independent non-executive directors Mr. Liang Xiang, Ms. Luo Ying and Ms. Xin Zhu.",
+      "source_language": "zh",
+      "target_language": "en",
+      "translation_mode": "semantic_translation",
+      "semantic_coverage": "full_semantic_translation",
+      "bbox": [
+        55.175,
+        228.864,
+        486.511,
+        244.332
+      ],
+      "text_role": "body",
+      "term_decisions": {
+        "provider": "google_translate_web_gtx",
+        "source_language": "zh",
+        "target_language": "en",
+        "numeric_token_policy": "preserve source numeric tokens when validator requires literal evidence"
+      },
+      "layout_variants": {
+        "display_en": "Mr. Guo Liyuan; and (ii) independent non-executive directors Mr. Liang Xiang, Ms. Luo Ying and Ms. Xin Zhu."
+      },
+      "layout_risk": {
+        "length_ratio": 3.242,
+        "bbox_width": 431.336,
+        "risk": "high"
+      }
+    }
+  ]
+}

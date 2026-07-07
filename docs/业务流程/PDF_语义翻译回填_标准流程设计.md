@@ -43,7 +43,11 @@
 }
 ```
 
-方向只影响“哪些源行需要翻译”和“目标文本字段/残留文本如何校验”。布局策略、状态机、修复 loop、视觉裁决和反过拟合边界不因具体语言或样本文档而换规则。
+方向首先影响“哪些源行需要翻译”和“目标文本字段/残留文本如何校验”。当实跑证据证明目标语长度、换行习惯、字形密度或阅读审美不同会改变排版结果时，方向也可以影响 `language layout profile`、D4 布局策略、D7 视觉裁决阈值和 D8 repair atom 优先级。方向分流只能基于通用语言方向与当前页几何证据，不能基于样本文档身份。
+
+方向不会改变的共性规则：图片保真、背景残留、表格/图表结构、侧边导航方向、禁止关键正文/标题小字 fallback、状态机、反过拟合边界、工作目录边界。
+
+方向可能改变的规则：正文是否先扩框再缩字、`body_flow` 合并条件、`target_composition` 是否适用、受限槽位 fallback 的字体曲线、段落间距/行距审美阈值、repair atom 的优先级。例如 `zh_to_en` 通常先修正文/标题重排和可读性；`en_to_zh` 通常优先保留源框与紧凑 CJK 排版。
 
 每个方向必须绑定一个通用 language layout profile，profile 只能描述语言方向的开口策略，不能描述具体样本：
 
@@ -91,7 +95,8 @@ prompt_overlay：D2/D4/D7 的方向性判断提醒
 执行器在 `S6_LayoutPlan` 必须把区域分成两类：
 
 ```text
-constrained_slot：表格单元格、图例、图表标签、侧边导航、页码、短标签。以源 bbox 为硬约束，优先使用 compact/table/legend/side-nav 译文变体。
+constrained_slot：表格单元格、图例、图表标签、侧边导航、页码、目录项、密集表格/矩阵内短标签。以源 bbox 为硬约束，优先使用 compact/table/legend/side-nav 译文变体。
+expandable_text_slot：页首标题、章节短说明、红色提示行、正文带里的解释性 short_label。源 bbox 是遮罩和阅读顺序锚点，不是硬容器；当目标语变长且当前页几何证明右侧/下方有空白时，可以扩展目标框后再缩字。
 event_card：时间线、里程碑、人物/图片旁的窄多行事件说明。属于受限槽位，但允许在本事件卡内部多行重排；不能跨年份、图片或相邻事件卡合并。
 fluid_body：正文段落、下方正文带、连续正文栏。以源 bbox 为遮罩和阅读顺序锚点，但目标语可按当前页正文带、页边距、避让区和下边界重构文本框。
 ```
@@ -105,6 +110,8 @@ region_kind
 字体大小层级
 绘图/表格密集度
 当前页可用正文带和避让区
+目标文本/源文本长度比
+右侧同水平障碍物和下方同栏障碍物
 目标语言方向 profile
 ```
 
@@ -125,10 +132,24 @@ region_kind
 2. 按源 bbox 擦除可替换源文本；填充色必须来自局部背景，不得来自源字形颜色。
 3. 合并同栏正文为 body_flow。
 4. 用 target_composition 根据当前页正文带重算目标文本框。
-5. 用 overlap_guard 防止侵入下一同栏区域。
-6. 在临时页探测字号和换行。
-7. 只把通过探测的最终文本画到真实候选页。
+5. 对 `expandable_text_slot` 运行 `expandable_text_slots`：按角色、页型、源框宽度、目标/源长度比、右侧障碍物和下方同栏障碍物扩展目标框。
+6. 用 overlap_guard 防止侵入下一同栏区域。
+7. 在临时页探测字号和换行。
+8. 只把通过探测的最终文本画到真实候选页。
 ```
+
+`expandable_text_slots` 的典型适用条件必须来自当前运行几何和语言 profile：
+
+```text
+region_kind in {heading, short_label}
+page_type_guess 不属于 chart_or_dashboard / table_or_chart_dense / matrix_or_table_diagram 等硬结构页型
+目标文本长度达到阈值，且目标/源长度比显示目标语明显变长
+源 bbox 宽度不是极窄导航项，也不是已经接近整页宽度的正文框
+扩展方向上不存在同水平文本、图片、表格或侧栏障碍物
+扩展后的 y1 不穿过下方同栏区域
+```
+
+如果 `short_label_legibility` 失败且语义译文有效，D8 默认选择 `expandable_text_slot_reflow_repair` 回到 `S6_LayoutPlan`；只有密集表格、图例、矩阵或目录项等结构性硬槽位才选择 `constrained_slot_layout_fit_repair`。
 
 当区域是 `constrained_slot` 时，不能使用正文构图扩张；只能用紧凑译文、字号曲线、旋转绘制或显式失败。
 
@@ -213,6 +234,8 @@ offline_reference: 仅用于事后评估的对照样本
 docs\offline_reference_evaluation\
 docs\reports\<round_id>\
 ```
+
+当前可用的离线对照工具是 `docs\offline_reference_evaluation\reference_layout_compare.py`。它只能在候选 PDF 生成、S8/S9 运行完毕后执行，产物命名为 `posthoc_reference_layout_comparison*.json`；该 JSON 不是 runtime gate 输入，也不能作为 D2/D4/D7 的 prompt 槽位。
 
 `pdf_translation_workflow_core` 只存放真实运行时会调用的通用抽取、布局、回填、验证工具，以及与这些工具一致的提示词和契约。
 
@@ -409,8 +432,8 @@ stateDiagram-v2
 | 子状态 | 工具/裁决 | 产物 |
 |---|---|---|
 | `S5A_BuildBatchManifest` | `build_translation_batch_manifest.py` | `translation_batch_manifest.json`、`translation_batches/<batch_id>.slot_values.json` |
-| `S5B_PreflightBatchWrite` | `validate_workspace_boundary.py` | `translation_batches/<batch_id>.workspace_boundary.json` |
-| `S5B_RunD2Batch` | `materialize_d2_translation_batches.py` + `D2_translation.prompt.json` | `prompt_instance.json`、`model_output.json`、`decision_record.json`、`d2_materialization.json` |
+| `S5B_PreflightBatchWrite` | `validate_workspace_boundary.py` 或 `validate_translation_manifest_boundaries.py` | `translation_batches/<batch_id>.workspace_boundary.json`、可选 manifest 级 summary |
+| `S5B_RunD2Batch` | `materialize_d2_translation_batches.py` + `D2_translation.prompt.json` | `prompt_instance.json`、`model_output.json`、`decision_record.json`、`d2_materialization.json`、`chunk_translation` 证据 |
 | `S5C_ValidateBatch` | `validate_translation_batch.py` | `translation_batches/<batch_id>.validation.json` |
 | `S5D_AssembleTranslations` | `assemble_semantic_translations.py` | `docs/input/semantic_translations/<case_id>.translations.json`、`translation_assembly_evidence.json` |
 | `S5E_ValidateFullSemanticTranslations` | `validate_semantic_translations.py` | `semantic_translation_validation.json` |
@@ -457,6 +480,14 @@ flowchart TD
   FC --> S9
 ```
 
+Loop 不是单独替代状态机的串行状态，而是 `S8` 失败后的复合活动。每一次 loop 必须完成：
+
+```text
+repair_loop_<n>.json -> 最小修复 -> 候选重生成/重裁决 -> 回到 S8 重新计算 gate
+```
+
+当 `max_repair_loops > 1` 时，执行器不得只跑第一轮。它必须把已经尝试过的 `(gate_id, repair_atom)` 记入 prior loop summary，下一轮优先选择尚未执行的阻断 repair atom；如果所有可执行通用修复都已尝试仍失败，才进入 `S_FAIL_QUALITY`。
+
 ### 4.3 Loop 内部状态图
 
 ```mermaid
@@ -488,11 +519,11 @@ stateDiagram-v2
 | `S2_ToolProbe` | `tools\probes\tool_probe.py` | 否 | 工具可用 -> `S3` |
 | `S3_SourceExtract` | `extract_pdf_structure.py`、`render_pdf.py` | 否 | 源证据完整 -> `S4` |
 | `S4_PageStrategy` | 无必需工具，读取 S3 产物 | `D1_page_strategy.prompt.json` | 页面策略完整 -> `S5` |
-| `S5_TranslationPlan` | `build_translation_batch_manifest.py`、逐批 `validate_workspace_boundary.py`、`materialize_d2_translation_batches.py`、逐批 `validate_translation_batch.py`、`assemble_semantic_translations.py`、`validate_semantic_translations.py` | 逐批 `D2_translation.prompt.json` | 全量语义译文有效 -> `S6`；无法物化 -> `S_FAIL_CAPABILITY`；写入边界失败 -> `S_FAIL_PROCESS_CONTRACT` |
-| `S6_LayoutPlan` | `build_layout_policy.py` | `D4_layout_plan.prompt.json` | 布局策略可追溯 -> `S7` |
+| `S5_TranslationPlan` | `build_translation_batch_manifest.py`、逐批 `validate_workspace_boundary.py` 或 manifest 级 `validate_translation_manifest_boundaries.py`、`materialize_d2_translation_batches.py`、逐批 `validate_translation_batch.py`、`assemble_semantic_translations.py`、`validate_semantic_translations.py` | 逐批 `D2_translation.prompt.json` | 全量语义译文有效 -> `S6`；无法物化 -> `S_FAIL_CAPABILITY`；写入边界失败 -> `S_FAIL_PROCESS_CONTRACT` |
+| `S6_LayoutPlan` | `build_layout_policy.py` | `D4_layout_plan.prompt.json` | 布局策略可追溯；必须声明 constrained_slot、expandable_text_slot、fluid_body 的分流 -> `S7` |
 | `S7_GenerateCandidate` | `generate_semantic_backfill.py` | 否 | 候选生成 -> `S8` |
 | `S8_VerifyProductQuality` | `render_pdf.py`、`collect_visual_region_metrics.py`、`plan_visual_region_repairs.py`、`render_source_output_crop.py`、`write_visual_adjudication.py`、`evaluate_pdf_quality.py` | `D5_D7_quality_gate.prompt.json` | 全 pass 或无阻断 `PASS_WITH_WARN` -> `S9`；可修阻断 -> `Lx`；不可修 -> fail；缺视觉闭环证据 -> `S_FAIL_PROCESS_CONTRACT` |
-| `Lx_RepairLoop` | 按 failure_class 选择工具；读取 `visual_region_metrics.json`、`visual_repair_plan.json`、`product_quality_gates.json`、`visual_adjudication.json`；执行引擎必须写 `repair_loop_<n>.json` | `D8_repair_selection.prompt.json` | 按 repair_atom 回到 `S3`、`S5`、`S6` 或 `S7`；若无通用执行器则写 `not_executed_unrepairable` 并 `S_FAIL_QUALITY` |
+| `Lx_RepairLoop` | 按 failure_class 选择工具；读取 `visual_region_metrics.json`、`visual_repair_plan.json`、`product_quality_gates.json`、`visual_adjudication.json`；执行引擎必须写 `repair_loop_<n>.json` | `D8_repair_selection.prompt.json` | 按 repair_atom 回到 `S3`、`S5`、`S6` 或 `S7`；`--max-repair-loops` 大于 1 时必须逐轮再渲染、再采集、再裁决；若无通用执行器则写 `not_executed_unrepairable` 并 `S_FAIL_QUALITY` |
 | `S9_VerifyProcessContract` | `validate_process_artifacts.py`、`scan_core_overfit.py`；必要时用 `validate_workspace_boundary.py --operation-log` 复核日志路径 | `D9_final_acceptance.prompt.json` | 输出最终终态 |
 
 ## 6. 提示词边界
@@ -541,20 +572,24 @@ run_id / case_id
 | `D8_repair_selection.prompt.json` | `S3_SourceExtract`、`S5_TranslationPlan`、`S6_LayoutPlan`、`S7_GenerateCandidate`、失败终态 | 必须由 selected `repair_atom` 决定，不得为绕过 gate 任意跳转 |
 | `D9_final_acceptance.prompt.json` | `S_DONE_PROCESS_VALIDATED`、`S_DONE_PRODUCT_ACCEPTED`、`S_FAIL_PROCESS_CONTRACT`、`S_FAIL_QUALITY`、`S_FAIL_TOOLING`、`S_FAIL_CAPABILITY` | 最终验收必须保留 process/product split verdict；产品未到达可写 `NOT_REACHED` |
 
-### 6.1 Round12 后固化的通用运行补充
+### 6.1 Round14/15 后固化的通用运行补充
 
 本节记录已进入生产 core 的通用规则，不是样本特例。
 
 1. 语言方向可由执行器自动识别，但必须写入 `round_input_manifest.json` 或等价 run manifest。识别依据只能是当前输入 PDF 前若干页的 CJK 字符数、Latin 字符数、页数和样本文本摘要；不得使用文件名作为裁决依据。文件名只能作为人类可读 case_id 来源。
 2. `S5_TranslationPlan` 的 D2 物化可以由 `materialize_d2_translation_batches.py` 执行。该工具只消费 `translation_batch_manifest.json` 和每个 batch 的 `slot_values.json`，必须在逐批 `workspace_boundary_verdict=PASS` 后写入 `prompt_instance.json`、`model_output.json`、`decision_record.json`。
-3. `materialize_d2_translation_batches.py` 允许的当前 provider 为 `google_translate_web_gtx`。provider 必须写入 batch output、assembly output、`candidate_generation_evidence.json` 和质量门禁；不能写成 placeholder、manual_placeholder 或 deterministic_placeholder。
-4. D2 请求文本必须先做 Unicode NFKC 归一化。缓存命中后仍必须校验目标脚本；缓存译文若不满足目标脚本，必须丢弃并重新请求，不得复用失败缓存。
-5. `build_translation_batch_manifest.py`、`validate_semantic_translations.py`、`generate_semantic_backfill.py` 必须共享同一组源单元过滤口径：
-   - 源语言为 `en` 且 CJK 字符数超过 Latin 字符数的一半时，视为目标语占优可见行，不进入 D2 语义翻译。
-   - `CUSIP`、`ISIN`、`SEDOL`、`RIC`、`LEI`、单个大写字母、股票代码、ISIN/CUSIP/SEDOL 类大写数字混合代码视为 neutral identifier，不进入 D2。生成器不得擦除这些中性标识；质量门禁必须允许它们作为目标中文 PDF 中的中性 Latin token。
-   - 已是目标语的可见行如果可能被相邻重排覆盖，生成器可以用 `preserve_already_target_language_span` 重画；该模式必须计入 `preserved_target_language_unit_count`，不得计入语义翻译覆盖。
-6. `generate_semantic_backfill.py` 在插入文字前必须检查 region rect 是否有限且非空。若布局策略产生空矩形，必须回退到 `source_anchor_bbox` 或当前 region items 的 union rect，并写入 `rect_repair.reason=empty_or_nonfinite_region_rect`。不得让 PyMuPDF 的 `text box must be finite and not empty` 直接中断产品质量运行。
-7. `evaluate_pdf_quality.py` 的 `text_residue` 对 `target_language=zh` 的规则是：Latin token 只有在目标译文证据中出现、匹配通用 neutral identifier/code 模式，或是已在目标译文证据中出现的品牌/代码词被 PDF 文本抽取器拆开的片段时才允许；其他 Latin token 仍判定为 source residue。对 `target_language=en`，CJK 残留仍是阻断失败。
+3. 大文档可以先用 `validate_translation_manifest_boundaries.py` 从 `translation_batch_manifest.json` 一次性写出每个 batch 的 `workspace_boundary_ref`。这只是规模化执行方式，不降低边界契约：每个 batch 仍必须有独立 `workspace_boundary_verdict=PASS`，任何失败都进入 `S_FAIL_PROCESS_CONTRACT`。
+4. `materialize_d2_translation_batches.py` 允许的当前 provider 为 `google_translate_web_gtx`。provider 必须写入 batch output、assembly output、`candidate_generation_evidence.json` 和质量门禁；不能写成 placeholder、manual_placeholder 或 deterministic_placeholder。
+5. D2 请求文本必须先做 Unicode NFKC 归一化。缓存命中后仍必须校验目标脚本；缓存译文若不满足目标脚本，必须丢弃并重新请求，不得复用失败缓存。`target_language=en` 时，如果源文本是 Latin 占优的混合实体、地址或机构名，工具可在 D2 后处理阶段去除括号中残留的 CJK 注释片段，但必须保留 Latin 主体、数字、标点和法定实体后缀；该规则只能基于当前 unit 的字符比例和通用实体形态，不能使用文件名、页码或样本文字。
+6. 大文档允许在一个 bounded batch 内使用 chunked provider calls。chunk 必须使用稳定中性 unit marker 包裹每个源单元，返回后必须按原 `unit_id` 拆回，并在 `model_output.chunk_translation` 中记录 `chunk_units_limit`、`chunk_chars_limit`、chunk 数、marker split 数和 fallback 单元数。marker 丢失或目标脚本失败的单元必须回退逐单元翻译；仍失败则 `S_FAIL_CAPABILITY`。chunk 不得改变 batch 输出 schema，也不得跳过 `validate_translation_batch.py`。
+7. `build_translation_batch_manifest.py` 是可翻译源单元判定的唯一口径；`validate_semantic_translations.py`、`build_layout_policy.py`、`generate_semantic_backfill.py` 必须复用同一 `line_is_translatable` 语义，不得各自维护分叉规则：
+   - 已是目标语占优的可见行不进入 D2 语义覆盖；如果它可能被相邻重排覆盖，生成器可以用 `preserve_already_target_language_span` 重画，并计入 `preserved_target_language_unit_count`，不得计入语义翻译覆盖。
+   - URL、邮箱、域名、股票代码、评级字母、ISIN/CUSIP/SEDOL/RIC/LEI、百分比/bps/pps、罗马数字条目、纯数字或数字符号片段、短大写代码、法定实体/基金/地址型 Latin 名称等通用中性标识不进入 D2。该判断必须是开口函数：由字符类别、token 形态、词数、脚注/代码模式和当前语言方向决定，不能出现样本文字或固定页码。
+   - 中性标识在候选 PDF 中不得被擦除；质量门禁必须允许它们作为目标语 PDF 中的 neutral token，但不能因此放过真正的源语言正文残留。
+8. `generate_semantic_backfill.py` 在插入文字前必须检查 region rect 是否有限且非空。若布局策略产生空矩形，必须回退到 `source_anchor_bbox` 或当前 region items 的 union rect，并写入 `rect_repair.reason=empty_or_nonfinite_region_rect`。不得让 PyMuPDF 的 `text box must be finite and not empty` 直接中断产品质量运行。
+9. 当抽取器把顶部大标题或正文导语与大型装饰数字/章节号合并成异常高 bbox 时，生成器必须基于当前页几何执行 `decorative_numeric_merge_repair`：识别“文本末尾单个装饰数字 + bbox 高度远超字体节奏”的异常，使用同列邻近正常文本行修复文字 bbox，并只从译文中剥离误并入的装饰数字；源页原有的大数字/章节号作为视觉元素保留。该规则不能绑定具体数字、页码或标题词。
+10. `matrix_or_table_diagram` 或 dense page 对正文重排默认保守，但不能误杀页首大标题和上方导语。若当前区域满足“页首、字体大于页面中位、宽度足够、与表格/图形主体不重叠”的几何证据，`large_top_heading_region` 和 `top_lead_body_reflow` 可以绕过 dense/matrix hard-disable，进入目标语构图；该例外必须写入 `layout_plan.json` 或 `candidate_generation_evidence.json`。
+11. `evaluate_pdf_quality.py` 的 `text_residue` 对 `target_language=zh` 的规则是：Latin token 只有在目标译文证据中出现、匹配通用 neutral identifier/code 模式，或是已在目标译文证据中出现的品牌/代码词被 PDF 文本抽取器拆开的片段时才允许；其他 Latin token 仍判定为 source residue。对 `target_language=en`，CJK 残留仍是阻断失败。
 
 对应工具：
 
@@ -562,6 +597,7 @@ run_id / case_id
 pdf_translation_workflow_core\tools\generators\materialize_d2_translation_batches.py
 pdf_translation_workflow_core\tools\planners\build_translation_batch_manifest.py
 pdf_translation_workflow_core\tools\validators\validate_semantic_translations.py
+pdf_translation_workflow_core\tools\planners\build_layout_policy.py
 pdf_translation_workflow_core\tools\generators\generate_semantic_backfill.py
 pdf_translation_workflow_core\tools\validators\evaluate_pdf_quality.py
 ```
@@ -618,6 +654,12 @@ python pdf_translation_workflow_core\tools\planners\build_translation_batch_mani
 python pdf_translation_workflow_core\tools\validators\validate_workspace_boundary.py --workspace-root . --path docs\reports\<run_id>\translation_batches\<batch_id>.prompt_instance.json --path docs\reports\<run_id>\translation_batches\<batch_id>.model_output.json --path docs\reports\<run_id>\translation_batches\<batch_id>.decision_record.json --path docs\reports\<run_id>\translation_batches\<batch_id>.validation.json --out docs\reports\<run_id>\translation_batches\<batch_id>.workspace_boundary.json --allow-missing
 ```
 
+大文档可使用等价的 manifest 级边界生成：
+
+```powershell
+python pdf_translation_workflow_core\tools\validators\validate_translation_manifest_boundaries.py --manifest docs\reports\<run_id>\translation_batch_manifest.json --workspace-root . --out docs\reports\<run_id>\translation_manifest_boundaries.json
+```
+
 ```text
 1. 读取 translation_batches\<batch_id>.slot_values.json。
 2. 对该 batch 的 prompt_instance/model_output/decision_record/validation 计划路径运行 validate_workspace_boundary.py。
@@ -633,10 +675,10 @@ python pdf_translation_workflow_core\tools\validators\validate_workspace_boundar
 若本轮由工具直接物化 D2 batch，执行器必须在逐批 workspace boundary 通过后调用：
 
 ```powershell
-python pdf_translation_workflow_core\tools\generators\materialize_d2_translation_batches.py --manifest docs\reports\<run_id>\translation_batch_manifest.json --prompt-template pdf_translation_workflow_core\prompts\templates\D2_translation.prompt.json --provider google_translate_web_gtx --require-workspace-boundary --cache docs\reports\<run_id>\translation_cache.json --out docs\reports\<run_id>\d2_materialization.json
+python pdf_translation_workflow_core\tools\generators\materialize_d2_translation_batches.py --manifest docs\reports\<run_id>\translation_batch_manifest.json --prompt-template pdf_translation_workflow_core\prompts\templates\D2_translation.prompt.json --provider google_translate_web_gtx --require-workspace-boundary --chunk-units 25 --chunk-chars 4500 --cache docs\reports\<run_id>\translation_cache.json --out docs\reports\<run_id>\d2_materialization.json
 ```
 
-该工具只是 D2 的 batch 物化器，不替代 batch validation、assembly 或 full semantic validation。provider 不可用、目标脚本校验失败、缓存译文无效且重试后仍失败时，必须停在 `S_FAIL_CAPABILITY`，不能生成 placeholder。
+该工具只是 D2 的 batch 物化器，不替代 batch validation、assembly 或 full semantic validation。provider 不可用、目标脚本校验失败、缓存译文无效且重试后仍失败时，必须停在 `S_FAIL_CAPABILITY`，不能生成 placeholder。`--chunk-units` 与 `--chunk-chars` 只能控制 provider 请求规模，不能改变 `translation_units -> units` 一一覆盖契约。
 
 ```powershell
 python pdf_translation_workflow_core\tools\validators\validate_translation_batch.py --slot-values docs\reports\<run_id>\translation_batches\<batch_id>.slot_values.json --model-output docs\reports\<run_id>\translation_batches\<batch_id>.model_output.json --out docs\reports\<run_id>\translation_batches\<batch_id>.validation.json
@@ -681,6 +723,8 @@ classification_rules.event_card
 classification_rules.table_cell
 classification_rules.legend
 classification_rules.vertical_nav
+classification_rules.heading.source_size_page_quantile / min_source_to_page_quantile_ratio
+classification_rules.metric_value.source_size_page_quantile / value_token_regex
 reflow.reflow_kinds / preserve_line_kinds
 flow_grouping.body.enabled
 flow_grouping.body.min_region_count
@@ -703,6 +747,8 @@ target_language_reflow.enabled
 target_language_reflow.region_kinds
 target_language_reflow.allow_dense_page_body_below_y_ratio
 target_language_reflow.overlap_guard
+target_language_reflow.large_top_heading_region
+target_language_reflow.top_lead_body_reflow
 layout_text_variants 中 compact_label、short_label、table_cell、legend 的目标语字段
 font_profiles 中 event_card、table_cell、legend、table_note、footnote、body、body_flow、heading
 source_separator_policy
@@ -721,6 +767,7 @@ short continuation lines may join only when an active body_flow exists, x0 is al
 dense table/chart page -> preserve table cells and legends, but allow body_flow below allow_dense_page_body_below_y_ratio when current-run geometry proves it is a body copy band
 target_composition applies only to fluid body/body_flow; it uses source bbox as anchor evidence and recomputes target frame from current-page body band before font shrink
 target_language_reflow may expand only declared region_kinds and must obey overlap_guard so expanded text does not invade the next same-column region
+matrix_or_table_diagram page -> hard-disable normal body_flow, but allow page-top large heading and page-top lead body only when current geometry proves they are outside the diagram/table body
 ```
 
 ### 7.6 候选 PDF 生成
@@ -748,7 +795,11 @@ source_block_ids
 source_line_indexes
 semantic_translated_unit_count
 preserved_target_language_unit_count
+decorative_numeric_merge_repair_count
+rect_repair
 ```
+
+如果 `decorative_numeric_merge_repair_count > 0`，`candidate_generation_evidence.json` 必须记录每个修复的 `source_line_index`、原 bbox、修复后 bbox、邻近行证据和被剥离的尾部装饰 token。该证据用于 S8 判断“标题/导语是否因为抽取器合并装饰数字而误排”，不是样本页码或固定数字规则。
 
 ### 7.7 质量门禁
 
@@ -841,6 +892,7 @@ source_anchor_order pass
 visual_similarity pass 或无阻断 PASS_WITH_WARN
 hero_banner_text_readability pass when hero/banner title exists
 title_readability pass when title/heading exists
+metric_value_hierarchy pass when KPI/metric value regions exist
 body_paragraph_readability pass when body/body_flow exists
 table_text_legibility pass when table cells or table headers exist
 matrix_diagram_integrity pass 或无阻断 warn when matrix/table-diagram pages exist
@@ -968,7 +1020,7 @@ repair_plans:
 | 2 | `text_residue`、`backfill_generation`、`failed_probe_residue` | 候选生成物本身不可信 | `S7` |
 | 3 | `source_anchor_order_mismatch`、`text_fit_overflow`、`collision`、`text_image_collision` | 结构性错误会污染后续美观判断 | `S6` 或 `S7` |
 | 4 | `image_color_integrity_fail`、`background_delta_fail`、`background_residue_artifact` | 图片/底色保护错误会造成明显视觉破坏 | `S7` |
-| 5 | `matrix_diagram_integrity_fail`、`hero_banner_text_readability_fail`、`title_readability_fail`、`body_paragraph_readability_fail`、`table_text_legibility_fail`、`footnote_readability_fail`、`legend_label_alignment_fail`、`sidebar_navigation_legibility_fail`、`event_card_readability_fail`、`short_label_legibility_fail` | 二维结构、角色可读性与局部布局失败 | `S5` / `S6` |
+| 5 | `matrix_diagram_integrity_fail`、`hero_banner_text_readability_fail`、`title_readability_fail`、`body_paragraph_readability_fail`、`table_text_legibility_fail`、`footnote_readability_fail`、`legend_label_alignment_fail`、`sidebar_navigation_legibility_fail`、`event_card_readability_fail`、`short_label_legibility_fail` | 二维结构、角色可读性与局部布局失败 | 默认 `S6` / `S7`；只有语义真实性、覆盖率或 compact variant 证据缺失才回 `S5` |
 | 6 | `line_fragmentation`、`paragraph_density_mismatch`、`font_hierarchy_ratio_mismatch`、`visual_similarity_fail`、`table_integrity_fail`、`chart_integrity_fail` | 审美和整体结构偏差 | `S6` / `S7` / `S_FAIL_QUALITY` |
 
 文字过小且挤占图片的处理：
@@ -1000,13 +1052,16 @@ product_quality_gates / visual_adjudication dimensions -> D8_repair_selection.pr
 | `source_relative_visual_baseline` | `source_relative_visual_baseline_fail` | `rerun_source_extraction_or_generation_evidence_linkage` | `S3` 或 `S7`；若状态机无法表达则 `Ax_AdaptiveChange` | `source_extraction.json`、`candidate_generation_evidence.json` |
 | `hero_banner_text_readability` | `hero_banner_text_readability_fail` | `heading_frame_fit_or_short_title_variant` | `S6` | `visual_region_metrics.role_gates` |
 | `title_readability` | `title_readability_fail` | `heading_font_fit_curve_repair` | `S6` | `visual_region_metrics.role_gates` |
+| `metric_value_hierarchy` | `metric_value_hierarchy_fail` | `metric_value_font_hierarchy_repair` | `S6` | `visual_region_metrics.role_gates`?`candidate_generation_evidence.insertions` ?? `region_kind=metric_value`?`output_to_source_font_ratio` |
+| `title_readability` 且存在异常高标题 bbox | `decorative_numeric_merge_bbox_fail` | `decorative_numeric_merge_repair` | `S7` | `source_extraction.json`、`candidate_generation_evidence.insertions` |
 | `body_paragraph_readability` | `body_paragraph_readability_fail` | `target_composition_body_reflow_repair` | `S6` | `visual_region_metrics.role_gates` |
-| `table_text_legibility` | `table_text_legibility_fail` | `D2_constrained_slot_layout_variants`；若已有语义译文但 textbox 无法 fit，使用 `constrained_slot_text_image_fit` | `S5` 或 `S7` | `visual_region_metrics.role_gates`、`candidate_generation_evidence.insertions` |
+| dense/matrix 页首导语可读性 | `top_lead_body_reflow_fail` | `top_lead_body_reflow_policy_repair` | `S6` | `source_extraction.json`、`candidate_generation_evidence.insertions`、candidate crop |
+| `table_text_legibility` | `table_text_legibility_fail` | `constrained_slot_layout_fit_repair`；只有语义校验证明缺 compact variant 时才用 `D2_constrained_slot_layout_variants` | 默认 `S7`；语义缺陷才 `S5` | `visual_region_metrics.role_gates`、`candidate_generation_evidence.insertions`、`semantic_translation_validation.json` |
 | `footnote_readability` | `footnote_readability_fail` | `footnote_fit_curve_repair` | `S6` | `visual_region_metrics.role_gates` |
-| `legend_label_alignment` | `legend_label_alignment_fail` | `D2_constrained_slot_layout_variants`；若已有语义译文但 textbox 无法 fit，使用 `constrained_slot_text_image_fit` | `S5` 或 `S7` | `visual_region_metrics.role_gates`、`candidate_generation_evidence.insertions` |
+| `legend_label_alignment` | `legend_label_alignment_fail` | `constrained_slot_layout_fit_repair`；只有语义校验证明缺 compact variant 时才用 `D2_constrained_slot_layout_variants` | 默认 `S7`；语义缺陷才 `S5` | `visual_region_metrics.role_gates`、`candidate_generation_evidence.insertions`、`semantic_translation_validation.json` |
 | `sidebar_navigation_legibility` | `sidebar_navigation_legibility_fail` | `side_navigation_rotated_image_repair` | `S6` | `visual_region_metrics.role_gates` |
 | `event_card_readability` | `event_card_readability_fail` | `event_card_local_fit_repair` | `S6` | `visual_region_metrics.role_gates` |
-| `short_label_legibility` | `short_label_legibility_fail` | `D2_constrained_slot_layout_variants`；若已有语义译文但 textbox 无法 fit，使用 `constrained_slot_text_image_fit` | `S5` 或 `S7` | `visual_region_metrics.role_gates`、`candidate_generation_evidence.insertions` |
+| `short_label_legibility` | `short_label_legibility_fail` | `expandable_text_slot_reflow_repair`；若 D7 证明该短文本在表格/图例/矩阵/目录等硬结构槽位内，才用 `constrained_slot_layout_fit_repair`；只有语义校验证明缺 compact variant 时才用 `D2_constrained_slot_layout_variants` | 默认 `S6`；硬槽位才 `S7`；语义缺陷才 `S5` | `visual_region_metrics.role_gates`、`candidate_generation_evidence.insertions`、`semantic_translation_validation.json` |
 | `image_color_integrity` | `image_color_integrity_fail` | `image_redaction_exclusion_repair` | `S7` | `visual_region_metrics.page_metrics` |
 | `background_delta` / `background_color_delta` | `background_delta_fail` | `background_fill_resample` | `S7` | `region_metrics.reasons`、`repair_atoms`、crop |
 | `background_residue_artifact` | `background_residue_artifact` | `background_residue_fill_resample` | `S7` | `region_metrics.inner_background_delta`、`region_metrics.background_residue_delta`、`region_metrics.text_image_background_delta`、`redaction_metrics.wide_line_patch_risk`、`background_cover_metrics.draw_mode/area/saturation`、`background_covers`、`repair_atoms`、crop |
@@ -1063,14 +1118,15 @@ product_quality_gates / visual_adjudication dimensions -> D8_repair_selection.pr
 `constrained_slot_text_image_fit` 的使用条件：
 
 ```text
-1. 只允许用于 table_cell、compact_label、short_label、legend，或 chart/table dense 页面中的单行 body 标签。
+1. 只允许用于 table_cell、compact_label、short_label、legend，或 chart/table dense 页面中的单行 body 标签；zh_to_en profile 可额外声明 body、body_flow、heading、event_card 的 wrapped text-image 兜底。
 2. 必须先经过正常 insert_textbox probing；只有 textbox 无法 fit 时才能使用。
 3. 必须保留完整目标语义文本，不能截断、替换为源文或伪造缩写。
 4. 必须在 candidate_generation_evidence.insertions 中记录 status=constrained_text_image_fit、font_size、target box 和 horizontal_compression_ratio。
 5. 若压缩导致人工/模型视觉裁决不可读，D7 仍可判 `table_text_legibility`、`short_label_legibility` 或 `visual_similarity` 失败。
-6. textbox 探测全部失败后，S7 可以对 policy 明确声明的受限角色使用 `constrained_text_image_fit`，但不能作为正常文本插入的首选路径。默认允许 `table_cell`、`compact_label`、`short_label`、`legend`、`table_note`、`footnote`；`zh_to_en` profile 可额外允许 `body_flow`。
-7. `table_note`、`footnote` 和 `zh_to_en body_flow` 的 text-image 必须按目标框宽度进行换行渲染，不能把整段目标文本压成单行图片。证据中必须保留 `image_width_px`、`image_height_px`、`target_width_pt`、`target_height_pt`、`horizontal_compression_ratio` 和 `image_background_color`。
-8. 如果 text-image 的背景与源 bbox 内侧背景不一致，`collect_visual_region_metrics.py` 必须通过 `text_image_background_delta` 将其归入 `background_residue_artifact`，不能因为 `text_fit` 已消除就直接放行。
+6. 普通视觉失败、字体过小、bbox 不够、段落断裂、槽位溢出，默认是布局/生成修复，不是重新翻译。只有 `semantic_translation_validation.json` 证明语义真实性、覆盖率或目标语 compact variant 缺失时，才允许回 `S5_TranslationPlan`。
+7. textbox 探测全部失败后，S7 可以对 policy 明确声明的受限角色使用 `constrained_text_image_fit`，但不能作为正常文本插入的首选路径。
+8. `table_note`、`footnote` 和 `zh_to_en body/body_flow/heading/event_card` 的 text-image 必须按目标框宽度进行换行渲染，不能把整段目标文本压成单行图片。证据中必须保留 `image_width_px`、`image_height_px`、`target_width_pt`、`target_height_pt`、`horizontal_compression_ratio`、`wrapped_text_image`、`keep_proportion` 和 `image_background_color`。
+9. 如果 text-image 的背景与源 bbox 内侧背景不一致，`collect_visual_region_metrics.py` 必须通过 `text_image_background_delta` 将其归入 `background_residue_artifact`，不能因为 `text_fit` 已消除就直接放行。
 ```
 
 `source_anchor_order` 的通过条件：
@@ -1124,6 +1180,8 @@ product_quality_gates / visual_adjudication dimensions -> D8_repair_selection.pr
 
 执行引擎调用子工具时必须用容错编码捕获 stdout/stderr，例如 Python `subprocess.run(..., text=True, encoding="utf-8", errors="replace")`。Windows 中文路径或 PDF 库输出可能包含非 UTF-8 字节，日志捕获不能因为解码失败而中断状态机。
 
+当 `run_semantic_product_quality_round.py` 复制输入 PDF 或语义译文进入当前 round 的 `docs/input` 时，必须使用幂等复制：若源路径与目标路径解析后相同，则不复制但记录 `copy_skipped_same_path=true`；若不同，复制前仍要做 workspace boundary 检查。不能因为 Windows 文件锁或同路径复制错误中断状态机，也不能把同路径复制失败误判为翻译/排版失败。
+
 当输入目录中已有多份语义译文 JSON 时，执行引擎不得按文件名推断源 PDF 与译文的绑定关系。必须在当前 source PDF 完成 `source_extraction.json` 后，对候选语义译文逐个运行：
 
 ```powershell
@@ -1160,13 +1218,15 @@ python pdf_translation_workflow_core\tools\validators\validate_semantic_translat
 | `chart_integrity_fail` | `chart_region_preserve_or_label_reflow` | `S6` 或 `S7` |
 | `hero_banner_text_readability_fail` | `heading_frame_fit_or_short_title_variant` | `S6` |
 | `title_readability_fail` | `heading_font_fit_curve_repair` | `S6` |
+| `decorative_numeric_merge_bbox_fail` | `decorative_numeric_merge_repair` | `S7` |
 | `body_paragraph_readability_fail` | `target_composition_body_reflow_repair` | `S6` |
-| `table_text_legibility_fail` | `D2_constrained_slot_layout_variants` 或 `constrained_slot_text_image_fit` | `S5` 或 `S7` |
+| `top_lead_body_reflow_fail` | `top_lead_body_reflow_policy_repair` | `S6` |
+| `table_text_legibility_fail` | `constrained_slot_layout_fit_repair`；只有 compact variant 证据缺失才用 `D2_constrained_slot_layout_variants` | 默认 `S7`；语义缺陷才 `S5` |
 | `footnote_readability_fail` | `footnote_fit_curve_repair` | `S6` |
-| `legend_label_alignment_fail` | `D2_constrained_slot_layout_variants` 或 `constrained_slot_text_image_fit` | `S5` 或 `S7` |
+| `legend_label_alignment_fail` | `constrained_slot_layout_fit_repair`；只有 compact variant 证据缺失才用 `D2_constrained_slot_layout_variants` | 默认 `S7`；语义缺陷才 `S5` |
 | `sidebar_navigation_legibility_fail` | `side_navigation_rotated_image_repair` | `S6` |
 | `event_card_readability_fail` | `event_card_local_fit_repair` | `S6` |
-| `short_label_legibility_fail` | `D2_constrained_slot_layout_variants` 或 `constrained_slot_text_image_fit` | `S5` 或 `S7` |
+| `short_label_legibility_fail` | `expandable_text_slot_reflow_repair`；硬结构槽位才用 `constrained_slot_layout_fit_repair`；只有 compact variant 证据缺失才用 `D2_constrained_slot_layout_variants` | 默认 `S6`；硬槽位才 `S7`；语义缺陷才 `S5` |
 | `image_color_integrity_fail` | `image_redaction_exclusion_repair` | `S7` |
 | `background_delta_fail` | `background_fill_resample` | `S7` |
 | `text_image_collision_fail` | `avoid_region_reflow` 或 `image_redaction_exclusion_repair` | `S6` 或 `S7` |
@@ -2008,3 +2068,87 @@ product_quality_gates.json 中对应 gate
 [ ] state_trace.json、operation_log.jsonl 和 decision_log.jsonl 存在
 [ ] final report 写明 process/product 双 verdict
 ```
+## 21. Round20 校准后的现行规则
+
+本节是当前有效补充规则。若前文出现更早的粗粒度表述，以本节为准。
+
+### 21.1 角色字号契约
+
+1. 生产级 `font_profiles` 必须优先使用 `sizing_mode=source_relative`、`source_scale`、`min_source_ratio`、`max_source_ratio`、`page_quantile_floor`、`page_quantile_ceiling` 等开口字段。
+2. 可复用语言 profile 不得写入样本推导的 `min_pt`、`max_pt`、`min_insert_pt` 作为角色字体规则。
+3. `collect_visual_region_metrics.py` 可以记录 `fail_font_pt`、`warn_font_pt` 作为报告维度，但默认阻断失败必须以 `generation_status`、`output_to_source_font_ratio`、背景残留、结构完整性为主。只有角色显式声明 `absolute_font_floor_blocks=true` 时，绝对字号才可成为阻断失败。
+4. constrained text image 的字号也应支持 `min_font_source_ratio`、`max_font_source_ratio`、`min_font_page_quantile`、`max_font_page_quantile`，不能只依赖固定 `min_font_pt/max_font_pt`。
+
+### 21.2 Metric/KPI 判定
+
+`metric_value` 不能只因出现币种或单位词而成立。必须同时满足：
+
+1. 当前页源字号高于 `classification_rules.metric_value.source_size_page_quantile * min_source_to_page_quantile_ratio`。
+2. 源文本命中通用 `value_token_regex`。
+3. 源文本命中通用 `value_amount_regex`，即存在数值金额、百分比、bps/pps 或数值+单位结构。
+
+单位标签如 `US dollars`、`美元`、`港元` 只有单位无数值时，不得被提升为 KPI 大指标角色；它应回落到普通 `table_cell`、`short_label` 或 `compact_label` 等当前页角色。
+
+### 21.3 Compact/Short Label 布局
+
+`short_label_legibility` 的质量角色可以来自 `short_label` 或 `compact_label`。D8 选择 `expandable_text_slot_reflow_repair` 时，S6 必须同时允许：
+
+1. `expandable_text_slots.region_kinds` 包含 `short_label`、`compact_label` 和必要的 `heading`。
+2. `compact_label` 使用独立的 `compact_label_min_width_page_ratio`、`compact_label_max_width_page_ratio`、`compact_label_height_expand_ratio`、`compact_label_min_text_expansion_ratio` 等开口参数。
+3. 扩展只能由当前页几何、空白、障碍物和角色决定；不得依赖固定标签文本、页码、坐标或已知样本。
+
+### 21.4 背景采样
+
+`sample_fill_detail` 必须是当前 bbox 和当前页像素的开放函数：
+
+1. 默认使用外环/近环像素聚类，避免把字形颜色误当背景。
+2. 若 bbox 内部存在足够一致的非浅色主背景聚类，则允许使用 `inner_bbox_pixel_cluster`，用于彩色表头、小色块标签、蓝底/灰底单元等场景。
+3. `constrained_text_image_fit` 和 redaction fill 必须使用同一个局部背景来源，并在 evidence 中记录 `fill_color_provenance` 与 `image_background_color`。
+4. S8 必须用 `inner_background_delta`、`text_image_background_delta`、`background_residue_delta` 判断是否出现可见补丁；不能因整页平均色差小而放行。
+
+### 21.5 D8 与直通成功路径
+
+D8 不是每次运行都必须出现。规则如下：
+
+1. 若 S8 产品质量 PASS，`blocking_repair_count=0`，则允许直接进入 `S9_VerifyProcessContract`，由 `D9_final_acceptance.next_state=S_DONE_PRODUCT_ACCEPTED` 完成终态。
+2. 若 D7/S8 存在阻断失败，或状态机进入 `Lx_RepairLoop`，必须记录 `D8_minimal_repair_selection` 和 `repair_loop_<n>.json`。
+3. `validate_process_artifacts.py` 必须接受无修复直通 PASS 路径；不能因为没有 D8 而误判 `S_FAIL_PROCESS_CONTRACT`。
+
+### 21.6 Windows 路径长度
+
+执行器生成临时候选验证文件时，不得把完整 PDF/JSON stem 拼入深层临时文件名。匹配语义译文时，`translation_match_candidates` 内文件名应使用短编号，例如 `candidate_001.validation.json`。完整候选文件名应保存在 JSON 字段里，而不是路径里。
+### 21.7 面板/矩阵内标题的降级规则
+
+`heading` 只能代表页级标题、章节标题或几何证明确实脱离表格/矩阵主体的大标题。若当前页是 `matrix_or_table_diagram`、`table_or_chart_dense` 或其他同背景多列面板，并且一个候选标题在同一水平行存在横向分隔的相邻文本块，则该候选不得按页级 `heading` 扩框；应降级为 `table_cell`、`compact_label` 或其他受限槽位角色，并保持本单元格局部几何。
+
+通用判断输入只能来自当前运行：
+
+1. 当前页 `page_type_guess`。
+2. 当前 region 的 bbox、source font size、source width ratio。
+3. 同页 `line_geometries` 中与该 region 垂直重叠且横向分隔的相邻行。
+4. `target_language_reflow.min_source_width_page_ratio_for_reflow`。
+
+`target_language_reflow.min_source_width_page_ratio_for_reflow` 必须约束所有可横向扩框的 region kind，不得只约束 `body/body_flow`。这用于防止窄列标题、表格单元格标题或灰底面板标签被扩成正文宽框。页首大标题和页首导语仍可通过 `large_top_heading_region` / `top_lead_body_reflow` 例外进入重排，但必须由当前页几何证明其不在表格/矩阵主体内。
+
+### 21.8 Insertion Collision 门禁
+
+S8 必须在 `collect_visual_region_metrics.py` 中输出 `insertion_collision` role gate。该 gate 比较同页所有生成插入 bbox，若两个不同 semantic region 的重叠面积超过较小 bbox 面积的阈值，则说明存在布局碰撞。
+
+当前通用阈值：
+
+```text
+overlap_ratio_of_smaller >= 0.55 -> fail, blocking=true
+overlap_ratio_of_smaller >= 0.25 -> warn
+```
+
+阈值是结构门禁，不绑定页面、文本或坐标；它用于捕获完全同框、标题压表格、面板标签互相覆盖等错误，同时避免把普通相邻行的字体 bbox 轻微交叠误判为阻断。
+
+`visual_region_metrics.role_gates[*].gate_id=insertion_collision` 失败时：
+
+```text
+failure_class = insertion_collision_fail
+repair_atom = region_collision_layout_repair
+target_state = S6_LayoutPlan
+```
+
+D8/repair planner 必须记录左右 region id、page_number、left/right role、left/right kind、两个 bbox 和 `overlap_ratio_of_smaller`。修复优先级是：先回到 S6 重新分类面板/表格标签、收紧不安全的 target_language_reflow/target_composition，再回 S7 重生成；不能用重翻译掩盖布局碰撞。

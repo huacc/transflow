@@ -19,6 +19,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from _common import read_json, rel, resolve_workspace_path, sha256_file, write_json  # noqa: E402
+from planners.build_translation_batch_manifest import line_is_translatable as manifest_line_is_translatable  # noqa: E402
 
 
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
@@ -34,12 +35,7 @@ def normalize_language(value: Any, default: str) -> str:
 
 
 def line_is_translatable(line: dict[str, Any], source_language: str) -> bool:
-    text = str(line.get("text", ""))
-    if source_language == "zh":
-        return bool(CJK_RE.search(text))
-    if source_language == "en":
-        return bool(line.get("ascii_tokens"))
-    return bool(text.strip())
+    return manifest_line_is_translatable(line, source_language)
 
 
 def quantile(values: list[float], q: float) -> float:
@@ -85,6 +81,62 @@ def deep_merge(base: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]
         else:
             base[key] = value
     return base
+
+
+DERIVED_PROFILE_SECTIONS = {
+    "target_composition",
+    "target_language_reflow",
+    "expandable_text_slots",
+    "constrained_text_image_fit",
+    "local_constrained_slot_expansion",
+    "local_constrained_slot_flow",
+    "flow_grouping",
+}
+
+
+def remove_numeric_policy_overrides(value: Any) -> Any:
+    if isinstance(value, dict):
+        cleaned: dict[str, Any] = {}
+        for key, item in value.items():
+            cleaned_item = remove_numeric_policy_overrides(item)
+            if cleaned_item is not None:
+                cleaned[key] = cleaned_item
+        return cleaned
+    if isinstance(value, list):
+        cleaned_list = []
+        for item in value:
+            cleaned_item = remove_numeric_policy_overrides(item)
+            if cleaned_item is not None:
+                cleaned_list.append(cleaned_item)
+        return cleaned_list
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, (int, float)):
+        return None
+    return value
+
+
+def has_derive_from_current_source(value: Any) -> bool:
+    if isinstance(value, dict):
+        if value.get("derive_from_current_source") is True:
+            return True
+        return any(has_derive_from_current_source(item) for item in value.values())
+    if isinstance(value, list):
+        return any(has_derive_from_current_source(item) for item in value)
+    return False
+
+
+def sanitize_language_profile_overrides(overrides: dict[str, Any]) -> dict[str, Any]:
+    sanitized: dict[str, Any] = {}
+    for key, value in overrides.items():
+        if key in DERIVED_PROFILE_SECTIONS and isinstance(value, dict) and has_derive_from_current_source(value):
+            cleaned = remove_numeric_policy_overrides(value)
+            if isinstance(cleaned, dict):
+                cleaned.pop("source", None)
+            sanitized[key] = cleaned
+        else:
+            sanitized[key] = value
+    return sanitized
 
 
 def load_language_profile(profile_path: Path | None) -> dict[str, Any]:
@@ -138,14 +190,44 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
     font_max = max(font_sizes)
     width_q25 = quantile(widths, 0.25)
     width_q50 = quantile(widths, 0.50)
+    width_q75 = quantile(widths, 0.75)
+    height_q50 = median(heights)
+    page_width_q50 = median(page_widths)
+    page_height_q50 = median(page_heights)
 
     body_scale = 1.04 if font_q50 >= 8.0 else 1.0
     footnote_scale = 0.78 if font_q25 <= 7.5 else 0.84
     compact_scale = 0.66 if width_q25 < 32 else 0.74
     body_flow_min_region_count = 2 if target_language == "en" else 4
-    body_min_pt = 4.4 if target_language == "en" else 5.2
-    body_flow_min_pt = 4.8 if target_language == "en" else 5.6
-
+    width_q25_ratio = width_q25 / max(1.0, page_width_q50)
+    width_q50_ratio = width_q50 / max(1.0, page_width_q50)
+    width_q75_ratio = width_q75 / max(1.0, page_width_q50)
+    font_gap_ratio = font_q50 / max(1.0, page_width_q50)
+    height_q50_ratio = height_q50 / max(1.0, page_height_q50)
+    local_expansion_min_source_width_ratio = round(max(width_q25_ratio * 0.45, font_gap_ratio * 1.2), 4)
+    local_expansion_max_source_width_ratio = round(min(max(width_q75_ratio * 1.35, width_q50_ratio), width_q50_ratio + width_q25_ratio), 4)
+    local_expansion_min_width_ratio = round(max(width_q50_ratio * 1.15, local_expansion_max_source_width_ratio * 0.72), 4)
+    local_expansion_max_width_ratio = round(min(max(width_q75_ratio * 1.65, local_expansion_min_width_ratio), 0.62), 4)
+    local_flow_max_width_ratio = round(min(max(width_q75_ratio * 1.55, width_q50_ratio), 0.62), 4)
+    local_flow_max_height_ratio = round(min(max(height_q50_ratio * 8.0, font_q50 / max(1.0, page_height_q50) * 7.0), 0.34), 4)
+    local_gap_pt = round(max(font_q25 * 0.45, height_q50 * 0.28), 3)
+    local_vertical_gap_pt = round(max(font_q25 * 0.28, height_q50 * 0.18), 3)
+    local_max_x0_delta = round(max(width_q25 * 0.35, font_q50 * 1.6), 3)
+    body_margin_ratio = round(max(font_gap_ratio * 2.2, width_q25_ratio * 0.45), 4)
+    body_min_width_ratio = round(max(width_q75_ratio * 1.5, width_q50_ratio + width_q25_ratio), 4)
+    body_max_width_ratio = round(min(max(body_min_width_ratio, 1.0 - body_margin_ratio * 2.0), 0.94), 4)
+    body_height_expand_ratio = round(max(1.08, height_q50 / max(1.0, font_q25)), 3)
+    body_min_height_ratio = round(max(height_q50_ratio * 2.5, font_q50 / max(1.0, page_height_q50) * 3.0), 4)
+    label_min_width_ratio = round(max(width_q50_ratio * 1.4, width_q25_ratio + font_gap_ratio * 2.0), 4)
+    label_max_width_ratio = round(min(max(width_q75_ratio * 1.8, label_min_width_ratio), body_max_width_ratio), 4)
+    label_height_expand_ratio = round(max(1.15, height_q50 / max(1.0, font_q25)), 3)
+    label_min_target_chars = max(4, round(font_q50))
+    compression_floor_ratio = round(max(0.48, min(0.82, font_q25 / max(1.0, font_q75))), 3)
+    derived_policy_statement = (
+        "computed by build_layout_policy.py from current source_extraction statistics "
+        "(font q25/q50/q75, line width q25/q50/q75, line height q50, and page width/height q50); "
+        "language profile may enable sections and list roles but must not provide reusable numeric thresholds"
+    )
     policy = {
         "tool": "build_layout_policy",
         "policy_version": "2026-07-05.region_reflow_policy_v1",
@@ -176,13 +258,13 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "max": round(max(widths), 3),
             },
             "line_height": {
-                "q50": round(median(heights), 3),
+                "q50": round(height_q50, 3),
                 "min": round(min(heights), 3),
                 "max": round(max(heights), 3),
             },
             "page": {
-                "width_q50": round(median(page_widths), 3),
-                "height_q50": round(median(page_heights), 3),
+                "width_q50": round(page_width_q50, 3),
+                "height_q50": round(page_height_q50, 3),
             },
         },
         "classification_rules": {
@@ -219,6 +301,14 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "max_region_width_pt": round(max(90.0, min(width_q50 * 1.45, 160.0)), 3),
                 "min_median_font_size": round(max(6.0, font_q50 * 0.85), 3),
             },
+            "metric_value": {
+                "enabled": True,
+                "source_size_page_quantile": "q75",
+                "min_source_to_page_quantile_ratio": 1.45,
+                "value_token_regex": r"([%\uFF05$]|US\$|HK\$|GBP|EUR|\u7f8e\u5143|\u6e2f\u5143|\u5104\u5143|\u4ebf|bn|billion|million|m|bps|\u57fa\u9ede|\u57fa\u70b9)",
+                "value_amount_regex": r"((?:US\$|HK\$|\$|GBP|EUR)?\s*\d[\d,]*(?:\.\d+)?\s*(?:[%\uFF05]|\u7f8e\u5143|\u6e2f\u5143|\u5104\u5143|\u4ebf|bn|billion|millions?|m|bps|\u57fa\u9ede|\u57fa\u70b9)?)|((?:US\$|HK\$|\$|GBP|EUR)\s*\d)",
+                "anti_overfit": "classifies by current-run font hierarchy and generic value tokens, never by literal values or fixed point sizes",
+            },
             "legend": {
                 "min_line_count": 3,
                 "max_region_width_pt": round(max(80.0, min(width_q50 * 1.25, 140.0)), 3),
@@ -231,7 +321,9 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "max_median_font_size": round(max(font_q50, font_q75), 3),
             },
             "heading": {
-                "min_median_font_size": round(max(font_q75, font_q50 * 1.25), 3),
+                "source_size_page_quantile": "q75",
+                "min_source_to_page_quantile_ratio": 1.20,
+                "top_y_ratio_for_priority": 0.35,
             },
         },
         "region_expansion": {
@@ -240,16 +332,16 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
         },
         "reflow": {
             "reflow_kinds": ["body", "body_flow", "event_card", "table_note", "footnote", "heading", "short_label"],
-            "preserve_line_kinds": ["vertical_nav", "legend", "compact_label", "table_cell"],
+            "preserve_line_kinds": ["vertical_nav", "legend", "compact_label", "table_cell", "metric_value"],
             "min_items_for_reflow": 2,
         },
         "flow_grouping": {
             "body": {
                 "enabled": True,
                 "min_region_count": body_flow_min_region_count,
-                "min_region_width_page_ratio": 0.45,
+                "min_region_width_page_ratio": round(max(width_q50_ratio, width_q75_ratio * 0.72), 4),
                 "max_x0_delta_pt": round(max(12.0, font_q50 * 2.0), 3),
-                "max_width_delta_ratio": 0.18,
+                "max_width_delta_ratio": round(max(0.18, min(1.0, width_q25 / max(1.0, width_q75))), 3),
                 "max_vertical_gap_pt": round(max(18.0, font_q50 * 3.0), 3),
                 "paragraph_gap_pt": round(max(10.0, font_q50 * 1.8), 3),
                 "line_joiner_en": " ",
@@ -259,7 +351,8 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "disable_page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
                 "paragraph_separator": "\n\n",
                 "target_region_kind": "body_flow",
-                "source": "current_run_width_alignment_and_user_feedback",
+                "source": "current_source_geometry_derived",
+                "derivation": derived_policy_statement,
             }
         },
         "source_separator_policy": {
@@ -278,14 +371,156 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
                 "center_on_source_bbox": True,
             }
         },
+        "target_composition": {
+            "enabled": target_language == "en",
+            "derive_from_current_source": True,
+            "region_kinds": ["body_flow", "heading"],
+            "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
+            "disable_page_type_guesses": ["mixed_image_text", "chart_or_dashboard", "matrix_or_table_diagram"],
+            "allow_dense_page_body_below_y_ratio": round(max(0.45, min(0.72, 1.0 - height_q50_ratio * 8.0)), 4),
+            "left_margin_page_ratio": body_margin_ratio,
+            "right_margin_page_ratio": body_margin_ratio,
+            "top_margin_page_ratio": round(max(height_q50_ratio, font_q50 / max(1.0, page_height_q50) * 2.0), 4),
+            "bottom_margin_page_ratio": round(max(height_q50_ratio, font_q25 / max(1.0, page_height_q50) * 2.0), 4),
+            "min_width_page_ratio": body_min_width_ratio,
+            "min_source_width_page_ratio_for_composition": round(max(width_q50_ratio, width_q75_ratio * 0.72), 4),
+            "max_width_page_ratio": body_max_width_ratio,
+            "height_expand_ratio": body_height_expand_ratio,
+            "min_height_page_ratio": body_min_height_ratio,
+            "max_bottom_page_ratio": round(min(0.98, 1.0 - height_q50_ratio), 4),
+            "overlap_guard": {
+                "enabled": True,
+                "min_column_overlap_ratio": round(max(0.45, min(0.72, width_q50 / max(1.0, width_q75))), 3),
+                "min_vertical_gap_pt": local_vertical_gap_pt,
+                "min_remaining_height_pt": round(max(font_q50 * 1.8, height_q50 * 1.5), 3),
+                "ignore_region_kinds": ["vertical_nav", "legend"],
+            },
+            "source": "current_source_geometry_derived",
+            "derivation": derived_policy_statement,
+        },
+        "target_language_reflow": {
+            "enabled": target_language == "en",
+            "derive_from_current_source": True,
+            "region_kinds": ["body_flow", "table_note", "heading"],
+            "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
+            "disable_page_type_guesses": ["mixed_image_text", "chart_or_dashboard", "matrix_or_table_diagram"],
+            "min_width_page_ratio": body_min_width_ratio,
+            "min_source_width_page_ratio_for_reflow": round(max(width_q50_ratio, width_q75_ratio * 0.72), 4),
+            "right_margin_page_ratio": body_margin_ratio,
+            "bottom_margin_page_ratio": round(max(height_q50_ratio, font_q25 / max(1.0, page_height_q50) * 2.0), 4),
+            "height_expand_ratio": body_height_expand_ratio,
+            "min_height_page_ratio": body_min_height_ratio,
+            "max_bottom_page_ratio": round(min(0.98, 1.0 - height_q50_ratio), 4),
+            "allow_dense_page_body_below_y_ratio": round(max(0.45, min(0.72, 1.0 - height_q50_ratio * 8.0)), 4),
+            "overlap_guard": {
+                "enabled": True,
+                "min_column_overlap_ratio": round(max(0.45, min(0.72, width_q50 / max(1.0, width_q75))), 3),
+                "min_vertical_gap_pt": local_vertical_gap_pt,
+                "min_remaining_height_pt": round(max(font_q50 * 1.4, height_q50 * 1.2), 3),
+                "ignore_region_kinds": ["vertical_nav", "legend"],
+            },
+            "source": "current_source_geometry_derived",
+            "derivation": derived_policy_statement,
+        },
+        "expandable_text_slots": {
+            "enabled": target_language == "en",
+            "derive_from_current_source": True,
+            "region_kinds": ["heading", "short_label", "compact_label", "metric_value"],
+            "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
+            "disable_page_type_guesses": ["chart_or_dashboard", "table_or_chart_dense"],
+            "allow_hard_page_left_label_expansion": True,
+            "hard_page_left_label_max_x_ratio": round(max(width_q25_ratio, font_gap_ratio * 3.0), 4),
+            "hard_page_left_label_max_y_ratio": round(min(0.92, 1.0 - height_q50_ratio * 4.0), 4),
+            "min_target_chars": label_min_target_chars,
+            "min_text_expansion_ratio": round(max(1.05, font_q50 / max(1.0, font_q25)), 3),
+            "min_source_width_page_ratio": local_expansion_min_source_width_ratio,
+            "max_source_width_page_ratio": local_expansion_max_source_width_ratio,
+            "min_y_ratio": round(max(height_q50_ratio, font_q25 / max(1.0, page_height_q50)), 4),
+            "max_y_ratio": round(min(0.98, 1.0 - height_q50_ratio), 4),
+            "right_margin_page_ratio": round(max(body_margin_ratio, font_gap_ratio * 2.0), 4),
+            "bottom_margin_page_ratio": round(max(height_q50_ratio, font_q25 / max(1.0, page_height_q50)), 4),
+            "min_width_page_ratio": label_min_width_ratio,
+            "heading_min_width_page_ratio": round(max(label_min_width_ratio, width_q75_ratio * 1.5), 4),
+            "compact_label_min_width_page_ratio": label_min_width_ratio,
+            "compact_label_max_width_page_ratio": label_max_width_ratio,
+            "compact_label_height_expand_ratio": label_height_expand_ratio,
+            "compact_label_min_y_ratio": 0.0,
+            "compact_label_min_text_expansion_ratio": 0.0,
+            "compact_label_min_target_chars": 1,
+            "metric_value_min_width_page_ratio": local_expansion_min_width_ratio,
+            "metric_value_max_width_page_ratio": local_expansion_max_width_ratio,
+            "metric_value_height_expand_ratio": round(max(1.0, height_q50 / max(1.0, font_q50)), 3),
+            "metric_value_min_height_source_ratio": round(max(0.72, font_q25 / max(1.0, font_q50)), 3),
+            "metric_value_min_text_expansion_ratio": 0.0,
+            "metric_value_min_target_chars": 1,
+            "max_width_page_ratio": body_max_width_ratio,
+            "height_expand_ratio": label_height_expand_ratio,
+            "min_height_source_ratio": round(max(1.1, height_q50 / max(1.0, font_q50)), 3),
+            "min_horizontal_gap_pt": local_gap_pt,
+            "min_vertical_gap_pt": local_vertical_gap_pt,
+            "obstacle_vertical_overlap_ratio": round(max(0.12, min(0.55, height_q50 / max(1.0, font_q50 * 4.0))), 3),
+            "source": "current_source_geometry_derived",
+            "derivation": derived_policy_statement,
+        },
         "constrained_text_image_fit": {
             "enabled": True,
             "region_kinds": ["table_cell", "compact_label", "short_label", "legend", "table_note", "footnote"],
             "wrapped_region_kinds": ["table_note", "footnote"],
+            "wrap_on_compression_region_kinds": ["table_cell", "compact_label", "legend"],
+            "forbid_region_kinds": ["metric_value"],
             "dense_single_line_body_page_types": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
-            "min_font_pt": 3.2,
-            "max_font_pt": 5.2,
+            "min_horizontal_compression_ratio": compression_floor_ratio,
+            "min_font_source_ratio": round(max(0.42, font_q25 / max(1.0, font_q75) * 0.72), 3),
+            "max_font_source_ratio": round(max(0.86, min(1.12, font_q75 / max(1.0, font_q50))), 3),
+            "min_font_page_quantile": "q25",
+            "min_font_page_quantile_scale": round(max(0.56, min(0.88, font_q25 / max(1.0, font_q50))), 3),
+            "max_font_page_quantile": "q75",
+            "max_font_page_quantile_scale": round(max(0.90, min(1.12, font_q75 / max(1.0, font_q50))), 3),
+            "keep_proportion_for_wrapped": True,
+            "source": "current_source_geometry_derived",
+            "derivation": derived_policy_statement,
             "reason": "Use a transparent text image only for constrained label slots after textbox probing fails; preserve full target text and record compression evidence.",
+        },
+        "local_constrained_slot_expansion": {
+            "enabled": target_language == "en",
+            "page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
+            "region_kinds": ["table_cell", "compact_label", "short_label"],
+            "min_source_width_page_ratio": local_expansion_min_source_width_ratio,
+            "max_source_width_page_ratio": local_expansion_max_source_width_ratio,
+            "min_y_ratio": round(max(font_q50 / max(1.0, page_height_q50), height_q50_ratio), 4),
+            "max_y_ratio": round(1.0 - max(font_q50 / max(1.0, page_height_q50), height_q50_ratio) * 2.0, 4),
+            "min_source_size_page_quantile": "q50",
+            "min_source_to_page_quantile_ratio": 0.95,
+            "min_target_chars": max(4, round(font_q50)),
+            "min_text_expansion_ratio": round(max(1.05, font_q50 / max(1.0, font_q25)), 3),
+            "min_alpha_chars": 4,
+            "right_margin_page_ratio": round(max(width_q25_ratio * 0.5, font_gap_ratio * 2.0), 4),
+            "bottom_margin_page_ratio": round(max(height_q50_ratio, font_q25 / max(1.0, page_height_q50)), 4),
+            "min_width_page_ratio": local_expansion_min_width_ratio,
+            "max_width_page_ratio": local_expansion_max_width_ratio,
+            "height_expand_ratio": round(max(1.25, height_q50 / max(1.0, font_q25)), 3),
+            "min_height_source_ratio": round(max(1.1, height_q50 / max(1.0, font_q50)), 3),
+            "min_horizontal_gap_pt": local_gap_pt,
+            "min_vertical_gap_pt": local_vertical_gap_pt,
+            "obstacle_vertical_overlap_ratio": round(max(0.12, min(0.55, height_q50 / max(1.0, font_q50 * 4.0))), 3),
+            "below_column_overlap_ratio": round(max(0.10, min(0.45, width_q25 / max(1.0, width_q75))), 3),
+            "source": "source_candidate_region_similarity_open_rule",
+            "derivation": "all numeric thresholds in this object are computed from current source extraction statistics: line_width q25/q50/q75, font_size q25/q50, line_height q50, and page width/height q50",
+        },
+        "local_constrained_slot_flow": {
+            "enabled": target_language == "en",
+            "page_type_guesses": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
+            "region_kinds": ["table_cell", "compact_label", "short_label", "body"],
+            "min_line_count": 2,
+            "max_region_width_page_ratio": local_flow_max_width_ratio,
+            "max_region_height_page_ratio": local_flow_max_height_ratio,
+            "max_x0_delta_pt": local_max_x0_delta,
+            "max_width_ratio": round(max(1.2, width_q75 / max(1.0, width_q25)), 3),
+            "max_median_font_size_page_quantile": "q50",
+            "max_source_to_page_quantile_ratio": round(max(1.05, font_q75 / max(1.0, font_q50)), 3),
+            "min_alpha_chars": 4,
+            "source": "source_candidate_region_similarity_open_rule",
+            "derivation": "all numeric thresholds in this object are computed from current source extraction statistics: line_width q25/q50/q75, font_size q50/q75, line_height q50, and page width/height q50",
         },
         "layout_text_variants": {
             "compact_label": ["compact_label_zh", "compact_zh", "display_zh"],
@@ -296,6 +531,8 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
             "short_label_en": ["short_label_en", "compact_en", "display_en"],
             "table_cell_en": ["table_cell_en", "compact_label_en", "compact_en", "display_en"],
             "legend_en": ["legend_en", "compact_label_en", "compact_en", "display_en"],
+            "metric_value_en": ["metric_value_en", "compact_en", "display_en"],
+            "metric_value_zh": ["metric_value_zh", "compact_zh", "display_zh"],
             "event_card_en": ["event_card_en", "short_label_en", "compact_en", "display_en"],
             "event_card_zh": ["event_card_zh", "short_label_zh", "compact_zh", "display_zh"],
             "heading_en": ["heading_en", "short_label_en", "compact_label_en", "display_en"],
@@ -303,65 +540,136 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
         },
         "font_profiles": {
             "footnote": {
+                "sizing_mode": "source_relative",
                 "source_scale": round(footnote_scale, 3),
-                "min_pt": 3.8,
-                "max_pt": round(max(4.8, min(font_q25 * footnote_scale, 5.8)), 3),
+                "min_source_ratio": 0.55,
+                "max_source_ratio": 0.96,
+                "page_quantile_floor": "q25",
+                "page_quantile_floor_scale": 0.70,
+                "page_quantile_ceiling": "q50",
+                "page_quantile_ceiling_scale": 0.95,
+                "min_insert_source_ratio": 0.52,
                 "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64, 0.58],
             },
             "table_note": {
+                "sizing_mode": "source_relative",
                 "source_scale": 1.05,
-                "min_pt": 5.2,
-                "max_pt": round(max(6.2, min(font_q50 * 0.95, 8.2)), 3),
+                "min_source_ratio": 0.70,
+                "max_source_ratio": 1.10,
+                "page_quantile_floor": "q25",
+                "page_quantile_floor_scale": 0.86,
+                "page_quantile_ceiling": "q75",
+                "page_quantile_ceiling_scale": 1.08,
+                "min_insert_source_ratio": 0.66,
                 "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.80, 0.76],
             },
             "compact_label": {
+                "sizing_mode": "source_relative",
                 "source_scale": round(compact_scale, 3),
-                "min_pt": 3.5,
-                "max_pt": round(max(4.2, min(font_q25 * compact_scale, 5.2)), 3),
+                "min_source_ratio": 0.46,
+                "max_source_ratio": 0.92,
+                "page_quantile_floor": "q25",
+                "page_quantile_floor_scale": 0.58,
+                "page_quantile_ceiling": "q75",
+                "page_quantile_ceiling_scale": 0.92,
+                "min_insert_source_ratio": 0.44,
                 "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60],
             },
             "table_cell": {
+                "sizing_mode": "source_relative",
                 "source_scale": round(max(0.72, min(0.92, compact_scale + 0.14)), 3),
-                "min_pt": 3.2,
-                "max_pt": round(max(4.8, min(font_q50 * 0.92, 7.4)), 3),
+                "min_source_ratio": 0.50,
+                "max_source_ratio": 1.00,
+                "page_quantile_floor": "q25",
+                "page_quantile_floor_scale": 0.68,
+                "page_quantile_ceiling": "q75",
+                "page_quantile_ceiling_scale": 0.96,
+                "min_insert_source_ratio": 0.48,
                 "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60, 0.54, 0.48],
             },
             "legend": {
+                "sizing_mode": "source_relative",
                 "source_scale": round(max(0.78, min(0.98, compact_scale + 0.18)), 3),
-                "min_pt": 4.0,
-                "max_pt": round(max(5.2, min(font_q50 * 0.98, 8.0)), 3),
+                "min_source_ratio": 0.58,
+                "max_source_ratio": 1.04,
+                "page_quantile_floor": "q25",
+                "page_quantile_floor_scale": 0.76,
+                "page_quantile_ceiling": "q75",
+                "page_quantile_ceiling_scale": 1.04,
+                "min_insert_source_ratio": 0.54,
                 "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64],
             },
             "heading": {
+                "sizing_mode": "source_relative",
                 "source_scale": 0.95,
-                "min_pt": 5.0,
-                "min_insert_pt": 6.2,
-                "max_pt": round(max(8.0, min(max(font_q95 * 1.05, font_max * 0.98), font_max)), 3),
+                "min_source_ratio": 0.62,
+                "max_source_ratio": 1.15,
+                "page_quantile_floor": "q75",
+                "page_quantile_floor_scale": 0.96,
+                "page_quantile_ceiling": "max",
+                "page_quantile_ceiling_scale": 1.05,
+                "min_insert_source_ratio": 0.55,
                 "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60, 0.52, 0.44, 0.36, 0.30],
             },
             "short_label": {
+                "sizing_mode": "source_relative",
                 "source_scale": 0.95,
-                "min_pt": 5.0,
-                "max_pt": round(max(6.0, min(font_q50 * 1.05, 11.0)), 3),
+                "min_source_ratio": 0.58,
+                "max_source_ratio": 1.10,
+                "page_quantile_floor": "q50",
+                "page_quantile_floor_scale": 0.76,
+                "page_quantile_ceiling": "q95",
+                "page_quantile_ceiling_scale": 1.00,
+                "min_insert_source_ratio": 0.52,
                 "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68],
             },
+            "metric_value": {
+                "sizing_mode": "source_relative",
+                "source_scale": 1.0,
+                "min_source_ratio": 0.70,
+                "max_source_ratio": 1.05,
+                "page_quantile_floor": "q75",
+                "page_quantile_floor_scale": 1.10,
+                "page_quantile_ceiling": "max",
+                "page_quantile_ceiling_scale": 1.05,
+                "min_insert_source_ratio": 0.62,
+                "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.80, 0.76, 0.70],
+                "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles at generation time",
+            },
             "event_card": {
+                "sizing_mode": "source_relative",
                 "source_scale": 0.86,
-                "min_pt": 4.4,
-                "min_insert_pt": 4.0,
-                "max_pt": round(max(5.8, min(font_q50 * 0.92, 7.4)), 3),
+                "min_source_ratio": 0.54,
+                "max_source_ratio": 1.02,
+                "page_quantile_floor": "q25",
+                "page_quantile_floor_scale": 0.74,
+                "page_quantile_ceiling": "q75",
+                "page_quantile_ceiling_scale": 0.96,
+                "min_insert_source_ratio": 0.50,
                 "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.60],
             },
             "body": {
+                "sizing_mode": "source_relative",
                 "source_scale": round(body_scale, 3),
-                "min_pt": body_min_pt,
-                "max_pt": round(max(7.8, min(max(font_q50 * 1.15, font_q75 * 1.10), 11.5)), 3),
+                "min_source_ratio": 0.68 if target_language == "en" else 0.64,
+                "max_source_ratio": 1.18 if target_language == "en" else 1.08,
+                "page_quantile_floor": "q50",
+                "page_quantile_floor_scale": 0.84 if target_language == "en" else 0.76,
+                "page_quantile_ceiling": "q95",
+                "page_quantile_ceiling_scale": 1.12 if target_language == "en" else 1.02,
+                "min_insert_source_ratio": 0.64 if target_language == "en" else 0.60,
                 "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64, 0.58, 0.52, 0.46],
             },
             "body_flow": {
+                "sizing_mode": "source_relative",
                 "source_scale": round(max(body_scale, 1.12), 3),
-                "min_pt": body_flow_min_pt,
-                "max_pt": round(max(8.4, min(max(font_q50 * 1.24, font_q75 * 1.16), 12.4)), 3),
+                "min_source_ratio": 0.72 if target_language == "en" else 0.66,
+                "max_source_ratio": 1.24 if target_language == "en" else 1.10,
+                "page_quantile_floor": "q50",
+                "page_quantile_floor_scale": 0.88 if target_language == "en" else 0.78,
+                "page_quantile_ceiling": "q95",
+                "page_quantile_ceiling_scale": 1.18 if target_language == "en" else 1.04,
+                "min_insert_source_ratio": 0.68 if target_language == "en" else 0.62,
                 "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.80, 0.76, 0.70, 0.64, 0.58, 0.52, 0.46],
             },
         },
@@ -372,6 +680,8 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
             "point_fit_max_chars": 18,
             "fallback_insert_font_pt": 3.5,
             "fallback_max_chars": 24,
+            "forbid_region_kinds": ["metric_value"],
+            "forbid_reason": "Metric/KPI values must preserve source-relative visual hierarchy; tiny fallback text is a quality failure.",
         },
         "anti_overfit": {
             "no_filename_branch": True,
@@ -382,7 +692,7 @@ def build_policy(extraction_path: Path, translations_path: Path | None = None, l
     }
     overrides = language_profile.get("policy_overrides")
     if isinstance(overrides, dict):
-        deep_merge(policy, overrides)
+        deep_merge(policy, sanitize_language_profile_overrides(overrides))
     return policy
 
 

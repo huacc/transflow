@@ -1,0 +1,49 @@
+[
+  {
+    "case_id": "R12_00005_2025_interim_report_zh",
+    "quality_returncode": 0,
+    "quality_verdict": "FAIL",
+    "failed_gate_ids": [
+      "text_residue",
+      "text_fit",
+      "visual_similarity",
+      "body_paragraph_readability",
+      "footnote_readability",
+      "sidebar_navigation_legibility",
+      "table_text_legibility",
+      "background_residue_artifact",
+      "matrix_diagram_integrity"
+    ]
+  },
+  {
+    "case_id": "R12_00388_2026_annual_report_en",
+    "quality_returncode": 0,
+    "quality_verdict": "PASS",
+    "failed_gate_ids": []
+  },
+  {
+    "case_id": "R12_00992_2023_annual_report_en",
+    "quality_returncode": 0,
+    "quality_verdict": "FAIL",
+    "failed_gate_ids": [
+      "text_residue",
+      "text_fit",
+      "visual_similarity",
+      "event_card_readability",
+      "footnote_readability",
+      "short_label_legibility"
+    ]
+  },
+  {
+    "case_id": "R12_jianye_new_life_c",
+    "quality_returncode": 0,
+    "quality_verdict": "PASS",
+    "failed_gate_ids": []
+  },
+  {
+    "case_id": "R12_jianye_new_life_e",
+    "quality_returncode": 0,
+    "quality_verdict": "PASS",
+    "failed_gate_ids": []
+  }
+]

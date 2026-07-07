@@ -1,0 +1,6930 @@
+{
+  "run_id": "round14",
+  "case_id": "R14_00005_2025_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0010",
+  "batch_index": 10,
+  "batch_count": 196,
+  "source_extraction_ref": "docs/reports/round14/source_extraction_en.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p14_b0_l0",
+      "page_index": 14,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Key financial metrics",
+      "bbox": [
+        42.52,
+        66.648,
+        177.998,
+        84.848
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Key",
+        "financial",
+        "metrics"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p14_b1_l0",
+      "page_index": 14,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "For the year ended 31 Dec",
+      "bbox": [
+        431.49,
+        84.014,
+        517.583,
+        93.114
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Dec",
+        "For",
+        "ended",
+        "the",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b2_l0",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Reported results",
+      "bbox": [
+        45.15,
+        95.194,
+        102.781,
+        104.294
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Reported",
+        "results"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b2_l4",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "Profit before tax ($m)",
+      "bbox": [
+        45.15,
+        105.704,
+        111.783,
+        114.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Profit",
+        "before",
+        "m)",
+        "tax"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b2_l9",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 9,
+      "source_text": "Profit after tax ($m)",
+      "bbox": [
+        45.15,
+        115.454,
+        106.022,
+        124.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Profit",
+        "after",
+        "m)",
+        "tax"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b2_l14",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 14,
+      "source_text": "Net operating income before change in expected credit losses and other credit",
+      "bbox": [
+        45.15,
+        125.504,
+        292.369,
+        134.604
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Net",
+        "and",
+        "before",
+        "change",
+        "credit",
+        "expected",
+        "in",
+        "income",
+        "losses",
+        "operating",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b2_l15",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 15,
+      "source_text": "impairment charges (‘revenue’) ($m)",
+      "bbox": [
+        45.15,
+        133.904,
+        159.747,
+        143.004
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "charges",
+        "impairment",
+        "m)",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b2_l20",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 20,
+      "source_text": "Cost efficiency ratio (%)",
+      "bbox": [
+        45.15,
+        143.954,
+        119.931,
+        153.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Cost",
+        "efficiency",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b2_l24",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 24,
+      "source_text": "Net interest margin (%)",
+      "bbox": [
+        45.15,
+        153.704,
+        118.398,
+        162.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Net",
+        "interest",
+        "margin"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b2_l28",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 28,
+      "source_text": "Basic earnings per share ($)",
+      "bbox": [
+        45.15,
+        163.454,
+        132.51,
+        172.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Basic",
+        "earnings",
+        "per",
+        "share"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b2_l33",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 33,
+      "source_text": "Diluted earnings per share ($)",
+      "bbox": [
+        45.15,
+        173.204,
+        137.97,
+        182.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Diluted",
+        "earnings",
+        "per",
+        "share"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b2_l38",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 38,
+      "source_text": "Dividend per ordinary share (in respect of the period) ($)1",
+      "bbox": [
+        45.15,
+        182.954,
+        223.398,
+        192.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Dividend",
+        "in",
+        "of",
+        "ordinary",
+        "per",
+        "period)",
+        "respect",
+        "share",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b2_l43",
+      "page_index": 14,
+      "block_id": 2,
+      "line_index": 43,
+      "source_text": "Dividend payout ratio (%)2",
+      "bbox": [
+        45.15,
+        192.704,
+        127.538,
+        201.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Dividend",
+        "payout",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l0",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Alternative performance measures ø",
+      "bbox": [
+        45.15,
+        213.724,
+        175.108,
+        222.888
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Alternative",
+        "measures",
+        "performance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l1",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "Constant currency profit before tax ($m)",
+      "bbox": [
+        45.15,
+        224.204,
+        171.304,
+        233.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "before",
+        "currency",
+        "m)",
+        "profit",
+        "tax"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l6",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 6,
+      "source_text": "Constant currency revenue ($m)",
+      "bbox": [
+        45.15,
+        233.954,
+        146.23,
+        243.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "currency",
+        "m)",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l11",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 11,
+      "source_text": "Constant currency banking net interest income ($m)",
+      "bbox": [
+        45.15,
+        243.704,
+        208.838,
+        252.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "banking",
+        "currency",
+        "income",
+        "interest",
+        "m)",
+        "net"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l15",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 15,
+      "source_text": "Constant currency cost efficiency ratio (%)",
+      "bbox": [
+        45.15,
+        253.454,
+        178.612,
+        262.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "cost",
+        "currency",
+        "efficiency",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l19",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 19,
+      "source_text": "Constant currency profit before tax excluding notable items ($m)",
+      "bbox": [
+        45.15,
+        263.204,
+        248.332,
+        272.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "before",
+        "currency",
+        "excluding",
+        "items",
+        "m)",
+        "notable",
+        "profit",
+        "tax"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l24",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 24,
+      "source_text": "Constant currency revenue excluding notable items ($m)",
+      "bbox": [
+        45.15,
+        272.954,
+        223.258,
+        282.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "currency",
+        "excluding",
+        "items",
+        "m)",
+        "notable",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l29",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 29,
+      "source_text": "Constant currency profit before tax excluding notable items and strategic transactions ($m)",
+      "bbox": [
+        45.15,
+        282.704,
+        331.772,
+        291.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "and",
+        "before",
+        "currency",
+        "excluding",
+        "items",
+        "m)",
+        "notable",
+        "profit",
+        "strategic",
+        "tax",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l34",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 34,
+      "source_text": "Constant currency revenue excluding notable items and strategic transactions ($m)",
+      "bbox": [
+        45.15,
+        292.454,
+        306.698,
+        301.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "and",
+        "currency",
+        "excluding",
+        "items",
+        "m)",
+        "notable",
+        "revenue",
+        "strategic",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l39",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 39,
+      "source_text": "Expected credit losses and other credit impairment charges (annualised) as a % of",
+      "bbox": [
+        45.15,
+        303.244,
+        303.828,
+        312.344
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Expected",
+        "a",
+        "and",
+        "annualised)",
+        "as",
+        "charges",
+        "credit",
+        "impairment",
+        "losses",
+        "of",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l40",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 40,
+      "source_text": "average gross loans and advances to customers, including held for sale (%)",
+      "bbox": [
+        45.15,
+        311.644,
+        282.688,
+        320.744
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "advances",
+        "and",
+        "average",
+        "customers",
+        "for",
+        "gross",
+        "held",
+        "including",
+        "loans",
+        "sale",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l44",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 44,
+      "source_text": "Basic earnings per share excluding material notable items and related impacts ($)",
+      "bbox": [
+        45.15,
+        322.454,
+        301.273,
+        331.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Basic",
+        "and",
+        "earnings",
+        "excluding",
+        "impacts",
+        "items",
+        "material",
+        "notable",
+        "per",
+        "related",
+        "share"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l48",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 48,
+      "source_text": "Return on average ordinary shareholders’ equity (annualised) (%)",
+      "bbox": [
+        45.15,
+        332.204,
+        249.2,
+        341.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Return",
+        "annualised)",
+        "average",
+        "equity",
+        "on",
+        "ordinary",
+        "shareholders"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l52",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 52,
+      "source_text": "Return on average tangible equity (annualised) (%)",
+      "bbox": [
+        45.15,
+        341.954,
+        204.106,
+        351.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Return",
+        "annualised)",
+        "average",
+        "equity",
+        "on",
+        "tangible"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l56",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 56,
+      "source_text": "Return on average tangible equity excluding notable items (annualised) (%)",
+      "bbox": [
+        45.15,
+        351.704,
+        265.804,
+        360.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Return",
+        "annualised)",
+        "average",
+        "equity",
+        "excluding",
+        "items",
+        "notable",
+        "on",
+        "tangible"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b3_l60",
+      "page_index": 14,
+      "block_id": 3,
+      "line_index": 60,
+      "source_text": "Target basis operating expenses ($m)",
+      "bbox": [
+        45.15,
+        361.454,
+        163.065,
+        370.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Target",
+        "basis",
+        "expenses",
+        "m)",
+        "operating"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b4_l0",
+      "page_index": 14,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "At 31 Dec",
+      "bbox": [
+        458.35,
+        376.514,
+        490.69,
+        385.614
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b5_l0",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "Balance sheet",
+      "bbox": [
+        45.15,
+        387.694,
+        93.807,
+        396.794
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Balance",
+        "sheet"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b5_l4",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "Total assets ($m)",
+      "bbox": [
+        45.15,
+        398.204,
+        98.651,
+        407.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Total",
+        "assets",
+        "m)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b5_l9",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 9,
+      "source_text": "Net loans and advances to customers ($m)",
+      "bbox": [
+        45.15,
+        407.954,
+        180.236,
+        417.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Net",
+        "advances",
+        "and",
+        "customers",
+        "loans",
+        "m)",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b5_l14",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 14,
+      "source_text": "Constant currency net loans and advances to customers ($m)",
+      "bbox": [
+        45.15,
+        417.704,
+        238.665,
+        426.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "advances",
+        "and",
+        "currency",
+        "customers",
+        "loans",
+        "m)",
+        "net",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b5_l19",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 19,
+      "source_text": "Customer accounts ($m)",
+      "bbox": [
+        45.15,
+        427.454,
+        122.717,
+        436.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Customer",
+        "accounts",
+        "m)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b5_l24",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 24,
+      "source_text": "Constant currency customer accounts ($m)",
+      "bbox": [
+        45.15,
+        437.204,
+        181.398,
+        446.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Constant",
+        "accounts",
+        "currency",
+        "customer",
+        "m)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b5_l29",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 29,
+      "source_text": "Average interest-earning assets, year to date ($m)",
+      "bbox": [
+        45.15,
+        446.954,
+        202.069,
+        456.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Average",
+        "assets",
+        "date",
+        "interest-earning",
+        "m)",
+        "to",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b5_l34",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 34,
+      "source_text": "Loans and advances to customers as % of customer accounts (%)",
+      "bbox": [
+        45.15,
+        456.704,
+        253.449,
+        465.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Loans",
+        "accounts",
+        "advances",
+        "and",
+        "as",
+        "customer",
+        "customers",
+        "of",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b5_l38",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 38,
+      "source_text": "Total shareholders’ equity ($m)",
+      "bbox": [
+        45.15,
+        466.454,
+        142.576,
+        475.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Total",
+        "equity",
+        "m)",
+        "shareholders"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b5_l43",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 43,
+      "source_text": "Tangible ordinary shareholders’ equity ($m)",
+      "bbox": [
+        45.15,
+        476.204,
+        181.678,
+        485.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Tangible",
+        "equity",
+        "m)",
+        "ordinary",
+        "shareholders"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b5_l48",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 48,
+      "source_text": "Net asset value per ordinary share at period end ($)",
+      "bbox": [
+        45.15,
+        485.954,
+        206.29,
+        495.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Net",
+        "asset",
+        "at",
+        "end",
+        "ordinary",
+        "per",
+        "period",
+        "share",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b5_l53",
+      "page_index": 14,
+      "block_id": 5,
+      "line_index": 53,
+      "source_text": "Tangible net asset value per ordinary share at period end ($)",
+      "bbox": [
+        45.15,
+        495.704,
+        233.8,
+        504.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Tangible",
+        "asset",
+        "at",
+        "end",
+        "net",
+        "ordinary",
+        "per",
+        "period",
+        "share",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b6_l0",
+      "page_index": 14,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Capital, leverage and liquidity",
+      "bbox": [
+        45.15,
+        515.944,
+        148.673,
+        525.044
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Capital",
+        "and",
+        "leverage",
+        "liquidity"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b7_l0",
+      "page_index": 14,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "Common equity tier 1 capital ratio (%)3,4",
+      "bbox": [
+        45.15,
+        526.454,
+        170.906,
+        535.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Common",
+        "capital",
+        "equity",
+        "ratio",
+        "tier"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "3,4"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b7_l4",
+      "page_index": 14,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "Risk-weighted assets ($m)3,4",
+      "bbox": [
+        45.15,
+        536.204,
+        134.286,
+        545.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Risk-weighted",
+        "assets",
+        "m)3"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3,4"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b7_l9",
+      "page_index": 14,
+      "block_id": 7,
+      "line_index": 9,
+      "source_text": "Total capital ratio (%)3,4",
+      "bbox": [
+        45.15,
+        545.954,
+        118.166,
+        555.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Total",
+        "capital",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3,4"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b7_l13",
+      "page_index": 14,
+      "block_id": 7,
+      "line_index": 13,
+      "source_text": "Leverage ratio (%)3,4",
+      "bbox": [
+        45.15,
+        555.704,
+        108.886,
+        564.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Leverage",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3,4"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b7_l17",
+      "page_index": 14,
+      "block_id": 7,
+      "line_index": 17,
+      "source_text": "High-quality liquid assets (liquidity value) ($m)4,5",
+      "bbox": [
+        45.15,
+        565.454,
+        195.886,
+        574.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "High-quality",
+        "assets",
+        "liquid",
+        "liquidity",
+        "m)4",
+        "value)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "4,5"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b7_l22",
+      "page_index": 14,
+      "block_id": 7,
+      "line_index": 22,
+      "source_text": "Liquidity coverage ratio (%)4,5",
+      "bbox": [
+        45.15,
+        575.204,
+        137.626,
+        584.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Liquidity",
+        "coverage",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "4,5"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b7_l26",
+      "page_index": 14,
+      "block_id": 7,
+      "line_index": 26,
+      "source_text": "Net stable funding ratio (%)4,5",
+      "bbox": [
+        45.15,
+        584.954,
+        138.006,
+        594.054
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Net",
+        "funding",
+        "ratio",
+        "stable"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "4,5"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b8_l0",
+      "page_index": 14,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "Share count",
+      "bbox": [
+        45.15,
+        605.194,
+        87.29,
+        614.294
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Share",
+        "count"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b9_l0",
+      "page_index": 14,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Period end basic number of $0.50 ordinary shares outstanding, after deducting own shares held (millions)",
+      "bbox": [
+        45.15,
+        615.704,
+        379.26,
+        624.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Period",
+        "after",
+        "basic",
+        "deducting",
+        "end",
+        "held",
+        "millions)",
+        "number",
+        "of",
+        "ordinary",
+        "outstanding",
+        "own",
+        "shares"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "0.50 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b9_l5",
+      "page_index": 14,
+      "block_id": 9,
+      "line_index": 5,
+      "source_text": "Period end basic number of $0.50 ordinary shares outstanding and dilutive potential ordinary shares, after",
+      "bbox": [
+        45.15,
+        625.004,
+        379.862,
+        634.104
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Period",
+        "after",
+        "and",
+        "basic",
+        "dilutive",
+        "end",
+        "number",
+        "of",
+        "ordinary",
+        "outstanding",
+        "potential",
+        "shares"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "0.50 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b9_l6",
+      "page_index": 14,
+      "block_id": 9,
+      "line_index": 6,
+      "source_text": "deducting own shares held (millions)",
+      "bbox": [
+        45.15,
+        633.404,
+        160.671,
+        642.504
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "deducting",
+        "held",
+        "millions)",
+        "own",
+        "shares"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b9_l11",
+      "page_index": 14,
+      "block_id": 9,
+      "line_index": 11,
+      "source_text": "Average basic number of $0.50 ordinary shares outstanding, after deducting own shares held (millions)",
+      "bbox": [
+        45.15,
+        642.704,
+        369.649,
+        651.804
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Average",
+        "after",
+        "basic",
+        "deducting",
+        "held",
+        "millions)",
+        "number",
+        "of",
+        "ordinary",
+        "outstanding",
+        "own",
+        "shares"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "0.50 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l0",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "Ñ For reconciliation and analysis of our reported results on a constant currency basis, including lists of notable items, see page 76. Definitions and calculations of",
+      "bbox": [
+        42.52,
+        659.6,
+        544.398,
+        669.848
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 9.0,
+      "font": "Wingdings3",
+      "ascii_tokens": [
+        "Definitions",
+        "For",
+        "a",
+        "analysis",
+        "and",
+        "basis",
+        "calculations",
+        "constant",
+        "currency",
+        "including",
+        "items",
+        "lists",
+        "notable",
+        "of",
+        "on",
+        "our",
+        "page",
+        "reconciliation",
+        "reported",
+        "results",
+        "see"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "76"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l1",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "other alternative performance measures are included in ‘Reconciliation of alternative performance measures’ on page 92.",
+      "bbox": [
+        53.86,
+        669.024,
+        426.79,
+        678.124
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Reconciliation",
+        "alternative",
+        "are",
+        "in",
+        "included",
+        "measures",
+        "of",
+        "on",
+        "other",
+        "page",
+        "performance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "92"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l2",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "1 In 2024, dividend per share includes the special dividend of $0.21 per ordinary share arising from the proceeds of the sale of our banking business in Canada to",
+      "bbox": [
+        42.52,
+        679.004,
+        546.197,
+        688.104
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Canada",
+        "In",
+        "arising",
+        "banking",
+        "business",
+        "dividend",
+        "from",
+        "in",
+        "includes",
+        "of",
+        "ordinary",
+        "our",
+        "per",
+        "proceeds",
+        "sale",
+        "share",
+        "special",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "0.21 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l3",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "Royal Bank of Canada.",
+      "bbox": [
+        53.86,
+        687.404,
+        125.883,
+        696.504
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Bank",
+        "Canada.",
+        "Royal",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b10_l4",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "2 Our dividend payout ratio is adjusted for material notable items and related impacts, including all associated income statement impacts relating to those items.",
+      "bbox": [
+        42.52,
+        695.804,
+        546.736,
+        704.904
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Our",
+        "adjusted",
+        "all",
+        "and",
+        "associated",
+        "dividend",
+        "for",
+        "impacts",
+        "including",
+        "income",
+        "is",
+        "items",
+        "items.",
+        "material",
+        "notable",
+        "payout",
+        "ratio",
+        "related",
+        "relating",
+        "statement",
+        "those",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l5",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "3 Regulatory capital ratios and requirements are based on the transitional arrangements of the Capital Requirements Regulation in force at the time. Effective 1",
+      "bbox": [
+        42.52,
+        704.204,
+        539.505,
+        713.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Capital",
+        "Effective",
+        "Regulation",
+        "Regulatory",
+        "Requirements",
+        "and",
+        "are",
+        "arrangements",
+        "at",
+        "based",
+        "capital",
+        "force",
+        "in",
+        "of",
+        "on",
+        "ratios",
+        "requirements",
+        "the",
+        "time.",
+        "transitional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l6",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "January 2025, the IFRS 9 transitional arrangements came to an end, followed by the end of the CRR II grandfathering provisions on 28 June 2025.",
+      "bbox": [
+        53.86,
+        712.604,
+        503.7,
+        721.704
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "CRR",
+        "IFRS",
+        "II",
+        "January",
+        "June",
+        "an",
+        "arrangements",
+        "by",
+        "came",
+        "end",
+        "followed",
+        "grandfathering",
+        "of",
+        "on",
+        "provisions",
+        "the",
+        "to",
+        "transitional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "9 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "28 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l7",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 7,
+      "source_text": "4 Regulatory numbers and ratios are as presented at the date of reporting. Small changes may exist between these numbers and ratios and those submitted in",
+      "bbox": [
+        42.52,
+        721.004,
+        538.826,
+        730.104
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Regulatory",
+        "Small",
+        "and",
+        "are",
+        "as",
+        "at",
+        "between",
+        "changes",
+        "date",
+        "exist",
+        "in",
+        "may",
+        "numbers",
+        "of",
+        "presented",
+        "ratios",
+        "reporting.",
+        "submitted",
+        "the",
+        "these",
+        "those"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "4 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l8",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 8,
+      "source_text": "regulatory filings. Where differences are significant, we may restate in subsequent periods.",
+      "bbox": [
+        53.86,
+        729.404,
+        333.587,
+        738.504
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Where",
+        "are",
+        "differences",
+        "filings.",
+        "in",
+        "may",
+        "periods.",
+        "regulatory",
+        "restate",
+        "significant",
+        "subsequent",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l9",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 9,
+      "source_text": "5 The liquidity coverage ratio is based on the average value of the preceding 12 months. The net stable funding ratio is based on the average value of four preceding",
+      "bbox": [
+        42.52,
+        737.804,
+        556.235,
+        746.904
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "The",
+        "average",
+        "based",
+        "coverage",
+        "four",
+        "funding",
+        "is",
+        "liquidity",
+        "months.",
+        "net",
+        "of",
+        "on",
+        "preceding",
+        "ratio",
+        "stable",
+        "the",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "5 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "12 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p14_b10_l10",
+      "page_index": 14,
+      "block_id": 10,
+      "line_index": 10,
+      "source_text": "quarters.",
+      "bbox": [
+        53.86,
+        746.204,
+        81.279,
+        755.304
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "quarters."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l0",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.68,
+        14.764,
+        100.539,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l1",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        119.18,
+        14.764,
+        155.503,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l2",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.68,
+        14.764,
+        243.472,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l3",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        266.18,
+        14.764,
+        302.181,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l4",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.68,
+        14.764,
+        370.298,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l5",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.68,
+        23.164,
+        395.974,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l6",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        413.18,
+        14.764,
+        445.1,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l7",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        413.18,
+        23.164,
+        448.187,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l8",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.68,
+        14.764,
+        520.595,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b11_l9",
+      "page_index": 14,
+      "block_id": 11,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.68,
+        23.164,
+        522.912,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p14_b12_l0",
+      "page_index": 14,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Financial overview",
+      "bbox": [
+        45.68,
+        34.324,
+        106.139,
+        43.424
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Financial",
+        "overview"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b0_l0",
+      "page_index": 15,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Income statement results",
+      "bbox": [
+        42.52,
+        66.648,
+        208.07,
+        84.848
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Income",
+        "results",
+        "statement"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p15_b1_l0",
+      "page_index": 15,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "2025 compared with 2024",
+      "bbox": [
+        42.52,
+        89.756,
+        205.527,
+        106.656
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "compared",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b2_l0",
+      "page_index": 15,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Movement in reported profit before tax compared with 2024",
+      "bbox": [
+        45.15,
+        113.616,
+        269.75,
+        124.016
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Movement",
+        "before",
+        "compared",
+        "in",
+        "profit",
+        "reported",
+        "tax",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b3_l4",
+      "page_index": 15,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "of which strategic",
+      "bbox": [
+        488.91,
+        126.764,
+        554.402,
+        135.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "of",
+        "strategic",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b3_l5",
+      "page_index": 15,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "transactions1",
+      "bbox": [
+        506.31,
+        135.164,
+        552.147,
+        144.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "transactions1"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b4_l0",
+      "page_index": 15,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Reported results",
+      "bbox": [
+        45.15,
+        146.344,
+        102.781,
+        155.444
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Reported",
+        "results"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b4_l1",
+      "page_index": 15,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "$m",
+      "bbox": [
+        273.96,
+        146.414,
+        285.153,
+        155.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b4_l2",
+      "page_index": 15,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        319.65,
+        146.414,
+        330.143,
+        155.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b4_l3",
+      "page_index": 15,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        364.65,
+        146.414,
+        375.143,
+        155.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b4_l4",
+      "page_index": 15,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "$m",
+      "bbox": [
+        408.96,
+        146.414,
+        420.153,
+        155.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b4_l6",
+      "page_index": 15,
+      "block_id": 4,
+      "line_index": 6,
+      "source_text": "$m",
+      "bbox": [
+        540.96,
+        146.414,
+        552.153,
+        155.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b5_l0",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "Revenue",
+      "bbox": [
+        45.15,
+        157.594,
+        75.131,
+        166.694
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b5_l8",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 8,
+      "source_text": "–  of which: net interest income",
+      "bbox": [
+        45.15,
+        168.104,
+        144.466,
+        177.204
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "income",
+        "interest",
+        "net",
+        "of",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b5_l24",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 24,
+      "source_text": "Net operating income",
+      "bbox": [
+        45.15,
+        187.604,
+        120.778,
+        196.704
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Net",
+        "income",
+        "operating"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b5_l32",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 32,
+      "source_text": "Total operating expenses",
+      "bbox": [
+        45.15,
+        197.354,
+        124.082,
+        206.454
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Total",
+        "expenses",
+        "operating"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b5_l40",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 40,
+      "source_text": "Operating profit",
+      "bbox": [
+        45.15,
+        207.104,
+        100.793,
+        216.204
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Operating",
+        "profit"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b5_l48",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 48,
+      "source_text": "Share of profit in associates and joint ventures less",
+      "bbox": [
+        45.15,
+        217.154,
+        206.983,
+        226.254
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Share",
+        "and",
+        "associates",
+        "in",
+        "joint",
+        "less",
+        "of",
+        "profit",
+        "ventures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b5_l49",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 49,
+      "source_text": "impairment",
+      "bbox": [
+        45.15,
+        225.554,
+        81.186,
+        234.654
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "impairment"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b5_l56",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 56,
+      "source_text": "Profit before tax",
+      "bbox": [
+        45.15,
+        235.604,
+        101.906,
+        244.704
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Profit",
+        "before",
+        "tax"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b5_l64",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 64,
+      "source_text": "Tax expense",
+      "bbox": [
+        45.15,
+        245.354,
+        84.378,
+        254.454
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Tax",
+        "expense"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b5_l71",
+      "page_index": 15,
+      "block_id": 5,
+      "line_index": 71,
+      "source_text": "Profit after tax",
+      "bbox": [
+        45.15,
+        255.104,
+        95.781,
+        264.204
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Profit",
+        "after",
+        "tax"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b6_l0",
+      "page_index": 15,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Revenue excluding notable items ø",
+      "bbox": [
+        45.15,
+        275.004,
+        170.038,
+        284.168
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Revenue",
+        "excluding",
+        "items",
+        "notable"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b6_l7",
+      "page_index": 15,
+      "block_id": 6,
+      "line_index": 7,
+      "source_text": "Profit before tax excluding notable items ø",
+      "bbox": [
+        45.15,
+        284.754,
+        196.778,
+        293.918
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Profit",
+        "before",
+        "excluding",
+        "items",
+        "notable",
+        "tax"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b7_l0",
+      "page_index": 15,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "1 For details, see ‘Strategic transactions supplementary analysis‘ on page 80.",
+      "bbox": [
+        42.52,
+        297.154,
+        287.62,
+        306.254
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "For",
+        "Strategic",
+        "analysis",
+        "details",
+        "on",
+        "page",
+        "see",
+        "supplementary",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "80"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b8_l0",
+      "page_index": 15,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "Reported profit",
+      "bbox": [
+        42.52,
+        323.256,
+        100.4,
+        333.656
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Reported",
+        "profit"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b8_l1",
+      "page_index": 15,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "Reported profit before tax of $29.9bn was",
+      "bbox": [
+        42.52,
+        333.364,
+        190.632,
+        343.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Reported",
+        "before",
+        "bn",
+        "of",
+        "profit",
+        "tax",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "29"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b8_l2",
+      "page_index": 15,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "$2.4bn or 7% lower, mainly due to a $4.9bn",
+      "bbox": [
+        42.52,
+        342.964,
+        197.224,
+        352.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "bn",
+        "due",
+        "lower",
+        "mainly",
+        "or",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "7%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "4"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b8_l3",
+      "page_index": 15,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "year-on-year net adverse impact from notable",
+      "bbox": [
+        42.52,
+        352.564,
+        202.456,
+        362.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "adverse",
+        "from",
+        "impact",
+        "net",
+        "notable",
+        "year-on-year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b8_l4",
+      "page_index": 15,
+      "block_id": 8,
+      "line_index": 4,
+      "source_text": "items.",
+      "bbox": [
+        42.52,
+        362.164,
+        66.464,
+        371.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "items."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b9_l0",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "In 2025, notable item impacts included",
+      "bbox": [
+        42.52,
+        378.264,
+        179.408,
+        387.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "impacts",
+        "included",
+        "item",
+        "notable"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l1",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "recognition of dilution and impairment losses",
+      "bbox": [
+        42.52,
+        387.864,
+        200.6,
+        397.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "dilution",
+        "impairment",
+        "losses",
+        "of",
+        "recognition"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l2",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "of $2.1bn related to BoCom, reserve recycling",
+      "bbox": [
+        42.52,
+        397.464,
+        204.552,
+        407.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "BoCom",
+        "bn",
+        "of",
+        "recycling",
+        "related",
+        "reserve",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l3",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 3,
+      "source_text": "losses of $1.5bn following the completion of",
+      "bbox": [
+        42.52,
+        407.064,
+        199.344,
+        416.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "completion",
+        "following",
+        "losses",
+        "of",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l4",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 4,
+      "source_text": "the sale of our French retained portfolio of",
+      "bbox": [
+        42.52,
+        416.664,
+        190.896,
+        426.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "French",
+        "of",
+        "our",
+        "portfolio",
+        "retained",
+        "sale",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l5",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 5,
+      "source_text": "home and certain other loans, legal provisions",
+      "bbox": [
+        42.52,
+        426.264,
+        203.64,
+        435.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "certain",
+        "home",
+        "legal",
+        "loans",
+        "other",
+        "provisions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l6",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 6,
+      "source_text": "of $1.4bn and restructuring and other related",
+      "bbox": [
+        42.52,
+        435.864,
+        200.132,
+        445.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "bn",
+        "of",
+        "other",
+        "related",
+        "restructuring"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l7",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 7,
+      "source_text": "costs associated with our organisational",
+      "bbox": [
+        42.52,
+        445.464,
+        183.248,
+        455.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "associated",
+        "costs",
+        "organisational",
+        "our",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l8",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 8,
+      "source_text": "simplification of $1.0bn. In 2024, these",
+      "bbox": [
+        42.52,
+        455.064,
+        179.616,
+        464.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "bn.",
+        "of",
+        "simplification",
+        "these"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l9",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 9,
+      "source_text": "included a gain of $4.8bn on the disposal of",
+      "bbox": [
+        42.52,
+        464.664,
+        195.352,
+        474.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "bn",
+        "disposal",
+        "gain",
+        "included",
+        "of",
+        "on",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "4"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l10",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 10,
+      "source_text": "our banking business in Canada and the",
+      "bbox": [
+        42.52,
+        474.264,
+        182.52,
+        483.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Canada",
+        "and",
+        "banking",
+        "business",
+        "in",
+        "our",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l11",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 11,
+      "source_text": "impacts of the disposal of our business in",
+      "bbox": [
+        42.52,
+        483.864,
+        188.864,
+        493.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "business",
+        "disposal",
+        "impacts",
+        "in",
+        "of",
+        "our",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l12",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 12,
+      "source_text": "Argentina, comprising a $1.0bn loss on",
+      "bbox": [
+        42.52,
+        493.464,
+        179.856,
+        503.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Argentina",
+        "a",
+        "bn",
+        "comprising",
+        "loss",
+        "on"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l13",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 13,
+      "source_text": "disposal, and the recycling of foreign currency",
+      "bbox": [
+        42.52,
+        503.064,
+        204.0,
+        512.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "currency",
+        "disposal",
+        "foreign",
+        "of",
+        "recycling",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l14",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 14,
+      "source_text": "reserve losses and other reserves of $5.2bn.",
+      "bbox": [
+        42.52,
+        512.664,
+        199.734,
+        522.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "bn.",
+        "losses",
+        "of",
+        "other",
+        "reserve",
+        "reserves"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "5"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l15",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 15,
+      "source_text": "They also included a $0.2bn loss on the early",
+      "bbox": [
+        42.52,
+        522.264,
+        200.116,
+        531.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "They",
+        "a",
+        "also",
+        "bn",
+        "early",
+        "included",
+        "loss",
+        "on",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "0"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b9_l16",
+      "page_index": 15,
+      "block_id": 9,
+      "line_index": 16,
+      "source_text": "redemption of legacy securities.",
+      "bbox": [
+        42.52,
+        531.864,
+        153.752,
+        541.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "legacy",
+        "of",
+        "redemption",
+        "securities."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b10_l0",
+      "page_index": 15,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "On a constant currency basis, profit before tax",
+      "bbox": [
+        42.52,
+        547.964,
+        205.352,
+        557.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "On",
+        "a",
+        "basis",
+        "before",
+        "constant",
+        "currency",
+        "profit",
+        "tax"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b10_l1",
+      "page_index": 15,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "of $29.9bn was $2.5bn lower than in 2024,",
+      "bbox": [
+        42.52,
+        557.564,
+        193.788,
+        567.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "in",
+        "lower",
+        "of",
+        "than",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "29"
+        },
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b10_l2",
+      "page_index": 15,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "while excluding notable items it increased by",
+      "bbox": [
+        42.52,
+        567.164,
+        200.608,
+        576.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "by",
+        "excluding",
+        "increased",
+        "it",
+        "items",
+        "notable",
+        "while"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b10_l3",
+      "page_index": 15,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "$2.4bn or 7%.",
+      "bbox": [
+        42.52,
+        576.764,
+        92.184,
+        586.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "or"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "7%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b11_l0",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "Reported revenue",
+      "bbox": [
+        216.38,
+        323.256,
+        284.068,
+        333.656
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Reported",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b11_l1",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "Reported revenue of $68.3bn was $2.4bn or",
+      "bbox": [
+        216.38,
+        333.364,
+        372.502,
+        343.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Reported",
+        "bn",
+        "of",
+        "or",
+        "revenue",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "68"
+        },
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b11_l2",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "4% higher, reflecting strong fee and other",
+      "bbox": [
+        216.38,
+        342.964,
+        364.472,
+        352.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "fee",
+        "higher",
+        "other",
+        "reflecting",
+        "strong"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "4%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b11_l3",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "income growth. This was partly offset by a net",
+      "bbox": [
+        216.38,
+        352.564,
+        380.134,
+        362.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "a",
+        "by",
+        "growth.",
+        "income",
+        "net",
+        "offset",
+        "partly",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b11_l4",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 4,
+      "source_text": "adverse movement in notable items of",
+      "bbox": [
+        216.38,
+        362.164,
+        352.988,
+        371.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "adverse",
+        "in",
+        "items",
+        "movement",
+        "notable",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b11_l5",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 5,
+      "source_text": "$1.2bn, primarily relating to business",
+      "bbox": [
+        216.38,
+        371.764,
+        346.112,
+        381.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "business",
+        "primarily",
+        "relating",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b11_l6",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 6,
+      "source_text": "disposals, as well as a dilution loss of $1.1bn",
+      "bbox": [
+        216.38,
+        381.364,
+        373.784,
+        391.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "as",
+        "bn",
+        "dilution",
+        "disposals",
+        "loss",
+        "of",
+        "well"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b11_l7",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 7,
+      "source_text": "following the completion of BoCom’s capital",
+      "bbox": [
+        216.38,
+        390.964,
+        372.42,
+        400.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "BoCom",
+        "capital",
+        "completion",
+        "following",
+        "of",
+        "s",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b11_l8",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 8,
+      "source_text": "issuance in June 2025, which reduced our",
+      "bbox": [
+        216.38,
+        400.564,
+        365.092,
+        410.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "June",
+        "in",
+        "issuance",
+        "our",
+        "reduced",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b11_l9",
+      "page_index": 15,
+      "block_id": 11,
+      "line_index": 9,
+      "source_text": "interest from 19.03% to 16.00%.",
+      "bbox": [
+        216.38,
+        410.164,
+        332.104,
+        419.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "from",
+        "interest",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "19.03%"
+        },
+        {
+          "type": "percentage",
+          "value": "16.00%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b12_l0",
+      "page_index": 15,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Revenue excluding notable items increased by",
+      "bbox": [
+        216.38,
+        426.264,
+        380.324,
+        435.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Revenue",
+        "by",
+        "excluding",
+        "increased",
+        "items",
+        "notable"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b12_l1",
+      "page_index": 15,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "$3.6bn, primarily reflecting higher fee and",
+      "bbox": [
+        216.38,
+        435.864,
+        363.064,
+        445.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "bn",
+        "fee",
+        "higher",
+        "primarily",
+        "reflecting"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b12_l2",
+      "page_index": 15,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "other income in Wealth and Wholesale",
+      "bbox": [
+        216.38,
+        445.464,
+        353.376,
+        455.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Wealth",
+        "Wholesale",
+        "and",
+        "in",
+        "income",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b12_l3",
+      "page_index": 15,
+      "block_id": 12,
+      "line_index": 3,
+      "source_text": "Transaction Banking, as well as from the non-",
+      "bbox": [
+        216.38,
+        455.064,
+        374.572,
+        464.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Banking",
+        "Transaction",
+        "as",
+        "from",
+        "non-",
+        "the",
+        "well"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b12_l4",
+      "page_index": 15,
+      "block_id": 12,
+      "line_index": 4,
+      "source_text": "recurrence of adverse hyperinflationary",
+      "bbox": [
+        216.38,
+        464.664,
+        354.06,
+        474.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "adverse",
+        "hyperinflationary",
+        "of",
+        "recurrence"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b12_l5",
+      "page_index": 15,
+      "block_id": 12,
+      "line_index": 5,
+      "source_text": "impacts in Argentina.",
+      "bbox": [
+        216.38,
+        474.264,
+        289.86,
+        483.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Argentina.",
+        "impacts",
+        "in"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b13_l0",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "In Wealth, there was a strong performance in",
+      "bbox": [
+        216.38,
+        490.364,
+        376.34,
+        500.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "Wealth",
+        "a",
+        "in",
+        "performance",
+        "strong",
+        "there",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l1",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "Insurance, due to a higher CSM release,",
+      "bbox": [
+        216.38,
+        499.964,
+        358.076,
+        509.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CSM",
+        "Insurance",
+        "a",
+        "due",
+        "higher",
+        "release",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l2",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "reflecting strong new business growth and",
+      "bbox": [
+        216.38,
+        509.564,
+        367.668,
+        519.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "business",
+        "growth",
+        "new",
+        "reflecting",
+        "strong"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l3",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "favourable net investment returns and",
+      "bbox": [
+        216.38,
+        519.164,
+        351.116,
+        528.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "favourable",
+        "investment",
+        "net",
+        "returns"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l4",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 4,
+      "source_text": "experience variances, and growth in our",
+      "bbox": [
+        216.38,
+        528.764,
+        357.18,
+        538.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "experience",
+        "growth",
+        "in",
+        "our",
+        "variances"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l5",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "Private Bank and investment distribution from",
+      "bbox": [
+        216.38,
+        538.364,
+        377.58,
+        548.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank",
+        "Private",
+        "and",
+        "distribution",
+        "from",
+        "investment"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l6",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 6,
+      "source_text": "higher customer activity. In Wholesale",
+      "bbox": [
+        216.38,
+        547.964,
+        351.444,
+        557.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "Wholesale",
+        "activity.",
+        "customer",
+        "higher"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l7",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 7,
+      "source_text": "Transaction Banking, fee and other income",
+      "bbox": [
+        216.38,
+        557.564,
+        367.244,
+        567.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Banking",
+        "Transaction",
+        "and",
+        "fee",
+        "income",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l8",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 8,
+      "source_text": "growth reflected a strong performance in",
+      "bbox": [
+        216.38,
+        567.164,
+        361.532,
+        576.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "growth",
+        "in",
+        "performance",
+        "reflected",
+        "strong"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l9",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 9,
+      "source_text": "2025, particularly in Global Foreign Exchange",
+      "bbox": [
+        216.38,
+        576.764,
+        374.012,
+        586.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Exchange",
+        "Foreign",
+        "Global",
+        "in",
+        "particularly"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b13_l10",
+      "page_index": 15,
+      "block_id": 13,
+      "line_index": 10,
+      "source_text": "amid elevated market volatility.",
+      "bbox": [
+        216.38,
+        586.364,
+        324.076,
+        596.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "amid",
+        "elevated",
+        "market",
+        "volatility."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l0",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "Net interest income",
+      "bbox": [
+        390.24,
+        323.256,
+        468.992,
+        333.656
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Net",
+        "income",
+        "interest"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b14_l1",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "NII increased by $2.1bn reflecting the benefit",
+      "bbox": [
+        390.24,
+        333.364,
+        549.084,
+        343.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "NII",
+        "benefit",
+        "bn",
+        "by",
+        "increased",
+        "reflecting",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l2",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "of the reinvestment of our structural hedge at",
+      "bbox": [
+        390.24,
+        342.964,
+        550.904,
+        352.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "at",
+        "hedge",
+        "of",
+        "our",
+        "reinvestment",
+        "structural",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l3",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 3,
+      "source_text": "higher yields, deposit balance growth and",
+      "bbox": [
+        390.24,
+        352.564,
+        536.648,
+        362.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "balance",
+        "deposit",
+        "growth",
+        "higher",
+        "yields"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l4",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 4,
+      "source_text": "higher NII in Markets Treasury. In addition, the",
+      "bbox": [
+        390.24,
+        362.164,
+        553.36,
+        371.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "Markets",
+        "NII",
+        "Treasury.",
+        "addition",
+        "higher",
+        "in",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l5",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 5,
+      "source_text": "increase reflected the non-recurrence of a",
+      "bbox": [
+        390.24,
+        371.764,
+        537.896,
+        381.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "increase",
+        "non-recurrence",
+        "of",
+        "reflected",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l6",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 6,
+      "source_text": "$0.2bn loss in 2024 on the early redemption of",
+      "bbox": [
+        390.24,
+        381.364,
+        554.452,
+        391.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "early",
+        "in",
+        "loss",
+        "of",
+        "on",
+        "redemption",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "0"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l7",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 7,
+      "source_text": "legacy securities. This was partly offset by the",
+      "bbox": [
+        390.24,
+        390.964,
+        552.954,
+        400.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "by",
+        "legacy",
+        "offset",
+        "partly",
+        "securities.",
+        "the",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l8",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 8,
+      "source_text": "adverse impact of $1.6bn from business",
+      "bbox": [
+        390.24,
+        400.564,
+        532.432,
+        410.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "adverse",
+        "bn",
+        "business",
+        "from",
+        "impact",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l9",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 9,
+      "source_text": "disposals in Argentina and Canada, and margin",
+      "bbox": [
+        390.24,
+        410.164,
+        554.128,
+        419.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Argentina",
+        "Canada",
+        "and",
+        "disposals",
+        "in",
+        "margin"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l10",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 10,
+      "source_text": "compression on our deposits from lower",
+      "bbox": [
+        390.24,
+        419.764,
+        533.784,
+        429.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "compression",
+        "deposits",
+        "from",
+        "lower",
+        "on",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l11",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 11,
+      "source_text": "interest rates. The growth in NII also reflected",
+      "bbox": [
+        390.24,
+        429.364,
+        552.006,
+        439.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "NII",
+        "The",
+        "also",
+        "growth",
+        "in",
+        "interest",
+        "rates.",
+        "reflected"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l12",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 12,
+      "source_text": "a benefit from lower funding costs associated",
+      "bbox": [
+        390.24,
+        438.964,
+        551.44,
+        448.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "associated",
+        "benefit",
+        "costs",
+        "from",
+        "funding",
+        "lower"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l13",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 13,
+      "source_text": "with the trading book of $1.7bn. Banking NII,",
+      "bbox": [
+        390.24,
+        448.564,
+        547.832,
+        458.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Banking",
+        "NII",
+        "bn.",
+        "book",
+        "of",
+        "the",
+        "trading",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l14",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 14,
+      "source_text": "which excludes these funding costs, increased",
+      "bbox": [
+        390.24,
+        458.164,
+        554.992,
+        467.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "costs",
+        "excludes",
+        "funding",
+        "increased",
+        "these",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b14_l15",
+      "page_index": 15,
+      "block_id": 14,
+      "line_index": 15,
+      "source_text": "by $0.3bn.",
+      "bbox": [
+        390.24,
+        467.764,
+        426.824,
+        477.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn.",
+        "by"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "0"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b15_l0",
+      "page_index": 15,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "On a constant currency basis, revenue",
+      "bbox": [
+        390.24,
+        483.864,
+        525.888,
+        493.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "On",
+        "a",
+        "basis",
+        "constant",
+        "currency",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b15_l1",
+      "page_index": 15,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "increased by $2.3bn or 3% and banking NII",
+      "bbox": [
+        390.24,
+        493.464,
+        541.966,
+        503.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "NII",
+        "and",
+        "banking",
+        "bn",
+        "by",
+        "increased",
+        "or"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "3%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b15_l2",
+      "page_index": 15,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "rose by $0.5bn.",
+      "bbox": [
+        390.24,
+        503.064,
+        444.184,
+        512.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn.",
+        "by",
+        "rose"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "0"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b16_l0",
+      "page_index": 15,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "Notable items – on a reported basis",
+      "bbox": [
+        45.15,
+        612.986,
+        177.246,
+        623.386
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Notable",
+        "a",
+        "basis",
+        "items",
+        "on",
+        "reported"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l0",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "$m",
+      "bbox": [
+        450.96,
+        625.414,
+        462.153,
+        634.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b17_l1",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "$m",
+      "bbox": [
+        496.65,
+        625.414,
+        507.143,
+        634.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b17_l2",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        541.65,
+        625.414,
+        552.143,
+        634.514
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b17_l3",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 3,
+      "source_text": "Revenue",
+      "bbox": [
+        45.15,
+        635.854,
+        75.131,
+        644.954
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b17_l4",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 4,
+      "source_text": "Disposals, wind-downs, acquisitions and related costs1",
+      "bbox": [
+        45.15,
+        645.604,
+        217.978,
+        654.704
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Disposals",
+        "acquisitions",
+        "and",
+        "costs1",
+        "related",
+        "wind-downs"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l9",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 9,
+      "source_text": "Dilution loss of interest in BoCom associate",
+      "bbox": [
+        45.15,
+        655.354,
+        181.902,
+        664.454
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "BoCom",
+        "Dilution",
+        "associate",
+        "in",
+        "interest",
+        "loss",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l14",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 14,
+      "source_text": "Fair value movements on financial instruments",
+      "bbox": [
+        45.15,
+        665.104,
+        192.227,
+        674.204
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Fair",
+        "financial",
+        "instruments",
+        "movements",
+        "on",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l19",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 19,
+      "source_text": "Disposal losses on Markets Treasury repositioning",
+      "bbox": [
+        45.15,
+        674.854,
+        203.0,
+        683.954
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Disposal",
+        "Markets",
+        "Treasury",
+        "losses",
+        "on",
+        "repositioning"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l24",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 24,
+      "source_text": "Early redemption of legacy securities",
+      "bbox": [
+        45.15,
+        684.604,
+        161.21,
+        693.704
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Early",
+        "legacy",
+        "of",
+        "redemption",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l29",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 29,
+      "source_text": "Currency translation on revenue notable items",
+      "bbox": [
+        45.15,
+        694.354,
+        190.428,
+        703.454
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Currency",
+        "items",
+        "notable",
+        "on",
+        "revenue",
+        "translation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l34",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 34,
+      "source_text": "Operating expenses",
+      "bbox": [
+        45.15,
+        704.104,
+        114.275,
+        713.204
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Operating",
+        "expenses"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b17_l35",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 35,
+      "source_text": "Disposals, wind-downs, acquisitions and related costs",
+      "bbox": [
+        45.15,
+        713.854,
+        215.593,
+        722.954
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Disposals",
+        "acquisitions",
+        "and",
+        "costs",
+        "related",
+        "wind-downs"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l40",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 40,
+      "source_text": "Restructuring and other related costs",
+      "bbox": [
+        45.15,
+        723.604,
+        162.022,
+        732.704
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Restructuring",
+        "and",
+        "costs",
+        "other",
+        "related"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l45",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 45,
+      "source_text": "Legal provisions",
+      "bbox": [
+        45.15,
+        733.354,
+        96.327,
+        742.454
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Legal",
+        "provisions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b17_l50",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 50,
+      "source_text": "Currency translation on operating expenses notable items",
+      "bbox": [
+        45.15,
+        743.104,
+        226.716,
+        752.204
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Currency",
+        "expenses",
+        "items",
+        "notable",
+        "on",
+        "operating",
+        "translation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l55",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 55,
+      "source_text": "Share of profit in associates and joint ventures less impairment",
+      "bbox": [
+        45.15,
+        752.854,
+        266.448,
+        761.954
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Share",
+        "and",
+        "associates",
+        "impairment",
+        "in",
+        "joint",
+        "less",
+        "of",
+        "profit",
+        "ventures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l56",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 56,
+      "source_text": "Impairment losses of interest in BoCom associate",
+      "bbox": [
+        45.15,
+        762.604,
+        200.977,
+        771.704
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "BoCom",
+        "Impairment",
+        "associate",
+        "in",
+        "interest",
+        "losses",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b17_l61",
+      "page_index": 15,
+      "block_id": 17,
+      "line_index": 61,
+      "source_text": "Currency translation on associate notable items",
+      "bbox": [
+        45.15,
+        772.354,
+        194.754,
+        781.454
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Currency",
+        "associate",
+        "items",
+        "notable",
+        "on",
+        "translation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b18_l0",
+      "page_index": 15,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "1 2024 includes losses of $0.2bn related to the sale of our business in Russia, which are not categorised as a material notable item.",
+      "bbox": [
+        42.52,
+        787.154,
+        451.655,
+        796.254
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Russia",
+        "a",
+        "are",
+        "as",
+        "bn",
+        "business",
+        "categorised",
+        "in",
+        "includes",
+        "item.",
+        "losses",
+        "material",
+        "not",
+        "notable",
+        "of",
+        "our",
+        "related",
+        "sale",
+        "the",
+        "to",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "0"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p15_b19_l0",
+      "page_index": 15,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        44.52,
+        14.764,
+        99.379,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b19_l1",
+      "page_index": 15,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        118.02,
+        14.764,
+        154.343,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b19_l2",
+      "page_index": 15,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        191.52,
+        14.764,
+        242.312,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b19_l3",
+      "page_index": 15,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        265.02,
+        14.764,
+        301.021,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b19_l4",
+      "page_index": 15,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        338.52,
+        14.764,
+        369.138,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b19_l5",
+      "page_index": 15,
+      "block_id": 19,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        338.52,
+        23.164,
+        394.814,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p15_b19_l6",
+      "page_index": 15,
+      "block_id": 19,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        412.02,
+        14.764,
+        443.94,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round14/translation_batches/batch_0010.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round14/translation_batches/batch_0010.model_output.json",
+    "required_units": [
+      "p14_b0_l0",
+      "p14_b1_l0",
+      "p14_b2_l0",
+      "p14_b2_l4",
+      "p14_b2_l9",
+      "p14_b2_l14",
+      "p14_b2_l15",
+      "p14_b2_l20",
+      "p14_b2_l24",
+      "p14_b2_l28",
+      "p14_b2_l33",
+      "p14_b2_l38",
+      "p14_b2_l43",
+      "p14_b3_l0",
+      "p14_b3_l1",
+      "p14_b3_l6",
+      "p14_b3_l11",
+      "p14_b3_l15",
+      "p14_b3_l19",
+      "p14_b3_l24",
+      "p14_b3_l29",
+      "p14_b3_l34",
+      "p14_b3_l39",
+      "p14_b3_l40",
+      "p14_b3_l44",
+      "p14_b3_l48",
+      "p14_b3_l52",
+      "p14_b3_l56",
+      "p14_b3_l60",
+      "p14_b4_l0",
+      "p14_b5_l0",
+      "p14_b5_l4",
+      "p14_b5_l9",
+      "p14_b5_l14",
+      "p14_b5_l19",
+      "p14_b5_l24",
+      "p14_b5_l29",
+      "p14_b5_l34",
+      "p14_b5_l38",
+      "p14_b5_l43",
+      "p14_b5_l48",
+      "p14_b5_l53",
+      "p14_b6_l0",
+      "p14_b7_l0",
+      "p14_b7_l4",
+      "p14_b7_l9",
+      "p14_b7_l13",
+      "p14_b7_l17",
+      "p14_b7_l22",
+      "p14_b7_l26",
+      "p14_b8_l0",
+      "p14_b9_l0",
+      "p14_b9_l5",
+      "p14_b9_l6",
+      "p14_b9_l11",
+      "p14_b10_l0",
+      "p14_b10_l1",
+      "p14_b10_l2",
+      "p14_b10_l3",
+      "p14_b10_l4",
+      "p14_b10_l5",
+      "p14_b10_l6",
+      "p14_b10_l7",
+      "p14_b10_l8",
+      "p14_b10_l9",
+      "p14_b10_l10",
+      "p14_b11_l0",
+      "p14_b11_l1",
+      "p14_b11_l2",
+      "p14_b11_l3",
+      "p14_b11_l4",
+      "p14_b11_l5",
+      "p14_b11_l6",
+      "p14_b11_l7",
+      "p14_b11_l8",
+      "p14_b11_l9",
+      "p14_b12_l0",
+      "p15_b0_l0",
+      "p15_b1_l0",
+      "p15_b2_l0",
+      "p15_b3_l4",
+      "p15_b3_l5",
+      "p15_b4_l0",
+      "p15_b4_l1",
+      "p15_b4_l2",
+      "p15_b4_l3",
+      "p15_b4_l4",
+      "p15_b4_l6",
+      "p15_b5_l0",
+      "p15_b5_l8",
+      "p15_b5_l24",
+      "p15_b5_l32",
+      "p15_b5_l40",
+      "p15_b5_l48",
+      "p15_b5_l49",
+      "p15_b5_l56",
+      "p15_b5_l64",
+      "p15_b5_l71",
+      "p15_b6_l0",
+      "p15_b6_l7",
+      "p15_b7_l0",
+      "p15_b8_l0",
+      "p15_b8_l1",
+      "p15_b8_l2",
+      "p15_b8_l3",
+      "p15_b8_l4",
+      "p15_b9_l0",
+      "p15_b9_l1",
+      "p15_b9_l2",
+      "p15_b9_l3",
+      "p15_b9_l4",
+      "p15_b9_l5",
+      "p15_b9_l6",
+      "p15_b9_l7",
+      "p15_b9_l8",
+      "p15_b9_l9",
+      "p15_b9_l10",
+      "p15_b9_l11",
+      "p15_b9_l12",
+      "p15_b9_l13",
+      "p15_b9_l14",
+      "p15_b9_l15",
+      "p15_b9_l16",
+      "p15_b10_l0",
+      "p15_b10_l1",
+      "p15_b10_l2",
+      "p15_b10_l3",
+      "p15_b11_l0",
+      "p15_b11_l1",
+      "p15_b11_l2",
+      "p15_b11_l3",
+      "p15_b11_l4",
+      "p15_b11_l5",
+      "p15_b11_l6",
+      "p15_b11_l7",
+      "p15_b11_l8",
+      "p15_b11_l9",
+      "p15_b12_l0",
+      "p15_b12_l1",
+      "p15_b12_l2",
+      "p15_b12_l3",
+      "p15_b12_l4",
+      "p15_b12_l5",
+      "p15_b13_l0",
+      "p15_b13_l1",
+      "p15_b13_l2",
+      "p15_b13_l3",
+      "p15_b13_l4",
+      "p15_b13_l5",
+      "p15_b13_l6",
+      "p15_b13_l7",
+      "p15_b13_l8",
+      "p15_b13_l9",
+      "p15_b13_l10",
+      "p15_b14_l0",
+      "p15_b14_l1",
+      "p15_b14_l2",
+      "p15_b14_l3",
+      "p15_b14_l4",
+      "p15_b14_l5",
+      "p15_b14_l6",
+      "p15_b14_l7",
+      "p15_b14_l8",
+      "p15_b14_l9",
+      "p15_b14_l10",
+      "p15_b14_l11",
+      "p15_b14_l12",
+      "p15_b14_l13",
+      "p15_b14_l14",
+      "p15_b14_l15",
+      "p15_b15_l0",
+      "p15_b15_l1",
+      "p15_b15_l2",
+      "p15_b16_l0",
+      "p15_b17_l0",
+      "p15_b17_l1",
+      "p15_b17_l2",
+      "p15_b17_l3",
+      "p15_b17_l4",
+      "p15_b17_l9",
+      "p15_b17_l14",
+      "p15_b17_l19",
+      "p15_b17_l24",
+      "p15_b17_l29",
+      "p15_b17_l34",
+      "p15_b17_l35",
+      "p15_b17_l40",
+      "p15_b17_l45",
+      "p15_b17_l50",
+      "p15_b17_l55",
+      "p15_b17_l56",
+      "p15_b17_l61",
+      "p15_b18_l0",
+      "p15_b19_l0",
+      "p15_b19_l1",
+      "p15_b19_l2",
+      "p15_b19_l3",
+      "p15_b19_l4",
+      "p15_b19_l5",
+      "p15_b19_l6"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

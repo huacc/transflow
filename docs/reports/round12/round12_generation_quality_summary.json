@@ -1,0 +1,1550 @@
+[
+  {
+    "case_id": "R12_00005_2025_interim_report_zh",
+    "status": "CANDIDATE_GENERATED",
+    "candidate": "docs/output/round12/R12_00005_2025_interim_report_zh_candidate.pdf",
+    "candidate_exists": true,
+    "render_returncode": 0,
+    "metrics_returncode": 0,
+    "repair_returncode": 0,
+    "adjudication_returncode": 0,
+    "quality_returncode": 0,
+    "quality_verdict": "FAIL",
+    "failed_gates": [
+      {
+        "gate_id": "text_residue",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "target_language": "en",
+          "ascii_token_count": 322,
+          "cjk_unique_count": 151,
+          "sample": [
+            "一",
+            "三",
+            "上",
+            "中",
+            "之",
+            "二",
+            "交",
+            "人",
+            "他",
+            "任",
+            "住",
+            "何",
+            "作",
+            "供",
+            "保",
+            "信",
+            "個",
+            "值",
+            "健",
+            "備",
+            "債",
+            "僅",
+            "允",
+            "元",
+            "入",
+            "全",
+            "公",
+            "其",
+            "具",
+            "分",
+            "列",
+            "別",
+            "利",
+            "力",
+            "務",
+            "包",
+            "北",
+            "卡",
+            "及",
+            "可",
+            "司",
+            "合",
+            "同",
+            "國",
+            "好",
+            "宅",
+            "定",
+            "客",
+            "實",
+            "審",
+            "對",
+            "就",
+            "工",
+            "已",
+            "布",
+            "律",
+            "息",
+            "應",
+            "成",
+            "或",
+            "戶",
+            "承",
+            "披",
+            "抵",
+            "押",
+            "括",
+            "指",
+            "按",
+            "控",
+            "揭",
+            "損",
+            "擔",
+            "攤",
+            "收",
+            "整",
+            "易",
+            "有",
+            "未",
+            "本",
+            "東"
+          ]
+        }
+      },
+      {
+        "gate_id": "text_fit",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "fit_warning_count": 4,
+          "reason": "fallback insertion or overflow evidence blocks product-quality acceptance",
+          "generation_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+        }
+      },
+      {
+        "gate_id": "visual_similarity",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_quality_adjudication": "FAIL",
+          "visual_adjudication": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_adjudication.json",
+          "reason": "automated structural checks are not enough for product-quality acceptance; source-vs-output PNG adjudication must be recorded",
+          "generation_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/candidate_generation_evidence.json"
+        }
+      },
+      {
+        "gate_id": "body_paragraph_readability",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 2,
+          "warning_count": 3,
+          "region_count": 6,
+          "sample": [
+            {
+              "region_id": "body_flow_000",
+              "page_index": 5,
+              "page_number": 6,
+              "region_kind": "body_flow",
+              "page_type_guess": "chart_or_dashboard",
+              "quality_role": "body",
+              "gate_id": "body_paragraph_readability",
+              "status": "fail",
+              "generation_status": "fallback_insert_text",
+              "font_size": 3.2,
+              "source_median_font_size": 8.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 21,
+              "output_to_source_font_ratio": 0.4,
+              "fail_font_pt": 5.2,
+              "warn_font_pt": 6.8,
+              "fail_source_ratio": 0.45,
+              "warn_source_ratio": 0.62,
+              "bbox": [
+                47.622,
+                463.485,
+                464.318,
+                566.742
+              ],
+              "source_union_bbox": [
+                41.35,
+                463.885,
+                289.35,
+                712.625
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 0.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "fallback_insert_text is not acceptable for role body",
+                "font_size 3.20pt is below body fail floor 5.20pt",
+                "output_to_source_font_ratio 0.40 is below body fail ratio 0.45"
+              ],
+              "repair_atoms": [
+                "target_composition_body_reflow_repair"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_06_body_flow_000_body.png",
+              "target_text_sample": "In view of the continued challenges faced by the market, Hong Kong’s commercial real estate loan portfolio (excluding Ma"
+            },
+            {
+              "region_id": "body_flow_001",
+              "page_index": 5,
+              "page_number": 6,
+              "region_kind": "body_flow",
+              "page_type_guess": "chart_or_dashboard",
+              "quality_role": "body",
+              "gate_id": "body_paragraph_readability",
+              "status": "fail",
+              "generation_status": "fallback_insert_text",
+              "font_size": 3.2,
+              "source_median_font_size": 8.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 10,
+              "output_to_source_font_ratio": 0.4,
+              "fail_font_pt": 5.2,
+              "warn_font_pt": 6.8,
+              "fail_source_ratio": 0.45,
+              "warn_source_ratio": 0.62,
+              "bbox": [
+                130.962,
+                463.485,
+                547.658,
+                566.742
+              ],
+              "source_union_bbox": [
+                304.71,
+                463.885,
+                552.71,
+                567.425
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 0.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "fallback_insert_text is not acceptable for role body",
+                "font_size 3.20pt is below body fail floor 5.20pt",
+                "output_to_source_font_ratio 0.40 is below body fail ratio 0.45"
+              ],
+              "repair_atoms": [
+                "target_composition_body_reflow_repair"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_06_body_flow_001_body.png",
+              "target_text_sample": "Downward pressure continues as oversupply continues to have an adverse impact on rents and capital values. With Valuatio"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      },
+      {
+        "gate_id": "footnote_readability",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 1,
+          "warning_count": 0,
+          "region_count": 13,
+          "sample": [
+            {
+              "region_id": "region_p7_b6_l0",
+              "page_index": 7,
+              "page_number": 8,
+              "region_kind": "footnote",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "footnote",
+              "gate_id": "footnote_readability",
+              "status": "fail",
+              "generation_status": "fallback_insert_text",
+              "font_size": 3.2,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 0.457,
+              "fail_font_pt": 3.2,
+              "warn_font_pt": 3.8,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                40.85,
+                579.07,
+                544.296,
+                589.181
+              ],
+              "source_union_bbox": [
+                41.35,
+                579.47,
+                543.796,
+                588.781
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 0.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "fallback_insert_text is not acceptable for role footnote"
+              ],
+              "repair_atoms": [
+                "footnote_fit_curve_repair"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_08_region_p7_b6_l0_footnote.png",
+              "target_text_sample": "1 The real estate loans disclosed here only correspond to the borrower’s industry. The “commercial real estate” industry"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      },
+      {
+        "gate_id": "sidebar_navigation_legibility",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 1,
+          "warning_count": 0,
+          "region_count": 96,
+          "sample": [
+            {
+              "region_id": "region_p1_b4_l29",
+              "page_index": 1,
+              "page_number": 2,
+              "region_kind": "vertical_nav",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "sidebar",
+              "gate_id": "sidebar_navigation_legibility",
+              "status": "fail",
+              "generation_status": "rotated_horizontal_image_fit",
+              "font_size": 7.7,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 1.1,
+              "fail_font_pt": 3.4,
+              "warn_font_pt": 4.0,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                404.847,
+                351.099,
+                414.632,
+                379.899
+              ],
+              "source_union_bbox": [
+                405.347,
+                351.499,
+                414.132,
+                379.499
+              ],
+              "source_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "output_inner_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "text_image_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "background_delta": 0.0,
+              "source_residue_delta": 31.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 31.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "inner_background_delta 31.0 exceeds fail threshold 30.0"
+              ],
+              "repair_atoms": [
+                "background_residue_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_02_region_p1_b4_l29_sidebar.png",
+              "target_text_sample": "million dollars"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      },
+      {
+        "gate_id": "table_text_legibility",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 2,
+          "warning_count": 185,
+          "region_count": 734,
+          "sample": [
+            {
+              "region_id": "region_p1_b4_l13",
+              "page_index": 1,
+              "page_number": 2,
+              "region_kind": "table_cell",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "table_text",
+              "gate_id": "table_text_legibility",
+              "status": "fail",
+              "generation_status": "fit",
+              "font_size": 4.712,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 0.673,
+              "fail_font_pt": 3.2,
+              "warn_font_pt": 3.8,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                395.097,
+                351.099,
+                404.882,
+                365.899
+              ],
+              "source_union_bbox": [
+                395.597,
+                351.499,
+                404.382,
+                365.499
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "output_inner_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 31.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 31.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "inner_background_delta 31.0 exceeds fail threshold 30.0"
+              ],
+              "repair_atoms": [
+                "background_residue_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_02_region_p1_b4_l13_table_text.png",
+              "target_text_sample": "total"
+            },
+            {
+              "region_id": "region_p4_b22_115",
+              "page_index": 4,
+              "page_number": 5,
+              "region_kind": "table_note",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "table_text",
+              "gate_id": "table_text_legibility",
+              "status": "fail",
+              "generation_status": "fallback_insert_text",
+              "font_size": 3.2,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 2,
+              "output_to_source_font_ratio": 0.457,
+              "fail_font_pt": 3.2,
+              "warn_font_pt": 3.8,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                39.85,
+                711.31,
+                551.19,
+                733.741
+              ],
+              "source_union_bbox": [
+                41.35,
+                713.67,
+                549.69,
+                731.381
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 0.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "fallback_insert_text is not acceptable for role table_text"
+              ],
+              "repair_atoms": [
+                "D2_constrained_slot_layout_variants"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_05_region_p4_b22_115_table_text.png",
+              "target_text_sample": "1 The \"total book value\" transfer between Level 1 and Level 2 (mainly from Asia) is due to an increase in the average PD"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      },
+      {
+        "gate_id": "background_residue_artifact",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 3,
+          "warning_count": 0,
+          "region_count": 850,
+          "sample": [
+            {
+              "region_id": "region_p1_b4_l13",
+              "page_index": 1,
+              "page_number": 2,
+              "region_kind": "table_cell",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "table_text",
+              "gate_id": "table_text_legibility",
+              "status": "fail",
+              "generation_status": "fit",
+              "font_size": 4.712,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 0.673,
+              "fail_font_pt": 3.2,
+              "warn_font_pt": 3.8,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                395.097,
+                351.099,
+                404.882,
+                365.899
+              ],
+              "source_union_bbox": [
+                395.597,
+                351.499,
+                404.382,
+                365.499
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "output_inner_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 31.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 31.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "inner_background_delta 31.0 exceeds fail threshold 30.0"
+              ],
+              "repair_atoms": [
+                "background_residue_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_02_region_p1_b4_l13_table_text.png",
+              "target_text_sample": "total"
+            },
+            {
+              "region_id": "region_p1_b4_l29",
+              "page_index": 1,
+              "page_number": 2,
+              "region_kind": "vertical_nav",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "sidebar",
+              "gate_id": "sidebar_navigation_legibility",
+              "status": "fail",
+              "generation_status": "rotated_horizontal_image_fit",
+              "font_size": 7.7,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 1.1,
+              "fail_font_pt": 3.4,
+              "warn_font_pt": 4.0,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                404.847,
+                351.099,
+                414.632,
+                379.899
+              ],
+              "source_union_bbox": [
+                405.347,
+                351.499,
+                414.132,
+                379.499
+              ],
+              "source_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "output_inner_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "text_image_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "background_delta": 0.0,
+              "source_residue_delta": 31.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 31.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "inner_background_delta 31.0 exceeds fail threshold 30.0"
+              ],
+              "repair_atoms": [
+                "background_residue_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_02_region_p1_b4_l29_sidebar.png",
+              "target_text_sample": "million dollars"
+            },
+            {
+              "unit_id": "p6_b12_l0",
+              "page_index": 6,
+              "page_number": 7,
+              "bbox": [
+                245.16,
+                317.43,
+                303.315,
+                327.541
+              ],
+              "status": "fail",
+              "fill_color_rgb": [
+                224,
+                225,
+                226
+              ],
+              "source_ring_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_ring_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "redaction_fill_delta": 30.0,
+              "output_ring_delta": 0.0,
+              "patch_score": 36.373,
+              "covered_by_background_cover": false,
+              "wide_line_patch_risk": false,
+              "fill_method": "outside_ring_median_pixel_cluster",
+              "fill_color_provenance": {
+                "fill_color": [
+                  0.8784313725490196,
+                  0.8823529411764706,
+                  0.8862745098039215
+                ],
+                "method": "outside_ring_median_pixel_cluster",
+                "sample_count": 63,
+                "selected_cluster_count": 30,
+                "selected_cluster_key": [
+                  224,
+                  224,
+                  224
+                ],
+                "selected_cluster_inner_count": 8,
+                "selected_cluster_near_ring_count": 15,
+                "selected_cluster_outer_ring_count": 7,
+                "selected_cluster_representative_source": "ring",
+                "quantization_step": 8
+              },
+              "reasons": [
+                "redaction_fill_delta 30.0 with patch_score 36.4 exceeds fail threshold"
+              ],
+              "repair_atoms": [
+                "background_residue_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_07_p6_b12_l0_redaction_fill.png"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      },
+      {
+        "gate_id": "matrix_diagram_integrity",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 4,
+          "warning_count": 165,
+          "region_count": 736,
+          "sample": [
+            {
+              "region_id": "region_p1_b4_l13",
+              "page_index": 1,
+              "page_number": 2,
+              "region_kind": "table_cell",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "table_text",
+              "gate_id": "table_text_legibility",
+              "status": "fail",
+              "generation_status": "fit",
+              "font_size": 4.712,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 0.673,
+              "fail_font_pt": 3.2,
+              "warn_font_pt": 3.8,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                395.097,
+                351.099,
+                404.882,
+                365.899
+              ],
+              "source_union_bbox": [
+                395.597,
+                351.499,
+                404.382,
+                365.499
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "output_inner_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 31.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 31.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "inner_background_delta 31.0 exceeds fail threshold 30.0"
+              ],
+              "repair_atoms": [
+                "background_residue_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_02_region_p1_b4_l13_table_text.png",
+              "target_text_sample": "total"
+            },
+            {
+              "region_id": "region_p1_b4_l29",
+              "page_index": 1,
+              "page_number": 2,
+              "region_kind": "vertical_nav",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "sidebar",
+              "gate_id": "sidebar_navigation_legibility",
+              "status": "fail",
+              "generation_status": "rotated_horizontal_image_fit",
+              "font_size": 7.7,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 1.1,
+              "fail_font_pt": 3.4,
+              "warn_font_pt": 4.0,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                404.847,
+                351.099,
+                414.632,
+                379.899
+              ],
+              "source_union_bbox": [
+                405.347,
+                351.499,
+                414.132,
+                379.499
+              ],
+              "source_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "output_inner_background_rgb": [
+                224,
+                224,
+                224
+              ],
+              "text_image_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "background_delta": 0.0,
+              "source_residue_delta": 31.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 31.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "inner_background_delta 31.0 exceeds fail threshold 30.0"
+              ],
+              "repair_atoms": [
+                "background_residue_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_02_region_p1_b4_l29_sidebar.png",
+              "target_text_sample": "million dollars"
+            },
+            {
+              "region_id": "region_p4_b22_115",
+              "page_index": 4,
+              "page_number": 5,
+              "region_kind": "table_note",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "table_text",
+              "gate_id": "table_text_legibility",
+              "status": "fail",
+              "generation_status": "fallback_insert_text",
+              "font_size": 3.2,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 2,
+              "output_to_source_font_ratio": 0.457,
+              "fail_font_pt": 3.2,
+              "warn_font_pt": 3.8,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                39.85,
+                711.31,
+                551.19,
+                733.741
+              ],
+              "source_union_bbox": [
+                41.35,
+                713.67,
+                549.69,
+                731.381
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 0.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "fallback_insert_text is not acceptable for role table_text"
+              ],
+              "repair_atoms": [
+                "D2_constrained_slot_layout_variants"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_05_region_p4_b22_115_table_text.png",
+              "target_text_sample": "1 The \"total book value\" transfer between Level 1 and Level 2 (mainly from Asia) is due to an increase in the average PD"
+            },
+            {
+              "region_id": "region_p7_b6_l0",
+              "page_index": 7,
+              "page_number": 8,
+              "region_kind": "footnote",
+              "page_type_guess": "matrix_or_table_diagram",
+              "quality_role": "footnote",
+              "gate_id": "footnote_readability",
+              "status": "fail",
+              "generation_status": "fallback_insert_text",
+              "font_size": 3.2,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 0.457,
+              "fail_font_pt": 3.2,
+              "warn_font_pt": 3.8,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                40.85,
+                579.07,
+                544.296,
+                589.181
+              ],
+              "source_union_bbox": [
+                41.35,
+                579.47,
+                543.796,
+                588.781
+              ],
+              "source_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 0.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "fallback_insert_text is not acceptable for role footnote"
+              ],
+              "repair_atoms": [
+                "footnote_fit_curve_repair"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_region_crops/page_08_region_p7_b6_l0_footnote.png",
+              "target_text_sample": "1 The real estate loans disclosed here only correspond to the borrower’s industry. The “commercial real estate” industry"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "R12_00388_2026_annual_report_en",
+    "status": "CANDIDATE_GENERATED",
+    "candidate": "docs/output/round12/R12_00388_2026_annual_report_en_candidate.pdf",
+    "candidate_exists": true,
+    "render_returncode": 0,
+    "metrics_returncode": 0,
+    "repair_returncode": 0,
+    "adjudication_returncode": 0,
+    "quality_returncode": 0,
+    "quality_verdict": "FAIL",
+    "failed_gates": [
+      {
+        "gate_id": "text_residue",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "target_language": "zh",
+          "ascii_token_count": 12,
+          "cjk_unique_count": 154,
+          "allowed_latin_token_count": 2,
+          "disallowed_ascii_token_count": 10,
+          "sample": [
+            "CUSIP",
+            "F109",
+            "HK",
+            "HK0388045442",
+            "HKEX",
+            "HKEX-R",
+            "HKXCY",
+            "HSI",
+            "ISIN",
+            "SEDOL1"
+          ],
+          "allowed_latin_sample": [
+            "IR",
+            "R"
+          ],
+          "reason": "Latin tokens are accepted only when they appear in the validated target-language evidence; other ASCII tokens remain source-residue failures."
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "R12_00992_2023_annual_report_en",
+    "status": "CANDIDATE_GENERATED",
+    "candidate": "docs/output/round12/R12_00992_2023_annual_report_en_candidate.pdf",
+    "candidate_exists": true,
+    "render_returncode": 0,
+    "metrics_returncode": 0,
+    "repair_returncode": 0,
+    "adjudication_returncode": 0,
+    "quality_returncode": 0,
+    "quality_verdict": "FAIL",
+    "failed_gates": [
+      {
+        "gate_id": "text_residue",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "target_language": "zh",
+          "ascii_token_count": 33,
+          "cjk_unique_count": 647,
+          "allowed_latin_token_count": 29,
+          "disallowed_ascii_token_count": 4,
+          "sample": [
+            "Gro",
+            "INED",
+            "NED",
+            "w"
+          ],
+          "allowed_latin_sample": [
+            "A",
+            "Bang",
+            "Big",
+            "Bo",
+            "C",
+            "CEO",
+            "CFO",
+            "ESG",
+            "Gordon",
+            "Grabe",
+            "Halyburton",
+            "Hong",
+            "Hsiueh",
+            "John",
+            "Kasper",
+            "Lan",
+            "Lawson",
+            "Lenovo",
+            "N",
+            "O.",
+            "Orr",
+            "R&D",
+            "Robert",
+            "Roersted",
+            "Rorsted",
+            "S",
+            "Thornton",
+            "William",
+            "Xue"
+          ],
+          "reason": "Latin tokens are accepted only when they appear in the validated target-language evidence; other ASCII tokens remain source-residue failures."
+        }
+      },
+      {
+        "gate_id": "text_fit",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "fit_warning_count": 1,
+          "reason": "fallback insertion or overflow evidence blocks product-quality acceptance",
+          "generation_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/candidate_generation_evidence.json"
+        }
+      },
+      {
+        "gate_id": "visual_similarity",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_quality_adjudication": "FAIL",
+          "visual_adjudication": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_adjudication.json",
+          "reason": "automated structural checks are not enough for product-quality acceptance; source-vs-output PNG adjudication must be recorded",
+          "generation_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/candidate_generation_evidence.json"
+        }
+      },
+      {
+        "gate_id": "event_card_readability",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 2,
+          "warning_count": 1,
+          "region_count": 37,
+          "sample": [
+            {
+              "region_id": "region_p0_b17_l0",
+              "page_index": 0,
+              "page_number": 1,
+              "region_kind": "event_card",
+              "page_type_guess": "mixed_image_text",
+              "quality_role": "event_card",
+              "gate_id": "event_card_readability",
+              "status": "fail",
+              "generation_status": "fit",
+              "font_size": 5.538,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 0.791,
+              "fail_font_pt": 3.8,
+              "warn_font_pt": 4.2,
+              "fail_source_ratio": 0.45,
+              "warn_source_ratio": 0.6,
+              "bbox": [
+                245.731,
+                294.3,
+                341.042,
+                303.766
+              ],
+              "source_union_bbox": [
+                246.231,
+                294.7,
+                340.542,
+                303.366
+              ],
+              "source_background_rgb": [
+                32,
+                64,
+                144
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 175.0,
+              "source_residue_delta": 175.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "background_delta 175.0 exceeds fail threshold 42.0"
+              ],
+              "repair_atoms": [
+                "background_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_01_region_p0_b17_l0_event_card.png",
+              "target_text_sample": "更多详情，第 64 至 88 页"
+            },
+            {
+              "region_id": "region_p0_b25_033",
+              "page_index": 0,
+              "page_number": 1,
+              "region_kind": "event_card",
+              "page_type_guess": "mixed_image_text",
+              "quality_role": "event_card",
+              "gate_id": "event_card_readability",
+              "status": "fail",
+              "generation_status": "fit",
+              "font_size": 6.02,
+              "source_median_font_size": 7.0,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 2,
+              "output_to_source_font_ratio": 0.86,
+              "fail_font_pt": 3.8,
+              "warn_font_pt": 4.2,
+              "fail_source_ratio": 0.45,
+              "warn_source_ratio": 0.6,
+              "bbox": [
+                294.91,
+                384.914,
+                348.548,
+                406.301
+              ],
+              "source_union_bbox": [
+                296.41,
+                387.274,
+                347.048,
+                403.941
+              ],
+              "source_background_rgb": [
+                80,
+                32,
+                32
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 207.0,
+              "source_residue_delta": 207.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "background_delta 207.0 exceeds fail threshold 42.0"
+              ],
+              "repair_atoms": [
+                "background_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_01_region_p0_b25_033_event_card.png",
+              "target_text_sample": "更多细节，第 90 至 92 页"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      },
+      {
+        "gate_id": "footnote_readability",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 1,
+          "warning_count": 0,
+          "region_count": 29,
+          "sample": [
+            {
+              "region_id": "region_p10_b16_l2",
+              "page_index": 10,
+              "page_number": 11,
+              "region_kind": "footnote",
+              "page_type_guess": "mixed_text",
+              "quality_role": "footnote",
+              "gate_id": "footnote_readability",
+              "status": "fail",
+              "generation_status": "fallback_insert_text",
+              "font_size": 3.2,
+              "source_median_font_size": 7.5,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 0.427,
+              "fail_font_pt": 3.2,
+              "warn_font_pt": 3.8,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.5,
+              "bbox": [
+                355.975,
+                709.546,
+                367.565,
+                719.632
+              ],
+              "source_union_bbox": [
+                356.475,
+                709.946,
+                367.065,
+                719.232
+              ],
+              "source_background_rgb": [
+                32,
+                64,
+                144
+              ],
+              "source_inner_background_rgb": [
+                32,
+                64,
+                144
+              ],
+              "output_background_rgb": [
+                32,
+                64,
+                144
+              ],
+              "output_inner_background_rgb": [
+                32,
+                64,
+                144
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 0.0,
+              "source_residue_delta": 0.0,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "fallback_insert_text is not acceptable for role footnote"
+              ],
+              "repair_atoms": [
+                "footnote_fit_curve_repair"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_11_region_p10_b16_l2_footnote.png",
+              "target_text_sample": "急诊科"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      },
+      {
+        "gate_id": "short_label_legibility",
+        "status": "fail",
+        "blocking": true,
+        "evidence": {
+          "visual_region_metrics": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_metrics.json",
+          "role_gate_status": "fail",
+          "failure_count": 1,
+          "warning_count": 3,
+          "region_count": 43,
+          "sample": [
+            {
+              "region_id": "region_p1_b17_l0",
+              "page_index": 1,
+              "page_number": 2,
+              "region_kind": "short_label",
+              "page_type_guess": "mixed_text",
+              "quality_role": "short_label",
+              "gate_id": "short_label_legibility",
+              "status": "fail",
+              "generation_status": "fit",
+              "font_size": 8.303,
+              "source_median_font_size": 9.5,
+              "source_font_source": "source_extraction",
+              "source_matched_line_count": 1,
+              "output_to_source_font_ratio": 0.874,
+              "fail_font_pt": 3.4,
+              "warn_font_pt": 4.4,
+              "fail_source_ratio": 0.35,
+              "warn_source_ratio": 0.55,
+              "bbox": [
+                398.452,
+                294.163,
+                466.815,
+                307.446
+              ],
+              "source_union_bbox": [
+                398.952,
+                294.563,
+                466.315,
+                307.046
+              ],
+              "source_background_rgb": [
+                176,
+                48,
+                32
+              ],
+              "source_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "output_inner_background_rgb": [
+                255,
+                255,
+                255
+              ],
+              "text_image_background_rgb": null,
+              "background_delta": 169.667,
+              "source_residue_delta": 169.667,
+              "background_residue_delta": 0.0,
+              "inner_background_delta": 0.0,
+              "text_image_background_delta": 0.0,
+              "reasons": [
+                "background_delta 169.7 exceeds fail threshold 42.0"
+              ],
+              "repair_atoms": [
+                "background_fill_resample"
+              ],
+              "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_02_region_p1_b17_l0_short_label.png",
+              "target_text_sample": "3S（智能物联网、"
+            }
+          ],
+          "reason": "region-level visual gates evaluate title/body/table/footnote/sidebar/image/background roles separately"
+        }
+      }
+    ]
+  },
+  {
+    "case_id": "R12_jianye_new_life_c",
+    "status": "CANDIDATE_GENERATED",
+    "candidate": "docs/output/round12/R12_jianye_new_life_c_candidate.pdf",
+    "candidate_exists": true,
+    "render_returncode": 0,
+    "metrics_returncode": 0,
+    "repair_returncode": 0,
+    "adjudication_returncode": 0,
+    "quality_returncode": 0,
+    "quality_verdict": "PASS",
+    "failed_gates": []
+  },
+  {
+    "case_id": "R12_jianye_new_life_e",
+    "status": "CANDIDATE_GENERATED",
+    "candidate": "docs/output/round12/R12_jianye_new_life_e_candidate.pdf",
+    "candidate_exists": true,
+    "render_returncode": 0,
+    "metrics_returncode": 0,
+    "repair_returncode": 0,
+    "adjudication_returncode": 0,
+    "quality_returncode": 0,
+    "quality_verdict": "PASS",
+    "failed_gates": []
+  }
+]

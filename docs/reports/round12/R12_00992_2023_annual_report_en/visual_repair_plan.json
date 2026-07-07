@@ -1,0 +1,113 @@
+{
+  "tool": "plan_visual_region_repairs",
+  "visual_region_metrics": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_metrics.json",
+  "repair_plan_count": 4,
+  "blocking_repair_count": 3,
+  "next_state": "Lx_RepairLoop",
+  "plans": [
+    {
+      "gate_id": "body_paragraph_readability",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 1,
+      "repair_atom": "target_composition_body_reflow_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Recompose body frame from current page margins/body band before shrinking text.",
+      "sample_regions": [
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b8_l0",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "fit",
+          "font_size": 5.472,
+          "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_03_region_p2_b8_l0_body.png",
+          "reasons": [
+            "font_size 5.47pt is below body recommended floor 6.80pt"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "event_card_readability",
+      "gate_status": "fail",
+      "failure_count": 2,
+      "warning_count": 1,
+      "repair_atom": "event_card_local_fit_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Keep event text local to its anchor and tune event-card fit curve.",
+      "sample_regions": [
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b17_l0",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 5.538,
+          "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_01_region_p0_b17_l0_event_card.png",
+          "reasons": [
+            "background_delta 175.0 exceeds fail threshold 42.0"
+          ]
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b25_033",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 6.02,
+          "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_01_region_p0_b25_033_event_card.png",
+          "reasons": [
+            "background_delta 207.0 exceeds fail threshold 42.0"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "footnote_readability",
+      "gate_status": "fail",
+      "failure_count": 1,
+      "warning_count": 0,
+      "repair_atom": "footnote_fit_curve_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Tune footnote fit curve and paragraph grouping without changing table/body layout.",
+      "sample_regions": [
+        {
+          "page_number": 11,
+          "region_id": "region_p10_b16_l2",
+          "quality_role": "footnote",
+          "region_kind": "footnote",
+          "generation_status": "fallback_insert_text",
+          "font_size": 3.2,
+          "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_11_region_p10_b16_l2_footnote.png",
+          "reasons": [
+            "fallback_insert_text is not acceptable for role footnote"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "short_label_legibility",
+      "gate_status": "fail",
+      "failure_count": 1,
+      "warning_count": 3,
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan",
+      "description": "Generate compact display variant for short constrained label.",
+      "sample_regions": [
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b17_l0",
+          "quality_role": "short_label",
+          "region_kind": "short_label",
+          "generation_status": "fit",
+          "font_size": 8.303,
+          "crop_evidence": "docs/reports/round12/R12_00992_2023_annual_report_en/visual_region_crops/page_02_region_p1_b17_l0_short_label.png",
+          "reasons": [
+            "background_delta 169.7 exceeds fail threshold 42.0"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "diagnostic_id": "round12_loop_execution_diagnostic",
+  "question": "Did Lx_RepairLoop really execute as a repair loop?",
+  "verdict": "NO_FULL_LOOP_EXECUTED",
+  "evidence": {
+    "state_trace_entered_lx": true,
+    "repair_loop_record_count": 0,
+    "repair_loop_records_required_glob": "docs/reports/round12/**/repair_loop_*.json",
+    "planning_artifacts_found": [
+      "docs/reports/round12/R12_00005_2025_interim_report_zh/visual_repair_plan.json",
+      "docs/reports/round12/R12_00992_2023_annual_report_en/visual_repair_plan.json",
+      "docs/reports/round12/R12_jianye_new_life_c/visual_repair_plan.json",
+      "docs/reports/round12/R12_jianye_new_life_e/visual_repair_plan.json"
+    ],
+    "executed_repair_loop_evidence_found": []
+  },
+  "distinction": {
+    "visual_repair_plan_json": "planning evidence only",
+    "repair_loop_n_json": "required execution evidence for an actual Lx repair-loop iteration",
+    "candidate_regeneration": "candidate generation evidence, not sufficient by itself to prove a repair atom was selected, applied, and rechecked"
+  },
+  "why_unfixed_failures_remained": [
+    "R12_00005_2025_interim_report_zh had blocking product-quality failures and repair plans, but no recorded repair atom execution.",
+    "R12_00992_2023_annual_report_en had blocking product-quality failures and repair plans, but no recorded repair atom execution."
+  ],
+  "why_jianye_cases_appeared_to_pass": [
+    "Their product_quality_gates.json had no blocking failures.",
+    "Their visual_repair_plan.json records only non-blocking warning-level repairs.",
+    "Current gates did not block on several human-aesthetic issues such as weak title hierarchy, unnatural notice wording, paragraph rhythm, or large local blank gaps."
+  ],
+  "corrected_process_verdict": "FAIL",
+  "corrected_terminal_state": "S_FAIL_PROCESS_CONTRACT",
+  "required_contract_fix": [
+    "Entering Lx_RepairLoop must require at least one repair_loop_<n>.json record.",
+    "D8 output must include repair_loop_record_path and execution_status.",
+    "validate_process_artifacts.py must fail when Lx is entered without repair_loop_<n>.json."
+  ]
+}

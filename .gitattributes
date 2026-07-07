@@ -8,3 +8,4 @@
 *.ttf binary
 *.ttc binary
 *.pyc binary
+docs/reports/**/candidate_generation_evidence.json filter=lfs diff=lfs merge=lfs -text

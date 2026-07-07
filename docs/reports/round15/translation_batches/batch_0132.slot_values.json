@@ -1,0 +1,5289 @@
+{
+  "run_id": "round15",
+  "case_id": "R15_00005_2025_annual_report_zh",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0132",
+  "batch_index": 132,
+  "batch_count": 166,
+  "source_extraction_ref": "docs/reports/round15/source_extraction_zh.json",
+  "source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "translation_units": [
+    {
+      "unit_id": "p286_b12_l7",
+      "page_index": 286,
+      "block_id": 12,
+      "line_index": 7,
+      "source_text": "補充資料",
+      "bbox": [
+        485.23,
+        15.84,
+        513.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p286_b13_l0",
+      "page_index": 286,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "財務報表附註",
+      "bbox": [
+        411.73,
+        36.09,
+        453.73,
+        45.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p286_b14_l0",
+      "page_index": 286,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "滙豐控股有限公司 2025年報及賬⽬",
+      "bbox": [
+        242.87,
+        808.67,
+        351.832,
+        817.981
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b0_l0",
+      "page_index": 287,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "2 費⽤收益淨額",
+      "bbox": [
+        42.37,
+        68.531,
+        146.198,
+        87.152
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2 "
+        }
+      ],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p287_b1_l0",
+      "page_index": 287,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "按環球業務劃分之費⽤收益淨額",
+      "bbox": [
+        42.73,
+        93.075,
+        154.73,
+        103.715
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b2_l0",
+      "page_index": 287,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "2025年",
+      "bbox": [
+        389.05,
+        106.14,
+        412.71,
+        115.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b3_l0",
+      "page_index": 287,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "香港",
+      "bbox": [
+        283.74,
+        124.89,
+        297.74,
+        134.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b3_l1",
+      "page_index": 287,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "英國",
+      "bbox": [
+        333.99,
+        124.89,
+        347.99,
+        134.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b4_l0",
+      "page_index": 287,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "企業及機構",
+      "bbox": [
+        363.24,
+        116.49,
+        398.24,
+        125.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b4_l1",
+      "page_index": 287,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "理財",
+      "bbox": [
+        384.24,
+        124.89,
+        398.24,
+        134.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b5_l0",
+      "page_index": 287,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "國際財富管理",
+      "bbox": [
+        406.49,
+        116.49,
+        448.49,
+        125.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b5_l1",
+      "page_index": 287,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "及卓越理財",
+      "bbox": [
+        413.49,
+        124.89,
+        448.49,
+        134.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b5_l2",
+      "page_index": 287,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "企業中⼼",
+      "bbox": [
+        470.74,
+        124.89,
+        498.74,
+        134.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b5_l3",
+      "page_index": 287,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "總計",
+      "bbox": [
+        534.99,
+        124.89,
+        548.99,
+        134.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l0",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "百萬美元",
+      "bbox": [
+        269.74,
+        136.14,
+        297.74,
+        145.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l1",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "百萬美元",
+      "bbox": [
+        319.99,
+        136.14,
+        347.99,
+        145.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l2",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "百萬美元",
+      "bbox": [
+        370.24,
+        136.14,
+        398.24,
+        145.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l3",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 3,
+      "source_text": "百萬美元",
+      "bbox": [
+        420.49,
+        136.14,
+        448.49,
+        145.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l4",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 4,
+      "source_text": "百萬美元",
+      "bbox": [
+        470.74,
+        136.14,
+        498.74,
+        145.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l5",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 5,
+      "source_text": "百萬美元",
+      "bbox": [
+        520.99,
+        136.14,
+        548.99,
+        145.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l6",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 6,
+      "source_text": "管理資⾦",
+      "bbox": [
+        45.0,
+        145.89,
+        73.0,
+        155.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l14",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 14,
+      "source_text": "卡",
+      "bbox": [
+        45.0,
+        155.64,
+        52.0,
+        164.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l22",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 22,
+      "source_text": "信貸",
+      "bbox": [
+        45.0,
+        165.39,
+        59.0,
+        174.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l30",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 30,
+      "source_text": "經紀業務收益",
+      "bbox": [
+        45.0,
+        175.14,
+        87.0,
+        184.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l38",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 38,
+      "source_text": "⼾⼝服務",
+      "bbox": [
+        45.0,
+        184.89,
+        73.0,
+        194.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l46",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 46,
+      "source_text": "單位信託",
+      "bbox": [
+        45.0,
+        194.64,
+        73.0,
+        203.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l54",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 54,
+      "source_text": "包銷",
+      "bbox": [
+        45.0,
+        204.39,
+        59.0,
+        213.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l62",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 62,
+      "source_text": "環球託管",
+      "bbox": [
+        45.0,
+        214.14,
+        73.0,
+        223.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l70",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 70,
+      "source_text": "匯款",
+      "bbox": [
+        45.0,
+        223.89,
+        59.0,
+        233.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l78",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 78,
+      "source_text": "進出⼝",
+      "bbox": [
+        45.0,
+        233.64,
+        66.0,
+        242.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l86",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 86,
+      "source_text": "保險代理佣⾦",
+      "bbox": [
+        45.0,
+        243.39,
+        87.0,
+        252.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l94",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 94,
+      "source_text": "其他",
+      "bbox": [
+        45.0,
+        253.14,
+        59.0,
+        262.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l102",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 102,
+      "source_text": "費⽤收益",
+      "bbox": [
+        45.0,
+        262.89,
+        73.0,
+        272.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l110",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 110,
+      "source_text": "減︰費⽤⽀出",
+      "bbox": [
+        45.0,
+        272.64,
+        87.0,
+        281.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b6_l118",
+      "page_index": 287,
+      "block_id": 6,
+      "line_index": 118,
+      "source_text": "費⽤收益淨額",
+      "bbox": [
+        45.0,
+        282.39,
+        87.0,
+        291.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l0",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "2024年",
+      "bbox": [
+        388.89,
+        297.14,
+        412.102,
+        306.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l1",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "管理資⾦",
+      "bbox": [
+        45.0,
+        306.89,
+        73.0,
+        316.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l9",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 9,
+      "source_text": "卡",
+      "bbox": [
+        45.0,
+        316.64,
+        52.0,
+        325.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l17",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 17,
+      "source_text": "信貸",
+      "bbox": [
+        45.0,
+        326.39,
+        59.0,
+        335.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l25",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 25,
+      "source_text": "經紀業務收益",
+      "bbox": [
+        45.0,
+        336.14,
+        87.0,
+        345.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l33",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 33,
+      "source_text": "⼾⼝服務",
+      "bbox": [
+        45.0,
+        345.89,
+        73.0,
+        355.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l41",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 41,
+      "source_text": "單位信託",
+      "bbox": [
+        45.0,
+        355.64,
+        73.0,
+        364.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l49",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 49,
+      "source_text": "包銷",
+      "bbox": [
+        45.0,
+        365.39,
+        59.0,
+        374.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l57",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 57,
+      "source_text": "環球託管",
+      "bbox": [
+        45.0,
+        375.14,
+        73.0,
+        384.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l65",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 65,
+      "source_text": "匯款",
+      "bbox": [
+        45.0,
+        384.89,
+        59.0,
+        394.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l73",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 73,
+      "source_text": "進出⼝",
+      "bbox": [
+        45.0,
+        394.64,
+        66.0,
+        403.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l81",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 81,
+      "source_text": "保險代理佣⾦",
+      "bbox": [
+        45.0,
+        404.39,
+        87.0,
+        413.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l89",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 89,
+      "source_text": "其他",
+      "bbox": [
+        45.0,
+        414.14,
+        59.0,
+        423.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l97",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 97,
+      "source_text": "費⽤收益",
+      "bbox": [
+        45.0,
+        423.89,
+        73.0,
+        433.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l105",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 105,
+      "source_text": "減︰費⽤⽀出",
+      "bbox": [
+        45.0,
+        433.64,
+        87.0,
+        442.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b7_l113",
+      "page_index": 287,
+      "block_id": 7,
+      "line_index": 113,
+      "source_text": "費⽤收益淨額",
+      "bbox": [
+        45.0,
+        443.39,
+        87.0,
+        452.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l0",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "2023年",
+      "bbox": [
+        388.49,
+        458.14,
+        411.702,
+        467.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l1",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "管理資⾦",
+      "bbox": [
+        45.35,
+        467.89,
+        73.35,
+        477.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l9",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 9,
+      "source_text": "卡",
+      "bbox": [
+        45.35,
+        477.64,
+        52.35,
+        486.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l17",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 17,
+      "source_text": "信貸",
+      "bbox": [
+        45.35,
+        487.39,
+        59.35,
+        496.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l25",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 25,
+      "source_text": "經紀業務收益",
+      "bbox": [
+        45.35,
+        497.14,
+        87.35,
+        506.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l33",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 33,
+      "source_text": "⼾⼝服務",
+      "bbox": [
+        45.35,
+        506.89,
+        73.35,
+        516.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l41",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 41,
+      "source_text": "單位信託",
+      "bbox": [
+        45.35,
+        516.64,
+        73.35,
+        525.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l49",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 49,
+      "source_text": "包銷",
+      "bbox": [
+        45.35,
+        526.39,
+        59.35,
+        535.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l57",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 57,
+      "source_text": "環球託管",
+      "bbox": [
+        45.35,
+        536.14,
+        73.35,
+        545.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l65",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 65,
+      "source_text": "匯款",
+      "bbox": [
+        45.35,
+        545.89,
+        59.35,
+        555.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l73",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 73,
+      "source_text": "進出⼝",
+      "bbox": [
+        45.35,
+        555.64,
+        66.35,
+        564.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l81",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 81,
+      "source_text": "保險代理佣⾦",
+      "bbox": [
+        45.35,
+        565.39,
+        87.35,
+        574.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l89",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 89,
+      "source_text": "其他",
+      "bbox": [
+        45.35,
+        575.14,
+        59.35,
+        584.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l97",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 97,
+      "source_text": "費⽤收益",
+      "bbox": [
+        45.35,
+        584.89,
+        73.35,
+        594.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l105",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 105,
+      "source_text": "減︰費⽤⽀出",
+      "bbox": [
+        45.35,
+        594.64,
+        87.35,
+        603.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b8_l113",
+      "page_index": 287,
+      "block_id": 8,
+      "line_index": 113,
+      "source_text": "費⽤收益淨額",
+      "bbox": [
+        45.35,
+        604.39,
+        87.35,
+        613.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b9_l1",
+      "page_index": 287,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "費⽤收益淨額包括非按公允值計入損益賬之⾦融資產所賺取之費⽤（不包括於釐定實質利率時計入之⾦額）68億美元（2024年︰68億美元；2023",
+      "bbox": [
+        42.37,
+        623.695,
+        548.522,
+        634.335
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 48,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2023"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p287_b9_l2",
+      "page_index": 287,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "年︰70億美元）、非按公允值計入損益賬之⾦融負債應付費⽤（不包括釐定實質利率時計入之⾦額）20億美元（2024年︰20億美元；2023年︰19",
+      "bbox": [
+        42.37,
+        633.295,
+        550.89,
+        643.935
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 43,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "19"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p287_b9_l3",
+      "page_index": 287,
+      "block_id": 9,
+      "line_index": 3,
+      "source_text": "億美元）、信託及其他受信業務賺取之費⽤40億美元（2024年︰35億美元；2023年︰35億美元），以及與信託及其他受信業務相關之應付費⽤5",
+      "bbox": [
+        42.37,
+        642.895,
+        546.338,
+        653.535
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 45,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "5"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p287_b9_l4",
+      "page_index": 287,
+      "block_id": 9,
+      "line_index": 4,
+      "source_text": "億美元（2024年︰4億美元；2023年︰3億美元）。",
+      "bbox": [
+        42.37,
+        652.495,
+        222.61,
+        663.135
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p287_b10_l0",
+      "page_index": 287,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "策略報告",
+      "bbox": [
+        44.23,
+        15.84,
+        72.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b10_l1",
+      "page_index": 287,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "環境、社會及",
+      "bbox": [
+        117.73,
+        15.84,
+        159.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b10_l2",
+      "page_index": 287,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "管治報告",
+      "bbox": [
+        117.73,
+        24.24,
+        145.73,
+        33.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b10_l3",
+      "page_index": 287,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "財務回顧",
+      "bbox": [
+        191.23,
+        15.84,
+        219.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b10_l4",
+      "page_index": 287,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "風險回顧",
+      "bbox": [
+        264.73,
+        15.84,
+        292.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b10_l5",
+      "page_index": 287,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "企業管治報告",
+      "bbox": [
+        338.23,
+        15.84,
+        378.795,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b10_l6",
+      "page_index": 287,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "財務報表",
+      "bbox": [
+        411.73,
+        15.84,
+        439.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b10_l7",
+      "page_index": 287,
+      "block_id": 10,
+      "line_index": 7,
+      "source_text": "補充資料",
+      "bbox": [
+        485.23,
+        15.84,
+        513.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b11_l0",
+      "page_index": 287,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "財務報表附註",
+      "bbox": [
+        411.73,
+        36.09,
+        453.73,
+        45.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p287_b12_l0",
+      "page_index": 287,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "滙豐控股有限公司 2025年報及賬⽬",
+      "bbox": [
+        242.87,
+        808.67,
+        351.832,
+        817.981
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b0_l0",
+      "page_index": 288,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "3 按公允值計入損益賬之⾦融⼯具淨收益／（⽀出）",
+      "bbox": [
+        42.37,
+        68.531,
+        371.612,
+        87.152
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3 "
+        }
+      ],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p288_b2_l0",
+      "page_index": 288,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "2025年",
+      "bbox": [
+        415.85,
+        97.39,
+        439.51,
+        106.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b2_l1",
+      "page_index": 288,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "2024年",
+      "bbox": [
+        471.04,
+        97.39,
+        494.252,
+        106.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b2_l2",
+      "page_index": 288,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "2023年",
+      "bbox": [
+        525.79,
+        97.39,
+        549.002,
+        106.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l0",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "百萬美元",
+      "bbox": [
+        411.49,
+        108.64,
+        439.49,
+        117.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l1",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "百萬美元",
+      "bbox": [
+        466.24,
+        108.64,
+        494.24,
+        117.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l2",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "百萬美元",
+      "bbox": [
+        520.99,
+        108.64,
+        548.99,
+        117.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l3",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "以下項⽬產⽣之淨收益／（⽀出）︰",
+      "bbox": [
+        45.0,
+        118.39,
+        157.0,
+        127.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l4",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "交易活動淨額",
+      "bbox": [
+        45.0,
+        128.14,
+        87.0,
+        137.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l9",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 9,
+      "source_text": "按公允值予以管理之其他⼯具",
+      "bbox": [
+        45.0,
+        137.89,
+        136.0,
+        147.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l14",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 14,
+      "source_text": "持作交易⽤途或按公允值予以管理之⾦融⼯具淨收益",
+      "bbox": [
+        45.0,
+        147.64,
+        206.0,
+        156.951
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 20,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l19",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 19,
+      "source_text": "為應付保單未決賠款及投資合約負債⽽持有之⾦融資產",
+      "bbox": [
+        45.0,
+        157.39,
+        213.0,
+        166.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 22,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l24",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 24,
+      "source_text": "在投資合約下對客⼾之負債",
+      "bbox": [
+        45.0,
+        167.14,
+        129.0,
+        176.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b3_l29",
+      "page_index": 288,
+      "block_id": 3,
+      "line_index": 29,
+      "source_text": "按公允值計入損益賬之保險業務資產和負債（包括相關衍⽣⼯具）淨收益／（⽀出）",
+      "bbox": [
+        45.0,
+        176.89,
+        304.0,
+        186.201
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 29,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p288_b4_l1",
+      "page_index": 288,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "滙豐控股",
+      "bbox": [
+        42.37,
+        199.266,
+        94.37,
+        216.557
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 13.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b5_l0",
+      "page_index": 288,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "2025年",
+      "bbox": [
+        415.85,
+        219.74,
+        439.51,
+        229.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b5_l1",
+      "page_index": 288,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "2024年",
+      "bbox": [
+        471.04,
+        219.74,
+        494.252,
+        229.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b5_l2",
+      "page_index": 288,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "2023年",
+      "bbox": [
+        525.79,
+        219.74,
+        549.002,
+        229.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l0",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "百萬美元",
+      "bbox": [
+        411.49,
+        230.99,
+        439.49,
+        240.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l1",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "百萬美元",
+      "bbox": [
+        466.24,
+        230.99,
+        494.24,
+        240.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l2",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "百萬美元",
+      "bbox": [
+        520.99,
+        230.99,
+        548.99,
+        240.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l3",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 3,
+      "source_text": "以下項⽬產⽣之淨收益／（⽀出）：",
+      "bbox": [
+        45.0,
+        240.74,
+        157.0,
+        250.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l4",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 4,
+      "source_text": "交易活動淨額",
+      "bbox": [
+        45.0,
+        250.49,
+        87.0,
+        259.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l9",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 9,
+      "source_text": "按公允值予以管理之其他⼯具",
+      "bbox": [
+        45.0,
+        260.24,
+        136.0,
+        269.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l14",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 14,
+      "source_text": "持作交易⽤途或按公允值予以管理之⾦融⼯具淨收益",
+      "bbox": [
+        45.0,
+        269.99,
+        206.0,
+        279.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 20,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l19",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 19,
+      "source_text": "與滙豐控股之已發⾏債務證券共同管理之衍⽣⼯具",
+      "bbox": [
+        45.0,
+        279.74,
+        199.0,
+        289.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l24",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 24,
+      "source_text": "公允值之其他變動",
+      "bbox": [
+        45.0,
+        289.49,
+        101.0,
+        298.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l29",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 29,
+      "source_text": "指定債務及相關衍⽣⼯具公允值之變動",
+      "bbox": [
+        45.0,
+        299.24,
+        164.0,
+        308.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b6_l34",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 34,
+      "source_text": "強制性按公允值計入損益賬之其他⾦融⼯具之公允值變動",
+      "bbox": [
+        45.0,
+        308.99,
+        220.0,
+        318.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 23,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p288_b6_l39",
+      "page_index": 288,
+      "block_id": 6,
+      "line_index": 39,
+      "source_text": "截⾄12⽉31⽇⽌年度",
+      "bbox": [
+        45.0,
+        318.74,
+        110.66,
+        328.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "12"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b7_l2",
+      "page_index": 288,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "保險業務",
+      "bbox": [
+        63.0,
+        343.19,
+        119.0,
+        361.812
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p288_b8_l0",
+      "page_index": 288,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "保險服務業績",
+      "bbox": [
+        42.73,
+        367.425,
+        90.73,
+        378.065
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b9_l0",
+      "page_index": 288,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "2025年",
+      "bbox": [
+        222.17,
+        382.74,
+        245.83,
+        392.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b9_l1",
+      "page_index": 288,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "2024年",
+      "bbox": [
+        348.77,
+        382.74,
+        371.982,
+        392.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b9_l2",
+      "page_index": 288,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "2023年",
+      "bbox": [
+        476.27,
+        382.74,
+        499.482,
+        392.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b10_l0",
+      "page_index": 288,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "附有直接參與條",
+      "bbox": [
+        174.49,
+        394.29,
+        223.49,
+        403.601
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b10_l1",
+      "page_index": 288,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "款之壽險保單及",
+      "bbox": [
+        174.49,
+        402.69,
+        223.49,
+        412.001
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b10_l2",
+      "page_index": 288,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "附有酌情參與條",
+      "bbox": [
+        174.49,
+        411.09,
+        223.49,
+        420.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b10_l3",
+      "page_index": 288,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "款之投資合約1",
+      "bbox": [
+        178.78,
+        419.49,
+        223.492,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b11_l0",
+      "page_index": 288,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "其他壽險",
+      "bbox": [
+        232.24,
+        411.09,
+        260.24,
+        420.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b12_l0",
+      "page_index": 288,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "合約2",
+      "bbox": [
+        243.53,
+        419.49,
+        260.242,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b12_l1",
+      "page_index": 288,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "總計",
+      "bbox": [
+        279.99,
+        419.49,
+        293.99,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b13_l0",
+      "page_index": 288,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "附有直接參與條",
+      "bbox": [
+        301.99,
+        394.29,
+        350.99,
+        403.601
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b13_l1",
+      "page_index": 288,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "款之壽險保單及",
+      "bbox": [
+        301.99,
+        402.69,
+        350.99,
+        412.001
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b13_l2",
+      "page_index": 288,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "附有酌情參與條",
+      "bbox": [
+        301.99,
+        411.09,
+        350.99,
+        420.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b13_l3",
+      "page_index": 288,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "款之投資合約1",
+      "bbox": [
+        306.36,
+        419.49,
+        350.999,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b14_l0",
+      "page_index": 288,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "其他壽險",
+      "bbox": [
+        359.74,
+        411.09,
+        387.74,
+        420.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b15_l0",
+      "page_index": 288,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "合約2",
+      "bbox": [
+        371.11,
+        419.49,
+        387.749,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b15_l1",
+      "page_index": 288,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "總計",
+      "bbox": [
+        407.49,
+        419.49,
+        421.49,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b16_l0",
+      "page_index": 288,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "附有直接參與條",
+      "bbox": [
+        429.49,
+        394.29,
+        478.49,
+        403.601
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b16_l1",
+      "page_index": 288,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "款之壽險保單及",
+      "bbox": [
+        429.49,
+        402.69,
+        478.49,
+        412.001
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b16_l2",
+      "page_index": 288,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "附有酌情參與條",
+      "bbox": [
+        429.49,
+        411.09,
+        478.49,
+        420.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b16_l3",
+      "page_index": 288,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "款之投資合約1",
+      "bbox": [
+        433.86,
+        419.49,
+        478.499,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b17_l0",
+      "page_index": 288,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "其他壽險",
+      "bbox": [
+        487.24,
+        411.09,
+        515.24,
+        420.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b18_l0",
+      "page_index": 288,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "合約2",
+      "bbox": [
+        498.61,
+        419.49,
+        515.249,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b18_l1",
+      "page_index": 288,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "總計",
+      "bbox": [
+        534.99,
+        419.49,
+        548.99,
+        428.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l0",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "百萬美元",
+      "bbox": [
+        195.49,
+        430.74,
+        223.49,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l1",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "百萬美元",
+      "bbox": [
+        232.24,
+        430.74,
+        260.24,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l2",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "百萬美元",
+      "bbox": [
+        265.99,
+        430.74,
+        293.99,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l3",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "百萬美元",
+      "bbox": [
+        322.99,
+        430.74,
+        350.99,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l4",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "百萬美元",
+      "bbox": [
+        359.74,
+        430.74,
+        387.74,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l5",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 5,
+      "source_text": "百萬美元",
+      "bbox": [
+        393.49,
+        430.74,
+        421.49,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l6",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 6,
+      "source_text": "百萬美元",
+      "bbox": [
+        450.49,
+        430.74,
+        478.49,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l7",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 7,
+      "source_text": "百萬美元",
+      "bbox": [
+        487.24,
+        430.74,
+        515.24,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l8",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 8,
+      "source_text": "百萬美元",
+      "bbox": [
+        520.99,
+        430.74,
+        548.99,
+        440.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l9",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 9,
+      "source_text": "保險收入",
+      "bbox": [
+        45.0,
+        440.49,
+        73.0,
+        449.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l10",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 10,
+      "source_text": "與剩餘保障負債變動相關之⾦額",
+      "bbox": [
+        45.0,
+        450.24,
+        143.0,
+        459.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l21",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 21,
+      "source_text": "–  就提供服務確認之合約服務收益",
+      "bbox": [
+        45.0,
+        459.99,
+        150.28,
+        469.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l32",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 32,
+      "source_text": "–  就逾期風險的非財務風險作出的風險",
+      "bbox": [
+        45.0,
+        470.34,
+        164.28,
+        479.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l33",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 33,
+      "source_text": "調整變動",
+      "bbox": [
+        45.0,
+        478.74,
+        80.0,
+        488.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l44",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 44,
+      "source_text": "–  預期已產⽣賠償及其他保險服務⽀出",
+      "bbox": [
+        45.0,
+        488.49,
+        166.03,
+        497.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l55",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 55,
+      "source_text": "–  其他",
+      "bbox": [
+        45.0,
+        498.24,
+        66.28,
+        507.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l66",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 66,
+      "source_text": "收回保險獲取現⾦流",
+      "bbox": [
+        45.0,
+        507.99,
+        108.0,
+        517.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l77",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 77,
+      "source_text": "保險收入總額",
+      "bbox": [
+        45.0,
+        517.74,
+        87.0,
+        527.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l88",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 88,
+      "source_text": "保險服務⽀出",
+      "bbox": [
+        45.0,
+        527.49,
+        87.0,
+        536.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l89",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 89,
+      "source_text": "已產⽣賠償及其他保險服務⽀出",
+      "bbox": [
+        45.0,
+        537.24,
+        144.75,
+        546.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l100",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 100,
+      "source_text": "條件繁苛合約的虧損及虧損撥回",
+      "bbox": [
+        45.0,
+        546.99,
+        143.0,
+        556.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l111",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 111,
+      "source_text": "保險獲取現⾦流之攤銷",
+      "bbox": [
+        45.0,
+        556.74,
+        115.0,
+        566.051
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l122",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 122,
+      "source_text": "已產⽣賠償負債調整",
+      "bbox": [
+        45.0,
+        566.49,
+        108.0,
+        575.801
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l133",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 133,
+      "source_text": "保險服務⽀出總額",
+      "bbox": [
+        45.0,
+        576.24,
+        101.0,
+        585.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b19_l143",
+      "page_index": 288,
+      "block_id": 19,
+      "line_index": 143,
+      "source_text": "保險服務業績總額3",
+      "bbox": [
+        45.0,
+        585.99,
+        103.712,
+        595.301
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b20_l0",
+      "page_index": 288,
+      "block_id": 20,
+      "line_index": 0,
+      "source_text": "1 「附有直接參與條款之壽險保單及附有酌情參與條款之投資合約」⼤致按可變費⽤⽅法計量模型計量。",
+      "bbox": [
+        42.37,
+        603.48,
+        368.703,
+        612.791
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 39,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p288_b20_l1",
+      "page_index": 288,
+      "block_id": 20,
+      "line_index": 1,
+      "source_text": "2 「其他壽險合約」按⼀般計量模型計量。",
+      "bbox": [
+        42.37,
+        611.88,
+        179.7,
+        621.191
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b20_l2",
+      "page_index": 288,
+      "block_id": 20,
+      "line_index": 2,
+      "source_text": "3 「保險服務業績總額」包括HSBC Life (UK) Limited及HSBC Assurances Vie (France)分類為持作出售⽤途時賺取的2億美元（2024年：零美元；2023年：零美",
+      "bbox": [
+        42.37,
+        620.28,
+        540.987,
+        629.591
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Assurances",
+        "France)",
+        "HSBC",
+        "Life",
+        "Limited",
+        "UK)",
+        "Vie"
+      ],
+      "cjk_char_count": 33,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p288_b20_l3",
+      "page_index": 288,
+      "block_id": 20,
+      "line_index": 3,
+      "source_text": "元）。詳情請參閱附註23。",
+      "bbox": [
+        53.71,
+        628.68,
+        138.816,
+        637.991
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b21_l0",
+      "page_index": 288,
+      "block_id": 21,
+      "line_index": 0,
+      "source_text": "策略報告",
+      "bbox": [
+        44.23,
+        15.84,
+        72.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b21_l1",
+      "page_index": 288,
+      "block_id": 21,
+      "line_index": 1,
+      "source_text": "環境、社會及",
+      "bbox": [
+        117.73,
+        15.84,
+        159.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b21_l2",
+      "page_index": 288,
+      "block_id": 21,
+      "line_index": 2,
+      "source_text": "管治報告",
+      "bbox": [
+        117.73,
+        24.24,
+        145.73,
+        33.551
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b21_l3",
+      "page_index": 288,
+      "block_id": 21,
+      "line_index": 3,
+      "source_text": "財務回顧",
+      "bbox": [
+        191.23,
+        15.84,
+        219.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b21_l4",
+      "page_index": 288,
+      "block_id": 21,
+      "line_index": 4,
+      "source_text": "風險回顧",
+      "bbox": [
+        264.73,
+        15.84,
+        292.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b21_l5",
+      "page_index": 288,
+      "block_id": 21,
+      "line_index": 5,
+      "source_text": "企業管治報告",
+      "bbox": [
+        338.23,
+        15.84,
+        378.795,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b21_l6",
+      "page_index": 288,
+      "block_id": 21,
+      "line_index": 6,
+      "source_text": "財務報表",
+      "bbox": [
+        411.73,
+        15.84,
+        439.73,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b21_l7",
+      "page_index": 288,
+      "block_id": 21,
+      "line_index": 7,
+      "source_text": "補充資料",
+      "bbox": [
+        485.23,
+        15.84,
+        513.23,
+        25.151
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b22_l0",
+      "page_index": 288,
+      "block_id": 22,
+      "line_index": 0,
+      "source_text": "財務報表附註",
+      "bbox": [
+        411.73,
+        36.09,
+        453.73,
+        45.401
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p288_b23_l0",
+      "page_index": 288,
+      "block_id": 23,
+      "line_index": 0,
+      "source_text": "滙豐控股有限公司 2025年報及賬⽬",
+      "bbox": [
+        242.87,
+        808.67,
+        351.832,
+        817.981
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b0_l0",
+      "page_index": 289,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "投資回報淨額",
+      "bbox": [
+        42.73,
+        72.275,
+        90.73,
+        82.915
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b1_l0",
+      "page_index": 289,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "2025年",
+      "bbox": [
+        223.3,
+        87.59,
+        246.96,
+        96.901
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b1_l1",
+      "page_index": 289,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "2024年",
+      "bbox": [
+        351.02,
+        87.59,
+        374.232,
+        96.901
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b1_l2",
+      "page_index": 289,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "2023年",
+      "bbox": [
+        477.39,
+        87.59,
+        500.602,
+        96.901
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b2_l0",
+      "page_index": 289,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "附有直接參與條",
+      "bbox": [
+        176.74,
+        99.14,
+        225.74,
+        108.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b2_l1",
+      "page_index": 289,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "款之壽險保單及",
+      "bbox": [
+        176.74,
+        107.54,
+        225.74,
+        116.851
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b2_l2",
+      "page_index": 289,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "附有酌情參與條",
+      "bbox": [
+        176.74,
+        115.94,
+        225.74,
+        125.251
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b2_l3",
+      "page_index": 289,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "款之投資合約",
+      "bbox": [
+        183.74,
+        124.34,
+        225.74,
+        133.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b3_l0",
+      "page_index": 289,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "其他壽險",
+      "bbox": [
+        234.49,
+        115.94,
+        262.49,
+        125.251
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b3_l1",
+      "page_index": 289,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "合約",
+      "bbox": [
+        248.49,
+        124.34,
+        262.49,
+        133.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b3_l2",
+      "page_index": 289,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "總計",
+      "bbox": [
+        282.24,
+        124.34,
+        296.24,
+        133.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b4_l0",
+      "page_index": 289,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "附有直接參與條",
+      "bbox": [
+        304.24,
+        99.14,
+        353.24,
+        108.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b4_l1",
+      "page_index": 289,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "款之壽險保單及",
+      "bbox": [
+        304.24,
+        107.54,
+        353.24,
+        116.851
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b4_l2",
+      "page_index": 289,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "附有酌情參與條",
+      "bbox": [
+        304.24,
+        115.94,
+        353.24,
+        125.251
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b4_l3",
+      "page_index": 289,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "款之投資合約",
+      "bbox": [
+        311.24,
+        124.34,
+        353.24,
+        133.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b5_l0",
+      "page_index": 289,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "其他壽險",
+      "bbox": [
+        361.99,
+        115.94,
+        389.99,
+        125.251
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b5_l1",
+      "page_index": 289,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "合約",
+      "bbox": [
+        375.99,
+        124.34,
+        389.99,
+        133.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b5_l2",
+      "page_index": 289,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "總計",
+      "bbox": [
+        409.74,
+        124.34,
+        423.74,
+        133.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b6_l0",
+      "page_index": 289,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "附有直接參與條",
+      "bbox": [
+        431.74,
+        99.14,
+        480.74,
+        108.451
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b6_l1",
+      "page_index": 289,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "款之壽險保單及",
+      "bbox": [
+        431.74,
+        107.54,
+        480.74,
+        116.851
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b6_l2",
+      "page_index": 289,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "附有酌情參與條",
+      "bbox": [
+        431.74,
+        115.94,
+        480.74,
+        125.251
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b6_l3",
+      "page_index": 289,
+      "block_id": 6,
+      "line_index": 3,
+      "source_text": "款之投資合約",
+      "bbox": [
+        438.74,
+        124.34,
+        480.74,
+        133.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b7_l0",
+      "page_index": 289,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "其他壽險",
+      "bbox": [
+        487.24,
+        115.94,
+        515.24,
+        125.251
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p289_b7_l1",
+      "page_index": 289,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "合約",
+      "bbox": [
+        501.24,
+        124.34,
+        515.24,
+        133.651
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round15/translation_batches/batch_0132.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round15/translation_batches/batch_0132.model_output.json",
+    "required_units": [
+      "p286_b12_l7",
+      "p286_b13_l0",
+      "p286_b14_l0",
+      "p287_b0_l0",
+      "p287_b1_l0",
+      "p287_b2_l0",
+      "p287_b3_l0",
+      "p287_b3_l1",
+      "p287_b4_l0",
+      "p287_b4_l1",
+      "p287_b5_l0",
+      "p287_b5_l1",
+      "p287_b5_l2",
+      "p287_b5_l3",
+      "p287_b6_l0",
+      "p287_b6_l1",
+      "p287_b6_l2",
+      "p287_b6_l3",
+      "p287_b6_l4",
+      "p287_b6_l5",
+      "p287_b6_l6",
+      "p287_b6_l14",
+      "p287_b6_l22",
+      "p287_b6_l30",
+      "p287_b6_l38",
+      "p287_b6_l46",
+      "p287_b6_l54",
+      "p287_b6_l62",
+      "p287_b6_l70",
+      "p287_b6_l78",
+      "p287_b6_l86",
+      "p287_b6_l94",
+      "p287_b6_l102",
+      "p287_b6_l110",
+      "p287_b6_l118",
+      "p287_b7_l0",
+      "p287_b7_l1",
+      "p287_b7_l9",
+      "p287_b7_l17",
+      "p287_b7_l25",
+      "p287_b7_l33",
+      "p287_b7_l41",
+      "p287_b7_l49",
+      "p287_b7_l57",
+      "p287_b7_l65",
+      "p287_b7_l73",
+      "p287_b7_l81",
+      "p287_b7_l89",
+      "p287_b7_l97",
+      "p287_b7_l105",
+      "p287_b7_l113",
+      "p287_b8_l0",
+      "p287_b8_l1",
+      "p287_b8_l9",
+      "p287_b8_l17",
+      "p287_b8_l25",
+      "p287_b8_l33",
+      "p287_b8_l41",
+      "p287_b8_l49",
+      "p287_b8_l57",
+      "p287_b8_l65",
+      "p287_b8_l73",
+      "p287_b8_l81",
+      "p287_b8_l89",
+      "p287_b8_l97",
+      "p287_b8_l105",
+      "p287_b8_l113",
+      "p287_b9_l1",
+      "p287_b9_l2",
+      "p287_b9_l3",
+      "p287_b9_l4",
+      "p287_b10_l0",
+      "p287_b10_l1",
+      "p287_b10_l2",
+      "p287_b10_l3",
+      "p287_b10_l4",
+      "p287_b10_l5",
+      "p287_b10_l6",
+      "p287_b10_l7",
+      "p287_b11_l0",
+      "p287_b12_l0",
+      "p288_b0_l0",
+      "p288_b2_l0",
+      "p288_b2_l1",
+      "p288_b2_l2",
+      "p288_b3_l0",
+      "p288_b3_l1",
+      "p288_b3_l2",
+      "p288_b3_l3",
+      "p288_b3_l4",
+      "p288_b3_l9",
+      "p288_b3_l14",
+      "p288_b3_l19",
+      "p288_b3_l24",
+      "p288_b3_l29",
+      "p288_b4_l1",
+      "p288_b5_l0",
+      "p288_b5_l1",
+      "p288_b5_l2",
+      "p288_b6_l0",
+      "p288_b6_l1",
+      "p288_b6_l2",
+      "p288_b6_l3",
+      "p288_b6_l4",
+      "p288_b6_l9",
+      "p288_b6_l14",
+      "p288_b6_l19",
+      "p288_b6_l24",
+      "p288_b6_l29",
+      "p288_b6_l34",
+      "p288_b6_l39",
+      "p288_b7_l2",
+      "p288_b8_l0",
+      "p288_b9_l0",
+      "p288_b9_l1",
+      "p288_b9_l2",
+      "p288_b10_l0",
+      "p288_b10_l1",
+      "p288_b10_l2",
+      "p288_b10_l3",
+      "p288_b11_l0",
+      "p288_b12_l0",
+      "p288_b12_l1",
+      "p288_b13_l0",
+      "p288_b13_l1",
+      "p288_b13_l2",
+      "p288_b13_l3",
+      "p288_b14_l0",
+      "p288_b15_l0",
+      "p288_b15_l1",
+      "p288_b16_l0",
+      "p288_b16_l1",
+      "p288_b16_l2",
+      "p288_b16_l3",
+      "p288_b17_l0",
+      "p288_b18_l0",
+      "p288_b18_l1",
+      "p288_b19_l0",
+      "p288_b19_l1",
+      "p288_b19_l2",
+      "p288_b19_l3",
+      "p288_b19_l4",
+      "p288_b19_l5",
+      "p288_b19_l6",
+      "p288_b19_l7",
+      "p288_b19_l8",
+      "p288_b19_l9",
+      "p288_b19_l10",
+      "p288_b19_l21",
+      "p288_b19_l32",
+      "p288_b19_l33",
+      "p288_b19_l44",
+      "p288_b19_l55",
+      "p288_b19_l66",
+      "p288_b19_l77",
+      "p288_b19_l88",
+      "p288_b19_l89",
+      "p288_b19_l100",
+      "p288_b19_l111",
+      "p288_b19_l122",
+      "p288_b19_l133",
+      "p288_b19_l143",
+      "p288_b20_l0",
+      "p288_b20_l1",
+      "p288_b20_l2",
+      "p288_b20_l3",
+      "p288_b21_l0",
+      "p288_b21_l1",
+      "p288_b21_l2",
+      "p288_b21_l3",
+      "p288_b21_l4",
+      "p288_b21_l5",
+      "p288_b21_l6",
+      "p288_b21_l7",
+      "p288_b22_l0",
+      "p288_b23_l0",
+      "p289_b0_l0",
+      "p289_b1_l0",
+      "p289_b1_l1",
+      "p289_b1_l2",
+      "p289_b2_l0",
+      "p289_b2_l1",
+      "p289_b2_l2",
+      "p289_b2_l3",
+      "p289_b3_l0",
+      "p289_b3_l1",
+      "p289_b3_l2",
+      "p289_b4_l0",
+      "p289_b4_l1",
+      "p289_b4_l2",
+      "p289_b4_l3",
+      "p289_b5_l0",
+      "p289_b5_l1",
+      "p289_b5_l2",
+      "p289_b6_l0",
+      "p289_b6_l1",
+      "p289_b6_l2",
+      "p289_b6_l3",
+      "p289_b7_l0",
+      "p289_b7_l1"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "tool": "build_layout_policy",
+  "policy_version": "2026-07-05.region_reflow_policy_v1",
+  "policy_source": "auto_from_current_extraction_statistics",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "language_pair_profile": "en_to_zh",
+  "language_profile_json": "pdf_translation_workflow_core/profiles/en_to_zh.layout_profile.json",
+  "language_profile_sha256": "583f8c146c86750bbd0808743e18c57355b412a7f4289d88cb276da62ead4149",
+  "layout_strategy": "source_anchor_preserving_compact_cjk_reflow",
+  "source_extraction": "docs/reports/round14/R14_00005_2025_annual_report_en/source_extraction.json",
+  "semantic_translations": "docs/input/round14/semantic_translations/R14_00005_2025_annual_report_en.translations.json",
+  "statistics": {
+    "unit_count": 39151,
+    "font_size": {
+      "q25": 7.0,
+      "q50": 7.0,
+      "q75": 8.0,
+      "q95": 8.0,
+      "min": 5.0,
+      "max": 48.0
+    },
+    "line_width": {
+      "q25": 43.984,
+      "q50": 129.935,
+      "min": 6.223,
+      "max": 757.143
+    },
+    "line_height": {
+      "q50": 9.1,
+      "min": 6.06,
+      "max": 806.49
+    },
+    "page": {
+      "width_q50": 597.6,
+      "height_q50": 842.4
+    }
+  },
+  "classification_rules": {
+    "table_note": {
+      "marker_regex": "^(note|notes):$",
+      "min_line_count": 2,
+      "min_region_width_page_ratio": 0.45,
+      "max_median_font_size": 7.0,
+      "min_y_ratio": 0.4,
+      "dense_page_min_y_ratio": 0.72
+    },
+    "footnote": {
+      "max_median_font_size": 7.0,
+      "min_y_ratio": 0.6,
+      "dense_page_min_y_ratio": 0.68
+    },
+    "event_card": {
+      "page_type_guesses": [
+        "mixed_image_text"
+      ],
+      "max_line_count": 6,
+      "max_region_width_page_ratio": 0.24,
+      "min_y_ratio": 0.12,
+      "max_y_ratio": 0.92
+    },
+    "vertical_nav": {
+      "max_region_width_pt": 22.0,
+      "min_height_width_ratio": 1.8
+    },
+    "compact_label": {
+      "max_region_width_pt": 42.0,
+      "max_median_line_width_pt": 42.0
+    },
+    "short_label": {
+      "max_line_count": 2,
+      "max_region_width_pt": 160.0,
+      "min_median_font_size": 6.0
+    },
+    "legend": {
+      "min_line_count": 3,
+      "max_region_width_pt": 140.0,
+      "max_median_line_width_pt": 95.0
+    },
+    "table_cell": {
+      "page_type_guesses": [
+        "table_or_chart_dense",
+        "chart_or_dashboard",
+        "matrix_or_table_diagram"
+      ],
+      "max_line_count": 2,
+      "max_region_width_pt": 160.0,
+      "max_median_font_size": 8.0
+    },
+    "heading": {
+      "min_median_font_size": 8.75
+    }
+  },
+  "region_expansion": {
+    "default": {
+      "x_pad_pt": 1.0,
+      "y_pad_min_pt": 0.6,
+      "y_pad_source_size_ratio": 0.28
+    },
+    "footnote": {
+      "x_pad_pt": 0.5,
+      "y_pad_min_pt": 0.45,
+      "y_pad_source_size_ratio": 0.22
+    }
+  },
+  "reflow": {
+    "reflow_kinds": [
+      "body",
+      "body_flow",
+      "event_card",
+      "table_note",
+      "footnote",
+      "heading",
+      "short_label"
+    ],
+    "preserve_line_kinds": [
+      "vertical_nav",
+      "legend",
+      "compact_label",
+      "table_cell"
+    ],
+    "min_items_for_reflow": 2
+  },
+  "flow_grouping": {
+    "body": {
+      "enabled": true,
+      "min_region_count": 4,
+      "min_region_width_page_ratio": 0.45,
+      "max_x0_delta_pt": 14.0,
+      "max_width_delta_ratio": 0.18,
+      "max_vertical_gap_pt": 21.0,
+      "paragraph_gap_pt": 8.0,
+      "line_joiner_en": " ",
+      "line_joiner_zh": "",
+      "include_line_preserve_body": false,
+      "hard_disable_page_type_guesses": [
+        "matrix_or_table_diagram"
+      ],
+      "disable_page_type_guesses": [
+        "table_or_chart_dense",
+        "chart_or_dashboard",
+        "matrix_or_table_diagram"
+      ],
+      "paragraph_separator": "\n\n",
+      "target_region_kind": "body_flow",
+      "source": "current_run_width_alignment_and_user_feedback"
+    }
+  },
+  "source_separator_policy": {
+    "split_on_untranslated_visible_line_gap": true,
+    "max_line_index_gap_without_split": 1,
+    "reason": "do not reflow translated text across visible source headings, years, bullets, or separators that are not translation units"
+  },
+  "draw_modes": {
+    "vertical_nav": {
+      "mode": "rotated_horizontal_text_image",
+      "render_backend": "PIL_transparent_png",
+      "writing_mode": "horizontal_line_rotated_as_unit",
+      "glyph_orientation": "rotate_glyphs_with_line",
+      "rotation_degrees": 90,
+      "single_line": true,
+      "center_on_source_bbox": true
+    }
+  },
+  "constrained_text_image_fit": {
+    "enabled": true,
+    "region_kinds": [
+      "table_cell",
+      "compact_label",
+      "short_label",
+      "legend",
+      "table_note",
+      "footnote"
+    ],
+    "wrapped_region_kinds": [
+      "table_note",
+      "footnote"
+    ],
+    "dense_single_line_body_page_types": [
+      "table_or_chart_dense",
+      "chart_or_dashboard",
+      "matrix_or_table_diagram"
+    ],
+    "min_font_pt": 3.2,
+    "max_font_pt": 5.2,
+    "reason": "Use a transparent text image only for constrained label slots after textbox probing fails; preserve full target text and record compression evidence."
+  },
+  "layout_text_variants": {
+    "compact_label": [
+      "compact_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "short_label": [
+      "short_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "table_cell": [
+      "table_cell_zh",
+      "compact_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "legend": [
+      "legend_zh",
+      "compact_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "compact_label_en": [
+      "compact_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "short_label_en": [
+      "short_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "table_cell_en": [
+      "table_cell_en",
+      "compact_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "legend_en": [
+      "legend_en",
+      "compact_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "event_card_en": [
+      "event_card_en",
+      "short_label_en",
+      "compact_en",
+      "display_en"
+    ],
+    "event_card_zh": [
+      "event_card_zh",
+      "short_label_zh",
+      "compact_zh",
+      "display_zh"
+    ],
+    "heading_en": [
+      "heading_en",
+      "short_label_en",
+      "compact_label_en",
+      "display_en"
+    ],
+    "heading_zh": [
+      "heading_zh",
+      "short_label_zh",
+      "compact_label_zh",
+      "display_zh"
+    ]
+  },
+  "font_profiles": {
+    "footnote": {
+      "source_scale": 0.82,
+      "min_pt": 4.0,
+      "max_pt": 6.0,
+      "shrink_scales": [
+        1.0,
+        0.94,
+        0.88,
+        0.82,
+        0.76,
+        0.7
+      ]
+    },
+    "table_note": {
+      "source_scale": 1.05,
+      "min_pt": 5.2,
+      "max_pt": 6.65,
+      "shrink_scales": [
+        1.0,
+        0.96,
+        0.92,
+        0.88,
+        0.84,
+        0.8,
+        0.76
+      ]
+    },
+    "compact_label": {
+      "source_scale": 0.74,
+      "min_pt": 3.5,
+      "max_pt": 5.18,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76,
+        0.68,
+        0.6
+      ]
+    },
+    "table_cell": {
+      "source_scale": 0.84,
+      "min_pt": 3.2,
+      "max_pt": 6.8,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76,
+        0.68,
+        0.6,
+        0.52,
+        0.48
+      ],
+      "min_insert_pt": 3.2
+    },
+    "legend": {
+      "source_scale": 0.92,
+      "min_pt": 4.0,
+      "max_pt": 6.86,
+      "shrink_scales": [
+        1.0,
+        0.94,
+        0.88,
+        0.82,
+        0.76,
+        0.7,
+        0.64
+      ]
+    },
+    "heading": {
+      "source_scale": 0.95,
+      "min_pt": 5.0,
+      "min_insert_pt": 6.2,
+      "max_pt": 47.04,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76,
+        0.68,
+        0.6,
+        0.52,
+        0.44,
+        0.36,
+        0.3
+      ]
+    },
+    "short_label": {
+      "source_scale": 0.95,
+      "min_pt": 5.0,
+      "max_pt": 7.35,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76,
+        0.68
+      ]
+    },
+    "event_card": {
+      "source_scale": 0.86,
+      "min_pt": 4.4,
+      "min_insert_pt": 4.0,
+      "max_pt": 6.44,
+      "shrink_scales": [
+        1.0,
+        0.92,
+        0.84,
+        0.76,
+        0.68,
+        0.6
+      ]
+    },
+    "body": {
+      "source_scale": 0.96,
+      "min_pt": 5.2,
+      "max_pt": 9.4,
+      "shrink_scales": [
+        1.0,
+        0.96,
+        0.92,
+        0.88,
+        0.84,
+        0.8,
+        0.76,
+        0.7,
+        0.64
+      ]
+    },
+    "body_flow": {
+      "source_scale": 0.98,
+      "min_pt": 5.4,
+      "max_pt": 9.8,
+      "shrink_scales": [
+        1.0,
+        0.96,
+        0.92,
+        0.88,
+        0.84,
+        0.8,
+        0.76,
+        0.7,
+        0.64
+      ]
+    }
+  },
+  "fallback": {
+    "min_insert_pt": 3.2,
+    "point_fit_status_kinds": [
+      "compact_label",
+      "short_label"
+    ],
+    "point_fit_font_pt": 3.3,
+    "point_fit_max_chars": 18,
+    "fallback_insert_font_pt": 3.2,
+    "fallback_max_chars": 24
+  },
+  "anti_overfit": {
+    "no_filename_branch": true,
+    "no_known_text_branch": true,
+    "no_fixed_page_number_branch": true,
+    "parameters_are_current_run_policy": true
+  },
+  "target_language_reflow": {
+    "enabled": false,
+    "reason": "Chinese generally fits inside English source frames; expand only through ordinary region padding unless D4 records a run-local exception."
+  }
+}

@@ -4,6 +4,20 @@
   "target_language": "en",
   "target_text_field": "translation_en",
   "layout_strategy": "target_visual_composition_before_font_shrink",
+  "directional_policy": {
+    "direction_specific_dimensions": [
+      "fluid body copy usually expands from Chinese into English",
+      "English body copy needs Western word wrapping and wider readable frames",
+      "mixed image/text pages must keep local event/photo anchors instead of page-wide body composition"
+    ],
+    "direction_independent_dimensions": [
+      "image preservation",
+      "background residue detection",
+      "table and chart structure",
+      "side-navigation glyph orientation",
+      "no tiny fallback text for critical roles"
+    ]
+  },
   "principles": [
     "Use the Chinese source PDF as the only runtime layout anchor.",
     "English target text often expands and needs Western word wrapping, so expand paragraph frames before shrinking font size.",
@@ -11,69 +25,122 @@
   ],
   "policy_overrides": {
     "language_pair_profile": "zh_to_en",
+    "classification_rules": {
+      "metric_value": {
+        "enabled": true,
+        "source_size_page_quantile": "q75",
+        "min_source_to_page_quantile_ratio": 1.45,
+        "value_token_regex": "([%\\uFF05$]|US\\$|HK\\$|GBP|EUR|\\u7f8e\\u5143|\\u6e2f\\u5143|\\u5104\\u5143|\\u4ebf|bn|billion|million|m|bps|\\u57fa\\u9ede|\\u57fa\\u70b9)",
+        "value_amount_regex": "((?:US\\$|HK\\$|\\$|GBP|EUR)?\\s*\\d[\\d,]*(?:\\.\\d+)?\\s*(?:[%\\uFF05]|\\u7f8e\\u5143|\\u6e2f\\u5143|\\u5104\\u5143|\\u4ebf|bn|billion|millions?|m|bps|\\u57fa\\u9ede|\\u57fa\\u70b9)?)|((?:US\\$|HK\\$|\\$|GBP|EUR)\\s*\\d)",
+        "anti_overfit": "classify by current-page font hierarchy plus generic numeric/currency/percentage tokens; never by filename, page number, exact value, or fixed point size"
+      },
+      "heading": {
+        "source_size_page_quantile": "q75",
+        "min_source_to_page_quantile_ratio": 1.2,
+        "top_y_ratio_for_priority": 0.35,
+        "anti_overfit": "classify headings against current-page font hierarchy instead of a fixed point-size threshold"
+      }
+    },
     "target_composition": {
       "enabled": true,
-      "region_kinds": ["body_flow", "heading"],
-      "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
-      "disable_page_type_guesses": ["chart_or_dashboard", "matrix_or_table_diagram"],
-      "allow_dense_page_body_below_y_ratio": 0.55,
-      "left_margin_page_ratio": 0.08,
-      "right_margin_page_ratio": 0.08,
-      "top_margin_page_ratio": 0.04,
-      "bottom_margin_page_ratio": 0.04,
-      "min_width_page_ratio": 0.70,
-      "max_width_page_ratio": 0.82,
-      "height_expand_ratio": 1.25,
-      "min_height_page_ratio": 0.10,
-      "max_bottom_page_ratio": 0.93,
+      "derive_from_current_source": true,
+      "region_kinds": [
+        "body_flow",
+        "heading"
+      ],
+      "hard_disable_page_type_guesses": [
+        "matrix_or_table_diagram"
+      ],
+      "disable_page_type_guesses": [
+        "mixed_image_text",
+        "chart_or_dashboard",
+        "matrix_or_table_diagram"
+      ],
       "overlap_guard": {
         "enabled": true,
-        "min_column_overlap_ratio": 0.55,
-        "min_vertical_gap_pt": 5.0,
-        "min_remaining_height_pt": 18.0,
-        "ignore_region_kinds": ["vertical_nav", "legend"]
+        "ignore_region_kinds": [
+          "vertical_nav",
+          "legend"
+        ]
       },
       "source": "language_pair_profile_open_rule",
       "reason": "For zh->en body copy, source bboxes are redaction/order anchors. The English paragraph frame must be recomposed from current-page body band, margins, and remaining readable area before font shrink."
     },
     "target_language_reflow": {
       "enabled": true,
-      "region_kinds": ["body_flow", "table_note", "heading"],
-      "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
-      "disable_page_type_guesses": ["chart_or_dashboard", "matrix_or_table_diagram"],
-      "min_width_page_ratio": 0.68,
-      "right_margin_page_ratio": 0.08,
-      "bottom_margin_page_ratio": 0.06,
-      "height_expand_ratio": 1.35,
-      "min_height_page_ratio": 0.08,
-      "max_bottom_page_ratio": 0.94,
-      "allow_dense_page_body_below_y_ratio": 0.55,
+      "derive_from_current_source": true,
+      "region_kinds": [
+        "body_flow",
+        "table_note",
+        "heading"
+      ],
+      "hard_disable_page_type_guesses": [
+        "matrix_or_table_diagram"
+      ],
+      "disable_page_type_guesses": [
+        "mixed_image_text",
+        "chart_or_dashboard",
+        "matrix_or_table_diagram"
+      ],
       "overlap_guard": {
         "enabled": true,
-        "min_column_overlap_ratio": 0.55,
-        "min_vertical_gap_pt": 5.0,
-        "min_remaining_height_pt": 14.0,
-        "ignore_region_kinds": ["vertical_nav", "legend"]
+        "ignore_region_kinds": [
+          "vertical_nav",
+          "legend"
+        ]
       },
       "source": "language_pair_profile_open_rule",
       "reason": "For zh->en, same-source bbox fitting over-shrinks body text. Expand current-page text frames within the same page band before shrink."
     },
+    "expandable_text_slots": {
+      "enabled": true,
+      "derive_from_current_source": true,
+      "region_kinds": [
+        "heading",
+        "short_label",
+        "compact_label",
+        "metric_value"
+      ],
+      "hard_disable_page_type_guesses": [
+        "matrix_or_table_diagram"
+      ],
+      "disable_page_type_guesses": [
+        "chart_or_dashboard",
+        "table_or_chart_dense"
+      ],
+      "allow_hard_page_left_label_expansion": true,
+      "source": "language_pair_profile_open_rule",
+      "reason": "For zh->en, page-level headings and explanatory short labels are not hard source bboxes. If current-page geometry shows unused whitespace and no table/chart hard constraint, expand the target slot before font shrink."
+    },
+    "local_constrained_slot_expansion": {
+      "enabled": true,
+      "derive_from_current_source": true,
+      "source": "source_candidate_region_similarity_open_rule",
+      "reason": "For zh->en inside dense panels, charts, and matrix-like pages, source bbox is the local semantic anchor. The executable layout policy must derive width, height, gap, and font thresholds from current source-page geometry instead of reusable fixed values."
+    },
+    "local_constrained_slot_flow": {
+      "enabled": true,
+      "derive_from_current_source": true,
+      "source": "source_candidate_region_similarity_open_rule",
+      "reason": "When adjacent source lines form one local semantic panel/cell, the target language should be reflowed inside that local panel instead of being inserted line-by-line. The executable thresholds must be run-local derivations from source geometry."
+    },
     "flow_grouping": {
       "body": {
         "enabled": true,
-        "candidate_region_kinds": ["body", "short_label", "compact_label"],
-        "min_region_count": 2,
-        "min_region_width_page_ratio": 0.24,
-        "max_x0_delta_pt": 18.0,
-        "max_width_delta_ratio": 1.0,
-        "max_vertical_gap_pt": 40.0,
+        "derive_from_current_source": true,
+        "candidate_region_kinds": [
+          "body"
+        ],
         "allow_short_continuation_lines": true,
-        "min_continuation_width_page_ratio": 0.02,
-        "paragraph_gap_pt": 18.0,
         "include_line_preserve_body": true,
-        "hard_disable_page_type_guesses": ["matrix_or_table_diagram"],
-        "disable_page_type_guesses": ["chart_or_dashboard", "matrix_or_table_diagram"],
-        "allow_dense_page_body_below_y_ratio": 0.55,
+        "hard_disable_page_type_guesses": [
+          "matrix_or_table_diagram"
+        ],
+        "disable_page_type_guesses": [
+          "mixed_image_text",
+          "chart_or_dashboard",
+          "matrix_or_table_diagram"
+        ],
         "paragraph_separator": "\n\n",
         "line_joiner_en": " ",
         "line_joiner_zh": ""
@@ -81,77 +148,250 @@
     },
     "font_profiles": {
       "body": {
+        "sizing_mode": "source_relative",
         "source_scale": 1.1,
-        "min_pt": 7.4,
-        "min_insert_pt": 7.2,
-        "max_pt": 10.0,
-        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8]
+        "min_source_ratio": 0.78,
+        "max_source_ratio": 1.18,
+        "page_quantile_floor": "q50",
+        "page_quantile_floor_scale": 0.85,
+        "page_quantile_ceiling": "q95",
+        "page_quantile_ceiling_scale": 1.1,
+        "min_insert_source_ratio": 0.74,
+        "shrink_scales": [
+          1.0,
+          0.96,
+          0.92,
+          0.88,
+          0.84,
+          0.8
+        ],
+        "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
       },
       "body_flow": {
+        "sizing_mode": "source_relative",
         "source_scale": 1.16,
-        "min_pt": 8.0,
-        "min_insert_pt": 7.8,
-        "max_pt": 10.2,
-        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8]
+        "min_source_ratio": 0.82,
+        "max_source_ratio": 1.25,
+        "page_quantile_floor": "q50",
+        "page_quantile_floor_scale": 0.9,
+        "page_quantile_ceiling": "q95",
+        "page_quantile_ceiling_scale": 1.16,
+        "min_insert_source_ratio": 0.78,
+        "shrink_scales": [
+          1.0,
+          0.96,
+          0.92,
+          0.88,
+          0.84,
+          0.8
+        ],
+        "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
       },
       "table_note": {
+        "sizing_mode": "source_relative",
         "source_scale": 1.0,
-        "min_pt": 6.2,
-        "min_insert_pt": 5.8,
-        "max_pt": 8.0,
-        "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.8, 0.76]
+        "min_source_ratio": 0.72,
+        "max_source_ratio": 1.08,
+        "page_quantile_floor": "q25",
+        "page_quantile_floor_scale": 0.9,
+        "page_quantile_ceiling": "q75",
+        "page_quantile_ceiling_scale": 1.05,
+        "min_insert_source_ratio": 0.68,
+        "shrink_scales": [
+          1.0,
+          0.96,
+          0.92,
+          0.88,
+          0.84,
+          0.8,
+          0.76
+        ],
+        "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
       },
       "footnote": {
+        "sizing_mode": "source_relative",
         "source_scale": 0.82,
-        "min_pt": 3.8,
-        "min_insert_pt": 3.8,
-        "max_pt": 6.2,
-        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76, 0.70, 0.64, 0.58]
+        "min_source_ratio": 0.58,
+        "max_source_ratio": 0.96,
+        "page_quantile_floor": "q25",
+        "page_quantile_floor_scale": 0.7,
+        "page_quantile_ceiling": "q50",
+        "page_quantile_ceiling_scale": 0.95,
+        "min_insert_source_ratio": 0.58,
+        "shrink_scales": [
+          1.0,
+          0.94,
+          0.88,
+          0.82,
+          0.76,
+          0.7,
+          0.64,
+          0.58
+        ],
+        "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
       },
       "heading": {
-        "source_scale": 1.0,
-        "min_pt": 8.0,
-        "min_insert_pt": 7.0,
-        "max_pt": 24.0,
-        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.74, 0.66, 0.58, 0.50, 0.42, 0.34, 0.30]
+        "sizing_mode": "source_relative",
+        "source_scale": 1.08,
+        "min_source_ratio": 0.72,
+        "max_source_ratio": 1.2,
+        "page_quantile_floor": "q75",
+        "page_quantile_floor_scale": 1.0,
+        "page_quantile_ceiling": "max",
+        "page_quantile_ceiling_scale": 1.08,
+        "min_insert_source_ratio": 0.55,
+        "shrink_scales": [
+          1.0,
+          0.94,
+          0.88,
+          0.82,
+          0.76,
+          0.7,
+          0.64,
+          0.58,
+          0.52,
+          0.46,
+          0.4,
+          0.34,
+          0.3
+        ],
+        "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
       },
       "short_label": {
+        "sizing_mode": "source_relative",
+        "source_scale": 1.08,
+        "min_source_ratio": 0.6,
+        "max_source_ratio": 1.15,
+        "page_quantile_floor": "q50",
+        "page_quantile_floor_scale": 0.8,
+        "page_quantile_ceiling": "q95",
+        "page_quantile_ceiling_scale": 1.0,
+        "min_insert_source_ratio": 0.55,
+        "shrink_scales": [
+          1.0,
+          0.94,
+          0.88,
+          0.82,
+          0.76
+        ],
+        "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
+      },
+      "metric_value": {
+        "sizing_mode": "source_relative",
         "source_scale": 1.0,
-        "min_pt": 6.0,
-        "min_insert_pt": 5.2,
-        "max_pt": 12.0,
-        "shrink_scales": [1.0, 0.94, 0.88, 0.82, 0.76]
+        "min_source_ratio": 0.7,
+        "max_source_ratio": 1.05,
+        "page_quantile_floor": "q75",
+        "page_quantile_floor_scale": 1.1,
+        "page_quantile_ceiling": "max",
+        "page_quantile_ceiling_scale": 1.05,
+        "min_insert_source_ratio": 0.62,
+        "shrink_scales": [
+          1.0,
+          0.96,
+          0.92,
+          0.88,
+          0.84,
+          0.8,
+          0.76,
+          0.7
+        ],
+        "anti_overfit": "actual point size is resolved per page from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
       },
       "table_cell": {
+        "sizing_mode": "source_relative",
         "source_scale": 0.9,
-        "min_pt": 3.2,
-        "min_insert_pt": 3.2,
-        "max_pt": 6.2,
-        "shrink_scales": [1.0, 0.92, 0.84, 0.76, 0.68, 0.6, 0.52, 0.48]
+        "min_source_ratio": 0.52,
+        "max_source_ratio": 1.0,
+        "page_quantile_floor": "q25",
+        "page_quantile_floor_scale": 0.7,
+        "page_quantile_ceiling": "q75",
+        "page_quantile_ceiling_scale": 0.95,
+        "min_insert_source_ratio": 0.52,
+        "shrink_scales": [
+          1.0,
+          0.92,
+          0.84,
+          0.76,
+          0.68,
+          0.6,
+          0.52,
+          0.48
+        ],
+        "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
       },
       "legend": {
+        "sizing_mode": "source_relative",
         "source_scale": 0.94,
-        "min_pt": 4.8,
-        "min_insert_pt": 4.2,
-        "max_pt": 8.0,
-        "shrink_scales": [1.0, 0.92, 0.84, 0.76]
+        "min_source_ratio": 0.62,
+        "max_source_ratio": 1.05,
+        "page_quantile_floor": "q25",
+        "page_quantile_floor_scale": 0.78,
+        "page_quantile_ceiling": "q75",
+        "page_quantile_ceiling_scale": 1.05,
+        "min_insert_source_ratio": 0.58,
+        "shrink_scales": [
+          1.0,
+          0.92,
+          0.84,
+          0.76
+        ],
+        "anti_overfit": "actual point size is resolved from source_size and current-page font quantiles; this profile contains ratios, not fixed sample font sizes"
       }
     },
     "constrained_text_image_fit": {
       "enabled": true,
-      "region_kinds": ["table_cell", "compact_label", "short_label", "legend", "table_note", "footnote", "body_flow"],
-      "wrapped_region_kinds": ["table_note", "footnote", "body_flow"],
-      "dense_single_line_body_page_types": ["table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"],
-      "min_font_pt": 5.2,
-      "max_font_pt": 6.6,
+      "derive_from_current_source": true,
+      "region_kinds": [
+        "table_cell",
+        "compact_label",
+        "short_label",
+        "legend",
+        "table_note",
+        "footnote",
+        "body",
+        "body_flow",
+        "heading",
+        "event_card"
+      ],
+      "forbid_region_kinds": [
+        "metric_value"
+      ],
+      "wrapped_region_kinds": [
+        "table_note",
+        "footnote",
+        "body",
+        "body_flow",
+        "heading",
+        "short_label",
+        "event_card"
+      ],
+      "wrap_on_compression_region_kinds": [
+        "table_cell",
+        "compact_label",
+        "legend"
+      ],
+      "dense_single_line_body_page_types": [
+        "table_or_chart_dense",
+        "chart_or_dashboard",
+        "matrix_or_table_diagram"
+      ],
+      "min_font_page_quantile": "q25",
+      "max_font_page_quantile": "q95",
+      "keep_proportion_for_wrapped": true,
       "reason": "For zh->en, textbox probing is preferred. If a body/table-note/footnote region still overflows after frame expansion, render wrapped target text as a last-resort local text image instead of falling back to tiny point text."
     },
-      "fallback": {
-      "min_insert_pt": 3.2,
-      "fallback_insert_font_pt": 3.2,
-      "point_fit_font_pt": 3.4,
+    "fallback": {
       "fallback_max_chars": 120,
-      "point_fit_max_chars": 80
+      "point_fit_max_chars": 80,
+      "forbid_region_kinds": [
+        "body",
+        "body_flow",
+        "heading",
+        "event_card",
+        "metric_value"
+      ],
+      "forbid_reason": "Critical zh->en prose/title regions must use reflow or wrapped constrained text images; tiny point fallback is a quality failure, not a rendering strategy."
     }
   },
   "prompt_overlay": {

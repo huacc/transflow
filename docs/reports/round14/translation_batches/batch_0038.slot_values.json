@@ -1,0 +1,6729 @@
+{
+  "run_id": "round14",
+  "case_id": "R14_00005_2025_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0038",
+  "batch_index": 38,
+  "batch_count": 196,
+  "source_extraction_ref": "docs/reports/round14/source_extraction_en.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p56_b10_l1",
+      "page_index": 56,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "engage in HSBC’s success. In 2025, we",
+      "bbox": [
+        391.6,
+        293.663,
+        533.032,
+        303.359
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "In",
+        "engage",
+        "in",
+        "s",
+        "success.",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b10_l2",
+      "page_index": 56,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "invited around 199,000 colleagues to join our",
+      "bbox": [
+        391.6,
+        303.263,
+        549.224,
+        312.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "around",
+        "colleagues",
+        "invited",
+        "join",
+        "our",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "199,000 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b10_l3",
+      "page_index": 56,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "share plans, and 95% of colleagues globally",
+      "bbox": [
+        391.6,
+        312.863,
+        545.416,
+        322.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "colleagues",
+        "globally",
+        "of",
+        "plans",
+        "share"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "95%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b10_l4",
+      "page_index": 56,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "have eligibility. Currently, around 63,000",
+      "bbox": [
+        391.6,
+        322.463,
+        532.6,
+        332.159
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Currently",
+        "around",
+        "eligibility.",
+        "have"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "63,000"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b10_l5",
+      "page_index": 56,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "colleagues participate in one of the plans.",
+      "bbox": [
+        391.6,
+        332.063,
+        535.264,
+        341.759
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "colleagues",
+        "in",
+        "of",
+        "one",
+        "participate",
+        "plans.",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b11_l0",
+      "page_index": 56,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "Supporting our colleagues to grow",
+      "bbox": [
+        42.52,
+        377.256,
+        252.704,
+        394.156
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Supporting",
+        "colleagues",
+        "grow",
+        "our",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b12_l0",
+      "page_index": 56,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "We recognise the importance of personal and",
+      "bbox": [
+        42.52,
+        401.864,
+        203.39,
+        411.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "and",
+        "importance",
+        "of",
+        "personal",
+        "recognise",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b12_l1",
+      "page_index": 56,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "professional growth for our colleagues, and",
+      "bbox": [
+        42.52,
+        411.464,
+        194.984,
+        421.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "colleagues",
+        "for",
+        "growth",
+        "our",
+        "professional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b12_l2",
+      "page_index": 56,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "seek to support their mental, physical and",
+      "bbox": [
+        42.52,
+        421.064,
+        189.752,
+        430.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "mental",
+        "physical",
+        "seek",
+        "support",
+        "their",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b12_l3",
+      "page_index": 56,
+      "block_id": 12,
+      "line_index": 3,
+      "source_text": "financial well-being.",
+      "bbox": [
+        42.52,
+        430.664,
+        112.8,
+        440.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "financial",
+        "well-being."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b13_l0",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "We have refined our Well-being index in the",
+      "bbox": [
+        42.52,
+        446.764,
+        197.208,
+        456.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "Well-being",
+        "have",
+        "in",
+        "index",
+        "our",
+        "refined",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b13_l1",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "Snapshot survey to focus on where we can",
+      "bbox": [
+        42.52,
+        456.364,
+        195.68,
+        466.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Snapshot",
+        "can",
+        "focus",
+        "on",
+        "survey",
+        "to",
+        "we",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b13_l2",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "make the most positive impact and updated",
+      "bbox": [
+        42.52,
+        465.964,
+        197.392,
+        475.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "impact",
+        "make",
+        "most",
+        "positive",
+        "the",
+        "updated"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b13_l3",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "our questions to focus on happiness at work,",
+      "bbox": [
+        42.52,
+        475.564,
+        201.136,
+        485.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "at",
+        "focus",
+        "happiness",
+        "on",
+        "our",
+        "questions",
+        "to",
+        "work"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b13_l4",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 4,
+      "source_text": "stress levels, job satisfaction, and sense of",
+      "bbox": [
+        42.52,
+        485.164,
+        193.52,
+        494.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "job",
+        "levels",
+        "of",
+        "satisfaction",
+        "sense",
+        "stress"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b13_l5",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "purpose, aligning our methodology to the",
+      "bbox": [
+        42.52,
+        494.764,
+        187.664,
+        504.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "aligning",
+        "methodology",
+        "our",
+        "purpose",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b13_l6",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 6,
+      "source_text": "Organisation for Economic Co-operation and",
+      "bbox": [
+        42.52,
+        504.364,
+        198.184,
+        514.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Co-operation",
+        "Economic",
+        "Organisation",
+        "and",
+        "for"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b13_l7",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 7,
+      "source_text": "Development (‘OECD’) measures of well-",
+      "bbox": [
+        42.52,
+        513.964,
+        186.616,
+        523.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Development",
+        "OECD",
+        "measures",
+        "of",
+        "well-"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b13_l8",
+      "page_index": 56,
+      "block_id": 13,
+      "line_index": 8,
+      "source_text": "being.",
+      "bbox": [
+        42.52,
+        523.564,
+        63.88,
+        533.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "being."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b14_l0",
+      "page_index": 56,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "In 2025 our Well-being index increased to",
+      "bbox": [
+        42.52,
+        539.664,
+        188.928,
+        549.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "Well-being",
+        "increased",
+        "index",
+        "our",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b14_l1",
+      "page_index": 56,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "66%, with improvements of one percentage",
+      "bbox": [
+        42.52,
+        549.264,
+        199.232,
+        558.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "improvements",
+        "of",
+        "one",
+        "percentage",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "66%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b14_l2",
+      "page_index": 56,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "point across happiness at work, stress levels",
+      "bbox": [
+        42.52,
+        558.864,
+        200.184,
+        568.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "across",
+        "at",
+        "happiness",
+        "levels",
+        "point",
+        "stress",
+        "work"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b14_l3",
+      "page_index": 56,
+      "block_id": 14,
+      "line_index": 3,
+      "source_text": "and job satisfaction.",
+      "bbox": [
+        42.52,
+        568.464,
+        111.552,
+        578.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "job",
+        "satisfaction."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b15_l0",
+      "page_index": 56,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "Mental health",
+      "bbox": [
+        42.52,
+        584.056,
+        96.672,
+        594.456
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Mental",
+        "health"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b15_l1",
+      "page_index": 56,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "We were ranked 1st globally for the fourth",
+      "bbox": [
+        42.52,
+        594.164,
+        191.96,
+        603.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "for",
+        "fourth",
+        "globally",
+        "ranked",
+        "st",
+        "the",
+        "were"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b15_l2",
+      "page_index": 56,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "consecutive year in the CCLA Corporate",
+      "bbox": [
+        42.52,
+        603.764,
+        183.864,
+        613.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CCLA",
+        "Corporate",
+        "consecutive",
+        "in",
+        "the",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b15_l3",
+      "page_index": 56,
+      "block_id": 15,
+      "line_index": 3,
+      "source_text": "Mental Health Benchmark Global 100+. We",
+      "bbox": [
+        42.52,
+        613.364,
+        196.616,
+        623.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Benchmark",
+        "Global",
+        "Health",
+        "Mental",
+        "We"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "100"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b15_l4",
+      "page_index": 56,
+      "block_id": 15,
+      "line_index": 4,
+      "source_text": "are the only organisation to achieve Tier 1",
+      "bbox": [
+        42.52,
+        622.964,
+        189.216,
+        632.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Tier",
+        "achieve",
+        "are",
+        "only",
+        "organisation",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b15_l5",
+      "page_index": 56,
+      "block_id": 15,
+      "line_index": 5,
+      "source_text": "status since the benchmark’s inception. In",
+      "bbox": [
+        42.52,
+        632.564,
+        191.536,
+        642.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "benchmark",
+        "inception.",
+        "s",
+        "since",
+        "status",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b15_l6",
+      "page_index": 56,
+      "block_id": 15,
+      "line_index": 6,
+      "source_text": "2025, we scored 83%, significantly higher",
+      "bbox": [
+        42.52,
+        642.164,
+        190.712,
+        651.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "higher",
+        "scored",
+        "significantly",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "percentage",
+          "value": "83%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b15_l7",
+      "page_index": 56,
+      "block_id": 15,
+      "line_index": 7,
+      "source_text": "than the financial services industry average of",
+      "bbox": [
+        42.52,
+        651.764,
+        203.12,
+        661.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "average",
+        "financial",
+        "industry",
+        "of",
+        "services",
+        "than",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b16_l0",
+      "page_index": 56,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "In 2025, we hosted two global masterclass",
+      "bbox": [
+        42.52,
+        677.464,
+        194.28,
+        687.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "global",
+        "hosted",
+        "masterclass",
+        "two",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b16_l1",
+      "page_index": 56,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "series, one focused on mental health and",
+      "bbox": [
+        42.52,
+        687.064,
+        188.128,
+        696.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "focused",
+        "health",
+        "mental",
+        "on",
+        "one",
+        "series"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b16_l2",
+      "page_index": 56,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "performance, and the other on sleep and well-",
+      "bbox": [
+        42.52,
+        696.664,
+        202.904,
+        706.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "on",
+        "other",
+        "performance",
+        "sleep",
+        "the",
+        "well-"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b16_l3",
+      "page_index": 56,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "being. These events brought together senior",
+      "bbox": [
+        42.52,
+        706.264,
+        199.408,
+        715.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "These",
+        "being.",
+        "brought",
+        "events",
+        "senior",
+        "together"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b16_l4",
+      "page_index": 56,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "leaders and industry experts to share",
+      "bbox": [
+        42.52,
+        715.864,
+        173.264,
+        725.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "experts",
+        "industry",
+        "leaders",
+        "share",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b16_l5",
+      "page_index": 56,
+      "block_id": 16,
+      "line_index": 5,
+      "source_text": "evidence-based strategies for enhancing well-",
+      "bbox": [
+        42.52,
+        725.464,
+        201.568,
+        735.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "enhancing",
+        "evidence-based",
+        "for",
+        "strategies",
+        "well-"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b16_l6",
+      "page_index": 56,
+      "block_id": 16,
+      "line_index": 6,
+      "source_text": "being and performance, while addressing",
+      "bbox": [
+        42.52,
+        735.064,
+        188.2,
+        744.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "addressing",
+        "and",
+        "being",
+        "performance",
+        "while"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b16_l7",
+      "page_index": 56,
+      "block_id": 16,
+      "line_index": 7,
+      "source_text": "workplace myths and stigma.",
+      "bbox": [
+        42.52,
+        744.664,
+        144.848,
+        754.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "myths",
+        "stigma.",
+        "workplace"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b17_l0",
+      "page_index": 56,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "In 2025, we updated the well-being content in",
+      "bbox": [
+        217.06,
+        401.864,
+        379.128,
+        411.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "content",
+        "in",
+        "the",
+        "updated",
+        "we",
+        "well-being"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b17_l1",
+      "page_index": 56,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "our global mandatory training and launched a",
+      "bbox": [
+        217.06,
+        411.464,
+        374.34,
+        421.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "and",
+        "global",
+        "launched",
+        "mandatory",
+        "our",
+        "training"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b17_l2",
+      "page_index": 56,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "new voluntary mental health module. The new",
+      "bbox": [
+        217.06,
+        421.064,
+        381.084,
+        430.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "health",
+        "mental",
+        "module.",
+        "new",
+        "voluntary"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b17_l3",
+      "page_index": 56,
+      "block_id": 17,
+      "line_index": 3,
+      "source_text": "module has been completed over 1,300 times",
+      "bbox": [
+        217.06,
+        430.664,
+        379.388,
+        440.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "been",
+        "completed",
+        "has",
+        "module",
+        "over",
+        "times"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1,300 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b17_l4",
+      "page_index": 56,
+      "block_id": 17,
+      "line_index": 4,
+      "source_text": "since launch in November, with 27% of those",
+      "bbox": [
+        217.06,
+        440.264,
+        378.356,
+        449.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "November",
+        "in",
+        "launch",
+        "of",
+        "since",
+        "those",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "27%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b17_l5",
+      "page_index": 56,
+      "block_id": 17,
+      "line_index": 5,
+      "source_text": "completions being done by people leaders.",
+      "bbox": [
+        217.06,
+        449.864,
+        366.144,
+        459.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "being",
+        "by",
+        "completions",
+        "done",
+        "leaders.",
+        "people"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b18_l0",
+      "page_index": 56,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "Our network of over 250 mindfulness",
+      "bbox": [
+        217.06,
+        465.964,
+        349.74,
+        475.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Our",
+        "mindfulness",
+        "network",
+        "of",
+        "over"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "250 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b18_l1",
+      "page_index": 56,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "champions delivered sessions to over 27,000",
+      "bbox": [
+        217.06,
+        475.564,
+        376.196,
+        485.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "champions",
+        "delivered",
+        "over",
+        "sessions",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "27,000"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b18_l2",
+      "page_index": 56,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "colleagues, up 43% on 2024, and enrolment to",
+      "bbox": [
+        217.06,
+        485.164,
+        382.332,
+        494.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "colleagues",
+        "enrolment",
+        "on",
+        "to",
+        "up"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "percentage",
+          "value": "43%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b18_l3",
+      "page_index": 56,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "the meditation app, Headspace, increased by",
+      "bbox": [
+        217.06,
+        494.764,
+        375.764,
+        504.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Headspace",
+        "app",
+        "by",
+        "increased",
+        "meditation",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l0",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "Physical health",
+      "bbox": [
+        217.06,
+        519.956,
+        276.236,
+        530.356
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Physical",
+        "health"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b19_l1",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "We provided private medical insurance to 99%",
+      "bbox": [
+        217.06,
+        530.064,
+        381.896,
+        539.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "insurance",
+        "medical",
+        "private",
+        "provided",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "99%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l2",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "of our permanent employees, and offered",
+      "bbox": [
+        217.06,
+        539.664,
+        364.516,
+        549.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "employees",
+        "of",
+        "offered",
+        "our",
+        "permanent"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l3",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "telemedicine services in most countries and",
+      "bbox": [
+        217.06,
+        549.264,
+        372.204,
+        558.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "countries",
+        "in",
+        "most",
+        "services",
+        "telemedicine"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l4",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "territories. In some markets, we also have on-",
+      "bbox": [
+        217.06,
+        558.864,
+        376.508,
+        568.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "also",
+        "have",
+        "markets",
+        "on-",
+        "some",
+        "territories.",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l5",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 5,
+      "source_text": "site medical centres. In 2025, 80% of",
+      "bbox": [
+        217.06,
+        568.464,
+        349.596,
+        578.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "centres.",
+        "medical",
+        "of",
+        "site"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "percentage",
+          "value": "80%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l6",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 6,
+      "source_text": "colleagues can access free health",
+      "bbox": [
+        217.06,
+        578.064,
+        336.14,
+        587.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "access",
+        "can",
+        "colleagues",
+        "free",
+        "health"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l7",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 7,
+      "source_text": "assessments. We also expanded medical",
+      "bbox": [
+        217.06,
+        587.664,
+        363.366,
+        597.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "also",
+        "assessments.",
+        "expanded",
+        "medical"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l8",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 8,
+      "source_text": "outpatient reimbursement to over 35,000",
+      "bbox": [
+        217.06,
+        597.264,
+        362.732,
+        606.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "outpatient",
+        "over",
+        "reimbursement",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "35,000"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l9",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 9,
+      "source_text": "colleagues in India. In Singapore and the UK,",
+      "bbox": [
+        217.06,
+        606.864,
+        373.812,
+        616.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "India.",
+        "Singapore",
+        "UK",
+        "and",
+        "colleagues",
+        "in",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l10",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 10,
+      "source_text": "we introduced fertility medical support,",
+      "bbox": [
+        217.06,
+        616.464,
+        355.108,
+        626.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "fertility",
+        "introduced",
+        "medical",
+        "support",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l11",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 11,
+      "source_text": "increasing the number of countries offering",
+      "bbox": [
+        217.06,
+        626.064,
+        369.516,
+        635.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "countries",
+        "increasing",
+        "number",
+        "of",
+        "offering",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b19_l12",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 12,
+      "source_text": "this benefit to 10.",
+      "bbox": [
+        217.06,
+        635.664,
+        278.244,
+        645.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "benefit",
+        "this",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "10"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b20_l0",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 0,
+      "source_text": "In 2025, we continued to offer the Personify",
+      "bbox": [
+        217.06,
+        651.764,
+        372.988,
+        661.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "Personify",
+        "continued",
+        "offer",
+        "the",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l1",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 1,
+      "source_text": "Health app to colleagues, helping boost their",
+      "bbox": [
+        217.06,
+        661.364,
+        373.804,
+        671.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Health",
+        "app",
+        "boost",
+        "colleagues",
+        "helping",
+        "their",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l2",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 2,
+      "source_text": "physical activity. Over 33,000 colleagues have",
+      "bbox": [
+        217.06,
+        670.964,
+        378.644,
+        680.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Over",
+        "activity.",
+        "colleagues",
+        "have",
+        "physical"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "33,000 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l3",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 3,
+      "source_text": "downloaded the app, an increase of 57% on",
+      "bbox": [
+        217.06,
+        680.564,
+        372.804,
+        690.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "an",
+        "app",
+        "downloaded",
+        "increase",
+        "of",
+        "on",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "57%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l4",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 4,
+      "source_text": "2024. Additionally, over 11,400 colleagues",
+      "bbox": [
+        217.06,
+        690.164,
+        365.57,
+        699.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additionally",
+        "colleagues",
+        "over"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "11,400 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l5",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 5,
+      "source_text": "participated in the HSBC Global Activity",
+      "bbox": [
+        217.06,
+        699.764,
+        356.02,
+        709.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Activity",
+        "Global",
+        "HSBC",
+        "in",
+        "participated",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l6",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 6,
+      "source_text": "Challenge in September, an increase of over",
+      "bbox": [
+        217.06,
+        709.364,
+        373.084,
+        719.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Challenge",
+        "September",
+        "an",
+        "in",
+        "increase",
+        "of",
+        "over"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l7",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 7,
+      "source_text": "149% in participation from 2024. We set a",
+      "bbox": [
+        217.06,
+        718.964,
+        366.596,
+        728.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "a",
+        "from",
+        "in",
+        "participation",
+        "set"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "percentage",
+          "value": "149%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l8",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 8,
+      "source_text": "new Guinness World Record for the most",
+      "bbox": [
+        217.06,
+        728.564,
+        364.612,
+        738.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Guinness",
+        "Record",
+        "World",
+        "for",
+        "most",
+        "new",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l9",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 9,
+      "source_text": "participants in a 10,000 step challenge in 24",
+      "bbox": [
+        217.06,
+        738.164,
+        371.148,
+        747.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "challenge",
+        "in",
+        "participants",
+        "step"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "10,000 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "24"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l10",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 10,
+      "source_text": "hours.",
+      "bbox": [
+        217.06,
+        747.764,
+        241.012,
+        757.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "hours."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l0",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 0,
+      "source_text": "Financial health",
+      "bbox": [
+        391.6,
+        401.356,
+        453.144,
+        411.756
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Financial",
+        "health"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l1",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 1,
+      "source_text": "We introduced a four-part financial well-being",
+      "bbox": [
+        391.6,
+        411.464,
+        550.936,
+        421.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "a",
+        "financial",
+        "four-part",
+        "introduced",
+        "well-being"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l2",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 2,
+      "source_text": "series providing ‘Money Skills That Make Life",
+      "bbox": [
+        391.6,
+        421.064,
+        551.464,
+        430.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Life",
+        "Make",
+        "Money",
+        "Skills",
+        "That",
+        "providing",
+        "series"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l3",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 3,
+      "source_text": "Easier’, which gained an overall satisfaction",
+      "bbox": [
+        391.6,
+        430.664,
+        544.368,
+        440.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Easier",
+        "an",
+        "gained",
+        "overall",
+        "satisfaction",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l4",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 4,
+      "source_text": "score of 97%. According to our Performance",
+      "bbox": [
+        391.6,
+        440.264,
+        549.488,
+        449.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "According",
+        "Performance",
+        "of",
+        "our",
+        "score",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "97%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l5",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 5,
+      "source_text": "and Reward survey, 37% of colleagues",
+      "bbox": [
+        391.6,
+        449.864,
+        529.992,
+        459.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Reward",
+        "and",
+        "colleagues",
+        "of",
+        "survey"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "37%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l6",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 6,
+      "source_text": "expressed a desire for more financial well-",
+      "bbox": [
+        391.6,
+        459.464,
+        538.384,
+        469.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "desire",
+        "expressed",
+        "financial",
+        "for",
+        "more",
+        "well-"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l7",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 7,
+      "source_text": "being support. In response, we trialled an",
+      "bbox": [
+        391.6,
+        469.064,
+        537.434,
+        478.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "an",
+        "being",
+        "response",
+        "support.",
+        "trialled",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l8",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 8,
+      "source_text": "independent financial well-being platform for",
+      "bbox": [
+        391.6,
+        478.664,
+        548.336,
+        488.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "financial",
+        "for",
+        "independent",
+        "platform",
+        "well-being"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l9",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 9,
+      "source_text": "colleagues in Mexico, UAE, the UK and India",
+      "bbox": [
+        391.6,
+        488.264,
+        548.528,
+        497.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "India",
+        "Mexico",
+        "UAE",
+        "UK",
+        "and",
+        "colleagues",
+        "in",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l10",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 10,
+      "source_text": "to enhance financial literacy. Over 1,600",
+      "bbox": [
+        391.6,
+        497.864,
+        532.696,
+        507.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Over",
+        "enhance",
+        "financial",
+        "literacy.",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1,600"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l11",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 11,
+      "source_text": "colleagues are participating in the trial, which",
+      "bbox": [
+        391.6,
+        507.464,
+        549.448,
+        517.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "colleagues",
+        "in",
+        "participating",
+        "the",
+        "trial",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l12",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 12,
+      "source_text": "concludes in March 2026.",
+      "bbox": [
+        391.6,
+        517.064,
+        483.378,
+        526.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "March",
+        "concludes",
+        "in"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2026"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b22_l0",
+      "page_index": 56,
+      "block_id": 22,
+      "line_index": 0,
+      "source_text": "Flexible working",
+      "bbox": [
+        391.6,
+        532.656,
+        456.376,
+        543.056
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Flexible",
+        "working"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b22_l1",
+      "page_index": 56,
+      "block_id": 22,
+      "line_index": 1,
+      "source_text": "We support hybrid working, with 85% of our",
+      "bbox": [
+        391.6,
+        542.764,
+        548.19,
+        552.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "We",
+        "hybrid",
+        "of",
+        "our",
+        "support",
+        "with",
+        "working"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "85%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b22_l2",
+      "page_index": 56,
+      "block_id": 22,
+      "line_index": 2,
+      "source_text": "colleagues embracing this approach.",
+      "bbox": [
+        391.6,
+        552.364,
+        518.144,
+        562.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "approach.",
+        "colleagues",
+        "embracing",
+        "this"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b23_l0",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 0,
+      "source_text": "We value flexibility but also emphasise the",
+      "bbox": [
+        391.6,
+        568.464,
+        541.864,
+        578.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "also",
+        "but",
+        "emphasise",
+        "flexibility",
+        "the",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b23_l1",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 1,
+      "source_text": "importance of in-person interactions to foster",
+      "bbox": [
+        391.6,
+        578.065,
+        550.488,
+        587.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "foster",
+        "importance",
+        "in-person",
+        "interactions",
+        "of",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b23_l2",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 2,
+      "source_text": "collaboration, build trust, and demonstrate care",
+      "bbox": [
+        391.6,
+        587.664,
+        557.0,
+        597.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "build",
+        "care",
+        "collaboration",
+        "demonstrate",
+        "trust"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b23_l3",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 3,
+      "source_text": "and empathy. Strong relationships among",
+      "bbox": [
+        391.6,
+        597.264,
+        538.616,
+        606.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strong",
+        "among",
+        "and",
+        "empathy.",
+        "relationships"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b23_l4",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 4,
+      "source_text": "colleagues lead to better outcomes for our",
+      "bbox": [
+        391.6,
+        606.865,
+        541.48,
+        616.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "better",
+        "colleagues",
+        "for",
+        "lead",
+        "our",
+        "outcomes",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b23_l5",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 5,
+      "source_text": "customers.",
+      "bbox": [
+        391.6,
+        616.465,
+        430.864,
+        626.161
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "customers."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b24_l0",
+      "page_index": 56,
+      "block_id": 24,
+      "line_index": 0,
+      "source_text": "In 2025, we reset our expectations that",
+      "bbox": [
+        391.6,
+        632.565,
+        530.624,
+        642.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "expectations",
+        "our",
+        "reset",
+        "that",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b24_l1",
+      "page_index": 56,
+      "block_id": 24,
+      "line_index": 1,
+      "source_text": "Managing Directors are present in the office a",
+      "bbox": [
+        391.6,
+        642.164,
+        553.16,
+        651.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Directors",
+        "Managing",
+        "a",
+        "are",
+        "in",
+        "office",
+        "present",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b24_l2",
+      "page_index": 56,
+      "block_id": 24,
+      "line_index": 2,
+      "source_text": "minimum of four days a week, emphasising",
+      "bbox": [
+        391.6,
+        651.765,
+        546.12,
+        661.461
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "days",
+        "emphasising",
+        "four",
+        "minimum",
+        "of",
+        "week"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b24_l3",
+      "page_index": 56,
+      "block_id": 24,
+      "line_index": 3,
+      "source_text": "the importance of relationships, as we evolve",
+      "bbox": [
+        391.6,
+        661.365,
+        551.41,
+        671.061
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "as",
+        "evolve",
+        "importance",
+        "of",
+        "relationships",
+        "the",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b24_l4",
+      "page_index": 56,
+      "block_id": 24,
+      "line_index": 4,
+      "source_text": "our culture.",
+      "bbox": [
+        391.6,
+        670.965,
+        433.28,
+        680.661
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "culture.",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b25_l0",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 0,
+      "source_text": "We enhanced our family leave policies to",
+      "bbox": [
+        391.6,
+        687.065,
+        536.328,
+        696.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "enhanced",
+        "family",
+        "leave",
+        "our",
+        "policies",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l1",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 1,
+      "source_text": "promote flexibility and work-life balance. Over",
+      "bbox": [
+        391.6,
+        696.665,
+        552.648,
+        706.361
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Over",
+        "and",
+        "balance.",
+        "flexibility",
+        "promote",
+        "work-life"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l2",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 2,
+      "source_text": "99% of colleagues now have access to at",
+      "bbox": [
+        391.6,
+        706.265,
+        538.64,
+        715.961
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "access",
+        "at",
+        "colleagues",
+        "have",
+        "now",
+        "of",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "99%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l3",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 3,
+      "source_text": "least 18 weeks of fully-paid parental leave for",
+      "bbox": [
+        391.6,
+        715.865,
+        550.424,
+        725.561
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "for",
+        "fully-paid",
+        "least",
+        "leave",
+        "of",
+        "parental",
+        "weeks"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "18 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l4",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 4,
+      "source_text": "primary caregivers, along with five paid",
+      "bbox": [
+        391.6,
+        725.465,
+        529.224,
+        735.161
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "along",
+        "caregivers",
+        "five",
+        "paid",
+        "primary",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l5",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 5,
+      "source_text": "compassionate leave days. Additionally,",
+      "bbox": [
+        391.6,
+        735.065,
+        531.536,
+        744.761
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additionally",
+        "compassionate",
+        "days.",
+        "leave"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l6",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 6,
+      "source_text": "around 72% of colleagues can also use up to",
+      "bbox": [
+        391.6,
+        744.665,
+        549.856,
+        754.361
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "also",
+        "around",
+        "can",
+        "colleagues",
+        "of",
+        "to",
+        "up",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "72%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l7",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 7,
+      "source_text": "five paid days as carer leave days, when",
+      "bbox": [
+        391.6,
+        754.265,
+        533.24,
+        763.961
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "as",
+        "carer",
+        "days",
+        "five",
+        "leave",
+        "paid",
+        "when"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l8",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 8,
+      "source_text": "regular arrangements unexpectedly fall",
+      "bbox": [
+        391.6,
+        763.865,
+        528.92,
+        773.561
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "arrangements",
+        "fall",
+        "regular",
+        "unexpectedly"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b25_l9",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 9,
+      "source_text": "through.",
+      "bbox": [
+        391.6,
+        773.465,
+        420.792,
+        783.161
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "through."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l0",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.54,
+        14.764,
+        96.36,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l1",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        119.04,
+        14.764,
+        159.129,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l2",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.54,
+        14.764,
+        243.332,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l3",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        266.04,
+        14.764,
+        302.041,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l4",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.54,
+        14.764,
+        370.158,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l5",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.54,
+        23.164,
+        395.834,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l6",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        413.04,
+        14.764,
+        444.96,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l7",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        413.04,
+        23.164,
+        448.047,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l8",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.54,
+        14.764,
+        520.455,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l9",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.54,
+        23.164,
+        522.772,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b27_l0",
+      "page_index": 56,
+      "block_id": 27,
+      "line_index": 0,
+      "source_text": "Social",
+      "bbox": [
+        119.04,
+        34.324,
+        138.36,
+        43.424
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Social"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b0_l0",
+      "page_index": 57,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Developing skills, careers and opportunities",
+      "bbox": [
+        42.52,
+        66.648,
+        353.348,
+        84.848
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Developing",
+        "and",
+        "careers",
+        "opportunities",
+        "skills"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p57_b1_l0",
+      "page_index": 57,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Learning and skills development",
+      "bbox": [
+        42.52,
+        92.948,
+        252.954,
+        111.148
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Learning",
+        "and",
+        "development",
+        "skills"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p57_b2_l0",
+      "page_index": 57,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Employee development energises our",
+      "bbox": [
+        42.52,
+        118.564,
+        177.04,
+        128.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Employee",
+        "development",
+        "energises",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b2_l1",
+      "page_index": 57,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "colleagues for growth and helps equip them",
+      "bbox": [
+        42.52,
+        128.164,
+        197.728,
+        137.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "colleagues",
+        "equip",
+        "for",
+        "growth",
+        "helps",
+        "them"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b2_l2",
+      "page_index": 57,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "with the skills they need today while also",
+      "bbox": [
+        42.52,
+        137.764,
+        187.528,
+        147.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "also",
+        "need",
+        "skills",
+        "the",
+        "they",
+        "today",
+        "while",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b2_l3",
+      "page_index": 57,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "preparing them to meet future challenges.",
+      "bbox": [
+        42.52,
+        147.364,
+        189.448,
+        157.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "challenges.",
+        "future",
+        "meet",
+        "preparing",
+        "them",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l0",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Establishing our leadership framework",
+      "bbox": [
+        42.52,
+        165.368,
+        187.088,
+        173.368
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Establishing",
+        "framework",
+        "leadership",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l1",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "To support our refreshed strategy and",
+      "bbox": [
+        42.52,
+        174.064,
+        176.36,
+        183.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "To",
+        "and",
+        "our",
+        "refreshed",
+        "strategy",
+        "support"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l2",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "ambition, a cross-section of business leaders",
+      "bbox": [
+        42.52,
+        183.664,
+        200.624,
+        193.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "ambition",
+        "business",
+        "cross-section",
+        "leaders",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l3",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "developed and launched a set of leadership",
+      "bbox": [
+        42.52,
+        193.264,
+        195.064,
+        202.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "and",
+        "developed",
+        "launched",
+        "leadership",
+        "of",
+        "set"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l4",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "principles and a new Group-wide leadership",
+      "bbox": [
+        42.52,
+        202.864,
+        196.4,
+        212.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group-wide",
+        "a",
+        "and",
+        "leadership",
+        "new",
+        "principles"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l5",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "framework called How We Lead. This is",
+      "bbox": [
+        42.52,
+        212.464,
+        183.504,
+        222.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "How",
+        "Lead.",
+        "This",
+        "We",
+        "called",
+        "framework",
+        "is"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l6",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 6,
+      "source_text": "characterised by simple, practical and universal",
+      "bbox": [
+        42.52,
+        222.064,
+        207.496,
+        231.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "by",
+        "characterised",
+        "practical",
+        "simple",
+        "universal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l7",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 7,
+      "source_text": "tools and consistent leadership language for all",
+      "bbox": [
+        42.52,
+        231.664,
+        207.024,
+        241.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "all",
+        "and",
+        "consistent",
+        "for",
+        "language",
+        "leadership",
+        "tools"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b3_l8",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 8,
+      "source_text": "people leaders across HSBC.",
+      "bbox": [
+        42.52,
+        241.264,
+        143.504,
+        250.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC.",
+        "across",
+        "leaders",
+        "people"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b4_l0",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Supporting future skills",
+      "bbox": [
+        42.52,
+        256.856,
+        136.624,
+        267.256
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Supporting",
+        "future",
+        "skills"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b4_l1",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "We have evolved our platforms to offer skills,",
+      "bbox": [
+        42.52,
+        266.964,
+        202.32,
+        276.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "evolved",
+        "have",
+        "offer",
+        "our",
+        "platforms",
+        "skills",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b4_l2",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "opportunities and development pathways,",
+      "bbox": [
+        42.52,
+        276.564,
+        190.864,
+        286.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "development",
+        "opportunities",
+        "pathways"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b4_l3",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "supporting our colleagues to grow, perform",
+      "bbox": [
+        42.52,
+        286.164,
+        195.504,
+        295.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "colleagues",
+        "grow",
+        "our",
+        "perform",
+        "supporting",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b4_l4",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "and adapt in a changing environment. In 2025,",
+      "bbox": [
+        42.52,
+        295.764,
+        205.056,
+        305.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "a",
+        "adapt",
+        "and",
+        "changing",
+        "environment.",
+        "in"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l0",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "– increased the number of active users and",
+      "bbox": [
+        42.52,
+        321.464,
+        195.666,
+        331.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "active",
+        "and",
+        "increased",
+        "number",
+        "of",
+        "the",
+        "users"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l1",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "participation in learning programmes. To",
+      "bbox": [
+        49.61,
+        331.064,
+        191.218,
+        340.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "To",
+        "in",
+        "learning",
+        "participation",
+        "programmes."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l2",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "bridge skill gaps we offered access to",
+      "bbox": [
+        49.61,
+        340.664,
+        182.946,
+        350.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "access",
+        "bridge",
+        "gaps",
+        "offered",
+        "skill",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l3",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "learning content, fostering knowledge-",
+      "bbox": [
+        49.61,
+        350.264,
+        183.442,
+        359.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "content",
+        "fostering",
+        "knowledge-",
+        "learning"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l4",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "sharing, collaboration and structured learning",
+      "bbox": [
+        49.61,
+        359.864,
+        207.162,
+        369.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "collaboration",
+        "learning",
+        "sharing",
+        "structured"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l5",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "pathways; and",
+      "bbox": [
+        49.61,
+        369.464,
+        100.194,
+        379.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "pathways"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l6",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "– increased efforts in our digital badging to",
+      "bbox": [
+        42.52,
+        381.064,
+        193.186,
+        390.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "badging",
+        "digital",
+        "efforts",
+        "in",
+        "increased",
+        "our",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l7",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 7,
+      "source_text": "recognise skill-building achievements, with",
+      "bbox": [
+        49.61,
+        390.664,
+        200.306,
+        400.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "achievements",
+        "recognise",
+        "skill-building",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l8",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 8,
+      "source_text": "46 new badges launched and more than",
+      "bbox": [
+        49.61,
+        400.264,
+        191.538,
+        409.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "badges",
+        "launched",
+        "more",
+        "new",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "46 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l9",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 9,
+      "source_text": "42,000 credentials issued in areas across",
+      "bbox": [
+        49.61,
+        409.864,
+        194.258,
+        419.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "across",
+        "areas",
+        "credentials",
+        "in",
+        "issued"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "42,000 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l10",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 10,
+      "source_text": "data, digital, banking and finance, and",
+      "bbox": [
+        49.61,
+        419.464,
+        181.538,
+        429.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "banking",
+        "data",
+        "digital",
+        "finance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b5_l11",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 11,
+      "source_text": "wealth.",
+      "bbox": [
+        49.61,
+        429.064,
+        75.338,
+        438.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "wealth."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b6_l0",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Maintaining our risk management",
+      "bbox": [
+        42.52,
+        444.156,
+        180.568,
+        454.556
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Maintaining",
+        "management",
+        "our",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b6_l1",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "culture",
+      "bbox": [
+        42.52,
+        453.756,
+        70.416,
+        464.156
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "culture"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b6_l2",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "We continue to improve our risk management",
+      "bbox": [
+        42.52,
+        463.864,
+        204.856,
+        473.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "continue",
+        "improve",
+        "management",
+        "our",
+        "risk",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b6_l3",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 3,
+      "source_text": "learning programmes to seek to ensure that",
+      "bbox": [
+        42.52,
+        473.464,
+        197.296,
+        483.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ensure",
+        "learning",
+        "programmes",
+        "seek",
+        "that",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b6_l4",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 4,
+      "source_text": "they maintain relevance and reinforce our risk",
+      "bbox": [
+        42.52,
+        483.064,
+        202.752,
+        492.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "maintain",
+        "our",
+        "reinforce",
+        "relevance",
+        "risk",
+        "they"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b6_l5",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 5,
+      "source_text": "management culture.",
+      "bbox": [
+        42.52,
+        492.664,
+        117.04,
+        502.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "culture.",
+        "management"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b7_l0",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "In 2025, we introduced a multi-year Financial",
+      "bbox": [
+        42.52,
+        508.764,
+        199.728,
+        518.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "In",
+        "a",
+        "introduced",
+        "multi-year",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l1",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "Crime learning programme aimed at enhancing",
+      "bbox": [
+        42.52,
+        518.364,
+        207.888,
+        528.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Crime",
+        "aimed",
+        "at",
+        "enhancing",
+        "learning",
+        "programme"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l2",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "our ability to manage financial crime risks. This",
+      "bbox": [
+        42.52,
+        527.964,
+        206.088,
+        537.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "ability",
+        "crime",
+        "financial",
+        "manage",
+        "our",
+        "risks.",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l3",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 3,
+      "source_text": "programme seeks to equip our colleagues in",
+      "bbox": [
+        42.52,
+        537.564,
+        199.072,
+        547.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "colleagues",
+        "equip",
+        "in",
+        "our",
+        "programme",
+        "seeks",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l4",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "high-risk roles with essential skills and",
+      "bbox": [
+        42.52,
+        547.164,
+        176.952,
+        556.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "essential",
+        "high-risk",
+        "roles",
+        "skills",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l5",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 5,
+      "source_text": "knowledge to effectively mitigate these risks.",
+      "bbox": [
+        42.52,
+        556.764,
+        202.752,
+        566.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "effectively",
+        "knowledge",
+        "mitigate",
+        "risks.",
+        "these",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l6",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 6,
+      "source_text": "Learning is delivered through role-specific",
+      "bbox": [
+        42.52,
+        566.364,
+        189.2,
+        576.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Learning",
+        "delivered",
+        "is",
+        "role-specific",
+        "through"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l7",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 7,
+      "source_text": "scenarios that assess capability by applying",
+      "bbox": [
+        42.52,
+        575.964,
+        194.936,
+        585.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "applying",
+        "assess",
+        "by",
+        "capability",
+        "scenarios",
+        "that"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l8",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 8,
+      "source_text": "knowledge and addressing skill gaps with",
+      "bbox": [
+        42.52,
+        585.564,
+        189.016,
+        595.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "addressing",
+        "and",
+        "gaps",
+        "knowledge",
+        "skill",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b7_l9",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 9,
+      "source_text": "tailored content.",
+      "bbox": [
+        42.52,
+        595.164,
+        98.976,
+        604.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "content.",
+        "tailored"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l0",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "We have evolved our global mandatory",
+      "bbox": [
+        42.52,
+        611.264,
+        180.016,
+        620.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "evolved",
+        "global",
+        "have",
+        "mandatory",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l1",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "training, a key component of our risk and",
+      "bbox": [
+        42.52,
+        620.864,
+        186.28,
+        630.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "and",
+        "component",
+        "key",
+        "of",
+        "our",
+        "risk",
+        "training"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l2",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "compliance framework. Moving away from",
+      "bbox": [
+        42.52,
+        630.464,
+        194.088,
+        640.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Moving",
+        "away",
+        "compliance",
+        "framework.",
+        "from"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l3",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "traditional compliance methods, we have",
+      "bbox": [
+        42.52,
+        640.064,
+        187.328,
+        649.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "compliance",
+        "have",
+        "methods",
+        "traditional",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l4",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 4,
+      "source_text": "adopted thematic structures in risk",
+      "bbox": [
+        42.52,
+        649.664,
+        165.432,
+        659.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "adopted",
+        "in",
+        "risk",
+        "structures",
+        "thematic"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l5",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 5,
+      "source_text": "management, financial crime, and conduct,",
+      "bbox": [
+        42.52,
+        659.264,
+        194.288,
+        668.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "conduct",
+        "crime",
+        "financial",
+        "management"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l6",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 6,
+      "source_text": "focusing on skills and behaviours. This",
+      "bbox": [
+        42.52,
+        668.864,
+        177.552,
+        678.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "and",
+        "behaviours.",
+        "focusing",
+        "on",
+        "skills"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l7",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 7,
+      "source_text": "approach emphasises practical application and",
+      "bbox": [
+        42.52,
+        678.464,
+        205.064,
+        688.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "application",
+        "approach",
+        "emphasises",
+        "practical"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l8",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 8,
+      "source_text": "tailors content to individual capabilities. By",
+      "bbox": [
+        42.52,
+        688.064,
+        191.208,
+        697.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "By",
+        "capabilities.",
+        "content",
+        "individual",
+        "tailors",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l9",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 9,
+      "source_text": "2026, the training will develop into a dynamic,",
+      "bbox": [
+        42.52,
+        697.664,
+        203.56,
+        707.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "develop",
+        "dynamic",
+        "into",
+        "the",
+        "training",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2026"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l10",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 10,
+      "source_text": "personalised experience, emphasising",
+      "bbox": [
+        42.52,
+        707.264,
+        177.336,
+        716.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "emphasising",
+        "experience",
+        "personalised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l11",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 11,
+      "source_text": "foundational knowledge for new joiners and",
+      "bbox": [
+        42.52,
+        716.864,
+        196.832,
+        726.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "for",
+        "foundational",
+        "joiners",
+        "knowledge",
+        "new"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b8_l12",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 12,
+      "source_text": "ongoing improvement for colleagues.",
+      "bbox": [
+        42.52,
+        726.464,
+        172.16,
+        736.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "colleagues.",
+        "for",
+        "improvement",
+        "ongoing"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b9_l0",
+      "page_index": 57,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Fostering AI adoption",
+      "bbox": [
+        42.52,
+        742.056,
+        128.76,
+        752.456
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "AI",
+        "Fostering",
+        "adoption"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b9_l1",
+      "page_index": 57,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "Our AI Academy continues to drive innovation",
+      "bbox": [
+        42.52,
+        752.164,
+        207.784,
+        761.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "Academy",
+        "Our",
+        "continues",
+        "drive",
+        "innovation",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b9_l2",
+      "page_index": 57,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "and improvement, equipping colleagues with",
+      "bbox": [
+        42.52,
+        761.764,
+        204.2,
+        771.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "colleagues",
+        "equipping",
+        "improvement",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b9_l3",
+      "page_index": 57,
+      "block_id": 9,
+      "line_index": 3,
+      "source_text": "the skills to use AI technologies effectively",
+      "bbox": [
+        42.52,
+        771.364,
+        196.664,
+        781.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "effectively",
+        "skills",
+        "technologies",
+        "the",
+        "to",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l0",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "and ethically. Since its launch in 2024, the",
+      "bbox": [
+        217.15,
+        118.564,
+        367.734,
+        128.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Since",
+        "and",
+        "ethically.",
+        "in",
+        "its",
+        "launch",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l1",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "Academy has evolved to focus on specialised",
+      "bbox": [
+        217.15,
+        128.164,
+        380.638,
+        137.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Academy",
+        "evolved",
+        "focus",
+        "has",
+        "on",
+        "specialised",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l2",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "technical pathways tailored to employee roles",
+      "bbox": [
+        217.15,
+        137.764,
+        381.95,
+        147.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "employee",
+        "pathways",
+        "roles",
+        "tailored",
+        "technical",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l3",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "and their level of AI involvement. It provides",
+      "bbox": [
+        217.15,
+        147.364,
+        375.742,
+        157.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "It",
+        "and",
+        "involvement.",
+        "level",
+        "of",
+        "provides",
+        "their"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l4",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "comprehensive training on AI literacy,",
+      "bbox": [
+        217.15,
+        156.964,
+        353.086,
+        166.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "comprehensive",
+        "literacy",
+        "on",
+        "training"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l5",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "responsible AI, and AI ethics, with",
+      "bbox": [
+        217.15,
+        166.564,
+        340.662,
+        176.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "and",
+        "ethics",
+        "responsible",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l6",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "participants earning badges to recognise their",
+      "bbox": [
+        217.15,
+        176.164,
+        381.046,
+        185.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "badges",
+        "earning",
+        "participants",
+        "recognise",
+        "their",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l7",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 7,
+      "source_text": "achievements. In 2025, we piloted the AI",
+      "bbox": [
+        217.15,
+        185.764,
+        365.526,
+        195.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI",
+        "In",
+        "achievements.",
+        "piloted",
+        "the",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l8",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 8,
+      "source_text": "Ambassador mentorship programme to",
+      "bbox": [
+        217.15,
+        195.364,
+        359.31,
+        205.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Ambassador",
+        "mentorship",
+        "programme",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l9",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 9,
+      "source_text": "empower a future-ready workforce. This",
+      "bbox": [
+        217.15,
+        204.964,
+        362.406,
+        214.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "a",
+        "empower",
+        "future-ready",
+        "workforce."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l10",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 10,
+      "source_text": "initiative accelerates skills development and",
+      "bbox": [
+        217.15,
+        214.564,
+        374.846,
+        224.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "accelerates",
+        "and",
+        "development",
+        "initiative",
+        "skills"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l11",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 11,
+      "source_text": "expands professional networks through",
+      "bbox": [
+        217.15,
+        224.164,
+        359.726,
+        233.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "expands",
+        "networks",
+        "professional",
+        "through"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l12",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 12,
+      "source_text": "dynamic peer-to-peer mentorship and",
+      "bbox": [
+        217.15,
+        233.764,
+        352.63,
+        243.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "dynamic",
+        "mentorship",
+        "peer-to-peer"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b10_l13",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 13,
+      "source_text": "meaningful connections.",
+      "bbox": [
+        217.15,
+        243.364,
+        304.206,
+        253.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "connections.",
+        "meaningful"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round14/translation_batches/batch_0038.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round14/translation_batches/batch_0038.model_output.json",
+    "required_units": [
+      "p56_b10_l1",
+      "p56_b10_l2",
+      "p56_b10_l3",
+      "p56_b10_l4",
+      "p56_b10_l5",
+      "p56_b11_l0",
+      "p56_b12_l0",
+      "p56_b12_l1",
+      "p56_b12_l2",
+      "p56_b12_l3",
+      "p56_b13_l0",
+      "p56_b13_l1",
+      "p56_b13_l2",
+      "p56_b13_l3",
+      "p56_b13_l4",
+      "p56_b13_l5",
+      "p56_b13_l6",
+      "p56_b13_l7",
+      "p56_b13_l8",
+      "p56_b14_l0",
+      "p56_b14_l1",
+      "p56_b14_l2",
+      "p56_b14_l3",
+      "p56_b15_l0",
+      "p56_b15_l1",
+      "p56_b15_l2",
+      "p56_b15_l3",
+      "p56_b15_l4",
+      "p56_b15_l5",
+      "p56_b15_l6",
+      "p56_b15_l7",
+      "p56_b16_l0",
+      "p56_b16_l1",
+      "p56_b16_l2",
+      "p56_b16_l3",
+      "p56_b16_l4",
+      "p56_b16_l5",
+      "p56_b16_l6",
+      "p56_b16_l7",
+      "p56_b17_l0",
+      "p56_b17_l1",
+      "p56_b17_l2",
+      "p56_b17_l3",
+      "p56_b17_l4",
+      "p56_b17_l5",
+      "p56_b18_l0",
+      "p56_b18_l1",
+      "p56_b18_l2",
+      "p56_b18_l3",
+      "p56_b19_l0",
+      "p56_b19_l1",
+      "p56_b19_l2",
+      "p56_b19_l3",
+      "p56_b19_l4",
+      "p56_b19_l5",
+      "p56_b19_l6",
+      "p56_b19_l7",
+      "p56_b19_l8",
+      "p56_b19_l9",
+      "p56_b19_l10",
+      "p56_b19_l11",
+      "p56_b19_l12",
+      "p56_b20_l0",
+      "p56_b20_l1",
+      "p56_b20_l2",
+      "p56_b20_l3",
+      "p56_b20_l4",
+      "p56_b20_l5",
+      "p56_b20_l6",
+      "p56_b20_l7",
+      "p56_b20_l8",
+      "p56_b20_l9",
+      "p56_b20_l10",
+      "p56_b21_l0",
+      "p56_b21_l1",
+      "p56_b21_l2",
+      "p56_b21_l3",
+      "p56_b21_l4",
+      "p56_b21_l5",
+      "p56_b21_l6",
+      "p56_b21_l7",
+      "p56_b21_l8",
+      "p56_b21_l9",
+      "p56_b21_l10",
+      "p56_b21_l11",
+      "p56_b21_l12",
+      "p56_b22_l0",
+      "p56_b22_l1",
+      "p56_b22_l2",
+      "p56_b23_l0",
+      "p56_b23_l1",
+      "p56_b23_l2",
+      "p56_b23_l3",
+      "p56_b23_l4",
+      "p56_b23_l5",
+      "p56_b24_l0",
+      "p56_b24_l1",
+      "p56_b24_l2",
+      "p56_b24_l3",
+      "p56_b24_l4",
+      "p56_b25_l0",
+      "p56_b25_l1",
+      "p56_b25_l2",
+      "p56_b25_l3",
+      "p56_b25_l4",
+      "p56_b25_l5",
+      "p56_b25_l6",
+      "p56_b25_l7",
+      "p56_b25_l8",
+      "p56_b25_l9",
+      "p56_b26_l0",
+      "p56_b26_l1",
+      "p56_b26_l2",
+      "p56_b26_l3",
+      "p56_b26_l4",
+      "p56_b26_l5",
+      "p56_b26_l6",
+      "p56_b26_l7",
+      "p56_b26_l8",
+      "p56_b26_l9",
+      "p56_b27_l0",
+      "p57_b0_l0",
+      "p57_b1_l0",
+      "p57_b2_l0",
+      "p57_b2_l1",
+      "p57_b2_l2",
+      "p57_b2_l3",
+      "p57_b3_l0",
+      "p57_b3_l1",
+      "p57_b3_l2",
+      "p57_b3_l3",
+      "p57_b3_l4",
+      "p57_b3_l5",
+      "p57_b3_l6",
+      "p57_b3_l7",
+      "p57_b3_l8",
+      "p57_b4_l0",
+      "p57_b4_l1",
+      "p57_b4_l2",
+      "p57_b4_l3",
+      "p57_b4_l4",
+      "p57_b5_l0",
+      "p57_b5_l1",
+      "p57_b5_l2",
+      "p57_b5_l3",
+      "p57_b5_l4",
+      "p57_b5_l5",
+      "p57_b5_l6",
+      "p57_b5_l7",
+      "p57_b5_l8",
+      "p57_b5_l9",
+      "p57_b5_l10",
+      "p57_b5_l11",
+      "p57_b6_l0",
+      "p57_b6_l1",
+      "p57_b6_l2",
+      "p57_b6_l3",
+      "p57_b6_l4",
+      "p57_b6_l5",
+      "p57_b7_l0",
+      "p57_b7_l1",
+      "p57_b7_l2",
+      "p57_b7_l3",
+      "p57_b7_l4",
+      "p57_b7_l5",
+      "p57_b7_l6",
+      "p57_b7_l7",
+      "p57_b7_l8",
+      "p57_b7_l9",
+      "p57_b8_l0",
+      "p57_b8_l1",
+      "p57_b8_l2",
+      "p57_b8_l3",
+      "p57_b8_l4",
+      "p57_b8_l5",
+      "p57_b8_l6",
+      "p57_b8_l7",
+      "p57_b8_l8",
+      "p57_b8_l9",
+      "p57_b8_l10",
+      "p57_b8_l11",
+      "p57_b8_l12",
+      "p57_b9_l0",
+      "p57_b9_l1",
+      "p57_b9_l2",
+      "p57_b9_l3",
+      "p57_b10_l0",
+      "p57_b10_l1",
+      "p57_b10_l2",
+      "p57_b10_l3",
+      "p57_b10_l4",
+      "p57_b10_l5",
+      "p57_b10_l6",
+      "p57_b10_l7",
+      "p57_b10_l8",
+      "p57_b10_l9",
+      "p57_b10_l10",
+      "p57_b10_l11",
+      "p57_b10_l12",
+      "p57_b10_l13"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

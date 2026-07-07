@@ -1,0 +1,5333 @@
+{
+  "run_id": "round15",
+  "case_id": "R15_00005_2025_annual_report_zh",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0030",
+  "batch_index": 30,
+  "batch_count": 166,
+  "source_extraction_ref": "docs/reports/round15/source_extraction_zh.json",
+  "source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "translation_units": [
+    {
+      "unit_id": "p56_b19_l8",
+      "page_index": 56,
+      "block_id": 19,
+      "line_index": 8,
+      "source_text": "個。",
+      "bbox": [
+        215.91,
+        494.435,
+        231.83,
+        505.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b20_l0",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 0,
+      "source_text": "2025年，我們繼續提供Personify Health應⽤",
+      "bbox": [
+        215.91,
+        510.535,
+        373.654,
+        521.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Health",
+        "Personify"
+      ],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l1",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 1,
+      "source_text": "程式予員⼯使⽤，⿎勵他們多做運動。超過3.3",
+      "bbox": [
+        215.91,
+        520.135,
+        377.342,
+        530.775
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b20_l2",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 2,
+      "source_text": "萬名員⼯下載應⽤程式，較2024年上升57%。",
+      "bbox": [
+        215.91,
+        529.735,
+        376.982,
+        540.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "57%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b20_l3",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 3,
+      "source_text": "此外，超過1.14萬名員⼯參加於9⽉舉⾏的滙豐",
+      "bbox": [
+        215.91,
+        539.335,
+        378.518,
+        549.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b20_l4",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 4,
+      "source_text": "環球運動挑戰，參與⼈數較2024年⼤增逾",
+      "bbox": [
+        215.91,
+        548.935,
+        360.918,
+        559.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b20_l5",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 5,
+      "source_text": "149%。我們創下24⼩時內參與步⾏10,000步",
+      "bbox": [
+        215.91,
+        558.535,
+        373.19,
+        569.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 10,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "149%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "10,"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b20_l6",
+      "page_index": 56,
+      "block_id": 20,
+      "line_index": 6,
+      "source_text": "挑戰的最多⼈數，成功刷新健⼒⽒世界紀錄。",
+      "bbox": [
+        215.91,
+        568.135,
+        374.39,
+        578.775
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l0",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 0,
+      "source_text": "財務健康",
+      "bbox": [
+        390.45,
+        327.835,
+        422.45,
+        338.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l1",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 1,
+      "source_text": "我們推出⼀連四集的財務健康系列節⽬「讓⽣",
+      "bbox": [
+        390.45,
+        337.435,
+        548.93,
+        348.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l2",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 2,
+      "source_text": "活更輕鬆的理財技能(Money Skills That Make",
+      "bbox": [
+        390.45,
+        347.035,
+        552.914,
+        357.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Make",
+        "Money",
+        "Skills",
+        "That"
+      ],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l3",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 3,
+      "source_text": "Life Easier)」，整體滿意度評分為97%。根據",
+      "bbox": [
+        390.45,
+        356.635,
+        548.354,
+        367.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Easier)",
+        "Life"
+      ],
+      "cjk_char_count": 10,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "97%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p56_b21_l4",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 4,
+      "source_text": "我們的表現與獎勵調查，37%員⼯表⽰希望獲",
+      "bbox": [
+        390.45,
+        366.235,
+        549.154,
+        376.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "37%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l5",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 5,
+      "source_text": "得更多財務健康⽅⾯的⽀援。有⾒及此，我們",
+      "bbox": [
+        390.45,
+        375.835,
+        548.93,
+        386.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l6",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 6,
+      "source_text": "為墨⻄哥、阿聯酋、英國和印度的員⼯試⾏推",
+      "bbox": [
+        390.45,
+        385.435,
+        548.93,
+        396.076
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l7",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 7,
+      "source_text": "出獨立財務健康平台，藉以增進員⼯的理財知",
+      "bbox": [
+        390.45,
+        395.035,
+        548.93,
+        405.676
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l8",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 8,
+      "source_text": "識。超過1,600名員⼯正參與試⾏計劃，計劃將",
+      "bbox": [
+        390.45,
+        404.635,
+        553.058,
+        415.276
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b21_l9",
+      "page_index": 56,
+      "block_id": 21,
+      "line_index": 9,
+      "source_text": "於2026年3⽉結束。",
+      "bbox": [
+        390.45,
+        414.235,
+        460.81,
+        424.876
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b22_l0",
+      "page_index": 56,
+      "block_id": 22,
+      "line_index": 0,
+      "source_text": "靈活⼯作",
+      "bbox": [
+        390.45,
+        430.335,
+        422.45,
+        440.976
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b22_l1",
+      "page_index": 56,
+      "block_id": 22,
+      "line_index": 1,
+      "source_text": "我們⽀持混合⼯作模式，85%員⼯對此表⽰歡",
+      "bbox": [
+        390.45,
+        439.935,
+        549.154,
+        450.576
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "85%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b22_l2",
+      "page_index": 56,
+      "block_id": 22,
+      "line_index": 2,
+      "source_text": "迎。",
+      "bbox": [
+        390.45,
+        449.535,
+        406.37,
+        460.176
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b23_l0",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 0,
+      "source_text": "我們重視靈活處事，但同時亦著重⾯對⾯的交",
+      "bbox": [
+        390.45,
+        465.635,
+        548.93,
+        476.276
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b23_l1",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 1,
+      "source_text": "流，從⽽促進合作、建立互信，並且展現關懷",
+      "bbox": [
+        390.45,
+        475.235,
+        548.93,
+        485.876
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b23_l2",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 2,
+      "source_text": "和同理⼼。員⼯彼此之間關係深厚，能夠為客",
+      "bbox": [
+        390.45,
+        484.835,
+        548.93,
+        495.476
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b23_l3",
+      "page_index": 56,
+      "block_id": 23,
+      "line_index": 3,
+      "source_text": "⼾帶來更理想的成果。",
+      "bbox": [
+        390.45,
+        494.435,
+        469.73,
+        505.076
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b24_l0",
+      "page_index": 56,
+      "block_id": 24,
+      "line_index": 0,
+      "source_text": "2025年，我們修訂對董事總經理職位的期望，",
+      "bbox": [
+        390.45,
+        510.535,
+        551.298,
+        521.176
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b24_l1",
+      "page_index": 56,
+      "block_id": 24,
+      "line_index": 1,
+      "source_text": "要求每週最少四天在辦公室⼯作，以期在集團",
+      "bbox": [
+        390.45,
+        520.135,
+        548.93,
+        530.776
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b24_l2",
+      "page_index": 56,
+      "block_id": 24,
+      "line_index": 2,
+      "source_text": "文化發展之際強調⼈際關係的重要性。",
+      "bbox": [
+        390.45,
+        529.735,
+        525.17,
+        540.376
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b25_l0",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 0,
+      "source_text": "我們亦完善家庭休假政策，務求增加彈性，在",
+      "bbox": [
+        390.45,
+        545.835,
+        548.93,
+        556.476
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b25_l1",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 1,
+      "source_text": "⼯作與⽣活之間取得平衡。⽬前，超過99%員",
+      "bbox": [
+        390.45,
+        555.435,
+        549.154,
+        566.076
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "99%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b25_l2",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 2,
+      "source_text": "⼯享有最少18週有薪育嬰假（主要照顧者），",
+      "bbox": [
+        390.45,
+        565.035,
+        550.114,
+        575.676
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b25_l3",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 3,
+      "source_text": "以及五天有薪恩恤假。此外，倘在⽇常安排中",
+      "bbox": [
+        390.45,
+        574.635,
+        548.93,
+        585.276
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b25_l4",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 4,
+      "source_text": "出現意外狀況，約72%員⼯亦享有最多五天有",
+      "bbox": [
+        390.45,
+        584.235,
+        549.154,
+        594.876
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "72%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b25_l5",
+      "page_index": 56,
+      "block_id": 25,
+      "line_index": 5,
+      "source_text": "薪看護假。",
+      "bbox": [
+        390.45,
+        593.835,
+        430.13,
+        604.476
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l0",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 0,
+      "source_text": "策略報告",
+      "bbox": [
+        44.0,
+        15.331,
+        72.0,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l1",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 1,
+      "source_text": "環境、社會及",
+      "bbox": [
+        117.5,
+        15.331,
+        159.5,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l2",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 2,
+      "source_text": "管治報告",
+      "bbox": [
+        117.5,
+        23.731,
+        145.5,
+        33.041
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l3",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 3,
+      "source_text": "財務回顧",
+      "bbox": [
+        191.0,
+        15.331,
+        219.0,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l4",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 4,
+      "source_text": "風險回顧",
+      "bbox": [
+        264.5,
+        15.331,
+        292.5,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l5",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 5,
+      "source_text": "企業管治報告",
+      "bbox": [
+        338.0,
+        15.331,
+        378.565,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l6",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 6,
+      "source_text": "財務報表",
+      "bbox": [
+        411.5,
+        15.331,
+        439.5,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b26_l7",
+      "page_index": 56,
+      "block_id": 26,
+      "line_index": 7,
+      "source_text": "補充資料",
+      "bbox": [
+        485.0,
+        15.331,
+        513.0,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b27_l0",
+      "page_index": 56,
+      "block_id": 27,
+      "line_index": 0,
+      "source_text": "社會",
+      "bbox": [
+        117.5,
+        36.391,
+        131.43,
+        45.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p56_b28_l0",
+      "page_index": 56,
+      "block_id": 28,
+      "line_index": 0,
+      "source_text": "滙豐控股有限公司 2025年報及賬⽬",
+      "bbox": [
+        243.05,
+        808.67,
+        352.012,
+        817.981
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b0_l0",
+      "page_index": 57,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "提升技能、發展事業及開拓機遇",
+      "bbox": [
+        41.37,
+        68.02,
+        240.87,
+        86.642
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p57_b1_l0",
+      "page_index": 57,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "學習及技能發展",
+      "bbox": [
+        41.37,
+        94.32,
+        139.37,
+        112.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p57_b2_l0",
+      "page_index": 57,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "員⼯發展推動員⼯成⻑，協助他們掌握現時所",
+      "bbox": [
+        41.37,
+        118.735,
+        199.85,
+        129.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b2_l1",
+      "page_index": 57,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "需技能，同時為應對未來挑戰作好準備。",
+      "bbox": [
+        41.37,
+        128.335,
+        184.01,
+        138.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b3_l0",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "制訂領導架構",
+      "bbox": [
+        41.37,
+        144.435,
+        88.97,
+        155.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b3_l1",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "為⽀持經更新後的策略和抱負，滙豐各業務領",
+      "bbox": [
+        41.37,
+        155.035,
+        199.85,
+        165.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b3_l2",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "導層共同制訂並推出⼀套領導原則及集團整體",
+      "bbox": [
+        41.37,
+        164.634,
+        199.85,
+        175.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b3_l3",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "新領導架構，名為「領導之道 (How We",
+      "bbox": [
+        41.37,
+        174.234,
+        182.122,
+        184.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "How",
+        "We"
+      ],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b3_l4",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "Lead)」。該架構的特點是精簡實⽤，並設有通",
+      "bbox": [
+        41.37,
+        183.834,
+        204.162,
+        194.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Lead)"
+      ],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b3_l5",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "⽤⼯具及⼀套貫徹的領導語⾔，供滙豐全體管",
+      "bbox": [
+        41.37,
+        193.434,
+        199.85,
+        204.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b3_l6",
+      "page_index": 57,
+      "block_id": 3,
+      "line_index": 6,
+      "source_text": "理⼈員使⽤。",
+      "bbox": [
+        41.37,
+        203.034,
+        88.97,
+        213.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b4_l0",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "⽀援未來技能",
+      "bbox": [
+        41.37,
+        219.134,
+        89.37,
+        229.775
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b4_l1",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "我們完善各個平台，提供技能、機遇和發展路",
+      "bbox": [
+        41.37,
+        228.734,
+        199.85,
+        239.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b4_l2",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "徑，⽀援員⼯成⻑，發揮表現，並適應不斷變",
+      "bbox": [
+        41.37,
+        238.334,
+        199.85,
+        248.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b4_l3",
+      "page_index": 57,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "化的環境。於2025年：",
+      "bbox": [
+        41.37,
+        247.934,
+        123.018,
+        258.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l0",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "– 學習計劃的活躍⽤⼾⼈數及參與次數有所增",
+      "bbox": [
+        41.37,
+        264.034,
+        199.02,
+        274.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l1",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "加。我們提供學習內容，促進知識分享及合",
+      "bbox": [
+        48.46,
+        273.634,
+        199.02,
+        284.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l2",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "作，並讓員⼯運⽤結構完善的途徑學習，拉",
+      "bbox": [
+        48.46,
+        283.234,
+        199.02,
+        293.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l3",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "近技能差距；及",
+      "bbox": [
+        48.46,
+        292.834,
+        103.98,
+        303.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l4",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "– 數碼徽章⽅⾯的⼯作有所加強，對員⼯成功",
+      "bbox": [
+        41.37,
+        304.434,
+        199.02,
+        315.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l5",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "掌握新技能予以肯定。我們增設46款新徽",
+      "bbox": [
+        48.46,
+        314.034,
+        192.284,
+        324.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l6",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "章，並在數據、數碼、理財及⾦融，以及財",
+      "bbox": [
+        48.46,
+        323.634,
+        199.02,
+        334.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b5_l7",
+      "page_index": 57,
+      "block_id": 5,
+      "line_index": 7,
+      "source_text": "富管理等範疇頒發超過42,000項認證。",
+      "bbox": [
+        48.46,
+        333.234,
+        183.94,
+        343.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b6_l0",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "恪守風險管理文化",
+      "bbox": [
+        41.37,
+        349.334,
+        105.37,
+        359.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b6_l1",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "我們繼續改良風險管理學習計劃，務求維持課",
+      "bbox": [
+        41.37,
+        358.934,
+        199.85,
+        369.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b6_l2",
+      "page_index": 57,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "程內容的實⽤程度，同時加強風險管理文化。",
+      "bbox": [
+        41.37,
+        368.534,
+        199.85,
+        379.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b7_l0",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "2025年，我們推出⼀項為期多年的⾦融犯罪管",
+      "bbox": [
+        41.37,
+        384.634,
+        202.218,
+        395.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b7_l1",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "理學習計劃，旨在提升集團管理⾦融犯罪風險",
+      "bbox": [
+        41.37,
+        394.234,
+        199.85,
+        404.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b7_l2",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "的能⼒。計劃銳意為出任⾼風險職位的員⼯提",
+      "bbox": [
+        41.37,
+        403.834,
+        199.85,
+        414.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b7_l3",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 3,
+      "source_text": "供必要技能和知識，藉以有效降低相關風險。",
+      "bbox": [
+        41.37,
+        413.434,
+        199.85,
+        424.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b7_l4",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "學習內容經過專⾨設計，包括針對特定職位、",
+      "bbox": [
+        41.37,
+        423.034,
+        199.85,
+        433.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b7_l5",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 5,
+      "source_text": "⽤作評估員⼯的境況模擬，員⼯在學習過程中",
+      "bbox": [
+        41.37,
+        432.634,
+        199.85,
+        443.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b7_l6",
+      "page_index": 57,
+      "block_id": 7,
+      "line_index": 6,
+      "source_text": "能夠運⽤知識，從⽽彌補技能差距。",
+      "bbox": [
+        41.37,
+        442.234,
+        168.17,
+        452.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l0",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "我們亦更新環球強制培訓課程。該課程是滙豐",
+      "bbox": [
+        41.37,
+        458.334,
+        199.85,
+        468.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l1",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "風險管理與合規架構的重要組成部分。有別於",
+      "bbox": [
+        41.37,
+        467.934,
+        199.85,
+        478.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l2",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "傳統的合規⽅法，我們採⽤風險管理、⾦融犯",
+      "bbox": [
+        41.37,
+        477.534,
+        199.85,
+        488.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l3",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "罪和⾏為守則等主題結構，專注技能和⾏為⽅",
+      "bbox": [
+        41.37,
+        487.134,
+        199.85,
+        497.775
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l4",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 4,
+      "source_text": "⾯的培訓。此⽅針強調實際應⽤，並根據個⼈",
+      "bbox": [
+        41.37,
+        496.734,
+        199.85,
+        507.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l5",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 5,
+      "source_text": "能⼒調整內容。培訓於2026年將發展成為動態",
+      "bbox": [
+        41.37,
+        506.334,
+        202.218,
+        516.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l6",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 6,
+      "source_text": "的個⼈化體驗，不但能夠讓新入職員⼯集中學",
+      "bbox": [
+        41.37,
+        515.934,
+        199.85,
+        526.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b8_l7",
+      "page_index": 57,
+      "block_id": 8,
+      "line_index": 7,
+      "source_text": "習基礎知識，亦促使同事持續進步。",
+      "bbox": [
+        41.37,
+        525.534,
+        168.17,
+        536.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b9_l0",
+      "page_index": 57,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "促進採納⼈⼯智能",
+      "bbox": [
+        41.37,
+        541.634,
+        105.37,
+        552.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b9_l1",
+      "page_index": 57,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "滙豐的⼈⼯智能學院不斷推動創新與進步，協",
+      "bbox": [
+        41.37,
+        551.234,
+        199.85,
+        561.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b9_l2",
+      "page_index": 57,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "助同事獲得所需技能，從⽽以符合道德標準的",
+      "bbox": [
+        41.37,
+        560.834,
+        199.85,
+        571.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b9_l3",
+      "page_index": 57,
+      "block_id": 9,
+      "line_index": 3,
+      "source_text": "⽅式有效運⽤⼈⼯智能技術。⾃2024年成立以",
+      "bbox": [
+        41.37,
+        570.434,
+        202.218,
+        581.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b10_l0",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "來，學院不斷發展，針對員⼯的職位及⼈⼯智",
+      "bbox": [
+        216.0,
+        118.734,
+        374.48,
+        129.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b10_l1",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "能參與程度度⾝訂造專⾨技術學習路線，提供",
+      "bbox": [
+        216.0,
+        128.334,
+        374.48,
+        138.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b10_l2",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "關於⼈⼯智能知識、負責任地運⽤⼈⼯智能及",
+      "bbox": [
+        216.0,
+        137.934,
+        374.48,
+        148.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b10_l3",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "⼈⼯智能道德操守⽅⾯的全⾯培訓，⽽參與者",
+      "bbox": [
+        216.0,
+        147.534,
+        374.48,
+        158.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b10_l4",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "可獲發徽章以表揚他們的成就。2025年，我們",
+      "bbox": [
+        216.0,
+        157.134,
+        376.848,
+        167.775
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b10_l5",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "試⾏⼈⼯智能⼤使導師計劃，培養能迎合未來",
+      "bbox": [
+        216.0,
+        166.734,
+        374.48,
+        177.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b10_l6",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "需要的員⼯團隊。這項計劃透過動態同儕指導",
+      "bbox": [
+        216.0,
+        176.334,
+        374.48,
+        186.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b10_l7",
+      "page_index": 57,
+      "block_id": 10,
+      "line_index": 7,
+      "source_text": "和重要⼈脈，加速技能發展並擴⼤專業網絡。",
+      "bbox": [
+        216.0,
+        185.934,
+        374.48,
+        196.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b11_l0",
+      "page_index": 57,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "員⼯於2025年繼續踴躍參與⼈⼯智能學院的學",
+      "bbox": [
+        216.0,
+        202.034,
+        376.848,
+        212.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b11_l1",
+      "page_index": 57,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "習課程，⾄今已有2.6萬名員⼯完成超過12.2萬",
+      "bbox": [
+        216.0,
+        211.634,
+        377.0,
+        222.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b11_l2",
+      "page_index": 57,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "⼩時的學習課程。",
+      "bbox": [
+        216.0,
+        221.234,
+        279.44,
+        231.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b12_l0",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "香港推出「Skills Galaxy」和「Skills Master」",
+      "bbox": [
+        216.0,
+        237.334,
+        377.568,
+        247.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Galaxy",
+        "Master",
+        "Skills"
+      ],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b12_l1",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "計劃，在⼈⼯智能能⼒發展⽅⾯取得進展。有",
+      "bbox": [
+        216.0,
+        246.934,
+        374.48,
+        257.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b12_l2",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "關計劃以⼈⼯智能、數據和領導能⼒為重點。",
+      "bbox": [
+        216.0,
+        256.534,
+        374.48,
+        267.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b12_l3",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 3,
+      "source_text": "Skills Galaxy嘉年華吸引超過1,400名員⼯參",
+      "bbox": [
+        216.0,
+        266.134,
+        367.608,
+        276.775
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Galaxy",
+        "Skills"
+      ],
+      "cjk_char_count": 10,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b12_l4",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 4,
+      "source_text": "加，設有互動攤位、⼯作坊及資訊交流會。",
+      "bbox": [
+        216.0,
+        275.734,
+        366.56,
+        286.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b12_l5",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 5,
+      "source_text": "Skills Master計劃則是⼀項網上⾃修計劃，各",
+      "bbox": [
+        216.0,
+        285.334,
+        372.728,
+        295.974
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Master",
+        "Skills"
+      ],
+      "cjk_char_count": 11,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b12_l6",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 6,
+      "source_text": "個學期設有不同主題，推動員⼯持續學習⼈⼯",
+      "bbox": [
+        216.0,
+        294.934,
+        374.48,
+        305.574
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b12_l7",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 7,
+      "source_text": "智能和數據⽅⾯的知識，成功吸引逾3,300名員",
+      "bbox": [
+        216.0,
+        304.534,
+        378.608,
+        315.174
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b12_l8",
+      "page_index": 57,
+      "block_id": 12,
+      "line_index": 8,
+      "source_text": "⼯參與。",
+      "bbox": [
+        216.0,
+        314.134,
+        247.76,
+        324.774
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l0",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "增進財富管理專業知識",
+      "bbox": [
+        216.0,
+        330.234,
+        296.0,
+        340.874
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 10,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l1",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "2025年，滙豐成立財富管理學院，旨在培養頂",
+      "bbox": [
+        216.0,
+        339.834,
+        376.848,
+        350.474
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l2",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "尖的財富管理⼈才。學院為員⼯提供內容豐富",
+      "bbox": [
+        216.0,
+        349.434,
+        374.48,
+        360.074
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l3",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "的知識平台，圍繞五項核⼼技能，涵蓋198個",
+      "bbox": [
+        216.0,
+        359.034,
+        372.296,
+        369.674
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l4",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 4,
+      "source_text": "學習主題、26⼩時的學習內容，並設有四種學",
+      "bbox": [
+        216.0,
+        368.634,
+        375.664,
+        379.274
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "26"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l5",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "習語⾔可供選擇。員⼯通過網上評估，便可獲",
+      "bbox": [
+        216.0,
+        378.234,
+        374.48,
+        388.874
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l6",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 6,
+      "source_text": "頒分為三個能⼒等級的數碼徽章。截⾄2025年",
+      "bbox": [
+        216.0,
+        387.834,
+        376.848,
+        398.474
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l7",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 7,
+      "source_text": "9⽉，已有超過1,000名團隊成員在平台上互",
+      "bbox": [
+        216.0,
+        397.434,
+        367.32,
+        408.074
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "9"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b13_l8",
+      "page_index": 57,
+      "block_id": 13,
+      "line_index": 8,
+      "source_text": "動，其中720⼈已獲頒能⼒徽章。",
+      "bbox": [
+        216.0,
+        407.034,
+        332.696,
+        417.674
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 9,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b14_l0",
+      "page_index": 57,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "我們與倫敦商學院合作，為集團業績表現最佳",
+      "bbox": [
+        216.0,
+        423.134,
+        374.48,
+        433.774
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b14_l1",
+      "page_index": 57,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "的70名財富管理經理展開為期九個⽉的培訓課",
+      "bbox": [
+        216.0,
+        432.734,
+        375.664,
+        443.374
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b14_l2",
+      "page_index": 57,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "程。該課程結合嚴謹的學術培訓、實⽤的財富",
+      "bbox": [
+        216.0,
+        442.334,
+        374.48,
+        452.974
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b14_l3",
+      "page_index": 57,
+      "block_id": 14,
+      "line_index": 3,
+      "source_text": "管理策略、虛擬學習及以客為本的挑戰。財富",
+      "bbox": [
+        216.0,
+        451.934,
+        374.48,
+        462.574
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b14_l4",
+      "page_index": 57,
+      "block_id": 14,
+      "line_index": 4,
+      "source_text": "管理經理完成課程後，可獲倫敦商學院頒發證",
+      "bbox": [
+        216.0,
+        461.534,
+        374.48,
+        472.174
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 19,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b14_l5",
+      "page_index": 57,
+      "block_id": 14,
+      "line_index": 5,
+      "source_text": "書。",
+      "bbox": [
+        216.0,
+        471.134,
+        231.92,
+        481.775
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l0",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "⽀持親⾝參與交流發展",
+      "bbox": [
+        216.0,
+        487.234,
+        296.0,
+        497.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l1",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "我們於6⽉在廣州南沙開設第四所滙豐⼤學分",
+      "bbox": [
+        216.0,
+        496.834,
+        371.112,
+        507.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l2",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "校，並舉辦⼀場活動，邀得集團多位⾼級領導",
+      "bbox": [
+        216.0,
+        506.434,
+        374.48,
+        517.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l3",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 3,
+      "source_text": "⼈出席。這個旗艦學習校園備有住宿設施，致",
+      "bbox": [
+        216.0,
+        516.034,
+        374.48,
+        526.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l4",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 4,
+      "source_text": "⼒匯聚全球各地的同事在同⼀個專屬空間內學",
+      "bbox": [
+        216.0,
+        525.634,
+        374.48,
+        536.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l5",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 5,
+      "source_text": "習和交流。校園設有170間客房、⼤型演講",
+      "bbox": [
+        216.0,
+        535.234,
+        364.376,
+        545.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l6",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 6,
+      "source_text": "廳、多功能廳、⽤途靈活的現代化課室及健康",
+      "bbox": [
+        216.0,
+        544.834,
+        374.48,
+        555.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l7",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 7,
+      "source_text": "空間。⾄今全球已有超過4,500名⾼級領導層參",
+      "bbox": [
+        216.0,
+        554.434,
+        378.608,
+        565.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b15_l8",
+      "page_index": 57,
+      "block_id": 15,
+      "line_index": 8,
+      "source_text": "加中國分校舉辦的領袖活動。",
+      "bbox": [
+        216.0,
+        564.034,
+        319.04,
+        574.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b16_l0",
+      "page_index": 57,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "推動員⼯成⻑",
+      "bbox": [
+        398.51,
+        263.686,
+        476.51,
+        280.977
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 13.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b17_l0",
+      "page_index": 57,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "今年，我們⼤⼒推動員⼯提升技能，加快",
+      "bbox": [
+        398.51,
+        286.365,
+        541.15,
+        297.005
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b17_l1",
+      "page_index": 57,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "朝著數碼化、可持續發展和業務增⻑的⽬",
+      "bbox": [
+        398.51,
+        295.965,
+        541.15,
+        306.605
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b17_l2",
+      "page_index": 57,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "標邁進：",
+      "bbox": [
+        398.51,
+        305.565,
+        430.27,
+        316.205
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l0",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "– ⾃2024年推⾏以來，數碼發展加速計劃",
+      "bbox": [
+        398.51,
+        321.665,
+        542.688,
+        332.305
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l1",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "已為出任關鍵職位的員⼯提供逾2.5萬⼩",
+      "bbox": [
+        405.6,
+        331.265,
+        543.264,
+        341.905
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l2",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "時的專⾨培訓，當中包括產品負責⼈和",
+      "bbox": [
+        405.6,
+        340.865,
+        540.32,
+        351.505
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l3",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "Scrum流程管理員(scrum master)。這",
+      "bbox": [
+        405.6,
+        350.465,
+        539.232,
+        361.105
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Scrum",
+        "master)",
+        "scrum"
+      ],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p57_b18_l4",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 4,
+      "source_text": "項專業發展策略投資有助員⼯團隊設計",
+      "bbox": [
+        405.6,
+        360.065,
+        540.32,
+        370.705
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l5",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 5,
+      "source_text": "出類拔萃的產品，並更有效提供服務，",
+      "bbox": [
+        405.6,
+        369.665,
+        540.32,
+        380.305
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l6",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 6,
+      "source_text": "為客⼾實現更佳成果。",
+      "bbox": [
+        405.6,
+        379.265,
+        484.88,
+        389.905
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l7",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 7,
+      "source_text": "– 我們啟動⼀項計劃以加強集團可持續發",
+      "bbox": [
+        398.51,
+        390.865,
+        540.32,
+        401.505
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l8",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 8,
+      "source_text": "展供應鏈融資企業及機構理財業務員⼯",
+      "bbox": [
+        405.6,
+        400.465,
+        540.32,
+        411.105
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l9",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 9,
+      "source_text": "的能⼒。這項計劃使環境、社會及管治",
+      "bbox": [
+        405.6,
+        410.065,
+        540.32,
+        420.705
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l10",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 10,
+      "source_text": "相關活動增加，當中涉及客⼾電話交",
+      "bbox": [
+        405.6,
+        419.665,
+        532.4,
+        430.305
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l11",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 11,
+      "source_text": "流、交易流程規劃和授權委託。",
+      "bbox": [
+        405.6,
+        429.265,
+        516.56,
+        439.905
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l12",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 12,
+      "source_text": "– 我們正在擴展「業務指引(Doing",
+      "bbox": [
+        398.51,
+        440.865,
+        519.88,
+        451.505
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Doing"
+      ],
+      "cjk_char_count": 10,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l13",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 13,
+      "source_text": "Business In)」系列課程，重點關注印度",
+      "bbox": [
+        405.6,
+        450.465,
+        543.592,
+        461.105
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Business",
+        "In)"
+      ],
+      "cjk_char_count": 10,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l14",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 14,
+      "source_text": "等新增⻑市場。我們與印度商學院合",
+      "bbox": [
+        405.6,
+        460.065,
+        532.4,
+        470.705
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l15",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 15,
+      "source_text": "作，舉辦為期四天的課堂培訓，讓銀⾏",
+      "bbox": [
+        405.6,
+        469.665,
+        540.32,
+        480.305
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l16",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 16,
+      "source_text": "從業員全⾯了解印度經濟、營商環境、",
+      "bbox": [
+        405.6,
+        479.265,
+        540.32,
+        489.905
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b18_l17",
+      "page_index": 57,
+      "block_id": 18,
+      "line_index": 17,
+      "source_text": "監管架構和客⼾理財優先重點。",
+      "bbox": [
+        405.6,
+        488.865,
+        516.56,
+        499.505
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b19_l0",
+      "page_index": 57,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "滙豐的培訓",
+      "bbox": [
+        390.63,
+        514.985,
+        432.63,
+        525.625
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b19_l1",
+      "page_index": 57,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "560萬⼩時",
+      "bbox": [
+        390.63,
+        520.5,
+        532.83,
+        560.402
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 30.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p57_b19_l2",
+      "page_index": 57,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "員⼯於2025年接受培訓的時數。",
+      "bbox": [
+        390.63,
+        556.085,
+        503.958,
+        566.725
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 10,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b19_l3",
+      "page_index": 57,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "（2024年：620萬⼩時）",
+      "bbox": [
+        390.63,
+        565.685,
+        479.054,
+        576.325
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 3,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b19_l4",
+      "page_index": 57,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "26.8⼩時",
+      "bbox": [
+        390.63,
+        579.76,
+        509.73,
+        619.662
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 30.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 1,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "26.8"
+        }
+      ],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p57_b19_l5",
+      "page_index": 57,
+      "block_id": 19,
+      "line_index": 5,
+      "source_text": "每名等同全職僱員於2025年接受培訓的時數。",
+      "bbox": [
+        390.63,
+        615.345,
+        551.478,
+        625.985
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b19_l6",
+      "page_index": 57,
+      "block_id": 19,
+      "line_index": 6,
+      "source_text": "（2024年：29.6⼩時）",
+      "bbox": [
+        390.63,
+        624.945,
+        472.894,
+        635.585
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "29.6"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b20_l0",
+      "page_index": 57,
+      "block_id": 20,
+      "line_index": 0,
+      "source_text": "策略報告",
+      "bbox": [
+        44.0,
+        15.33,
+        72.0,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b20_l1",
+      "page_index": 57,
+      "block_id": 20,
+      "line_index": 1,
+      "source_text": "環境、社會及",
+      "bbox": [
+        117.5,
+        15.33,
+        159.5,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 5,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b20_l2",
+      "page_index": 57,
+      "block_id": 20,
+      "line_index": 2,
+      "source_text": "管治報告",
+      "bbox": [
+        117.5,
+        23.73,
+        145.5,
+        33.041
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b20_l3",
+      "page_index": 57,
+      "block_id": 20,
+      "line_index": 3,
+      "source_text": "財務回顧",
+      "bbox": [
+        191.0,
+        15.33,
+        219.0,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b20_l4",
+      "page_index": 57,
+      "block_id": 20,
+      "line_index": 4,
+      "source_text": "風險回顧",
+      "bbox": [
+        264.5,
+        15.33,
+        292.5,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b20_l5",
+      "page_index": 57,
+      "block_id": 20,
+      "line_index": 5,
+      "source_text": "企業管治報告",
+      "bbox": [
+        338.0,
+        15.33,
+        378.565,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b20_l6",
+      "page_index": 57,
+      "block_id": 20,
+      "line_index": 6,
+      "source_text": "財務報表",
+      "bbox": [
+        411.5,
+        15.33,
+        439.5,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b20_l7",
+      "page_index": 57,
+      "block_id": 20,
+      "line_index": 7,
+      "source_text": "補充資料",
+      "bbox": [
+        485.0,
+        15.33,
+        513.0,
+        24.641
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 4,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b21_l0",
+      "page_index": 57,
+      "block_id": 21,
+      "line_index": 0,
+      "source_text": "社會",
+      "bbox": [
+        117.5,
+        36.39,
+        131.43,
+        45.701
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p57_b22_l0",
+      "page_index": 57,
+      "block_id": 22,
+      "line_index": 0,
+      "source_text": "滙豐控股有限公司 2025年報及賬⽬",
+      "bbox": [
+        243.33,
+        808.67,
+        352.292,
+        817.981
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b0_l0",
+      "page_index": 58,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "2024與2025年之間的免費賬⼾數⽬減少，部分原因",
+      "bbox": [
+        42.59,
+        338.98,
+        201.014,
+        348.291
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p58_b0_l1",
+      "page_index": 58,
+      "block_id": 0,
+      "line_index": 1,
+      "source_text": "是英國業務結束⼤量不活躍賬⼾。",
+      "bbox": [
+        42.59,
+        347.38,
+        147.59,
+        356.691
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 12,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b1_l0",
+      "page_index": 58,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "建立客⼾共融與復元⼒",
+      "bbox": [
+        41.37,
+        68.02,
+        181.37,
+        86.642
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p58_b2_l0",
+      "page_index": 58,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "客⼾共融與復元⼒⽅針",
+      "bbox": [
+        41.37,
+        94.32,
+        181.37,
+        112.942
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p58_b3_l0",
+      "page_index": 58,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "我們透過提供各種解決⽅案，致⼒消除獲取⾦",
+      "bbox": [
+        41.37,
+        118.735,
+        199.85,
+        129.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b3_l1",
+      "page_index": 58,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "融服務⽅⾯的障礙，從⽽⽀援我們的客⼾、員",
+      "bbox": [
+        41.37,
+        128.335,
+        199.85,
+        138.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b3_l2",
+      "page_index": 58,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "⼯及社區。本節將聚焦於滙豐所提供的部分解",
+      "bbox": [
+        41.37,
+        137.935,
+        199.85,
+        148.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b3_l3",
+      "page_index": 58,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "決⽅案。",
+      "bbox": [
+        41.37,
+        147.535,
+        73.13,
+        158.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 2,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b4_l0",
+      "page_index": 58,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "獲取滙豐的產品及服務",
+      "bbox": [
+        41.37,
+        163.634,
+        121.37,
+        174.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 10,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b4_l1",
+      "page_index": 58,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "在英國和香港，我們為不符合標準賬⼾資格的",
+      "bbox": [
+        41.37,
+        173.234,
+        199.85,
+        183.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 18,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b4_l2",
+      "page_index": 58,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "客⼾或可能需要額外⽀援的社會或財務弱勢⼈",
+      "bbox": [
+        41.37,
+        182.834,
+        199.85,
+        193.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b4_l3",
+      "page_index": 58,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "⼠提供免費賬⼾服務，旨在讓他們能夠獲得基",
+      "bbox": [
+        41.37,
+        192.434,
+        199.85,
+        203.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b4_l4",
+      "page_index": 58,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "本的銀⾏服務。英國⽅⾯，我們與慈善機構",
+      "bbox": [
+        41.37,
+        202.034,
+        191.93,
+        212.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 14,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b4_l5",
+      "page_index": 58,
+      "block_id": 4,
+      "line_index": 5,
+      "source_text": "Shelter合作，將這項服務擴展⾄無固定地址的",
+      "bbox": [
+        41.37,
+        211.634,
+        201.938,
+        222.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [
+        "Shelter"
+      ],
+      "cjk_char_count": 15,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b4_l6",
+      "page_index": 58,
+      "block_id": 4,
+      "line_index": 6,
+      "source_text": "客⼾，讓無家者亦能享⽤滙豐的服務。",
+      "bbox": [
+        41.37,
+        221.234,
+        176.09,
+        231.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b5_l0",
+      "page_index": 58,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "觸⼿可及的銀⾏服務",
+      "bbox": [
+        41.37,
+        248.434,
+        113.37,
+        259.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b5_l1",
+      "page_index": 58,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "下表顯⽰英國及香港客⼾持有的免費賬⼾數⽬",
+      "bbox": [
+        41.37,
+        258.034,
+        199.85,
+        268.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b9_l0",
+      "page_index": 58,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "⽀持理財學習及教育",
+      "bbox": [
+        216.0,
+        118.735,
+        288.0,
+        129.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b9_l1",
+      "page_index": 58,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "我們繼續透過不同渠道投放資源於理財教育內",
+      "bbox": [
+        216.0,
+        128.335,
+        372.96,
+        138.975
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 20,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b9_l2",
+      "page_index": 58,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "容和⼯具，幫助客⼾、員⼯和社區建立⾃信，",
+      "bbox": [
+        216.0,
+        137.935,
+        372.96,
+        148.575
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b9_l3",
+      "page_index": 58,
+      "block_id": 9,
+      "line_index": 3,
+      "source_text": "放⼼使⽤理財服務。",
+      "bbox": [
+        216.0,
+        147.535,
+        286.72,
+        158.175
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 6,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b10_l0",
+      "page_index": 58,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "⽀援客⼾的財務健康",
+      "bbox": [
+        216.0,
+        163.634,
+        288.0,
+        174.275
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 7,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b10_l1",
+      "page_index": 58,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "滙豐致⼒提升客⼾及員⼯的財務健康，幫助他",
+      "bbox": [
+        216.0,
+        173.234,
+        374.32,
+        183.875
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b10_l2",
+      "page_index": 58,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "們於⽇常以⾄⻑期善⽤⾦錢。我們提供⼀系列",
+      "bbox": [
+        216.0,
+        182.834,
+        374.48,
+        193.475
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 13,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b10_l3",
+      "page_index": 58,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "個⼈化服務和數碼⼯具，包括財務健康測試、",
+      "bbox": [
+        216.0,
+        192.434,
+        374.48,
+        203.075
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 16,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b10_l4",
+      "page_index": 58,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "未來規劃⼯具、網絡研討會與財務健康檢查。",
+      "bbox": [
+        216.0,
+        202.034,
+        374.48,
+        212.675
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b11_l0",
+      "page_index": 58,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "創造共融的銀⾏體驗",
+      "bbox": [
+        216.0,
+        218.134,
+        288.0,
+        228.775
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiBold",
+      "ascii_tokens": [],
+      "cjk_char_count": 8,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p58_b11_l1",
+      "page_index": 58,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "滙豐務求設計便捷易⽤的銀⾏產品及服務，確",
+      "bbox": [
+        216.0,
+        227.734,
+        374.16,
+        238.375
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.28,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "MicrosoftJhengHeiRegular",
+      "ascii_tokens": [],
+      "cjk_char_count": 17,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round15/translation_batches/batch_0030.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round15/translation_batches/batch_0030.model_output.json",
+    "required_units": [
+      "p56_b19_l8",
+      "p56_b20_l0",
+      "p56_b20_l1",
+      "p56_b20_l2",
+      "p56_b20_l3",
+      "p56_b20_l4",
+      "p56_b20_l5",
+      "p56_b20_l6",
+      "p56_b21_l0",
+      "p56_b21_l1",
+      "p56_b21_l2",
+      "p56_b21_l3",
+      "p56_b21_l4",
+      "p56_b21_l5",
+      "p56_b21_l6",
+      "p56_b21_l7",
+      "p56_b21_l8",
+      "p56_b21_l9",
+      "p56_b22_l0",
+      "p56_b22_l1",
+      "p56_b22_l2",
+      "p56_b23_l0",
+      "p56_b23_l1",
+      "p56_b23_l2",
+      "p56_b23_l3",
+      "p56_b24_l0",
+      "p56_b24_l1",
+      "p56_b24_l2",
+      "p56_b25_l0",
+      "p56_b25_l1",
+      "p56_b25_l2",
+      "p56_b25_l3",
+      "p56_b25_l4",
+      "p56_b25_l5",
+      "p56_b26_l0",
+      "p56_b26_l1",
+      "p56_b26_l2",
+      "p56_b26_l3",
+      "p56_b26_l4",
+      "p56_b26_l5",
+      "p56_b26_l6",
+      "p56_b26_l7",
+      "p56_b27_l0",
+      "p56_b28_l0",
+      "p57_b0_l0",
+      "p57_b1_l0",
+      "p57_b2_l0",
+      "p57_b2_l1",
+      "p57_b3_l0",
+      "p57_b3_l1",
+      "p57_b3_l2",
+      "p57_b3_l3",
+      "p57_b3_l4",
+      "p57_b3_l5",
+      "p57_b3_l6",
+      "p57_b4_l0",
+      "p57_b4_l1",
+      "p57_b4_l2",
+      "p57_b4_l3",
+      "p57_b5_l0",
+      "p57_b5_l1",
+      "p57_b5_l2",
+      "p57_b5_l3",
+      "p57_b5_l4",
+      "p57_b5_l5",
+      "p57_b5_l6",
+      "p57_b5_l7",
+      "p57_b6_l0",
+      "p57_b6_l1",
+      "p57_b6_l2",
+      "p57_b7_l0",
+      "p57_b7_l1",
+      "p57_b7_l2",
+      "p57_b7_l3",
+      "p57_b7_l4",
+      "p57_b7_l5",
+      "p57_b7_l6",
+      "p57_b8_l0",
+      "p57_b8_l1",
+      "p57_b8_l2",
+      "p57_b8_l3",
+      "p57_b8_l4",
+      "p57_b8_l5",
+      "p57_b8_l6",
+      "p57_b8_l7",
+      "p57_b9_l0",
+      "p57_b9_l1",
+      "p57_b9_l2",
+      "p57_b9_l3",
+      "p57_b10_l0",
+      "p57_b10_l1",
+      "p57_b10_l2",
+      "p57_b10_l3",
+      "p57_b10_l4",
+      "p57_b10_l5",
+      "p57_b10_l6",
+      "p57_b10_l7",
+      "p57_b11_l0",
+      "p57_b11_l1",
+      "p57_b11_l2",
+      "p57_b12_l0",
+      "p57_b12_l1",
+      "p57_b12_l2",
+      "p57_b12_l3",
+      "p57_b12_l4",
+      "p57_b12_l5",
+      "p57_b12_l6",
+      "p57_b12_l7",
+      "p57_b12_l8",
+      "p57_b13_l0",
+      "p57_b13_l1",
+      "p57_b13_l2",
+      "p57_b13_l3",
+      "p57_b13_l4",
+      "p57_b13_l5",
+      "p57_b13_l6",
+      "p57_b13_l7",
+      "p57_b13_l8",
+      "p57_b14_l0",
+      "p57_b14_l1",
+      "p57_b14_l2",
+      "p57_b14_l3",
+      "p57_b14_l4",
+      "p57_b14_l5",
+      "p57_b15_l0",
+      "p57_b15_l1",
+      "p57_b15_l2",
+      "p57_b15_l3",
+      "p57_b15_l4",
+      "p57_b15_l5",
+      "p57_b15_l6",
+      "p57_b15_l7",
+      "p57_b15_l8",
+      "p57_b16_l0",
+      "p57_b17_l0",
+      "p57_b17_l1",
+      "p57_b17_l2",
+      "p57_b18_l0",
+      "p57_b18_l1",
+      "p57_b18_l2",
+      "p57_b18_l3",
+      "p57_b18_l4",
+      "p57_b18_l5",
+      "p57_b18_l6",
+      "p57_b18_l7",
+      "p57_b18_l8",
+      "p57_b18_l9",
+      "p57_b18_l10",
+      "p57_b18_l11",
+      "p57_b18_l12",
+      "p57_b18_l13",
+      "p57_b18_l14",
+      "p57_b18_l15",
+      "p57_b18_l16",
+      "p57_b18_l17",
+      "p57_b19_l0",
+      "p57_b19_l1",
+      "p57_b19_l2",
+      "p57_b19_l3",
+      "p57_b19_l4",
+      "p57_b19_l5",
+      "p57_b19_l6",
+      "p57_b20_l0",
+      "p57_b20_l1",
+      "p57_b20_l2",
+      "p57_b20_l3",
+      "p57_b20_l4",
+      "p57_b20_l5",
+      "p57_b20_l6",
+      "p57_b20_l7",
+      "p57_b21_l0",
+      "p57_b22_l0",
+      "p58_b0_l0",
+      "p58_b0_l1",
+      "p58_b1_l0",
+      "p58_b2_l0",
+      "p58_b3_l0",
+      "p58_b3_l1",
+      "p58_b3_l2",
+      "p58_b3_l3",
+      "p58_b4_l0",
+      "p58_b4_l1",
+      "p58_b4_l2",
+      "p58_b4_l3",
+      "p58_b4_l4",
+      "p58_b4_l5",
+      "p58_b4_l6",
+      "p58_b5_l0",
+      "p58_b5_l1",
+      "p58_b9_l0",
+      "p58_b9_l1",
+      "p58_b9_l2",
+      "p58_b9_l3",
+      "p58_b10_l0",
+      "p58_b10_l1",
+      "p58_b10_l2",
+      "p58_b10_l3",
+      "p58_b10_l4",
+      "p58_b11_l0",
+      "p58_b11_l1"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

@@ -1,0 +1,300 @@
+{
+  "tool": "plan_visual_region_repairs",
+  "visual_region_metrics": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_region_metrics.json",
+  "repair_plan_count": 4,
+  "blocking_repair_count": 0,
+  "next_state": "S8_VerifyProductQuality",
+  "plans": [
+    {
+      "gate_id": "short_label_legibility",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 1,
+      "repair_atom": "expandable_text_slot_reflow_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Repair readable page labels by expanding target slots into current-page whitespace before font shrink; dense table/chart labels remain constrained-slot repairs.",
+      "sample_regions": [
+        {
+          "page_number": 2,
+          "region_id": "region_p1_b17_l0",
+          "right_region_id": null,
+          "quality_role": "short_label",
+          "right_quality_role": null,
+          "region_kind": "compact_label",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.108,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_02_region_p1_b17_l0_short_label.png",
+          "reasons": [
+            "font_size 3.11pt is below short_label recommended floor 4.40pt",
+            "output_to_source_font_ratio 0.44 is below short_label warn ratio 0.55"
+          ],
+          "overlap_ratio_of_smaller": null
+        }
+      ]
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 6,
+      "repair_atom": "constrained_slot_layout_fit_repair",
+      "target_state": "S7_GenerateCandidate",
+      "description": "Repair constrained table/header slots with layout fit, wrapped constrained text image, or local font curve; do not retranslate unless semantic validation proves a compact variant is missing.",
+      "sample_regions": [
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b3_l5",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_01_region_p0_b3_l5_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b40_l0",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_01_region_p0_b40_l0_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b40_l3",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_01_region_p0_b40_l3_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        },
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b12_l1",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_03_region_p2_b12_l1_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        },
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b24_l0",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_03_region_p2_b24_l0_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        }
+      ]
+    },
+    {
+      "gate_id": "insertion_collision",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 14,
+      "repair_atom": "region_collision_layout_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Repair overlapping generated insertion rectangles by reclassifying panel/table labels, reducing unsafe reflow expansion, or returning constrained slots to local cell geometry.",
+      "sample_regions": [
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b5_l0",
+          "right_region_id": "region_p0_b5_l1",
+          "quality_role": null,
+          "right_quality_role": "table_text",
+          "region_kind": null,
+          "right_region_kind": "table_cell",
+          "generation_status": null,
+          "font_size": null,
+          "crop_evidence": null,
+          "reasons": [],
+          "overlap_ratio_of_smaller": 0.518
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b5_l1",
+          "right_region_id": "region_p0_b5_l2",
+          "quality_role": null,
+          "right_quality_role": "table_text",
+          "region_kind": null,
+          "right_region_kind": "table_cell",
+          "generation_status": null,
+          "font_size": null,
+          "crop_evidence": null,
+          "reasons": [],
+          "overlap_ratio_of_smaller": 0.4473
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b10_l1",
+          "right_region_id": "region_p0_b12_l0",
+          "quality_role": null,
+          "right_quality_role": "table_text",
+          "region_kind": null,
+          "right_region_kind": "table_cell",
+          "generation_status": null,
+          "font_size": null,
+          "crop_evidence": null,
+          "reasons": [],
+          "overlap_ratio_of_smaller": 0.4908
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b12_l0",
+          "right_region_id": "region_p0_b12_l1",
+          "quality_role": null,
+          "right_quality_role": "table_text",
+          "region_kind": null,
+          "right_region_kind": "table_cell",
+          "generation_status": null,
+          "font_size": null,
+          "crop_evidence": null,
+          "reasons": [],
+          "overlap_ratio_of_smaller": 0.4473
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b13_l0",
+          "right_region_id": "region_p0_b13_l1",
+          "quality_role": null,
+          "right_quality_role": "metric_value",
+          "region_kind": null,
+          "right_region_kind": "metric_value",
+          "generation_status": null,
+          "font_size": null,
+          "crop_evidence": null,
+          "reasons": [],
+          "overlap_ratio_of_smaller": 0.5179
+        }
+      ]
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 6,
+      "repair_atom": "matrix_diagram_table_cell_preserve_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Treat matrix/table-diagram pages as two-dimensional structures; preserve cells/labels and prevent body_flow/fallback insertion inside the diagram.",
+      "sample_regions": [
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b3_l5",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_01_region_p0_b3_l5_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b40_l0",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_01_region_p0_b40_l0_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        },
+        {
+          "page_number": 1,
+          "region_id": "region_p0_b40_l3",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_01_region_p0_b40_l3_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        },
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b12_l1",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_03_region_p2_b12_l1_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        },
+        {
+          "page_number": 3,
+          "region_id": "region_p2_b24_l0",
+          "right_region_id": null,
+          "quality_role": "table_text",
+          "right_quality_role": null,
+          "region_kind": "table_cell",
+          "right_region_kind": null,
+          "generation_status": "fit",
+          "font_size": 3.78,
+          "crop_evidence": "docs/output/round21/reports/R21_PAGES_03_05_06_00005_2025_annual_report_zh_pages_003_005_006/visual_crops/page_03_region_p2_b24_l0_table_text.png",
+          "reasons": [
+            "font_size 3.78pt is below table_text recommended floor 3.80pt"
+          ],
+          "overlap_ratio_of_smaller": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6606 @@
+{
+  "run_id": "round14",
+  "case_id": "R14_00005_2025_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0044",
+  "batch_index": 44,
+  "batch_count": 196,
+  "source_extraction_ref": "docs/reports/round14/source_extraction_en.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p64_b7_l1",
+      "page_index": 64,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "Withholding taxes $685m (2024: $667m)",
+      "bbox": [
+        401.55,
+        254.556,
+        523.673,
+        263.222
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Withholding",
+        "m",
+        "m)",
+        "taxes"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b7_l2",
+      "page_index": 64,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "Employer taxes $1,102m (2024: $1,003m)",
+      "bbox": [
+        401.55,
+        262.956,
+        527.421,
+        271.622
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Employer",
+        "m",
+        "m)",
+        "taxes"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1,"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1,"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b7_l3",
+      "page_index": 64,
+      "block_id": 7,
+      "line_index": 3,
+      "source_text": "Bank levy $273m (2024: $135m)",
+      "bbox": [
+        401.55,
+        271.356,
+        498.743,
+        280.022
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank",
+        "levy",
+        "m",
+        "m)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b7_l4",
+      "page_index": 64,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "Irrecoverable VAT $1,160m (2024: $1,098m)",
+      "bbox": [
+        401.55,
+        279.756,
+        533.991,
+        288.422
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Irrecoverable",
+        "VAT",
+        "m",
+        "m)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1,"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1,"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b7_l5",
+      "page_index": 64,
+      "block_id": 7,
+      "line_index": 5,
+      "source_text": "Other duties and levies $221m1 (2024: $229m)",
+      "bbox": [
+        401.55,
+        288.156,
+        541.193,
+        296.822
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other",
+        "and",
+        "duties",
+        "levies",
+        "m)",
+        "m1"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b8_l0",
+      "page_index": 64,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "1 Other duties and levies includes property taxes of",
+      "bbox": [
+        391.78,
+        305.714,
+        557.029,
+        314.814
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Other",
+        "and",
+        "duties",
+        "includes",
+        "levies",
+        "of",
+        "property",
+        "taxes"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b9_l0",
+      "page_index": 64,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Our approach to customer and market conduct",
+      "bbox": [
+        42.52,
+        336.808,
+        349.512,
+        355.008
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Our",
+        "and",
+        "approach",
+        "conduct",
+        "customer",
+        "market",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p64_b10_l0",
+      "page_index": 64,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "Our Conduct Approach guides us to do the",
+      "bbox": [
+        42.52,
+        365.424,
+        193.464,
+        375.12
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Approach",
+        "Conduct",
+        "Our",
+        "do",
+        "guides",
+        "the",
+        "to",
+        "us"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b10_l1",
+      "page_index": 64,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "right thing and to focus on the impact we have",
+      "bbox": [
+        42.52,
+        375.024,
+        206.752,
+        384.72
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "focus",
+        "have",
+        "impact",
+        "on",
+        "right",
+        "the",
+        "thing",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b10_l2",
+      "page_index": 64,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "for our customers and the financial markets in",
+      "bbox": [
+        42.52,
+        384.624,
+        204.096,
+        394.32
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "customers",
+        "financial",
+        "for",
+        "in",
+        "markets",
+        "our",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b10_l3",
+      "page_index": 64,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "which we operate. It is embedded throughout",
+      "bbox": [
+        42.52,
+        394.224,
+        204.312,
+        403.92
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "It",
+        "embedded",
+        "is",
+        "operate.",
+        "throughout",
+        "we",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b10_l4",
+      "page_index": 64,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "our product and services lifecycle, with a focus",
+      "bbox": [
+        42.52,
+        403.824,
+        207.488,
+        413.52
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "and",
+        "focus",
+        "lifecycle",
+        "our",
+        "product",
+        "services",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b10_l5",
+      "page_index": 64,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "on five clear outcomes:",
+      "bbox": [
+        42.52,
+        413.424,
+        125.934,
+        423.12
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "clear",
+        "five",
+        "on",
+        "outcomes"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b11_l0",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "– We understand our customers’ needs.",
+      "bbox": [
+        217.15,
+        365.424,
+        360.48,
+        375.12
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "customers",
+        "needs.",
+        "our",
+        "understand"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b11_l1",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "– We provide products and services that offer",
+      "bbox": [
+        217.15,
+        377.024,
+        378.936,
+        386.72
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "and",
+        "offer",
+        "products",
+        "provide",
+        "services",
+        "that"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b11_l2",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "a fair exchange of value.",
+      "bbox": [
+        224.24,
+        386.624,
+        310.648,
+        396.32
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "exchange",
+        "fair",
+        "of",
+        "value."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b11_l3",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "– We service customers’ ongoing needs and",
+      "bbox": [
+        217.15,
+        398.224,
+        375.264,
+        407.92
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "and",
+        "customers",
+        "needs",
+        "ongoing",
+        "service"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b11_l4",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 4,
+      "source_text": "put it right if we make a mistake.",
+      "bbox": [
+        224.24,
+        407.824,
+        340.592,
+        417.52
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "if",
+        "it",
+        "make",
+        "mistake.",
+        "put",
+        "right",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b11_l5",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 5,
+      "source_text": "– We act with integrity in the financial markets",
+      "bbox": [
+        217.15,
+        419.424,
+        381.376,
+        429.12
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "act",
+        "financial",
+        "in",
+        "integrity",
+        "markets",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b11_l6",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 6,
+      "source_text": "we operate in.",
+      "bbox": [
+        224.24,
+        429.024,
+        276.424,
+        438.72
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "in.",
+        "operate",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b11_l7",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 7,
+      "source_text": "– We operate resiliently and securely to avoid",
+      "bbox": [
+        217.15,
+        440.624,
+        377.956,
+        450.32
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "and",
+        "avoid",
+        "operate",
+        "resiliently",
+        "securely",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b11_l8",
+      "page_index": 64,
+      "block_id": 11,
+      "line_index": 8,
+      "source_text": "harm to customers and markets.",
+      "bbox": [
+        224.24,
+        450.224,
+        337.88,
+        459.92
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "customers",
+        "harm",
+        "markets.",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b12_l0",
+      "page_index": 64,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Our principles, policies and procedures set",
+      "bbox": [
+        391.78,
+        365.424,
+        541.588,
+        375.12
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Our",
+        "and",
+        "policies",
+        "principles",
+        "procedures",
+        "set"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b12_l1",
+      "page_index": 64,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "standards to help ensure that we consider and",
+      "bbox": [
+        391.78,
+        375.024,
+        555.196,
+        384.72
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "consider",
+        "ensure",
+        "help",
+        "standards",
+        "that",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b12_l2",
+      "page_index": 64,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "meet customer needs and protect market",
+      "bbox": [
+        391.78,
+        384.624,
+        539.332,
+        394.32
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "customer",
+        "market",
+        "meet",
+        "needs",
+        "protect"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b12_l3",
+      "page_index": 64,
+      "block_id": 12,
+      "line_index": 3,
+      "source_text": "integrity. They help ensure our products and",
+      "bbox": [
+        391.78,
+        394.224,
+        547.268,
+        403.92
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "They",
+        "and",
+        "ensure",
+        "help",
+        "integrity.",
+        "our",
+        "products"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b12_l4",
+      "page_index": 64,
+      "block_id": 12,
+      "line_index": 4,
+      "source_text": "services remain fit-for-purpose, offer fair value",
+      "bbox": [
+        391.78,
+        403.824,
+        553.996,
+        413.52
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "fair",
+        "fit-for-purpose",
+        "offer",
+        "remain",
+        "services",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b12_l5",
+      "page_index": 64,
+      "block_id": 12,
+      "line_index": 5,
+      "source_text": "exchange and mitigate the risk of customer or",
+      "bbox": [
+        391.78,
+        413.424,
+        553.876,
+        423.12
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "customer",
+        "exchange",
+        "mitigate",
+        "of",
+        "or",
+        "risk",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b12_l6",
+      "page_index": 64,
+      "block_id": 12,
+      "line_index": 6,
+      "source_text": "market detriment.",
+      "bbox": [
+        391.78,
+        423.024,
+        456.612,
+        432.72
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "detriment.",
+        "market"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b13_l0",
+      "page_index": 64,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "We train all our colleagues on the importance",
+      "bbox": [
+        391.78,
+        439.124,
+        551.204,
+        448.82
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "all",
+        "colleagues",
+        "importance",
+        "on",
+        "our",
+        "the",
+        "train"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b13_l1",
+      "page_index": 64,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "of customer and market conduct, helping to",
+      "bbox": [
+        391.78,
+        448.724,
+        546.116,
+        458.42
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "conduct",
+        "customer",
+        "helping",
+        "market",
+        "of",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b13_l2",
+      "page_index": 64,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "ensure our conduct outcomes are part of",
+      "bbox": [
+        391.78,
+        458.324,
+        536.132,
+        468.02
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "conduct",
+        "ensure",
+        "of",
+        "our",
+        "outcomes",
+        "part"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b13_l3",
+      "page_index": 64,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "everything we do.",
+      "bbox": [
+        391.78,
+        467.924,
+        454.46,
+        477.62
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "do.",
+        "everything",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b14_l0",
+      "page_index": 64,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "Our approach with suppliers",
+      "bbox": [
+        42.52,
+        498.668,
+        227.166,
+        516.868
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Our",
+        "approach",
+        "suppliers",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p64_b15_l0",
+      "page_index": 64,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "We maintain global policies and procedures for",
+      "bbox": [
+        42.52,
+        527.284,
+        207.192,
+        536.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "and",
+        "for",
+        "global",
+        "maintain",
+        "policies",
+        "procedures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b15_l1",
+      "page_index": 64,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "the onboarding and use of third-party",
+      "bbox": [
+        42.52,
+        536.884,
+        172.808,
+        546.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "of",
+        "onboarding",
+        "the",
+        "third-party",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b15_l2",
+      "page_index": 64,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "suppliers. We expect suppliers to meet our",
+      "bbox": [
+        42.52,
+        546.484,
+        194.632,
+        556.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "expect",
+        "meet",
+        "our",
+        "suppliers",
+        "suppliers.",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b15_l3",
+      "page_index": 64,
+      "block_id": 15,
+      "line_index": 3,
+      "source_text": "third-party risk compliance requirements and",
+      "bbox": [
+        42.52,
+        556.084,
+        199.36,
+        565.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "compliance",
+        "requirements",
+        "risk",
+        "third-party"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b15_l4",
+      "page_index": 64,
+      "block_id": 15,
+      "line_index": 4,
+      "source_text": "assess them to identify any financial stability",
+      "bbox": [
+        42.52,
+        565.684,
+        199.136,
+        575.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "any",
+        "assess",
+        "financial",
+        "identify",
+        "stability",
+        "them",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b15_l5",
+      "page_index": 64,
+      "block_id": 15,
+      "line_index": 5,
+      "source_text": "concerns.",
+      "bbox": [
+        42.52,
+        575.284,
+        76.528,
+        584.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "concerns."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b16_l0",
+      "page_index": 64,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "Sustainable procurement",
+      "bbox": [
+        42.52,
+        590.876,
+        145.304,
+        601.276
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Sustainable",
+        "procurement"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b16_l1",
+      "page_index": 64,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "Supporting and engaging with our supply chain",
+      "bbox": [
+        42.52,
+        600.984,
+        207.248,
+        610.68
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Supporting",
+        "and",
+        "chain",
+        "engaging",
+        "our",
+        "supply",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b16_l2",
+      "page_index": 64,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "is vital to progressing our sustainable",
+      "bbox": [
+        42.52,
+        610.584,
+        173.104,
+        620.28
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "is",
+        "our",
+        "progressing",
+        "sustainable",
+        "to",
+        "vital"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b16_l3",
+      "page_index": 64,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "procurement goals. In 2025:",
+      "bbox": [
+        42.52,
+        620.184,
+        140.384,
+        629.88
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "goals.",
+        "procurement"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l0",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "– We continued gathering carbon emission",
+      "bbox": [
+        42.52,
+        636.284,
+        194.482,
+        645.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "carbon",
+        "continued",
+        "emission",
+        "gathering"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l1",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "data from our suppliers through CDP",
+      "bbox": [
+        49.61,
+        645.884,
+        179.178,
+        655.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CDP",
+        "data",
+        "from",
+        "our",
+        "suppliers",
+        "through"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l2",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "(formerly the Carbon Disclosure Project) and",
+      "bbox": [
+        49.61,
+        655.484,
+        205.562,
+        665.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Carbon",
+        "Disclosure",
+        "Project)",
+        "and",
+        "formerly",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l3",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 3,
+      "source_text": "an additional data collection source",
+      "bbox": [
+        49.61,
+        665.084,
+        172.882,
+        674.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "additional",
+        "an",
+        "collection",
+        "data",
+        "source"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l4",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 4,
+      "source_text": "introduced in 2024 to simplify and expand",
+      "bbox": [
+        49.61,
+        674.684,
+        196.906,
+        684.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "expand",
+        "in",
+        "introduced",
+        "simplify",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l5",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 5,
+      "source_text": "our supplier outreach for scope 3 data",
+      "bbox": [
+        49.61,
+        684.284,
+        183.378,
+        693.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "data",
+        "for",
+        "our",
+        "outreach",
+        "scope",
+        "supplier"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l6",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 6,
+      "source_text": "collection.",
+      "bbox": [
+        49.61,
+        693.884,
+        86.93,
+        703.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "collection."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b17_l7",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 7,
+      "source_text": "– We continued to deepen our collaboration",
+      "bbox": [
+        42.52,
+        705.484,
+        197.418,
+        715.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "collaboration",
+        "continued",
+        "deepen",
+        "our",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l8",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 8,
+      "source_text": "with suppliers and have increased our focus",
+      "bbox": [
+        49.61,
+        715.084,
+        204.306,
+        724.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "focus",
+        "have",
+        "increased",
+        "our",
+        "suppliers",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l9",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 9,
+      "source_text": "on those without public disclosures or",
+      "bbox": [
+        49.61,
+        724.684,
+        183.818,
+        734.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "disclosures",
+        "on",
+        "or",
+        "public",
+        "those",
+        "without"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l10",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 10,
+      "source_text": "emissions reduction plans, and supported",
+      "bbox": [
+        49.61,
+        734.284,
+        196.546,
+        743.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "emissions",
+        "plans",
+        "reduction",
+        "supported"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l11",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 11,
+      "source_text": "them by providing additional guidance where",
+      "bbox": [
+        49.61,
+        743.884,
+        207.402,
+        753.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "additional",
+        "by",
+        "guidance",
+        "providing",
+        "them",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l12",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 12,
+      "source_text": "appropriate.",
+      "bbox": [
+        49.61,
+        753.484,
+        90.904,
+        763.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "appropriate."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b17_l13",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 13,
+      "source_text": "– Through ongoing engagement and targeted",
+      "bbox": [
+        42.52,
+        765.084,
+        202.818,
+        774.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Through",
+        "and",
+        "engagement",
+        "ongoing",
+        "targeted"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b17_l14",
+      "page_index": 64,
+      "block_id": 17,
+      "line_index": 14,
+      "source_text": "collaboration events, we are partnering with",
+      "bbox": [
+        49.61,
+        774.684,
+        202.082,
+        784.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "collaboration",
+        "events",
+        "partnering",
+        "we",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l0",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "– some of our suppliers who are more",
+      "bbox": [
+        217.15,
+        527.284,
+        353.008,
+        536.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "more",
+        "of",
+        "our",
+        "some",
+        "suppliers",
+        "who"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l1",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "advanced in their sustainability journey to",
+      "bbox": [
+        224.24,
+        536.884,
+        369.16,
+        546.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "advanced",
+        "in",
+        "journey",
+        "sustainability",
+        "their",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l2",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "jointly develop innovative ideas on",
+      "bbox": [
+        224.24,
+        546.484,
+        344.92,
+        556.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "develop",
+        "ideas",
+        "innovative",
+        "jointly",
+        "on"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l3",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "decarbonisation and nature-related topics.",
+      "bbox": [
+        224.24,
+        556.084,
+        369.312,
+        565.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "decarbonisation",
+        "nature-related",
+        "topics."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l4",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 4,
+      "source_text": "– We also supported our sourcing teams to",
+      "bbox": [
+        217.15,
+        567.684,
+        370.376,
+        577.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "also",
+        "our",
+        "sourcing",
+        "supported",
+        "teams",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l5",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 5,
+      "source_text": "further integrate sustainability into sourcing",
+      "bbox": [
+        224.24,
+        577.284,
+        376.456,
+        586.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "further",
+        "integrate",
+        "into",
+        "sourcing",
+        "sustainability"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l6",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 6,
+      "source_text": "strategy and decision making, including new",
+      "bbox": [
+        224.24,
+        586.884,
+        380.272,
+        596.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "decision",
+        "including",
+        "making",
+        "new",
+        "strategy"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l7",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 7,
+      "source_text": "supplier selection, renewals and ongoing",
+      "bbox": [
+        224.24,
+        596.484,
+        368.056,
+        606.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "ongoing",
+        "renewals",
+        "selection",
+        "supplier"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l8",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 8,
+      "source_text": "supplier management.",
+      "bbox": [
+        224.24,
+        606.084,
+        302.232,
+        615.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "management.",
+        "supplier"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b18_l9",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 9,
+      "source_text": "– As part of our nature approach, we have",
+      "bbox": [
+        217.15,
+        617.684,
+        365.944,
+        627.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "As",
+        "approach",
+        "have",
+        "nature",
+        "of",
+        "our",
+        "part",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l10",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 10,
+      "source_text": "begun developing sustainable sourcing",
+      "bbox": [
+        224.24,
+        627.284,
+        361.184,
+        636.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "begun",
+        "developing",
+        "sourcing",
+        "sustainable"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l11",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 11,
+      "source_text": "roadmaps across key sectors, such as",
+      "bbox": [
+        224.24,
+        636.884,
+        358.656,
+        646.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "across",
+        "as",
+        "key",
+        "roadmaps",
+        "sectors",
+        "such"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l12",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 12,
+      "source_text": "support services, technology services and",
+      "bbox": [
+        224.24,
+        646.484,
+        371.992,
+        656.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "services",
+        "support",
+        "technology"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l13",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 13,
+      "source_text": "corporate real estate, following a materiality",
+      "bbox": [
+        224.24,
+        656.084,
+        378.256,
+        665.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "corporate",
+        "estate",
+        "following",
+        "materiality",
+        "real"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l14",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 14,
+      "source_text": "assessment of biodiversity and nature risks.",
+      "bbox": [
+        224.24,
+        665.684,
+        378.872,
+        675.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "assessment",
+        "biodiversity",
+        "nature",
+        "of",
+        "risks."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l15",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 15,
+      "source_text": "The roadmaps will help us address high-risk",
+      "bbox": [
+        224.24,
+        675.284,
+        378.056,
+        684.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "address",
+        "help",
+        "high-risk",
+        "roadmaps",
+        "us",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l16",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 16,
+      "source_text": "areas and include considerations for nature",
+      "bbox": [
+        224.24,
+        684.884,
+        375.376,
+        694.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "areas",
+        "considerations",
+        "for",
+        "include",
+        "nature"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l17",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 17,
+      "source_text": "and biodiversity within our procurement",
+      "bbox": [
+        224.24,
+        694.484,
+        364.584,
+        704.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "biodiversity",
+        "our",
+        "procurement",
+        "within"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l18",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 18,
+      "source_text": "activities.",
+      "bbox": [
+        224.24,
+        704.084,
+        256.76,
+        713.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "activities."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b18_l19",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 19,
+      "source_text": "– We continue to implement our human rights",
+      "bbox": [
+        217.15,
+        715.684,
+        380.872,
+        725.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "continue",
+        "human",
+        "implement",
+        "our",
+        "rights",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l20",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 20,
+      "source_text": "due diligence process to help identify",
+      "bbox": [
+        224.24,
+        725.284,
+        355.776,
+        734.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "diligence",
+        "due",
+        "help",
+        "identify",
+        "process",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l21",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 21,
+      "source_text": "supplier risks.",
+      "bbox": [
+        224.24,
+        734.884,
+        271.984,
+        744.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "risks.",
+        "supplier"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b18_l22",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 22,
+      "source_text": "– We maintained an inclusive approach to",
+      "bbox": [
+        217.15,
+        746.484,
+        364.688,
+        756.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "an",
+        "approach",
+        "inclusive",
+        "maintained",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l23",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 23,
+      "source_text": "supplier engagement, supporting fair access",
+      "bbox": [
+        224.24,
+        756.084,
+        380.264,
+        765.78
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "access",
+        "engagement",
+        "fair",
+        "supplier",
+        "supporting"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l24",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 24,
+      "source_text": "to procurement opportunities for all",
+      "bbox": [
+        224.24,
+        765.684,
+        349.272,
+        775.38
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "all",
+        "for",
+        "opportunities",
+        "procurement",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b18_l25",
+      "page_index": 64,
+      "block_id": 18,
+      "line_index": 25,
+      "source_text": "suppliers.",
+      "bbox": [
+        224.24,
+        775.284,
+        257.72,
+        784.98
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "suppliers."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b19_l0",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "Supplier Code of Conduct",
+      "bbox": [
+        391.78,
+        526.776,
+        496.996,
+        537.176
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Code",
+        "Conduct",
+        "Supplier",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b19_l1",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "Our Supplier Code of Conduct (‘the Code’)",
+      "bbox": [
+        391.78,
+        535.844,
+        540.868,
+        545.54
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Code",
+        "Conduct",
+        "Our",
+        "Supplier",
+        "of",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l2",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "sets out the minimum standards we expect of",
+      "bbox": [
+        391.78,
+        545.444,
+        554.932,
+        555.14
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "expect",
+        "minimum",
+        "of",
+        "out",
+        "sets",
+        "standards",
+        "the",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l3",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "our suppliers in respect of the environment,",
+      "bbox": [
+        391.78,
+        555.044,
+        545.94,
+        564.74
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "environment",
+        "in",
+        "of",
+        "our",
+        "respect",
+        "suppliers",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l4",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "inclusion and human rights. In 2025, we",
+      "bbox": [
+        391.78,
+        564.644,
+        532.588,
+        574.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "and",
+        "human",
+        "inclusion",
+        "rights.",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l5",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 5,
+      "source_text": "refreshed the Code to include principles on",
+      "bbox": [
+        391.78,
+        574.244,
+        543.348,
+        583.94
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Code",
+        "include",
+        "on",
+        "principles",
+        "refreshed",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l6",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 6,
+      "source_text": "responsible use of AI. We continue to",
+      "bbox": [
+        391.78,
+        583.844,
+        525.196,
+        593.54
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "AI.",
+        "We",
+        "continue",
+        "of",
+        "responsible",
+        "to",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l7",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 7,
+      "source_text": "formalise adherence to the Code by seeking to",
+      "bbox": [
+        391.78,
+        593.444,
+        556.532,
+        603.14
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Code",
+        "adherence",
+        "by",
+        "formalise",
+        "seeking",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l8",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 8,
+      "source_text": "add clauses to our supplier contracts which",
+      "bbox": [
+        391.78,
+        603.044,
+        544.26,
+        612.74
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "add",
+        "clauses",
+        "contracts",
+        "our",
+        "supplier",
+        "to",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l9",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 9,
+      "source_text": "support the right to audit and act if a breach is",
+      "bbox": [
+        391.78,
+        612.644,
+        553.108,
+        622.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "act",
+        "and",
+        "audit",
+        "breach",
+        "if",
+        "is",
+        "right",
+        "support",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l10",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 10,
+      "source_text": "discovered. At the end of 2025, 97.3% of",
+      "bbox": [
+        391.78,
+        622.244,
+        537.764,
+        631.94
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "discovered.",
+        "end",
+        "of",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "percentage",
+          "value": "97.3%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l11",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 11,
+      "source_text": "approximately 9,830 contracted suppliers had",
+      "bbox": [
+        391.78,
+        631.844,
+        551.69,
+        641.54
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "approximately",
+        "contracted",
+        "had",
+        "suppliers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "9,830 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l12",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 12,
+      "source_text": "either confirmed adherence to the Code, or",
+      "bbox": [
+        391.78,
+        641.444,
+        544.324,
+        651.14
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Code",
+        "adherence",
+        "confirmed",
+        "either",
+        "or",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l13",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 13,
+      "source_text": "provided their own alternative that was",
+      "bbox": [
+        391.78,
+        651.044,
+        529.468,
+        660.74
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "alternative",
+        "own",
+        "provided",
+        "that",
+        "their",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l14",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 14,
+      "source_text": "accepted by our Global Procurement function.",
+      "bbox": [
+        391.78,
+        660.644,
+        553.492,
+        670.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Global",
+        "Procurement",
+        "accepted",
+        "by",
+        "function.",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l15",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 15,
+      "source_text": "Our Supplier Code of Conduct is available at:",
+      "bbox": [
+        391.78,
+        670.244,
+        548.548,
+        679.94
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Code",
+        "Conduct",
+        "Our",
+        "Supplier",
+        "at",
+        "available",
+        "is",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b19_l17",
+      "page_index": 64,
+      "block_id": 19,
+      "line_index": 17,
+      "source_text": "responsible-business/working-with-suppliers",
+      "bbox": [
+        391.78,
+        689.444,
+        545.652,
+        699.14
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "responsible-business/working-with-suppliers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b20_l0",
+      "page_index": 64,
+      "block_id": 20,
+      "line_index": 0,
+      "source_text": "Ñ For further details of the number of suppliers in",
+      "bbox": [
+        391.78,
+        706.03,
+        550.057,
+        716.279
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 9.0,
+      "font": "Wingdings3",
+      "ascii_tokens": [
+        "For",
+        "details",
+        "further",
+        "in",
+        "number",
+        "of",
+        "suppliers",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b20_l1",
+      "page_index": 64,
+      "block_id": 20,
+      "line_index": 1,
+      "source_text": "each geographical region, see the ESG Data",
+      "bbox": [
+        403.12,
+        715.454,
+        541.048,
+        724.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Data",
+        "ESG",
+        "each",
+        "geographical",
+        "region",
+        "see",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p64_b20_l2",
+      "page_index": 64,
+      "block_id": 20,
+      "line_index": 2,
+      "source_text": "Pack at www.hsbc.com/esg",
+      "bbox": [
+        403.12,
+        724.004,
+        490.06,
+        733.104
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Pack",
+        "at",
+        "www.hsbc.com/esg"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l0",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.68,
+        14.764,
+        96.5,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l1",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        119.18,
+        14.764,
+        159.269,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l2",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.68,
+        14.764,
+        243.472,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l3",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        266.18,
+        14.764,
+        302.181,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l4",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.68,
+        14.764,
+        370.298,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l5",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.68,
+        23.164,
+        395.974,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l6",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        413.18,
+        14.764,
+        445.1,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l7",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        413.18,
+        23.164,
+        448.187,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l8",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.68,
+        14.764,
+        520.595,
+        23.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b21_l9",
+      "page_index": 64,
+      "block_id": 21,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.68,
+        23.164,
+        522.912,
+        32.264
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p64_b22_l0",
+      "page_index": 64,
+      "block_id": 22,
+      "line_index": 0,
+      "source_text": "Governance",
+      "bbox": [
+        119.18,
+        34.324,
+        157.568,
+        43.424
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Governance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p65_b0_l0",
+      "page_index": 65,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Safeguarding data",
+      "bbox": [
+        42.52,
+        66.648,
+        175.03,
+        84.848
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Safeguarding",
+        "data"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p65_b1_l0",
+      "page_index": 65,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Data privacy",
+      "bbox": [
+        42.52,
+        89.948,
+        124.182,
+        108.148
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Data",
+        "privacy"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p65_b2_l0",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "We are committed to protecting and managing",
+      "bbox": [
+        42.52,
+        115.564,
+        207.44,
+        125.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "and",
+        "are",
+        "committed",
+        "managing",
+        "protecting",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l1",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "the data we process, in accordance with the",
+      "bbox": [
+        42.52,
+        125.164,
+        198.56,
+        134.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "accordance",
+        "data",
+        "in",
+        "process",
+        "the",
+        "we",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l2",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "laws and regulations of the markets in which",
+      "bbox": [
+        42.52,
+        134.764,
+        200.256,
+        144.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "in",
+        "laws",
+        "markets",
+        "of",
+        "regulations",
+        "the",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l3",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "we operate. Our strategy rests on having the",
+      "bbox": [
+        42.52,
+        144.364,
+        200.672,
+        154.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Our",
+        "having",
+        "on",
+        "operate.",
+        "rests",
+        "strategy",
+        "the",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l4",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "right talent, technology, and processes to",
+      "bbox": [
+        42.52,
+        153.964,
+        188.408,
+        163.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "processes",
+        "right",
+        "talent",
+        "technology",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l5",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "manage privacy risks effectively. Our Group-",
+      "bbox": [
+        42.52,
+        163.564,
+        196.352,
+        173.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group-",
+        "Our",
+        "effectively.",
+        "manage",
+        "privacy",
+        "risks"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l6",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 6,
+      "source_text": "wide data risk policy provides a consistent",
+      "bbox": [
+        42.52,
+        173.164,
+        191.008,
+        182.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "consistent",
+        "data",
+        "policy",
+        "provides",
+        "risk",
+        "wide"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l7",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 7,
+      "source_text": "approach to data and privacy risk",
+      "bbox": [
+        42.52,
+        182.764,
+        158.056,
+        192.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "approach",
+        "data",
+        "privacy",
+        "risk",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l8",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 8,
+      "source_text": "management, applicable across all global",
+      "bbox": [
+        42.52,
+        192.364,
+        186.368,
+        202.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "across",
+        "all",
+        "applicable",
+        "global",
+        "management"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l9",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 9,
+      "source_text": "businesses and infrastructure. This policy is",
+      "bbox": [
+        42.52,
+        201.964,
+        195.728,
+        211.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "and",
+        "businesses",
+        "infrastructure.",
+        "is",
+        "policy"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l10",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 10,
+      "source_text": "reviewed annually with the aim of ensuring",
+      "bbox": [
+        42.52,
+        211.564,
+        194.15,
+        221.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "aim",
+        "annually",
+        "ensuring",
+        "of",
+        "reviewed",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l11",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 11,
+      "source_text": "that we remain responsive to regulatory",
+      "bbox": [
+        42.52,
+        221.164,
+        183.32,
+        230.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "regulatory",
+        "remain",
+        "responsive",
+        "that",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l12",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 12,
+      "source_text": "changes. Our HSBC Privacy Principles can be",
+      "bbox": [
+        42.52,
+        230.764,
+        202.12,
+        240.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "Our",
+        "Principles",
+        "Privacy",
+        "be",
+        "can",
+        "changes."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l13",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 13,
+      "source_text": "found at: www.hsbc.com/ who-we-are/esg-",
+      "bbox": [
+        42.52,
+        240.364,
+        194.088,
+        250.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "at",
+        "found",
+        "who-we-are/esg-",
+        "www.hsbc.com/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l14",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 14,
+      "source_text": "and-responsible-business/ managing-risk/",
+      "bbox": [
+        42.52,
+        249.964,
+        185.104,
+        259.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and-responsible-business/",
+        "managing-risk/"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b2_l15",
+      "page_index": 65,
+      "block_id": 2,
+      "line_index": 15,
+      "source_text": "operational-risk.",
+      "bbox": [
+        42.52,
+        259.564,
+        97.174,
+        269.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "operational-risk."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p65_b3_l0",
+      "page_index": 65,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "We regularly provide employees with training",
+      "bbox": [
+        42.52,
+        275.664,
+        202.016,
+        285.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "employees",
+        "provide",
+        "regularly",
+        "training",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b3_l1",
+      "page_index": 65,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "and awareness sessions on data privacy and",
+      "bbox": [
+        42.52,
+        285.264,
+        199.096,
+        294.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "awareness",
+        "data",
+        "on",
+        "privacy",
+        "sessions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b3_l2",
+      "page_index": 65,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "security, offering both mandatory and",
+      "bbox": [
+        42.52,
+        294.864,
+        175.04,
+        304.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "both",
+        "mandatory",
+        "offering",
+        "security"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b3_l3",
+      "page_index": 65,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "supplementary sessions as required. In",
+      "bbox": [
+        42.52,
+        304.464,
+        180.744,
+        314.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "as",
+        "required.",
+        "sessions",
+        "supplementary"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b3_l4",
+      "page_index": 65,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "addition, we mark International Data Privacy",
+      "bbox": [
+        42.52,
+        314.064,
+        197.152,
+        323.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Data",
+        "International",
+        "Privacy",
+        "addition",
+        "mark",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b3_l5",
+      "page_index": 65,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "Day each year, with events that discuss",
+      "bbox": [
+        42.52,
+        323.664,
+        182.904,
+        333.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Day",
+        "discuss",
+        "each",
+        "events",
+        "that",
+        "with",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b3_l6",
+      "page_index": 65,
+      "block_id": 3,
+      "line_index": 6,
+      "source_text": "developments in the data privacy landscape",
+      "bbox": [
+        42.52,
+        333.264,
+        196.416,
+        342.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "data",
+        "developments",
+        "in",
+        "landscape",
+        "privacy",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b3_l7",
+      "page_index": 65,
+      "block_id": 3,
+      "line_index": 7,
+      "source_text": "and reinforce privacy awareness across HSBC.",
+      "bbox": [
+        42.52,
+        342.864,
+        206.858,
+        352.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC.",
+        "across",
+        "and",
+        "awareness",
+        "privacy",
+        "reinforce"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l0",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "We provide transparency to our customers,",
+      "bbox": [
+        217.15,
+        115.564,
+        370.238,
+        125.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "customers",
+        "our",
+        "provide",
+        "to",
+        "transparency"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l1",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "employees and other stakeholders regarding",
+      "bbox": [
+        217.15,
+        125.163,
+        374.134,
+        134.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "employees",
+        "other",
+        "regarding",
+        "stakeholders"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l2",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "processing of personal data and their rights.",
+      "bbox": [
+        217.15,
+        134.763,
+        371.238,
+        144.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "data",
+        "of",
+        "personal",
+        "processing",
+        "rights.",
+        "their"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l3",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "Where relevant, we work with third parties to",
+      "bbox": [
+        217.15,
+        144.363,
+        377.462,
+        154.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Where",
+        "parties",
+        "relevant",
+        "third",
+        "to",
+        "we",
+        "with",
+        "work"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l4",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "help ensure adequate protections are",
+      "bbox": [
+        217.15,
+        153.963,
+        348.846,
+        163.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "adequate",
+        "are",
+        "ensure",
+        "help",
+        "protections"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l5",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 5,
+      "source_text": "provided, in line with our data risk policy and",
+      "bbox": [
+        217.15,
+        163.563,
+        372.862,
+        173.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "data",
+        "in",
+        "line",
+        "our",
+        "policy",
+        "provided",
+        "risk",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l6",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 6,
+      "source_text": "regulatory requirements. We offer a broad",
+      "bbox": [
+        217.15,
+        173.163,
+        365.782,
+        182.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "a",
+        "broad",
+        "offer",
+        "regulatory",
+        "requirements."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l7",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 7,
+      "source_text": "range of channels for customers, employees",
+      "bbox": [
+        217.15,
+        182.763,
+        374.598,
+        192.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "channels",
+        "customers",
+        "employees",
+        "for",
+        "of",
+        "range"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l8",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 8,
+      "source_text": "and other stakeholders to raise privacy",
+      "bbox": [
+        217.15,
+        192.363,
+        353.07,
+        202.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "other",
+        "privacy",
+        "raise",
+        "stakeholders",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b4_l9",
+      "page_index": 65,
+      "block_id": 4,
+      "line_index": 9,
+      "source_text": "concerns and questions.",
+      "bbox": [
+        217.15,
+        201.963,
+        302.006,
+        211.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "concerns",
+        "questions."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p65_b5_l0",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "Data privacy is regularly monitored at multiple",
+      "bbox": [
+        217.15,
+        218.063,
+        372.118,
+        227.759
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Data",
+        "at",
+        "is",
+        "monitored",
+        "multiple",
+        "privacy",
+        "regularly"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l1",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "governance forums, including at Board level,",
+      "bbox": [
+        217.15,
+        227.663,
+        368.27,
+        237.359
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Board",
+        "at",
+        "forums",
+        "governance",
+        "including",
+        "level"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l2",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "providing senior executive oversight on privacy",
+      "bbox": [
+        217.15,
+        237.263,
+        376.032,
+        246.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "executive",
+        "on",
+        "oversight",
+        "privacy",
+        "providing",
+        "senior"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l3",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "risk and global programmes. Our Global Internal",
+      "bbox": [
+        217.15,
+        246.863,
+        379.23,
+        256.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Global",
+        "Internal",
+        "Our",
+        "and",
+        "global",
+        "programmes.",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l4",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "Audit function independently assures whether",
+      "bbox": [
+        217.15,
+        256.463,
+        374.462,
+        266.159
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Audit",
+        "assures",
+        "function",
+        "independently",
+        "whether"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l5",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "our data privacy risk management approach is",
+      "bbox": [
+        217.15,
+        266.063,
+        373.174,
+        275.759
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "approach",
+        "data",
+        "is",
+        "management",
+        "our",
+        "privacy",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l6",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "effectively designed and operational. In addition,",
+      "bbox": [
+        217.15,
+        275.663,
+        380.822,
+        285.359
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "addition",
+        "and",
+        "designed",
+        "effectively",
+        "operational."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l7",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 7,
+      "source_text": "we have established data privacy governance",
+      "bbox": [
+        217.15,
+        285.263,
+        371.582,
+        294.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "data",
+        "established",
+        "governance",
+        "have",
+        "privacy",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l8",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 8,
+      "source_text": "structures and continue to embed accountability",
+      "bbox": [
+        217.15,
+        294.863,
+        380.982,
+        304.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "accountability",
+        "and",
+        "continue",
+        "embed",
+        "structures",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b5_l9",
+      "page_index": 65,
+      "block_id": 5,
+      "line_index": 9,
+      "source_text": "across all businesses and functions.",
+      "bbox": [
+        217.15,
+        304.463,
+        337.646,
+        314.159
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "across",
+        "all",
+        "and",
+        "businesses",
+        "functions."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b6_l0",
+      "page_index": 65,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "We continue to review and implement",
+      "bbox": [
+        217.15,
+        320.563,
+        352.942,
+        330.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "and",
+        "continue",
+        "implement",
+        "review",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b6_l1",
+      "page_index": 65,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "industry best practices for data privacy and",
+      "bbox": [
+        217.15,
+        330.163,
+        367.782,
+        339.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "best",
+        "data",
+        "for",
+        "industry",
+        "practices",
+        "privacy"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b6_l2",
+      "page_index": 65,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "security, working closely with our data",
+      "bbox": [
+        217.15,
+        339.763,
+        352.63,
+        349.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "closely",
+        "data",
+        "our",
+        "security",
+        "with",
+        "working"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b7_l0",
+      "page_index": 65,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "protection officers, industry bodies, and",
+      "bbox": [
+        391.78,
+        115.563,
+        531.524,
+        125.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "bodies",
+        "industry",
+        "officers",
+        "protection"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b7_l1",
+      "page_index": 65,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "research institutions. Regular reviews and",
+      "bbox": [
+        391.78,
+        125.163,
+        539.452,
+        134.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Regular",
+        "and",
+        "institutions.",
+        "research",
+        "reviews"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b7_l2",
+      "page_index": 65,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "privacy risk assessments are conducted to",
+      "bbox": [
+        391.78,
+        134.763,
+        541.772,
+        144.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "assessments",
+        "conducted",
+        "privacy",
+        "risk",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b7_l3",
+      "page_index": 65,
+      "block_id": 7,
+      "line_index": 3,
+      "source_text": "strengthen our data privacy controls.",
+      "bbox": [
+        391.78,
+        144.363,
+        520.748,
+        154.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "controls.",
+        "data",
+        "our",
+        "privacy",
+        "strengthen"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b7_l4",
+      "page_index": 65,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "Procedures are in place to address data privacy",
+      "bbox": [
+        391.78,
+        153.963,
+        557.268,
+        163.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Procedures",
+        "address",
+        "are",
+        "data",
+        "in",
+        "place",
+        "privacy",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b7_l5",
+      "page_index": 65,
+      "block_id": 7,
+      "line_index": 5,
+      "source_text": "considerations, including notifying regulators,",
+      "bbox": [
+        391.78,
+        163.563,
+        550.58,
+        173.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "considerations",
+        "including",
+        "notifying",
+        "regulators"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b7_l6",
+      "page_index": 65,
+      "block_id": 7,
+      "line_index": 6,
+      "source_text": "customers and data subjects as required by",
+      "bbox": [
+        391.78,
+        173.163,
+        545.236,
+        182.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "as",
+        "by",
+        "customers",
+        "data",
+        "required",
+        "subjects"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b7_l7",
+      "page_index": 65,
+      "block_id": 7,
+      "line_index": 7,
+      "source_text": "law in the event of a data privacy breach.",
+      "bbox": [
+        391.78,
+        182.763,
+        533.694,
+        192.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "breach.",
+        "data",
+        "event",
+        "in",
+        "law",
+        "of",
+        "privacy",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l0",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "Intellectual property rights practices",
+      "bbox": [
+        391.78,
+        201.355,
+        536.772,
+        211.755
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Intellectual",
+        "practices",
+        "property",
+        "rights"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l1",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "Our Group intellectual property risk policy,",
+      "bbox": [
+        391.78,
+        211.463,
+        539.732,
+        221.159
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "Our",
+        "intellectual",
+        "policy",
+        "property",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l2",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "supported by comprehensive controls and",
+      "bbox": [
+        391.78,
+        221.063,
+        540.124,
+        230.759
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "by",
+        "comprehensive",
+        "controls",
+        "supported"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l3",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "guidance, is designed to manage risks",
+      "bbox": [
+        391.78,
+        230.663,
+        526.532,
+        240.359
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "designed",
+        "guidance",
+        "is",
+        "manage",
+        "risks",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l4",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 4,
+      "source_text": "associated with intellectual property. This",
+      "bbox": [
+        391.78,
+        240.263,
+        537.588,
+        249.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "associated",
+        "intellectual",
+        "property.",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l5",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 5,
+      "source_text": "policy seeks to ensure that our commercially",
+      "bbox": [
+        391.78,
+        249.863,
+        549.076,
+        259.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "commercially",
+        "ensure",
+        "our",
+        "policy",
+        "seeks",
+        "that",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l6",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 6,
+      "source_text": "and strategically valuable intellectual property",
+      "bbox": [
+        391.78,
+        259.463,
+        550.956,
+        269.159
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "intellectual",
+        "property",
+        "strategically",
+        "valuable"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l7",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 7,
+      "source_text": "is properly identified and safeguarded. This",
+      "bbox": [
+        391.78,
+        269.063,
+        542.828,
+        278.759
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "and",
+        "identified",
+        "is",
+        "properly",
+        "safeguarded."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l8",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 8,
+      "source_text": "includes applying to register trademarks and",
+      "bbox": [
+        391.78,
+        278.663,
+        547.284,
+        288.359
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "applying",
+        "includes",
+        "register",
+        "to",
+        "trademarks"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l9",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 9,
+      "source_text": "patents and enforcing our rights against third",
+      "bbox": [
+        391.78,
+        288.263,
+        549.332,
+        297.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "against",
+        "and",
+        "enforcing",
+        "our",
+        "patents",
+        "rights",
+        "third"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l10",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 10,
+      "source_text": "parties making unauthorised use of our",
+      "bbox": [
+        391.78,
+        297.863,
+        529.548,
+        307.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "making",
+        "of",
+        "our",
+        "parties",
+        "unauthorised",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l11",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 11,
+      "source_text": "intellectual property. Additionally, our",
+      "bbox": [
+        391.78,
+        307.463,
+        522.22,
+        317.159
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additionally",
+        "intellectual",
+        "our",
+        "property."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l12",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 12,
+      "source_text": "intellectual property framework helps prevent",
+      "bbox": [
+        391.78,
+        317.063,
+        551.996,
+        326.759
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "framework",
+        "helps",
+        "intellectual",
+        "prevent",
+        "property"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l13",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 13,
+      "source_text": "infringement of third-party rights, thereby",
+      "bbox": [
+        391.78,
+        326.663,
+        537.132,
+        336.359
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "infringement",
+        "of",
+        "rights",
+        "thereby",
+        "third-party"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l14",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 14,
+      "source_text": "supporting the consistent and effective",
+      "bbox": [
+        391.78,
+        336.263,
+        529.9,
+        345.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "consistent",
+        "effective",
+        "supporting",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l15",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 15,
+      "source_text": "management of intellectual property risk in",
+      "bbox": [
+        391.78,
+        345.863,
+        542.476,
+        355.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "in",
+        "intellectual",
+        "management",
+        "of",
+        "property",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b8_l16",
+      "page_index": 65,
+      "block_id": 8,
+      "line_index": 16,
+      "source_text": "alignment with our risk appetite.",
+      "bbox": [
+        391.78,
+        355.463,
+        503.82,
+        365.159
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "alignment",
+        "appetite.",
+        "our",
+        "risk",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b9_l0",
+      "page_index": 65,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Cybersecurity",
+      "bbox": [
+        42.52,
+        386.248,
+        131.798,
+        404.448
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Cybersecurity"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p65_b10_l0",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "The threat of a significant cyber incident",
+      "bbox": [
+        42.52,
+        411.864,
+        183.52,
+        421.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "a",
+        "cyber",
+        "incident",
+        "of",
+        "significant",
+        "threat"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b10_l1",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "remains a concern for the Group and the",
+      "bbox": [
+        42.52,
+        421.464,
+        185.544,
+        431.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "a",
+        "and",
+        "concern",
+        "for",
+        "remains",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b10_l2",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "broader financial sector. As cyber threats",
+      "bbox": [
+        42.52,
+        431.064,
+        186.648,
+        440.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "As",
+        "broader",
+        "cyber",
+        "financial",
+        "sector.",
+        "threats"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b10_l3",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "continue to evolve, failure to protect our",
+      "bbox": [
+        42.52,
+        440.664,
+        183.512,
+        450.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "continue",
+        "evolve",
+        "failure",
+        "our",
+        "protect",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b10_l4",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "operations may result in disruption to our",
+      "bbox": [
+        42.52,
+        450.264,
+        187.072,
+        459.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "disruption",
+        "in",
+        "may",
+        "operations",
+        "our",
+        "result",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b10_l5",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "business services and negative impacts on our",
+      "bbox": [
+        42.52,
+        459.864,
+        206.84,
+        469.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "business",
+        "impacts",
+        "negative",
+        "on",
+        "our",
+        "services"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b10_l6",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "customers, such as a financial loss, loss of",
+      "bbox": [
+        42.52,
+        469.464,
+        192.288,
+        479.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "as",
+        "customers",
+        "financial",
+        "loss",
+        "of",
+        "such"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b10_l7",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 7,
+      "source_text": "sensitive data or damage to our reputation,",
+      "bbox": [
+        42.52,
+        479.064,
+        193.664,
+        488.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "damage",
+        "data",
+        "or",
+        "our",
+        "reputation",
+        "sensitive",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p65_b10_l8",
+      "page_index": 65,
+      "block_id": 10,
+      "line_index": 8,
+      "source_text": "among other risks.",
+      "bbox": [
+        42.52,
+        488.664,
+        107.352,
+        498.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "among",
+        "other",
+        "risks."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round14/translation_batches/batch_0044.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round14/translation_batches/batch_0044.model_output.json",
+    "required_units": [
+      "p64_b7_l1",
+      "p64_b7_l2",
+      "p64_b7_l3",
+      "p64_b7_l4",
+      "p64_b7_l5",
+      "p64_b8_l0",
+      "p64_b9_l0",
+      "p64_b10_l0",
+      "p64_b10_l1",
+      "p64_b10_l2",
+      "p64_b10_l3",
+      "p64_b10_l4",
+      "p64_b10_l5",
+      "p64_b11_l0",
+      "p64_b11_l1",
+      "p64_b11_l2",
+      "p64_b11_l3",
+      "p64_b11_l4",
+      "p64_b11_l5",
+      "p64_b11_l6",
+      "p64_b11_l7",
+      "p64_b11_l8",
+      "p64_b12_l0",
+      "p64_b12_l1",
+      "p64_b12_l2",
+      "p64_b12_l3",
+      "p64_b12_l4",
+      "p64_b12_l5",
+      "p64_b12_l6",
+      "p64_b13_l0",
+      "p64_b13_l1",
+      "p64_b13_l2",
+      "p64_b13_l3",
+      "p64_b14_l0",
+      "p64_b15_l0",
+      "p64_b15_l1",
+      "p64_b15_l2",
+      "p64_b15_l3",
+      "p64_b15_l4",
+      "p64_b15_l5",
+      "p64_b16_l0",
+      "p64_b16_l1",
+      "p64_b16_l2",
+      "p64_b16_l3",
+      "p64_b17_l0",
+      "p64_b17_l1",
+      "p64_b17_l2",
+      "p64_b17_l3",
+      "p64_b17_l4",
+      "p64_b17_l5",
+      "p64_b17_l6",
+      "p64_b17_l7",
+      "p64_b17_l8",
+      "p64_b17_l9",
+      "p64_b17_l10",
+      "p64_b17_l11",
+      "p64_b17_l12",
+      "p64_b17_l13",
+      "p64_b17_l14",
+      "p64_b18_l0",
+      "p64_b18_l1",
+      "p64_b18_l2",
+      "p64_b18_l3",
+      "p64_b18_l4",
+      "p64_b18_l5",
+      "p64_b18_l6",
+      "p64_b18_l7",
+      "p64_b18_l8",
+      "p64_b18_l9",
+      "p64_b18_l10",
+      "p64_b18_l11",
+      "p64_b18_l12",
+      "p64_b18_l13",
+      "p64_b18_l14",
+      "p64_b18_l15",
+      "p64_b18_l16",
+      "p64_b18_l17",
+      "p64_b18_l18",
+      "p64_b18_l19",
+      "p64_b18_l20",
+      "p64_b18_l21",
+      "p64_b18_l22",
+      "p64_b18_l23",
+      "p64_b18_l24",
+      "p64_b18_l25",
+      "p64_b19_l0",
+      "p64_b19_l1",
+      "p64_b19_l2",
+      "p64_b19_l3",
+      "p64_b19_l4",
+      "p64_b19_l5",
+      "p64_b19_l6",
+      "p64_b19_l7",
+      "p64_b19_l8",
+      "p64_b19_l9",
+      "p64_b19_l10",
+      "p64_b19_l11",
+      "p64_b19_l12",
+      "p64_b19_l13",
+      "p64_b19_l14",
+      "p64_b19_l15",
+      "p64_b19_l17",
+      "p64_b20_l0",
+      "p64_b20_l1",
+      "p64_b20_l2",
+      "p64_b21_l0",
+      "p64_b21_l1",
+      "p64_b21_l2",
+      "p64_b21_l3",
+      "p64_b21_l4",
+      "p64_b21_l5",
+      "p64_b21_l6",
+      "p64_b21_l7",
+      "p64_b21_l8",
+      "p64_b21_l9",
+      "p64_b22_l0",
+      "p65_b0_l0",
+      "p65_b1_l0",
+      "p65_b2_l0",
+      "p65_b2_l1",
+      "p65_b2_l2",
+      "p65_b2_l3",
+      "p65_b2_l4",
+      "p65_b2_l5",
+      "p65_b2_l6",
+      "p65_b2_l7",
+      "p65_b2_l8",
+      "p65_b2_l9",
+      "p65_b2_l10",
+      "p65_b2_l11",
+      "p65_b2_l12",
+      "p65_b2_l13",
+      "p65_b2_l14",
+      "p65_b2_l15",
+      "p65_b3_l0",
+      "p65_b3_l1",
+      "p65_b3_l2",
+      "p65_b3_l3",
+      "p65_b3_l4",
+      "p65_b3_l5",
+      "p65_b3_l6",
+      "p65_b3_l7",
+      "p65_b4_l0",
+      "p65_b4_l1",
+      "p65_b4_l2",
+      "p65_b4_l3",
+      "p65_b4_l4",
+      "p65_b4_l5",
+      "p65_b4_l6",
+      "p65_b4_l7",
+      "p65_b4_l8",
+      "p65_b4_l9",
+      "p65_b5_l0",
+      "p65_b5_l1",
+      "p65_b5_l2",
+      "p65_b5_l3",
+      "p65_b5_l4",
+      "p65_b5_l5",
+      "p65_b5_l6",
+      "p65_b5_l7",
+      "p65_b5_l8",
+      "p65_b5_l9",
+      "p65_b6_l0",
+      "p65_b6_l1",
+      "p65_b6_l2",
+      "p65_b7_l0",
+      "p65_b7_l1",
+      "p65_b7_l2",
+      "p65_b7_l3",
+      "p65_b7_l4",
+      "p65_b7_l5",
+      "p65_b7_l6",
+      "p65_b7_l7",
+      "p65_b8_l0",
+      "p65_b8_l1",
+      "p65_b8_l2",
+      "p65_b8_l3",
+      "p65_b8_l4",
+      "p65_b8_l5",
+      "p65_b8_l6",
+      "p65_b8_l7",
+      "p65_b8_l8",
+      "p65_b8_l9",
+      "p65_b8_l10",
+      "p65_b8_l11",
+      "p65_b8_l12",
+      "p65_b8_l13",
+      "p65_b8_l14",
+      "p65_b8_l15",
+      "p65_b8_l16",
+      "p65_b9_l0",
+      "p65_b10_l0",
+      "p65_b10_l1",
+      "p65_b10_l2",
+      "p65_b10_l3",
+      "p65_b10_l4",
+      "p65_b10_l5",
+      "p65_b10_l6",
+      "p65_b10_l7",
+      "p65_b10_l8"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

@@ -37,9 +37,9 @@ REPAIR_ROUTE = {
         "description": "Recompose body frame from current page margins/body band before shrinking text.",
     },
     "table_text_legibility": {
-        "repair_atom": "D2_constrained_slot_layout_variants",
-        "target_state": "S5_TranslationPlan",
-        "description": "Generate compact semantic variants for table cells/headers; generator must not invent abbreviations.",
+        "repair_atom": "constrained_slot_layout_fit_repair",
+        "target_state": "S7_GenerateCandidate",
+        "description": "Repair constrained table/header slots with layout fit, wrapped constrained text image, or local font curve; do not retranslate unless semantic validation proves a compact variant is missing.",
     },
     "footnote_readability": {
         "repair_atom": "footnote_fit_curve_repair",
@@ -47,9 +47,9 @@ REPAIR_ROUTE = {
         "description": "Tune footnote fit curve and paragraph grouping without changing table/body layout.",
     },
     "legend_label_alignment": {
-        "repair_atom": "D2_constrained_slot_layout_variants",
-        "target_state": "S5_TranslationPlan",
-        "description": "Generate compact legend variants and preserve swatch-label alignment.",
+        "repair_atom": "constrained_slot_layout_fit_repair",
+        "target_state": "S7_GenerateCandidate",
+        "description": "Repair legend slot fit and swatch-label alignment with layout constraints first; do not retranslate unless semantic validation proves a compact variant is missing.",
     },
     "sidebar_navigation_legibility": {
         "repair_atom": "side_navigation_rotated_image_repair",
@@ -62,9 +62,14 @@ REPAIR_ROUTE = {
         "description": "Keep event text local to its anchor and tune event-card fit curve.",
     },
     "short_label_legibility": {
-        "repair_atom": "D2_constrained_slot_layout_variants",
-        "target_state": "S5_TranslationPlan",
-        "description": "Generate compact display variant for short constrained label.",
+        "repair_atom": "expandable_text_slot_reflow_repair",
+        "target_state": "S6_LayoutPlan",
+        "description": "Repair readable page labels by expanding target slots into current-page whitespace before font shrink; dense table/chart labels remain constrained-slot repairs.",
+    },
+    "metric_value_hierarchy": {
+        "repair_atom": "metric_value_font_hierarchy_repair",
+        "target_state": "S6_LayoutPlan",
+        "description": "Repair metric/KPI value hierarchy by preserving current-page source-relative font scale; do not use fixed point-size thresholds or retranslation.",
     },
     "image_color_integrity": {
         "repair_atom": "image_redaction_exclusion_repair",
@@ -85,6 +90,11 @@ REPAIR_ROUTE = {
         "repair_atom": "matrix_diagram_table_cell_preserve_repair",
         "target_state": "S6_LayoutPlan",
         "description": "Treat matrix/table-diagram pages as two-dimensional structures; preserve cells/labels and prevent body_flow/fallback insertion inside the diagram.",
+    },
+    "insertion_collision": {
+        "repair_atom": "region_collision_layout_repair",
+        "target_state": "S6_LayoutPlan",
+        "description": "Repair overlapping generated insertion rectangles by reclassifying panel/table labels, reducing unsafe reflow expansion, or returning constrained slots to local cell geometry.",
     },
 }
 
@@ -111,13 +121,17 @@ def plan(metrics_path: Path, out: Path) -> dict[str, Any]:
                 "sample_regions": [
                     {
                         "page_number": item.get("page_number"),
-                        "region_id": item.get("region_id"),
+                        "region_id": item.get("region_id") or item.get("left_region_id"),
+                        "right_region_id": item.get("right_region_id"),
                         "quality_role": item.get("quality_role"),
+                        "right_quality_role": item.get("right_role"),
                         "region_kind": item.get("region_kind"),
+                        "right_region_kind": item.get("right_kind"),
                         "generation_status": item.get("generation_status"),
                         "font_size": item.get("font_size"),
                         "crop_evidence": item.get("crop_evidence"),
                         "reasons": item.get("reasons", []),
+                        "overlap_ratio_of_smaller": item.get("overlap_ratio_of_smaller"),
                     }
                     for item in sample[:5]
                     if isinstance(item, dict)

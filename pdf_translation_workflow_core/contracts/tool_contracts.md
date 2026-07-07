@@ -117,11 +117,12 @@ Fill color must have provenance:
 
 - exact local page background sample;
 - table cell background sample;
+- inner-bbox pixel cluster sample when the bbox interior has a stable non-light background, so gray/table label bands and colored panels are not replaced by page-white or glyph color;
 - multi-point surrounding-pixel cluster sample for normal text bboxes, so glyph color is not mistaken for the background;
 - explicit white only for white regions after sampled evidence agrees;
 - transparent/no-fill only if the library supports it safely.
 
-The fill sampler is an open function over the current bbox and page pixels. It must not branch on filename, page number, exact text, known brand colors, hard-coded coordinates, or remembered samples. If a source glyph is red, blue, gray, or white, the sampler must still choose the surrounding region background unless the surrounding region itself has that color.
+The fill sampler is an open function over the current bbox and page pixels. It must not branch on filename, page number, exact text, known brand colors, hard-coded coordinates, or remembered samples. If a source glyph is red, blue, gray, or white, the sampler must still choose the surrounding or inner region background unless current-run pixel clusters prove that the region itself has that color. The evidence field `redaction_fill_provenance.sample_strategy` may use values such as `surrounding_pixel_cluster`, `table_cell_background_sample`, or `inner_bbox_pixel_cluster`.
 
 ## Generator Mode Contract
 
@@ -167,6 +168,7 @@ Required behavior:
 | already-target spans | if a source-language PDF contains visible text that is already in the target language and that text may be covered by a recomposed target frame, the generator may mark it `preserve_already_target_language_span`, redact it, and redraw the same text; this is preservation evidence, not semantic translation evidence |
 | grouping | derive block/region groups from current-run extraction metadata such as `unit_id`, bbox, font size, page geometry, and policy thresholds |
 | source separators | do not merge translated units across visible source lines that are not translation units, such as years, numeric headings, bullets, or separator labels; the policy field is `source_separator_policy.split_on_untranslated_visible_line_gap=true` |
+| decorative numeral repair | when a text line bbox is abnormally tall because extraction merged it with a trailing decorative numeral/section marker, repair the insertion bbox from current-page geometry and same-column neighbor rhythm; record `decorative_numeric_merge_repair_count` and repair evidence |
 | reflow | insert target-language text once per paragraph/body/footnote/heading region when the policy marks the region kind as `region_reflow` |
 | body flow | merge aligned wide body paragraph regions only when `layout_policy.flow_grouping.body` permits it and current-run x/width/y-gap statistics prove one continuous article column |
 | body flow line joining | inside one `body_flow`, use the policy's `paragraph_gap_pt` to decide whether adjacent source regions are same-paragraph continuations or new paragraphs; do not always join with `\n\n` |
@@ -176,12 +178,15 @@ Required behavior:
 | table cells | on dense table/chart pages, classify constrained labels and cells as `table_cell`; use explicit `table_cell_zh/table_cell_en` or compact variants from D2, and do not merge these cells into `body_flow` |
 | event cards | on mixed image/text timeline or milestone pages, classify narrow multi-line event descriptions as `event_card`; keep each event local, do not merge events into `body_flow`, and use event-card font/variant rules inside the source card slot |
 | dense page guard | when page extraction says `table_or_chart_dense` or `chart_or_dashboard`, table/chart labels stay out of `body_flow`; a lower-page body copy band may re-enter `body_flow` only when policy `allow_dense_page_body_below_y_ratio` and current-run geometry prove same-column article text |
-| target-language reflow | expand only declared `target_language_reflow.region_kinds`; obey `overlap_guard` so expanded frames do not invade the next same-column region |
+| matrix page top text exception | when page extraction says `matrix_or_table_diagram`, normal body_flow and target composition stay disabled; page-top large headings and lead body may reflow only when current geometry proves they sit outside the table/diagram body |
+| panel/table heading downgrade | on matrix/table or same-background multi-column panels, large-font labels with horizontally separated same-row neighbors must remain constrained `table_cell` / `compact_label`; they must not be treated as page-level headings or expanded into page-wide frames |
+| target-language reflow | expand only declared `target_language_reflow.region_kinds`; apply `min_source_width_page_ratio_for_reflow` to every expandable kind, not only body/body_flow; obey `overlap_guard` so expanded frames do not invade the next same-column region |
+| expandable text slot | expand only declared `expandable_text_slots.region_kinds` such as headings, explanatory short labels, and profile-declared compact labels; require current-run target/source length ratio, source width ratio, page type, right-side obstacle, and below-same-column obstacle evidence |
 | textbox fit probe | test each candidate font size on a temporary page first; failed attempts must not draw on the real candidate page |
 | rotated navigation | execute `layout_policy.draw_modes.vertical_nav=rotated_horizontal_text_image` for narrow side navigation; target text must be laid out horizontally first and rotated as one unit, not inserted as one-character vertical writing |
 | preserve-line | preserve line-level insertion only for policy-defined compact labels, legends, vertical navigation, chart ticks, or single-line regions |
 | compact labels | consume explicit `layout_variants` from translation input; never invent document-specific abbreviations inside the generator; never reintroduce source-language residue such as `n/m` to make text fit |
-| constrained text image fit | after normal textbox probing fails, table cells, compact labels, short labels, legends, and dense-page single-line labels may be inserted as transparent text images with full target text preserved; evidence must record `status=constrained_text_image_fit`, `font_size`, target box, and `horizontal_compression_ratio` |
+| constrained text image fit | after normal textbox probing fails, table cells, dense-page hard-slot short labels, legends, and dense-page single-line labels may be inserted as text images with full target text preserved; explanatory `short_label` and profile-declared `compact_label` must first try `expandable_text_slots`; `metric_value` must not use this fallback unless a future role-specific contract explicitly allows it; sizing must come from source-relative ratios and current-page font quantiles rather than fixed reusable point-size floors; evidence must record `status=constrained_text_image_fit`, `font_size`, target box, and `horizontal_compression_ratio` |
 | evidence | report both `inserted_unit_count` and `inserted_region_count`; unit count proves coverage, region count proves reflow happened; every insertion must also report `source_block_ids` and `source_line_indexes` so validators can detect cross-separator reflow |
 
 Required generation evidence:
@@ -275,12 +280,13 @@ python pdf_translation_workflow_core\tools\validators\collect_visual_region_metr
 The output must contain:
 
 - `page_metrics`: image count and page-level color/dominant-color deltas;
-- `region_metrics`: one record per generated insertion with `quality_role`, `gate_id`, `font_size`, `source_median_font_size`, `output_to_source_font_ratio`, `generation_status`, `source_background_rgb`, `source_inner_background_rgb`, `output_background_rgb`, `output_inner_background_rgb`, `text_image_background_rgb`, `background_delta`, `inner_background_delta`, `background_residue_delta`, `text_image_background_delta`, `crop_evidence`, reasons, and repair atoms;
+- `region_metrics`: one record per generated insertion with `quality_role`, `gate_id`, `font_size`, `source_median_font_size`, `output_to_source_font_ratio`, `generation_status`, `source_background_rgb`, `source_inner_background_rgb`, `output_background_rgb`, `output_inner_background_rgb`, `text_image_background_rgb`, `background_delta`, `inner_background_delta`, `background_residue_delta`, `text_image_background_delta`, `absolute_font_floor_blocks`, `crop_evidence`, reasons, and repair atoms;
+- `insertion_collision` role gate: compares generated insertion bboxes on the same page and records `left_region_id`, `right_region_id`, both roles/kinds/bboxes, and `overlap_ratio_of_smaller`; material overlap is blocking and routes to `region_collision_layout_repair`;
 - `redaction_metrics`: one record per redacted source unit with `fill_color_rgb`, `source_ring_background_rgb`, `output_ring_background_rgb`, `redaction_fill_delta`, `patch_score`, `covered_by_background_cover`, `wide_line_patch_risk`, reasons, and repair atoms;
 - `background_cover_metrics`: one record per background cover with `method`, `draw_mode`, `fill_color_rgb`, `fill_saturation`, `area_pt2`, `patch_size_px`, `sample_zoom`, status, reasons, and repair atoms. Large saturated-background covers drawn as `solid_vector_fill` must fail `background_residue_artifact` because they can create new visible rectangular blocks even when average color deltas are small;
-- `role_gates`: aggregated gates such as `source_relative_visual_baseline`, `hero_banner_text_readability`, `title_readability`, `body_paragraph_readability`, `table_text_legibility`, `footnote_readability`, `legend_label_alignment`, `sidebar_navigation_legibility`, `event_card_readability`, `background_residue_artifact`, and `image_color_integrity`.
+- `role_gates`: aggregated gates such as `source_relative_visual_baseline`, `hero_banner_text_readability`, `title_readability`, `metric_value_hierarchy`, `body_paragraph_readability`, `table_text_legibility`, `footnote_readability`, `legend_label_alignment`, `sidebar_navigation_legibility`, `event_card_readability`, `insertion_collision`, `background_residue_artifact`, and `image_color_integrity`.
 
-`source_relative_visual_baseline` is mandatory in product-quality mode. It fails when `source_extraction.json` is missing or when too few generated regions can be tied back to source extraction font/line evidence. `evaluate_pdf_quality.py` must consume this file through `--visual-region-metrics`. A critical role gate with status `fail` is blocking even if `visual_similarity` is `PASS_WITH_WARN` or a full-page thumbnail looks acceptable.
+`source_relative_visual_baseline` is mandatory in product-quality mode. It fails when `source_extraction.json` is missing or when too few generated regions can be tied back to source extraction font/line evidence. `evaluate_pdf_quality.py` must consume this file through `--visual-region-metrics`. A critical role gate with status `fail` is blocking even if `visual_similarity` is `PASS_WITH_WARN` or a full-page thumbnail looks acceptable. Absolute point-size floors are reporting hints by default; they block only when the role/profile explicitly records `absolute_font_floor_blocks=true`. Source-relative ratios, generation status, background consistency, residue, and structure gates remain the normal blocking signals.
 
 Repair routing should be generated by:
 
@@ -290,7 +296,7 @@ python pdf_translation_workflow_core\tools\repairs\plan_visual_region_repairs.py
   --out docs\reports\<run_id>\visual_repair_plan.json
 ```
 
-This repair planner may select repair atoms such as `heading_frame_fit_or_short_title_variant`, `D2_constrained_slot_layout_variants`, `target_composition_body_reflow_repair`, `background_fill_resample`, `background_residue_fill_resample`, or `image_redaction_exclusion_repair`. It must not rewrite candidate PDFs by itself.
+This repair planner may select repair atoms such as `heading_frame_fit_or_short_title_variant`, `metric_value_font_hierarchy_repair`, `decorative_numeric_merge_repair`, `top_lead_body_reflow_policy_repair`, `constrained_slot_layout_fit_repair`, `target_composition_body_reflow_repair`, `region_collision_layout_repair`, `background_fill_resample`, `background_residue_fill_resample`, or `image_redaction_exclusion_repair`. It must not rewrite candidate PDFs by itself. It must not route ordinary visual/text-fit failures to D2 retranslation unless semantic validation proves authenticity, coverage, or compact-variant evidence is missing.
 
 `evaluate_pdf_quality.py` also records per-page `source_font_hierarchy`, `output_font_hierarchy`, and `small_to_body_ratio_delta` metrics. These metrics do not replace visual judgement, but D7 must use them when deciding whether table notes, body copy, and headings still have source-like relative size.
 

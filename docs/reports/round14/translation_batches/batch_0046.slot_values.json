@@ -1,0 +1,7129 @@
+{
+  "run_id": "round14",
+  "case_id": "R14_00005_2025_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0046",
+  "batch_index": 46,
+  "batch_count": 196,
+  "source_extraction_ref": "docs/reports/round14/source_extraction_en.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p67_b11_l5",
+      "page_index": 67,
+      "block_id": 11,
+      "line_index": 5,
+      "source_text": "and the hyperinflation provisions of IAS 21 ’The Effects of Changes in",
+      "bbox": [
+        305.88,
+        187.964,
+        543.424,
+        197.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Changes",
+        "Effects",
+        "IAS",
+        "The",
+        "and",
+        "hyperinflation",
+        "in",
+        "of",
+        "provisions",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "21"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b11_l6",
+      "page_index": 67,
+      "block_id": 11,
+      "line_index": 6,
+      "source_text": "Foreign Exchange Rates’ in the current period for our operations in",
+      "bbox": [
+        305.88,
+        197.564,
+        533.672,
+        207.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Exchange",
+        "Foreign",
+        "Rates",
+        "current",
+        "for",
+        "in",
+        "operations",
+        "our",
+        "period",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b11_l7",
+      "page_index": 67,
+      "block_id": 11,
+      "line_index": 7,
+      "source_text": "Türkiye was a decrease in the Group’s profit before tax of $150m (2024:",
+      "bbox": [
+        305.88,
+        207.164,
+        552.608,
+        216.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "T",
+        "a",
+        "before",
+        "decrease",
+        "in",
+        "m",
+        "of",
+        "profit",
+        "rkiye",
+        "s",
+        "tax",
+        "the",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b11_l8",
+      "page_index": 67,
+      "block_id": 11,
+      "line_index": 8,
+      "source_text": "$157m), comprising a decrease in revenue, including a loss on net",
+      "bbox": [
+        305.88,
+        216.764,
+        532.248,
+        226.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "comprising",
+        "decrease",
+        "in",
+        "including",
+        "loss",
+        "m)",
+        "net",
+        "on",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b11_l9",
+      "page_index": 67,
+      "block_id": 11,
+      "line_index": 9,
+      "source_text": "monetary position of $145m (2024: $146m) and an increase in ECL and",
+      "bbox": [
+        305.88,
+        226.364,
+        549.696,
+        236.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ECL",
+        "an",
+        "and",
+        "in",
+        "increase",
+        "m",
+        "m)",
+        "monetary",
+        "of",
+        "position"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b11_l10",
+      "page_index": 67,
+      "block_id": 11,
+      "line_index": 10,
+      "source_text": "operating expenses of $4m (2024: increase of $11m). The consumer",
+      "bbox": [
+        305.88,
+        235.963,
+        541.288,
+        245.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "consumer",
+        "expenses",
+        "increase",
+        "m",
+        "m).",
+        "of",
+        "operating"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b11_l11",
+      "page_index": 67,
+      "block_id": 11,
+      "line_index": 11,
+      "source_text": "price index at 31 December 2025 for Türkiye was 3,513.87, with an",
+      "bbox": [
+        305.88,
+        245.563,
+        536.688,
+        255.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "December",
+        "T",
+        "an",
+        "at",
+        "for",
+        "index",
+        "price",
+        "rkiye",
+        "was",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "3,513.87"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b11_l12",
+      "page_index": 67,
+      "block_id": 11,
+      "line_index": 12,
+      "source_text": "increase in the period of 829.32 (2024: 825.55 increase).",
+      "bbox": [
+        305.88,
+        255.163,
+        496.8,
+        264.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "in",
+        "increase",
+        "increase).",
+        "of",
+        "period",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "829.32"
+        },
+        {
+          "type": "currency_amount",
+          "value": "825.55 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b12_l0",
+      "page_index": 67,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Use of alternative performance",
+      "bbox": [
+        305.88,
+        275.948,
+        511.708,
+        294.148
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Use",
+        "alternative",
+        "of",
+        "performance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p67_b12_l1",
+      "page_index": 67,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "measures",
+      "bbox": [
+        305.88,
+        292.748,
+        369.006,
+        310.948
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "measures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p67_b13_l0",
+      "page_index": 67,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "Our reported results are prepared in accordance with International",
+      "bbox": [
+        305.88,
+        315.864,
+        536.798,
+        325.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "International",
+        "Our",
+        "accordance",
+        "are",
+        "in",
+        "prepared",
+        "reported",
+        "results",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b13_l1",
+      "page_index": 67,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "Financial Reporting Standards as issued by the International Accounting",
+      "bbox": [
+        305.88,
+        325.464,
+        556.056,
+        335.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Accounting",
+        "Financial",
+        "International",
+        "Reporting",
+        "Standards",
+        "as",
+        "by",
+        "issued",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b13_l2",
+      "page_index": 67,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "Standards Board (‘IFRS Accounting Standards’), as detailed in the",
+      "bbox": [
+        305.88,
+        335.064,
+        534.252,
+        344.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Accounting",
+        "Board",
+        "IFRS",
+        "Standards",
+        "as",
+        "detailed",
+        "in",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b13_l3",
+      "page_index": 67,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "financial statements starting on page 262.",
+      "bbox": [
+        305.88,
+        344.664,
+        451.334,
+        354.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "financial",
+        "on",
+        "page",
+        "starting",
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "262"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l0",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "To measure our performance, we supplement our IFRS Accounting",
+      "bbox": [
+        305.88,
+        360.764,
+        541.76,
+        370.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Accounting",
+        "IFRS",
+        "To",
+        "measure",
+        "our",
+        "performance",
+        "supplement",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l1",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "Standards figures with non-IFRS Accounting Standards measures,",
+      "bbox": [
+        305.88,
+        370.364,
+        537.232,
+        380.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Accounting",
+        "Standards",
+        "figures",
+        "measures",
+        "non-IFRS",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l2",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "which constitute alternative performance measures under European",
+      "bbox": [
+        305.88,
+        379.964,
+        544.608,
+        389.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "European",
+        "alternative",
+        "constitute",
+        "measures",
+        "performance",
+        "under",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l3",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 3,
+      "source_text": "Securities and Markets Authority guidance and non-GAAP financial",
+      "bbox": [
+        305.88,
+        389.564,
+        538.856,
+        399.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Authority",
+        "Markets",
+        "Securities",
+        "and",
+        "financial",
+        "guidance",
+        "non-GAAP"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l4",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 4,
+      "source_text": "measures defined in and presented in accordance with US Securities",
+      "bbox": [
+        305.88,
+        399.164,
+        547.56,
+        408.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Securities",
+        "US",
+        "accordance",
+        "and",
+        "defined",
+        "in",
+        "measures",
+        "presented",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l5",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 5,
+      "source_text": "and Exchange Commission rules and regulations. These measures",
+      "bbox": [
+        305.88,
+        408.764,
+        539.104,
+        418.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Commission",
+        "Exchange",
+        "These",
+        "and",
+        "measures",
+        "regulations.",
+        "rules"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l6",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 6,
+      "source_text": "include those derived from our reported results that eliminate factors",
+      "bbox": [
+        305.88,
+        418.364,
+        547.24,
+        428.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "derived",
+        "eliminate",
+        "factors",
+        "from",
+        "include",
+        "our",
+        "reported",
+        "results",
+        "that",
+        "those"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l7",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 7,
+      "source_text": "distorting year-on-year comparisons. The ‘constant currency",
+      "bbox": [
+        305.88,
+        427.964,
+        515.72,
+        437.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "comparisons.",
+        "constant",
+        "currency",
+        "distorting",
+        "year-on-year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l8",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 8,
+      "source_text": "performance’ measure used throughout this report is described above.",
+      "bbox": [
+        305.88,
+        437.564,
+        553.624,
+        447.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "above.",
+        "described",
+        "is",
+        "measure",
+        "performance",
+        "report",
+        "this",
+        "throughout",
+        "used"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l9",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 9,
+      "source_text": "Definitions and calculations of other alternative performance measures",
+      "bbox": [
+        305.88,
+        447.164,
+        553.472,
+        456.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Definitions",
+        "alternative",
+        "and",
+        "calculations",
+        "measures",
+        "of",
+        "other",
+        "performance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l10",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 10,
+      "source_text": "are included in our ‘Alternative performance measures’ on page 92.",
+      "bbox": [
+        305.88,
+        456.764,
+        541.688,
+        466.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Alternative",
+        "are",
+        "in",
+        "included",
+        "measures",
+        "on",
+        "our",
+        "page",
+        "performance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "92"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l11",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 11,
+      "source_text": "Additionally, the insurance-specific non-GAAP measure ‘Insurance",
+      "bbox": [
+        305.88,
+        466.364,
+        537.096,
+        476.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additionally",
+        "Insurance",
+        "insurance-specific",
+        "measure",
+        "non-GAAP",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l12",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 12,
+      "source_text": "equity plus CSM net of tax‘ is provided on page 81, along with its",
+      "bbox": [
+        305.88,
+        475.964,
+        534.16,
+        485.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CSM",
+        "along",
+        "equity",
+        "is",
+        "its",
+        "net",
+        "of",
+        "on",
+        "page",
+        "plus",
+        "provided",
+        "tax",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "81, "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l13",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 13,
+      "source_text": "definition and reconciliation to the GAAP measure. All alternative",
+      "bbox": [
+        305.88,
+        485.564,
+        532.032,
+        495.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "All",
+        "GAAP",
+        "alternative",
+        "and",
+        "definition",
+        "measure.",
+        "reconciliation",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l14",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 14,
+      "source_text": "performance measures are reconciled to the closest reported",
+      "bbox": [
+        305.88,
+        495.164,
+        521.032,
+        504.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "closest",
+        "measures",
+        "performance",
+        "reconciled",
+        "reported",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b14_l15",
+      "page_index": 67,
+      "block_id": 14,
+      "line_index": 15,
+      "source_text": "performance measure.",
+      "bbox": [
+        305.88,
+        504.764,
+        385.208,
+        514.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "measure.",
+        "performance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b15_l0",
+      "page_index": 67,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "Return on average tangible equity",
+      "bbox": [
+        305.88,
+        518.856,
+        505.729,
+        535.756
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Return",
+        "average",
+        "equity",
+        "on",
+        "tangible"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b15_l1",
+      "page_index": 67,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "excluding notable items",
+      "bbox": [
+        305.88,
+        534.456,
+        444.538,
+        551.356
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "excluding",
+        "items",
+        "notable"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b16_l0",
+      "page_index": 67,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "The calculation for RoTE excluding notable items adjusts the ‘profit",
+      "bbox": [
+        305.88,
+        553.064,
+        534.416,
+        562.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "RoTE",
+        "The",
+        "adjusts",
+        "calculation",
+        "excluding",
+        "for",
+        "items",
+        "notable",
+        "profit",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b16_l1",
+      "page_index": 67,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "attributable to the ordinary shareholders, excluding goodwill and other",
+      "bbox": [
+        305.88,
+        562.664,
+        544.576,
+        572.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "attributable",
+        "excluding",
+        "goodwill",
+        "ordinary",
+        "other",
+        "shareholders",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b16_l2",
+      "page_index": 67,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "intangible assets impairment‘ for the post-tax impact of notable items. To",
+      "bbox": [
+        305.88,
+        572.264,
+        556.584,
+        581.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "To",
+        "assets",
+        "for",
+        "impact",
+        "impairment",
+        "intangible",
+        "items.",
+        "notable",
+        "of",
+        "post-tax",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b16_l3",
+      "page_index": 67,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "better align with market practice, from 2025 we no longer adjust the",
+      "bbox": [
+        305.88,
+        581.864,
+        539.752,
+        591.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "adjust",
+        "align",
+        "better",
+        "from",
+        "longer",
+        "market",
+        "no",
+        "practice",
+        "the",
+        "we",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b16_l4",
+      "page_index": 67,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "‘average tangible equity‘ for the post-tax impact of notable items in each",
+      "bbox": [
+        305.88,
+        591.464,
+        553.024,
+        601.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "average",
+        "each",
+        "equity",
+        "for",
+        "impact",
+        "in",
+        "items",
+        "notable",
+        "of",
+        "post-tax",
+        "tangible",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b16_l5",
+      "page_index": 67,
+      "block_id": 16,
+      "line_index": 5,
+      "source_text": "period. Comparatives have been re-presented.",
+      "bbox": [
+        305.88,
+        601.064,
+        463.352,
+        610.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Comparatives",
+        "been",
+        "have",
+        "period.",
+        "re-presented."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b17_l0",
+      "page_index": 67,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "Ñ See page 92 for the definition of return on average tangible equity excluding",
+      "bbox": [
+        305.88,
+        616.151,
+        544.777,
+        626.399
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 9.0,
+      "font": "Wingdings3",
+      "ascii_tokens": [
+        "See",
+        "average",
+        "definition",
+        "equity",
+        "excluding",
+        "for",
+        "of",
+        "on",
+        "page",
+        "return",
+        "tangible",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "92 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b17_l1",
+      "page_index": 67,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "notable items and page 93 for the reconciliation to the GAAP measure.",
+      "bbox": [
+        317.22,
+        626.316,
+        527.697,
+        634.8
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "GAAP",
+        "and",
+        "for",
+        "items",
+        "measure.",
+        "notable",
+        "page",
+        "reconciliation",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "93 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b17_l2",
+      "page_index": 67,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "Banking net interest income",
+      "bbox": [
+        305.88,
+        637.256,
+        469.134,
+        654.156
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Banking",
+        "income",
+        "interest",
+        "net"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b18_l0",
+      "page_index": 67,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "Banking net interest income (‘banking NII’) adjusts our NII primarily for",
+      "bbox": [
+        305.88,
+        655.864,
+        545.656,
+        665.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Banking",
+        "NII",
+        "adjusts",
+        "banking",
+        "for",
+        "income",
+        "interest",
+        "net",
+        "our",
+        "primarily"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b18_l1",
+      "page_index": 67,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "the impact of funding trading and fair value activities reported in interest",
+      "bbox": [
+        305.88,
+        665.464,
+        551.344,
+        675.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "activities",
+        "and",
+        "fair",
+        "funding",
+        "impact",
+        "in",
+        "interest",
+        "of",
+        "reported",
+        "the",
+        "trading",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b18_l2",
+      "page_index": 67,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "expense. It represents the Group’s banking revenue that is directly",
+      "bbox": [
+        305.88,
+        675.064,
+        534.136,
+        684.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "It",
+        "banking",
+        "directly",
+        "expense.",
+        "is",
+        "represents",
+        "revenue",
+        "s",
+        "that",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b18_l3",
+      "page_index": 67,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "impacted by changes in interest rates. We use this measure to",
+      "bbox": [
+        305.88,
+        684.664,
+        521.352,
+        694.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "by",
+        "changes",
+        "impacted",
+        "in",
+        "interest",
+        "measure",
+        "rates.",
+        "this",
+        "to",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b18_l4",
+      "page_index": 67,
+      "block_id": 18,
+      "line_index": 4,
+      "source_text": "determine the deployment of our surplus funding, and to help optimise",
+      "bbox": [
+        305.88,
+        694.264,
+        548.456,
+        703.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "deployment",
+        "determine",
+        "funding",
+        "help",
+        "of",
+        "optimise",
+        "our",
+        "surplus",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b18_l5",
+      "page_index": 67,
+      "block_id": 18,
+      "line_index": 5,
+      "source_text": "our structural hedging and risk management actions. For more",
+      "bbox": [
+        305.88,
+        703.864,
+        519.72,
+        713.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "For",
+        "actions.",
+        "and",
+        "hedging",
+        "management",
+        "more",
+        "our",
+        "risk",
+        "structural"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b18_l6",
+      "page_index": 67,
+      "block_id": 18,
+      "line_index": 6,
+      "source_text": "information on banking NII, see page 70.",
+      "bbox": [
+        305.88,
+        713.464,
+        443.654,
+        723.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "NII",
+        "banking",
+        "information",
+        "on",
+        "page",
+        "see"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "70"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p67_b19_l0",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.68,
+        15.206,
+        93.903,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l1",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        119.18,
+        15.206,
+        155.734,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l2",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.68,
+        16.872,
+        246.762,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l3",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        266.18,
+        15.206,
+        302.342,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l4",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.68,
+        15.206,
+        371.418,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l5",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.68,
+        23.606,
+        395.372,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l6",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        413.18,
+        15.206,
+        443.91,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l7",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        413.18,
+        23.606,
+        448.572,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l8",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.68,
+        15.206,
+        519.349,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p67_b19_l9",
+      "page_index": 67,
+      "block_id": 19,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.68,
+        23.606,
+        522.072,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b0_l0",
+      "page_index": 68,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Constant currency revenue and profit",
+      "bbox": [
+        42.52,
+        66.956,
+        262.48,
+        83.856
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Constant",
+        "and",
+        "currency",
+        "profit",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b0_l1",
+      "page_index": 68,
+      "block_id": 0,
+      "line_index": 1,
+      "source_text": "before tax excluding notable items and the",
+      "bbox": [
+        42.52,
+        82.556,
+        293.94,
+        99.456
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "and",
+        "before",
+        "excluding",
+        "items",
+        "notable",
+        "tax",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b0_l2",
+      "page_index": 68,
+      "block_id": 0,
+      "line_index": 2,
+      "source_text": "impact of strategic transactions",
+      "bbox": [
+        42.52,
+        98.156,
+        225.989,
+        115.056
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "impact",
+        "of",
+        "strategic",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l0",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "To aid the understanding of our results, we separately report ‘constant",
+      "bbox": [
+        42.52,
+        116.764,
+        277.776,
+        126.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "To",
+        "aid",
+        "constant",
+        "of",
+        "our",
+        "report",
+        "results",
+        "separately",
+        "the",
+        "understanding",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l1",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "currency revenue excluding notable items‘ and ‘constant currency profit",
+      "bbox": [
+        42.52,
+        126.364,
+        282.224,
+        136.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "constant",
+        "currency",
+        "excluding",
+        "items",
+        "notable",
+        "profit",
+        "revenue"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l2",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "before tax excluding notable items‘, which exclude the impact of notable",
+      "bbox": [
+        42.52,
+        135.964,
+        285.544,
+        145.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "before",
+        "exclude",
+        "excluding",
+        "impact",
+        "items",
+        "notable",
+        "of",
+        "tax",
+        "the",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l3",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "items and the impact of foreign exchange translation. We also separately",
+      "bbox": [
+        42.52,
+        145.564,
+        286.448,
+        155.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "also",
+        "and",
+        "exchange",
+        "foreign",
+        "impact",
+        "items",
+        "of",
+        "separately",
+        "the",
+        "translation."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l4",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "disclose ‘constant currency revenue excluding notable items and the",
+      "bbox": [
+        42.52,
+        155.164,
+        272.08,
+        164.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "constant",
+        "currency",
+        "disclose",
+        "excluding",
+        "items",
+        "notable",
+        "revenue",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l5",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 5,
+      "source_text": "impact of strategic transactions‘ and ‘constant currency profit before tax",
+      "bbox": [
+        42.52,
+        164.764,
+        282.856,
+        174.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "before",
+        "constant",
+        "currency",
+        "impact",
+        "of",
+        "profit",
+        "strategic",
+        "tax",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l6",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 6,
+      "source_text": "excluding notable items and the impact of strategic transactions‘, which",
+      "bbox": [
+        42.52,
+        174.364,
+        282.448,
+        184.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "excluding",
+        "impact",
+        "items",
+        "notable",
+        "of",
+        "strategic",
+        "the",
+        "transactions",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l7",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 7,
+      "source_text": "also exclude the impact of strategic transactions classified as material",
+      "bbox": [
+        42.52,
+        183.964,
+        274.912,
+        193.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "also",
+        "as",
+        "classified",
+        "exclude",
+        "impact",
+        "material",
+        "of",
+        "strategic",
+        "the",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l8",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 8,
+      "source_text": "notable items as described above. We consider these measures to provide",
+      "bbox": [
+        42.52,
+        193.564,
+        293.344,
+        203.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "above.",
+        "as",
+        "consider",
+        "described",
+        "items",
+        "measures",
+        "notable",
+        "provide",
+        "these",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l9",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 9,
+      "source_text": "useful information to investors as they remove items that distort period-on-",
+      "bbox": [
+        42.52,
+        203.164,
+        291.04,
+        212.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "as",
+        "distort",
+        "information",
+        "investors",
+        "items",
+        "period-on-",
+        "remove",
+        "that",
+        "they",
+        "to",
+        "useful"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b1_l10",
+      "page_index": 68,
+      "block_id": 1,
+      "line_index": 10,
+      "source_text": "period comparisons.",
+      "bbox": [
+        42.52,
+        212.764,
+        112.144,
+        222.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "comparisons.",
+        "period"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b2_l0",
+      "page_index": 68,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "The impact of strategic transactions also includes the distorting impact",
+      "bbox": [
+        42.52,
+        228.864,
+        283.76,
+        238.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "also",
+        "distorting",
+        "impact",
+        "includes",
+        "of",
+        "strategic",
+        "the",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b2_l1",
+      "page_index": 68,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "between the periods of the operating income statement results related",
+      "bbox": [
+        42.52,
+        238.464,
+        285.984,
+        248.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "between",
+        "income",
+        "of",
+        "operating",
+        "periods",
+        "related",
+        "results",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b2_l2",
+      "page_index": 68,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "to acquisitions and disposals and that affect period-on-period",
+      "bbox": [
+        42.52,
+        248.064,
+        249.808,
+        257.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "acquisitions",
+        "affect",
+        "and",
+        "disposals",
+        "period-on-period",
+        "that",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b2_l3",
+      "page_index": 68,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "comparisons. These impacts are not included in our notable or material",
+      "bbox": [
+        42.52,
+        257.664,
+        284.968,
+        267.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "These",
+        "are",
+        "comparisons.",
+        "impacts",
+        "in",
+        "included",
+        "material",
+        "not",
+        "notable",
+        "or",
+        "our"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b2_l4",
+      "page_index": 68,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "notable items. The impact of strategic transactions is computed by",
+      "bbox": [
+        42.52,
+        267.264,
+        270.96,
+        276.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "by",
+        "computed",
+        "impact",
+        "is",
+        "items.",
+        "notable",
+        "of",
+        "strategic",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b2_l5",
+      "page_index": 68,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "including the operating income statement results of each business in any",
+      "bbox": [
+        42.52,
+        276.864,
+        292.632,
+        286.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "any",
+        "business",
+        "each",
+        "in",
+        "including",
+        "income",
+        "of",
+        "operating",
+        "results",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b2_l6",
+      "page_index": 68,
+      "block_id": 2,
+      "line_index": 6,
+      "source_text": "period for which there are no results in the comparative period.",
+      "bbox": [
+        42.52,
+        286.464,
+        258.368,
+        296.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "comparative",
+        "for",
+        "in",
+        "no",
+        "period",
+        "period.",
+        "results",
+        "the",
+        "there",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b3_l0",
+      "page_index": 68,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Ñ See page 93 for the reconciliation to the GAAP measure.",
+      "bbox": [
+        42.52,
+        301.55,
+        222.758,
+        311.798
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 9.0,
+      "font": "Wingdings3",
+      "ascii_tokens": [
+        "GAAP",
+        "See",
+        "for",
+        "measure.",
+        "page",
+        "reconciliation",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "93 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b3_l1",
+      "page_index": 68,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "Target basis operating expenses",
+      "bbox": [
+        42.52,
+        314.106,
+        229.993,
+        331.006
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Target",
+        "basis",
+        "expenses",
+        "operating"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l0",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Target basis operating expenses is computed by excluding the direct cost",
+      "bbox": [
+        42.52,
+        332.714,
+        291.528,
+        342.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Target",
+        "basis",
+        "by",
+        "computed",
+        "cost",
+        "direct",
+        "excluding",
+        "expenses",
+        "is",
+        "operating",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l1",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "impact of the disposals of our banking business in Canada and our",
+      "bbox": [
+        42.52,
+        342.314,
+        266.296,
+        352.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Canada",
+        "and",
+        "banking",
+        "business",
+        "disposals",
+        "impact",
+        "in",
+        "of",
+        "our",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l2",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "business in Argentina from the 2024 baseline. It is measured on a",
+      "bbox": [
+        42.52,
+        351.914,
+        264.96,
+        361.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Argentina",
+        "It",
+        "a",
+        "baseline.",
+        "business",
+        "from",
+        "in",
+        "is",
+        "measured",
+        "on",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l3",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "constant currency basis and excludes notable items and the impact of",
+      "bbox": [
+        42.52,
+        361.514,
+        279.024,
+        371.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "basis",
+        "constant",
+        "currency",
+        "excludes",
+        "impact",
+        "items",
+        "notable",
+        "of",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l4",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "retranslating the prior year results of hyperinflationary economies at",
+      "bbox": [
+        42.52,
+        371.114,
+        270.6,
+        380.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "at",
+        "economies",
+        "hyperinflationary",
+        "of",
+        "prior",
+        "results",
+        "retranslating",
+        "the",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l5",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 5,
+      "source_text": "constant currency, which we consider to be outside of our control. We",
+      "bbox": [
+        42.52,
+        380.714,
+        281.472,
+        390.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "be",
+        "consider",
+        "constant",
+        "control.",
+        "currency",
+        "of",
+        "our",
+        "outside",
+        "to",
+        "we",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l6",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 6,
+      "source_text": "consider target basis operating expenses to provide useful information to",
+      "bbox": [
+        42.52,
+        390.314,
+        289.536,
+        400.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "basis",
+        "consider",
+        "expenses",
+        "information",
+        "operating",
+        "provide",
+        "target",
+        "to",
+        "useful"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l7",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 7,
+      "source_text": "investors by quantifying and excluding the notable items that",
+      "bbox": [
+        42.52,
+        399.914,
+        248.416,
+        409.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "by",
+        "excluding",
+        "investors",
+        "items",
+        "notable",
+        "quantifying",
+        "that",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b4_l8",
+      "page_index": 68,
+      "block_id": 4,
+      "line_index": 8,
+      "source_text": "management considered when setting and assessing cost-related targets.",
+      "bbox": [
+        42.52,
+        409.514,
+        293.712,
+        419.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "assessing",
+        "considered",
+        "cost-related",
+        "management",
+        "setting",
+        "targets.",
+        "when"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b5_l0",
+      "page_index": 68,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "Ñ See page 95 for further details and the reconciliation to the GAAP measure.",
+      "bbox": [
+        42.52,
+        426.1,
+        278.303,
+        436.348
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 9.0,
+      "font": "Wingdings3",
+      "ascii_tokens": [
+        "GAAP",
+        "See",
+        "and",
+        "details",
+        "for",
+        "further",
+        "measure.",
+        "page",
+        "reconciliation",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "95 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b5_l1",
+      "page_index": 68,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "Basic earnings per share excluding",
+      "bbox": [
+        42.52,
+        438.656,
+        248.245,
+        455.556
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Basic",
+        "earnings",
+        "excluding",
+        "per",
+        "share"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b5_l2",
+      "page_index": 68,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "material notable items and related impacts",
+      "bbox": [
+        42.52,
+        454.256,
+        290.391,
+        471.156
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "and",
+        "impacts",
+        "items",
+        "material",
+        "notable",
+        "related"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b6_l0",
+      "page_index": 68,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "We established a dividend payout ratio target basis of 50% for 2025.",
+      "bbox": [
+        42.52,
+        472.864,
+        282.728,
+        482.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "We",
+        "a",
+        "basis",
+        "dividend",
+        "established",
+        "for",
+        "of",
+        "payout",
+        "ratio",
+        "target"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b6_l1",
+      "page_index": 68,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "For the purposes of computing our dividend payout ratio target basis,",
+      "bbox": [
+        42.52,
+        482.464,
+        284.408,
+        492.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "For",
+        "basis",
+        "computing",
+        "dividend",
+        "of",
+        "our",
+        "payout",
+        "purposes",
+        "ratio",
+        "target",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b6_l2",
+      "page_index": 68,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "we exclude from earnings per share material notable items and related",
+      "bbox": [
+        42.52,
+        492.064,
+        290.2,
+        501.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "earnings",
+        "exclude",
+        "from",
+        "items",
+        "material",
+        "notable",
+        "per",
+        "related",
+        "share",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b6_l3",
+      "page_index": 68,
+      "block_id": 6,
+      "line_index": 3,
+      "source_text": "impacts. Material notable items for the ‘basic earnings per share",
+      "bbox": [
+        42.52,
+        501.664,
+        267.88,
+        511.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Material",
+        "basic",
+        "earnings",
+        "for",
+        "impacts.",
+        "items",
+        "notable",
+        "per",
+        "share",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b6_l4",
+      "page_index": 68,
+      "block_id": 6,
+      "line_index": 4,
+      "source_text": "excluding material notable items and related impacts‘ measure in 2025",
+      "bbox": [
+        42.52,
+        511.264,
+        290.208,
+        520.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "excluding",
+        "impacts",
+        "in",
+        "items",
+        "material",
+        "measure",
+        "notable",
+        "related"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b6_l5",
+      "page_index": 68,
+      "block_id": 6,
+      "line_index": 5,
+      "source_text": "and comparative periods are described above.",
+      "bbox": [
+        42.52,
+        520.864,
+        204.248,
+        530.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "above.",
+        "and",
+        "are",
+        "comparative",
+        "described",
+        "periods"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b7_l0",
+      "page_index": 68,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "Related impacts include those items that do not qualify for designation",
+      "bbox": [
+        42.52,
+        536.964,
+        289.592,
+        546.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Related",
+        "designation",
+        "do",
+        "for",
+        "impacts",
+        "include",
+        "items",
+        "not",
+        "qualify",
+        "that",
+        "those"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b7_l1",
+      "page_index": 68,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "as notable items but whose adjustment is considered by management",
+      "bbox": [
+        42.52,
+        546.564,
+        289.64,
+        556.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "adjustment",
+        "as",
+        "but",
+        "by",
+        "considered",
+        "is",
+        "items",
+        "management",
+        "notable",
+        "whose"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b7_l2",
+      "page_index": 68,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "to be appropriate for the purposes of determining the basis for our",
+      "bbox": [
+        42.52,
+        556.164,
+        274.784,
+        565.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "appropriate",
+        "basis",
+        "be",
+        "determining",
+        "for",
+        "of",
+        "our",
+        "purposes",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b7_l3",
+      "page_index": 68,
+      "block_id": 7,
+      "line_index": 3,
+      "source_text": "dividend payout ratio target basis calculation, for which we exclude",
+      "bbox": [
+        42.52,
+        565.764,
+        276.952,
+        575.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "basis",
+        "calculation",
+        "dividend",
+        "exclude",
+        "for",
+        "payout",
+        "ratio",
+        "target",
+        "we",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b7_l4",
+      "page_index": 68,
+      "block_id": 7,
+      "line_index": 4,
+      "source_text": "from earnings per share material notable items and related impacts.",
+      "bbox": [
+        42.52,
+        575.364,
+        277.568,
+        585.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "earnings",
+        "from",
+        "impacts.",
+        "items",
+        "material",
+        "notable",
+        "per",
+        "related",
+        "share"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b8_l0",
+      "page_index": 68,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "Ñ See page 80 for the supplementary analysis of the impact of strategic",
+      "bbox": [
+        42.52,
+        591.95,
+        262.672,
+        602.198
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 9.0,
+      "font": "Wingdings3",
+      "ascii_tokens": [
+        "See",
+        "analysis",
+        "for",
+        "impact",
+        "of",
+        "page",
+        "strategic",
+        "supplementary",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "80 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b8_l1",
+      "page_index": 68,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "transactions.",
+      "bbox": [
+        53.86,
+        602.116,
+        91.849,
+        610.6
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "transactions."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b8_l2",
+      "page_index": 68,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "Ñ See page 92 for the definition of basic earnings per share excluding material",
+      "bbox": [
+        42.52,
+        609.05,
+        281.404,
+        619.298
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 9.0,
+      "font": "Wingdings3",
+      "ascii_tokens": [
+        "See",
+        "basic",
+        "definition",
+        "earnings",
+        "excluding",
+        "for",
+        "material",
+        "of",
+        "page",
+        "per",
+        "share",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "92 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b8_l3",
+      "page_index": 68,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "notable items and related impacts and page 96 for the reconciliation to the",
+      "bbox": [
+        53.86,
+        619.216,
+        276.551,
+        627.7
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "for",
+        "impacts",
+        "items",
+        "notable",
+        "page",
+        "reconciliation",
+        "related",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "96 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b8_l4",
+      "page_index": 68,
+      "block_id": 8,
+      "line_index": 4,
+      "source_text": "GAAP measure.",
+      "bbox": [
+        53.86,
+        627.766,
+        101.957,
+        636.25
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "GAAP",
+        "measure."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b9_l0",
+      "page_index": 68,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Critical estimates and judgements",
+      "bbox": [
+        42.52,
+        645.398,
+        264.07,
+        663.598
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Critical",
+        "and",
+        "estimates",
+        "judgements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p68_b10_l0",
+      "page_index": 68,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "The results of HSBC reflect the choice of accounting policies,",
+      "bbox": [
+        42.52,
+        668.514,
+        257.44,
+        678.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "The",
+        "accounting",
+        "choice",
+        "of",
+        "policies",
+        "reflect",
+        "results",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b10_l1",
+      "page_index": 68,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "assumptions and estimates that underlie the preparation of HSBC’s",
+      "bbox": [
+        42.52,
+        678.114,
+        278.976,
+        687.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "and",
+        "assumptions",
+        "estimates",
+        "of",
+        "preparation",
+        "s",
+        "that",
+        "the",
+        "underlie"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b10_l2",
+      "page_index": 68,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "consolidated financial statements. The material accounting policies,",
+      "bbox": [
+        42.52,
+        687.714,
+        278.288,
+        697.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "accounting",
+        "consolidated",
+        "financial",
+        "material",
+        "policies",
+        "statements."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b10_l3",
+      "page_index": 68,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "including the policies which include critical estimates and judgements,",
+      "bbox": [
+        42.52,
+        697.314,
+        288.256,
+        707.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "critical",
+        "estimates",
+        "include",
+        "including",
+        "judgements",
+        "policies",
+        "the",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b10_l4",
+      "page_index": 68,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "are described in Note 1.2 on the financial statements. The accounting",
+      "bbox": [
+        42.52,
+        706.914,
+        285.702,
+        716.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Note",
+        "The",
+        "accounting",
+        "are",
+        "described",
+        "financial",
+        "in",
+        "on",
+        "statements.",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b10_l5",
+      "page_index": 68,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "policies listed below are highlighted as they involve a high degree of",
+      "bbox": [
+        42.52,
+        716.514,
+        280.768,
+        726.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "are",
+        "as",
+        "below",
+        "degree",
+        "high",
+        "highlighted",
+        "involve",
+        "listed",
+        "of",
+        "policies",
+        "they"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b10_l6",
+      "page_index": 68,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "uncertainty and have a material impact on the financial statements:",
+      "bbox": [
+        42.52,
+        726.114,
+        274.912,
+        735.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "and",
+        "financial",
+        "have",
+        "impact",
+        "material",
+        "on",
+        "statements",
+        "the",
+        "uncertainty"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l1",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "Impairment of amortised cost financial assets and financial assets",
+      "bbox": [
+        317.22,
+        68.964,
+        547.404,
+        78.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Impairment",
+        "amortised",
+        "and",
+        "assets",
+        "cost",
+        "financial",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l2",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "measured at fair value through other comprehensive income",
+      "bbox": [
+        317.22,
+        78.564,
+        529.428,
+        88.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "at",
+        "comprehensive",
+        "fair",
+        "income",
+        "measured",
+        "other",
+        "through",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l3",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "(‘FVOCI’): The most significant judgements relate to defining what is",
+      "bbox": [
+        317.22,
+        88.164,
+        556.916,
+        97.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "FVOCI",
+        "The",
+        "defining",
+        "is",
+        "judgements",
+        "most",
+        "relate",
+        "significant",
+        "to",
+        "what"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l4",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 4,
+      "source_text": "considered to be a significant increase in credit risk, determining the",
+      "bbox": [
+        317.22,
+        97.764,
+        555.844,
+        107.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "be",
+        "considered",
+        "credit",
+        "determining",
+        "in",
+        "increase",
+        "risk",
+        "significant",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l5",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 5,
+      "source_text": "lifetime and point of initial recognition of revolving facilities,",
+      "bbox": [
+        317.22,
+        107.364,
+        524.252,
+        117.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "facilities",
+        "initial",
+        "lifetime",
+        "of",
+        "point",
+        "recognition",
+        "revolving"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l6",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 6,
+      "source_text": "selecting and calibrating the probability of default (‘PD’), the loss",
+      "bbox": [
+        317.22,
+        116.964,
+        541.796,
+        126.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "PD",
+        "and",
+        "calibrating",
+        "default",
+        "loss",
+        "of",
+        "probability",
+        "selecting",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l7",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 7,
+      "source_text": "given default (‘LGD’) and the exposure at default (‘EAD’) models, as",
+      "bbox": [
+        317.22,
+        126.564,
+        554.348,
+        136.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "EAD",
+        "LGD",
+        "and",
+        "as",
+        "at",
+        "default",
+        "exposure",
+        "given",
+        "models",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l8",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 8,
+      "source_text": "well as selecting model inputs and economic forecasts, making",
+      "bbox": [
+        317.22,
+        136.164,
+        539.348,
+        145.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "as",
+        "economic",
+        "forecasts",
+        "inputs",
+        "making",
+        "model",
+        "selecting",
+        "well"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l9",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 9,
+      "source_text": "assumptions and estimates to incorporate relevant information",
+      "bbox": [
+        317.22,
+        145.764,
+        537.108,
+        155.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "assumptions",
+        "estimates",
+        "incorporate",
+        "information",
+        "relevant",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l10",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 10,
+      "source_text": "about late-breaking and past events, current conditions and",
+      "bbox": [
+        317.22,
+        155.364,
+        524.38,
+        165.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "about",
+        "and",
+        "conditions",
+        "current",
+        "events",
+        "late-breaking",
+        "past"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l11",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 11,
+      "source_text": "forecasts of economic conditions, and selecting applicable recovery",
+      "bbox": [
+        317.22,
+        164.964,
+        553.508,
+        174.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "applicable",
+        "conditions",
+        "economic",
+        "forecasts",
+        "of",
+        "recovery",
+        "selecting"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l12",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 12,
+      "source_text": "strategies for certain wholesale credit-impaired loans. A high degree",
+      "bbox": [
+        317.22,
+        174.564,
+        555.564,
+        184.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "A",
+        "certain",
+        "credit-impaired",
+        "degree",
+        "for",
+        "high",
+        "loans.",
+        "strategies",
+        "wholesale"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l13",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 13,
+      "source_text": "of uncertainty is involved in making estimations using assumptions",
+      "bbox": [
+        317.22,
+        184.164,
+        551.38,
+        193.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "assumptions",
+        "estimations",
+        "in",
+        "involved",
+        "is",
+        "making",
+        "of",
+        "uncertainty",
+        "using"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l14",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 14,
+      "source_text": "that are highly subjective and very sensitive to the risk factors.",
+      "bbox": [
+        317.22,
+        193.764,
+        535.388,
+        203.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "are",
+        "factors.",
+        "highly",
+        "risk",
+        "sensitive",
+        "subjective",
+        "that",
+        "the",
+        "to",
+        "very"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l15",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 15,
+      "source_text": "See Note 1.2(j) on page 280.",
+      "bbox": [
+        317.22,
+        203.364,
+        416.284,
+        213.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Note",
+        "See",
+        "j)",
+        "on",
+        "page"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "280"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l17",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 17,
+      "source_text": "Deferred tax assets: The most significant judgements relate to",
+      "bbox": [
+        317.22,
+        214.964,
+        536.588,
+        224.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Deferred",
+        "The",
+        "assets",
+        "judgements",
+        "most",
+        "relate",
+        "significant",
+        "tax",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l18",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 18,
+      "source_text": "those made in respect of recoverability, which are based on",
+      "bbox": [
+        317.22,
+        224.564,
+        526.612,
+        234.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "based",
+        "in",
+        "made",
+        "of",
+        "on",
+        "recoverability",
+        "respect",
+        "those",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l19",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 19,
+      "source_text": "expected future profitability. See Note 1.2(m) on page 284.",
+      "bbox": [
+        317.22,
+        234.164,
+        521.224,
+        243.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Note",
+        "See",
+        "expected",
+        "future",
+        "m)",
+        "on",
+        "page",
+        "profitability."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "284"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l21",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 21,
+      "source_text": "Valuation of financial instruments: In determining the fair value of",
+      "bbox": [
+        317.22,
+        245.764,
+        544.98,
+        255.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "Valuation",
+        "determining",
+        "fair",
+        "financial",
+        "instruments",
+        "of",
+        "the",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l22",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 22,
+      "source_text": "financial instruments a variety of valuation techniques are used,",
+      "bbox": [
+        317.22,
+        255.364,
+        539.46,
+        265.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "are",
+        "financial",
+        "instruments",
+        "of",
+        "techniques",
+        "used",
+        "valuation",
+        "variety"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l23",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 23,
+      "source_text": "some of which feature significant unobservable inputs and are",
+      "bbox": [
+        317.22,
+        264.964,
+        535.324,
+        274.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "are",
+        "feature",
+        "inputs",
+        "of",
+        "significant",
+        "some",
+        "unobservable",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l24",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 24,
+      "source_text": "subject to substantial uncertainty. See Note 1.2(d) on page 278.",
+      "bbox": [
+        317.22,
+        274.564,
+        537.714,
+        284.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Note",
+        "See",
+        "d)",
+        "on",
+        "page",
+        "subject",
+        "substantial",
+        "to",
+        "uncertainty."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "278"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l26",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 26,
+      "source_text": "Impairment of investment in subsidiaries: Impairment testing,",
+      "bbox": [
+        317.22,
+        286.163,
+        533.572,
+        295.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Impairment",
+        "in",
+        "investment",
+        "of",
+        "subsidiaries",
+        "testing"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l27",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 27,
+      "source_text": "including testing for reversal of impairment, involves significant",
+      "bbox": [
+        317.22,
+        295.763,
+        538.036,
+        305.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "for",
+        "impairment",
+        "including",
+        "involves",
+        "of",
+        "reversal",
+        "significant",
+        "testing"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l28",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 28,
+      "source_text": "judgement in determining the value in use, and in particular",
+      "bbox": [
+        317.22,
+        305.363,
+        524.74,
+        315.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "determining",
+        "in",
+        "judgement",
+        "particular",
+        "the",
+        "use",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l29",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 29,
+      "source_text": "estimating the present values of cash flows expected to arise from",
+      "bbox": [
+        317.22,
+        314.963,
+        551.82,
+        324.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "arise",
+        "cash",
+        "estimating",
+        "expected",
+        "flows",
+        "from",
+        "of",
+        "present",
+        "the",
+        "to",
+        "values"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l30",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 30,
+      "source_text": "continuing to hold the investment, based on a number of",
+      "bbox": [
+        317.22,
+        324.563,
+        516.7,
+        334.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "based",
+        "continuing",
+        "hold",
+        "investment",
+        "number",
+        "of",
+        "on",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l31",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 31,
+      "source_text": "management assumptions. See Note 1.2(a) on page 275.",
+      "bbox": [
+        317.22,
+        334.163,
+        515.634,
+        343.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Note",
+        "See",
+        "a)",
+        "assumptions.",
+        "management",
+        "on",
+        "page"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "275"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l33",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 33,
+      "source_text": "Impairment of interests in associates: Impairment testing, including",
+      "bbox": [
+        317.22,
+        345.763,
+        553.444,
+        355.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Impairment",
+        "associates",
+        "in",
+        "including",
+        "interests",
+        "of",
+        "testing"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l34",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 34,
+      "source_text": "testing for reversal of impairment, involves significant judgement in",
+      "bbox": [
+        317.22,
+        355.363,
+        552.9,
+        365.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "for",
+        "impairment",
+        "in",
+        "involves",
+        "judgement",
+        "of",
+        "reversal",
+        "significant",
+        "testing"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l35",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 35,
+      "source_text": "determining the value in use, and in particular estimating the",
+      "bbox": [
+        317.22,
+        364.963,
+        529.028,
+        374.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "determining",
+        "estimating",
+        "in",
+        "particular",
+        "the",
+        "use",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l36",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 36,
+      "source_text": "present values of cash flows expected to arise from continuing to",
+      "bbox": [
+        317.22,
+        374.563,
+        547.004,
+        384.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "arise",
+        "cash",
+        "continuing",
+        "expected",
+        "flows",
+        "from",
+        "of",
+        "present",
+        "to",
+        "values"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l37",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 37,
+      "source_text": "hold the investment, based on a number of management",
+      "bbox": [
+        317.22,
+        384.163,
+        517.844,
+        393.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "based",
+        "hold",
+        "investment",
+        "management",
+        "number",
+        "of",
+        "on",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l38",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 38,
+      "source_text": "assumptions. The most significant judgements relate to the",
+      "bbox": [
+        317.22,
+        393.763,
+        526.244,
+        403.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "assumptions.",
+        "judgements",
+        "most",
+        "relate",
+        "significant",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l39",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 39,
+      "source_text": "impairment testing of our investment in Bank of Communications",
+      "bbox": [
+        317.22,
+        403.363,
+        546.82,
+        413.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank",
+        "Communications",
+        "impairment",
+        "in",
+        "investment",
+        "of",
+        "our",
+        "testing"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l40",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 40,
+      "source_text": "Co., Limited (‘BoCom’). See Note 1.2(a) on page 275.",
+      "bbox": [
+        317.22,
+        412.963,
+        501.844,
+        422.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "BoCom",
+        "Co.",
+        "Limited",
+        "Note",
+        "See",
+        "a)",
+        "on",
+        "page"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "275"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l42",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 42,
+      "source_text": "Impairment of goodwill and non-financial assets: A high degree of",
+      "bbox": [
+        317.22,
+        424.563,
+        547.012,
+        434.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "A",
+        "Impairment",
+        "and",
+        "assets",
+        "degree",
+        "goodwill",
+        "high",
+        "non-financial",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l43",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 43,
+      "source_text": "uncertainty is involved in estimating the future cash flows of the",
+      "bbox": [
+        317.22,
+        434.163,
+        542.036,
+        443.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "cash",
+        "estimating",
+        "flows",
+        "future",
+        "in",
+        "involved",
+        "is",
+        "of",
+        "the",
+        "uncertainty"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l44",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 44,
+      "source_text": "cash-generating units (‘CGUs’) and the rates used to discount these",
+      "bbox": [
+        317.22,
+        443.763,
+        554.412,
+        453.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CGUs",
+        "and",
+        "cash-generating",
+        "discount",
+        "rates",
+        "the",
+        "these",
+        "to",
+        "units",
+        "used"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l45",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 45,
+      "source_text": "cash flows. See Note 1.2(b) on page 276.",
+      "bbox": [
+        317.22,
+        453.363,
+        460.624,
+        463.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Note",
+        "See",
+        "b)",
+        "cash",
+        "flows.",
+        "on",
+        "page"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "276"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l47",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 47,
+      "source_text": "Provisions: Significant judgement may be required due to the high",
+      "bbox": [
+        317.22,
+        464.964,
+        548.308,
+        474.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Provisions",
+        "Significant",
+        "be",
+        "due",
+        "high",
+        "judgement",
+        "may",
+        "required",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l48",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 48,
+      "source_text": "degree of uncertainty associated with determining whether a",
+      "bbox": [
+        317.22,
+        474.564,
+        531.476,
+        484.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "associated",
+        "degree",
+        "determining",
+        "of",
+        "uncertainty",
+        "whether",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l49",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 49,
+      "source_text": "present obligation exists, and estimating the probability and amount",
+      "bbox": [
+        317.22,
+        484.164,
+        554.308,
+        493.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "amount",
+        "and",
+        "estimating",
+        "exists",
+        "obligation",
+        "present",
+        "probability",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l50",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 50,
+      "source_text": "of any outflows that may arise. See Note 1.2(n) on page 285.",
+      "bbox": [
+        317.22,
+        493.764,
+        528.284,
+        503.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Note",
+        "See",
+        "any",
+        "arise.",
+        "may",
+        "n)",
+        "of",
+        "on",
+        "outflows",
+        "page",
+        "that"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2"
+        },
+        {
+          "type": "currency_amount",
+          "value": "285"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l52",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 52,
+      "source_text": "Post-employment benefit plans: The calculation of the defined",
+      "bbox": [
+        317.22,
+        505.364,
+        534.868,
+        515.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Post-employment",
+        "The",
+        "benefit",
+        "calculation",
+        "defined",
+        "of",
+        "plans",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l53",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 53,
+      "source_text": "benefit pension obligation involves the determination of key",
+      "bbox": [
+        317.22,
+        514.964,
+        526.5,
+        524.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "benefit",
+        "determination",
+        "involves",
+        "key",
+        "obligation",
+        "of",
+        "pension",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l54",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 54,
+      "source_text": "assumptions including discount rate, inflation rate, pension",
+      "bbox": [
+        317.22,
+        524.564,
+        522.964,
+        534.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "assumptions",
+        "discount",
+        "including",
+        "inflation",
+        "pension",
+        "rate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l55",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 55,
+      "source_text": "payments and deferred pensions, pay and mortality. See Note 1.2(l)",
+      "bbox": [
+        317.22,
+        534.164,
+        553.488,
+        543.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Note",
+        "See",
+        "and",
+        "deferred",
+        "l)",
+        "mortality.",
+        "pay",
+        "payments",
+        "pensions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1.2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b11_l56",
+      "page_index": 68,
+      "block_id": 11,
+      "line_index": 56,
+      "source_text": "on page 284.",
+      "bbox": [
+        317.22,
+        543.764,
+        362.524,
+        553.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "on",
+        "page"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "284"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b12_l0",
+      "page_index": 68,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Given the inherent uncertainties and the high level of subjectivity",
+      "bbox": [
+        305.88,
+        559.864,
+        532.816,
+        569.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Given",
+        "and",
+        "high",
+        "inherent",
+        "level",
+        "of",
+        "subjectivity",
+        "the",
+        "uncertainties"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b12_l1",
+      "page_index": 68,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "involved in the recognition or measurement of the items above, it is",
+      "bbox": [
+        305.88,
+        569.464,
+        542.976,
+        579.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "above",
+        "in",
+        "involved",
+        "is",
+        "it",
+        "items",
+        "measurement",
+        "of",
+        "or",
+        "recognition",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b12_l2",
+      "page_index": 68,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "possible that the outcomes in the next financial year could differ from",
+      "bbox": [
+        305.88,
+        579.064,
+        548.952,
+        588.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "could",
+        "differ",
+        "financial",
+        "from",
+        "in",
+        "next",
+        "outcomes",
+        "possible",
+        "that",
+        "the",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b12_l3",
+      "page_index": 68,
+      "block_id": 12,
+      "line_index": 3,
+      "source_text": "the expectations on which management’s estimates are based,",
+      "bbox": [
+        305.88,
+        588.664,
+        529.056,
+        598.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "based",
+        "estimates",
+        "expectations",
+        "management",
+        "on",
+        "s",
+        "the",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b12_l4",
+      "page_index": 68,
+      "block_id": 12,
+      "line_index": 4,
+      "source_text": "resulting in the recognition and measurement of materially different",
+      "bbox": [
+        305.88,
+        598.264,
+        542.512,
+        607.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "different",
+        "in",
+        "materially",
+        "measurement",
+        "of",
+        "recognition",
+        "resulting",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b12_l5",
+      "page_index": 68,
+      "block_id": 12,
+      "line_index": 5,
+      "source_text": "amounts from those estimated by management in these financial",
+      "bbox": [
+        305.88,
+        607.864,
+        535.112,
+        617.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "amounts",
+        "by",
+        "estimated",
+        "financial",
+        "from",
+        "in",
+        "management",
+        "these",
+        "those"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p68_b12_l6",
+      "page_index": 68,
+      "block_id": 12,
+      "line_index": 6,
+      "source_text": "statements.",
+      "bbox": [
+        305.88,
+        617.464,
+        347.728,
+        627.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "statements."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l0",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.68,
+        15.206,
+        93.903,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l1",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        119.18,
+        15.206,
+        155.734,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l2",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.68,
+        16.872,
+        246.762,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l3",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        266.18,
+        15.206,
+        302.342,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l4",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.68,
+        15.206,
+        371.418,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l5",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.68,
+        23.606,
+        395.372,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l6",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        413.18,
+        15.206,
+        443.91,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l7",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        413.18,
+        23.606,
+        448.572,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l8",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.68,
+        15.206,
+        519.349,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b13_l9",
+      "page_index": 68,
+      "block_id": 13,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.68,
+        23.606,
+        522.072,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p68_b14_l0",
+      "page_index": 68,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "Financial summary",
+      "bbox": [
+        192.68,
+        34.766,
+        250.633,
+        43.25
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "summary"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b0_l0",
+      "page_index": 69,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Consolidated income statement",
+      "bbox": [
+        42.52,
+        66.648,
+        249.454,
+        84.848
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Consolidated",
+        "income",
+        "statement"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p69_b1_l0",
+      "page_index": 69,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Summary consolidated income statement",
+      "bbox": [
+        42.88,
+        91.394,
+        191.248,
+        101.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Summary",
+        "consolidated",
+        "income",
+        "statement"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p69_b2_l5",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "$m",
+      "bbox": [
+        375.15,
+        115.042,
+        385.65,
+        122.042
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b2_l6",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 6,
+      "source_text": "$m",
+      "bbox": [
+        416.78,
+        113.376,
+        426.895,
+        121.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b2_l7",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 7,
+      "source_text": "$m",
+      "bbox": [
+        458.78,
+        113.376,
+        468.895,
+        121.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b2_l8",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 8,
+      "source_text": "$m",
+      "bbox": [
+        500.78,
+        113.376,
+        510.895,
+        121.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b2_l9",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 9,
+      "source_text": "$m",
+      "bbox": [
+        542.03,
+        113.376,
+        552.145,
+        121.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b2_l10",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 10,
+      "source_text": "Net interest income",
+      "bbox": [
+        45.15,
+        123.126,
+        108.941,
+        131.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Net",
+        "income",
+        "interest"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b2_l17",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 17,
+      "source_text": "Net fee income",
+      "bbox": [
+        45.15,
+        132.876,
+        95.333,
+        141.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Net",
+        "fee",
+        "income"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b2_l24",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 24,
+      "source_text": "Net income from financial instruments held for trading or managed on a fair value basis2",
+      "bbox": [
+        45.15,
+        142.626,
+        317.81,
+        151.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Net",
+        "a",
+        "basis2",
+        "fair",
+        "financial",
+        "for",
+        "from",
+        "held",
+        "income",
+        "instruments",
+        "managed",
+        "on",
+        "or",
+        "trading",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p69_b2_l31",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 31,
+      "source_text": "Net income/(expense) from assets and liabilities of insurance businesses, including related",
+      "bbox": [
+        45.15,
+        152.376,
+        327.957,
+        160.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Net",
+        "and",
+        "assets",
+        "businesses",
+        "from",
+        "including",
+        "income/(expense)",
+        "insurance",
+        "liabilities",
+        "of",
+        "related"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p69_b2_l32",
+      "page_index": 69,
+      "block_id": 2,
+      "line_index": 32,
+      "source_text": "derivatives, measured at fair value through profit or loss",
+      "bbox": [
+        45.15,
+        160.776,
+        218.239,
+        169.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "at",
+        "derivatives",
+        "fair",
+        "loss",
+        "measured",
+        "or",
+        "profit",
+        "through",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p69_b3_l0",
+      "page_index": 69,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Net insurance premium income",
+      "bbox": [
+        45.15,
+        171.126,
+        145.124,
+        179.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Net",
+        "income",
+        "insurance",
+        "premium"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p69_b3_l7",
+      "page_index": 69,
+      "block_id": 3,
+      "line_index": 7,
+      "source_text": "Insurance finance (expense)/income",
+      "bbox": [
+        45.15,
+        180.876,
+        157.199,
+        189.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Insurance",
+        "expense)/income",
+        "finance"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p69_b3_l14",
+      "page_index": 69,
+      "block_id": 3,
+      "line_index": 14,
+      "source_text": "Insurance service result",
+      "bbox": [
+        45.15,
+        190.626,
+        119.056,
+        199.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Insurance",
+        "result",
+        "service"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p69_b3_l21",
+      "page_index": 69,
+      "block_id": 3,
+      "line_index": 21,
+      "source_text": "Gain on acquisition3",
+      "bbox": [
+        45.15,
+        200.376,
+        106.37,
+        208.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Gain",
+        "acquisition3",
+        "on"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round14/translation_batches/batch_0046.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round14/translation_batches/batch_0046.model_output.json",
+    "required_units": [
+      "p67_b11_l5",
+      "p67_b11_l6",
+      "p67_b11_l7",
+      "p67_b11_l8",
+      "p67_b11_l9",
+      "p67_b11_l10",
+      "p67_b11_l11",
+      "p67_b11_l12",
+      "p67_b12_l0",
+      "p67_b12_l1",
+      "p67_b13_l0",
+      "p67_b13_l1",
+      "p67_b13_l2",
+      "p67_b13_l3",
+      "p67_b14_l0",
+      "p67_b14_l1",
+      "p67_b14_l2",
+      "p67_b14_l3",
+      "p67_b14_l4",
+      "p67_b14_l5",
+      "p67_b14_l6",
+      "p67_b14_l7",
+      "p67_b14_l8",
+      "p67_b14_l9",
+      "p67_b14_l10",
+      "p67_b14_l11",
+      "p67_b14_l12",
+      "p67_b14_l13",
+      "p67_b14_l14",
+      "p67_b14_l15",
+      "p67_b15_l0",
+      "p67_b15_l1",
+      "p67_b16_l0",
+      "p67_b16_l1",
+      "p67_b16_l2",
+      "p67_b16_l3",
+      "p67_b16_l4",
+      "p67_b16_l5",
+      "p67_b17_l0",
+      "p67_b17_l1",
+      "p67_b17_l2",
+      "p67_b18_l0",
+      "p67_b18_l1",
+      "p67_b18_l2",
+      "p67_b18_l3",
+      "p67_b18_l4",
+      "p67_b18_l5",
+      "p67_b18_l6",
+      "p67_b19_l0",
+      "p67_b19_l1",
+      "p67_b19_l2",
+      "p67_b19_l3",
+      "p67_b19_l4",
+      "p67_b19_l5",
+      "p67_b19_l6",
+      "p67_b19_l7",
+      "p67_b19_l8",
+      "p67_b19_l9",
+      "p68_b0_l0",
+      "p68_b0_l1",
+      "p68_b0_l2",
+      "p68_b1_l0",
+      "p68_b1_l1",
+      "p68_b1_l2",
+      "p68_b1_l3",
+      "p68_b1_l4",
+      "p68_b1_l5",
+      "p68_b1_l6",
+      "p68_b1_l7",
+      "p68_b1_l8",
+      "p68_b1_l9",
+      "p68_b1_l10",
+      "p68_b2_l0",
+      "p68_b2_l1",
+      "p68_b2_l2",
+      "p68_b2_l3",
+      "p68_b2_l4",
+      "p68_b2_l5",
+      "p68_b2_l6",
+      "p68_b3_l0",
+      "p68_b3_l1",
+      "p68_b4_l0",
+      "p68_b4_l1",
+      "p68_b4_l2",
+      "p68_b4_l3",
+      "p68_b4_l4",
+      "p68_b4_l5",
+      "p68_b4_l6",
+      "p68_b4_l7",
+      "p68_b4_l8",
+      "p68_b5_l0",
+      "p68_b5_l1",
+      "p68_b5_l2",
+      "p68_b6_l0",
+      "p68_b6_l1",
+      "p68_b6_l2",
+      "p68_b6_l3",
+      "p68_b6_l4",
+      "p68_b6_l5",
+      "p68_b7_l0",
+      "p68_b7_l1",
+      "p68_b7_l2",
+      "p68_b7_l3",
+      "p68_b7_l4",
+      "p68_b8_l0",
+      "p68_b8_l1",
+      "p68_b8_l2",
+      "p68_b8_l3",
+      "p68_b8_l4",
+      "p68_b9_l0",
+      "p68_b10_l0",
+      "p68_b10_l1",
+      "p68_b10_l2",
+      "p68_b10_l3",
+      "p68_b10_l4",
+      "p68_b10_l5",
+      "p68_b10_l6",
+      "p68_b11_l1",
+      "p68_b11_l2",
+      "p68_b11_l3",
+      "p68_b11_l4",
+      "p68_b11_l5",
+      "p68_b11_l6",
+      "p68_b11_l7",
+      "p68_b11_l8",
+      "p68_b11_l9",
+      "p68_b11_l10",
+      "p68_b11_l11",
+      "p68_b11_l12",
+      "p68_b11_l13",
+      "p68_b11_l14",
+      "p68_b11_l15",
+      "p68_b11_l17",
+      "p68_b11_l18",
+      "p68_b11_l19",
+      "p68_b11_l21",
+      "p68_b11_l22",
+      "p68_b11_l23",
+      "p68_b11_l24",
+      "p68_b11_l26",
+      "p68_b11_l27",
+      "p68_b11_l28",
+      "p68_b11_l29",
+      "p68_b11_l30",
+      "p68_b11_l31",
+      "p68_b11_l33",
+      "p68_b11_l34",
+      "p68_b11_l35",
+      "p68_b11_l36",
+      "p68_b11_l37",
+      "p68_b11_l38",
+      "p68_b11_l39",
+      "p68_b11_l40",
+      "p68_b11_l42",
+      "p68_b11_l43",
+      "p68_b11_l44",
+      "p68_b11_l45",
+      "p68_b11_l47",
+      "p68_b11_l48",
+      "p68_b11_l49",
+      "p68_b11_l50",
+      "p68_b11_l52",
+      "p68_b11_l53",
+      "p68_b11_l54",
+      "p68_b11_l55",
+      "p68_b11_l56",
+      "p68_b12_l0",
+      "p68_b12_l1",
+      "p68_b12_l2",
+      "p68_b12_l3",
+      "p68_b12_l4",
+      "p68_b12_l5",
+      "p68_b12_l6",
+      "p68_b13_l0",
+      "p68_b13_l1",
+      "p68_b13_l2",
+      "p68_b13_l3",
+      "p68_b13_l4",
+      "p68_b13_l5",
+      "p68_b13_l6",
+      "p68_b13_l7",
+      "p68_b13_l8",
+      "p68_b13_l9",
+      "p68_b14_l0",
+      "p69_b0_l0",
+      "p69_b1_l0",
+      "p69_b2_l5",
+      "p69_b2_l6",
+      "p69_b2_l7",
+      "p69_b2_l8",
+      "p69_b2_l9",
+      "p69_b2_l10",
+      "p69_b2_l17",
+      "p69_b2_l24",
+      "p69_b2_l31",
+      "p69_b2_l32",
+      "p69_b3_l0",
+      "p69_b3_l7",
+      "p69_b3_l14",
+      "p69_b3_l21"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

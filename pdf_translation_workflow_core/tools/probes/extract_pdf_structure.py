@@ -24,6 +24,7 @@ from _common import ascii_tokens, rel, resolve_workspace_path, sha256_file, writ
 
 
 CJK_RE = re.compile(r"[\u3400-\u9fff]")
+SYMBOL_FONT_RE = re.compile(r"(wingdings|symbol|dingbats)", re.IGNORECASE)
 
 
 def rect_values(rect: Any) -> list[float]:
@@ -38,6 +39,38 @@ def median(values: list[float]) -> float:
     if len(ordered) % 2:
         return float(ordered[mid])
     return (float(ordered[mid - 1]) + float(ordered[mid])) / 2
+
+
+def span_char_weight(text: str) -> int:
+    stripped = text.strip()
+    if not stripped:
+        return 0
+    return sum(1 for char in stripped if not char.isspace())
+
+
+def span_record(span: dict[str, Any]) -> dict[str, Any]:
+    text = str(span.get("text", ""))
+    font = str(span.get("font", ""))
+    return {
+        "text": text,
+        "bbox": rect_values(span.get("bbox", [0, 0, 0, 0])),
+        "font_size": round(float(span.get("size", 0)), 3),
+        "font": font,
+        "color": span.get("color"),
+        "char_count": span_char_weight(text),
+        "is_symbol_font": bool(SYMBOL_FONT_RE.search(font)),
+    }
+
+
+def dominant_content_span(spans: list[dict[str, Any]]) -> dict[str, Any]:
+    records = [span_record(span) for span in spans]
+    content = [record for record in records if record["char_count"] > 0 and not record["is_symbol_font"]]
+    if content:
+        return max(content, key=lambda record: (record["char_count"], record["font_size"]))
+    non_empty = [record for record in records if record["char_count"] > 0]
+    if non_empty:
+        return max(non_empty, key=lambda record: (record["char_count"], record["font_size"]))
+    return records[0] if records else {}
 
 
 def column_bucket_count(text_lines: list[dict[str, Any]], page_width: float) -> int:
@@ -103,7 +136,10 @@ def extract(pdf_path: Path) -> dict[str, Any]:
                 text = "".join(span.get("text", "") for span in spans).strip()
                 if not text:
                     continue
-                first_span = spans[0] if spans else {}
+                span_records = [span_record(span) for span in spans]
+                dominant_span = dominant_content_span(spans)
+                symbol_span_count = sum(1 for span in span_records if span.get("is_symbol_font") and span.get("char_count", 0) > 0)
+                content_span_count = sum(1 for span in span_records if not span.get("is_symbol_font") and span.get("char_count", 0) > 0)
                 lines.append(
                     {
                         "line_id": f"p{page_index}_b{block_index}_l{line_index}",
@@ -112,9 +148,14 @@ def extract(pdf_path: Path) -> dict[str, Any]:
                         "line_index": line_index,
                         "text": text,
                         "bbox": rect_values(line.get("bbox", [0, 0, 0, 0])),
-                        "font_size": round(float(first_span.get("size", 0)), 3),
-                        "font": first_span.get("font", ""),
-                        "color": first_span.get("color"),
+                        "font_size": round(float(dominant_span.get("font_size", 0)), 3),
+                        "font": dominant_span.get("font", ""),
+                        "color": dominant_span.get("color"),
+                        "spans": span_records,
+                        "symbol_span_count": symbol_span_count,
+                        "content_span_count": content_span_count,
+                        "has_symbol_span": symbol_span_count > 0,
+                        "dominant_text_color": dominant_span.get("color"),
                         "ascii_tokens": ascii_tokens(text),
                         "cjk_char_count": len(CJK_RE.findall(text)),
                     }

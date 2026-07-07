@@ -1,0 +1,49 @@
+{
+  "tool": "validate_translation_manifest_boundaries",
+  "batch_id": "batch_0099",
+  "workspace_root": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试",
+  "workspace_boundary_verdict": "PASS",
+  "checked_paths": [
+    {
+      "field": "slot_values_ref",
+      "path": "docs/reports/round15/translation_batches/batch_0099.slot_values.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\reports\\round15\\translation_batches\\batch_0099.slot_values.json",
+      "inside_workspace": true,
+      "exists": true,
+      "allow_missing": false
+    },
+    {
+      "field": "prompt_instance_ref",
+      "path": "docs/reports/round15/translation_batches/batch_0099.prompt_instance.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\reports\\round15\\translation_batches\\batch_0099.prompt_instance.json",
+      "inside_workspace": true,
+      "exists": false,
+      "allow_missing": true
+    },
+    {
+      "field": "model_output_ref",
+      "path": "docs/reports/round15/translation_batches/batch_0099.model_output.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\reports\\round15\\translation_batches\\batch_0099.model_output.json",
+      "inside_workspace": true,
+      "exists": false,
+      "allow_missing": true
+    },
+    {
+      "field": "batch_validation_ref",
+      "path": "docs/reports/round15/translation_batches/batch_0099.validation.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\reports\\round15\\translation_batches\\batch_0099.validation.json",
+      "inside_workspace": true,
+      "exists": false,
+      "allow_missing": true
+    },
+    {
+      "field": "decision_record_ref",
+      "path": "docs/reports/round15/translation_batches/batch_0099.decision_record.json",
+      "resolved": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\reports\\round15\\translation_batches\\batch_0099.decision_record.json",
+      "inside_workspace": true,
+      "exists": false,
+      "allow_missing": true
+    }
+  ],
+  "escaping_paths": []
+}

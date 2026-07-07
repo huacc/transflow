@@ -1,0 +1,753 @@
+{
+  "failed_batch_count": 21,
+  "failed_batches": [
+    "batch_0001.model_output",
+    "batch_0026.model_output",
+    "batch_0048.model_output",
+    "batch_0049.model_output",
+    "batch_0069.model_output",
+    "batch_0085.model_output",
+    "batch_0086.model_output",
+    "batch_0105.model_output",
+    "batch_0106.model_output",
+    "batch_0107.model_output",
+    "batch_0161.model_output",
+    "batch_0191.model_output",
+    "batch_0192.model_output",
+    "batch_0193.model_output",
+    "batch_0194.model_output",
+    "batch_0195.model_output",
+    "batch_0196.model_output",
+    "batch_0197.model_output",
+    "batch_0198.model_output",
+    "batch_0203.model_output",
+    "batch_0204.model_output"
+  ],
+  "error_counter": {
+    "short_nonsemantic": 46,
+    "short_numeric_metric": 28,
+    "other": 27
+  },
+  "examples": [
+    {
+      "batch": "batch_0001.model_output",
+      "unit_id": "p2_b4_l1",
+      "source": "(‘RoTE’) ø",
+      "target": "(‘RoTE’) ø（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0026.model_output",
+      "unit_id": "p41_b21_l10",
+      "source": "(‘rtk’).",
+      "target": "(‘rtk’).（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0048.model_output",
+      "unit_id": "p70_b15_l5",
+      "source": "by 6bps.",
+      "target": "by 6bps.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0049.model_output",
+      "unit_id": "p72_b9_l5",
+      "source": "CIB: 46,914; IWPB: 55,482).",
+      "target": "CIB: 46,914; IWPB: 55,482).（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0069.model_output",
+      "unit_id": "p111_b3_l27",
+      "source": "CIB IWPB",
+      "target": "CIB IWPB（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b3_l69",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b3_l83",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b4_l73",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b4_l87",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b4_l206",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b4_l220",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b6_l71",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b6_l85",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b7_l75",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b7_l89",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b7_l209",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0085.model_output",
+      "unit_id": "p141_b7_l223",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0086.model_output",
+      "unit_id": "p142_b2_l71",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0086.model_output",
+      "unit_id": "p142_b2_l84",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0086.model_output",
+      "unit_id": "p142_b3_l77",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0086.model_output",
+      "unit_id": "p142_b3_l91",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0086.model_output",
+      "unit_id": "p142_b5_l73",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0086.model_output",
+      "unit_id": "p142_b5_l87",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0086.model_output",
+      "unit_id": "p142_b6_l83",
+      "source": "B-",
+      "target": "B-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0086.model_output",
+      "unit_id": "p142_b6_l97",
+      "source": "CCC+",
+      "target": "CCC+（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0105.model_output",
+      "unit_id": "p176_b4_l0",
+      "source": "DP",
+      "target": "DP（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0105.model_output",
+      "unit_id": "p176_b4_l4",
+      "source": "TR",
+      "target": "TR（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0106.model_output",
+      "unit_id": "p177_b26_l2",
+      "source": "LT",
+      "target": "LT（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0106.model_output",
+      "unit_id": "p177_b26_l5",
+      "source": "LT",
+      "target": "LT（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0107.model_output",
+      "unit_id": "p177_b28_l5",
+      "source": "<2x",
+      "target": "<2x（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0107.model_output",
+      "unit_id": "p177_b28_l7",
+      "source": "<3x",
+      "target": "<3x（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0107.model_output",
+      "unit_id": "p178_b17_l5",
+      "source": "<2x",
+      "target": "<2x（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0161.model_output",
+      "unit_id": "p281_b8_l1",
+      "source": "15bps",
+      "target": "15bps（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0161.model_output",
+      "unit_id": "p281_b8_l3",
+      "source": "30bps",
+      "target": "30bps（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0161.model_output",
+      "unit_id": "p283_b2_l0",
+      "source": "PD",
+      "target": "PD（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0191.model_output",
+      "unit_id": "p349_b4_l0",
+      "source": "Assetfinance December (F) Limited",
+      "target": "Assetfinance December (F) Limited（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0191.model_output",
+      "unit_id": "p349_b6_l0",
+      "source": "Assetfinance December (P) Limited",
+      "target": "Assetfinance December (P) Limited（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0191.model_output",
+      "unit_id": "p349_b8_l0",
+      "source": "Assetfinance June (A) Limited",
+      "target": "Assetfinance June (A) Limited（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0191.model_output",
+      "unit_id": "p349_b13_l0",
+      "source": "Assetfinance September (F) Limited",
+      "target": "Assetfinance September (F) Limited（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0191.model_output",
+      "unit_id": "p349_b24_l0",
+      "source": "Card-Flo #3, Inc.",
+      "target": "Card-Flo #3, Inc.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0191.model_output",
+      "unit_id": "p349_b41_l0",
+      "source": "Flandres Contentieux S.A.",
+      "target": "Flandres Contentieux S.A.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0192.model_output",
+      "unit_id": "p350_b9_l0",
+      "source": "HSBC Casa de Bolsa, S.A. de C.V., Grupo",
+      "target": "HSBC Casa de Bolsa, S.A. de C.V., Grupo（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0192.model_output",
+      "unit_id": "p350_b69_l0",
+      "source": "HSBC Inversiones S.A.",
+      "target": "HSBC Inversiones S.A.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0193.model_output",
+      "unit_id": "p351_b47_l0",
+      "source": "HSBC Servicios, S.A. DE C.V., Grupo",
+      "target": "HSBC Servicios, S.A. DE C.V., Grupo（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0193.model_output",
+      "unit_id": "p351_b83_l0",
+      "source": "Inmobiliaria Bisa, S.A. de C.V.",
+      "target": "Inmobiliaria Bisa, S.A. de C.V.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0193.model_output",
+      "unit_id": "p351_b84_l0",
+      "source": "Inmobiliaria Grufin, S.A. de C.V.",
+      "target": "Inmobiliaria Grufin, S.A. de C.V.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0193.model_output",
+      "unit_id": "p351_b85_l0",
+      "source": "Inmobiliaria Guatusi, S.A. de C.V.",
+      "target": "Inmobiliaria Guatusi, S.A. de C.V.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0193.model_output",
+      "unit_id": "p352_b6_l0",
+      "source": "SNCB/M6-2007 A",
+      "target": "SNCB/M6-2007 A（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0193.model_output",
+      "unit_id": "p352_b7_l0",
+      "source": "SNCB/M6-2007 B",
+      "target": "SNCB/M6-2007 B（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0193.model_output",
+      "unit_id": "p352_b8_l0",
+      "source": "SNCB/M6-2008 A",
+      "target": "SNCB/M6-2008 A（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b17_l0",
+      "source": "Trinkaus Europa Immobilien-Fonds Nr.3",
+      "target": "Trinkaus Europa Immobilien-Fonds Nr.3（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b19_l0",
+      "source": "Trinkaus Immobilien-Fonds Verwaltungs-",
+      "target": "Trinkaus Immobilien-Fonds Verwaltungs-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b43_l1",
+      "source": "S.a.r.l",
+      "target": "S.a.r.l（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b44_l1",
+      "source": "S.a.r.l",
+      "target": "S.a.r.l（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b45_l1",
+      "source": "S.a.r.l",
+      "target": "S.a.r.l（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b46_l1",
+      "source": "S.a.r.l",
+      "target": "S.a.r.l（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b50_l0",
+      "source": "GTIDF Fund Carry L.P.",
+      "target": "GTIDF Fund Carry L.P.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b57_l0",
+      "source": "Hayfin Garnet Feeder Fund S.C.A. SICAV-",
+      "target": "Hayfin Garnet Feeder Fund S.C.A. SICAV-（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b73_l1",
+      "source": "S.à r.l.",
+      "target": "S.à r.l.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b76_l1",
+      "source": "HoldCo S.à r.l.",
+      "target": "HoldCo S.à r.l.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b78_l1",
+      "source": "2023 RAIF SICAV-S.A.",
+      "target": "2023 RAIF SICAV-S.A.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b80_l1",
+      "source": "GP S.à r.l.",
+      "target": "GP S.à r.l.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p352_b88_l1",
+      "source": "S.A. de C.V., Sociedad Operadora de Fondos",
+      "target": "S.A. de C.V., Sociedad Operadora de Fondos（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p353_b3_l0",
+      "source": "HSBC Private Markets GP S.à r.l.",
+      "target": "HSBC Private Markets GP S.à r.l.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p353_b9_l0",
+      "source": "HSBC SDL UK 2020 LendCo S.à r.l.B137",
+      "target": "HSBC SDL UK 2020 LendCo S.à r.l.B137（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p353_b10_l0",
+      "source": "HSBC SDL UK II HoldCo S.à r.l.",
+      "target": "HSBC SDL UK II HoldCo S.à r.l.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p353_b13_l1",
+      "source": "RAIF SICAV-S.A.",
+      "target": "RAIF SICAV-S.A.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p353_b18_l0",
+      "source": "HVDF US, L.P.",
+      "target": "HVDF US, L.P.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p353_b25_l0",
+      "source": "INHK Orca Carry L.P.",
+      "target": "INHK Orca Carry L.P.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p353_b45_l1",
+      "source": "SCSp",
+      "target": "SCSp（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0194.model_output",
+      "unit_id": "p353_b46_l1",
+      "source": "r.l.",
+      "target": "r.l.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0195.model_output",
+      "unit_id": "p353_b73_l0",
+      "source": "Vision Apex 2025 Carry L.P.",
+      "target": "Vision Apex 2025 Carry L.P.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0195.model_output",
+      "unit_id": "p353_b74_l0",
+      "source": "Vision Impact Carry L.P.",
+      "target": "Vision Impact Carry L.P.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0195.model_output",
+      "unit_id": "p353_b108_l0",
+      "source": "HQLAX S.à r.l.",
+      "target": "HQLAX S.à r.l.（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0195.model_output",
+      "unit_id": "p354_b7_l0",
+      "source": "Trinkaus Europa Immobilien-Fonds Nr. 7",
+      "target": "Trinkaus Europa Immobilien-Fonds Nr. 7（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0195.model_output",
+      "unit_id": "p354_b20_l4",
+      "source": "c/o The Corporation Trust Company 1209 Orange Street, Wilmington,",
+      "target": "c/o The Corporation Trust Company 1209 Orange Street, Wilmington,（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0195.model_output",
+      "unit_id": "p354_b24_l4",
+      "source": "C/O Teneo Financial Advisory Limited The Colmore Building, 20",
+      "target": "C/O Teneo Financial Advisory Limited The Colmore Building, 20（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0196.model_output",
+      "unit_id": "p355_b0_l7",
+      "source": "Immeuble Cœur Défense 110 esplanade du Général de Gaulle,",
+      "target": "Immeuble Cœur Défense 110 esplanade du Général de Gaulle,（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0196.model_output",
+      "unit_id": "p355_b2_l21",
+      "source": "The Corporation Trust Incorporated, 2405 York Road, Suite 201,",
+      "target": "The Corporation Trust Incorporated, 2405 York Road, Suite 201,（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    },
+    {
+      "batch": "batch_0196.model_output",
+      "unit_id": "p355_b5_l6",
+      "source": "c/o Mayfair Corporate Services Ltd., 26 Burnaby Street, Hamilton,",
+      "target": "c/o Mayfair Corporate Services Ltd., 26 Burnaby Street, Hamilton,（待人工复核）",
+      "errors": [
+        "target_script_validation_failed"
+      ]
+    }
+  ]
+}

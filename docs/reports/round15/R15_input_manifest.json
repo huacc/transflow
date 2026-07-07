@@ -1,0 +1,25 @@
+{
+  "round_id": "R15",
+  "source_dir": "docs/input/round15/source_pdfs",
+  "semantic_dir": "docs/input/round15/semantic_translations",
+  "input_dir": "docs/input/round15",
+  "semantic_translation_pool": "docs/input/round15/semantic_translation_pool",
+  "case_count": 1,
+  "semantic_pool_count": 1,
+  "semantic_pool_files": [
+    "docs/input/round15/semantic_translation_pool/R15_00005_2025_annual_report_zh.translations.json"
+  ],
+  "cases": [
+    {
+      "case_id": "R15_00005_2025_annual_report_zh",
+      "source_language": null,
+      "target_language": null,
+      "target_text_field": null,
+      "unit_count": null,
+      "translation_provider": null,
+      "source_pdf": "docs/input/round15/source_pdfs/00005_2025_annual_report_zh.pdf",
+      "semantic_translations": null
+    }
+  ],
+  "note": "Semantic translation JSONs are copied into a current-round pool. Each source PDF is matched by running validate_semantic_translations.py against current source_extraction.json; filenames are not used as the matching verdict."
+}

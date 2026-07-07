@@ -1,0 +1,436 @@
+{
+  "tool": "plan_visual_region_repairs",
+  "visual_region_metrics": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_region_metrics.repair01.json",
+  "repair_plan_count": 6,
+  "blocking_repair_count": 4,
+  "next_state": "Lx_RepairLoop",
+  "plans": [
+    {
+      "gate_id": "body_paragraph_readability",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 25,
+      "repair_atom": "target_composition_body_reflow_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Recompose body frame from current page margins/body band before shrinking text.",
+      "sample_regions": [
+        {
+          "page_number": 30,
+          "region_id": "region_p29_b4_003",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 7.7,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_30_region_p29_b4_003_body.png",
+          "reasons": [
+            "text_image_background_delta 6.7 exceeds warn threshold 6.0"
+          ]
+        },
+        {
+          "page_number": 30,
+          "region_id": "region_p29_b8_006",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 8.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_30_region_p29_b8_006_body.png",
+          "reasons": [
+            "text_image_background_delta 6.7 exceeds warn threshold 6.0"
+          ]
+        },
+        {
+          "page_number": 30,
+          "region_id": "region_p29_b12_009",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 8.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_30_region_p29_b12_009_body.png",
+          "reasons": [
+            "text_image_background_delta 6.7 exceeds warn threshold 6.0"
+          ]
+        },
+        {
+          "page_number": 30,
+          "region_id": "region_p29_b16_012",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 8.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_30_region_p29_b16_012_body.png",
+          "reasons": [
+            "text_image_background_delta 6.7 exceeds warn threshold 6.0"
+          ]
+        },
+        {
+          "page_number": 36,
+          "region_id": "region_p35_b21_025",
+          "quality_role": "body",
+          "region_kind": "body",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 8.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_36_region_p35_b21_025_body.png",
+          "reasons": [
+            "text_image_background_delta 6.7 exceeds warn threshold 6.0"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "event_card_readability",
+      "gate_status": "warn",
+      "failure_count": 0,
+      "warning_count": 6,
+      "repair_atom": "event_card_local_fit_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Keep event text local to its anchor and tune event-card fit curve.",
+      "sample_regions": [
+        {
+          "page_number": 9,
+          "region_id": "region_p8_b1_l0",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 4.678,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_09_region_p8_b1_l0_event_card.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.58 is below event_card warn ratio 0.60"
+          ]
+        },
+        {
+          "page_number": 9,
+          "region_id": "region_p8_b4_l0",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 4.128,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_09_region_p8_b4_l0_event_card.png",
+          "reasons": [
+            "font_size 4.13pt is below event_card recommended floor 4.20pt",
+            "output_to_source_font_ratio 0.52 is below event_card warn ratio 0.60"
+          ]
+        },
+        {
+          "page_number": 31,
+          "region_id": "region_p30_b15_l0",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 6.182,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_31_region_p30_b15_l0_event_card.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.52 is below event_card warn ratio 0.60"
+          ]
+        },
+        {
+          "page_number": 31,
+          "region_id": "region_p30_b27_l0",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 5.594,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_31_region_p30_b27_l0_event_card.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.47 is below event_card warn ratio 0.60"
+          ]
+        },
+        {
+          "page_number": 31,
+          "region_id": "region_p30_b38_l0",
+          "quality_role": "event_card",
+          "region_kind": "event_card",
+          "generation_status": "fit",
+          "font_size": 5.594,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_31_region_p30_b38_l0_event_card.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.47 is below event_card warn ratio 0.60"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "short_label_legibility",
+      "gate_status": "fail",
+      "failure_count": 95,
+      "warning_count": 78,
+      "repair_atom": "constrained_slot_layout_fit_repair",
+      "target_state": "S7_GenerateCandidate",
+      "description": "Repair short constrained labels with local slot fit or constrained text image first; do not retranslate unless semantic validation proves a compact variant is missing.",
+      "sample_regions": [
+        {
+          "page_number": 4,
+          "region_id": "region_p3_b6_l2",
+          "quality_role": "short_label",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 3.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_04_region_p3_b6_l2_short_label.png",
+          "reasons": [
+            "font_size 3.20pt is below short_label fail floor 3.40pt"
+          ]
+        },
+        {
+          "page_number": 4,
+          "region_id": "region_p3_b6_l5",
+          "quality_role": "short_label",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 3.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_04_region_p3_b6_l5_short_label.png",
+          "reasons": [
+            "font_size 3.20pt is below short_label fail floor 3.40pt"
+          ]
+        },
+        {
+          "page_number": 4,
+          "region_id": "region_p3_b6_l6",
+          "quality_role": "short_label",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 3.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_04_region_p3_b6_l6_short_label.png",
+          "reasons": [
+            "font_size 3.20pt is below short_label fail floor 3.40pt"
+          ]
+        },
+        {
+          "page_number": 4,
+          "region_id": "region_p3_b6_l7",
+          "quality_role": "short_label",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 3.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_04_region_p3_b6_l7_short_label.png",
+          "reasons": [
+            "font_size 3.20pt is below short_label fail floor 3.40pt"
+          ]
+        },
+        {
+          "page_number": 5,
+          "region_id": "region_p4_b16_l2",
+          "quality_role": "short_label",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 3.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_05_region_p4_b16_l2_short_label.png",
+          "reasons": [
+            "font_size 3.20pt is below short_label fail floor 3.40pt"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "gate_status": "fail",
+      "failure_count": 19,
+      "warning_count": 1070,
+      "repair_atom": "constrained_slot_layout_fit_repair",
+      "target_state": "S7_GenerateCandidate",
+      "description": "Repair constrained table/header slots with layout fit, wrapped constrained text image, or local font curve; do not retranslate unless semantic validation proves a compact variant is missing.",
+      "sample_regions": [
+        {
+          "page_number": 18,
+          "region_id": "region_p17_b22_l0",
+          "quality_role": "table_text",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 5.18,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_18_region_p17_b22_l0_table_text.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.26 is below table_text fail ratio 0.35"
+          ]
+        },
+        {
+          "page_number": 20,
+          "region_id": "region_p19_b20_l0",
+          "quality_role": "table_text",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 5.18,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_20_region_p19_b20_l0_table_text.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.26 is below table_text fail ratio 0.35"
+          ]
+        },
+        {
+          "page_number": 22,
+          "region_id": "region_p21_b20_l0",
+          "quality_role": "table_text",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 5.18,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_22_region_p21_b20_l0_table_text.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.26 is below table_text fail ratio 0.35"
+          ]
+        },
+        {
+          "page_number": 24,
+          "region_id": "region_p23_b20_l0",
+          "quality_role": "table_text",
+          "region_kind": "compact_label",
+          "generation_status": "fit",
+          "font_size": 5.18,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_24_region_p23_b20_l0_table_text.png",
+          "reasons": [
+            "output_to_source_font_ratio 0.26 is below table_text fail ratio 0.35"
+          ]
+        },
+        {
+          "page_number": 28,
+          "region_id": "region_p27_b1_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 3.72,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_28_region_p27_b1_l0_table_text.png",
+          "reasons": [
+            "inner_background_delta 127.0 exceeds fail threshold 30.0"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "background_residue_artifact",
+      "gate_status": "fail",
+      "failure_count": 67,
+      "warning_count": 58,
+      "repair_atom": "background_residue_fill_resample",
+      "target_state": "S7_GenerateCandidate",
+      "description": "Repair visible redaction/fill residue by sampling continuous local background and avoiding rectangular artifact patches.",
+      "sample_regions": [
+        {
+          "page_number": 28,
+          "region_id": "region_p27_b1_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 3.72,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_28_region_p27_b1_l0_table_text.png",
+          "reasons": [
+            "inner_background_delta 127.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 33,
+          "region_id": "region_p32_b5_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 6.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_33_region_p32_b5_l0_table_text.png",
+          "reasons": [
+            "inner_background_delta 223.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 35,
+          "region_id": "region_p34_b10_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 3.72,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_35_region_p34_b10_l0_table_text.png",
+          "reasons": [
+            "inner_background_delta 64.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 38,
+          "region_id": "region_p37_b11_l1",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 4.712,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_38_region_p37_b11_l1_table_text.png",
+          "reasons": [
+            "background_residue_delta 25.7 exceeds fail threshold 18.0"
+          ]
+        },
+        {
+          "page_number": 44,
+          "region_id": "region_p43_b14_l1",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 5.208,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_44_region_p43_b14_l1_table_text.png",
+          "reasons": [
+            "background_residue_delta 25.7 exceeds fail threshold 18.0"
+          ]
+        }
+      ]
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "gate_status": "fail",
+      "failure_count": 13,
+      "warning_count": 455,
+      "repair_atom": "matrix_diagram_table_cell_preserve_repair",
+      "target_state": "S6_LayoutPlan",
+      "description": "Treat matrix/table-diagram pages as two-dimensional structures; preserve cells/labels and prevent body_flow/fallback insertion inside the diagram.",
+      "sample_regions": [
+        {
+          "page_number": 28,
+          "region_id": "region_p27_b1_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 3.72,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_28_region_p27_b1_l0_table_text.png",
+          "reasons": [
+            "inner_background_delta 127.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 33,
+          "region_id": "region_p32_b5_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 6.2,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_33_region_p32_b5_l0_table_text.png",
+          "reasons": [
+            "inner_background_delta 223.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 35,
+          "region_id": "region_p34_b10_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "fit",
+          "font_size": 3.72,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_35_region_p34_b10_l0_table_text.png",
+          "reasons": [
+            "inner_background_delta 64.0 exceeds fail threshold 30.0"
+          ]
+        },
+        {
+          "page_number": 43,
+          "region_id": "region_p42_b6_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 5.6,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_43_region_p42_b6_l0_table_text.png",
+          "reasons": [
+            "background_delta 63.0 exceeds fail threshold 42.0"
+          ]
+        },
+        {
+          "page_number": 43,
+          "region_id": "region_p42_b11_l0",
+          "quality_role": "table_text",
+          "region_kind": "table_cell",
+          "generation_status": "constrained_text_image_fit",
+          "font_size": 5.6,
+          "crop_evidence": "docs/reports/round17/R17_00005_2025_annual_report_zh_pages_001_050/visual_crops_repair01/page_43_region_p42_b11_l0_table_text.png",
+          "reasons": [
+            "background_delta 127.0 exceeds fail threshold 42.0"
+          ]
+        }
+      ]
+    }
+  ]
+}

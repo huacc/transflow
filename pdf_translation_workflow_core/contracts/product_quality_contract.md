@@ -17,11 +17,15 @@ A run cannot claim product success merely because source-language residue appear
 | source_anchor_order | generation evidence proves a target-language region does not cross visible untranslated source separators | D5/D7 | yes |
 | clipping | output PNG and bbox checks | D5 | yes |
 | collision | bbox intersections and PNG review | D5/D7 | yes |
+| insertion_collision | `collect_visual_region_metrics.py` generated insertion bbox intersection gate | D7 | yes |
 | visual_similarity | metrics + PNG review | D7 | yes |
 | source_relative_visual_baseline | `collect_visual_region_metrics.py` source-extraction coverage gate | D7 | yes |
 | hero_banner_text_readability | `collect_visual_region_metrics.py` role gate | D7 | yes when hero/banner title exists |
 | title_readability | `collect_visual_region_metrics.py` role gate | D7 | yes when title/heading exists |
+| decorative_numeric_merge_bbox | source extraction bbox and generation evidence | D7 | yes when title/lead text is merged with a decorative numeral/section marker |
 | body_paragraph_readability | `collect_visual_region_metrics.py` role gate | D7 | yes when body/body_flow exists |
+| metric_value_hierarchy | `collect_visual_region_metrics.py` role gate using current-run source font hierarchy plus generic numeric amount evidence | D7 | yes when KPI/metric value regions exist |
+| top_lead_body_reflow | source geometry + generation evidence | D7 | yes when dense/matrix page has page-top lead body outside the table/diagram body |
 | table_text_legibility | `collect_visual_region_metrics.py` role gate | D7 | yes when table cells/headers exist |
 | legend_label_alignment | `collect_visual_region_metrics.py` role gate | D7 | yes when legends exist |
 | image_color_integrity | `collect_visual_region_metrics.py` page gate | D7 | yes |
@@ -58,6 +62,7 @@ At minimum:
 | `font_size_ratio` | output median font size / source median font size | fail if unreadable or visually mismatched |
 | `font_hierarchy.small_to_body_ratio` | small-note/table-note font size divided by body font size | fail if note text becomes body-sized or unreadably small |
 | `font_hierarchy.large_to_body_ratio` | heading/title font size divided by body font size | fail if title/body hierarchy collapses |
+| `metric_value.output_to_source_font_ratio` | output KPI/metric font size divided by its source font size | fail if a KPI/metric callout collapses relative to source; no fixed point-size floor is allowed |
 | `small_to_body_ratio_delta` | output small/body ratio minus source small/body ratio | fail/warn when role hierarchy changes visibly |
 | `blank_area_delta` | output blank area - source blank area | fail if visible holes emerge |
 | `background_delta` | sampled fill color difference | fail if visible redaction blocks |
@@ -65,8 +70,11 @@ At minimum:
 | `fragmentation_ratio` | output median line width / source median line width in the same region role | fail if target-language paragraphs are broken into visibly short lines without a source-layout reason |
 | `region_reflow_ratio` | inserted region count / inserted unit count | warn if paragraph pages are near 1.0, because that usually means line-by-line copy layout |
 | `source_line_index_gap` | line-index jump inside one inserted region for one source block | fail if gap > 1 and no explicit ignorable separator evidence exists |
+| `insertion_collision.overlap_ratio_of_smaller` | overlap area between two generated insertion bboxes divided by the smaller bbox area | fail on material overlap between different semantic regions; warn on moderate overlap |
 
 Thresholds must be page-type and region-type specific. A table cell cannot use the same thresholds as a body paragraph.
+
+Absolute point-size thresholds are not reusable product gates by default. They may be recorded as diagnostics, but they block success only when the current role/profile explicitly sets `absolute_font_floor_blocks=true`. For reusable contracts, font decisions must normally come from source-relative ratios, current-page font quantiles, generation status, background/residue gates, and visual structure gates.
 
 ## Product-Quality Failure Rule
 
@@ -178,16 +186,18 @@ Current blocking automation coverage:
 | `sidebar_orientation_group_consistency` | partial/yes if adjudication evidence is supplied | `evaluate_pdf_quality.py` blocks if D7 returns `FAIL` |
 | `sidebar_glyph_orientation` | partial/yes if adjudication evidence is supplied | use source-vs-output crop plus back-rotated output crop; blocks if D7 returns `FAIL` |
 | `clipping` | no | requires bbox-plus-PNG validator |
-| `collision` | no | requires region intersection validator |
+| `collision` | partial/yes if `visual_region_metrics` is supplied | `insertion_collision` blocks material overlap between different generated semantic regions; image/text collision still requires crop evidence |
 | `visual_similarity` | partial/yes if adjudication evidence is supplied | blocks success unless source-vs-output PNG adjudication is recorded as `PASS` or non-blocking `PASS_WITH_WARN` |
 | `source_relative_visual_baseline` | yes if `visual_region_metrics` is supplied | blocks when source extraction is missing or generated regions cannot be compared to source font/line evidence |
 | `hero_banner_text_readability` | yes if `visual_region_metrics` is supplied | blocks when a banner/title region falls back to tiny point text or below role font floor |
 | `title_readability` | yes if `visual_region_metrics` is supplied | blocks when heading/title text is unreadable, too small, or fallback-rendered |
+| `decorative_numeric_merge_bbox` | partial/yes if generation evidence is supplied | blocks when an abnormal high title/lead bbox is not repaired from current-page geometry |
 | `body_paragraph_readability` | yes if `visual_region_metrics` is supplied | blocks body/body_flow fallback, unreadable font floor, or severe background mismatch |
+| `top_lead_body_reflow` | partial/yes if generation evidence and crop evidence are supplied | blocks when matrix/dense page hard-disable suppresses a geometry-proven page-top lead body |
 | `table_text_legibility` | yes if `visual_region_metrics` is supplied | blocks table cell/header fallback or unreadable compact text |
 | `footnote_readability` | yes if `visual_region_metrics` is supplied | blocks unreadable notes or footnotes that fall below source-relative role floors |
 | `legend_label_alignment` | yes if `visual_region_metrics` is supplied | blocks unreadable or misaligned legend labels when present |
-| `short_label_legibility` | yes if `visual_region_metrics` is supplied | blocks constrained labels that cannot be read at generated size |
+| `short_label_legibility` | yes if `visual_region_metrics` is supplied | blocks explanatory short labels that cannot be read after expandable-slot reflow, or hard-slot labels that cannot be read within constrained table/chart/navigation geometry |
 | `sidebar_navigation_legibility` | yes if `visual_region_metrics` is supplied | blocks unreadable side navigation labels or wrong writing mode evidence when present |
 | `event_card_readability` | yes if `visual_region_metrics` is supplied | blocks timeline/event text that no longer stays readable and local to its anchor |
 | `image_color_integrity` | yes if `visual_region_metrics` is supplied | blocks missing source images or excessive page color delta |
@@ -222,7 +232,13 @@ On mixed image/text timeline or milestone pages, narrow event descriptions shoul
 
 When target-language expansion is enabled, `target_language_reflow` may expand only declared region kinds and must apply `overlap_guard` against the next same-column region.
 
+For any region kind eligible for horizontal expansion, `target_language_reflow.min_source_width_page_ratio_for_reflow` is a structural guard, not a body-only guard. It prevents narrow table, panel, or matrix labels from expanding into page-wide frames. On matrix/table-diagram or same-row multi-column panels, large-font labels with horizontally separated same-row neighbors must be classified as constrained `table_cell` / `compact_label` rather than page-level `heading`, unless current-page geometry proves they are page-top headings outside the table or panel body.
+
 When `target_composition` is enabled, `body_flow` source bboxes become anchors rather than hard containers. The output frame must be computed from the current page's body band, margins, lower safe boundary, region kind, and overlap guard. This rule is required for language directions where target prose usually expands. It is forbidden for constrained slots such as table cells, legends, chart labels, and side navigation unless a future contract defines a specific constrained-slot composition mode.
+
+When `expandable_text_slots` is enabled, page headings and explanatory `short_label` regions may expand into current-page whitespace before font shrink. This is required when target-language text becomes visibly longer and the source page contains unused right/down space. It is forbidden for dense table/chart/matrix labels, legends, side navigation, page numbers, or TOC-like hard slots unless a future contract defines a specific constrained-slot expansion mode.
+
+Metric/KPI values use the `metric_value` role. D4/S6 must classify them from current-run source font hierarchy plus a generic numeric amount pattern, such as a currency amount, percentage, signed value, ratio, or magnitude-bearing number. Unit-only labels such as `US dollars`, `million`, or `per cent` without a numeric value are not metric callouts and must remain labels/table text. The `font_profiles.metric_value` contract is source-relative: actual point size is resolved from the region `source_size` and current-page font quantiles. Reusable profiles must not encode fixed sample-derived `min_pt`, `max_pt`, or known literal values for this role. If the output/source font ratio collapses, S8 emits `metric_value_hierarchy` and D8 routes to `metric_value_font_hierarchy_repair` in `S6_LayoutPlan`.
 
 If source text already appears in the target language and would remain under a recomposed body frame, the generator must redact/redraw it as `preserve_already_target_language_span` or D7 must fail `failed_probe_residue` / `collision`. This is preservation, not semantic translation.
 

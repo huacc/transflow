@@ -31,6 +31,7 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 7.0,
         "fail_source_ratio": 0.28,
         "warn_source_ratio": 0.34,
+        "fail_horizontal_compression_ratio": 0.70,
         "critical": True,
         "repair_atom": "heading_frame_fit_or_short_title_variant",
     },
@@ -40,6 +41,7 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 7.0,
         "fail_source_ratio": 0.30,
         "warn_source_ratio": 0.42,
+        "fail_horizontal_compression_ratio": 0.70,
         "critical": True,
         "repair_atom": "heading_font_fit_curve_repair",
     },
@@ -49,6 +51,7 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 6.8,
         "fail_source_ratio": 0.45,
         "warn_source_ratio": 0.62,
+        "fail_horizontal_compression_ratio": 0.70,
         "critical": True,
         "repair_atom": "target_composition_body_reflow_repair",
     },
@@ -58,8 +61,9 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 3.8,
         "fail_source_ratio": 0.35,
         "warn_source_ratio": 0.50,
+        "fail_horizontal_compression_ratio": 0.62,
         "critical": True,
-        "repair_atom": "D2_constrained_slot_layout_variants",
+        "repair_atom": "constrained_slot_layout_fit_repair",
     },
     "footnote": {
         "gate_id": "footnote_readability",
@@ -67,6 +71,7 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 3.8,
         "fail_source_ratio": 0.35,
         "warn_source_ratio": 0.50,
+        "fail_horizontal_compression_ratio": 0.62,
         "critical": False,
         "repair_atom": "footnote_fit_curve_repair",
     },
@@ -76,8 +81,9 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 4.0,
         "fail_source_ratio": 0.35,
         "warn_source_ratio": 0.50,
+        "fail_horizontal_compression_ratio": 0.62,
         "critical": True,
-        "repair_atom": "D2_constrained_slot_layout_variants",
+        "repair_atom": "constrained_slot_layout_fit_repair",
     },
     "sidebar": {
         "gate_id": "sidebar_navigation_legibility",
@@ -85,6 +91,7 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 4.0,
         "fail_source_ratio": 0.35,
         "warn_source_ratio": 0.50,
+        "fail_horizontal_compression_ratio": 0.62,
         "critical": True,
         "repair_atom": "side_navigation_rotated_image_repair",
     },
@@ -94,6 +101,7 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 4.2,
         "fail_source_ratio": 0.45,
         "warn_source_ratio": 0.60,
+        "fail_horizontal_compression_ratio": 0.62,
         "critical": True,
         "repair_atom": "event_card_local_fit_repair",
     },
@@ -103,12 +111,22 @@ ROLE_RULES: dict[str, dict[str, Any]] = {
         "warn_font_pt": 4.4,
         "fail_source_ratio": 0.35,
         "warn_source_ratio": 0.55,
+        "fail_horizontal_compression_ratio": 0.62,
         "critical": False,
-        "repair_atom": "D2_constrained_slot_layout_variants",
+        "repair_atom": "expandable_text_slot_reflow_repair",
+    },
+    "metric_value": {
+        "gate_id": "metric_value_hierarchy",
+        "fail_font_pt": 0.0,
+        "warn_font_pt": 0.0,
+        "fail_source_ratio": 0.55,
+        "warn_source_ratio": 0.70,
+        "critical": True,
+        "repair_atom": "metric_value_font_hierarchy_repair",
     },
 }
 
-FAIL_STATUSES = {"fallback_insert_text"}
+FAIL_STATUSES = {"fallback_insert_text", "fallback_insert_forbidden"}
 WARN_STATUSES = {"point_fit"}
 DENSE_TABLE_PAGE_TYPES = {"table_or_chart_dense", "chart_or_dashboard", "matrix_or_table_diagram"}
 IMAGE_DELTA_FAIL = 34.0
@@ -131,6 +149,8 @@ BACKGROUND_COVER_SOLID_PATCH_AREA_FAIL = 600.0
 BACKGROUND_COVER_SOLID_PATCH_AREA_WARN = 300.0
 SOURCE_BASELINE_FAIL_COVERAGE = 0.90
 SOURCE_BASELINE_WARN_COVERAGE = 0.97
+INSERTION_COLLISION_FAIL_RATIO = 0.55
+INSERTION_COLLISION_WARN_RATIO = 0.25
 
 
 def render_page(doc: fitz.Document, page_index: int, zoom: float) -> Image.Image:
@@ -313,6 +333,8 @@ def region_role(insertion: dict[str, Any], page_rect: fitz.Rect, source_bg: tupl
         return "hero_banner_title"
     if kind == "heading":
         return "title"
+    if kind == "metric_value":
+        return "metric_value"
     if page_type in DENSE_TABLE_PAGE_TYPES and kind in {"body", "short_label", "compact_label"} and width_ratio < 0.50:
         return "table_text"
     if kind in {"body", "body_flow"}:
@@ -407,18 +429,33 @@ def status_for_region(
     elif status in WARN_STATUSES and bool(rule.get("critical")):
         reasons.append(f"{status} is only a warning-level fit for critical role {role}")
         repair_atoms.append(str(rule["repair_atom"]))
-    if font_size and font_size < float(rule["fail_font_pt"]):
+    if font_size and font_size < float(rule["fail_font_pt"]) and bool(rule.get("absolute_font_floor_blocks", False)):
         reasons.append(f"font_size {font_size:.2f}pt is below {role} fail floor {float(rule['fail_font_pt']):.2f}pt")
         repair_atoms.append(str(rule["repair_atom"]))
     if font_ratio is not None and font_ratio < float(rule["fail_source_ratio"]):
         reasons.append(f"output_to_source_font_ratio {font_ratio:.2f} is below {role} fail ratio {float(rule['fail_source_ratio']):.2f}")
         repair_atoms.append(str(rule["repair_atom"]))
+    horizontal_compression_ratio = insertion.get("horizontal_compression_ratio")
+    if status in TEXT_IMAGE_STATUSES and isinstance(horizontal_compression_ratio, (int, float)):
+        fail_compression_ratio = float(rule.get("fail_horizontal_compression_ratio", 0.0) or 0.0)
+        if fail_compression_ratio and float(horizontal_compression_ratio) < fail_compression_ratio:
+            reasons.append(
+                f"horizontal_compression_ratio {float(horizontal_compression_ratio):.2f} is below {role} fail ratio {fail_compression_ratio:.2f}"
+            )
+            repair_atoms.append(str(rule["repair_atom"]))
     source_residue_delta = float(insertion.get("source_residue_delta") or 0.0)
     inner_bg_delta = float(insertion.get("inner_background_delta") or 0.0)
     text_image_bg_delta = float(insertion.get("text_image_background_delta") or 0.0)
+    text_image_edge_delta = float(insertion.get("text_image_edge_background_delta") or 0.0)
     residue_excess = max(0.0, residue_delta - source_residue_delta)
     residue_check_enabled = max(saturation(insertion.get("output_inner_background_rgb", (0, 0, 0))), saturation(insertion.get("output_background_rgb", (0, 0, 0)))) <= 72.0
     text_label_roles = {"event_card", "short_label", "legend", "sidebar"}
+    label_source_glyph_dominated = (
+        role in text_label_roles
+        and source_residue_delta >= BACKGROUND_RESIDUE_FAIL
+        and residue_delta < BACKGROUND_RESIDUE_WARN
+        and text_image_edge_delta < TEXT_IMAGE_BACKGROUND_DELTA_WARN
+    )
     background_delta_only = (
         inner_bg_delta < INNER_BACKGROUND_DELTA_FAIL
         and text_image_bg_delta < TEXT_IMAGE_BACKGROUND_DELTA_FAIL
@@ -437,11 +474,13 @@ def status_for_region(
         reasons.append(f"{status} has no image_background_color evidence")
         repair_atoms.append("background_residue_fill_resample")
     if text_image_bg_delta >= TEXT_IMAGE_BACKGROUND_DELTA_FAIL:
-        reasons.append(f"text_image_background_delta {text_image_bg_delta:.1f} exceeds fail threshold {TEXT_IMAGE_BACKGROUND_DELTA_FAIL:.1f}")
-        repair_atoms.append("background_residue_fill_resample")
+        if not label_source_glyph_dominated:
+            reasons.append(f"text_image_background_delta {text_image_bg_delta:.1f} exceeds fail threshold {TEXT_IMAGE_BACKGROUND_DELTA_FAIL:.1f}")
+            repair_atoms.append("background_residue_fill_resample")
     if inner_bg_delta >= INNER_BACKGROUND_DELTA_FAIL:
-        reasons.append(f"inner_background_delta {inner_bg_delta:.1f} exceeds fail threshold {INNER_BACKGROUND_DELTA_FAIL:.1f}")
-        repair_atoms.append("background_residue_fill_resample")
+        if not label_source_glyph_dominated:
+            reasons.append(f"inner_background_delta {inner_bg_delta:.1f} exceeds fail threshold {INNER_BACKGROUND_DELTA_FAIL:.1f}")
+            repair_atoms.append("background_residue_fill_resample")
     if residue_check_enabled and residue_delta >= BACKGROUND_RESIDUE_FAIL and residue_excess >= 8.0:
         reasons.append(f"background_residue_delta {residue_delta:.1f} exceeds fail threshold {BACKGROUND_RESIDUE_FAIL:.1f}")
         repair_atoms.append("background_residue_fill_resample")
@@ -459,9 +498,9 @@ def status_for_region(
         return "warn", warn_reasons, sorted(set(warn_repairs)), font_ratio
     if bg_delta >= BACKGROUND_DELTA_WARN:
         return "warn", [f"background_delta {bg_delta:.1f} exceeds warn threshold {BACKGROUND_DELTA_WARN:.1f}"], ["background_fill_resample"], font_ratio
-    if inner_bg_delta >= INNER_BACKGROUND_DELTA_WARN:
+    if inner_bg_delta >= INNER_BACKGROUND_DELTA_WARN and not label_source_glyph_dominated:
         return "warn", [f"inner_background_delta {inner_bg_delta:.1f} exceeds warn threshold {INNER_BACKGROUND_DELTA_WARN:.1f}"], ["background_residue_fill_resample"], font_ratio
-    if text_image_bg_delta >= TEXT_IMAGE_BACKGROUND_DELTA_WARN:
+    if text_image_bg_delta >= TEXT_IMAGE_BACKGROUND_DELTA_WARN and not label_source_glyph_dominated:
         return "warn", [f"text_image_background_delta {text_image_bg_delta:.1f} exceeds warn threshold {TEXT_IMAGE_BACKGROUND_DELTA_WARN:.1f}"], ["background_residue_fill_resample"], font_ratio
     if residue_check_enabled and residue_delta >= BACKGROUND_RESIDUE_WARN and residue_excess >= 6.0:
         return "warn", [f"background_residue_delta {residue_delta:.1f} exceeds warn threshold {BACKGROUND_RESIDUE_WARN:.1f}"], ["background_residue_fill_resample"], font_ratio
@@ -493,6 +532,20 @@ def rect_contains(container: list[float], inner: list[float], tolerance: float =
         and float(container[2]) >= float(inner[2]) - tolerance
         and float(container[3]) >= float(inner[3]) - tolerance
     )
+
+
+def rect_area(rect: list[float]) -> float:
+    return max(0.0, float(rect[2]) - float(rect[0])) * max(0.0, float(rect[3]) - float(rect[1]))
+
+
+def rect_overlap_ratio(left: list[float], right: list[float]) -> float:
+    overlap_w = max(0.0, min(float(left[2]), float(right[2])) - max(float(left[0]), float(right[0])))
+    overlap_h = max(0.0, min(float(left[3]), float(right[3])) - max(float(left[1]), float(right[1])))
+    overlap_area = overlap_w * overlap_h
+    smaller_area = min(rect_area(left), rect_area(right))
+    if smaller_area <= 0:
+        return 0.0
+    return round(overlap_area / smaller_area, 4)
 
 
 def collect(
@@ -577,12 +630,14 @@ def collect(
         inner_bg_delta = color_delta(source_inner_bg, output_inner_bg)
         text_image_background_rgb = normalized_float_color_to_rgb(insertion.get("image_background_color"))
         text_image_bg_delta = color_delta(text_image_background_rgb, source_inner_bg) if text_image_background_rgb is not None else 0.0
+        text_image_edge_delta = color_delta(text_image_background_rgb, source_bg) if text_image_background_rgb is not None else 0.0
         insertion["source_residue_delta"] = source_residue_delta
         insertion["output_background_rgb"] = output_bg
         insertion["output_inner_background_rgb"] = output_inner_bg
         insertion["inner_background_delta"] = inner_bg_delta
         insertion["text_image_background_rgb"] = text_image_background_rgb
         insertion["text_image_background_delta"] = text_image_bg_delta
+        insertion["text_image_edge_background_delta"] = text_image_edge_delta
         role = region_role(insertion, source_doc[page_index].rect, source_bg)
         source_stats = source_stats_for_insertion(insertion, source_lines)
         source_font_size = source_stats.get("source_median_font_size")
@@ -630,6 +685,10 @@ def collect(
             "background_residue_delta": residue_delta,
             "inner_background_delta": inner_bg_delta,
             "text_image_background_delta": text_image_bg_delta,
+            "text_image_edge_background_delta": text_image_edge_delta,
+            "horizontal_compression_ratio": insertion.get("horizontal_compression_ratio"),
+            "wrapped_text_image": insertion.get("wrapped_text_image"),
+            "keep_proportion": insertion.get("keep_proportion"),
             "reasons": reasons,
             "repair_atoms": repair_atoms,
             "crop_evidence": crop_ref,
@@ -782,6 +841,54 @@ def collect(
                 "sample": (failures or warnings or items)[:8],
             }
         )
+    collision_failures: list[dict[str, Any]] = []
+    collision_warnings: list[dict[str, Any]] = []
+    for index, left in enumerate(region_metrics):
+        left_bbox = left.get("bbox")
+        if not isinstance(left_bbox, list) or len(left_bbox) != 4:
+            continue
+        for right in region_metrics[index + 1 :]:
+            if left.get("page_index") != right.get("page_index"):
+                continue
+            right_bbox = right.get("bbox")
+            if not isinstance(right_bbox, list) or len(right_bbox) != 4:
+                continue
+            overlap_ratio = rect_overlap_ratio(left_bbox, right_bbox)
+            if overlap_ratio <= 0:
+                continue
+            same_region = left.get("region_id") == right.get("region_id")
+            if same_region:
+                continue
+            pair = {
+                "left_region_id": left.get("region_id"),
+                "right_region_id": right.get("region_id"),
+                "page_index": left.get("page_index"),
+                "page_number": left.get("page_number"),
+                "left_role": left.get("quality_role"),
+                "right_role": right.get("quality_role"),
+                "left_kind": left.get("region_kind"),
+                "right_kind": right.get("region_kind"),
+                "left_bbox": left_bbox,
+                "right_bbox": right_bbox,
+                "overlap_ratio_of_smaller": overlap_ratio,
+                "repair_atoms": ["constrained_slot_layout_fit_repair", "target_composition_body_reflow_repair"],
+            }
+            if overlap_ratio >= INSERTION_COLLISION_FAIL_RATIO:
+                collision_failures.append(pair)
+            elif overlap_ratio >= INSERTION_COLLISION_WARN_RATIO:
+                collision_warnings.append(pair)
+    role_gates.append(
+        {
+            "gate_id": "insertion_collision",
+            "status": "fail" if collision_failures else "warn" if collision_warnings else "pass",
+            "blocking": bool(collision_failures),
+            "failure_count": len(collision_failures),
+            "warning_count": len(collision_warnings),
+            "region_count": len(region_metrics),
+            "sample": (collision_failures or collision_warnings)[:8],
+            "reason": "generated insertion rectangles on the same page must not materially overlap unless they are the same semantic region; overlapping labels usually indicate a wrong role or reflow frame",
+        }
+    )
     residue_failures = [
         item
         for item in region_metrics

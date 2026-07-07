@@ -1,0 +1,1663 @@
+{
+  "run_id": "R12_jianye_new_life_e",
+  "case_id": "R12_jianye_new_life_e",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0005",
+  "batch_index": 5,
+  "batch_count": 6,
+  "source_extraction_ref": "docs/reports/round12/R12_jianye_new_life_e/source_extraction.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p4_b0_l4",
+      "page_index": 4,
+      "block_id": 0,
+      "line_index": 4,
+      "source_text": "Hopewell Centre, 183 Queen’s Road East, Wanchai, Hong Kong not later than 4:30 p.m. on Tuesday, 26",
+      "bbox": [
+        80.617,
+        111.483,
+        538.524,
+        121.864
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Centre",
+        "East",
+        "Hong",
+        "Hopewell",
+        "Kong",
+        "Queen",
+        "Road",
+        "Tuesday",
+        "Wanchai",
+        "later",
+        "not",
+        "on",
+        "p.m.",
+        "s",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "183 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "4"
+        },
+        {
+          "type": "currency_amount",
+          "value": "30 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "26"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b0_l5",
+      "page_index": 4,
+      "block_id": 0,
+      "line_index": 5,
+      "source_text": "May 2026, for registration.",
+      "bbox": [
+        80.617,
+        125.848,
+        198.065,
+        135.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "May",
+        "for",
+        "registration."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2026"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l0",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "(c)",
+      "bbox": [
+        56.693,
+        151.756,
+        68.339,
+        161.719
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "c)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p4_b1_l1",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "Any shareholder of the Company entitled to attend and vote at the Meeting is entitled to appoint a proxy",
+      "bbox": [
+        80.612,
+        151.756,
+        538.531,
+        161.719
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Any",
+        "Company",
+        "Meeting",
+        "a",
+        "and",
+        "appoint",
+        "at",
+        "attend",
+        "entitled",
+        "is",
+        "of",
+        "proxy",
+        "shareholder",
+        "the",
+        "to",
+        "vote"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l2",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "to attend and vote on his or her behalf. Any shareholder of the Company holding two or more shares",
+      "bbox": [
+        80.617,
+        165.703,
+        538.587,
+        175.666
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Any",
+        "Company",
+        "and",
+        "attend",
+        "behalf.",
+        "her",
+        "his",
+        "holding",
+        "more",
+        "of",
+        "on",
+        "or",
+        "shareholder",
+        "shares",
+        "the",
+        "to",
+        "two",
+        "vote"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l3",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "entitled to attend and vote at the Meeting is entitled to appoint one or more proxies to attend and vote on",
+      "bbox": [
+        80.617,
+        179.65,
+        538.523,
+        189.612
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Meeting",
+        "and",
+        "appoint",
+        "at",
+        "attend",
+        "entitled",
+        "is",
+        "more",
+        "on",
+        "one",
+        "or",
+        "proxies",
+        "the",
+        "to",
+        "vote"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l4",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "his or her behalf. A proxy need not be a shareholder of the Company. To be valid, a form of proxy in",
+      "bbox": [
+        80.617,
+        193.596,
+        538.496,
+        203.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "A",
+        "Company.",
+        "To",
+        "a",
+        "be",
+        "behalf.",
+        "form",
+        "her",
+        "his",
+        "in",
+        "need",
+        "not",
+        "of",
+        "or",
+        "proxy",
+        "shareholder",
+        "the",
+        "valid"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l5",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 5,
+      "source_text": "the prescribed form together with the power of attorney or other authority, if any, under which it is",
+      "bbox": [
+        80.617,
+        207.543,
+        538.581,
+        217.506
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "any",
+        "attorney",
+        "authority",
+        "form",
+        "if",
+        "is",
+        "it",
+        "of",
+        "or",
+        "other",
+        "power",
+        "prescribed",
+        "the",
+        "together",
+        "under",
+        "which",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l6",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 6,
+      "source_text": "signed, or a certified copy of such power or authority, must be deposited with the Company’s Hong",
+      "bbox": [
+        80.617,
+        221.072,
+        538.572,
+        231.452
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Company",
+        "Hong",
+        "a",
+        "authority",
+        "be",
+        "certified",
+        "copy",
+        "deposited",
+        "must",
+        "of",
+        "or",
+        "power",
+        "s",
+        "signed",
+        "such",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l7",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 7,
+      "source_text": "Kong branch share registrar, Computershare Hong Kong Investor Services Limited at 17M Floor,",
+      "bbox": [
+        80.616,
+        235.436,
+        538.585,
+        245.399
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Computershare",
+        "Floor",
+        "Hong",
+        "Investor",
+        "Kong",
+        "Limited",
+        "M",
+        "Services",
+        "at",
+        "branch",
+        "registrar",
+        "share"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l8",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 8,
+      "source_text": "Hopewell Centre, 183 Queen’s Road East, Wanchai, Hong Kong not less than 48 hours (i.e. no later than",
+      "bbox": [
+        80.616,
+        248.965,
+        538.519,
+        259.346
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Centre",
+        "East",
+        "Hong",
+        "Hopewell",
+        "Kong",
+        "Queen",
+        "Road",
+        "Wanchai",
+        "hours",
+        "i.e.",
+        "later",
+        "less",
+        "no",
+        "not",
+        "s",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "183 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "48 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l9",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 9,
+      "source_text": "10:00 a.m. (Hong Kong time) on Saturday, 30 May 2026) before the time fixed for holding the Meeting",
+      "bbox": [
+        80.615,
+        263.33,
+        538.559,
+        273.292
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Hong",
+        "Kong",
+        "May",
+        "Meeting",
+        "Saturday",
+        "a.m.",
+        "before",
+        "fixed",
+        "for",
+        "holding",
+        "on",
+        "the",
+        "time",
+        "time)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2026"
+        },
+        {
+          "type": "currency_amount",
+          "value": "10"
+        },
+        {
+          "type": "currency_amount",
+          "value": "00 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "30 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b1_l10",
+      "page_index": 4,
+      "block_id": 1,
+      "line_index": 10,
+      "source_text": "or any adjourned or postponed meeting.",
+      "bbox": [
+        80.615,
+        277.276,
+        253.984,
+        287.239
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "adjourned",
+        "any",
+        "meeting.",
+        "or",
+        "postponed"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b2_l0",
+      "page_index": 4,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "(d)",
+      "bbox": [
+        56.691,
+        303.185,
+        68.895,
+        313.148
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "d)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p4_b2_l1",
+      "page_index": 4,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "Completion and return of the form of proxy will not preclude a member of the Company from attending",
+      "bbox": [
+        80.601,
+        303.185,
+        538.547,
+        313.148
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Company",
+        "Completion",
+        "a",
+        "and",
+        "attending",
+        "form",
+        "from",
+        "member",
+        "not",
+        "of",
+        "preclude",
+        "proxy",
+        "return",
+        "the",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b2_l2",
+      "page_index": 4,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "and voting at the Meeting or any adjournment or postponement thereof if he/she so desires and, in such",
+      "bbox": [
+        80.615,
+        317.132,
+        538.589,
+        327.094
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Meeting",
+        "adjournment",
+        "and",
+        "any",
+        "at",
+        "desires",
+        "he/she",
+        "if",
+        "in",
+        "or",
+        "postponement",
+        "so",
+        "such",
+        "the",
+        "thereof",
+        "voting"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b2_l3",
+      "page_index": 4,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "event, the form of proxy shall be deemed to have been revoked.",
+      "bbox": [
+        80.615,
+        331.078,
+        360.192,
+        341.041
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "be",
+        "been",
+        "deemed",
+        "event",
+        "form",
+        "have",
+        "of",
+        "proxy",
+        "revoked.",
+        "shall",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b3_l0",
+      "page_index": 4,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "(e)",
+      "bbox": [
+        56.691,
+        356.987,
+        68.332,
+        366.95
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "e)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p4_b3_l1",
+      "page_index": 4,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "In the case of joint registered holders of any Shares, any one of such persons may vote at the Meeting",
+      "bbox": [
+        80.604,
+        356.987,
+        538.531,
+        366.95
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "In",
+        "Meeting",
+        "Shares",
+        "any",
+        "at",
+        "case",
+        "holders",
+        "joint",
+        "may",
+        "of",
+        "one",
+        "persons",
+        "registered",
+        "such",
+        "the",
+        "vote"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b3_l2",
+      "page_index": 4,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "(or at any adjournment or postponement thereof), either personally or by proxy, in respect of such",
+      "bbox": [
+        80.615,
+        370.934,
+        538.559,
+        380.896
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "adjournment",
+        "any",
+        "at",
+        "by",
+        "either",
+        "in",
+        "of",
+        "or",
+        "personally",
+        "postponement",
+        "proxy",
+        "respect",
+        "such",
+        "thereof)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b3_l3",
+      "page_index": 4,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "Share(s) as if he or she were solely entitled thereto; but if more than one joint registered holder is",
+      "bbox": [
+        80.615,
+        384.88,
+        538.696,
+        394.843
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Share(s)",
+        "as",
+        "but",
+        "entitled",
+        "he",
+        "holder",
+        "if",
+        "is",
+        "joint",
+        "more",
+        "one",
+        "or",
+        "registered",
+        "she",
+        "solely",
+        "than",
+        "thereto",
+        "were"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b3_l4",
+      "page_index": 4,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "present at the Meeting, whether in person or by proxy, that one of the joint registered holders whose",
+      "bbox": [
+        80.615,
+        398.827,
+        538.562,
+        408.79
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Meeting",
+        "at",
+        "by",
+        "holders",
+        "in",
+        "joint",
+        "of",
+        "one",
+        "or",
+        "person",
+        "present",
+        "proxy",
+        "registered",
+        "that",
+        "the",
+        "whether",
+        "whose"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b3_l5",
+      "page_index": 4,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "name stands first on the register of members in respect of the relevant joint holding shall, to the",
+      "bbox": [
+        80.615,
+        412.774,
+        538.506,
+        422.736
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "first",
+        "holding",
+        "in",
+        "joint",
+        "members",
+        "name",
+        "of",
+        "on",
+        "register",
+        "relevant",
+        "respect",
+        "shall",
+        "stands",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b3_l6",
+      "page_index": 4,
+      "block_id": 3,
+      "line_index": 6,
+      "source_text": "exclusion of other joint holders, be entitled to vote in respect thereof.",
+      "bbox": [
+        80.615,
+        426.72,
+        385.203,
+        436.683
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "be",
+        "entitled",
+        "exclusion",
+        "holders",
+        "in",
+        "joint",
+        "of",
+        "other",
+        "respect",
+        "thereof.",
+        "to",
+        "vote"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b4_l0",
+      "page_index": 4,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "(f)",
+      "bbox": [
+        56.691,
+        452.629,
+        67.242,
+        462.592
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "f)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p4_b4_l1",
+      "page_index": 4,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "In relation to proposed resolutions numbered 2(A), (B) and (C) above, Mr. Mr. Yan Xuewen, Mr. Leong",
+      "bbox": [
+        80.591,
+        452.629,
+        538.611,
+        462.592
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "A)",
+        "B)",
+        "C)",
+        "In",
+        "Leong",
+        "Mr.",
+        "Xuewen",
+        "Yan",
+        "above",
+        "and",
+        "numbered",
+        "proposed",
+        "relation",
+        "resolutions",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b4_l2",
+      "page_index": 4,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "Chong and Ms. Luo Laura Ying will retire from their offices as Directors at the Meeting and, being",
+      "bbox": [
+        80.615,
+        466.576,
+        538.549,
+        476.538
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Chong",
+        "Directors",
+        "Laura",
+        "Luo",
+        "Meeting",
+        "Ms.",
+        "Ying",
+        "and",
+        "as",
+        "at",
+        "being",
+        "from",
+        "offices",
+        "retire",
+        "the",
+        "their",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b4_l3",
+      "page_index": 4,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "eligible, they will offer themselves for re-election. Particulars of the retiring Directors to be offered for",
+      "bbox": [
+        80.615,
+        480.522,
+        538.557,
+        490.485
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Directors",
+        "Particulars",
+        "be",
+        "eligible",
+        "for",
+        "of",
+        "offer",
+        "offered",
+        "re-election.",
+        "retiring",
+        "the",
+        "themselves",
+        "they",
+        "to",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b4_l4",
+      "page_index": 4,
+      "block_id": 4,
+      "line_index": 4,
+      "source_text": "re-election are set out in Appendix II to the circular.",
+      "bbox": [
+        80.615,
+        494.469,
+        310.498,
+        504.432
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Appendix",
+        "II",
+        "are",
+        "circular.",
+        "in",
+        "out",
+        "re-election",
+        "set",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b5_l0",
+      "page_index": 4,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "(g)",
+      "bbox": [
+        56.691,
+        520.378,
+        68.899,
+        530.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "g)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p4_b5_l1",
+      "page_index": 4,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "In relation to proposed resolutions numbered 4(A) and 4(C) above, approval is being sought from the",
+      "bbox": [
+        80.605,
+        520.378,
+        538.505,
+        530.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "A)",
+        "C)",
+        "In",
+        "above",
+        "and",
+        "approval",
+        "being",
+        "from",
+        "is",
+        "numbered",
+        "proposed",
+        "relation",
+        "resolutions",
+        "sought",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "4"
+        },
+        {
+          "type": "currency_amount",
+          "value": "4"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b5_l2",
+      "page_index": 4,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "shareholders for the granting to the Directors of a general mandate to authorise the allotment and issue",
+      "bbox": [
+        80.615,
+        534.325,
+        538.494,
+        544.287
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Directors",
+        "a",
+        "allotment",
+        "and",
+        "authorise",
+        "for",
+        "general",
+        "granting",
+        "issue",
+        "mandate",
+        "of",
+        "shareholders",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b5_l3",
+      "page_index": 4,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "of shares under the Listing Rules. The Board has no immediate plans to issue any new shares which may",
+      "bbox": [
+        80.615,
+        548.271,
+        538.546,
+        558.234
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Board",
+        "Listing",
+        "Rules.",
+        "The",
+        "any",
+        "has",
+        "immediate",
+        "issue",
+        "may",
+        "new",
+        "no",
+        "of",
+        "plans",
+        "shares",
+        "the",
+        "to",
+        "under",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b5_l4",
+      "page_index": 4,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "fall to be issued under the Share Schemes of the Company or any scrip dividend scheme which may be",
+      "bbox": [
+        80.615,
+        562.218,
+        538.622,
+        572.18
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Company",
+        "Schemes",
+        "Share",
+        "any",
+        "be",
+        "dividend",
+        "fall",
+        "issued",
+        "may",
+        "of",
+        "or",
+        "scheme",
+        "scrip",
+        "the",
+        "to",
+        "under",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b5_l5",
+      "page_index": 4,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "approved by shareholders.",
+      "bbox": [
+        80.615,
+        576.164,
+        193.966,
+        586.127
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "approved",
+        "by",
+        "shareholders."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b6_l0",
+      "page_index": 4,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "(h)",
+      "bbox": [
+        56.691,
+        602.073,
+        68.891,
+        612.036
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "h)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p4_b6_l1",
+      "page_index": 4,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "In relation to proposed resolution numbered 4(B) above, the Directors wish to state that they will",
+      "bbox": [
+        80.597,
+        602.073,
+        538.609,
+        612.036
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "B)",
+        "Directors",
+        "In",
+        "above",
+        "numbered",
+        "proposed",
+        "relation",
+        "resolution",
+        "state",
+        "that",
+        "the",
+        "they",
+        "to",
+        "will",
+        "wish"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "4"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b6_l2",
+      "page_index": 4,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "exercise the powers conferred thereby to repurchase shares of the Company in circumstances which they",
+      "bbox": [
+        80.615,
+        616.02,
+        538.505,
+        625.982
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Company",
+        "circumstances",
+        "conferred",
+        "exercise",
+        "in",
+        "of",
+        "powers",
+        "repurchase",
+        "shares",
+        "the",
+        "thereby",
+        "they",
+        "to",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b6_l3",
+      "page_index": 4,
+      "block_id": 6,
+      "line_index": 3,
+      "source_text": "deem appropriate for the benefit of the shareholders of the Company. An explanatory statement",
+      "bbox": [
+        80.615,
+        629.966,
+        538.511,
+        639.929
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "An",
+        "Company.",
+        "appropriate",
+        "benefit",
+        "deem",
+        "explanatory",
+        "for",
+        "of",
+        "shareholders",
+        "statement",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p4_b6_l4",
+      "page_index": 4,
+      "block_id": 6,
+      "line_index": 4,
+      "source_text": "containing the information necessary to enable the shareholders of the Company to make an informed",
+      "bbox": [
+        80.615,
+        643.913,
+        538.497,
+        653.876
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        793.701
+      ],
+      "font_size": 9.963,
+      "font": "AdvOTf9433e2d",
+      "ascii_tokens": [
+        "Company",
+        "an",
+        "containing",
+        "enable",
+        "information",
+        "informed",
+        "make",
+        "necessary",
+        "of",
+        "shareholders",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round12/R12_jianye_new_life_e/translation_batches/batch_0005.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round12/R12_jianye_new_life_e/translation_batches/batch_0005.model_output.json",
+    "required_units": [
+      "p4_b0_l4",
+      "p4_b0_l5",
+      "p4_b1_l0",
+      "p4_b1_l1",
+      "p4_b1_l2",
+      "p4_b1_l3",
+      "p4_b1_l4",
+      "p4_b1_l5",
+      "p4_b1_l6",
+      "p4_b1_l7",
+      "p4_b1_l8",
+      "p4_b1_l9",
+      "p4_b1_l10",
+      "p4_b2_l0",
+      "p4_b2_l1",
+      "p4_b2_l2",
+      "p4_b2_l3",
+      "p4_b3_l0",
+      "p4_b3_l1",
+      "p4_b3_l2",
+      "p4_b3_l3",
+      "p4_b3_l4",
+      "p4_b3_l5",
+      "p4_b3_l6",
+      "p4_b4_l0",
+      "p4_b4_l1",
+      "p4_b4_l2",
+      "p4_b4_l3",
+      "p4_b4_l4",
+      "p4_b5_l0",
+      "p4_b5_l1",
+      "p4_b5_l2",
+      "p4_b5_l3",
+      "p4_b5_l4",
+      "p4_b5_l5",
+      "p4_b6_l0",
+      "p4_b6_l1",
+      "p4_b6_l2",
+      "p4_b6_l3",
+      "p4_b6_l4"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

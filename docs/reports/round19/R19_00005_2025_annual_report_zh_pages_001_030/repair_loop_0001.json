@@ -1,0 +1,182 @@
+{
+  "loop_id": "R19_00005_2025_annual_report_zh_pages_001_030_L001",
+  "loop_iteration": 1,
+  "entered_from_state": "S8_VerifyProductQuality",
+  "failure_class": "metric_value_hierarchy",
+  "failed_gate_ids": [
+    "metric_value_hierarchy",
+    "short_label_legibility",
+    "table_text_legibility",
+    "background_residue_artifact",
+    "matrix_diagram_integrity"
+  ],
+  "repair_atom": "metric_value_font_hierarchy_repair",
+  "target_state": "S6_LayoutPlan",
+  "target_scope": [
+    {
+      "page_number": 3,
+      "region_id": "region_p2_b17_l0",
+      "quality_role": "metric_value",
+      "region_kind": "metric_value",
+      "generation_status": "fallback_insert_text",
+      "font_size": 3.2,
+      "crop_evidence": "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_crops/page_03_region_p2_b17_l0_metric_value.png",
+      "reasons": [
+        "fallback_insert_text is not acceptable for role metric_value",
+        "output_to_source_font_ratio 0.11 is below metric_value fail ratio 0.55"
+      ]
+    },
+    {
+      "page_number": 3,
+      "region_id": "region_p2_b24_l0",
+      "quality_role": "metric_value",
+      "region_kind": "metric_value",
+      "generation_status": "fallback_insert_text",
+      "font_size": 3.2,
+      "crop_evidence": "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_crops/page_03_region_p2_b24_l0_metric_value.png",
+      "reasons": [
+        "fallback_insert_text is not acceptable for role metric_value",
+        "output_to_source_font_ratio 0.11 is below metric_value fail ratio 0.55"
+      ]
+    },
+    {
+      "page_number": 3,
+      "region_id": "region_p2_b28_l0",
+      "quality_role": "metric_value",
+      "region_kind": "metric_value",
+      "generation_status": "fallback_insert_text",
+      "font_size": 3.2,
+      "crop_evidence": "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_crops/page_03_region_p2_b28_l0_metric_value.png",
+      "reasons": [
+        "fallback_insert_text is not acceptable for role metric_value",
+        "output_to_source_font_ratio 0.11 is below metric_value fail ratio 0.55"
+      ]
+    },
+    {
+      "page_number": 12,
+      "region_id": "region_p11_b10_l1",
+      "quality_role": "metric_value",
+      "region_kind": "metric_value",
+      "generation_status": "fallback_insert_text",
+      "font_size": 3.2,
+      "crop_evidence": "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_crops/page_12_region_p11_b10_l1_metric_value.png",
+      "reasons": [
+        "fallback_insert_text is not acceptable for role metric_value",
+        "output_to_source_font_ratio 0.11 is below metric_value fail ratio 0.55"
+      ]
+    },
+    {
+      "page_number": 27,
+      "region_id": "region_p26_b16_l6",
+      "quality_role": "metric_value",
+      "region_kind": "metric_value",
+      "generation_status": "fallback_insert_text",
+      "font_size": 3.2,
+      "crop_evidence": "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_crops/page_27_region_p26_b16_l6_metric_value.png",
+      "reasons": [
+        "fallback_insert_text is not acceptable for role metric_value",
+        "output_to_source_font_ratio 0.13 is below metric_value fail ratio 0.55"
+      ]
+    }
+  ],
+  "expected_effect": "Repair metric/KPI value hierarchy by preserving current-page source-relative font scale; do not use fixed point-size thresholds or retranslation.",
+  "verification_to_run": [
+    "build_layout_policy.py policy override materialization",
+    "generate_semantic_backfill.py",
+    "render_pdf.py",
+    "collect_visual_region_metrics.py",
+    "plan_visual_region_repairs.py",
+    "write_visual_adjudication.py",
+    "evaluate_pdf_quality.py"
+  ],
+  "deferred_failures": [
+    {
+      "gate_id": "short_label_legibility",
+      "repair_atom": "expandable_text_slot_reflow_repair",
+      "target_state": "S6_LayoutPlan"
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "repair_atom": "constrained_slot_layout_fit_repair",
+      "target_state": "S7_GenerateCandidate"
+    },
+    {
+      "gate_id": "background_residue_artifact",
+      "repair_atom": "background_residue_fill_resample",
+      "target_state": "S7_GenerateCandidate"
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "repair_atom": "matrix_diagram_table_cell_preserve_repair",
+      "target_state": "S6_LayoutPlan"
+    }
+  ],
+  "execution_status": "applied_and_rejudged",
+  "applied_policy_changes": [
+    {
+      "path": "forbid_region_kinds",
+      "before": [
+        "body",
+        "body_flow",
+        "heading",
+        "event_card"
+      ],
+      "after": [
+        "body",
+        "body_flow",
+        "heading",
+        "event_card",
+        "metric_value"
+      ],
+      "reason": "critical visual roles must fail visibly instead of falling back to tiny point text"
+    },
+    {
+      "path": "region_kinds",
+      "before": [
+        "table_cell",
+        "compact_label",
+        "short_label",
+        "legend",
+        "table_note",
+        "footnote",
+        "body",
+        "body_flow",
+        "heading",
+        "event_card"
+      ],
+      "after": [
+        "table_cell",
+        "compact_label",
+        "short_label",
+        "legend",
+        "table_note",
+        "footnote",
+        "body",
+        "body_flow",
+        "heading",
+        "event_card",
+        "metric_value"
+      ],
+      "reason": "critical roles may use policy-declared constrained text images after textbox probing fails"
+    }
+  ],
+  "input_artifacts": [
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/product_quality_gates.json",
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_repair_plan.json",
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/layout_policy.json"
+  ],
+  "output_artifacts": [
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/layout_policy.repair01.json",
+    "docs/output/round19/R19_00005_2025_annual_report_zh_pages_001_030_repair01_candidate.pdf",
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/candidate_generation_evidence.repair01.json",
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_region_metrics.repair01.json",
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_repair_plan.repair01.json",
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/visual_adjudication.repair01.json",
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/product_quality_gates.repair01.json",
+    "docs/reports/round19/R19_00005_2025_annual_report_zh_pages_001_030/repair_loop_0001.json"
+  ],
+  "rejudged_product_quality_verdict": "FAIL",
+  "remaining_blocking_repair_count": 5,
+  "next_state": "S_FAIL_QUALITY",
+  "timestamp_local": "2026-07-07 11:32:43"
+}

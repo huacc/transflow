@@ -1,0 +1,41 @@
+{
+  "prompt_id": "D4_layout_plan",
+  "decision_contract": "D4_layout_plan",
+  "purpose": "Plan a run-local target-language backfill layout policy from source bboxes, page strategy, translated units, and baseline geometry statistics.",
+  "system_prompt": "You are a PDF layout policy planner. Preserve source visual rhythm while adapting target-language text. Use observed bboxes, region roles, current-run statistics, translation direction, and font capabilities only. Do not hardcode filenames, known page numbers, exact sample text, fixed coordinates, or remembered sample-specific values. Return strict JSON.",
+  "user_prompt_template": "Create or revise layout policy for run {{run_id}} in state {{state_id}}. Page strategy: {{page_strategy}}. Translation units: {{translated_units}}. Source geometry: {{source_geometry}}. Font capabilities: {{font_capabilities}}. Language profile: {{language_profile}}. Baseline policy from tool: {{baseline_layout_policy}}. Required decisions: language_pair_profile and layout_strategy, constrained_slot vs expandable_text_slot vs fluid_body classification, region classification thresholds including event_card/table_note/table_cell/legend/vertical_nav/heading and source-relative metric_value/KPI roles, region_reflow vs line_preserve kinds, source_separator_policy for visible untranslated anchors, body_flow grouping including short continuation line policy, paragraph_gap_pt and target-language line joiners, target_composition for fluid body_flow frames where source bboxes are redaction/order anchors rather than hard containers, expandable_text_slots for headings and explanatory short labels whose target-language text grows and whose current-page geometry has right/down whitespace, event_card policy for mixed image/text timeline or milestone pages, dense table/chart lower-page body-band policy, matrix/table-diagram page-top large-heading and lead-body reflow exceptions when geometry proves they are outside the table/diagram body, target_language_reflow region kinds and overlap_guard, already-target-language span preservation/redraw risk, table_note detection, table_cell detection for dense table/chart pages, legend label handling, vertical_nav side_nav_group writing mode, rotated_horizontal_text_image draw mode, font hierarchy ratios across event_card/table_cell/table_note/footnote/body/body_flow/heading/metric_value, source_relative font profile contracts whose actual point sizes are resolved from source_size and current-page font quantiles, layout text variant fields, font profiles, shrink scales, fallback policy, textbox probe isolation requirement, and fit risks. Output a complete layout_policy JSON or explicit policy_overrides with evidence.",
+  "slots": {
+    "run_id": "string",
+    "run_mode": "process_validation|product_quality",
+    "state_id": "S6_LayoutPlan",
+    "page_strategy": "object",
+    "translated_units": "array(object)",
+    "source_geometry": "object(page_rect, source_bboxes, avoid_regions)",
+    "font_capabilities": "object(font_files, fallback_fonts)",
+    "language_profile": "object from pdf_translation_workflow_core/profiles/<source>_to_<target>.layout_profile.json",
+    "baseline_layout_policy": "object from tools/planners/build_layout_policy.py"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": [
+      "verdict",
+      "layout_policy",
+      "policy_decisions",
+      "global_risks",
+      "confidence",
+      "evidence_refs",
+      "next_state"
+    ],
+    "properties": {
+      "verdict": "PASS|NEEDS_EVIDENCE|FAIL",
+      "layout_policy": "object(policy_version, policy_source, language_pair_profile, language_profile_json, language_profile_sha256, layout_strategy, classification_rules including event_card, table_note, table_cell, legend, vertical_nav, heading current-page hierarchy thresholds, and metric_value source-relative value-token rules, region_expansion, target_composition, expandable_text_slots, target_language_reflow including large_top_heading_region and top_lead_body_reflow, reflow, source_separator_policy, flow_grouping, draw_modes including vertical_nav.rotated_horizontal_text_image, layout_text_variants, font_profiles including event_card/table_cell/table_note/body/body_flow/heading/metric_value, with source_relative profiles expressed as ratios and page quantile references rather than fixed sample point sizes, fallback, anti_overfit)",
+      "policy_decisions": "array(object(decision_id, dimension, input_evidence, selected_value, rejected_alternatives, reason, affected_region_kinds))",
+      "global_risks": "array(string)",
+      "confidence": "0.0-1.0",
+      "evidence_refs": "array(path)",
+      "next_state": "S7_GenerateCandidate|S_FAIL_PROCESS_CONTRACT"
+    }
+  },
+  "failure_policy": "If no safe layout policy can be assigned for a region class, return FAIL with the region class and required missing evidence.",
+  "anti_overfit_policy": "Do not hardcode sample coordinates, literal source text, known sample translations, filenames, or page identity. Numeric policy values must cite current-run statistics, model visual adjudication, or explicit user feedback evidence. Font profile overrides in reusable language profiles must not hardcode sample-derived min_pt/max_pt for visual roles; prefer source_size ratios and current-page font quantiles."
+}

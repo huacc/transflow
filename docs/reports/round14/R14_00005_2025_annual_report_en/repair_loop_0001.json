@@ -1,0 +1,129 @@
+{
+  "loop_id": "R14_00005_2025_annual_report_en_L001",
+  "loop_iteration": 1,
+  "entered_from_state": "S8_VerifyProductQuality",
+  "failure_class": "body_paragraph_readability",
+  "failed_gate_ids": [
+    "body_paragraph_readability",
+    "footnote_readability",
+    "short_label_legibility",
+    "table_text_legibility",
+    "title_readability",
+    "background_residue_artifact",
+    "matrix_diagram_integrity"
+  ],
+  "repair_atom": "target_composition_body_reflow_repair",
+  "target_state": "S6_LayoutPlan",
+  "target_scope": [
+    {
+      "page_number": 36,
+      "region_id": "region_p35_b5_005",
+      "quality_role": "body",
+      "region_kind": "body",
+      "generation_status": "fit",
+      "font_size": 6.72,
+      "crop_evidence": "docs/reports/round14/R14_00005_2025_annual_report_en/visual_crops/page_36_region_p35_b5_005_body.png",
+      "reasons": [
+        "inner_background_delta 175.0 exceeds fail threshold 30.0"
+      ]
+    },
+    {
+      "page_number": 95,
+      "region_id": "region_p94_b5_l5",
+      "quality_role": "body",
+      "region_kind": "body",
+      "generation_status": "fit",
+      "font_size": 4.704,
+      "crop_evidence": "docs/reports/round14/R14_00005_2025_annual_report_en/visual_crops/page_95_region_p94_b5_l5_body.png",
+      "reasons": [
+        "font_size 4.70pt is below body fail floor 5.20pt"
+      ]
+    },
+    {
+      "page_number": 98,
+      "region_id": "region_p97_b2_l40",
+      "quality_role": "body",
+      "region_kind": "body",
+      "generation_status": "fit",
+      "font_size": 4.704,
+      "crop_evidence": "docs/reports/round14/R14_00005_2025_annual_report_en/visual_crops/page_98_region_p97_b2_l40_body.png",
+      "reasons": [
+        "font_size 4.70pt is below body fail floor 5.20pt"
+      ]
+    },
+    {
+      "page_number": 177,
+      "region_id": "region_p176_b4_l6",
+      "quality_role": "body",
+      "region_kind": "body",
+      "generation_status": "fit",
+      "font_size": 4.704,
+      "crop_evidence": "docs/reports/round14/R14_00005_2025_annual_report_en/visual_crops/page_177_region_p176_b4_l6_body.png",
+      "reasons": [
+        "font_size 4.70pt is below body fail floor 5.20pt"
+      ]
+    },
+    {
+      "page_number": 177,
+      "region_id": "region_p176_b9_l0",
+      "quality_role": "body",
+      "region_kind": "body",
+      "generation_status": "fit",
+      "font_size": 4.704,
+      "crop_evidence": "docs/reports/round14/R14_00005_2025_annual_report_en/visual_crops/page_177_region_p176_b9_l0_body.png",
+      "reasons": [
+        "font_size 4.70pt is below body fail floor 5.20pt"
+      ]
+    }
+  ],
+  "expected_effect": "Recompose body frame from current page margins/body band before shrinking text.",
+  "verification_to_run": [
+    "generate_semantic_backfill.py if a generic repair executor is available",
+    "render_pdf.py",
+    "collect_visual_region_metrics.py",
+    "evaluate_pdf_quality.py"
+  ],
+  "deferred_failures": [
+    {
+      "gate_id": "footnote_readability",
+      "repair_atom": "footnote_fit_curve_repair",
+      "target_state": "S6_LayoutPlan"
+    },
+    {
+      "gate_id": "short_label_legibility",
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan"
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "repair_atom": "D2_constrained_slot_layout_variants",
+      "target_state": "S5_TranslationPlan"
+    },
+    {
+      "gate_id": "title_readability",
+      "repair_atom": "heading_font_fit_curve_repair",
+      "target_state": "S6_LayoutPlan"
+    },
+    {
+      "gate_id": "background_residue_artifact",
+      "repair_atom": "background_residue_fill_resample",
+      "target_state": "S7_GenerateCandidate"
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "repair_atom": "matrix_diagram_table_cell_preserve_repair",
+      "target_state": "S6_LayoutPlan"
+    }
+  ],
+  "execution_status": "not_executed_unrepairable",
+  "unrepairable_reason": "Round runner can select and record repair atoms, but no generic atom executor is wired for this failure class without adding new tool behavior. Product quality remains FAIL instead of being silently promoted.",
+  "input_artifacts": [
+    "docs/reports/round14/R14_00005_2025_annual_report_en/product_quality_gates.json",
+    "docs/reports/round14/R14_00005_2025_annual_report_en/visual_repair_plan.json"
+  ],
+  "output_artifacts": [
+    "docs/reports/round14/R14_00005_2025_annual_report_en/repair_loop_0001.json"
+  ],
+  "next_state": "S_FAIL_QUALITY",
+  "timestamp_local": "2026-07-07 07:14:13"
+}

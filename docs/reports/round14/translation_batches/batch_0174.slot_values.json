@@ -1,0 +1,6594 @@
+{
+  "run_id": "round14",
+  "case_id": "R14_00005_2025_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0174",
+  "batch_index": 174,
+  "batch_count": 196,
+  "source_extraction_ref": "docs/reports/round14/source_extraction_en.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p318_b12_l17",
+      "page_index": 318,
+      "block_id": 12,
+      "line_index": 17,
+      "source_text": "Hong Kong dollar-denominated structural foreign exchange",
+      "bbox": [
+        45.15,
+        516.226,
+        227.99,
+        524.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Hong",
+        "Kong",
+        "dollar-denominated",
+        "exchange",
+        "foreign",
+        "structural"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b12_l25",
+      "page_index": 318,
+      "block_id": 12,
+      "line_index": 25,
+      "source_text": "Other structural foreign exchange3",
+      "bbox": [
+        45.15,
+        525.976,
+        152.25,
+        534.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other",
+        "exchange3",
+        "foreign",
+        "structural"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b12_l33",
+      "page_index": 318,
+      "block_id": 12,
+      "line_index": 33,
+      "source_text": "Total",
+      "bbox": [
+        45.15,
+        535.726,
+        60.319,
+        544.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Total"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b13_l0",
+      "page_index": 318,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "1 Amount recognised in OCI for Swiss franc includes $110m (2024: $110m) related to de-designated hedge.",
+      "bbox": [
+        42.52,
+        549.846,
+        383.958,
+        558.33
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Amount",
+        "OCI",
+        "Swiss",
+        "de-designated",
+        "for",
+        "franc",
+        "hedge.",
+        "in",
+        "includes",
+        "m",
+        "m)",
+        "recognised",
+        "related",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b13_l1",
+      "page_index": 318,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "2 Used in effectiveness assessment, comprising amount attributable to the designated hedged risk that can be a risk component.",
+      "bbox": [
+        42.52,
+        558.246,
+        450.634,
+        566.73
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Used",
+        "a",
+        "amount",
+        "assessment",
+        "attributable",
+        "be",
+        "can",
+        "component.",
+        "comprising",
+        "designated",
+        "effectiveness",
+        "hedged",
+        "in",
+        "risk",
+        "that",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b13_l2",
+      "page_index": 318,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "3 Other currencies include Euro, New Taiwan dollar, Singapore dollar, Polish zloty, South Korean won, UAE dirham, Indian rupee, Chinese renminbi, Kuwaiti dinar,",
+      "bbox": [
+        42.52,
+        566.646,
+        551.742,
+        575.13
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Chinese",
+        "Euro",
+        "Indian",
+        "Korean",
+        "Kuwaiti",
+        "New",
+        "Other",
+        "Polish",
+        "Singapore",
+        "South",
+        "Taiwan",
+        "UAE",
+        "currencies",
+        "dinar",
+        "dirham",
+        "dollar",
+        "include",
+        "renminbi",
+        "rupee",
+        "won",
+        "zloty"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b13_l3",
+      "page_index": 318,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "Qatari riyal, Indonesian rupiah, Thai baht, Malaysian ringgit and Philippine peso.",
+      "bbox": [
+        53.86,
+        575.046,
+        298.531,
+        583.53
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Indonesian",
+        "Malaysian",
+        "Philippine",
+        "Qatari",
+        "Thai",
+        "and",
+        "baht",
+        "peso.",
+        "ringgit",
+        "riyal",
+        "rupiah"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b14_l0",
+      "page_index": 318,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "16 Financial investments",
+      "bbox": [
+        42.52,
+        595.898,
+        206.478,
+        614.098
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Financial",
+        "investments"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "16 "
+        }
+      ],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p318_b15_l0",
+      "page_index": 318,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "Carrying amount of financial investments",
+      "bbox": [
+        42.88,
+        622.644,
+        188.144,
+        632.34
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Carrying",
+        "amount",
+        "financial",
+        "investments",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b16_l2",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        483.9,
+        649.292,
+        494.4,
+        656.292
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b16_l3",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        539.03,
+        647.626,
+        549.145,
+        656.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b16_l4",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "Financial investments measured at fair value through other comprehensive income",
+      "bbox": [
+        45.15,
+        657.376,
+        302.281,
+        665.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "at",
+        "comprehensive",
+        "fair",
+        "income",
+        "investments",
+        "measured",
+        "other",
+        "through",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b16_l8",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 8,
+      "source_text": "–  treasury and other eligible bills",
+      "bbox": [
+        45.15,
+        667.126,
+        147.063,
+        675.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "bills",
+        "eligible",
+        "other",
+        "treasury"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b16_l12",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 12,
+      "source_text": "–  debt securities",
+      "bbox": [
+        45.15,
+        676.876,
+        98.441,
+        685.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "debt",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b16_l16",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 16,
+      "source_text": "–  equity securities",
+      "bbox": [
+        45.15,
+        686.626,
+        103.495,
+        695.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "equity",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b16_l20",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 20,
+      "source_text": "–  other instruments",
+      "bbox": [
+        45.15,
+        696.376,
+        108.164,
+        704.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "instruments",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b16_l24",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 24,
+      "source_text": "Debt instruments measured at amortised cost",
+      "bbox": [
+        45.15,
+        706.126,
+        188.678,
+        714.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Debt",
+        "amortised",
+        "at",
+        "cost",
+        "instruments",
+        "measured"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b16_l28",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 28,
+      "source_text": "–  treasury and other eligible bills",
+      "bbox": [
+        45.15,
+        715.876,
+        147.063,
+        724.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "bills",
+        "eligible",
+        "other",
+        "treasury"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p318_b16_l32",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 32,
+      "source_text": "–  debt securities",
+      "bbox": [
+        45.15,
+        725.626,
+        98.441,
+        734.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "debt",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b16_l36",
+      "page_index": 318,
+      "block_id": 16,
+      "line_index": 36,
+      "source_text": "At 31 Dec",
+      "bbox": [
+        45.15,
+        737.042,
+        77.049,
+        744.042
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l0",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        44.38,
+        15.206,
+        92.603,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l1",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        117.88,
+        15.206,
+        154.434,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l2",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        191.38,
+        15.206,
+        241.164,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l3",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        264.88,
+        15.206,
+        301.042,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l4",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        338.38,
+        15.206,
+        370.118,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l5",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        338.38,
+        23.606,
+        394.072,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l6",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        411.88,
+        16.872,
+        443.394,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l7",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        411.88,
+        25.272,
+        449.603,
+        32.272
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l8",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        485.38,
+        15.206,
+        518.049,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b18_l9",
+      "page_index": 318,
+      "block_id": 18,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        485.38,
+        23.606,
+        520.772,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p318_b19_l0",
+      "page_index": 318,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "Notes on the financial statements",
+      "bbox": [
+        411.88,
+        35.456,
+        516.901,
+        43.94
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Notes",
+        "financial",
+        "on",
+        "statements",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b0_l0",
+      "page_index": 319,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Equity instruments measured at fair value through other comprehensive income",
+      "bbox": [
+        42.88,
+        71.594,
+        326.72,
+        81.29
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Equity",
+        "at",
+        "comprehensive",
+        "fair",
+        "income",
+        "instruments",
+        "measured",
+        "other",
+        "through",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b1_l0",
+      "page_index": 319,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Fair value",
+      "bbox": [
+        462.13,
+        96.122,
+        494.428,
+        103.122
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Fair",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b1_l1",
+      "page_index": 319,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "Dividends",
+      "bbox": [
+        516.12,
+        87.722,
+        551.127,
+        94.722
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Dividends"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b1_l2",
+      "page_index": 319,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "recognised",
+      "bbox": [
+        512.62,
+        96.122,
+        549.181,
+        103.122
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "recognised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b2_l0",
+      "page_index": 319,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Type of equity instruments",
+      "bbox": [
+        45.15,
+        107.242,
+        135.38,
+        114.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Type",
+        "equity",
+        "instruments",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b2_l1",
+      "page_index": 319,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "$m",
+      "bbox": [
+        483.9,
+        107.242,
+        494.4,
+        114.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b2_l2",
+      "page_index": 319,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        538.65,
+        107.242,
+        549.15,
+        114.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b2_l3",
+      "page_index": 319,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "Investments required by central institutions",
+      "bbox": [
+        45.15,
+        115.326,
+        180.124,
+        123.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Investments",
+        "by",
+        "central",
+        "institutions",
+        "required"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b2_l7",
+      "page_index": 319,
+      "block_id": 2,
+      "line_index": 7,
+      "source_text": "Business facilitation",
+      "bbox": [
+        45.15,
+        125.076,
+        106.981,
+        133.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Business",
+        "facilitation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b2_l11",
+      "page_index": 319,
+      "block_id": 2,
+      "line_index": 11,
+      "source_text": "Others",
+      "bbox": [
+        45.15,
+        134.826,
+        66.542,
+        143.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Others"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b2_l15",
+      "page_index": 319,
+      "block_id": 2,
+      "line_index": 15,
+      "source_text": "At 31 Dec 2025",
+      "bbox": [
+        45.15,
+        146.242,
+        94.563,
+        153.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b3_l0",
+      "page_index": 319,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Investments required by central institutions",
+      "bbox": [
+        45.15,
+        164.076,
+        180.124,
+        172.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Investments",
+        "by",
+        "central",
+        "institutions",
+        "required"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b3_l4",
+      "page_index": 319,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "Business facilitation",
+      "bbox": [
+        45.15,
+        173.826,
+        106.981,
+        182.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Business",
+        "facilitation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b3_l8",
+      "page_index": 319,
+      "block_id": 3,
+      "line_index": 8,
+      "source_text": "Others",
+      "bbox": [
+        45.15,
+        183.576,
+        66.542,
+        192.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Others"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b3_l12",
+      "page_index": 319,
+      "block_id": 3,
+      "line_index": 12,
+      "source_text": "At 31 Dec 2024",
+      "bbox": [
+        45.15,
+        193.326,
+        93.748,
+        201.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b4_l0",
+      "page_index": 319,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Weighted average yields of investment debt securities",
+      "bbox": [
+        42.88,
+        214.844,
+        236.544,
+        224.54
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Weighted",
+        "average",
+        "debt",
+        "investment",
+        "of",
+        "securities",
+        "yields"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b5_l0",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "Up to 1",
+      "bbox": [
+        389.67,
+        231.742,
+        414.177,
+        238.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Up",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l1",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "year",
+      "bbox": [
+        397.81,
+        240.142,
+        414.155,
+        247.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l3",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "years",
+      "bbox": [
+        441.25,
+        240.142,
+        459.149,
+        247.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l5",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "years",
+      "bbox": [
+        486.25,
+        240.142,
+        504.149,
+        247.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l6",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "Over 10",
+      "bbox": [
+        523.48,
+        231.742,
+        551.109,
+        238.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Over"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "10"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l7",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 7,
+      "source_text": "years",
+      "bbox": [
+        531.25,
+        240.142,
+        549.149,
+        247.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l8",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 8,
+      "source_text": "Yield",
+      "bbox": [
+        397.44,
+        250.492,
+        414.163,
+        257.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Yield"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l9",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 9,
+      "source_text": "Yield",
+      "bbox": [
+        442.44,
+        250.492,
+        459.163,
+        257.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Yield"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l10",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 10,
+      "source_text": "Yield",
+      "bbox": [
+        487.44,
+        250.492,
+        504.163,
+        257.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Yield"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l11",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 11,
+      "source_text": "Yield",
+      "bbox": [
+        532.44,
+        250.492,
+        549.163,
+        257.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Yield"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l16",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 16,
+      "source_text": "Debt securities measured at fair value through other comprehensive income",
+      "bbox": [
+        45.15,
+        269.992,
+        299.131,
+        276.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Debt",
+        "at",
+        "comprehensive",
+        "fair",
+        "income",
+        "measured",
+        "other",
+        "securities",
+        "through",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b5_l17",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 17,
+      "source_text": "US Treasury",
+      "bbox": [
+        45.15,
+        278.076,
+        85.211,
+        286.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Treasury",
+        "US"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l22",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 22,
+      "source_text": "US Government agencies",
+      "bbox": [
+        45.15,
+        287.826,
+        126.84,
+        296.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government",
+        "US",
+        "agencies"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l27",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 27,
+      "source_text": "US Government-sponsored agencies",
+      "bbox": [
+        45.15,
+        297.576,
+        161.469,
+        306.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government-sponsored",
+        "US",
+        "agencies"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b5_l32",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 32,
+      "source_text": "UK Government",
+      "bbox": [
+        45.15,
+        307.326,
+        97.272,
+        315.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government",
+        "UK"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l37",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 37,
+      "source_text": "Hong Kong Government",
+      "bbox": [
+        45.15,
+        317.076,
+        122.57,
+        325.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government",
+        "Hong",
+        "Kong"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l42",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 42,
+      "source_text": "Other governments",
+      "bbox": [
+        45.15,
+        326.826,
+        108.171,
+        335.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other",
+        "governments"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l47",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 47,
+      "source_text": "Asset-backed securities",
+      "bbox": [
+        45.15,
+        336.576,
+        120.995,
+        345.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Asset-backed",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b5_l52",
+      "page_index": 319,
+      "block_id": 5,
+      "line_index": 52,
+      "source_text": "Corporate debt and other securities",
+      "bbox": [
+        45.15,
+        346.326,
+        157.178,
+        354.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate",
+        "and",
+        "debt",
+        "other",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b6_l0",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Debt securities measured at amortised cost",
+      "bbox": [
+        45.15,
+        367.492,
+        190.225,
+        374.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Debt",
+        "amortised",
+        "at",
+        "cost",
+        "measured",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b6_l1",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "US Treasury",
+      "bbox": [
+        45.15,
+        375.576,
+        85.211,
+        384.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Treasury",
+        "US"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b6_l6",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 6,
+      "source_text": "US Government agencies",
+      "bbox": [
+        45.15,
+        385.326,
+        126.84,
+        393.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government",
+        "US",
+        "agencies"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b6_l11",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 11,
+      "source_text": "US Government-sponsored agencies",
+      "bbox": [
+        45.15,
+        395.076,
+        161.469,
+        403.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government-sponsored",
+        "US",
+        "agencies"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b6_l16",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 16,
+      "source_text": "UK Government",
+      "bbox": [
+        45.15,
+        404.826,
+        97.272,
+        413.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government",
+        "UK"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b6_l21",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 21,
+      "source_text": "Hong Kong Government",
+      "bbox": [
+        45.15,
+        414.576,
+        122.57,
+        423.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government",
+        "Hong",
+        "Kong"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b6_l26",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 26,
+      "source_text": "Other governments",
+      "bbox": [
+        45.15,
+        424.326,
+        108.171,
+        432.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other",
+        "governments"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b6_l31",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 31,
+      "source_text": "Asset-backed securities",
+      "bbox": [
+        45.15,
+        434.076,
+        120.995,
+        442.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Asset-backed",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b6_l36",
+      "page_index": 319,
+      "block_id": 6,
+      "line_index": 36,
+      "source_text": "Corporate debt and other securities",
+      "bbox": [
+        45.15,
+        443.826,
+        157.178,
+        452.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate",
+        "and",
+        "debt",
+        "other",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b7_l1",
+      "page_index": 319,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "The maturity distributions of ABSs are presented in the above table on the basis of contractual maturity dates. The weighted average yield for each",
+      "bbox": [
+        42.52,
+        461.714,
+        554.032,
+        471.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ABSs",
+        "The",
+        "above",
+        "are",
+        "average",
+        "basis",
+        "contractual",
+        "dates.",
+        "distributions",
+        "each",
+        "for",
+        "in",
+        "maturity",
+        "of",
+        "on",
+        "presented",
+        "table",
+        "the",
+        "weighted",
+        "yield"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b7_l2",
+      "page_index": 319,
+      "block_id": 7,
+      "line_index": 2,
+      "source_text": "range of maturities is calculated by dividing the annualised interest income for the year ended 31 December 2025 by the book amount of debt",
+      "bbox": [
+        42.52,
+        471.314,
+        536.676,
+        481.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "December",
+        "amount",
+        "annualised",
+        "book",
+        "by",
+        "calculated",
+        "debt",
+        "dividing",
+        "ended",
+        "for",
+        "income",
+        "interest",
+        "is",
+        "maturities",
+        "of",
+        "range",
+        "the",
+        "year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b7_l3",
+      "page_index": 319,
+      "block_id": 7,
+      "line_index": 3,
+      "source_text": "securities at that date. The yields do not include the effect of related derivatives.",
+      "bbox": [
+        42.52,
+        480.914,
+        320.968,
+        490.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "at",
+        "date.",
+        "derivatives.",
+        "do",
+        "effect",
+        "include",
+        "not",
+        "of",
+        "related",
+        "securities",
+        "that",
+        "the",
+        "yields"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b8_l0",
+      "page_index": 319,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "HSBC Holdings",
+      "bbox": [
+        42.52,
+        495.006,
+        135.782,
+        511.906
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "HSBC",
+        "Holdings"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b9_l0",
+      "page_index": 319,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "HSBC Holdings carrying amount of financial investments",
+      "bbox": [
+        42.88,
+        516.244,
+        243.672,
+        525.94
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "Holdings",
+        "amount",
+        "carrying",
+        "financial",
+        "investments",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b10_l2",
+      "page_index": 319,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        493.65,
+        542.892,
+        504.15,
+        549.892
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b10_l3",
+      "page_index": 319,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        539.03,
+        541.226,
+        549.145,
+        549.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b10_l4",
+      "page_index": 319,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "Debt instruments measured at amortised cost",
+      "bbox": [
+        45.15,
+        552.642,
+        198.765,
+        559.642
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Debt",
+        "amortised",
+        "at",
+        "cost",
+        "instruments",
+        "measured"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b10_l5",
+      "page_index": 319,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "Treasury and other eligible bills",
+      "bbox": [
+        45.15,
+        560.726,
+        141.232,
+        569.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Treasury",
+        "and",
+        "bills",
+        "eligible",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b10_l9",
+      "page_index": 319,
+      "block_id": 10,
+      "line_index": 9,
+      "source_text": "Debt securities",
+      "bbox": [
+        45.15,
+        570.476,
+        92.211,
+        578.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Debt",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b10_l13",
+      "page_index": 319,
+      "block_id": 10,
+      "line_index": 13,
+      "source_text": "At 31 Dec",
+      "bbox": [
+        45.15,
+        581.892,
+        77.049,
+        588.892
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b11_l1",
+      "page_index": 319,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "17 Assets pledged, collateral received and assets transferred",
+      "bbox": [
+        42.6,
+        602.058,
+        441.932,
+        620.258
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Assets",
+        "and",
+        "assets",
+        "collateral",
+        "pledged",
+        "received",
+        "transferred"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "17 "
+        }
+      ],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p319_b12_l0",
+      "page_index": 319,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Assets pledged1",
+      "bbox": [
+        42.52,
+        625.856,
+        139.427,
+        642.756
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Assets",
+        "pledged1"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b13_l0",
+      "page_index": 319,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "Financial assets pledged as collateral",
+      "bbox": [
+        42.88,
+        647.094,
+        173.48,
+        656.79
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "as",
+        "assets",
+        "collateral",
+        "pledged"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b14_l2",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        493.65,
+        673.742,
+        504.15,
+        680.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b14_l3",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        539.03,
+        672.076,
+        549.145,
+        680.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b14_l4",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 4,
+      "source_text": "Treasury bills and other eligible securities",
+      "bbox": [
+        45.15,
+        681.826,
+        175.07,
+        690.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Treasury",
+        "and",
+        "bills",
+        "eligible",
+        "other",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b14_l8",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 8,
+      "source_text": "Loans and advances to banks",
+      "bbox": [
+        45.15,
+        691.576,
+        138.523,
+        700.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Loans",
+        "advances",
+        "and",
+        "banks",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b14_l12",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 12,
+      "source_text": "Loans and advances to customers",
+      "bbox": [
+        45.15,
+        701.326,
+        153.3,
+        709.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Loans",
+        "advances",
+        "and",
+        "customers",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b14_l16",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 16,
+      "source_text": "Debt securities",
+      "bbox": [
+        45.15,
+        711.076,
+        94.157,
+        719.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Debt",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b14_l20",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 20,
+      "source_text": "Equity securities",
+      "bbox": [
+        45.15,
+        720.826,
+        96.488,
+        729.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Equity",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b14_l24",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 24,
+      "source_text": "Other",
+      "bbox": [
+        45.15,
+        730.576,
+        64.988,
+        739.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b14_l28",
+      "page_index": 319,
+      "block_id": 14,
+      "line_index": 28,
+      "source_text": "Assets pledged at 31 Dec",
+      "bbox": [
+        45.15,
+        741.992,
+        128.786,
+        748.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Assets",
+        "Dec",
+        "at",
+        "pledged"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b15_l1",
+      "page_index": 319,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "The value of assets pledged to secure liabilities may be greater than the book value of assets utilised as collateral. For example, in the case of",
+      "bbox": [
+        42.52,
+        758.214,
+        535.48,
+        767.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "For",
+        "The",
+        "as",
+        "assets",
+        "be",
+        "book",
+        "case",
+        "collateral.",
+        "example",
+        "greater",
+        "in",
+        "liabilities",
+        "may",
+        "of",
+        "pledged",
+        "secure",
+        "than",
+        "the",
+        "to",
+        "utilised",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b15_l2",
+      "page_index": 319,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "securitisations and covered bonds, the amount of liabilities issued plus mandatory over-collateralisation is less than the book value of the pool of",
+      "bbox": [
+        42.52,
+        767.814,
+        543.736,
+        777.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "amount",
+        "and",
+        "bonds",
+        "book",
+        "covered",
+        "is",
+        "issued",
+        "less",
+        "liabilities",
+        "mandatory",
+        "of",
+        "over-collateralisation",
+        "plus",
+        "pool",
+        "securitisations",
+        "than",
+        "the",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b15_l3",
+      "page_index": 319,
+      "block_id": 15,
+      "line_index": 3,
+      "source_text": "assets available for use as collateral. This is also the case where assets are placed with a custodian or a settlement agent that has a floating charge",
+      "bbox": [
+        42.52,
+        777.414,
+        554.656,
+        787.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "a",
+        "agent",
+        "also",
+        "are",
+        "as",
+        "assets",
+        "available",
+        "case",
+        "charge",
+        "collateral.",
+        "custodian",
+        "floating",
+        "for",
+        "has",
+        "is",
+        "or",
+        "placed",
+        "settlement",
+        "that",
+        "the",
+        "use",
+        "where",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b15_l4",
+      "page_index": 319,
+      "block_id": 15,
+      "line_index": 4,
+      "source_text": "over all the assets placed to secure any liabilities under settlement accounts.",
+      "bbox": [
+        42.52,
+        787.014,
+        308.584,
+        796.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "accounts.",
+        "all",
+        "any",
+        "assets",
+        "liabilities",
+        "over",
+        "placed",
+        "secure",
+        "settlement",
+        "the",
+        "to",
+        "under"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p319_b16_l0",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        44.38,
+        15.206,
+        92.603,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l1",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        117.88,
+        15.206,
+        154.434,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l2",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        191.38,
+        15.206,
+        241.164,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l3",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        264.88,
+        15.206,
+        301.042,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l4",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        338.38,
+        15.206,
+        370.118,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l5",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        338.38,
+        23.606,
+        394.072,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l6",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        411.88,
+        16.872,
+        443.394,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l7",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        411.88,
+        25.272,
+        449.603,
+        32.272
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l8",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        485.38,
+        15.206,
+        518.049,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b16_l9",
+      "page_index": 319,
+      "block_id": 16,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        485.38,
+        23.606,
+        520.772,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p319_b17_l0",
+      "page_index": 319,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "Notes on the financial statements",
+      "bbox": [
+        411.88,
+        35.456,
+        516.901,
+        43.94
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Notes",
+        "financial",
+        "on",
+        "statements",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b0_l0",
+      "page_index": 320,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "These transactions are conducted under terms that are usual and customary for collateralised transactions including, where relevant, standard",
+      "bbox": [
+        42.52,
+        68.964,
+        536.304,
+        78.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "These",
+        "and",
+        "are",
+        "collateralised",
+        "conducted",
+        "customary",
+        "for",
+        "including",
+        "relevant",
+        "standard",
+        "terms",
+        "that",
+        "transactions",
+        "under",
+        "usual",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b0_l1",
+      "page_index": 320,
+      "block_id": 0,
+      "line_index": 1,
+      "source_text": "securities lending and borrowing, repurchase agreements and derivative margining. HSBC places both cash and non-cash collateral in relation to",
+      "bbox": [
+        42.52,
+        78.564,
+        543.328,
+        88.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "agreements",
+        "and",
+        "borrowing",
+        "both",
+        "cash",
+        "collateral",
+        "derivative",
+        "in",
+        "lending",
+        "margining.",
+        "non-cash",
+        "places",
+        "relation",
+        "repurchase",
+        "securities",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b0_l2",
+      "page_index": 320,
+      "block_id": 0,
+      "line_index": 2,
+      "source_text": "derivative transactions.",
+      "bbox": [
+        42.52,
+        88.164,
+        122.416,
+        97.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "derivative",
+        "transactions."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b1_l0",
+      "page_index": 320,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Hong Kong currency notes in circulation are secured by the deposit of funds in respect of which the Hong Kong Government certificates of",
+      "bbox": [
+        42.52,
+        104.264,
+        526.448,
+        113.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Government",
+        "Hong",
+        "Kong",
+        "are",
+        "by",
+        "certificates",
+        "circulation",
+        "currency",
+        "deposit",
+        "funds",
+        "in",
+        "notes",
+        "of",
+        "respect",
+        "secured",
+        "the",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b1_l1",
+      "page_index": 320,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "indebtedness are held.",
+      "bbox": [
+        42.52,
+        113.864,
+        121.672,
+        123.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "held.",
+        "indebtedness"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b2_l0",
+      "page_index": 320,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Financial assets pledged as collateral which the counterparty has the right to sell or repledge",
+      "bbox": [
+        42.88,
+        132.594,
+        370.696,
+        142.29
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "as",
+        "assets",
+        "collateral",
+        "counterparty",
+        "has",
+        "or",
+        "pledged",
+        "repledge",
+        "right",
+        "sell",
+        "the",
+        "to",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b3_l2",
+      "page_index": 320,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        493.65,
+        159.242,
+        504.15,
+        166.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b3_l3",
+      "page_index": 320,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        539.03,
+        157.576,
+        549.145,
+        166.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b3_l4",
+      "page_index": 320,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "Trading assets",
+      "bbox": [
+        45.15,
+        167.326,
+        92.218,
+        175.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Trading",
+        "assets"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b3_l8",
+      "page_index": 320,
+      "block_id": 3,
+      "line_index": 8,
+      "source_text": "Financial investments",
+      "bbox": [
+        45.15,
+        177.076,
+        112.441,
+        185.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "investments"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b3_l12",
+      "page_index": 320,
+      "block_id": 3,
+      "line_index": 12,
+      "source_text": "At 31 Dec",
+      "bbox": [
+        45.15,
+        188.492,
+        77.049,
+        195.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b4_l0",
+      "page_index": 320,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Collateral received1",
+      "bbox": [
+        42.52,
+        202.706,
+        158.397,
+        219.606
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Collateral",
+        "received1"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b5_l0",
+      "page_index": 320,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "The fair value of assets accepted as collateral relating primarily to standard securities lending, reverse repurchase agreements, swaps of securities",
+      "bbox": [
+        42.52,
+        221.314,
+        552.112,
+        231.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "accepted",
+        "agreements",
+        "as",
+        "assets",
+        "collateral",
+        "fair",
+        "lending",
+        "of",
+        "primarily",
+        "relating",
+        "repurchase",
+        "reverse",
+        "securities",
+        "standard",
+        "swaps",
+        "to",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b5_l1",
+      "page_index": 320,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "and derivative margining that HSBC is permitted to sell or repledge in the absence of default was $647.7bn (2024: $515.3bn). The fair value of any",
+      "bbox": [
+        42.52,
+        230.914,
+        551.556,
+        240.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "The",
+        "absence",
+        "and",
+        "any",
+        "bn",
+        "bn).",
+        "default",
+        "derivative",
+        "fair",
+        "in",
+        "is",
+        "margining",
+        "of",
+        "or",
+        "permitted",
+        "repledge",
+        "sell",
+        "that",
+        "the",
+        "to",
+        "value",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "647"
+        },
+        {
+          "type": "currency_amount",
+          "value": "515"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b5_l2",
+      "page_index": 320,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "such collateral sold or repledged was $378.8bn (2024: $293.5bn).",
+      "bbox": [
+        42.52,
+        240.514,
+        269.598,
+        250.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "bn",
+        "bn).",
+        "collateral",
+        "or",
+        "repledged",
+        "sold",
+        "such",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "378"
+        },
+        {
+          "type": "currency_amount",
+          "value": "293"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b6_l0",
+      "page_index": 320,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "HSBC is obliged to return equivalent securities. These transactions are conducted under terms that are usual and customary to standard securities",
+      "bbox": [
+        42.52,
+        256.614,
+        551.822,
+        266.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "These",
+        "and",
+        "are",
+        "conducted",
+        "customary",
+        "equivalent",
+        "is",
+        "obliged",
+        "return",
+        "securities",
+        "securities.",
+        "standard",
+        "terms",
+        "that",
+        "to",
+        "transactions",
+        "under",
+        "usual"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b6_l1",
+      "page_index": 320,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "lending, reverse repurchase agreements and derivative margining.",
+      "bbox": [
+        42.52,
+        266.214,
+        272.008,
+        275.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "agreements",
+        "and",
+        "derivative",
+        "lending",
+        "margining.",
+        "repurchase",
+        "reverse"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b7_l0",
+      "page_index": 320,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "Assets transferred1",
+      "bbox": [
+        42.52,
+        280.306,
+        157.067,
+        297.206
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 13.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Assets",
+        "transferred1"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b8_l0",
+      "page_index": 320,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "The assets pledged include transfers to third parties that do not qualify for derecognition, including secured borrowings such as debt securities",
+      "bbox": [
+        42.52,
+        298.914,
+        539.048,
+        308.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "as",
+        "assets",
+        "borrowings",
+        "debt",
+        "derecognition",
+        "do",
+        "for",
+        "include",
+        "including",
+        "not",
+        "parties",
+        "pledged",
+        "qualify",
+        "secured",
+        "securities",
+        "such",
+        "that",
+        "third",
+        "to",
+        "transfers"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b8_l1",
+      "page_index": 320,
+      "block_id": 8,
+      "line_index": 1,
+      "source_text": "held by counterparties as collateral under repurchase agreements and equity securities lent under securities lending agreements, as well as swaps",
+      "bbox": [
+        42.52,
+        308.514,
+        553.296,
+        318.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "agreements",
+        "and",
+        "as",
+        "by",
+        "collateral",
+        "counterparties",
+        "equity",
+        "held",
+        "lending",
+        "lent",
+        "repurchase",
+        "securities",
+        "swaps",
+        "under",
+        "well"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b8_l2",
+      "page_index": 320,
+      "block_id": 8,
+      "line_index": 2,
+      "source_text": "of equity and debt securities. For secured borrowings, the transferred asset collateral continues to be recognised in full while a related liability,",
+      "bbox": [
+        42.52,
+        318.114,
+        537.408,
+        327.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "For",
+        "a",
+        "and",
+        "asset",
+        "be",
+        "borrowings",
+        "collateral",
+        "continues",
+        "debt",
+        "equity",
+        "full",
+        "in",
+        "liability",
+        "of",
+        "recognised",
+        "related",
+        "secured",
+        "securities.",
+        "the",
+        "to",
+        "transferred",
+        "while"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b8_l3",
+      "page_index": 320,
+      "block_id": 8,
+      "line_index": 3,
+      "source_text": "reflecting the Group’s obligation to repurchase the assets for a fixed price at a future date, is also recognised on the balance sheet.",
+      "bbox": [
+        42.52,
+        327.714,
+        498.128,
+        337.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "a",
+        "also",
+        "assets",
+        "at",
+        "balance",
+        "date",
+        "fixed",
+        "for",
+        "future",
+        "is",
+        "obligation",
+        "on",
+        "price",
+        "recognised",
+        "reflecting",
+        "repurchase",
+        "s",
+        "sheet.",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b9_l0",
+      "page_index": 320,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Where securities are swapped, the transferred asset continues to be recognised in full. There is no associated liability as the non-cash collateral",
+      "bbox": [
+        42.52,
+        343.814,
+        542.04,
+        353.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "There",
+        "Where",
+        "are",
+        "as",
+        "asset",
+        "associated",
+        "be",
+        "collateral",
+        "continues",
+        "full.",
+        "in",
+        "is",
+        "liability",
+        "no",
+        "non-cash",
+        "recognised",
+        "securities",
+        "swapped",
+        "the",
+        "to",
+        "transferred"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b9_l1",
+      "page_index": 320,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "received is not recognised on the balance sheet. The Group is unable to use, sell or pledge the transferred assets for the duration of the",
+      "bbox": [
+        42.52,
+        353.414,
+        515.632,
+        363.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "The",
+        "assets",
+        "balance",
+        "duration",
+        "for",
+        "is",
+        "not",
+        "of",
+        "on",
+        "or",
+        "pledge",
+        "received",
+        "recognised",
+        "sell",
+        "sheet.",
+        "the",
+        "to",
+        "transferred",
+        "unable",
+        "use"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b9_l2",
+      "page_index": 320,
+      "block_id": 9,
+      "line_index": 2,
+      "source_text": "transaction, and remains exposed to interest rate risk and credit risk on these pledged assets.",
+      "bbox": [
+        42.52,
+        363.014,
+        369.416,
+        372.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "assets.",
+        "credit",
+        "exposed",
+        "interest",
+        "on",
+        "pledged",
+        "rate",
+        "remains",
+        "risk",
+        "these",
+        "to",
+        "transaction"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b10_l0",
+      "page_index": 320,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "Transferred financial assets not qualifying for full derecognition and associated financial liabilities",
+      "bbox": [
+        42.88,
+        381.744,
+        384.008,
+        391.44
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Transferred",
+        "and",
+        "assets",
+        "associated",
+        "derecognition",
+        "financial",
+        "for",
+        "full",
+        "liabilities",
+        "not",
+        "qualifying"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b11_l0",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "Carrying amount of:",
+      "bbox": [
+        463.62,
+        398.642,
+        530.505,
+        405.642
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Carrying",
+        "amount",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l1",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "Transferred",
+      "bbox": [
+        455.92,
+        408.392,
+        494.427,
+        415.392
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Transferred"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l2",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "assets",
+      "bbox": [
+        473.39,
+        416.792,
+        494.397,
+        423.792
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "assets"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l3",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "Associated",
+      "bbox": [
+        512.61,
+        408.392,
+        549.171,
+        415.392
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Associated"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l4",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 4,
+      "source_text": "liabilities",
+      "bbox": [
+        519.23,
+        416.792,
+        549.19,
+        423.792
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "liabilities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l5",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 5,
+      "source_text": "$m",
+      "bbox": [
+        483.9,
+        427.142,
+        494.4,
+        434.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l6",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 6,
+      "source_text": "$m",
+      "bbox": [
+        538.65,
+        427.142,
+        549.15,
+        434.142
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l7",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 7,
+      "source_text": "At 31 Dec 2025",
+      "bbox": [
+        45.15,
+        436.892,
+        94.563,
+        443.892
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l8",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 8,
+      "source_text": "Repurchase agreements",
+      "bbox": [
+        45.15,
+        444.976,
+        121.394,
+        453.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Repurchase",
+        "agreements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b11_l12",
+      "page_index": 320,
+      "block_id": 11,
+      "line_index": 12,
+      "source_text": "Securities lending agreements",
+      "bbox": [
+        45.15,
+        454.726,
+        139.678,
+        463.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Securities",
+        "agreements",
+        "lending"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b12_l0",
+      "page_index": 320,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "At 31 Dec 2024",
+      "bbox": [
+        45.15,
+        473.476,
+        93.779,
+        481.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b12_l1",
+      "page_index": 320,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "Repurchase agreements",
+      "bbox": [
+        45.15,
+        483.226,
+        121.394,
+        491.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Repurchase",
+        "agreements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b12_l5",
+      "page_index": 320,
+      "block_id": 12,
+      "line_index": 5,
+      "source_text": "Securities lending agreements",
+      "bbox": [
+        45.15,
+        492.976,
+        139.678,
+        501.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Securities",
+        "agreements",
+        "lending"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b13_l0",
+      "page_index": 320,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "1 Excludes assets classified as held for sale.",
+      "bbox": [
+        42.52,
+        507.096,
+        185.616,
+        515.58
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Excludes",
+        "as",
+        "assets",
+        "classified",
+        "for",
+        "held",
+        "sale."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b14_l0",
+      "page_index": 320,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "18 Interests in associates and joint ventures",
+      "bbox": [
+        42.6,
+        526.148,
+        334.408,
+        544.348
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 14.0,
+      "font": "UniversNextforHSBC-Regul",
+      "ascii_tokens": [
+        "Interests",
+        "and",
+        "associates",
+        "in",
+        "joint",
+        "ventures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "18 "
+        }
+      ],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p320_b15_l0",
+      "page_index": 320,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "Carrying amount of HSBC’s interests in associates and joint ventures",
+      "bbox": [
+        42.88,
+        548.144,
+        287.656,
+        557.84
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Carrying",
+        "HSBC",
+        "amount",
+        "and",
+        "associates",
+        "in",
+        "interests",
+        "joint",
+        "of",
+        "s",
+        "ventures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b16_l2",
+      "page_index": 320,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        483.9,
+        571.792,
+        494.4,
+        578.792
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b16_l3",
+      "page_index": 320,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        539.03,
+        570.126,
+        549.145,
+        578.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b16_l4",
+      "page_index": 320,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "Interests in associates",
+      "bbox": [
+        45.15,
+        579.876,
+        114.772,
+        588.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Interests",
+        "associates",
+        "in"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b16_l8",
+      "page_index": 320,
+      "block_id": 16,
+      "line_index": 8,
+      "source_text": "Interests in joint ventures",
+      "bbox": [
+        45.15,
+        589.626,
+        124.502,
+        598.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Interests",
+        "in",
+        "joint",
+        "ventures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b16_l12",
+      "page_index": 320,
+      "block_id": 16,
+      "line_index": 12,
+      "source_text": "Interests in associates and joint ventures",
+      "bbox": [
+        45.15,
+        601.042,
+        181.692,
+        608.042
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Interests",
+        "and",
+        "associates",
+        "in",
+        "joint",
+        "ventures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b17_l1",
+      "page_index": 320,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "Principal associates of HSBC",
+      "bbox": [
+        42.88,
+        619.894,
+        145.056,
+        629.59
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "Principal",
+        "associates",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b18_l2",
+      "page_index": 320,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "Carrying amount",
+      "bbox": [
+        297.07,
+        643.542,
+        353.455,
+        650.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Carrying",
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b18_l3",
+      "page_index": 320,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "Fair value1",
+      "bbox": [
+        383.86,
+        643.542,
+        418.65,
+        650.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Fair",
+        "value1"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b18_l4",
+      "page_index": 320,
+      "block_id": 18,
+      "line_index": 4,
+      "source_text": "Carrying amount",
+      "bbox": [
+        432.58,
+        641.876,
+        483.918,
+        650.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Carrying",
+        "amount"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b18_l5",
+      "page_index": 320,
+      "block_id": 18,
+      "line_index": 5,
+      "source_text": "Fair value1",
+      "bbox": [
+        517.08,
+        641.876,
+        549.15,
+        650.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fair",
+        "value1"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b19_l0",
+      "page_index": 320,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "$m",
+      "bbox": [
+        342.9,
+        653.292,
+        353.4,
+        660.292
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b19_l1",
+      "page_index": 320,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "$m",
+      "bbox": [
+        408.15,
+        653.292,
+        418.65,
+        660.292
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b19_l2",
+      "page_index": 320,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "$m",
+      "bbox": [
+        473.78,
+        651.626,
+        483.895,
+        660.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b19_l3",
+      "page_index": 320,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        539.03,
+        651.626,
+        549.145,
+        660.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b19_l10",
+      "page_index": 320,
+      "block_id": 19,
+      "line_index": 10,
+      "source_text": "Saudi Awwal Bank",
+      "bbox": [
+        45.15,
+        671.126,
+        103.089,
+        679.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Awwal",
+        "Bank",
+        "Saudi"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b20_l1",
+      "page_index": 320,
+      "block_id": 20,
+      "line_index": 1,
+      "source_text": "Principal associates are listed on recognised stock exchanges. The fair values are based on the quoted market prices of the shares held (Level 1 in the fair value",
+      "bbox": [
+        53.77,
+        685.246,
+        551.708,
+        693.73
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Level",
+        "Principal",
+        "The",
+        "are",
+        "associates",
+        "based",
+        "exchanges.",
+        "fair",
+        "held",
+        "in",
+        "listed",
+        "market",
+        "of",
+        "on",
+        "prices",
+        "quoted",
+        "recognised",
+        "shares",
+        "stock",
+        "the",
+        "value",
+        "values"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b21_l0",
+      "page_index": 320,
+      "block_id": 21,
+      "line_index": 0,
+      "source_text": "Principal associates of HSBC (continued)",
+      "bbox": [
+        42.88,
+        710.444,
+        186.808,
+        720.14
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "HSBC",
+        "Principal",
+        "associates",
+        "continued)",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b22_l0",
+      "page_index": 320,
+      "block_id": 22,
+      "line_index": 0,
+      "source_text": "At 31 Dec 2025",
+      "bbox": [
+        380.83,
+        725.092,
+        430.243,
+        732.092
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b22_l1",
+      "page_index": 320,
+      "block_id": 22,
+      "line_index": 1,
+      "source_text": "Jurisdiction of incorporation",
+      "bbox": [
+        278.88,
+        734.072,
+        373.779,
+        741.072
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Jurisdiction",
+        "incorporation",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b22_l2",
+      "page_index": 320,
+      "block_id": 22,
+      "line_index": 2,
+      "source_text": "and principal place of business",
+      "bbox": [
+        271.48,
+        742.472,
+        373.778,
+        749.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "and",
+        "business",
+        "of",
+        "place",
+        "principal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b22_l3",
+      "page_index": 320,
+      "block_id": 22,
+      "line_index": 3,
+      "source_text": "Principal activity",
+      "bbox": [
+        409.22,
+        742.472,
+        464.464,
+        749.472
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Principal",
+        "activity"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b22_l4",
+      "page_index": 320,
+      "block_id": 22,
+      "line_index": 4,
+      "source_text": "HSBC’s interest1",
+      "bbox": [
+        494.56,
+        734.072,
+        549.15,
+        741.072
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "HSBC",
+        "interest1",
+        "s"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b23_l1",
+      "page_index": 320,
+      "block_id": 23,
+      "line_index": 1,
+      "source_text": "Mainland China",
+      "bbox": [
+        321.6,
+        753.592,
+        373.708,
+        760.592
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "China",
+        "Mainland"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b23_l2",
+      "page_index": 320,
+      "block_id": 23,
+      "line_index": 2,
+      "source_text": "Banking services",
+      "bbox": [
+        408.43,
+        753.592,
+        464.444,
+        760.592
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Banking",
+        "services"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b23_l4",
+      "page_index": 320,
+      "block_id": 23,
+      "line_index": 4,
+      "source_text": "Saudi Awwal Bank",
+      "bbox": [
+        45.15,
+        761.676,
+        103.089,
+        770.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Awwal",
+        "Bank",
+        "Saudi"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b23_l5",
+      "page_index": 320,
+      "block_id": 23,
+      "line_index": 5,
+      "source_text": "Saudi Arabia",
+      "bbox": [
+        330.91,
+        763.342,
+        373.694,
+        770.342
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Arabia",
+        "Saudi"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b23_l6",
+      "page_index": 320,
+      "block_id": 23,
+      "line_index": 6,
+      "source_text": "Banking services",
+      "bbox": [
+        408.43,
+        763.342,
+        464.444,
+        770.342
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Banking",
+        "services"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b24_l0",
+      "page_index": 320,
+      "block_id": 24,
+      "line_index": 0,
+      "source_text": "1 The Group’s interest in Bank of Communications Co., Limited (‘BoCom’) reduced from 19.03% to 16.00% following the completion of a capital issuance by",
+      "bbox": [
+        42.52,
+        775.796,
+        537.489,
+        784.28
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Bank",
+        "BoCom",
+        "Co.",
+        "Communications",
+        "Group",
+        "Limited",
+        "The",
+        "a",
+        "by",
+        "capital",
+        "completion",
+        "following",
+        "from",
+        "in",
+        "interest",
+        "issuance",
+        "of",
+        "reduced",
+        "s",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "19.03%"
+        },
+        {
+          "type": "percentage",
+          "value": "16.00%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "1 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b24_l1",
+      "page_index": 320,
+      "block_id": 24,
+      "line_index": 1,
+      "source_text": "BoCom on 17 June 2025. There has been no percentage change in HSBC’s shareholding interest in the Saudi Awwal Bank when compared with 2024.",
+      "bbox": [
+        53.86,
+        784.196,
+        522.244,
+        792.68
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Awwal",
+        "Bank",
+        "BoCom",
+        "HSBC",
+        "June",
+        "Saudi",
+        "There",
+        "been",
+        "change",
+        "compared",
+        "has",
+        "in",
+        "interest",
+        "no",
+        "on",
+        "percentage",
+        "s",
+        "shareholding",
+        "the",
+        "when",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "17 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p320_b25_l0",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        44.38,
+        15.206,
+        92.603,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l1",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        117.88,
+        15.206,
+        154.434,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l2",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        191.38,
+        15.206,
+        241.164,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l3",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        264.88,
+        15.206,
+        301.042,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l4",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        338.38,
+        15.206,
+        370.118,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l5",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        338.38,
+        23.606,
+        394.072,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l6",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        411.88,
+        16.872,
+        443.394,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l7",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        411.88,
+        25.272,
+        449.603,
+        32.272
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l8",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        485.38,
+        15.206,
+        518.049,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b25_l9",
+      "page_index": 320,
+      "block_id": 25,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        485.38,
+        23.606,
+        520.772,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p320_b26_l0",
+      "page_index": 320,
+      "block_id": 26,
+      "line_index": 0,
+      "source_text": "Notes on the financial statements",
+      "bbox": [
+        411.88,
+        35.456,
+        516.901,
+        43.94
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Notes",
+        "financial",
+        "on",
+        "statements",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p321_b0_l0",
+      "page_index": 321,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Share of profit in associates and joint ventures",
+      "bbox": [
+        42.88,
+        71.594,
+        207.224,
+        81.29
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Share",
+        "and",
+        "associates",
+        "in",
+        "joint",
+        "of",
+        "profit",
+        "ventures"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p321_b1_l3",
+      "page_index": 321,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "$m",
+      "bbox": [
+        426.9,
+        95.992,
+        437.4,
+        102.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p321_b1_l4",
+      "page_index": 321,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "$m",
+      "bbox": [
+        482.03,
+        94.326,
+        492.145,
+        102.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p321_b1_l5",
+      "page_index": 321,
+      "block_id": 1,
+      "line_index": 5,
+      "source_text": "$m",
+      "bbox": [
+        536.78,
+        94.326,
+        546.895,
+        102.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p321_b1_l11",
+      "page_index": 321,
+      "block_id": 1,
+      "line_index": 11,
+      "source_text": "Saudi Awwal Bank",
+      "bbox": [
+        45.15,
+        113.826,
+        103.089,
+        122.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        594.99,
+        841.89
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Awwal",
+        "Bank",
+        "Saudi"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round14/translation_batches/batch_0174.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round14/translation_batches/batch_0174.model_output.json",
+    "required_units": [
+      "p318_b12_l17",
+      "p318_b12_l25",
+      "p318_b12_l33",
+      "p318_b13_l0",
+      "p318_b13_l1",
+      "p318_b13_l2",
+      "p318_b13_l3",
+      "p318_b14_l0",
+      "p318_b15_l0",
+      "p318_b16_l2",
+      "p318_b16_l3",
+      "p318_b16_l4",
+      "p318_b16_l8",
+      "p318_b16_l12",
+      "p318_b16_l16",
+      "p318_b16_l20",
+      "p318_b16_l24",
+      "p318_b16_l28",
+      "p318_b16_l32",
+      "p318_b16_l36",
+      "p318_b18_l0",
+      "p318_b18_l1",
+      "p318_b18_l2",
+      "p318_b18_l3",
+      "p318_b18_l4",
+      "p318_b18_l5",
+      "p318_b18_l6",
+      "p318_b18_l7",
+      "p318_b18_l8",
+      "p318_b18_l9",
+      "p318_b19_l0",
+      "p319_b0_l0",
+      "p319_b1_l0",
+      "p319_b1_l1",
+      "p319_b1_l2",
+      "p319_b2_l0",
+      "p319_b2_l1",
+      "p319_b2_l2",
+      "p319_b2_l3",
+      "p319_b2_l7",
+      "p319_b2_l11",
+      "p319_b2_l15",
+      "p319_b3_l0",
+      "p319_b3_l4",
+      "p319_b3_l8",
+      "p319_b3_l12",
+      "p319_b4_l0",
+      "p319_b5_l0",
+      "p319_b5_l1",
+      "p319_b5_l3",
+      "p319_b5_l5",
+      "p319_b5_l6",
+      "p319_b5_l7",
+      "p319_b5_l8",
+      "p319_b5_l9",
+      "p319_b5_l10",
+      "p319_b5_l11",
+      "p319_b5_l16",
+      "p319_b5_l17",
+      "p319_b5_l22",
+      "p319_b5_l27",
+      "p319_b5_l32",
+      "p319_b5_l37",
+      "p319_b5_l42",
+      "p319_b5_l47",
+      "p319_b5_l52",
+      "p319_b6_l0",
+      "p319_b6_l1",
+      "p319_b6_l6",
+      "p319_b6_l11",
+      "p319_b6_l16",
+      "p319_b6_l21",
+      "p319_b6_l26",
+      "p319_b6_l31",
+      "p319_b6_l36",
+      "p319_b7_l1",
+      "p319_b7_l2",
+      "p319_b7_l3",
+      "p319_b8_l0",
+      "p319_b9_l0",
+      "p319_b10_l2",
+      "p319_b10_l3",
+      "p319_b10_l4",
+      "p319_b10_l5",
+      "p319_b10_l9",
+      "p319_b10_l13",
+      "p319_b11_l1",
+      "p319_b12_l0",
+      "p319_b13_l0",
+      "p319_b14_l2",
+      "p319_b14_l3",
+      "p319_b14_l4",
+      "p319_b14_l8",
+      "p319_b14_l12",
+      "p319_b14_l16",
+      "p319_b14_l20",
+      "p319_b14_l24",
+      "p319_b14_l28",
+      "p319_b15_l1",
+      "p319_b15_l2",
+      "p319_b15_l3",
+      "p319_b15_l4",
+      "p319_b16_l0",
+      "p319_b16_l1",
+      "p319_b16_l2",
+      "p319_b16_l3",
+      "p319_b16_l4",
+      "p319_b16_l5",
+      "p319_b16_l6",
+      "p319_b16_l7",
+      "p319_b16_l8",
+      "p319_b16_l9",
+      "p319_b17_l0",
+      "p320_b0_l0",
+      "p320_b0_l1",
+      "p320_b0_l2",
+      "p320_b1_l0",
+      "p320_b1_l1",
+      "p320_b2_l0",
+      "p320_b3_l2",
+      "p320_b3_l3",
+      "p320_b3_l4",
+      "p320_b3_l8",
+      "p320_b3_l12",
+      "p320_b4_l0",
+      "p320_b5_l0",
+      "p320_b5_l1",
+      "p320_b5_l2",
+      "p320_b6_l0",
+      "p320_b6_l1",
+      "p320_b7_l0",
+      "p320_b8_l0",
+      "p320_b8_l1",
+      "p320_b8_l2",
+      "p320_b8_l3",
+      "p320_b9_l0",
+      "p320_b9_l1",
+      "p320_b9_l2",
+      "p320_b10_l0",
+      "p320_b11_l0",
+      "p320_b11_l1",
+      "p320_b11_l2",
+      "p320_b11_l3",
+      "p320_b11_l4",
+      "p320_b11_l5",
+      "p320_b11_l6",
+      "p320_b11_l7",
+      "p320_b11_l8",
+      "p320_b11_l12",
+      "p320_b12_l0",
+      "p320_b12_l1",
+      "p320_b12_l5",
+      "p320_b13_l0",
+      "p320_b14_l0",
+      "p320_b15_l0",
+      "p320_b16_l2",
+      "p320_b16_l3",
+      "p320_b16_l4",
+      "p320_b16_l8",
+      "p320_b16_l12",
+      "p320_b17_l1",
+      "p320_b18_l2",
+      "p320_b18_l3",
+      "p320_b18_l4",
+      "p320_b18_l5",
+      "p320_b19_l0",
+      "p320_b19_l1",
+      "p320_b19_l2",
+      "p320_b19_l3",
+      "p320_b19_l10",
+      "p320_b20_l1",
+      "p320_b21_l0",
+      "p320_b22_l0",
+      "p320_b22_l1",
+      "p320_b22_l2",
+      "p320_b22_l3",
+      "p320_b22_l4",
+      "p320_b23_l1",
+      "p320_b23_l2",
+      "p320_b23_l4",
+      "p320_b23_l5",
+      "p320_b23_l6",
+      "p320_b24_l0",
+      "p320_b24_l1",
+      "p320_b25_l0",
+      "p320_b25_l1",
+      "p320_b25_l2",
+      "p320_b25_l3",
+      "p320_b25_l4",
+      "p320_b25_l5",
+      "p320_b25_l6",
+      "p320_b25_l7",
+      "p320_b25_l8",
+      "p320_b25_l9",
+      "p320_b26_l0",
+      "p321_b0_l0",
+      "p321_b1_l3",
+      "p321_b1_l4",
+      "p321_b1_l5",
+      "p321_b1_l11"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

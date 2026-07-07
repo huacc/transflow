@@ -1,0 +1,6812 @@
+{
+  "run_id": "round14",
+  "case_id": "R14_00005_2025_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0080",
+  "batch_index": 80,
+  "batch_count": 196,
+  "source_extraction_ref": "docs/reports/round14/source_extraction_en.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p133_b8_l32",
+      "page_index": 133,
+      "block_id": 8,
+      "line_index": 32,
+      "source_text": "Performing forborne",
+      "bbox": [
+        45.15,
+        274.326,
+        108.164,
+        282.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Performing",
+        "forborne"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b8_l42",
+      "page_index": 133,
+      "block_id": 8,
+      "line_index": 42,
+      "source_text": "Non-performing forborne",
+      "bbox": [
+        45.15,
+        284.076,
+        122.563,
+        292.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Non-performing",
+        "forborne"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b8_l52",
+      "page_index": 133,
+      "block_id": 8,
+      "line_index": 52,
+      "source_text": "At 31 Dec 2024",
+      "bbox": [
+        45.15,
+        293.826,
+        93.748,
+        302.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "At",
+        "Dec"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b9_l1",
+      "page_index": 133,
+      "block_id": 9,
+      "line_index": 1,
+      "source_text": "Collateral and other credit enhancements",
+      "bbox": [
+        42.52,
+        311.504,
+        265.252,
+        327.104
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 12.0,
+      "font": "UniversNextforHSBC-Light",
+      "ascii_tokens": [
+        "Collateral",
+        "and",
+        "credit",
+        "enhancements",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l0",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "Although collateral can be an important mitigant of credit risk, it is the",
+      "bbox": [
+        42.52,
+        342.214,
+        285.368,
+        351.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Although",
+        "an",
+        "be",
+        "can",
+        "collateral",
+        "credit",
+        "important",
+        "is",
+        "it",
+        "mitigant",
+        "of",
+        "risk",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l1",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 1,
+      "source_text": "Group’s practice to typically lend on the basis of the customer’s ability",
+      "bbox": [
+        42.52,
+        351.814,
+        287.672,
+        361.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "ability",
+        "basis",
+        "customer",
+        "lend",
+        "of",
+        "on",
+        "practice",
+        "s",
+        "the",
+        "to",
+        "typically"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l2",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 2,
+      "source_text": "to meet their obligations out of cash flow resources rather than placing",
+      "bbox": [
+        42.52,
+        361.414,
+        290.392,
+        371.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "cash",
+        "flow",
+        "meet",
+        "obligations",
+        "of",
+        "out",
+        "placing",
+        "rather",
+        "resources",
+        "than",
+        "their",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l3",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 3,
+      "source_text": "primary reliance on collateral and other credit risk enhancements.",
+      "bbox": [
+        42.52,
+        371.014,
+        270.896,
+        380.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "collateral",
+        "credit",
+        "enhancements.",
+        "on",
+        "other",
+        "primary",
+        "reliance",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l4",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 4,
+      "source_text": "Depending on the customer’s standing and the type of product,",
+      "bbox": [
+        42.52,
+        380.614,
+        265.504,
+        390.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Depending",
+        "and",
+        "customer",
+        "of",
+        "on",
+        "product",
+        "s",
+        "standing",
+        "the",
+        "type"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l5",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 5,
+      "source_text": "facilities may be provided without any collateral or other credit",
+      "bbox": [
+        42.52,
+        390.214,
+        259.864,
+        399.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "any",
+        "be",
+        "collateral",
+        "credit",
+        "facilities",
+        "may",
+        "or",
+        "other",
+        "provided",
+        "without"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l6",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 6,
+      "source_text": "enhancements. For other lending, a charge over collateral is obtained",
+      "bbox": [
+        42.52,
+        399.814,
+        283.968,
+        409.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "For",
+        "a",
+        "charge",
+        "collateral",
+        "enhancements.",
+        "is",
+        "lending",
+        "obtained",
+        "other",
+        "over"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l7",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 7,
+      "source_text": "and considered in determining the credit decision and pricing. In the",
+      "bbox": [
+        42.52,
+        409.414,
+        279.96,
+        419.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "In",
+        "and",
+        "considered",
+        "credit",
+        "decision",
+        "determining",
+        "in",
+        "pricing.",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l8",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 8,
+      "source_text": "event of default, the Group may utilise the collateral as a source of",
+      "bbox": [
+        42.52,
+        419.014,
+        275.104,
+        428.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "a",
+        "as",
+        "collateral",
+        "default",
+        "event",
+        "may",
+        "of",
+        "source",
+        "the",
+        "utilise"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b10_l9",
+      "page_index": 133,
+      "block_id": 10,
+      "line_index": 9,
+      "source_text": "repayment.",
+      "bbox": [
+        42.52,
+        428.614,
+        82.224,
+        438.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "repayment."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b11_l0",
+      "page_index": 133,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "Depending on its form, collateral can have a significant financial effect",
+      "bbox": [
+        42.52,
+        444.714,
+        286.776,
+        454.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Depending",
+        "a",
+        "can",
+        "collateral",
+        "effect",
+        "financial",
+        "form",
+        "have",
+        "its",
+        "on",
+        "significant"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b11_l1",
+      "page_index": 133,
+      "block_id": 11,
+      "line_index": 1,
+      "source_text": "in mitigating our exposure to credit risk. Where there is sufficient",
+      "bbox": [
+        42.52,
+        454.314,
+        270.28,
+        464.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Where",
+        "credit",
+        "exposure",
+        "in",
+        "is",
+        "mitigating",
+        "our",
+        "risk.",
+        "sufficient",
+        "there",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b11_l2",
+      "page_index": 133,
+      "block_id": 11,
+      "line_index": 2,
+      "source_text": "collateral, an expected credit loss is not recognised. This is the case for",
+      "bbox": [
+        42.52,
+        463.914,
+        291.504,
+        473.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "an",
+        "case",
+        "collateral",
+        "credit",
+        "expected",
+        "for",
+        "is",
+        "loss",
+        "not",
+        "recognised.",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b11_l3",
+      "page_index": 133,
+      "block_id": 11,
+      "line_index": 3,
+      "source_text": "reverse repurchase agreements and for certain loans and advances to",
+      "bbox": [
+        42.52,
+        473.514,
+        286.808,
+        483.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "advances",
+        "agreements",
+        "and",
+        "certain",
+        "for",
+        "loans",
+        "repurchase",
+        "reverse",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b11_l4",
+      "page_index": 133,
+      "block_id": 11,
+      "line_index": 4,
+      "source_text": "customers where the loan to value (‘LTV’) is very low.",
+      "bbox": [
+        42.52,
+        483.114,
+        229.304,
+        492.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "LTV",
+        "customers",
+        "is",
+        "loan",
+        "low.",
+        "the",
+        "to",
+        "value",
+        "very",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l0",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 0,
+      "source_text": "Mitigants may include a charge on borrowers’ specific assets, such as",
+      "bbox": [
+        42.52,
+        499.214,
+        288.008,
+        508.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Mitigants",
+        "a",
+        "as",
+        "assets",
+        "borrowers",
+        "charge",
+        "include",
+        "may",
+        "on",
+        "specific",
+        "such"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l1",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 1,
+      "source_text": "real estate or financial instruments. Other credit risk mitigants include",
+      "bbox": [
+        42.52,
+        508.814,
+        285.888,
+        518.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other",
+        "credit",
+        "estate",
+        "financial",
+        "include",
+        "instruments.",
+        "mitigants",
+        "or",
+        "real",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l2",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 2,
+      "source_text": "short positions in securities and financial assets held as part of linked",
+      "bbox": [
+        42.52,
+        518.414,
+        283.664,
+        528.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "as",
+        "assets",
+        "financial",
+        "held",
+        "in",
+        "linked",
+        "of",
+        "part",
+        "positions",
+        "securities",
+        "short"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l3",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 3,
+      "source_text": "insurance/investment contracts where the risk is predominantly borne",
+      "bbox": [
+        42.52,
+        528.014,
+        287.608,
+        537.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "borne",
+        "contracts",
+        "insurance/investment",
+        "is",
+        "predominantly",
+        "risk",
+        "the",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l4",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 4,
+      "source_text": "by the policyholder. Additionally, risk may be managed by employing",
+      "bbox": [
+        42.52,
+        537.614,
+        281.936,
+        547.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additionally",
+        "be",
+        "by",
+        "employing",
+        "managed",
+        "may",
+        "policyholder.",
+        "risk",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l5",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 5,
+      "source_text": "other types of collateral and credit risk enhancements, such as second",
+      "bbox": [
+        42.52,
+        547.214,
+        289.24,
+        556.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "as",
+        "collateral",
+        "credit",
+        "enhancements",
+        "of",
+        "other",
+        "risk",
+        "second",
+        "such",
+        "types"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l6",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 6,
+      "source_text": "charges, other liens and unsupported guarantees. Guarantees are",
+      "bbox": [
+        42.52,
+        556.814,
+        272.008,
+        566.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Guarantees",
+        "and",
+        "are",
+        "charges",
+        "guarantees.",
+        "liens",
+        "other",
+        "unsupported"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l7",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 7,
+      "source_text": "normally taken from corporates and export credit agencies. Corporates",
+      "bbox": [
+        42.52,
+        566.414,
+        289.76,
+        576.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporates",
+        "agencies.",
+        "and",
+        "corporates",
+        "credit",
+        "export",
+        "from",
+        "normally",
+        "taken"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l8",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 8,
+      "source_text": "would normally provide guarantees as part of a parent/subsidiary",
+      "bbox": [
+        42.52,
+        576.014,
+        268.392,
+        585.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "as",
+        "guarantees",
+        "normally",
+        "of",
+        "parent/subsidiary",
+        "part",
+        "provide",
+        "would"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l9",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 9,
+      "source_text": "relationship and span a number of credit grades. The export credit",
+      "bbox": [
+        42.52,
+        585.614,
+        273.104,
+        595.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "a",
+        "and",
+        "credit",
+        "export",
+        "grades.",
+        "number",
+        "of",
+        "relationship",
+        "span"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b12_l10",
+      "page_index": 133,
+      "block_id": 12,
+      "line_index": 10,
+      "source_text": "agencies will normally be investment grade.",
+      "bbox": [
+        42.52,
+        595.214,
+        197.224,
+        604.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "agencies",
+        "be",
+        "grade.",
+        "investment",
+        "normally",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l0",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "Certain credit mitigants are used strategically in portfolio management",
+      "bbox": [
+        42.52,
+        611.314,
+        288.264,
+        621.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Certain",
+        "are",
+        "credit",
+        "in",
+        "management",
+        "mitigants",
+        "portfolio",
+        "strategically",
+        "used"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l1",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 1,
+      "source_text": "activities. Across Corporate and Institutional Banking, risk limits and",
+      "bbox": [
+        42.52,
+        620.914,
+        278.968,
+        630.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Across",
+        "Banking",
+        "Corporate",
+        "Institutional",
+        "activities.",
+        "and",
+        "limits",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l2",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 2,
+      "source_text": "utilisations, maturity profiles and risk quality are monitored and",
+      "bbox": [
+        42.52,
+        630.514,
+        261.568,
+        640.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "are",
+        "maturity",
+        "monitored",
+        "profiles",
+        "quality",
+        "risk",
+        "utilisations"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l3",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 3,
+      "source_text": "managed proactively. This process is key to the setting of risk appetite",
+      "bbox": [
+        42.52,
+        640.114,
+        289.08,
+        649.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "This",
+        "appetite",
+        "is",
+        "key",
+        "managed",
+        "of",
+        "proactively.",
+        "process",
+        "risk",
+        "setting",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l4",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 4,
+      "source_text": "for these larger, more complex, geographically distributed customer",
+      "bbox": [
+        42.52,
+        649.714,
+        280.136,
+        659.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "complex",
+        "customer",
+        "distributed",
+        "for",
+        "geographically",
+        "larger",
+        "more",
+        "these"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l5",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 5,
+      "source_text": "groups. While the principal form of risk management continues to be at",
+      "bbox": [
+        42.52,
+        659.314,
+        292.344,
+        669.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "While",
+        "at",
+        "be",
+        "continues",
+        "form",
+        "groups.",
+        "management",
+        "of",
+        "principal",
+        "risk",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l6",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 6,
+      "source_text": "the point of exposure origination, through the lending decision-making",
+      "bbox": [
+        42.52,
+        668.914,
+        287.416,
+        678.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "decision-making",
+        "exposure",
+        "lending",
+        "of",
+        "origination",
+        "point",
+        "the",
+        "through"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l7",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 7,
+      "source_text": "process, Corporate and Institutional Banking also utilises loan sales and",
+      "bbox": [
+        42.52,
+        678.514,
+        291.672,
+        688.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Banking",
+        "Corporate",
+        "Institutional",
+        "also",
+        "and",
+        "loan",
+        "process",
+        "sales",
+        "utilises"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l8",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 8,
+      "source_text": "credit default swap (‘CDS’) hedges to manage concentrations and",
+      "bbox": [
+        42.52,
+        688.114,
+        272.92,
+        697.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CDS",
+        "and",
+        "concentrations",
+        "credit",
+        "default",
+        "hedges",
+        "manage",
+        "swap",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b13_l9",
+      "page_index": 133,
+      "block_id": 13,
+      "line_index": 9,
+      "source_text": "reduce risk.",
+      "bbox": [
+        42.52,
+        697.714,
+        85.096,
+        707.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "reduce",
+        "risk."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b14_l0",
+      "page_index": 133,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "These transactions are the responsibility of a dedicated Corporate and",
+      "bbox": [
+        305.88,
+        342.214,
+        550.36,
+        351.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate",
+        "These",
+        "a",
+        "and",
+        "are",
+        "dedicated",
+        "of",
+        "responsibility",
+        "the",
+        "transactions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b14_l1",
+      "page_index": 133,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "Institutional Banking portfolio management team. Hedging activity is",
+      "bbox": [
+        305.88,
+        351.814,
+        545.208,
+        361.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Banking",
+        "Hedging",
+        "Institutional",
+        "activity",
+        "is",
+        "management",
+        "portfolio",
+        "team."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b14_l2",
+      "page_index": 133,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "carried out within agreed credit parameters, and is subject to market",
+      "bbox": [
+        305.88,
+        361.414,
+        545.568,
+        371.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "agreed",
+        "and",
+        "carried",
+        "credit",
+        "is",
+        "market",
+        "out",
+        "parameters",
+        "subject",
+        "to",
+        "within"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b14_l3",
+      "page_index": 133,
+      "block_id": 14,
+      "line_index": 3,
+      "source_text": "risk limits and a robust governance structure. Where applicable, CDSs",
+      "bbox": [
+        305.88,
+        371.014,
+        550.464,
+        380.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CDSs",
+        "Where",
+        "a",
+        "and",
+        "applicable",
+        "governance",
+        "limits",
+        "risk",
+        "robust",
+        "structure."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b14_l4",
+      "page_index": 133,
+      "block_id": 14,
+      "line_index": 4,
+      "source_text": "are entered into directly with a central clearing house counterparty.",
+      "bbox": [
+        305.88,
+        380.614,
+        540.216,
+        390.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "are",
+        "central",
+        "clearing",
+        "counterparty.",
+        "directly",
+        "entered",
+        "house",
+        "into",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b14_l5",
+      "page_index": 133,
+      "block_id": 14,
+      "line_index": 5,
+      "source_text": "Otherwise, the Group’s exposure to CDS protection providers is",
+      "bbox": [
+        305.88,
+        390.214,
+        530.568,
+        399.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CDS",
+        "Group",
+        "Otherwise",
+        "exposure",
+        "is",
+        "protection",
+        "providers",
+        "s",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b14_l6",
+      "page_index": 133,
+      "block_id": 14,
+      "line_index": 6,
+      "source_text": "diversified among mainly banking counterparties with strong credit",
+      "bbox": [
+        305.88,
+        399.814,
+        539.128,
+        409.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "among",
+        "banking",
+        "counterparties",
+        "credit",
+        "diversified",
+        "mainly",
+        "strong",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b14_l7",
+      "page_index": 133,
+      "block_id": 14,
+      "line_index": 7,
+      "source_text": "ratings.",
+      "bbox": [
+        305.88,
+        409.414,
+        331.528,
+        419.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ratings."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b15_l0",
+      "page_index": 133,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "CDS mitigants are held at portfolio level and are not included in the",
+      "bbox": [
+        305.88,
+        425.514,
+        539.776,
+        435.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CDS",
+        "and",
+        "are",
+        "at",
+        "held",
+        "in",
+        "included",
+        "level",
+        "mitigants",
+        "not",
+        "portfolio",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b15_l1",
+      "page_index": 133,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "expected credit loss calculations. CDS mitigants are not reported in the",
+      "bbox": [
+        305.88,
+        435.114,
+        554.648,
+        444.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CDS",
+        "are",
+        "calculations.",
+        "credit",
+        "expected",
+        "in",
+        "loss",
+        "mitigants",
+        "not",
+        "reported",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b15_l2",
+      "page_index": 133,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "following tables.",
+      "bbox": [
+        305.88,
+        444.714,
+        362.784,
+        454.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "following",
+        "tables."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b16_l0",
+      "page_index": 133,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "Collateral on loans and advances",
+      "bbox": [
+        305.88,
+        460.306,
+        434.712,
+        470.706
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Collateral",
+        "advances",
+        "and",
+        "loans",
+        "on"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b16_l1",
+      "page_index": 133,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "Collateral held is analysed separately for CRE and for other corporate,",
+      "bbox": [
+        305.88,
+        471.414,
+        548.52,
+        481.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CRE",
+        "Collateral",
+        "analysed",
+        "and",
+        "corporate",
+        "for",
+        "held",
+        "is",
+        "other",
+        "separately"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b16_l2",
+      "page_index": 133,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "commercial and financial (non-bank) lending. The following tables",
+      "bbox": [
+        305.88,
+        481.014,
+        533.448,
+        490.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "and",
+        "commercial",
+        "financial",
+        "following",
+        "lending.",
+        "non-bank)",
+        "tables"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b16_l3",
+      "page_index": 133,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "include off-balance sheet loan commitments, primarily undrawn credit",
+      "bbox": [
+        305.88,
+        490.614,
+        550.536,
+        500.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "commitments",
+        "credit",
+        "include",
+        "loan",
+        "off-balance",
+        "primarily",
+        "sheet",
+        "undrawn"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b16_l4",
+      "page_index": 133,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "lines.",
+      "bbox": [
+        305.88,
+        500.214,
+        324.136,
+        509.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "lines."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b17_l0",
+      "page_index": 133,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "The collateral measured in the following tables consists of fixed first",
+      "bbox": [
+        305.88,
+        516.314,
+        544.064,
+        526.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "collateral",
+        "consists",
+        "first",
+        "fixed",
+        "following",
+        "in",
+        "measured",
+        "of",
+        "tables",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b17_l1",
+      "page_index": 133,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "charges on real estate, and charges over cash and marketable financial",
+      "bbox": [
+        305.88,
+        525.914,
+        553.056,
+        535.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "cash",
+        "charges",
+        "estate",
+        "financial",
+        "marketable",
+        "on",
+        "over",
+        "real"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b17_l2",
+      "page_index": 133,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "instruments. The values in the tables represent the expected market",
+      "bbox": [
+        305.88,
+        535.514,
+        546.16,
+        545.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "expected",
+        "in",
+        "instruments.",
+        "market",
+        "represent",
+        "tables",
+        "the",
+        "values"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b17_l3",
+      "page_index": 133,
+      "block_id": 17,
+      "line_index": 3,
+      "source_text": "value on an open market basis, actual values realised are a function of",
+      "bbox": [
+        305.88,
+        545.114,
+        550.312,
+        554.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "actual",
+        "an",
+        "are",
+        "basis",
+        "function",
+        "market",
+        "of",
+        "on",
+        "open",
+        "realised",
+        "value",
+        "values"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b17_l4",
+      "page_index": 133,
+      "block_id": 17,
+      "line_index": 4,
+      "source_text": "market conditions. No adjustment has been made to the collateral for",
+      "bbox": [
+        305.88,
+        554.714,
+        548.76,
+        564.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "No",
+        "adjustment",
+        "been",
+        "collateral",
+        "conditions.",
+        "for",
+        "has",
+        "made",
+        "market",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b17_l5",
+      "page_index": 133,
+      "block_id": 17,
+      "line_index": 5,
+      "source_text": "any expected costs of recovery. Marketable securities are measured at",
+      "bbox": [
+        305.88,
+        564.314,
+        554.464,
+        574.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Marketable",
+        "any",
+        "are",
+        "at",
+        "costs",
+        "expected",
+        "measured",
+        "of",
+        "recovery.",
+        "securities"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b17_l6",
+      "page_index": 133,
+      "block_id": 17,
+      "line_index": 6,
+      "source_text": "their fair value.",
+      "bbox": [
+        305.88,
+        573.914,
+        357.016,
+        583.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "fair",
+        "their",
+        "value."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b18_l0",
+      "page_index": 133,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "Other types of collateral, such as unsupported guarantees and floating",
+      "bbox": [
+        305.88,
+        590.014,
+        551.696,
+        599.71
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other",
+        "and",
+        "as",
+        "collateral",
+        "floating",
+        "guarantees",
+        "of",
+        "such",
+        "types",
+        "unsupported"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b18_l1",
+      "page_index": 133,
+      "block_id": 18,
+      "line_index": 1,
+      "source_text": "charges over the assets of a customer’s business, are not measured in",
+      "bbox": [
+        305.88,
+        599.614,
+        554.472,
+        609.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "are",
+        "assets",
+        "business",
+        "charges",
+        "customer",
+        "in",
+        "measured",
+        "not",
+        "of",
+        "over",
+        "s",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b18_l2",
+      "page_index": 133,
+      "block_id": 18,
+      "line_index": 2,
+      "source_text": "the following tables. While such mitigants have value, often providing",
+      "bbox": [
+        305.88,
+        609.214,
+        549.032,
+        618.91
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "While",
+        "following",
+        "have",
+        "mitigants",
+        "often",
+        "providing",
+        "such",
+        "tables.",
+        "the",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b18_l3",
+      "page_index": 133,
+      "block_id": 18,
+      "line_index": 3,
+      "source_text": "rights in insolvency, their assignable value is not sufficiently certain and",
+      "bbox": [
+        305.88,
+        618.814,
+        554.776,
+        628.51
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "assignable",
+        "certain",
+        "in",
+        "insolvency",
+        "is",
+        "not",
+        "rights",
+        "sufficiently",
+        "their",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b18_l4",
+      "page_index": 133,
+      "block_id": 18,
+      "line_index": 4,
+      "source_text": "they are therefore assigned no value for disclosure purposes.",
+      "bbox": [
+        305.88,
+        628.414,
+        518.28,
+        638.11
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "are",
+        "assigned",
+        "disclosure",
+        "for",
+        "no",
+        "purposes.",
+        "therefore",
+        "they",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b19_l0",
+      "page_index": 133,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "The LTV ratios presented are calculated by directly associating loans",
+      "bbox": [
+        305.88,
+        644.514,
+        544.224,
+        654.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "LTV",
+        "The",
+        "are",
+        "associating",
+        "by",
+        "calculated",
+        "directly",
+        "loans",
+        "presented",
+        "ratios"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b19_l1",
+      "page_index": 133,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "and advances with the collateral that individually and uniquely supports",
+      "bbox": [
+        305.88,
+        654.114,
+        553.312,
+        663.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "advances",
+        "and",
+        "collateral",
+        "individually",
+        "supports",
+        "that",
+        "the",
+        "uniquely",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b19_l2",
+      "page_index": 133,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "each facility. When collateral assets are shared by multiple loans and",
+      "bbox": [
+        305.88,
+        663.714,
+        545.952,
+        673.41
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "When",
+        "and",
+        "are",
+        "assets",
+        "by",
+        "collateral",
+        "each",
+        "facility.",
+        "loans",
+        "multiple",
+        "shared"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b19_l3",
+      "page_index": 133,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "advances, whether specifically or, more generally, by way of an all",
+      "bbox": [
+        305.88,
+        673.315,
+        537.312,
+        683.01
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "advances",
+        "all",
+        "an",
+        "by",
+        "generally",
+        "more",
+        "of",
+        "or",
+        "specifically",
+        "way",
+        "whether"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b19_l4",
+      "page_index": 133,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "monies charge, the collateral value is pro-rated across the loans and",
+      "bbox": [
+        305.88,
+        682.914,
+        542.912,
+        692.61
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "across",
+        "and",
+        "charge",
+        "collateral",
+        "is",
+        "loans",
+        "monies",
+        "pro-rated",
+        "the",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b19_l5",
+      "page_index": 133,
+      "block_id": 19,
+      "line_index": 5,
+      "source_text": "advances protected by the collateral.",
+      "bbox": [
+        305.88,
+        692.514,
+        433.152,
+        702.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "advances",
+        "by",
+        "collateral.",
+        "protected",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p133_b20_l0",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.15,
+        15.206,
+        93.373,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l1",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        118.65,
+        15.206,
+        155.204,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l2",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.15,
+        15.206,
+        241.934,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l3",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        265.65,
+        16.872,
+        304.164,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l4",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.15,
+        15.206,
+        370.888,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l5",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.15,
+        23.606,
+        394.842,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l6",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        412.65,
+        15.206,
+        443.38,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l7",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        412.65,
+        23.606,
+        448.042,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l8",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.15,
+        15.206,
+        518.819,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b20_l9",
+      "page_index": 133,
+      "block_id": 20,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.15,
+        23.606,
+        521.542,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p133_b21_l0",
+      "page_index": 133,
+      "block_id": 21,
+      "line_index": 0,
+      "source_text": "Credit risk",
+      "bbox": [
+        265.65,
+        34.766,
+        297.143,
+        43.25
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Credit",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b0_l0",
+      "page_index": 134,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "For credit-impaired loans, the collateral values cannot be directly",
+      "bbox": [
+        42.52,
+        68.964,
+        266.816,
+        78.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "For",
+        "be",
+        "cannot",
+        "collateral",
+        "credit-impaired",
+        "directly",
+        "loans",
+        "the",
+        "values"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b0_l1",
+      "page_index": 134,
+      "block_id": 0,
+      "line_index": 1,
+      "source_text": "compared with impairment allowances recognised. The LTV figures use",
+      "bbox": [
+        42.52,
+        78.564,
+        293.904,
+        88.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "LTV",
+        "The",
+        "allowances",
+        "compared",
+        "figures",
+        "impairment",
+        "recognised.",
+        "use",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b0_l2",
+      "page_index": 134,
+      "block_id": 0,
+      "line_index": 2,
+      "source_text": "open market values with no adjustments, actual values realised are a",
+      "bbox": [
+        42.52,
+        88.164,
+        283.64,
+        97.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "actual",
+        "adjustments",
+        "are",
+        "market",
+        "no",
+        "open",
+        "realised",
+        "values",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b0_l3",
+      "page_index": 134,
+      "block_id": 0,
+      "line_index": 3,
+      "source_text": "function of market conditions. Impairment allowances are calculated on",
+      "bbox": [
+        42.52,
+        97.764,
+        292.352,
+        107.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Impairment",
+        "allowances",
+        "are",
+        "calculated",
+        "conditions.",
+        "function",
+        "market",
+        "of",
+        "on"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b0_l4",
+      "page_index": 134,
+      "block_id": 0,
+      "line_index": 4,
+      "source_text": "a different basis, by considering other cash flows and adjusting",
+      "bbox": [
+        42.52,
+        107.364,
+        263.056,
+        117.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "adjusting",
+        "and",
+        "basis",
+        "by",
+        "cash",
+        "considering",
+        "different",
+        "flows",
+        "other"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b0_l5",
+      "page_index": 134,
+      "block_id": 0,
+      "line_index": 5,
+      "source_text": "collateral values for costs of realising collateral as explained further on",
+      "bbox": [
+        42.52,
+        116.964,
+        286.608,
+        126.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "as",
+        "collateral",
+        "costs",
+        "explained",
+        "for",
+        "further",
+        "of",
+        "on",
+        "realising",
+        "values"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b0_l6",
+      "page_index": 134,
+      "block_id": 0,
+      "line_index": 6,
+      "source_text": "page 279.",
+      "bbox": [
+        42.52,
+        126.564,
+        76.964,
+        136.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "page"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "279"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b1_l0",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Mortgage loans",
+      "bbox": [
+        42.52,
+        142.156,
+        106.528,
+        152.556
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Mortgage",
+        "loans"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b1_l1",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "The following table provides a quantification of the value of fixed",
+      "bbox": [
+        42.52,
+        153.264,
+        268.128,
+        162.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "a",
+        "fixed",
+        "following",
+        "of",
+        "provides",
+        "quantification",
+        "table",
+        "the",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b1_l2",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "charges we hold over specific assets where we have a history",
+      "bbox": [
+        42.52,
+        162.864,
+        260.728,
+        172.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "assets",
+        "charges",
+        "have",
+        "history",
+        "hold",
+        "over",
+        "specific",
+        "we",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b1_l3",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "of enforcing, and are able to enforce, collateral in satisfying a debt in",
+      "bbox": [
+        42.52,
+        172.464,
+        280.992,
+        182.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "able",
+        "and",
+        "are",
+        "collateral",
+        "debt",
+        "enforce",
+        "enforcing",
+        "in",
+        "of",
+        "satisfying",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b1_l4",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "the event of the borrower failing to meet its contractual obligations, and",
+      "bbox": [
+        42.52,
+        182.064,
+        293.336,
+        191.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "borrower",
+        "contractual",
+        "event",
+        "failing",
+        "its",
+        "meet",
+        "obligations",
+        "of",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b1_l5",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 5,
+      "source_text": "where the collateral is cash or can be realised by sale in an established",
+      "bbox": [
+        42.52,
+        191.664,
+        289.448,
+        201.36
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "an",
+        "be",
+        "by",
+        "can",
+        "cash",
+        "collateral",
+        "established",
+        "in",
+        "is",
+        "or",
+        "realised",
+        "sale",
+        "the",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b1_l6",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 6,
+      "source_text": "market. The collateral valuation excludes any adjustments for obtaining",
+      "bbox": [
+        42.52,
+        201.264,
+        290.488,
+        210.96
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "adjustments",
+        "any",
+        "collateral",
+        "excludes",
+        "for",
+        "market.",
+        "obtaining",
+        "valuation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b1_l7",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 7,
+      "source_text": "and selling the collateral and, in particular, loans shown as not",
+      "bbox": [
+        42.52,
+        210.864,
+        258.544,
+        220.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "as",
+        "collateral",
+        "in",
+        "loans",
+        "not",
+        "particular",
+        "selling",
+        "shown",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b1_l8",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 8,
+      "source_text": "collateralised or partially collateralised may also benefit from other",
+      "bbox": [
+        42.52,
+        220.464,
+        273.24,
+        230.16
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "also",
+        "benefit",
+        "collateralised",
+        "from",
+        "may",
+        "or",
+        "other",
+        "partially"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b1_l9",
+      "page_index": 134,
+      "block_id": 1,
+      "line_index": 9,
+      "source_text": "forms of credit mitigants.",
+      "bbox": [
+        42.52,
+        230.064,
+        130.256,
+        239.76
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "credit",
+        "forms",
+        "mitigants.",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b2_l0",
+      "page_index": 134,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "The quality of both our Hong Kong and UK mortgage books remained",
+      "bbox": [
+        42.52,
+        246.164,
+        289.92,
+        255.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Hong",
+        "Kong",
+        "The",
+        "UK",
+        "and",
+        "books",
+        "both",
+        "mortgage",
+        "of",
+        "our",
+        "quality",
+        "remained"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b2_l1",
+      "page_index": 134,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "strong, with low levels of impairment allowances. The average LTV",
+      "bbox": [
+        42.52,
+        255.764,
+        282.84,
+        265.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "LTV",
+        "The",
+        "allowances.",
+        "average",
+        "impairment",
+        "levels",
+        "low",
+        "of",
+        "strong",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b2_l2",
+      "page_index": 134,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "ratio on new mortgage lending in Hong Kong was 70%, compared",
+      "bbox": [
+        42.52,
+        265.364,
+        279.628,
+        275.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Hong",
+        "Kong",
+        "compared",
+        "in",
+        "lending",
+        "mortgage",
+        "new",
+        "on",
+        "ratio",
+        "was"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "70%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b2_l3",
+      "page_index": 134,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "with an estimated 60% for the overall mortgage portfolio. The",
+      "bbox": [
+        42.52,
+        274.964,
+        264.574,
+        284.66
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "The",
+        "an",
+        "estimated",
+        "for",
+        "mortgage",
+        "overall",
+        "portfolio.",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "60%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b2_l4",
+      "page_index": 134,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "average LTV ratio on new lending in the UK was 69%, compared with",
+      "bbox": [
+        42.52,
+        284.564,
+        292.066,
+        294.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "LTV",
+        "UK",
+        "average",
+        "compared",
+        "in",
+        "lending",
+        "new",
+        "on",
+        "ratio",
+        "the",
+        "was",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "69%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b2_l5",
+      "page_index": 134,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "an estimated 55% for the overall mortgage portfolio.",
+      "bbox": [
+        42.52,
+        294.164,
+        229.056,
+        303.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "an",
+        "estimated",
+        "for",
+        "mortgage",
+        "overall",
+        "portfolio.",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "55%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b3_l0",
+      "page_index": 134,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Commercial real estate loans and advances",
+      "bbox": [
+        305.88,
+        68.456,
+        475.664,
+        78.856
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Commercial",
+        "advances",
+        "and",
+        "estate",
+        "loans",
+        "real"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b3_l1",
+      "page_index": 134,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "The value of CRE collateral is determined by using a combination of",
+      "bbox": [
+        305.88,
+        79.564,
+        542.176,
+        89.26
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CRE",
+        "The",
+        "a",
+        "by",
+        "collateral",
+        "combination",
+        "determined",
+        "is",
+        "of",
+        "using",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b3_l2",
+      "page_index": 134,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "external and internal valuations and physical inspections. For CRE,",
+      "bbox": [
+        305.88,
+        89.164,
+        536.848,
+        98.86
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "CRE",
+        "For",
+        "and",
+        "external",
+        "inspections.",
+        "internal",
+        "physical",
+        "valuations"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b3_l3",
+      "page_index": 134,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "where the facility exceeds regulatory threshold requirements, Group",
+      "bbox": [
+        305.88,
+        98.764,
+        545.256,
+        108.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Group",
+        "exceeds",
+        "facility",
+        "regulatory",
+        "requirements",
+        "the",
+        "threshold",
+        "where"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b3_l4",
+      "page_index": 134,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "policy requires an independent review of the valuation at least every",
+      "bbox": [
+        305.88,
+        108.364,
+        544.216,
+        118.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "an",
+        "at",
+        "every",
+        "independent",
+        "least",
+        "of",
+        "policy",
+        "requires",
+        "review",
+        "the",
+        "valuation"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b3_l5",
+      "page_index": 134,
+      "block_id": 3,
+      "line_index": 5,
+      "source_text": "three years, or more frequently as the need arises.",
+      "bbox": [
+        305.88,
+        117.963,
+        481.768,
+        127.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "arises.",
+        "as",
+        "frequently",
+        "more",
+        "need",
+        "or",
+        "the",
+        "three",
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b4_l0",
+      "page_index": 134,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "In Hong Kong, unsecured lending is typically limited to major property",
+      "bbox": [
+        305.88,
+        134.063,
+        549.024,
+        143.759
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Hong",
+        "In",
+        "Kong",
+        "is",
+        "lending",
+        "limited",
+        "major",
+        "property",
+        "to",
+        "typically",
+        "unsecured"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b4_l1",
+      "page_index": 134,
+      "block_id": 4,
+      "line_index": 1,
+      "source_text": "companies. In Europe, facilities of a working capital nature are generally",
+      "bbox": [
+        305.88,
+        143.663,
+        556.272,
+        153.359
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Europe",
+        "In",
+        "a",
+        "are",
+        "capital",
+        "companies.",
+        "facilities",
+        "generally",
+        "nature",
+        "of",
+        "working"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b4_l2",
+      "page_index": 134,
+      "block_id": 4,
+      "line_index": 2,
+      "source_text": "not secured by a first fixed charge, and are therefore disclosed as not",
+      "bbox": [
+        305.88,
+        153.263,
+        548.512,
+        162.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "a",
+        "and",
+        "are",
+        "as",
+        "by",
+        "charge",
+        "disclosed",
+        "first",
+        "fixed",
+        "not",
+        "secured",
+        "therefore"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b4_l3",
+      "page_index": 134,
+      "block_id": 4,
+      "line_index": 3,
+      "source_text": "collateralised.",
+      "bbox": [
+        305.88,
+        162.863,
+        353.176,
+        172.559
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "collateralised."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b5_l0",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "Other corporate, commercial and financial (non-bank) loans and",
+      "bbox": [
+        305.88,
+        178.455,
+        557.816,
+        188.855
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "Other",
+        "and",
+        "commercial",
+        "corporate",
+        "financial",
+        "loans",
+        "non-bank)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b5_l1",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "advances",
+      "bbox": [
+        305.88,
+        188.055,
+        342.712,
+        198.455
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversNextforHSBC-Bold",
+      "ascii_tokens": [
+        "advances"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b5_l2",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "Other corporate, commercial and financial (non-bank) loans are",
+      "bbox": [
+        305.88,
+        199.163,
+        524.824,
+        208.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Other",
+        "and",
+        "are",
+        "commercial",
+        "corporate",
+        "financial",
+        "loans",
+        "non-bank)"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b5_l3",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "analysed separately in the following table. For financing activities in",
+      "bbox": [
+        305.88,
+        208.763,
+        540.512,
+        218.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "For",
+        "activities",
+        "analysed",
+        "financing",
+        "following",
+        "in",
+        "separately",
+        "table.",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b5_l4",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 4,
+      "source_text": "other corporate and commercial lending, collateral value is not strongly",
+      "bbox": [
+        305.88,
+        218.363,
+        552.872,
+        228.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "collateral",
+        "commercial",
+        "corporate",
+        "is",
+        "lending",
+        "not",
+        "other",
+        "strongly",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b5_l5",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 5,
+      "source_text": "correlated to principal repayment performance. Collateral values are",
+      "bbox": [
+        305.88,
+        227.963,
+        542.536,
+        237.659
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Collateral",
+        "are",
+        "correlated",
+        "performance.",
+        "principal",
+        "repayment",
+        "to",
+        "values"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b5_l6",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 6,
+      "source_text": "generally refreshed when an obligor’s general credit performance",
+      "bbox": [
+        305.88,
+        237.563,
+        534.832,
+        247.259
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "an",
+        "credit",
+        "general",
+        "generally",
+        "obligor",
+        "performance",
+        "refreshed",
+        "s",
+        "when"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b5_l7",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 7,
+      "source_text": "deteriorates and we have to assess the likely performance of",
+      "bbox": [
+        305.88,
+        247.163,
+        520.08,
+        256.859
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "and",
+        "assess",
+        "deteriorates",
+        "have",
+        "likely",
+        "of",
+        "performance",
+        "the",
+        "to",
+        "we"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b5_l8",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 8,
+      "source_text": "secondary sources of repayment should it prove necessary to rely on",
+      "bbox": [
+        305.88,
+        256.763,
+        547.504,
+        266.459
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "it",
+        "necessary",
+        "of",
+        "on",
+        "prove",
+        "rely",
+        "repayment",
+        "secondary",
+        "should",
+        "sources",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p134_b5_l9",
+      "page_index": 134,
+      "block_id": 5,
+      "line_index": 9,
+      "source_text": "them.",
+      "bbox": [
+        305.88,
+        266.363,
+        328.584,
+        276.059
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "them."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l0",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.15,
+        15.206,
+        93.373,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l1",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        118.65,
+        15.206,
+        155.204,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l2",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.15,
+        15.206,
+        241.934,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l3",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        265.65,
+        16.872,
+        304.164,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l4",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.15,
+        15.206,
+        370.888,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l5",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.15,
+        23.606,
+        394.842,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l6",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 6,
+      "source_text": "Financial",
+      "bbox": [
+        412.65,
+        15.206,
+        443.38,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l7",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 7,
+      "source_text": "statements",
+      "bbox": [
+        412.65,
+        23.606,
+        448.042,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "statements"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l8",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 8,
+      "source_text": "Additional",
+      "bbox": [
+        486.15,
+        15.206,
+        518.819,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Additional"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b6_l9",
+      "page_index": 134,
+      "block_id": 6,
+      "line_index": 9,
+      "source_text": "information",
+      "bbox": [
+        486.15,
+        23.606,
+        521.542,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "information"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p134_b7_l0",
+      "page_index": 134,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "Credit risk",
+      "bbox": [
+        265.65,
+        34.766,
+        297.143,
+        43.25
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Credit",
+        "risk"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b0_l0",
+      "page_index": 135,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Loans and advances to customers including loan commitments by level of collateral for key countries/territories (by stage) at 31 December 2025",
+      "bbox": [
+        42.88,
+        71.594,
+        553.744,
+        81.29
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 8.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "December",
+        "Loans",
+        "advances",
+        "and",
+        "at",
+        "by",
+        "collateral",
+        "commitments",
+        "countries/territories",
+        "customers",
+        "for",
+        "including",
+        "key",
+        "level",
+        "loan",
+        "of",
+        "stage)",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        },
+        {
+          "type": "currency_amount",
+          "value": "31 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l0",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Gross carrying/nominal amount",
+      "bbox": [
+        236.24,
+        96.742,
+        343.172,
+        103.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Gross",
+        "amount",
+        "carrying/nominal"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l1",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "ECL coverage",
+      "bbox": [
+        450.85,
+        96.742,
+        495.972,
+        103.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "ECL",
+        "coverage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l2",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "Stage 1",
+      "bbox": [
+        206.63,
+        106.492,
+        231.914,
+        113.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l3",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "Stage 2",
+      "bbox": [
+        243.38,
+        106.492,
+        268.664,
+        113.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l4",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "Stage 3",
+      "bbox": [
+        280.13,
+        106.492,
+        305.414,
+        113.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l6",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 6,
+      "source_text": "Total",
+      "bbox": [
+        361.8,
+        106.492,
+        378.915,
+        113.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Total"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l7",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 7,
+      "source_text": "Stage 1",
+      "bbox": [
+        390.38,
+        106.492,
+        415.664,
+        113.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "1"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l8",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 8,
+      "source_text": "Stage 2",
+      "bbox": [
+        427.13,
+        106.492,
+        452.414,
+        113.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "2"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l9",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 9,
+      "source_text": "Stage 3",
+      "bbox": [
+        463.88,
+        106.492,
+        489.164,
+        113.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Stage"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "3"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l11",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 11,
+      "source_text": "Total",
+      "bbox": [
+        545.55,
+        106.492,
+        562.665,
+        113.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Total"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l12",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 12,
+      "source_text": "$m",
+      "bbox": [
+        221.4,
+        116.242,
+        231.9,
+        123.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l13",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 13,
+      "source_text": "$m",
+      "bbox": [
+        258.15,
+        116.242,
+        268.65,
+        123.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l14",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 14,
+      "source_text": "$m",
+      "bbox": [
+        294.9,
+        116.242,
+        305.4,
+        123.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l15",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 15,
+      "source_text": "$m",
+      "bbox": [
+        331.65,
+        116.242,
+        342.15,
+        123.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l16",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 16,
+      "source_text": "$m",
+      "bbox": [
+        368.4,
+        116.242,
+        378.9,
+        123.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "m"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l22",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 22,
+      "source_text": "Residential mortgages",
+      "bbox": [
+        45.15,
+        125.992,
+        120.211,
+        132.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Residential",
+        "mortgages"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l23",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 23,
+      "source_text": "Fully collateralised by LTV ratio",
+      "bbox": [
+        45.15,
+        134.076,
+        140.833,
+        142.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fully",
+        "LTV",
+        "by",
+        "collateralised",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l32",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 32,
+      "source_text": "–  less than 50%",
+      "bbox": [
+        45.15,
+        143.826,
+        97.279,
+        152.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "less",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l83",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 83,
+      "source_text": "Partially collateralised (A): LTV > 100%",
+      "bbox": [
+        45.15,
+        192.576,
+        165.284,
+        201.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "A)",
+        "LTV",
+        "Partially",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "100%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l94",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 94,
+      "source_text": "–  collateral value on A",
+      "bbox": [
+        45.15,
+        202.326,
+        114.779,
+        210.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "A",
+        "collateral",
+        "on",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l101",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 101,
+      "source_text": "of which: UK",
+      "bbox": [
+        45.15,
+        213.742,
+        87.934,
+        220.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "UK",
+        "of",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l102",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 102,
+      "source_text": "Fully collateralised by LTV ratio",
+      "bbox": [
+        45.15,
+        221.826,
+        140.833,
+        230.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fully",
+        "LTV",
+        "by",
+        "collateralised",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l111",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 111,
+      "source_text": "–  less than 50%",
+      "bbox": [
+        45.15,
+        231.576,
+        97.279,
+        240.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "less",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l166",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 166,
+      "source_text": "Partially collateralised (B): LTV > 100%",
+      "bbox": [
+        45.15,
+        280.326,
+        165.284,
+        288.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "B)",
+        "LTV",
+        "Partially",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "100%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l177",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 177,
+      "source_text": "–  collateral value on B",
+      "bbox": [
+        45.15,
+        290.076,
+        114.779,
+        298.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "B",
+        "collateral",
+        "on",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l184",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 184,
+      "source_text": "of which: Hong Kong",
+      "bbox": [
+        45.15,
+        301.492,
+        115.143,
+        308.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Hong",
+        "Kong",
+        "of",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l185",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 185,
+      "source_text": "Fully collateralised by LTV ratio",
+      "bbox": [
+        45.15,
+        309.576,
+        140.833,
+        318.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fully",
+        "LTV",
+        "by",
+        "collateralised",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l194",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 194,
+      "source_text": "–  less than 50%",
+      "bbox": [
+        45.15,
+        319.326,
+        97.279,
+        327.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "less",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l249",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 249,
+      "source_text": "Partially collateralised (C): LTV > 100%",
+      "bbox": [
+        45.15,
+        368.076,
+        165.284,
+        376.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "C)",
+        "LTV",
+        "Partially",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "100%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l260",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 260,
+      "source_text": "–  collateral value on C",
+      "bbox": [
+        45.15,
+        377.826,
+        114.779,
+        386.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "C",
+        "collateral",
+        "on",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l267",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 267,
+      "source_text": "Commercial real estate",
+      "bbox": [
+        45.15,
+        389.242,
+        122.157,
+        396.242
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Commercial",
+        "estate",
+        "real"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l268",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 268,
+      "source_text": "Not collateralised",
+      "bbox": [
+        45.15,
+        397.326,
+        98.819,
+        405.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Not",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l280",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 280,
+      "source_text": "Fully collateralised by LTV ratio",
+      "bbox": [
+        45.15,
+        407.076,
+        140.833,
+        415.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fully",
+        "LTV",
+        "by",
+        "collateralised",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l292",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 292,
+      "source_text": "–  less than 50%",
+      "bbox": [
+        45.15,
+        416.826,
+        97.279,
+        425.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "less",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l340",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 340,
+      "source_text": "Partially collateralised (A): LTV > 100%",
+      "bbox": [
+        45.15,
+        455.826,
+        165.284,
+        464.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "A)",
+        "LTV",
+        "Partially",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "100%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l352",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 352,
+      "source_text": "–  collateral value on A",
+      "bbox": [
+        45.15,
+        465.576,
+        114.779,
+        474.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "A",
+        "collateral",
+        "on",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l359",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 359,
+      "source_text": "of which: UK",
+      "bbox": [
+        45.15,
+        476.992,
+        87.934,
+        483.992
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "UK",
+        "of",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l360",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 360,
+      "source_text": "Not collateralised",
+      "bbox": [
+        45.15,
+        485.076,
+        98.819,
+        493.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Not",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l372",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 372,
+      "source_text": "Fully collateralised by LTV ratio",
+      "bbox": [
+        45.15,
+        494.826,
+        140.833,
+        503.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fully",
+        "LTV",
+        "by",
+        "collateralised",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l384",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 384,
+      "source_text": "–  less than 50%",
+      "bbox": [
+        45.15,
+        504.576,
+        97.279,
+        513.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "less",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l432",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 432,
+      "source_text": "Partially collateralised (B): LTV > 100%",
+      "bbox": [
+        45.15,
+        543.576,
+        165.284,
+        552.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "B)",
+        "LTV",
+        "Partially",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "100%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l444",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 444,
+      "source_text": "–  collateral value on B",
+      "bbox": [
+        45.15,
+        553.326,
+        114.779,
+        561.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "B",
+        "collateral",
+        "on",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l451",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 451,
+      "source_text": "of which: Hong Kong",
+      "bbox": [
+        45.15,
+        564.742,
+        115.143,
+        571.742
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Hong",
+        "Kong",
+        "of",
+        "which"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l452",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 452,
+      "source_text": "Not collateralised",
+      "bbox": [
+        45.15,
+        572.826,
+        98.819,
+        581.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Not",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l464",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 464,
+      "source_text": "Fully collateralised by LTV ratio",
+      "bbox": [
+        45.15,
+        582.576,
+        140.833,
+        591.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fully",
+        "LTV",
+        "by",
+        "collateralised",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l476",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 476,
+      "source_text": "–  less than 50%",
+      "bbox": [
+        45.15,
+        592.326,
+        97.279,
+        600.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "less",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l524",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 524,
+      "source_text": "Partially collateralised (C): LTV > 100%",
+      "bbox": [
+        45.15,
+        631.326,
+        165.284,
+        639.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "C)",
+        "LTV",
+        "Partially",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "100%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l536",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 536,
+      "source_text": "–  collateral value on C",
+      "bbox": [
+        45.15,
+        641.076,
+        114.779,
+        649.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "C",
+        "collateral",
+        "on",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l543",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 543,
+      "source_text": "Other corporate, commercial and financial",
+      "bbox": [
+        45.15,
+        652.492,
+        187.502,
+        659.492
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Other",
+        "and",
+        "commercial",
+        "corporate",
+        "financial"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l545",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 545,
+      "source_text": "Not collateralised",
+      "bbox": [
+        45.15,
+        668.826,
+        98.819,
+        677.31
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Not",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l555",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 555,
+      "source_text": "Fully collateralised by LTV ratio",
+      "bbox": [
+        45.15,
+        678.576,
+        140.833,
+        687.06
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Fully",
+        "LTV",
+        "by",
+        "collateralised",
+        "ratio"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l566",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 566,
+      "source_text": "–  less than 50%",
+      "bbox": [
+        45.15,
+        688.326,
+        97.279,
+        696.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "less",
+        "than"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "50%"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b1_l614",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 614,
+      "source_text": "Partially collateralised (A): LTV > 100%",
+      "bbox": [
+        45.15,
+        727.326,
+        165.284,
+        735.81
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "A)",
+        "LTV",
+        "Partially",
+        "collateralised"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "100%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p135_b1_l626",
+      "page_index": 135,
+      "block_id": 1,
+      "line_index": 626,
+      "source_text": "–  collateral value on A",
+      "bbox": [
+        45.15,
+        737.076,
+        114.779,
+        745.56
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "A",
+        "collateral",
+        "on",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b2_l0",
+      "page_index": 135,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Strategic report",
+      "bbox": [
+        45.15,
+        15.206,
+        93.373,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Strategic",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b2_l1",
+      "page_index": 135,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "ESG review",
+      "bbox": [
+        118.65,
+        15.206,
+        155.204,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "ESG",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b2_l2",
+      "page_index": 135,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "Financial review",
+      "bbox": [
+        192.15,
+        15.206,
+        241.934,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Financial",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b2_l3",
+      "page_index": 135,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "Risk review",
+      "bbox": [
+        265.65,
+        16.872,
+        304.164,
+        23.872
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-65Bold",
+      "ascii_tokens": [
+        "Risk",
+        "review"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b2_l4",
+      "page_index": 135,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "Corporate",
+      "bbox": [
+        339.15,
+        15.206,
+        370.888,
+        23.69
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Corporate"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p135_b2_l5",
+      "page_index": 135,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "Governance Report",
+      "bbox": [
+        339.15,
+        23.606,
+        394.842,
+        32.09
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        597.6,
+        842.4
+      ],
+      "font_size": 7.0,
+      "font": "UniversLT-45Light",
+      "ascii_tokens": [
+        "Governance",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round14/translation_batches/batch_0080.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round14/translation_batches/batch_0080.model_output.json",
+    "required_units": [
+      "p133_b8_l32",
+      "p133_b8_l42",
+      "p133_b8_l52",
+      "p133_b9_l1",
+      "p133_b10_l0",
+      "p133_b10_l1",
+      "p133_b10_l2",
+      "p133_b10_l3",
+      "p133_b10_l4",
+      "p133_b10_l5",
+      "p133_b10_l6",
+      "p133_b10_l7",
+      "p133_b10_l8",
+      "p133_b10_l9",
+      "p133_b11_l0",
+      "p133_b11_l1",
+      "p133_b11_l2",
+      "p133_b11_l3",
+      "p133_b11_l4",
+      "p133_b12_l0",
+      "p133_b12_l1",
+      "p133_b12_l2",
+      "p133_b12_l3",
+      "p133_b12_l4",
+      "p133_b12_l5",
+      "p133_b12_l6",
+      "p133_b12_l7",
+      "p133_b12_l8",
+      "p133_b12_l9",
+      "p133_b12_l10",
+      "p133_b13_l0",
+      "p133_b13_l1",
+      "p133_b13_l2",
+      "p133_b13_l3",
+      "p133_b13_l4",
+      "p133_b13_l5",
+      "p133_b13_l6",
+      "p133_b13_l7",
+      "p133_b13_l8",
+      "p133_b13_l9",
+      "p133_b14_l0",
+      "p133_b14_l1",
+      "p133_b14_l2",
+      "p133_b14_l3",
+      "p133_b14_l4",
+      "p133_b14_l5",
+      "p133_b14_l6",
+      "p133_b14_l7",
+      "p133_b15_l0",
+      "p133_b15_l1",
+      "p133_b15_l2",
+      "p133_b16_l0",
+      "p133_b16_l1",
+      "p133_b16_l2",
+      "p133_b16_l3",
+      "p133_b16_l4",
+      "p133_b17_l0",
+      "p133_b17_l1",
+      "p133_b17_l2",
+      "p133_b17_l3",
+      "p133_b17_l4",
+      "p133_b17_l5",
+      "p133_b17_l6",
+      "p133_b18_l0",
+      "p133_b18_l1",
+      "p133_b18_l2",
+      "p133_b18_l3",
+      "p133_b18_l4",
+      "p133_b19_l0",
+      "p133_b19_l1",
+      "p133_b19_l2",
+      "p133_b19_l3",
+      "p133_b19_l4",
+      "p133_b19_l5",
+      "p133_b20_l0",
+      "p133_b20_l1",
+      "p133_b20_l2",
+      "p133_b20_l3",
+      "p133_b20_l4",
+      "p133_b20_l5",
+      "p133_b20_l6",
+      "p133_b20_l7",
+      "p133_b20_l8",
+      "p133_b20_l9",
+      "p133_b21_l0",
+      "p134_b0_l0",
+      "p134_b0_l1",
+      "p134_b0_l2",
+      "p134_b0_l3",
+      "p134_b0_l4",
+      "p134_b0_l5",
+      "p134_b0_l6",
+      "p134_b1_l0",
+      "p134_b1_l1",
+      "p134_b1_l2",
+      "p134_b1_l3",
+      "p134_b1_l4",
+      "p134_b1_l5",
+      "p134_b1_l6",
+      "p134_b1_l7",
+      "p134_b1_l8",
+      "p134_b1_l9",
+      "p134_b2_l0",
+      "p134_b2_l1",
+      "p134_b2_l2",
+      "p134_b2_l3",
+      "p134_b2_l4",
+      "p134_b2_l5",
+      "p134_b3_l0",
+      "p134_b3_l1",
+      "p134_b3_l2",
+      "p134_b3_l3",
+      "p134_b3_l4",
+      "p134_b3_l5",
+      "p134_b4_l0",
+      "p134_b4_l1",
+      "p134_b4_l2",
+      "p134_b4_l3",
+      "p134_b5_l0",
+      "p134_b5_l1",
+      "p134_b5_l2",
+      "p134_b5_l3",
+      "p134_b5_l4",
+      "p134_b5_l5",
+      "p134_b5_l6",
+      "p134_b5_l7",
+      "p134_b5_l8",
+      "p134_b5_l9",
+      "p134_b6_l0",
+      "p134_b6_l1",
+      "p134_b6_l2",
+      "p134_b6_l3",
+      "p134_b6_l4",
+      "p134_b6_l5",
+      "p134_b6_l6",
+      "p134_b6_l7",
+      "p134_b6_l8",
+      "p134_b6_l9",
+      "p134_b7_l0",
+      "p135_b0_l0",
+      "p135_b1_l0",
+      "p135_b1_l1",
+      "p135_b1_l2",
+      "p135_b1_l3",
+      "p135_b1_l4",
+      "p135_b1_l6",
+      "p135_b1_l7",
+      "p135_b1_l8",
+      "p135_b1_l9",
+      "p135_b1_l11",
+      "p135_b1_l12",
+      "p135_b1_l13",
+      "p135_b1_l14",
+      "p135_b1_l15",
+      "p135_b1_l16",
+      "p135_b1_l22",
+      "p135_b1_l23",
+      "p135_b1_l32",
+      "p135_b1_l83",
+      "p135_b1_l94",
+      "p135_b1_l101",
+      "p135_b1_l102",
+      "p135_b1_l111",
+      "p135_b1_l166",
+      "p135_b1_l177",
+      "p135_b1_l184",
+      "p135_b1_l185",
+      "p135_b1_l194",
+      "p135_b1_l249",
+      "p135_b1_l260",
+      "p135_b1_l267",
+      "p135_b1_l268",
+      "p135_b1_l280",
+      "p135_b1_l292",
+      "p135_b1_l340",
+      "p135_b1_l352",
+      "p135_b1_l359",
+      "p135_b1_l360",
+      "p135_b1_l372",
+      "p135_b1_l384",
+      "p135_b1_l432",
+      "p135_b1_l444",
+      "p135_b1_l451",
+      "p135_b1_l452",
+      "p135_b1_l464",
+      "p135_b1_l476",
+      "p135_b1_l524",
+      "p135_b1_l536",
+      "p135_b1_l543",
+      "p135_b1_l545",
+      "p135_b1_l555",
+      "p135_b1_l566",
+      "p135_b1_l614",
+      "p135_b1_l626",
+      "p135_b2_l0",
+      "p135_b2_l1",
+      "p135_b2_l2",
+      "p135_b2_l3",
+      "p135_b2_l4",
+      "p135_b2_l5"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

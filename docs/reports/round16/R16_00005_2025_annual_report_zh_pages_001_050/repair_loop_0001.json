@@ -1,0 +1,120 @@
+{
+  "loop_id": "R16_00005_2025_annual_report_zh_pages_001_050_L001",
+  "loop_iteration": 1,
+  "entered_from_state": "S8_VerifyProductQuality",
+  "failure_class": "body_paragraph_readability",
+  "failed_gate_ids": [
+    "body_paragraph_readability",
+    "short_label_legibility",
+    "table_text_legibility",
+    "background_residue_artifact",
+    "matrix_diagram_integrity"
+  ],
+  "repair_atom": "target_composition_body_reflow_repair",
+  "target_state": "S6_LayoutPlan",
+  "target_scope": [
+    {
+      "page_number": 41,
+      "region_id": "body_flow_000",
+      "quality_role": "body",
+      "region_kind": "body_flow",
+      "generation_status": "constrained_text_image_fit",
+      "font_size": 8.2,
+      "crop_evidence": "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/visual_crops/page_41_body_flow_000_body.png",
+      "reasons": [
+        "text_image_background_delta 31.0 exceeds fail threshold 12.0",
+        "inner_background_delta 31.0 exceeds fail threshold 30.0"
+      ]
+    }
+  ],
+  "expected_effect": "Recompose body frame from current page margins/body band before shrinking text.",
+  "verification_to_run": [
+    "build_layout_policy.py policy override materialization",
+    "generate_semantic_backfill.py",
+    "render_pdf.py",
+    "collect_visual_region_metrics.py",
+    "plan_visual_region_repairs.py",
+    "write_visual_adjudication.py",
+    "evaluate_pdf_quality.py"
+  ],
+  "deferred_failures": [
+    {
+      "gate_id": "short_label_legibility",
+      "repair_atom": "constrained_slot_layout_fit_repair",
+      "target_state": "S7_GenerateCandidate"
+    },
+    {
+      "gate_id": "table_text_legibility",
+      "repair_atom": "constrained_slot_layout_fit_repair",
+      "target_state": "S7_GenerateCandidate"
+    },
+    {
+      "gate_id": "background_residue_artifact",
+      "repair_atom": "background_residue_fill_resample",
+      "target_state": "S7_GenerateCandidate"
+    },
+    {
+      "gate_id": "matrix_diagram_integrity",
+      "repair_atom": "matrix_diagram_table_cell_preserve_repair",
+      "target_state": "S6_LayoutPlan"
+    }
+  ],
+  "execution_status": "applied_and_rejudged",
+  "applied_policy_changes": [
+    {
+      "path": "min_width_page_ratio",
+      "before": 0.7,
+      "after": 0.78,
+      "reason": "body readability repair widens fluid body frames before shrinking font"
+    },
+    {
+      "path": "height_expand_ratio",
+      "before": 1.25,
+      "after": 1.55,
+      "reason": "body readability repair gives expanded English prose more vertical room"
+    },
+    {
+      "path": "max_bottom_page_ratio",
+      "before": 0.93,
+      "after": 0.96,
+      "reason": "body readability repair can use normal lower-page body area"
+    },
+    {
+      "path": "min_width_page_ratio",
+      "before": 0.68,
+      "after": 0.72,
+      "reason": "target-language reflow repair widens paragraph frames"
+    },
+    {
+      "path": "height_expand_ratio",
+      "before": 1.35,
+      "after": 1.55,
+      "reason": "target-language reflow repair gives expanded English prose more vertical room"
+    },
+    {
+      "path": "max_font_pt",
+      "before": 8.2,
+      "after": 8.4,
+      "reason": "repair keeps wrapped critical-role text readable"
+    }
+  ],
+  "input_artifacts": [
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/product_quality_gates.json",
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/visual_repair_plan.json",
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/layout_policy.json"
+  ],
+  "output_artifacts": [
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/layout_policy.repair01.json",
+    "docs/output/round16/R16_00005_2025_annual_report_zh_pages_001_050_repair01_candidate.pdf",
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/candidate_generation_evidence.repair01.json",
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/visual_region_metrics.repair01.json",
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/visual_repair_plan.repair01.json",
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/visual_adjudication.repair01.json",
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/product_quality_gates.repair01.json",
+    "docs/reports/round16/R16_00005_2025_annual_report_zh_pages_001_050/repair_loop_0001.json"
+  ],
+  "rejudged_product_quality_verdict": "FAIL",
+  "remaining_blocking_repair_count": 5,
+  "next_state": "S_FAIL_QUALITY",
+  "timestamp_local": "2026-07-07 09:30:48"
+}

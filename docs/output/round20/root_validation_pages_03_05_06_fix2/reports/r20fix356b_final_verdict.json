@@ -1,0 +1,24 @@
+{
+  "round_id": "r20fix356b",
+  "input_count": 1,
+  "process_contract_verdict": "PASS",
+  "semantic_translation_verdict": "PASS",
+  "generation_verdict": "PASS",
+  "product_quality_verdict": "PASS",
+  "terminal_state": "S_DONE_PRODUCT_ACCEPTED",
+  "cases": [
+    {
+      "case_id": "R20FIX356B_00005_2025_annual_report_zh_pages_003_005_006",
+      "source_pdf": "docs/output/round20/root_validation_pages_03_05_06_fix2/input/source_pdfs/00005_2025_annual_report_zh_pages_003_005_006.pdf",
+      "target_language": "en",
+      "candidate_pdf": "docs/output/round20/root_validation_pages_03_05_06_fix2/output/R20FIX356B_00005_2025_annual_report_zh_pages_003_005_006_candidate.pdf",
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "blocking_repair_count": 0,
+      "repair_loop_records": [],
+      "report_dir": "docs/output/round20/root_validation_pages_03_05_06_fix2/reports/R20FIX356B_00005_2025_annual_report_zh_pages_003_005_006"
+    }
+  ],
+  "process_validation": "docs/output/round20/root_validation_pages_03_05_06_fix2/reports/process_validation.json",
+  "process_validation_errors": []
+}

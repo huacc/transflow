@@ -1,0 +1,23 @@
+{
+  "tool": "validate_semantic_translations",
+  "translation_validation_verdict": "PASS",
+  "translation_provider": "google_translate_web_gtx",
+  "source_language": "zh",
+  "inferred_source_language": "zh",
+  "target_language": "en",
+  "target_text_field": "translation_en",
+  "translation_quality": "semantic_translation",
+  "semantic_coverage": "full_semantic_translation",
+  "top_level_errors": [],
+  "coverage": {
+    "source_unit_count": 2776,
+    "translated_unit_count": 2776,
+    "matched_unit_count": 2776,
+    "missing_unit_ids": [],
+    "invalid_unit_count": 0
+  },
+  "invalid_units": [],
+  "warnings": [],
+  "source_extraction": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\output\\round20\\reports\\R20_00005_2025_annual_report_zh_pages_001_030\\source_extraction.json",
+  "translations_json": "D:\\项目\\开源项目\\MerqFin\\spikes\\独立测试\\docs\\output\\round20\\input\\semantic_translations\\R20_00005_2025_annual_report_zh_pages_001_030.translations.json"
+}

@@ -1,0 +1,1632 @@
+{
+  "run_id": "R12_00992_2023_annual_report_en",
+  "case_id": "R12_00992_2023_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0010",
+  "batch_index": 10,
+  "batch_count": 13,
+  "source_extraction_ref": "docs/reports/round12/R12_00992_2023_annual_report_en/source_extraction.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p6_b17_l5",
+      "page_index": 6,
+      "block_id": 17,
+      "line_index": 5,
+      "source_text": "data center, software, cloud, services and solutions,",
+      "bbox": [
+        306.145,
+        651.963,
+        523.45,
+        661.521
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Light",
+      "ascii_tokens": [
+        "and",
+        "center",
+        "cloud",
+        "data",
+        "services",
+        "software",
+        "solutions"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p6_b17_l6",
+      "page_index": 6,
+      "block_id": 17,
+      "line_index": 6,
+      "source_text": "telecommunications, artificial intelligence areas and",
+      "bbox": [
+        306.145,
+        662.961,
+        524.367,
+        672.519
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Light",
+      "ascii_tokens": [
+        "and",
+        "areas",
+        "artificial",
+        "intelligence",
+        "telecommunications"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p6_b18_l0",
+      "page_index": 6,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "• Ongoing annually",
+      "bbox": [
+        297.64,
+        687.792,
+        383.392,
+        697.35
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Light",
+      "ascii_tokens": [
+        "Ongoing",
+        "annually"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p7_b0_l0",
+      "page_index": 7,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Lenovo Group Limited  2023/24 Annual Report",
+      "bbox": [
+        296.462,
+        812.946,
+        516.381,
+        825.326
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Annual",
+        "Group",
+        "Lenovo",
+        "Limited",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2023"
+        },
+        {
+          "type": "currency_amount",
+          "value": "24 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b1_l0",
+      "page_index": 7,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Workforce diversity",
+      "bbox": [
+        56.693,
+        392.708,
+        149.852,
+        405.848
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Workforce",
+        "diversity"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p7_b2_l0",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "As a global technology leader, assembling a diverse workforce that achieves its full potential through an inclusive culture",
+      "bbox": [
+        56.693,
+        410.601,
+        552.978,
+        421.743
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "As",
+        "a",
+        "achieves",
+        "an",
+        "assembling",
+        "culture",
+        "diverse",
+        "full",
+        "global",
+        "inclusive",
+        "its",
+        "leader",
+        "potential",
+        "technology",
+        "that",
+        "through",
+        "workforce"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l1",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "is fundamental to Lenovo’s competitive success. Working toward a gender balanced workforce is core to Lenovo’s",
+      "bbox": [
+        56.693,
+        421.599,
+        527.94,
+        432.741
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Lenovo",
+        "Working",
+        "a",
+        "balanced",
+        "competitive",
+        "core",
+        "fundamental",
+        "gender",
+        "is",
+        "s",
+        "success.",
+        "to",
+        "toward",
+        "workforce"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l2",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "diversity. While FY2023/24 data shows a 37% female global workforce and industry-leading 29% female representation",
+      "bbox": [
+        56.693,
+        432.597,
+        548.631,
+        443.739
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "FY2023/24",
+        "While",
+        "a",
+        "and",
+        "data",
+        "diversity.",
+        "female",
+        "global",
+        "industry-leading",
+        "representation",
+        "shows",
+        "workforce"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "37%"
+        },
+        {
+          "type": "percentage",
+          "value": "29%"
+        },
+        {
+          "type": "currency_amount",
+          "value": "24 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l3",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "in technical roles, Lenovo has chosen to focus its global target on increasing representation of female executives. After",
+      "bbox": [
+        56.693,
+        443.595,
+        544.771,
+        454.737
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "After",
+        "Lenovo",
+        "chosen",
+        "executives.",
+        "female",
+        "focus",
+        "global",
+        "has",
+        "in",
+        "increasing",
+        "its",
+        "of",
+        "on",
+        "representation",
+        "roles",
+        "target",
+        "technical",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l4",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "meeting and exceeding 2020 executive representation targets (20% representation target, 21% percent achieved),",
+      "bbox": [
+        56.693,
+        454.593,
+        527.591,
+        465.735
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "achieved)",
+        "and",
+        "exceeding",
+        "executive",
+        "meeting",
+        "percent",
+        "representation",
+        "target",
+        "targets"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2020"
+        },
+        {
+          "type": "percentage",
+          "value": "(20%"
+        },
+        {
+          "type": "percentage",
+          "value": "21%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l5",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 5,
+      "source_text": "Lenovo has established new goals to further advance our global female executive representation. Currently with 22%",
+      "bbox": [
+        56.693,
+        465.591,
+        538.248,
+        476.733
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Currently",
+        "Lenovo",
+        "advance",
+        "established",
+        "executive",
+        "female",
+        "further",
+        "global",
+        "goals",
+        "has",
+        "new",
+        "our",
+        "representation.",
+        "to",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "22%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l6",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 6,
+      "source_text": "executive representation of women, Lenovo is persistently working towards this goal by coordinating with business",
+      "bbox": [
+        56.693,
+        476.589,
+        531.683,
+        487.731
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Lenovo",
+        "business",
+        "by",
+        "coordinating",
+        "executive",
+        "goal",
+        "is",
+        "of",
+        "persistently",
+        "representation",
+        "this",
+        "towards",
+        "with",
+        "women",
+        "working"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l7",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 7,
+      "source_text": "leaders to ensure ownership and accountability. Lenovo has increased talent sourcing activities, established goals for",
+      "bbox": [
+        56.693,
+        487.587,
+        537.399,
+        498.729
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Lenovo",
+        "accountability.",
+        "activities",
+        "and",
+        "ensure",
+        "established",
+        "for",
+        "goals",
+        "has",
+        "increased",
+        "leaders",
+        "ownership",
+        "sourcing",
+        "talent",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l8",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 8,
+      "source_text": "hiring slates, and focused on diverse talent development and retention. The target aims to reach 27% female executive",
+      "bbox": [
+        56.693,
+        498.585,
+        544.511,
+        509.727
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "The",
+        "aims",
+        "and",
+        "development",
+        "diverse",
+        "executive",
+        "female",
+        "focused",
+        "hiring",
+        "on",
+        "reach",
+        "retention.",
+        "slates",
+        "talent",
+        "target",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "percentage",
+          "value": "27%"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b2_l9",
+      "page_index": 7,
+      "block_id": 2,
+      "line_index": 9,
+      "source_text": "representation by 2025 and is led by Lenovo’s Diversity and Inclusion Board, chaired by the Chief Diversity Officer.",
+      "bbox": [
+        56.693,
+        509.583,
+        524.907,
+        520.725
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "Chief",
+        "Diversity",
+        "Inclusion",
+        "Lenovo",
+        "Officer.",
+        "and",
+        "by",
+        "chaired",
+        "is",
+        "led",
+        "representation",
+        "s",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2025"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b3_l0",
+      "page_index": 7,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "To achieve its global female executive representation goal, Lenovo recognizes that it must foster a strong pipeline of",
+      "bbox": [
+        56.693,
+        526.251,
+        535.384,
+        537.393
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Lenovo",
+        "To",
+        "a",
+        "achieve",
+        "executive",
+        "female",
+        "foster",
+        "global",
+        "goal",
+        "it",
+        "its",
+        "must",
+        "of",
+        "pipeline",
+        "recognizes",
+        "representation",
+        "strong",
+        "that"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b3_l1",
+      "page_index": 7,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "diverse talent. It provides several career development programs to create that pipeline through learning, sponsorship,",
+      "bbox": [
+        56.693,
+        537.249,
+        540.379,
+        548.391
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "It",
+        "career",
+        "create",
+        "development",
+        "diverse",
+        "learning",
+        "pipeline",
+        "programs",
+        "provides",
+        "several",
+        "sponsorship",
+        "talent.",
+        "that",
+        "through",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b3_l2",
+      "page_index": 7,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "and mentorship programs in partnership with its employee resource groups, business leaders, and Human Resource",
+      "bbox": [
+        56.693,
+        548.247,
+        534.782,
+        559.389
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Human",
+        "Resource",
+        "and",
+        "business",
+        "employee",
+        "groups",
+        "in",
+        "its",
+        "leaders",
+        "mentorship",
+        "partnership",
+        "programs",
+        "resource",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b3_l3",
+      "page_index": 7,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "teams. The Women’s Leadership Development Program to develop female executive talent is the longest-running",
+      "bbox": [
+        56.693,
+        559.245,
+        525.512,
+        570.387
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Development",
+        "Leadership",
+        "Program",
+        "The",
+        "Women",
+        "develop",
+        "executive",
+        "female",
+        "is",
+        "longest-running",
+        "s",
+        "talent",
+        "teams.",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b3_l4",
+      "page_index": 7,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "program of its kind at Lenovo, with its eighth cohort of high potential women leaders graduating in 2024.",
+      "bbox": [
+        56.693,
+        570.243,
+        488.609,
+        581.385
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Lenovo",
+        "at",
+        "cohort",
+        "eighth",
+        "graduating",
+        "high",
+        "in",
+        "its",
+        "kind",
+        "leaders",
+        "of",
+        "potential",
+        "program",
+        "with",
+        "women"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b4_l0",
+      "page_index": 7,
+      "block_id": 4,
+      "line_index": 0,
+      "source_text": "Senior management diversity",
+      "bbox": [
+        56.693,
+        111.716,
+        195.323,
+        124.856
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Senior",
+        "diversity",
+        "management"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b5_l0",
+      "page_index": 7,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "With support of a diversified management team is also essential to the effectiveness of the Board.  As at the date of",
+      "bbox": [
+        56.693,
+        129.609,
+        534.773,
+        140.751
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "As",
+        "Board.",
+        "With",
+        "a",
+        "also",
+        "at",
+        "date",
+        "diversified",
+        "effectiveness",
+        "essential",
+        "is",
+        "management",
+        "of",
+        "support",
+        "team",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b5_l1",
+      "page_index": 7,
+      "block_id": 5,
+      "line_index": 1,
+      "source_text": "this annual report, the Company’s senior management has a balance of diversity, among others, genders and age as",
+      "bbox": [
+        56.693,
+        140.607,
+        535.106,
+        151.749
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Company",
+        "a",
+        "age",
+        "among",
+        "and",
+        "annual",
+        "as",
+        "balance",
+        "diversity",
+        "genders",
+        "has",
+        "management",
+        "of",
+        "others",
+        "report",
+        "s",
+        "senior",
+        "the",
+        "this"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b5_l2",
+      "page_index": 7,
+      "block_id": 5,
+      "line_index": 2,
+      "source_text": "illustrated in the following diagram. For further details of the senior management of the Company, please refer to their",
+      "bbox": [
+        56.693,
+        151.605,
+        543.52,
+        162.747
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Company",
+        "For",
+        "details",
+        "diagram.",
+        "following",
+        "further",
+        "illustrated",
+        "in",
+        "management",
+        "of",
+        "please",
+        "refer",
+        "senior",
+        "the",
+        "their",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b5_l3",
+      "page_index": 7,
+      "block_id": 5,
+      "line_index": 3,
+      "source_text": "biographies are set out on pages 147 to 150 of this annual report.",
+      "bbox": [
+        56.693,
+        162.603,
+        322.301,
+        173.745
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "annual",
+        "are",
+        "biographies",
+        "of",
+        "on",
+        "out",
+        "pages",
+        "report.",
+        "set",
+        "this",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "147 "
+        },
+        {
+          "type": "currency_amount",
+          "value": "150 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p7_b6_l0",
+      "page_index": 7,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Gender",
+      "bbox": [
+        56.693,
+        196.569,
+        88.427,
+        208.395
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Gender"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p7_b7_l0",
+      "page_index": 7,
+      "block_id": 7,
+      "line_index": 0,
+      "source_text": "Male (9)",
+      "bbox": [
+        252.596,
+        256.527,
+        287.129,
+        267.669
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Male"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "footnote_marker",
+          "value": "(9)"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p7_b7_l1",
+      "page_index": 7,
+      "block_id": 7,
+      "line_index": 1,
+      "source_text": "Female (3)",
+      "bbox": [
+        486.506,
+        256.527,
+        531.857,
+        267.669
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Female"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "footnote_marker",
+          "value": "(3)"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p7_b8_l0",
+      "page_index": 7,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "Above 60 (3)",
+      "bbox": [
+        478.879,
+        362.008,
+        534.877,
+        373.15
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Above"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "footnote_marker",
+          "value": "(3)"
+        },
+        {
+          "type": "currency_amount",
+          "value": "60"
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p7_b9_l0",
+      "page_index": 7,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "Age",
+      "bbox": [
+        56.689,
+        302.59,
+        74.446,
+        314.416
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Age"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b0_l0",
+      "page_index": 8,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Corporate governance report",
+      "bbox": [
+        42.52,
+        39.18,
+        318.656,
+        65.46
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 20.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Corporate",
+        "governance",
+        "report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "heading"
+    },
+    {
+      "unit_id": "p8_b1_l0",
+      "page_index": 8,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Lenovo Group Limited  2023/24 Annual Report",
+      "bbox": [
+        81.496,
+        812.946,
+        304.015,
+        825.326
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Annual",
+        "Group",
+        "Lenovo",
+        "Limited",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2023"
+        },
+        {
+          "type": "currency_amount",
+          "value": "24 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b2_l0",
+      "page_index": 8,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Tenure",
+      "bbox": [
+        42.52,
+        111.716,
+        74.7,
+        124.856
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Tenure"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b3_l0",
+      "page_index": 8,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "In accordance with the articles of association of the Company (the “Articles of Association”), all directors are subject",
+      "bbox": [
+        42.52,
+        129.609,
+        521.974,
+        140.751
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Articles",
+        "Association",
+        "Company",
+        "In",
+        "accordance",
+        "all",
+        "are",
+        "articles",
+        "association",
+        "directors",
+        "of",
+        "subject",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b3_l1",
+      "page_index": 8,
+      "block_id": 3,
+      "line_index": 1,
+      "source_text": "to retirement by rotation. At each annual general meeting, one-third of the directors for the time being shall retire from",
+      "bbox": [
+        42.52,
+        140.607,
+        532.038,
+        151.749
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "At",
+        "annual",
+        "being",
+        "by",
+        "directors",
+        "each",
+        "for",
+        "from",
+        "general",
+        "meeting",
+        "of",
+        "one-third",
+        "retire",
+        "retirement",
+        "rotation.",
+        "shall",
+        "the",
+        "time",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b3_l2",
+      "page_index": 8,
+      "block_id": 3,
+      "line_index": 2,
+      "source_text": "office. The retiring directors shall be eligible for re-election. New appointments either to fill a casual vacancy or as an",
+      "bbox": [
+        42.52,
+        151.605,
+        521.489,
+        162.747
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "New",
+        "The",
+        "a",
+        "an",
+        "appointments",
+        "as",
+        "be",
+        "casual",
+        "directors",
+        "either",
+        "eligible",
+        "fill",
+        "for",
+        "office.",
+        "or",
+        "re-election.",
+        "retiring",
+        "shall",
+        "to",
+        "vacancy"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b3_l3",
+      "page_index": 8,
+      "block_id": 3,
+      "line_index": 3,
+      "source_text": "addition to the Board are subject to re-election by shareholders of the Company at the next following annual general",
+      "bbox": [
+        42.52,
+        162.603,
+        524.469,
+        173.745
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "Company",
+        "addition",
+        "annual",
+        "are",
+        "at",
+        "by",
+        "following",
+        "general",
+        "next",
+        "of",
+        "re-election",
+        "shareholders",
+        "subject",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b3_l4",
+      "page_index": 8,
+      "block_id": 3,
+      "line_index": 4,
+      "source_text": "meeting of the Company. The chart below shows the tenure of the Board members as of the date of this annual report.",
+      "bbox": [
+        42.52,
+        173.601,
+        530.842,
+        184.743
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "Company.",
+        "The",
+        "annual",
+        "as",
+        "below",
+        "chart",
+        "date",
+        "meeting",
+        "members",
+        "of",
+        "report.",
+        "shows",
+        "tenure",
+        "the",
+        "this"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b5_l0",
+      "page_index": 8,
+      "block_id": 5,
+      "line_index": 0,
+      "source_text": "Percentage of new members",
+      "bbox": [
+        221.701,
+        637.214,
+        357.151,
+        650.354
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Percentage",
+        "members",
+        "new",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b6_l0",
+      "page_index": 8,
+      "block_id": 6,
+      "line_index": 0,
+      "source_text": "Over the period from January 2019 to May 2024",
+      "bbox": [
+        154.789,
+        565.87,
+        426.9,
+        581.638
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 12.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "January",
+        "May",
+        "Over",
+        "from",
+        "period",
+        "the",
+        "to"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2019"
+        },
+        {
+          "type": "year",
+          "value": "2024"
+        }
+      ],
+      "layout_hint": "body"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round12/R12_00992_2023_annual_report_en/translation_batches/batch_0010.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round12/R12_00992_2023_annual_report_en/translation_batches/batch_0010.model_output.json",
+    "required_units": [
+      "p6_b17_l5",
+      "p6_b17_l6",
+      "p6_b18_l0",
+      "p7_b0_l0",
+      "p7_b1_l0",
+      "p7_b2_l0",
+      "p7_b2_l1",
+      "p7_b2_l2",
+      "p7_b2_l3",
+      "p7_b2_l4",
+      "p7_b2_l5",
+      "p7_b2_l6",
+      "p7_b2_l7",
+      "p7_b2_l8",
+      "p7_b2_l9",
+      "p7_b3_l0",
+      "p7_b3_l1",
+      "p7_b3_l2",
+      "p7_b3_l3",
+      "p7_b3_l4",
+      "p7_b4_l0",
+      "p7_b5_l0",
+      "p7_b5_l1",
+      "p7_b5_l2",
+      "p7_b5_l3",
+      "p7_b6_l0",
+      "p7_b7_l0",
+      "p7_b7_l1",
+      "p7_b8_l0",
+      "p7_b9_l0",
+      "p8_b0_l0",
+      "p8_b1_l0",
+      "p8_b2_l0",
+      "p8_b3_l0",
+      "p8_b3_l1",
+      "p8_b3_l2",
+      "p8_b3_l3",
+      "p8_b3_l4",
+      "p8_b5_l0",
+      "p8_b6_l0"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

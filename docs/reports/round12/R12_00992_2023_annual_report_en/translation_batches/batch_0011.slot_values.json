@@ -1,0 +1,1530 @@
+{
+  "run_id": "R12_00992_2023_annual_report_en",
+  "case_id": "R12_00992_2023_annual_report_en",
+  "state_id": "S5_TranslationPlan",
+  "decision_id": "D2_translation",
+  "batch_id": "batch_0011",
+  "batch_index": 11,
+  "batch_count": 13,
+  "source_extraction_ref": "docs/reports/round12/R12_00992_2023_annual_report_en/source_extraction.json",
+  "source_language": "en",
+  "target_language": "zh",
+  "target_text_field": "translation_zh",
+  "translation_units": [
+    {
+      "unit_id": "p8_b8_l0",
+      "page_index": 8,
+      "block_id": 8,
+      "line_index": 0,
+      "source_text": "6/12 members",
+      "bbox": [
+        398.351,
+        681.13,
+        452.895,
+        691.642
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "members"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "6"
+        },
+        {
+          "type": "currency_amount",
+          "value": "12 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b9_l0",
+      "page_index": 8,
+      "block_id": 9,
+      "line_index": 0,
+      "source_text": "6/9 members",
+      "bbox": [
+        401.335,
+        718.69,
+        452.895,
+        729.202
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "members"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "6"
+        },
+        {
+          "type": "currency_amount",
+          "value": "9 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b10_l0",
+      "page_index": 8,
+      "block_id": 10,
+      "line_index": 0,
+      "source_text": "Board",
+      "bbox": [
+        128.791,
+        681.13,
+        151.999,
+        691.642
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Board"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b11_l0",
+      "page_index": 8,
+      "block_id": 11,
+      "line_index": 0,
+      "source_text": "Independent non-executive directors",
+      "bbox": [
+        128.791,
+        718.69,
+        268.223,
+        729.202
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 8.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Independent",
+        "directors",
+        "non-executive"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b13_l0",
+      "page_index": 8,
+      "block_id": 13,
+      "line_index": 0,
+      "source_text": "Tenure of Board members",
+      "bbox": [
+        42.52,
+        203.818,
+        152.914,
+        215.644
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Board",
+        "Tenure",
+        "members",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b14_l0",
+      "page_index": 8,
+      "block_id": 14,
+      "line_index": 0,
+      "source_text": "Over 10 years (5)",
+      "bbox": [
+        420.804,
+        262.304,
+        499.324,
+        274.684
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Over",
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "footnote_marker",
+          "value": "(5)"
+        },
+        {
+          "type": "currency_amount",
+          "value": "10 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b14_l1",
+      "page_index": 8,
+      "block_id": 14,
+      "line_index": 1,
+      "source_text": "5-10 years (2)",
+      "bbox": [
+        284.164,
+        262.304,
+        346.534,
+        274.684
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "footnote_marker",
+          "value": "(2)"
+        },
+        {
+          "type": "currency_amount",
+          "value": "5"
+        },
+        {
+          "type": "currency_amount",
+          "value": "10 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b14_l2",
+      "page_index": 8,
+      "block_id": 14,
+      "line_index": 2,
+      "source_text": "Below 5 years (5)",
+      "bbox": [
+        128.884,
+        262.304,
+        209.343,
+        274.684
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Below",
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "footnote_marker",
+          "value": "(5)"
+        },
+        {
+          "type": "currency_amount",
+          "value": "5 "
+        }
+      ],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b15_l0",
+      "page_index": 8,
+      "block_id": 15,
+      "line_index": 0,
+      "source_text": "All non-executive directors (including independent non-executive directors) have entered into letters of appointment",
+      "bbox": [
+        42.52,
+        293.748,
+        525.368,
+        304.89
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "All",
+        "appointment",
+        "directors",
+        "directors)",
+        "entered",
+        "have",
+        "including",
+        "independent",
+        "into",
+        "letters",
+        "non-executive",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b15_l1",
+      "page_index": 8,
+      "block_id": 15,
+      "line_index": 1,
+      "source_text": "with the Company for a term of three years. Their terms of appointment shall be subject to retirement from office by",
+      "bbox": [
+        42.52,
+        304.746,
+        523.127,
+        315.888
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Company",
+        "Their",
+        "a",
+        "appointment",
+        "be",
+        "by",
+        "for",
+        "from",
+        "of",
+        "office",
+        "retirement",
+        "shall",
+        "subject",
+        "term",
+        "terms",
+        "the",
+        "three",
+        "to",
+        "with",
+        "years."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b15_l2",
+      "page_index": 8,
+      "block_id": 15,
+      "line_index": 2,
+      "source_text": "rotation and re-election at the annual general meeting in accordance with the Articles of Association.",
+      "bbox": [
+        42.52,
+        315.744,
+        457.221,
+        326.886
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Articles",
+        "Association.",
+        "accordance",
+        "and",
+        "annual",
+        "at",
+        "general",
+        "in",
+        "meeting",
+        "of",
+        "re-election",
+        "rotation",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b16_l0",
+      "page_index": 8,
+      "block_id": 16,
+      "line_index": 0,
+      "source_text": "The Company agreed that the independence of directors is an important principle of the Company. In line with the best",
+      "bbox": [
+        42.52,
+        332.412,
+        535.124,
+        343.554
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Company",
+        "Company.",
+        "In",
+        "The",
+        "agreed",
+        "an",
+        "best",
+        "directors",
+        "important",
+        "independence",
+        "is",
+        "line",
+        "of",
+        "principle",
+        "that",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b16_l1",
+      "page_index": 8,
+      "block_id": 16,
+      "line_index": 1,
+      "source_text": "practices on corporate governance, the Board adopted the principle (the “Principle”) that each term of an independent",
+      "bbox": [
+        42.52,
+        343.41,
+        534.333,
+        354.552
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "Principle",
+        "adopted",
+        "an",
+        "corporate",
+        "each",
+        "governance",
+        "independent",
+        "of",
+        "on",
+        "practices",
+        "principle",
+        "term",
+        "that",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b16_l2",
+      "page_index": 8,
+      "block_id": 16,
+      "line_index": 2,
+      "source_text": "non-executive director of the Company shall not be more than three years and shall, subject to re-election by",
+      "bbox": [
+        42.52,
+        354.408,
+        492.482,
+        365.55
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Company",
+        "and",
+        "be",
+        "by",
+        "director",
+        "more",
+        "non-executive",
+        "not",
+        "of",
+        "re-election",
+        "shall",
+        "subject",
+        "than",
+        "the",
+        "three",
+        "to",
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b16_l3",
+      "page_index": 8,
+      "block_id": 16,
+      "line_index": 3,
+      "source_text": "shareholders at any subsequent annual general meeting of the Company, be renewable for additional three-year terms",
+      "bbox": [
+        42.52,
+        365.406,
+        531.552,
+        376.548
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Company",
+        "additional",
+        "annual",
+        "any",
+        "at",
+        "be",
+        "for",
+        "general",
+        "meeting",
+        "of",
+        "renewable",
+        "shareholders",
+        "subsequent",
+        "terms",
+        "the",
+        "three-year"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b16_l4",
+      "page_index": 8,
+      "block_id": 16,
+      "line_index": 4,
+      "source_text": "up to a maximum of nine years. At the recommendation of the Nomination and Governance Committee, the Board may",
+      "bbox": [
+        42.52,
+        376.404,
+        536.747,
+        387.546
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "At",
+        "Board",
+        "Committee",
+        "Governance",
+        "Nomination",
+        "a",
+        "and",
+        "maximum",
+        "may",
+        "nine",
+        "of",
+        "recommendation",
+        "the",
+        "to",
+        "up",
+        "years."
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b16_l5",
+      "page_index": 8,
+      "block_id": 16,
+      "line_index": 5,
+      "source_text": "invite an independent non-executive director to serve for an additional three-year term extending up to a total of 12",
+      "bbox": [
+        42.52,
+        387.402,
+        518.123,
+        398.544
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "a",
+        "additional",
+        "an",
+        "director",
+        "extending",
+        "for",
+        "independent",
+        "invite",
+        "non-executive",
+        "of",
+        "serve",
+        "term",
+        "three-year",
+        "to",
+        "total",
+        "up"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "12"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b16_l6",
+      "page_index": 8,
+      "block_id": 16,
+      "line_index": 6,
+      "source_text": "years subject to re-election at any subsequent annual general meeting of the Company.",
+      "bbox": [
+        42.52,
+        398.4,
+        401.97,
+        409.542
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Company.",
+        "annual",
+        "any",
+        "at",
+        "general",
+        "meeting",
+        "of",
+        "re-election",
+        "subject",
+        "subsequent",
+        "the",
+        "to",
+        "years"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b17_l0",
+      "page_index": 8,
+      "block_id": 17,
+      "line_index": 0,
+      "source_text": "In accordance with the Articles of Association, Mr. Zhao John Huan, Mr. Gordon Robert Halyburton Orr, Ms. Cher Wang",
+      "bbox": [
+        42.52,
+        415.068,
+        531.193,
+        426.21
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Articles",
+        "Association",
+        "Cher",
+        "Gordon",
+        "Halyburton",
+        "Huan",
+        "In",
+        "John",
+        "Mr.",
+        "Ms.",
+        "Orr",
+        "Robert",
+        "Wang",
+        "Zhao",
+        "accordance",
+        "of",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b17_l1",
+      "page_index": 8,
+      "block_id": 17,
+      "line_index": 1,
+      "source_text": "Hsiueh Hong, Professor Xue Lan, Mr. John Lawson Thornton and Mr. Kasper Bo Roersted will retire (if applicable) and",
+      "bbox": [
+        42.52,
+        426.066,
+        524.262,
+        437.208
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Bo",
+        "Hong",
+        "Hsiueh",
+        "John",
+        "Kasper",
+        "Lan",
+        "Lawson",
+        "Mr.",
+        "Professor",
+        "Roersted",
+        "Thornton",
+        "Xue",
+        "and",
+        "applicable)",
+        "if",
+        "retire",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b17_l2",
+      "page_index": 8,
+      "block_id": 17,
+      "line_index": 2,
+      "source_text": "being eligible, will offer themselves to be re-elected at the forthcoming annual general meeting to be held on July 18, 2024 (“2024",
+      "bbox": [
+        42.52,
+        437.064,
+        540.977,
+        448.206
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "July",
+        "annual",
+        "at",
+        "be",
+        "being",
+        "eligible",
+        "forthcoming",
+        "general",
+        "held",
+        "meeting",
+        "offer",
+        "on",
+        "re-elected",
+        "the",
+        "themselves",
+        "to",
+        "will"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "year",
+          "value": "2024"
+        },
+        {
+          "type": "currency_amount",
+          "value": "18, "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b17_l3",
+      "page_index": 8,
+      "block_id": 17,
+      "line_index": 3,
+      "source_text": "Annual General Meeting”).",
+      "bbox": [
+        42.52,
+        448.062,
+        150.961,
+        459.204
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Annual",
+        "General",
+        "Meeting"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b18_l0",
+      "page_index": 8,
+      "block_id": 18,
+      "line_index": 0,
+      "source_text": "Refreshment of the Board",
+      "bbox": [
+        42.52,
+        475.871,
+        164.399,
+        489.011
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Board",
+        "Refreshment",
+        "of",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p8_b19_l0",
+      "page_index": 8,
+      "block_id": 19,
+      "line_index": 0,
+      "source_text": "The Board’s diversity and independence are enhanced by refreshing the composition of the Board. As part of the",
+      "bbox": [
+        42.52,
+        493.764,
+        509.251,
+        504.906
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "As",
+        "Board",
+        "Board.",
+        "The",
+        "and",
+        "are",
+        "by",
+        "composition",
+        "diversity",
+        "enhanced",
+        "independence",
+        "of",
+        "part",
+        "refreshing",
+        "s",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b19_l1",
+      "page_index": 8,
+      "block_id": 19,
+      "line_index": 1,
+      "source_text": "Company’s continuing efforts to refresh the Board, the Board has appointed two independent non-executive directors",
+      "bbox": [
+        42.52,
+        504.762,
+        530.346,
+        515.904
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "Company",
+        "appointed",
+        "continuing",
+        "directors",
+        "efforts",
+        "has",
+        "independent",
+        "non-executive",
+        "refresh",
+        "s",
+        "the",
+        "to",
+        "two"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b19_l2",
+      "page_index": 8,
+      "block_id": 19,
+      "line_index": 2,
+      "source_text": "with solid experience, fresh ideas and different skills in FY2023/24. The appointment further enhances the strong",
+      "bbox": [
+        42.52,
+        515.76,
+        508.431,
+        526.902
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "FY2023/24.",
+        "The",
+        "and",
+        "appointment",
+        "different",
+        "enhances",
+        "experience",
+        "fresh",
+        "further",
+        "ideas",
+        "in",
+        "skills",
+        "solid",
+        "strong",
+        "the",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "currency_amount",
+          "value": "24"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b19_l3",
+      "page_index": 8,
+      "block_id": 19,
+      "line_index": 3,
+      "source_text": "independent element of the Board and adds value to the Board from the balance of skills, knowledge, experience and",
+      "bbox": [
+        42.52,
+        526.758,
+        528.005,
+        537.9
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "adds",
+        "and",
+        "balance",
+        "element",
+        "experience",
+        "from",
+        "independent",
+        "knowledge",
+        "of",
+        "skills",
+        "the",
+        "to",
+        "value"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p8_b19_l4",
+      "page_index": 8,
+      "block_id": 19,
+      "line_index": 4,
+      "source_text": "diversity perspectives. The diagram below shows how the Board has been refreshed since January 2019.",
+      "bbox": [
+        42.52,
+        537.756,
+        470.774,
+        548.898
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Board",
+        "January",
+        "The",
+        "been",
+        "below",
+        "diagram",
+        "diversity",
+        "has",
+        "how",
+        "perspectives.",
+        "refreshed",
+        "shows",
+        "since",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2019"
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p9_b0_l0",
+      "page_index": 9,
+      "block_id": 0,
+      "line_index": 0,
+      "source_text": "Lenovo Group Limited  2023/24 Annual Report",
+      "bbox": [
+        296.462,
+        812.946,
+        516.381,
+        825.326
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 10.0,
+      "font": "Gotham-Book",
+      "ascii_tokens": [
+        "Annual",
+        "Group",
+        "Lenovo",
+        "Limited",
+        "Report"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [
+        {
+          "type": "year",
+          "value": "2023"
+        },
+        {
+          "type": "currency_amount",
+          "value": "24 "
+        }
+      ],
+      "layout_hint": "body"
+    },
+    {
+      "unit_id": "p9_b1_l0",
+      "page_index": 9,
+      "block_id": 1,
+      "line_index": 0,
+      "source_text": "Evaluation of the",
+      "bbox": [
+        80.205,
+        435.469,
+        159.055,
+        447.952
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Evaluation",
+        "of",
+        "the"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b1_l1",
+      "page_index": 9,
+      "block_id": 1,
+      "line_index": 1,
+      "source_text": "Board composition and",
+      "bbox": [
+        65.632,
+        445.472,
+        173.628,
+        457.955
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Board",
+        "and",
+        "composition"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b1_l2",
+      "page_index": 9,
+      "block_id": 1,
+      "line_index": 2,
+      "source_text": "establishment of desired",
+      "bbox": [
+        62.982,
+        455.476,
+        176.279,
+        467.959
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "desired",
+        "establishment",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b1_l3",
+      "page_index": 9,
+      "block_id": 1,
+      "line_index": 3,
+      "source_text": "criteria for prospective",
+      "bbox": [
+        67.124,
+        465.479,
+        172.125,
+        477.962
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "criteria",
+        "for",
+        "prospective"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b1_l4",
+      "page_index": 9,
+      "block_id": 1,
+      "line_index": 4,
+      "source_text": "directors",
+      "bbox": [
+        98.113,
+        475.483,
+        138.278,
+        487.966
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "directors"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b2_l0",
+      "page_index": 9,
+      "block_id": 2,
+      "line_index": 0,
+      "source_text": "Identification of",
+      "bbox": [
+        220.264,
+        435.478,
+        294.516,
+        447.961
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Identification",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b2_l1",
+      "page_index": 9,
+      "block_id": 2,
+      "line_index": 1,
+      "source_text": "candidates",
+      "bbox": [
+        231.36,
+        445.482,
+        280.57,
+        457.965
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "candidates"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b2_l2",
+      "page_index": 9,
+      "block_id": 2,
+      "line_index": 2,
+      "source_text": "Evaluation of",
+      "bbox": [
+        364.901,
+        435.478,
+        426.737,
+        447.961
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Evaluation",
+        "of"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b2_l3",
+      "page_index": 9,
+      "block_id": 2,
+      "line_index": 3,
+      "source_text": "suitability of",
+      "bbox": [
+        366.583,
+        445.482,
+        425.065,
+        457.965
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "of",
+        "suitability"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b2_l4",
+      "page_index": 9,
+      "block_id": 2,
+      "line_index": 4,
+      "source_text": "candidates",
+      "bbox": [
+        369.794,
+        455.485,
+        419.004,
+        467.968
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "candidates"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    },
+    {
+      "unit_id": "p9_b3_l0",
+      "page_index": 9,
+      "block_id": 3,
+      "line_index": 0,
+      "source_text": "Meeting with",
+      "bbox": [
+        222.981,
+        624.082,
+        284.446,
+        636.565
+      ],
+      "page_rect": [
+        0.0,
+        0.0,
+        595.276,
+        841.89
+      ],
+      "font_size": 9.5,
+      "font": "Gotham-Bold",
+      "ascii_tokens": [
+        "Meeting",
+        "with"
+      ],
+      "cjk_char_count": 0,
+      "preserve_tokens": [],
+      "layout_hint": "short_label"
+    }
+  ],
+  "terminology_policy": {
+    "source": "current-run source units only",
+    "known_reference_translation_allowed": false
+  },
+  "output_contract": {
+    "workspace_boundary_ref": "docs/reports/round12/R12_00992_2023_annual_report_en/translation_batches/batch_0011.workspace_boundary.json",
+    "write_model_output_to": "docs/reports/round12/R12_00992_2023_annual_report_en/translation_batches/batch_0011.model_output.json",
+    "required_units": [
+      "p8_b8_l0",
+      "p8_b9_l0",
+      "p8_b10_l0",
+      "p8_b11_l0",
+      "p8_b13_l0",
+      "p8_b14_l0",
+      "p8_b14_l1",
+      "p8_b14_l2",
+      "p8_b15_l0",
+      "p8_b15_l1",
+      "p8_b15_l2",
+      "p8_b16_l0",
+      "p8_b16_l1",
+      "p8_b16_l2",
+      "p8_b16_l3",
+      "p8_b16_l4",
+      "p8_b16_l5",
+      "p8_b16_l6",
+      "p8_b17_l0",
+      "p8_b17_l1",
+      "p8_b17_l2",
+      "p8_b17_l3",
+      "p8_b18_l0",
+      "p8_b19_l0",
+      "p8_b19_l1",
+      "p8_b19_l2",
+      "p8_b19_l3",
+      "p8_b19_l4",
+      "p9_b0_l0",
+      "p9_b1_l0",
+      "p9_b1_l1",
+      "p9_b1_l2",
+      "p9_b1_l3",
+      "p9_b1_l4",
+      "p9_b2_l0",
+      "p9_b2_l1",
+      "p9_b2_l2",
+      "p9_b2_l3",
+      "p9_b2_l4",
+      "p9_b3_l0"
+    ],
+    "forbidden_placeholders": [
+      "中文回填",
+      "中文标题",
+      "中文标签",
+      "placeholder",
+      "TBD"
+    ]
+  }
+}

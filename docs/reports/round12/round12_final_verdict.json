@@ -1,0 +1,116 @@
+{
+  "round_id": "round12",
+  "input_count": 5,
+  "process_contract_verdict": "FAIL",
+  "semantic_translation_verdict": "PASS",
+  "generation_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "terminal_state": "S_FAIL_PROCESS_CONTRACT",
+  "repair_loop_execution_verdict": "PARTIAL_NOT_FULL_LOOP",
+  "repair_loop_execution_errors": [
+    "Lx_RepairLoop was entered, but no repair_loop_*.json execution record exists.",
+    "visual_repair_plan.json only proves repair planning; it does not prove that a repair atom was applied, regenerated, and rechecked."
+  ],
+  "anti_overfit_verdict": "PASS",
+  "cases": [
+    {
+      "case_id": "R12_00005_2025_interim_report_zh",
+      "source_pdf": "docs/input/round12/source_pdfs/00005_2025_interim_report_zh.pdf",
+      "detected_source_language": "zh",
+      "target_language": "en",
+      "page_count": 9,
+      "semantic_translation_verdict": "PASS",
+      "product_quality_verdict": "FAIL",
+      "failed_gate_ids": [
+        "text_residue",
+        "text_fit",
+        "visual_similarity",
+        "body_paragraph_readability",
+        "footnote_readability",
+        "sidebar_navigation_legibility",
+        "table_text_legibility",
+        "background_residue_artifact",
+        "matrix_diagram_integrity"
+      ],
+      "candidate_pdf": "docs/output/round12/R12_00005_2025_interim_report_zh_candidate.pdf",
+      "candidate_sha256": "5fd11ee9170ad13e787656b946eaaae7577269cd55000970daaf2bdf045cda4c",
+      "report_dir": "docs/reports/round12/R12_00005_2025_interim_report_zh",
+      "terminal_state": "S_FAIL_QUALITY"
+    },
+    {
+      "case_id": "R12_00388_2026_annual_report_en",
+      "source_pdf": "docs/input/round12/source_pdfs/00388_2026_annual_report_en.pdf",
+      "detected_source_language": "en",
+      "target_language": "zh",
+      "page_count": 1,
+      "semantic_translation_verdict": "PASS",
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "candidate_pdf": "docs/output/round12/R12_00388_2026_annual_report_en_candidate.pdf",
+      "candidate_sha256": "653d30035cdab4371186dfe903bb9e9ee07cd7098546d4f478e08875b89e2fb6",
+      "report_dir": "docs/reports/round12/R12_00388_2026_annual_report_en",
+      "terminal_state": "S_DONE_PRODUCT_ACCEPTED"
+    },
+    {
+      "case_id": "R12_00992_2023_annual_report_en",
+      "source_pdf": "docs/input/round12/source_pdfs/00992_2023_annual_report_en.pdf",
+      "detected_source_language": "en",
+      "target_language": "zh",
+      "page_count": 11,
+      "semantic_translation_verdict": "PASS",
+      "product_quality_verdict": "FAIL",
+      "failed_gate_ids": [
+        "text_residue",
+        "text_fit",
+        "visual_similarity",
+        "event_card_readability",
+        "footnote_readability",
+        "short_label_legibility"
+      ],
+      "candidate_pdf": "docs/output/round12/R12_00992_2023_annual_report_en_candidate.pdf",
+      "candidate_sha256": "6d31747cfe87b0244906d5e923e8ebf0de461f0f073b14550efeecc8d53066cb",
+      "report_dir": "docs/reports/round12/R12_00992_2023_annual_report_en",
+      "terminal_state": "S_FAIL_QUALITY"
+    },
+    {
+      "case_id": "R12_jianye_new_life_c",
+      "source_pdf": "docs/input/round12/source_pdfs/建業新生活有限公司_c.pdf",
+      "detected_source_language": "zh",
+      "target_language": "en",
+      "page_count": 6,
+      "semantic_translation_verdict": "PASS",
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "candidate_pdf": "docs/output/round12/R12_jianye_new_life_c_candidate.pdf",
+      "candidate_sha256": "f3f8e396156560c02471be22605c2c4536d86c30b5306c1dd349f1abb5ad2368",
+      "report_dir": "docs/reports/round12/R12_jianye_new_life_c",
+      "terminal_state": "S_DONE_PRODUCT_ACCEPTED"
+    },
+    {
+      "case_id": "R12_jianye_new_life_e",
+      "source_pdf": "docs/input/round12/source_pdfs/建業新生活有限公司_e.pdf",
+      "detected_source_language": "en",
+      "target_language": "zh",
+      "page_count": 6,
+      "semantic_translation_verdict": "PASS",
+      "product_quality_verdict": "PASS",
+      "failed_gate_ids": [],
+      "candidate_pdf": "docs/output/round12/R12_jianye_new_life_e_candidate.pdf",
+      "candidate_sha256": "db249aa11d15e604fbbfb06c5efd7c9608d63aae28f908bf1e941775be277205",
+      "report_dir": "docs/reports/round12/R12_jianye_new_life_e",
+      "terminal_state": "S_DONE_PRODUCT_ACCEPTED"
+    }
+  ],
+  "core_changes_made": [
+    "added materialize_d2_translation_batches.py runtime D2 materializer",
+    "added target-language-dominant and neutral-identifier source-unit filtering across S5/S7 validators/generator",
+    "added NFKC request normalization and cache target-script validation",
+    "added region rect sanitization before PyMuPDF textbox insertion",
+    "updated zh text_residue quality gate to allow generic neutral identifier/code tokens",
+    "updated standard design document, tool README, and D2 prompt template"
+  ],
+  "process_validation": "docs/reports/round12/process_validation.json",
+  "process_validation_errors": [
+    "Lx_RepairLoop was entered but no repair_loop_*.json execution record was found; visual_repair_plan.json is planning evidence, not repair-loop execution evidence"
+  ]
+}
