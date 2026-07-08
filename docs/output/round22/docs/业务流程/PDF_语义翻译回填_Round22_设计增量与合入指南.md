@@ -319,3 +319,58 @@ Round22 只能以“可复用规则”合入，不能以“样本结果”合入
 - 有对应渲染证据；
 - 有失败时的诚实终态。
 
+## 16. 2025 Annual Report 前 20 页泛化验证增量
+
+本节记录 `00005_2025_annual_report_zh` 前 20 页中译英泛化验证后的真实结论。该验证只使用源中文 PDF 和预先准备的语义译文 JSON；人工英文 PDF 只能作为人工结果性对照，不进入运行工具链。
+
+### 16.1 运行输入与输出
+
+| 项 | 路径 |
+|---|---|
+| 源 PDF | `input/source_pdfs/00005_2025_annual_report_zh_pages_001_020.pdf` |
+| 译文 JSON | `input/semantic_translations/R22_GEN_ZH_TO_EN_00005_pages_001_020.translations.json` |
+| 候选 PDF | `output/R22_GEN_ZH_TO_EN_00005_pages_001_020_candidate.pdf` |
+| 质量门禁 | `reports/quality_gates.json` |
+| 流程审计 | `reports/process_audit.json` |
+
+### 16.2 采用的通用规则
+
+这些规则可作为合入候选，因为触发依据只来自源页几何、源字体、源颜色、目标译文字长和局部门禁结果，不包含页码、具体文本、具体指标值或人工对照文件。
+
+| 规则 | 所在工具 | 输入维度 | 输出维度 | 解决的问题 |
+|---|---|---|---|---|
+| 红色强调文字先判定为 `red_heading`，再考虑 `title` | `tools/generate_round22_layout_candidate.py` | page-local accent color、font rank、symbol flag | role | 防止红色小标题被误判为大标题 |
+| 单行 title 使用较小目标高度，多行 title 才扩高 | `tools/generate_round22_layout_candidate.py` | target text length、target width、source font、source height | target rect height | 防止不可见标题框压到正文门禁 |
+| 红色 heading 设置源相对最低字号 | `tools/generate_round22_layout_candidate.py` | source font size、role | font start/min | 防止容器标题被压成不可读小字 |
+| word-bearing metric value 横向扩展 | `tools/planners/plan_layout.py` | target text length、source font、page margin | target rect width | 防止中译英后数值说明被塞进窄数值框 |
+| translation-growth slot | `tools/planners/plan_layout.py` | role、source font、target text length、target width、same-source-column next top、page bottom | target rect height | 先利用局部空白，再缩字 |
+| section-heading guardrail | `tools/planners/plan_layout.py` | source/output column overlap、red heading y、source font floor | upstream target rect trim | 防止上游正文扩张覆盖后续红标题 |
+| source line-grid container long-heading expansion | `tools/planners/plan_layout.py` | detected container rect、inner width、source font、target single-line capacity | heading rect height、font bounds | 改善卡片标题在中译英后的可读性 |
+
+### 16.3 已否决的实验规则
+
+| 实验 | 否决原因 |
+|---|---|
+| 对所有 role 使用向上取整的 line count | 会把 metric/短标签目标框放大，导致第 3 页等 KPI 区域局部 overlap 增加 |
+| 红标题使用下游同栏右边界强行收窄 | 可缓解个别左栏标题越界，但会让其他页面的边界标题 overflow，泛化结果变差 |
+
+### 16.4 最新门禁结果
+
+| 项 | 结果 |
+|---|---|
+| `process_contract_verdict` | `PASS` |
+| `process failure_count` | `0` |
+| `product_quality_verdict` | `FAIL` |
+| `blocking_failure_count` | `79` |
+| `all_groups_fit` | `11` |
+| `source_relative_font_floor` | `1` |
+| `local_text_overlap` | `67` |
+
+结论：Round22 当前可以作为“局部布局能力实验包”，不能作为已完成质量闭环。候选 PDF 已生成，但因产品门禁仍失败，不能标记为主流程可接受输出。
+
+### 16.5 下一步合入前必须补的能力
+
+- repair loop 必须从 `plan_repairs.py` 的“只选择修复族”升级为“应用一个修复动作并重跑 S3-S6”。
+- `local_text_overlap` 需要区分真实压字和过大的不可见目标框，门禁应尽量使用渲染证据或更接近实际绘制区域的 bbox。
+- 多栏长文页需要通用 column-flow 重排，而不是继续扩大单个文本框。
+- 合入主框架前，必须用非 HSBC/AIA PDF 再跑一次反过拟合验证。

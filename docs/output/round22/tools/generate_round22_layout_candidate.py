@@ -86,6 +86,11 @@ def rect_union(rects: list[fitz.Rect]) -> fitz.Rect:
     return rect
 
 
+def rect_x_overlap_ratio(left: fitz.Rect, right: fitz.Rect) -> float:
+    overlap = max(0.0, min(left.x1, right.x1) - max(left.x0, right.x0))
+    return overlap / max(1.0, min(left.width, right.width))
+
+
 def sanitize_text(text: str) -> str:
     replacements = {
         "\u2018": "'",
@@ -100,6 +105,7 @@ def sanitize_text(text: str) -> str:
     }
     for source, target in replacements.items():
         text = text.replace(source, target)
+    text = "".join(char if ord(char) >= 32 or char in "\n\t" else " " for char in text)
     text = " ".join(text.split())
     text = re.sub(r"(^|\n)\s*[a-z](?=[A-Z][a-z])", r"\1", text)
     return text
@@ -292,10 +298,10 @@ def role_for_lines(lines: list[Line], page_rect: fitz.Rect, stats: PageStats) ->
         return "red_note"
     if has_value_token and font_rank >= max(1.05, stats.font_q90 / max(stats.font_q75, 1.0) * 0.85):
         return "metric_value"
-    if len(lines) == 1 and largest_tier and before_body_median and has_words:
-        return "title"
     if has_accent_text and font_rank >= 1.0 and not has_symbol:
         return "red_heading"
+    if len(lines) == 1 and largest_tier and before_body_median and has_words:
+        return "title"
     compact_width_limit = max(stats.width_q50, stats.width_q75 * 0.72)
     if rect.width <= compact_width_limit and len(lines) <= 3 and font_rank <= 1.0:
         return "compact_panel"
@@ -304,22 +310,63 @@ def role_for_lines(lines: list[Line], page_rect: fitz.Rect, stats: PageStats) ->
     return "body"
 
 
+def is_table_like_block(lines: list[Line], page_rect: fitz.Rect, stats: PageStats) -> bool:
+    if len(lines) < 10:
+        return False
+    rect = rect_union([line.rect for line in lines])
+    if rect.width < page_rect.width * 0.42:
+        return False
+    numeric_count = sum(1 for line in lines if VALUE_TOKEN_RE.search(line.text))
+    numeric_ratio = numeric_count / max(1, len(lines))
+    short_count = sum(1 for line in lines if line.rect.width <= rect.width * 0.42)
+    short_ratio = short_count / max(1, len(lines))
+    bucket = max(4.0, stats.font_q50 or 6.0)
+    x_columns = len({round((line.rect.x0 - rect.x0) / bucket) for line in lines})
+    dense_financial_grid = numeric_ratio >= 0.28 and short_ratio >= 0.42 and x_columns >= 3
+    large_matrix = len(lines) >= 24 and numeric_ratio >= 0.18 and short_ratio >= 0.35 and x_columns >= 4
+    return dense_financial_grid or large_matrix
+
+
+def is_table_neighbor_block(lines: list[Line], table_rects: list[fitz.Rect], stats: PageStats) -> bool:
+    if not table_rects or len(lines) > 6:
+        return False
+    rect = rect_union([line.rect for line in lines])
+    max_size = max((line.font_size for line in lines), default=0.0)
+    if max_size > max(stats.font_q75, stats.font_q50 * 1.2):
+        return False
+    for table_rect in table_rects:
+        close_above = 0 <= table_rect.y0 - rect.y1 <= max(3.0, stats.font_q50 * 1.2)
+        close_inside_top = table_rect.y0 - max(3.0, stats.font_q50 * 1.2) <= rect.y0 <= table_rect.y0 + max(3.0, stats.font_q50 * 1.4)
+        if (close_above or close_inside_top) and rect_x_overlap_ratio(rect, table_rect) >= 0.18:
+            return True
+    return False
+
+
 def build_groups(page_lines: list[Line], page_rect: fitz.Rect, translations: dict[str, dict[str, str]]) -> list[Group]:
     groups: list[Group] = []
     stats = page_stats(page_lines, page_rect)
     by_block: dict[int, list[Line]] = {}
     for line in page_lines:
         by_block.setdefault(line.block_index, []).append(line)
+    table_rects = [
+        rect_union([line.rect for line in block_lines])
+        for block_lines in by_block.values()
+        if is_table_like_block(block_lines, page_rect, stats)
+    ]
 
     for block_index, block_lines in by_block.items():
         block_lines = sorted(block_lines, key=lambda item: (item.line_index, item.rect.y0))
+        block_rect = rect_union([line.rect for line in block_lines])
+        max_font = max((line.font_size for line in block_lines), default=0)
+        if is_table_like_block(block_lines, page_rect, stats) or is_table_neighbor_block(block_lines, table_rects, stats):
+            for part_index, line in enumerate(block_lines):
+                groups.append(make_group(block_index, part_index, [line], page_rect, stats, translations, force_role="table_cell"))
+            continue
         row_clusters = horizontal_row_clusters(block_lines, stats)
         if len(row_clusters) > 1:
             for part_index, cluster in enumerate(row_clusters):
                 groups.append(make_group(block_index, part_index, cluster, page_rect, stats, translations))
             continue
-        block_rect = rect_union([line.rect for line in block_lines])
-        max_font = max((line.font_size for line in block_lines), default=0)
         top_small_cluster = (
             block_rect.y1 < page_rect.height * 0.08
             and max_font <= stats.font_q50
@@ -493,32 +540,59 @@ def text_rect_for_group(group: Group, page_rect: fitz.Rect, groups: list[Group])
     column_right = min(right_obstacles) - gap if right_obstacles else right_margin
     column_left = max(left_obstacles) + gap if left_obstacles else left_margin
 
-    if group.role in {"body", "red_note", "section_heading", "red_heading"}:
+    if group.role in {"body", "red_note", "section_heading"}:
         if rect.x0 < page_rect.width * 0.38:
             rect.x1 = max(rect.x1, min(column_right, page_rect.width * 0.46))
         else:
             rect.x1 = max(rect.x1, min(column_right, right_margin))
         rect.x0 = max(column_left, rect.x0)
+    elif group.role == "table_cell":
+        available_width = max(8.0, column_right - rect.x0)
+        estimated_width = len(group.target_text) * max(1.8, group.source_font_size * 0.30)
+        rect.x1 = min(column_right, max(rect.x1, rect.x0 + min(available_width, estimated_width)))
+    elif group.role == "red_heading":
+        heading_width = max(rect.width * 1.4, page_rect.width * 0.22)
+        if right_obstacles:
+            rect.x1 = max(rect.x1, min(column_right, rect.x0 + heading_width))
+        else:
+            rect.x1 = min(right_margin, max(rect.x1, rect.x0 + heading_width))
     elif group.role == "compact_panel":
         available_width = max(8.0, column_right - rect.x0)
         estimated_width = len(group.target_text) * max(2.2, group.source_font_size * 0.34)
         rect.x1 = min(column_right, max(rect.x1, rect.x0 + min(available_width, estimated_width)))
     elif group.role == "nav_footer":
         rect.x1 = min(column_right, max(rect.x1, rect.x0 + rect.width * 1.35))
+    elif group.role == "metric_value":
+        available_width = max(8.0, column_right - rect.x0)
+        estimated_width = len(group.target_text) * max(3.0, group.source_font_size * 0.38)
+        rect.x1 = min(column_right, max(rect.x1, rect.x0 + min(available_width, estimated_width)))
     elif group.role == "title":
-        rect.x1 = min(right_margin, max(rect.x1, rect.x0 + page_rect.width * 0.36))
+        estimated_width = len(group.target_text) * max(5.0, group.source_font_size * 0.34)
+        base_width = page_rect.width * 0.42
+        if estimated_width > rect.width * 1.25:
+            base_width = page_rect.width * 0.78
+        rect.x1 = min(right_margin, max(rect.x1, rect.x0 + base_width))
     else:
         rect.x1 = min(column_right, max(rect.x1, rect.x0 + rect.width * 1.15))
 
     line_count = max(1, len(group.target_text) // max(14, int(rect.width / max(3.0, group.source_font_size * 0.45))))
     if group.role == "red_note":
         rect.y1 = max(rect.y1, rect.y0 + max(group.source_rect.height * 1.35, 8.0 * (line_count + 1)))
+    elif group.role == "table_cell":
+        rect.y1 = max(rect.y1, rect.y0 + max(group.source_rect.height * 1.05, group.source_font_size * 1.10))
     elif group.role in {"body", "compact_panel"}:
         rect.y1 = max(rect.y1, rect.y0 + max(group.source_rect.height * 1.15, 9.0 * line_count))
     elif group.role == "nav_footer":
         rect.y1 = max(rect.y1, rect.y0 + max(group.source_rect.height * 1.6, 7.0 * line_count))
-    elif group.role in {"title", "red_heading", "section_heading"}:
-        rect.y1 = max(rect.y1, rect.y0 + group.source_rect.height * 1.2)
+    elif group.role == "title":
+        source_height_factor = 1.45 if line_count > 1 else 1.15
+        rect.y1 = max(rect.y1, rect.y0 + max(group.source_rect.height * source_height_factor, group.source_font_size * 1.08 * line_count))
+    elif group.role == "section_heading":
+        rect.y1 = max(rect.y1, rect.y0 + max(group.source_rect.height * 1.2, 8.5 * line_count))
+    elif group.role == "metric_value":
+        rect.y1 = max(rect.y1, rect.y0 + max(group.source_rect.height, group.source_font_size * 0.92 * line_count))
+    elif group.role == "red_heading":
+        rect.y1 = max(rect.y1, rect.y0 + max(group.source_rect.height * 1.2, group.source_font_size * 0.98 * line_count))
     rect.x0 = max(4.0, min(rect.x0, page_rect.width - 12.0))
     rect.x1 = max(rect.x0 + 8.0, min(rect.x1, page_rect.width - 4.0))
     rect.y0 = max(4.0, min(rect.y0, page_rect.height - 12.0))
@@ -530,16 +604,23 @@ def text_rect_for_group(group: Group, page_rect: fitz.Rect, groups: list[Group])
 def initial_font_size(group: Group) -> tuple[float, float]:
     source = max(4.0, group.source_font_size)
     if group.role == "title":
-        start, floor = min(source * 0.92, 27.0), source * 0.58
+        start, floor = min(source * 0.88, 27.0), source * 0.50
         return max(start, floor), floor
     if group.role == "red_heading":
-        start, floor = min(source * 1.02, 15.0), source * 0.72
+        start, floor = min(source * 1.02, 15.0), max(6.4, source * 0.60)
         return max(start, floor), floor
     if group.role == "red_note":
         start, floor = min(source * 0.98, 8.2), max(4.8, source * 0.68)
         return max(start, floor), floor
+    if group.role == "table_cell":
+        start, floor = min(source * 0.88, 6.8), max(3.2, source * 0.42)
+        return max(start, floor), floor
     if group.role == "metric_value":
-        start, floor = min(source * 1.0, 30.0), source * 0.72
+        has_alpha = any(ch.isalpha() for ch in group.target_text)
+        if has_alpha and len(group.target_text) > 10:
+            start, floor = min(source * 0.82, 30.0), source * 0.50
+        else:
+            start, floor = min(source * 1.0, 30.0), source * 0.72
         return max(start, floor), floor
     if group.role == "compact_panel":
         start, floor = min(source * 0.98, 8.6), max(5.2, source * 0.68)

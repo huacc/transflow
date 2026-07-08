@@ -108,6 +108,20 @@ Planner-side `vertical_flow_relayout` applies only to text-flow roles (`body`, `
 
 Planner-side `section_pushdown_after_source_rule` detects long source-derived horizontal section rules and may shift downstream translated groups downward when upstream translated content grows into the next section boundary and there is page-bottom capacity. This is a geometry-derived pushdown; it must not branch on page ids or text.
 
+Planner-side `translation_growth_slot_expand` expands a translated text slot only from source role, target text length, source font size, current target width, same-source-column next top, and page-bottom capacity. It is used before vertical flow so downstream text can move instead of forcing the current text below a readable font size.
+
+Planner-side `metric_text_width_growth` widens metric values that become word-bearing translated text. It uses target text length, source font size, current target width, and page margin only; it must not branch on exact values such as percentages or dollar amounts.
+
+Planner-side `section_heading_guardrail` protects later red headings from being covered by upstream text growth in the same source or output column. It trims the upstream target rect only when the remaining height stays above a source-font-derived minimum.
+
+Planner-side `table_cell_split` detects wide, dense, numeric/source-grid-like text blocks from source geometry and text statistics, then splits them into per-line `table_cell` groups instead of allowing a whole table to become one paragraph or one red heading. Adjacent small-font blocks that touch the table top and overlap the table horizontally are bound into the same table-cell treatment.
+
+Planner-side `table_region_obstacle_pack` derives table bands from `table_cell` source rectangles. If translated body text would flow into a later table band, all affected same-column flow blocks above that table are packed within the available pre-table region before rendering. This is a hard visual-obstacle rule and must not branch on page number, sample text, or financial values.
+
+Generator-side title handling uses a smaller target height for single-line titles and a larger source-derived height only when the translated title needs multiple lines. This avoids false visual-overlap gates caused by an oversized invisible title rectangle.
+
+Generator-side red-heading handling gives accent headings role priority before generic title classification and enforces a source-relative font floor. This prevents red headings from being treated as broad page titles and prevents unreadable 5 pt heading fallback in bounded containers.
+
 Text sanitization removes single-letter symbol-font leakage before an uppercase word, for example when a bullet glyph is extracted as a plain ASCII letter. The actual bullet/color rendering remains source-span-derived.
 
 Candidate rendering is two-phase:
@@ -168,3 +182,14 @@ As of this package version:
 - product quality is expected to fail if any group remains `overflow_after_fit`;
 - product quality is expected to fail if a group has to shrink below the configured source-relative font floor;
 - a failed product gate means the candidate PDF is not acceptable for merge.
+
+Latest verified run:
+
+- command: `python run_round22_workflow.py --source-pdf input/source_pdfs/00005_2025_annual_report_zh_pages_001_020.pdf --translations-json input/semantic_translations/R22_GEN_ZH_TO_EN_00005_pages_001_020.translations.json --case-id R22_GEN_ZH_TO_EN_00005_pages_001_020`
+- candidate: `output/R22_GEN_ZH_TO_EN_00005_pages_001_020_candidate.pdf`
+- process: `process_contract_verdict=PASS`, `failure_count=0`
+- product: `product_quality_verdict=FAIL`, `blocking_failure_count=80`
+- blocking split: `all_groups_fit=9`, `source_relative_font_floor=1`, `local_text_overlap=70`
+- page-16 regression: the previous long red table paragraph overlay was removed by source-derived `table_cell_split`; the remaining page-16 failures are one red heading overflow and one small source-relative overlap between adjacent middle-column body groups.
+- adopted rules: source-derived single-line title height, red-heading role priority and font floor, metric text width growth, translation-growth slots, section-heading guardrail, source-width-derived container long-heading expansion, table-cell splitting, adjacent table-header binding, and table-region obstacle packing
+- rejected experiment: global line-count ceiling for all roles, because it inflated metric/label boxes and increased local overlap; red-heading source-column cap, because it caused bounded headings to overflow on other pages

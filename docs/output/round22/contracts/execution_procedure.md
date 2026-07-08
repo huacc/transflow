@@ -28,13 +28,21 @@ The round is successful only when:
 
 4. Run `S3_RolePlan`.
    - Classify roles using current-page relative features only.
-   - Required roles include `title`, `section_heading`, `body`, `red_heading`, `red_note`, `metric_value`, `compact_panel`, `nav_footer`.
+   - Required roles include `title`, `section_heading`, `body`, `red_heading`, `red_note`, `metric_value`, `compact_panel`, `table_cell`, `nav_footer`.
+   - Split dense, wide, numeric/table-like source blocks into `table_cell` groups before any normal paragraph grouping.
+   - Bind adjacent small-font blocks that touch a detected table top into `table_cell` treatment when their source geometry overlaps the table.
    - Emit both role and evidence dimensions for each group.
 
 5. Run `S4_LayoutPlan`.
    - Choose translation variant: display, short, compact.
    - Plan erase rect, target rect, font size range, line wrapping, and bullet/text split.
    - Expansion must respect detected neighboring columns/cards.
+   - Apply source-derived text-growth slots before font shrink when translated text needs more height.
+   - Apply metric text width growth only from target text length, source font size, current target width, and page margin.
+   - Apply red-heading guardrails only from source/output column overlap and source-font-derived minimum remaining height.
+   - Apply container long-heading expansion from detected source line-grid containers, container width, source font size, and target single-line capacity.
+   - Derive table bands from `table_cell` source rectangles and pack same-column body flow above later table regions when translated text would intrude.
+   - Do not branch on source page number, exact source/target phrase, exact numeric value, or offline reference content.
 
 6. Run `S5_GenerateCandidate`.
    - Render candidate over copied source PDF.
@@ -75,3 +83,15 @@ Model adjudication is allowed only for ambiguous visual judgment. It must use th
 - output dimensions;
 - selected repair family;
 - uncertainty and rejected alternatives.
+
+## Latest 1-20 Page Verification
+
+- Source input: `input/source_pdfs/00005_2025_annual_report_zh_pages_001_020.pdf`.
+- Translation input: `input/semantic_translations/R22_GEN_ZH_TO_EN_00005_pages_001_020.translations.json`.
+- Candidate output: `output/R22_GEN_ZH_TO_EN_00005_pages_001_020_candidate.pdf`.
+- Process verdict: `PASS`.
+- Product verdict: `FAIL`.
+- Blocking failures: 80 total; 9 `all_groups_fit`, 1 `source_relative_font_floor`, 70 `local_text_overlap`.
+- Page-16 regression fixed: a wide financial table was no longer merged into one red paragraph; the table is now split into `table_cell` groups and later body flow is packed above the table region.
+- Accepted generic changes: red-heading role precedence, source-relative red-heading floor, single-line title height reduction, container heading expansion, metric text width growth, translation-growth slots, section-heading guardrail, table-cell split, adjacent table-header binding, table-region obstacle packing.
+- Rejected generic changes: global line-count ceiling across all roles and red-heading source-column cap. Both were removed because the 1-20 run showed worse product gates.

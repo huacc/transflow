@@ -175,6 +175,15 @@ def estimated_text_height(item: dict, width: float) -> float:
     return max(font_size * leading, estimated_lines * font_size * leading)
 
 
+def estimated_metric_width(item: dict) -> float:
+    text = str(item.get("target_text") or "")
+    source_size = max(4.0, float(item.get("source_font_size") or 8.0))
+    font_size = max(4.0, float(item.get("font_start") or source_size))
+    has_alpha = any(ch.isalpha() for ch in text)
+    width_factor = 0.40 if has_alpha else 0.34
+    return len(text) * max(3.0, font_size * width_factor)
+
+
 def shift_item(item: dict, shift_y: float, reason: str, anchor: str | None = None) -> None:
     target = rect_from_values(item["target_rect"])
     target.y0 += shift_y
@@ -184,6 +193,225 @@ def shift_item(item: dict, shift_y: float, reason: str, anchor: str | None = Non
     if anchor:
         record["anchor"] = anchor
     item.setdefault("flow_adjustments", []).append(record)
+
+
+def apply_translation_growth_slots(planned: list[dict], page_rect: fitz.Rect) -> None:
+    """Expand source-derived slots when the translated text needs more height.
+
+    The rule is intentionally page-agnostic: it uses only source role, source
+    font, current target width, translated text length, and page remaining
+    space. Later vertical-flow passes decide whether downstream groups can move.
+    """
+    growth_roles = {"title", "body", "section_heading", "red_note", "compact_panel"}
+    for item in planned:
+        if item.get("role") not in growth_roles or in_repeated_band(item, page_rect):
+            continue
+        rect = rect_from_values(item["target_rect"])
+        source = rect_from_values(item["source_rect"])
+        if rect.height <= 0:
+            continue
+        source_size = max(4.0, float(item.get("source_font_size") or 8.0))
+        desired = estimated_text_height(item, rect.width)
+        same_column_next_tops = []
+        for other in planned:
+            if other is item or in_repeated_band(other, page_rect):
+                continue
+            other_source = rect_from_values(other["source_rect"])
+            if other_source.y0 <= source.y0 + 0.6:
+                continue
+            if x_overlap_ratio(source, other_source) < 0.24:
+                continue
+            same_column_next_tops.append(other_source.y0)
+        next_source_top = min(same_column_next_tops) if same_column_next_tops else None
+        local_gap = max(1.8, source_size * 0.25)
+        if item.get("role") == "title":
+            desired = max(desired, source_size * 1.45)
+            bottom_limit = min(page_rect.height - 24.0, rect.y0 + source_size * 3.2)
+            if next_source_top is not None:
+                bottom_limit = min(bottom_limit, next_source_top - local_gap)
+        elif item.get("role") == "compact_panel":
+            bottom_limit = min(page_rect.height - 20.0, rect.y0 + max(rect.height * 1.7, source_size * 3.0))
+            if next_source_top is not None:
+                bottom_limit = min(bottom_limit, next_source_top - local_gap)
+        else:
+            bottom_limit = page_rect.height - 24.0
+            if next_source_top is not None:
+                bottom_limit = min(bottom_limit, next_source_top - local_gap)
+        target_height = min(bottom_limit - rect.y0, max(rect.height, desired * 1.04))
+        if target_height <= rect.height + 0.6:
+            continue
+        rect.y1 = rect.y0 + target_height
+        update_rects(item, rect)
+        item.setdefault("flow_adjustments", []).append(
+            {
+                "reason": "translation_growth_slot_expand",
+                "estimated_text_height": round(desired, 3),
+                "target_height": round(target_height, 3),
+            }
+        )
+
+
+def apply_metric_text_width_growth(planned: list[dict], page_rect: fitz.Rect) -> None:
+    for item in planned:
+        if item.get("role") != "metric_value" or in_repeated_band(item, page_rect):
+            continue
+        text = str(item.get("target_text") or "")
+        if not any(ch.isalpha() for ch in text):
+            continue
+        rect = rect_from_values(item["target_rect"])
+        desired_width = estimated_metric_width(item)
+        if desired_width <= rect.width + 1.0:
+            continue
+        x1_limit = page_rect.width - max(8.0, page_rect.width * 0.045)
+        new_x1 = min(x1_limit, rect.x0 + desired_width)
+        if new_x1 <= rect.x1 + 1.0:
+            continue
+        rect.x1 = new_x1
+        update_rects(item, rect)
+        item.setdefault("flow_adjustments", []).append(
+            {
+                "reason": "metric_text_width_growth",
+                "estimated_width": round(desired_width, 3),
+            }
+        )
+
+
+def apply_section_heading_guardrails(planned: list[dict], page_rect: fitz.Rect) -> None:
+    headings = [
+        item
+        for item in planned
+        if item.get("role") == "red_heading" and not in_repeated_band(item, page_rect)
+    ]
+    if not headings:
+        return
+    guarded_roles = {"body", "section_heading", "red_note"}
+    for item in planned:
+        if item.get("role") not in guarded_roles or in_repeated_band(item, page_rect):
+            continue
+        source = rect_from_values(item["source_rect"])
+        target = rect_from_values(item["target_rect"])
+        for heading in headings:
+            heading_source = rect_from_values(heading["source_rect"])
+            heading_target = rect_from_values(heading["target_rect"])
+            if heading_source.y0 <= source.y0 + 0.6:
+                continue
+            same_source_column = x_overlap_ratio(source, heading_source) >= 0.22
+            same_output_column = x_overlap_ratio(target, heading_target) >= 0.22
+            if not same_source_column and not same_output_column:
+                continue
+            gap = max(2.0, float(heading.get("source_font_size") or 10.0) * 0.22)
+            guarded_y1 = heading_target.y0 - gap
+            if target.y1 <= guarded_y1 + 0.3:
+                continue
+            min_height = max(8.0, float(item.get("source_font_size") or 6.0) * 2.2)
+            if guarded_y1 - target.y0 < min_height:
+                continue
+            target.y1 = guarded_y1
+            update_rects(item, target)
+            item.setdefault("flow_adjustments", []).append(
+                {
+                    "reason": "section_heading_guardrail",
+                    "before_heading_group": heading["group_id"],
+                }
+            )
+
+
+def infer_table_regions(planned: list[dict], page_rect: fitz.Rect) -> list[fitz.Rect]:
+    cells = [
+        rect_from_values(item["source_rect"])
+        for item in planned
+        if item.get("role") == "table_cell" and not in_repeated_band(item, page_rect)
+    ]
+    if not cells:
+        return []
+    median_height = sorted(rect.height for rect in cells)[len(cells) // 2]
+    gap_limit = max(3.0, median_height * 1.65)
+    bands: list[list[fitz.Rect]] = []
+    for rect in sorted(cells, key=lambda item: (item.y0, item.x0)):
+        if not bands or rect.y0 > max(item.y1 for item in bands[-1]) + gap_limit:
+            bands.append([rect])
+        else:
+            bands[-1].append(rect)
+    regions = []
+    for band in bands:
+        region = fitz.Rect(band[0])
+        for rect in band[1:]:
+            region |= rect
+        if len(band) >= 6 and region.width >= page_rect.width * 0.32:
+            regions.append(region)
+    return regions
+
+
+def pack_flow_above_table_regions(planned: list[dict], page_rect: fitz.Rect) -> None:
+    table_regions = infer_table_regions(planned, page_rect)
+    if not table_regions:
+        return
+    flow_roles = {"body", "section_heading", "red_note"}
+    previous_bottom = page_rect.height * 0.08
+    for region in sorted(table_regions, key=lambda rect: rect.y0):
+        candidates = []
+        has_intrusion = False
+        for item in planned:
+            if item.get("role") not in flow_roles or in_repeated_band(item, page_rect):
+                continue
+            source = rect_from_values(item["source_rect"])
+            target = rect_from_values(item["target_rect"])
+            if source.y0 < previous_bottom - 1.0 or source.y1 > region.y0 + 0.8:
+                continue
+            if x_overlap_ratio(source, region) < 0.12 and x_overlap_ratio(target, region) < 0.12:
+                continue
+            if target.y1 > region.y0 - max(2.0, float(item.get("source_font_size") or 6.0) * 0.24):
+                has_intrusion = True
+            candidates.append(item)
+        if not candidates or not has_intrusion:
+            previous_bottom = max(previous_bottom, region.y1)
+            continue
+
+        columns: list[list[dict]] = []
+        for item in sorted(candidates, key=lambda value: (value["source_rect"][0], value["source_rect"][1])):
+            source = rect_from_values(item["source_rect"])
+            placed = False
+            for column in columns:
+                column_source = rect_from_values(column[0]["source_rect"])
+                if x_overlap_ratio(source, column_source) >= 0.22 or abs(source.x0 - column_source.x0) <= max(10.0, source.width * 0.25):
+                    column.append(item)
+                    placed = True
+                    break
+            if not placed:
+                columns.append([item])
+
+        for column in columns:
+            ordered = sorted(column, key=lambda value: value["source_rect"][1])
+            top = max(previous_bottom + 2.0, min(rect_from_values(item["source_rect"]).y0 for item in ordered))
+            bottom = region.y0 - max(2.4, max(float(item.get("source_font_size") or 6.0) for item in ordered) * 0.28)
+            available = bottom - top
+            if available <= 12.0:
+                continue
+            gap = max(1.2, min(float(item.get("source_font_size") or 6.0) for item in ordered) * 0.18)
+            current_heights = [max(8.0, rect_from_values(item["target_rect"]).height) for item in ordered]
+            desired_total = sum(current_heights) + gap * (len(ordered) - 1)
+            scale = min(1.0, max(0.58, (available - gap * (len(ordered) - 1)) / max(1.0, sum(current_heights))))
+            y = top
+            for item, current_height in zip(ordered, current_heights):
+                source_size = float(item.get("source_font_size") or 6.0)
+                if desired_total > available + 0.5:
+                    item["font_start"] = round(max(4.8, min(float(item.get("font_start") or source_size), source_size * max(0.62, scale))), 3)
+                    item["font_min"] = round(max(4.6, min(float(item.get("font_min") or source_size), source_size * 0.50)), 3)
+                target = rect_from_values(item["target_rect"])
+                height = max(8.0, current_height * scale)
+                if item is ordered[-1]:
+                    height = min(max(height, bottom - y), bottom - y)
+                new_rect = fitz.Rect(target.x0, y, target.x1, min(bottom, y + height))
+                update_rects(item, new_rect)
+                item.setdefault("flow_adjustments", []).append(
+                    {
+                        "reason": "table_region_obstacle_pack",
+                        "table_region": rect_values(region),
+                        "scale": round(scale, 3),
+                    }
+                )
+                y = new_rect.y1 + gap
+        previous_bottom = max(previous_bottom, region.y1)
 
 
 def apply_graphic_boundary_limits(planned: list[dict], containers: list[fitz.Rect], page_rect: fitz.Rect) -> None:
@@ -301,12 +529,14 @@ def apply_container_layout(planned: list[dict], containers: list[fitz.Rect], pag
             source_size = float(item.get("source_font_size") or 8.0)
             estimated = estimated_text_height(item, inner.width)
             if estimated > source.height * 1.35:
-                item["font_start"] = round(max(4.8, min(float(item.get("font_start") or source_size), source_size * 0.84)), 3)
-                item["font_min"] = round(max(4.5, min(float(item.get("font_min") or source_size), source_size * 0.48)), 3)
+                item["font_start"] = round(max(6.2, min(float(item.get("font_start") or source_size), source_size * 0.88)), 3)
+                item["font_min"] = round(max(5.8, min(float(item.get("font_min") or source_size), source_size * 0.56)), 3)
                 estimated = estimated_text_height(item, inner.width)
+            single_line_capacity = max(1, int(inner.width / max(source_size * 0.48, 1.0)))
+            max_heading_share = 0.58 if len(str(item.get("target_text") or "")) > single_line_capacity else 0.44
             height = max(
                 source.height * 1.08,
-                min(container.height * 0.44, estimated, max(source.height * 1.75, source_size * 2.6)),
+                min(container.height * max_heading_share, estimated * 1.08, max(source.height * 2.2, source_size * 3.4)),
             )
             y0 = max(y_cursor, min(source.y0, inner.y1 - height))
             rect = fitz.Rect(inner.x0, y0, inner.x1, min(inner.y1, y0 + height))
@@ -357,10 +587,10 @@ def apply_vertical_flow(planned: list[dict], page_rect: fitz.Rect) -> None:
                 previous_source_rect = rect_from_values(previous["source_rect"])
                 if source_rect.y0 <= previous_source_rect.y0:
                     continue
-                if x_overlap_ratio(source_rect, previous_source_rect) < 0.30:
-                    continue
                 prev_rect = rect_from_values(previous["target_rect"])
-                if x_overlap_ratio(rect, prev_rect) < 0.36:
+                same_source_column = x_overlap_ratio(source_rect, previous_source_rect) >= 0.30
+                same_output_column = x_overlap_ratio(rect, prev_rect) >= 0.30
+                if not same_source_column and not same_output_column:
                     continue
                 required_y0 = prev_rect.y1 + estimated_draw_extra_height(previous) + min_gap
                 if rect.y0 >= required_y0:
@@ -368,7 +598,10 @@ def apply_vertical_flow(planned: list[dict], page_rect: fitz.Rect) -> None:
                 shift = required_y0 - rect.y0
                 bottom_limit = page_rect.height - 22.0
                 if rect.y1 + shift > bottom_limit:
-                    continue
+                    available = max(0.0, bottom_limit - rect.y1)
+                    if available <= 0.5:
+                        continue
+                    shift = available
                 rect.y0 += shift
                 rect.y1 += shift
                 update_rects(item, rect)
@@ -540,8 +773,13 @@ def run(source_pdf: Path, role_plan: Path, output: Path) -> None:
         apply_filled_panel_compact_layout(planned, filled_rectangles, page_rect)
         apply_container_layout(planned, containers, page_rect)
         apply_metric_stack_layout(planned, page_rect)
+        apply_metric_text_width_growth(planned, page_rect)
+        apply_translation_growth_slots(planned, page_rect)
         apply_vertical_flow(planned, page_rect)
         apply_section_pushdown(planned, section_rules, page_rect)
+        apply_vertical_flow(planned, page_rect)
+        apply_section_heading_guardrails(planned, page_rect)
+        pack_flow_above_table_regions(planned, page_rect)
         pages.append(
             {
                 "page_index": page_index,

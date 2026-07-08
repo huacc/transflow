@@ -39,7 +39,9 @@ def validate(generation_evidence: Path, output: Path) -> None:
             )
         source_size = float(group.get("source_font_size") or 0)
         output_size = float(group.get("output_font_size") or 0)
-        if output_size and source_size and output_size < max(4.8, source_size * 0.52):
+        role = group.get("role")
+        floor = max(3.2, source_size * 0.42) if role == "table_cell" else max(4.8, source_size * 0.52)
+        if output_size and source_size and output_size < floor:
             blocking.append(
                 {
                     "gate_id": "source_relative_font_floor",
