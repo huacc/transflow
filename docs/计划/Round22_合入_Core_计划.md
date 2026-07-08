@@ -17,6 +17,7 @@
 3. 不能直接复制 round22 runner 到 core；需要把能力拆成稳定 Module。
 4. 旧 core 生成路径必须保留到新路径通过回归和 spike 验证。
 5. 人工对照 PDF 只能用于运行后的结果性评估，不能进入运行时输入、提示词槽位或工具裁决。
+6. `RepairPatch` 机制闭环不等于 round22 视觉效果等价；视觉等价必须用同输入、同语义译文、同页集单独验证。
 
 ## 3. 非目标
 
@@ -259,6 +260,62 @@ Lx_RepairLoop
 
 ## 7. 合入阶段
 
+### 当前执行状态（2026-07-08）
+
+本节记录当前计划执行位置。若下方阶段定义与本节状态冲突，以本节为准。
+
+| 阶段 | 状态 | 当前证据 | 结论 |
+|---|---|---|---|
+| 阶段 0：冻结基线 | 已完成历史基线动作 | 既有 regression/baseline 与合入前 tag | 不再重复执行 |
+| 阶段 1：引入接口，不启用新能力 | 已完成历史接口阶段 | core 已有 `role_plan.json`、`layout_plan.json`、工具/契约/提示词接口 | 当前不是 Phase 1；Phase 1 shadow 说明只作为历史背景 |
+| 阶段 2：迁入 RolePlanPlanner | 已完成 | `build_role_plan.py` 已进入 S6 链路 | 可进入阶段 3 |
+| 阶段 3：迁入 LayoutPlanPlanner | 已完成最小验证 | `09_phase23_round22_single` 中 `layout_plan.json` 被 S7 消费，`layout_plan_consumed_by_generator=true` | S6/S7 布局计划消费链路通过 |
+| 阶段 4A：迁入质量 gate 和 RepairPatch 机制 | 已完成流程闭环最小验证 | `13_phase4a_round22_single_after_runner_cleanup` 中生成 `repair_patch_0001.json.operation_count=1`，`repair_loop_0001.json.execution_status=applied_and_rejudged`，process PASS，product FAIL，anti-overfit PASS | RepairPatch 链路已进入 core 且 runner 已收敛到单一 RepairPatch 机制；这只证明闭环机制，不证明 round22 视觉效果已合入 |
+| 阶段 4B：Round22 visual parity 能力迁入 | 未完成 | core 的 `11_phase4_round22_single_noop_skip` 与 `pdf_translation_workflow_lab/rounds/round22_table_layout` 同输入效果仍有明显差距 | 下一步必须逐项迁入 round22 的泛化排版能力，并用同输入对比 |
+| 阶段 4C：回归矩阵和独立 spike 验证 | 入口预检阻塞 | `14_phase4c_entry_preflight` 显示 4B 仍未达到 visual parity；最新 core 证据仍为 process PASS、product FAIL；anti-overfit PASS | 不执行完整回归矩阵和独立 spike；先回到阶段 4B 迁入视觉等价能力 |
+| 阶段 5：默认启用新路径 | 未开始 | 4B/4C 未完成 | 默认启用前必须完成视觉等价、回归矩阵和独立 spike 验证 |
+
+正式阶段 2/3 证据报告：
+
+```text
+pdf_translation_workflow_regression/reports/09_phase23_round22_single_plan_execution_report.md
+```
+
+正式验证 run：
+
+```text
+pdf_translation_workflow_regression/runs/09_phase23_round22_single
+```
+
+该 run 的最终状态：
+
+```json
+{
+  "process_contract_verdict": "PASS",
+  "semantic_translation_verdict": "PASS",
+  "generation_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "terminal_state": "S_FAIL_QUALITY"
+}
+```
+
+阶段 4A 证据：
+
+```text
+pdf_translation_workflow_regression/runs/10_phase4_round22_single
+pdf_translation_workflow_regression/runs/11_phase4_round22_single_noop_skip
+pdf_translation_workflow_regression/runs/12_phase4a_round22_single_contract_sync
+pdf_translation_workflow_regression/runs/13_phase4a_round22_single_after_runner_cleanup
+```
+
+`10_phase4_round22_single` 证明 `build_repair_patch.py -> apply_repair_patch.py -> S6/S7/S8` 链路能执行，但首选 `metric_value_font_hierarchy_repair` 对当前 policy 产生 `operation_count=0`，因此只能作为 no-op 暴露证据。
+
+`11_phase4_round22_single_noop_skip` 修正调度后跳过 no-op repair atom，选择 `table_text_legibility -> constrained_slot_layout_fit_repair`，产出 `repair_patch_0001.json.operation_count=1`，`repair_loop_0001.json.execution_status=applied_and_rejudged`，`process_contract_verdict=PASS`，`product_quality_verdict=FAIL`。
+
+`12_phase4a_round22_single_contract_sync` 证明工具契约、状态机、提示词绑定与 RepairPatch 证据同步后仍然闭环；`13_phase4a_round22_single_after_runner_cleanup` 在移除 runner 内部重复修补逻辑后重新验证，结果仍为 process PASS、product FAIL，并且 `scan_core_overfit.py` 使用 run-local 样本敏感 token 扫描 core 后 PASS。
+
+后续正式 regression 编号必须继续递增；`13_phase4a_round22_single_after_runner_cleanup` 之后应从 `14_...` 开始。临时 `08_*` 不作为证据。
+
 ### 阶段 0：冻结基线
 
 动作：
@@ -336,13 +393,38 @@ Lx_RepairLoop
 - `fit_warning_count` 不增加。
 - 图片/背景残留不退化。
 
-### 阶段 4：迁入质量 gate 和 RepairPatch
+### 阶段 4A：迁入质量 gate 和 RepairPatch 机制
+
+入口条件（当前已满足）：
+
+| 条件 | 证据 | 状态 |
+|---|---|---|
+| S6/S7 新链路已跑通 | `candidate_generation_evidence.json.layout_plan_consumed_by_generator=true`，`layout_execution.json.layout_plan_consumed_by_generator=true` | PASS |
+| 候选 PDF 已生成 | `pdf_translation_workflow_regression/runs/09_phase23_round22_single/output/P23R22_src_candidate.pdf` | PASS |
+| 产品质量 gate 已执行 | `product_quality_gates.json.product_quality_verdict=FAIL`，`blocking_failure_count=8` | PASS |
+| 失败边界不是流程契约 | `P23R22_final_verdict.json.process_contract_verdict=PASS`，`process_validation_errors=[]` | PASS |
+| 失败 gate 已映射 repair atom | `visual_repair_plan.json` 和 `repair_loop_0001.json` 已给出 target state 与 repair atom | PASS |
+| repair loop 真实执行器存在 | `11_phase4_round22_single_noop_skip/reports/P4R22B_src/repair_loop_0001.json.execution_status=applied_and_rejudged` | PASS |
+
+阶段 4A 的起点不是重新证明 `layout_plan.json` 能否被消费，而是把下列失败 gate 转成可执行 repair patch，并重跑 S6/S7/S8：
+
+| failed gate | 当前 repair atom | target state |
+|---|---|---|
+| `metric_value_hierarchy` | `metric_value_font_hierarchy_repair` | `S6_LayoutPlan` |
+| `table_text_legibility` | `constrained_slot_layout_fit_repair` | `S7_GenerateCandidate` |
+| `insertion_collision` | `region_collision_layout_repair` | `S6_LayoutPlan` |
+| `background_residue_artifact` | `background_residue_fill_resample` | `S7_GenerateCandidate` |
+| `matrix_diagram_integrity` | `matrix_diagram_table_cell_preserve_repair` | `S6_LayoutPlan` |
+
+阶段 4A 的第一轮原建议以 `metric_value_hierarchy` 为主修复对象，因为 `repair_loop_0001.json` 已选择该 gate 作为首个 failure class。实盘验证后发现该 atom 对当前 `layout_policy.json` 已无可追加操作，必须记录为 no-op 并跳过，不能把“无变更重跑”算作有效修复。当前通过证据为 `13_phase4a_round22_single_after_runner_cleanup`：它跳过 no-op 的 `metric_value_hierarchy -> metric_value_font_hierarchy_repair`，选择 `table_text_legibility -> constrained_slot_layout_fit_repair`，生成并应用 `repair_patch_0001.json.operation_count=1`，重建 `layout_plan.repair01.json`，重新生成候选 PDF，再执行 S8 gate。只有出现 `repair_loop_<n>.json.execution_status=applied_and_rejudged` 且 `repair_patch_operation_count>0`，才算阶段 4A repair loop 执行通过。
 
 动作：
 
 1. 固化 `local_text_overlap`、`source_relative_font_floor`、`table_region_intrusion`。
 2. 新增 `build_repair_patch.py` 和 `apply_repair_patch.py`。
 3. 改造 runner：repair atom -> repair patch -> S6/S7/S8 重跑。
+4. 若首选 repair atom 生成 `operation_count=0`，必须写入 `skipped_noop_repairs` 并选择下一个可执行、非 no-op 的 repair atom。
+5. runner 内不得保留第二套内联 policy 修补分支；兼容入口只能委托 `repair_policy_patch.py` 生成和应用通用 operations。
 
 验证：
 
@@ -352,8 +434,124 @@ Lx_RepairLoop
 通过条件：
 
 - `repair_loop_<n>.json.execution_status=applied_and_rejudged`。
+- `repair_patch_<n>.json.operation_count>0`，或报告中明确 `skipped_noop_repairs` 后选择了下一个非 no-op atom。
 - 新旧 gate 差异可解释。
 - 若仍失败，必须是明确剩余 failure，不是 process contract 失败。
+
+### 阶段 4B：Round22 visual parity 能力迁入
+
+阶段 4B 的目标是回答一个更强的问题：同一个输入 PDF 和同一份语义译文，core 输出是否接近 `pdf_translation_workflow_lab/rounds/round22_table_layout` 的实验输出。阶段 4A 不能替代阶段 4B。
+
+入口条件：
+
+| 条件 | 证据 | 状态 |
+|---|---|---|
+| 4A RepairPatch 链路可执行 | `repair_loop_0001.json.execution_status=applied_and_rejudged` | PASS |
+| 同输入源 PDF 固定 | `round22_table_layout/input/source_pdfs/00005_2025_annual_report_zh_pages_001_020.pdf` | PASS |
+| 同语义译文固定 | `round22_table_layout/input/semantic_translations/R22_GEN_ZH_TO_EN_00005_pages_001_020.translations.json` | PASS |
+| round22 lab 输出存在 | `round22_table_layout/output/` 下候选 PDF 和报告 | PASS |
+| core 同输入输出存在 | `11_phase4_round22_single_noop_skip/output/P4R22B_src_repair01_candidate.pdf` | PASS |
+
+必须先做能力差异清单，而不是直接继续调参：
+
+| round22 能力 | 当前 core 风险 | 迁入方式 |
+|---|---|---|
+| source-line-grid container 推断 | core 仍可能把相邻表格/面板文本混成大块 body 或错误 reflow | 迁入 `build_role_plan.py`/`build_layout_plan.py` 的 current-run drawing-line/grid grouping |
+| same-row cross-column split | 中译英长文本会跨列挤压或覆盖邻列 | 在 role plan 中用 bbox 行带、列带和相邻障碍拆组 |
+| table/cell local obstacle pack | 表格、卡片、图例局部槽位无法合理扩展 | 在 layout plan 中为 table_cell/compact_label/legend 生成局部可用空间和避障约束 |
+| source-relative font floor | core 可能为了塞入 bbox 把字体压得过小 | 将 gate 与 layout planner 绑定，先扩框/重排，再缩字 |
+| local_text_overlap source-baseline gate | core 当前只有部分插入碰撞/视觉相似 gate，无法表达 round22 局部拥挤基线 | 迁入 validator 维度并映射到 `region_collision_layout_repair` 或 vertical-flow repair |
+| two-phase erase then insert | 局部背景和文字擦除顺序可能导致白块或残影 | 保持 generator 先统一擦除计划区，再按 layout plan 插入 |
+| filled panel/background-aware erase | 灰色面板/有色区域容易出现白条或色差 | 使用 current-run panel fill/drawing evidence，不使用固定颜色 |
+| text-column vertical flow and section pushdown | 中文到英文变长时局部区域无法整体下推 | 迁入可解释的 column flow/pushdown 策略，边界由当前页空白、横线、图片、表格和页底容量决定 |
+
+执行动作：
+
+1. 对 `round22_table_layout` 的 `reports/role_plan.json`、`reports/layout_plan.json`、`reports/quality_gates.json` 与 core 的 `role_plan.json`、`layout_plan.json`、`visual_region_metrics.json` 做结构差异报告。
+2. 只迁入差异清单中可泛化的能力；禁止复制 round22 的样本页码、样本文字、样本数值、固定坐标或人工对照路径。
+3. 每迁入一类能力，都必须更新 core 工具、契约、提示词绑定和本计划。
+4. 每次迁入后只用同一输入跑一个编号递增的 regression，例如 `12_round22_visual_parity_<capability>`。
+5. 用 `scan_core_overfit.py` 扫描新增工具、契约、提示词和 profile。
+
+防过拟合硬门禁：
+
+| 类别 | 允许 | 禁止 |
+|---|---|---|
+| 文档身份 | 读取当前输入 PDF 的结构、字体、颜色、bbox、drawing、image、文本语言统计 | 根据文件名、公司名、报告年份、已知样本 ID 分支 |
+| 页信息 | 使用当前页的几何分布、列带、行带、字体分位数、对象邻接关系 | 写死页码、页序、固定页面类型列表 |
+| 文本信息 | 使用通用字符类别、语言方向、数字/货币/百分比 token shape、标题/正文/表格角色证据 | 写死原文句子、译文句子、专有段落、特定数值 |
+| 坐标/尺寸 | 使用 page ratio、source-relative font ratio、当前页 quantile、局部 bbox adjacency | 写死绝对坐标、固定点号、固定颜色 RGB、固定 crop |
+| 对照样本 | 只在运行后做 posthoc 评估，不进入 runtime 输入 | 让人工英文/中文对照 PDF 参与 D2/D4/D7、layout policy 或 repair patch |
+| RepairPatch | 由 failed gate、repair atom、target language、region role 和 current-run policy 推导 | 针对某个 PDF/页/文本定制 patch |
+
+每个能力迁入前必须写一条“泛化来源说明”：
+
+```json
+{
+  "capability_id": "string",
+  "source_round22_evidence": ["role_plan/layout_plan/quality gate paths"],
+  "generic_runtime_evidence": ["geometry/font/color/drawing/text-shape fields"],
+  "forbidden_sample_facts_checked": ["filename", "page_number", "literal_text", "literal_value", "fixed_coordinate", "reference_pdf"],
+  "anti_overfit_verdict": "PASS|FAIL"
+}
+```
+
+每个能力迁入后必须做两类防过拟合验证：
+
+1. 静态扫描：把当前样本文件名、公司名、报告年份、关键页码、肉眼发现的特定文本和特定数值写入 run-local token file，执行 `scan_core_overfit.py`，结果必须 PASS。
+2. 动态变形：至少换一个非 round22 的 PDF 或同 PDF 不同页集运行；若新能力只在 round22 页集有效、换页后失效或误判，不能进入 core 默认路径。
+
+验证：
+
+- 用同一输入和同一语义译文同时保留三份输出：round22 lab、core 迁入前、core 迁入后。
+- 比较 `role_plan` 中的 group/role 数量、table_cell/compact_label/legend/body_flow 分布。
+- 比较 `layout_plan` 中的目标 bbox、局部扩框、避障记录、font profile 和 draw mode。
+- 比较产品 gate：至少覆盖 `text_fit`、`source_anchor_order`、`local_text_overlap`、`source_relative_font_floor`、`table_text_legibility`、`insertion_collision`、`background_residue_artifact`。
+- 视觉抽检必须使用当前 source 与 candidate 的 crop，不得使用人工英文对照作为 runtime 输入。
+
+通过条件：
+
+- core 同输入输出在关键页面的表格/面板/局部容器排版接近 round22 lab，不再出现明显比 round22 更差的大块挤压、跨列覆盖、白条、局部缺字。
+- 若产品质量仍 FAIL，失败类别必须是 round22 也未解决或新 validator 暴露的真实问题，而不是缺少已声明迁入能力。
+- `repair_loop` 若进入，必须继续符合阶段 4A 的 `repair_patch_<n>.json.operation_count>0` 或 `skipped_noop_repairs` 规则。
+- 旧 AIA/01_source 小样不出现明显退化。
+
+### 阶段 4C：回归矩阵和独立 spike 验证
+
+阶段 4C 只在 4B 达到 visual parity 后启动。
+
+当前入口预检证据：
+
+```text
+pdf_translation_workflow_regression/runs/14_phase4c_entry_preflight
+pdf_translation_workflow_regression/reports/14_phase4c_entry_preflight_report.md
+```
+
+预检结论：
+
+```json
+{
+  "entry_check": "FAIL",
+  "terminal_state": "S_BLOCKED_PHASE_PREREQUISITE",
+  "core_mutation": "NONE"
+}
+```
+
+阻塞原因：阶段 4B 仍未完成，最新阶段 4A core 证据仍为 `product_quality_verdict=FAIL`。因此本阶段的完整回归矩阵和独立 spike 包不能启动；否则会违反本计划的状态迁移。
+
+动作：
+
+1. 跑完整 regression matrix：AIA en->zh/zh->en、01_source timeline、00005 zh->en、临时测试 PDF。
+2. 每个 regression run 使用递增编号，保留 `final_verdict.json`、candidate PDF、render previews、visual metrics、repair loop records。
+3. 构建独立 spike 包，只给当前 core、流程文档、测试提示词和输入 PDF；不提供 round22 lab 工具作为运行依赖。
+4. spike 指令要求不改 framework；如因契约缺失必须小改，必须在报告中记录。
+
+通过条件：
+
+- 独立 spike 能复现 core 状态机和工具调度，不需要复制 round22 实验 runner。
+- `process_contract_verdict=PASS`。
+- 产品质量若 FAIL，失败边界可映射到明确 gate 和 repair atom。
+- regression 报告证明新能力没有让旧样本明显退化。
 
 ### 阶段 5：默认启用新路径
 
@@ -598,4 +796,3 @@ Lx_RepairLoop
 10. 更新流程设计文档和 core 文档副本。
 11. 打 tag。
 12. 按 cleanup report 清理可删除内容。
-

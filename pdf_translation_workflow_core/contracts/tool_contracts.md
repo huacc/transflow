@@ -136,7 +136,7 @@ The fill sampler is an open function over the current bbox and page pixels. It m
 | `assemble_semantic_translations.py` | `product_quality` | assembles validated batch outputs into semantic translation JSON |
 | `build_layout_policy.py` | `product_quality` and validation runs | derives a run-local layout policy from current extraction statistics plus the matching generic language layout profile; may be revised by D4 model judgement |
 | `build_role_plan.py` | `product_quality` and validation runs | derives current-run role groups from source extraction, semantic translations, page-relative font hierarchy, color, geometry, and generic value/note patterns; produces `role_plan.json` as D4 evidence |
-| `build_layout_plan.py` | `product_quality` and validation runs | projects `role_plan.json` plus `layout_policy.json` into a shadow `layout_plan.shadow.json`; phase-1 output is evidence only and must not be treated as the generator-consumed layout plan until the v2 path is explicitly enabled |
+| `build_layout_plan.py` | `product_quality` and validation runs | projects `role_plan.json` plus `layout_policy.json` into generator-consumable `layout_plan.json`; the plan must record `policy_version=layout_plan_v2.generator_consumable`, `behavior_mode=generator_consumable`, and `layout_plan_consumable_by_generator=true` |
 | `generate_semantic_backfill.py` | `product_quality` | consumes validated semantic translations and explicit layout policy, then performs redaction/backfill with region-level target-language reflow |
 
 `product_quality` must not silently fall back to `generate_backfill_candidate.py`. If semantic translations are missing or fail validation, return `S_FAIL_CAPABILITY` before creating a product candidate.
@@ -167,7 +167,7 @@ Required behavior:
 | redaction | redact every extractable source text unit by its original bbox |
 | layout policy | read `layout_policy.json`; do not hardcode role thresholds, font scales, shrink arrays, or fallback lengths in generator logic |
 | role plan | after `layout_policy.json`, run `build_role_plan.py` to produce `role_plan.json`; each group must cite current-page source-relative evidence and must not depend on filename, page number, exact sample text, fixed coordinates, or reference PDFs |
-| layout plan shadow | run `build_layout_plan.py` to produce `layout_plan.shadow.json`; in phase 1 this is regression evidence only, while generated `layout_plan.json` remains the artifact written by `generate_semantic_backfill.py` |
+| layout plan | after `role_plan.json`, run `build_layout_plan.py` to produce generator-consumable `layout_plan.json`; pass it to `generate_semantic_backfill.py --planned-layout`; the generator must write runtime insertion evidence to a separate `layout_execution.json` path passed through `--layout-plan` |
 | language profile | `layout_policy.json` must record `language_pair_profile`, `language_profile_json`, `language_profile_sha256`, and `layout_strategy`; language-direction behavior must come from this explicit profile, not sample branches |
 | already-target spans | if a source-language PDF contains visible text that is already in the target language and that text may be covered by a recomposed target frame, the generator may mark it `preserve_already_target_language_span`, redact it, and redraw the same text; this is preservation evidence, not semantic translation evidence |
 | grouping | derive block/region groups from current-run extraction metadata such as `unit_id`, bbox, font size, page geometry, and policy thresholds |
@@ -192,7 +192,7 @@ Required behavior:
 | preserve-line | preserve line-level insertion only for policy-defined compact labels, legends, vertical navigation, chart ticks, or single-line regions |
 | compact labels | consume explicit `layout_variants` from translation input; never invent document-specific abbreviations inside the generator; never reintroduce source-language residue such as `n/m` to make text fit |
 | constrained text image fit | after normal textbox probing fails, table cells, dense-page hard-slot short labels, legends, and dense-page single-line labels may be inserted as text images with full target text preserved; explanatory `short_label` and profile-declared `compact_label` must first try `expandable_text_slots`; `metric_value` must not use this fallback unless a future role-specific contract explicitly allows it; sizing must come from source-relative ratios and current-page font quantiles rather than fixed reusable point-size floors; evidence must record `status=constrained_text_image_fit`, `font_size`, target box, and `horizontal_compression_ratio` |
-| evidence | report both `inserted_unit_count` and `inserted_region_count`; unit count proves coverage, region count proves reflow happened; every insertion must also report `source_block_ids` and `source_line_indexes` so validators can detect cross-separator reflow |
+| evidence | report both `inserted_unit_count` and `inserted_region_count`; unit count proves coverage, region count proves reflow happened; every insertion must also report `source_block_ids`, `source_line_indexes`, `planned_layout_consumed`, `planned_layout_group_id`, and `planned_layout_role` so validators can detect cross-separator reflow and prove S6 plan consumption |
 
 Required generation evidence:
 
@@ -205,6 +205,9 @@ Required generation evidence:
   "layout_policy_sha256": "...",
   "layout_policy_version": "...",
   "layout_policy_source": "...",
+  "layout_plan_input_json": "docs/reports/.../layout_plan.json",
+  "layout_plan_consumed_by_generator": true,
+  "layout_plan_consumed_page_indexes": [1, 2],
   "redacted_line_count": 209,
   "inserted_unit_count": 209,
   "inserted_region_count": 127,
@@ -317,6 +320,31 @@ python pdf_translation_workflow_core\tools\repairs\plan_visual_region_repairs.py
 ```
 
 This repair planner may select repair atoms such as `heading_frame_fit_or_short_title_variant`, `metric_value_font_hierarchy_repair`, `decorative_numeric_merge_repair`, `top_lead_body_reflow_policy_repair`, `constrained_slot_layout_fit_repair`, `target_composition_body_reflow_repair`, `region_collision_layout_repair`, `background_fill_resample`, `background_residue_fill_resample`, or `image_redaction_exclusion_repair`. It must not rewrite candidate PDFs by itself. It must not route ordinary visual/text-fit failures to D2 retranslation unless semantic validation proves authenticity, coverage, or compact-variant evidence is missing.
+
+Repair application must be materialized through `RepairPatch` artifacts, not hidden inside the orchestrator:
+
+```powershell
+python pdf_translation_workflow_core\tools\repairs\build_repair_patch.py `
+  --layout-policy <run_dir>\layout_policy.json `
+  --visual-repair-plan <run_dir>\visual_repair_plan.json `
+  --product-quality <run_dir>\product_quality_gates.json `
+  --case-id <case_id> `
+  --loop-index <n> `
+  --gate-id <selected_gate_id> `
+  --repair-atom <selected_repair_atom> `
+  --out <run_dir>\repair_patch_<n>.json
+```
+
+```powershell
+python pdf_translation_workflow_core\tools\repairs\apply_repair_patch.py `
+  --layout-policy <run_dir>\layout_policy.json `
+  --repair-patch <run_dir>\repair_patch_<n>.json `
+  --out <run_dir>\layout_policy.repair<n>.json
+```
+
+`repair_patch_<n>.json` must contain `selected_failure`, `failed_gate_ids`, `deferred_failures`, `policy_context`, `operations`, `operation_count`, and an anti-overfit statement. A repair atom that generates `operation_count=0` is a no-op for the current policy; the runner must record it in `skipped_noop_repairs` and select the next executable non-no-op atom when one exists. A no-op patch cannot be counted as an effective repair, even if the candidate is regenerated.
+
+RepairPatch tools may branch only on failed gate id, repair atom, target language, region role, and current-run policy fields. They must not branch on PDF filename, known page number, literal source/target text, fixed sample coordinate, fixed sample color, document identity, or offline reference PDFs.
 
 `evaluate_pdf_quality.py` also records per-page `source_font_hierarchy`, `output_font_hierarchy`, and `small_to_body_ratio_delta` metrics. These metrics do not replace visual judgement, but D7 must use them when deciding whether table notes, body copy, and headings still have source-like relative size.
 

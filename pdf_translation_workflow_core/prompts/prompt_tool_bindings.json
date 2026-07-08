@@ -131,7 +131,7 @@
       "tool_first": [
         "tools/planners/build_layout_policy.py",
         "tools/planners/build_role_plan.py",
-        "tools/planners/build_layout_plan.py in phase-1 shadow mode"
+        "tools/planners/build_layout_plan.py in generator-consumable mode"
       ],
       "model_prompt": "templates/D4_layout_plan.prompt.json",
       "slot_bindings": {
@@ -142,13 +142,12 @@
         "language_profile": "pdf_translation_workflow_core/profiles/<source_language>_to_<target_language>.layout_profile.json",
         "baseline_layout_policy": "layout_policy.json produced by build_layout_policy.py",
         "role_plan": "role_plan.json produced by build_role_plan.py",
-        "layout_plan_shadow": "layout_plan.shadow.json produced by build_layout_plan.py; not generator-consumed until v2 is enabled"
+        "layout_plan": "layout_plan.json produced by build_layout_plan.py; consumed by generate_semantic_backfill.py through --planned-layout in product-quality v2 runs"
       },
       "produces": [
         "layout_policy.json",
         "role_plan.json",
-        "layout_plan.shadow.json",
-        "layout_plan.json from S7 generator"
+        "layout_plan.json"
       ],
       "required_decisions": [
         "policy numeric values must come from current-run extraction statistics, explicit D4 judgement, or user feedback evidence",
@@ -186,19 +185,20 @@
           "source_pdf",
           "source_extraction.json",
           "layout_policy.json",
+          "layout_plan.json from S6 as --planned-layout in product-quality v2 runs",
           "semantic_translations.json in product_quality"
         ],
         "required_generator_outputs": [
           "candidate.pdf",
           "translations.json",
-          "layout_plan.json",
+          "layout_execution.json",
           "candidate_generation_evidence.json"
         ]
       },
       "produces": [
         "candidate.pdf",
         "translations.json",
-        "layout_plan.json",
+        "layout_execution.json",
         "candidate_generation_evidence.json"
       ],
       "mode_scope": "backfill_candidate_validation|product_quality",
@@ -297,7 +297,10 @@
     {
       "state": "Lx_RepairLoop",
       "tool_first": [
-        "tools/run_semantic_product_quality_round.py must write repair_loop_<n>.json for every entered repair loop; a visual_repair_plan.json alone is not loop execution evidence"
+        "tools/run_semantic_product_quality_round.py must write repair_loop_<n>.json for every entered repair loop; a visual_repair_plan.json alone is not loop execution evidence",
+        "tools/repairs/build_repair_patch.py must materialize selected D8 failure/repair atom into repair_patch_<n>.json before any policy mutation",
+        "tools/repairs/apply_repair_patch.py must apply the patch to a run-local layout_policy repair copy before S6/S7 regeneration",
+        "if repair_patch_<n>.json operation_count is 0, record skipped_noop_repairs and choose the next executable non-no-op repair atom when available"
       ],
       "model_prompt": "templates/D8_repair_selection.prompt.json",
       "slot_bindings": {
@@ -307,6 +310,8 @@
         "prior_loop_summary": "state_trace.json previous loop entries"
       },
       "produces": [
+        "repair_patch_<n>.json",
+        "layout_policy.repair<n>.json when the patch changes layout policy",
         "repair_loop_<n>.json",
         "optional revised layout/translation/candidate artifacts when a repair atom executor is available"
       ],

@@ -2,11 +2,11 @@
 
 tool_name: generate_semantic_backfill
 category: generators
-input_contract: source PDF, source extraction JSON, semantic translations JSON, explicit layout policy JSON, output/evidence paths
+input_contract: source PDF, source extraction JSON, semantic translations JSON, explicit layout policy JSON, optional generator-consumable layout_plan JSON, output/evidence paths
 output_contract: candidate PDF with source-language text redacted and semantic target-language translations inserted after temporary-page textbox fit probing, plus translations/layout/evidence JSON
 failure_signals: missing/invalid semantic translations, font unavailable, insertion/output failure
 fallback: mark S_FAIL_CAPABILITY or S_FAIL_QUALITY; never fall back to placeholder text in product_quality
-anti_overfit_statement: consumes current-run unit ids and bboxes only and never branches on sample filename, page number, coordinates, exact text, or document identity
+anti_overfit_statement: consumes current-run unit ids, role/layout plans, and bboxes only and never branches on sample filename, page number, coordinates, exact text, or document identity
 """
 
 from __future__ import annotations
@@ -1639,6 +1639,102 @@ def build_regions(items: list[dict[str, Any]], page_rect: fitz.Rect, policy: dic
     return grouped_regions
 
 
+PLAN_ROLE_TO_REGION_KIND = {
+    "body": "body",
+    "body_flow": "body_flow",
+    "heading": "heading",
+    "red_heading": "heading",
+    "red_note": "short_label",
+    "compact_panel": "compact_label",
+    "metric_value": "metric_value",
+    "table_cell": "table_cell",
+    "legend": "legend",
+    "footnote": "footnote",
+    "nav_footer": "compact_label",
+    "vertical_nav": "vertical_nav",
+}
+
+
+def planned_layout_pages(planned_layout_path: Path | None) -> dict[int, dict[str, Any]]:
+    if planned_layout_path is None:
+        return {}
+    data = read_json(planned_layout_path)
+    if not isinstance(data, dict):
+        raise ValueError("planned layout must be a JSON object")
+    if not data.get("layout_plan_consumable_by_generator") and data.get("behavior_mode") not in {"generator_consumable", "legacy_compatible_shadow"}:
+        raise ValueError("planned layout is not marked as generator consumable")
+    pages: dict[int, dict[str, Any]] = {}
+    for page in data.get("pages", []):
+        if not isinstance(page, dict):
+            continue
+        pages[int(page.get("page_index", 0))] = page
+    return pages
+
+
+def rect_from_values(values: Any) -> fitz.Rect:
+    if not isinstance(values, list) or len(values) != 4:
+        return fitz.Rect(0, 0, 0, 0)
+    return fitz.Rect([float(value) for value in values])
+
+
+def planned_region_kind(group: dict[str, Any]) -> str:
+    role = str(group.get("role") or "body")
+    return PLAN_ROLE_TO_REGION_KIND.get(role, "body")
+
+
+def build_regions_from_planned_layout(
+    items: list[dict[str, Any]],
+    page_rect: fitz.Rect,
+    policy: dict[str, Any],
+    page_context: dict[str, Any] | None,
+    planned_page: dict[str, Any],
+) -> list[dict[str, Any]]:
+    by_unit_id = {str(item.get("unit_id")): item for item in items}
+    page_stats = page_context_font_stats(page_context)
+    regions: list[dict[str, Any]] = []
+    missing_groups: list[dict[str, Any]] = []
+    for index, group in enumerate(planned_page.get("groups", [])):
+        if not isinstance(group, dict):
+            continue
+        line_ids = [str(value) for value in group.get("line_ids", [])]
+        group_items = [by_unit_id[unit_id] for unit_id in line_ids if unit_id in by_unit_id]
+        if not group_items:
+            missing_groups.append({"group_id": group.get("group_id"), "line_ids": line_ids[:20]})
+            continue
+        kind = planned_region_kind(group)
+        target_rect = rect_from_values(group.get("target_rect"))
+        if target_rect.is_empty or target_rect.width <= 0 or target_rect.height <= 0:
+            target_rect = union_rect([item["rect"] for item in group_items])
+        source_rect = rect_from_values(group.get("source_rect"))
+        source_sizes = [float(item.get("font_size") or 0.0) for item in group_items]
+        source_size = float(group.get("source_font_size") or median_float(source_sizes) or 6.0)
+        target_text = str(group.get("target_text") or join_translation_fragments(group_items, kind, policy))
+        region = {
+            "region_id": str(group.get("group_id") or f"planned_region_{index:04d}"),
+            "region_kind": kind,
+            "items": group_items,
+            "rect": target_rect,
+            "translation_zh": target_text,
+            "target_text": target_text,
+            "text_color": dominant_text_color(group_items),
+            "background_color": dominant_fill_color(group_items),
+            "source_size": source_size,
+            "layout_mode": str(group.get("layout_mode") or "planned_layout"),
+            "page_type_guess": page_type_guess(page_context),
+            "page_font_stats": page_stats,
+            "source_anchor_bbox": [round(v, 3) for v in source_rect] if not source_rect.is_empty else None,
+            "planned_layout_consumed": True,
+            "planned_layout_group_id": group.get("group_id"),
+            "planned_layout_role": group.get("role"),
+            "planned_layout_fit_estimate": group.get("fit_estimate"),
+            "planned_layout_adjustments": group.get("layout_adjustments", []),
+        }
+        regions.append(region)
+    if not regions:
+        raise ValueError(f"planned layout did not match any current source units; missing_groups={missing_groups[:5]}")
+    return regions
+
+
 BACKGROUND_COVER_REGION_KINDS = {"body", "body_flow", "heading", "table_note", "footnote", "event_card"}
 BACKGROUND_COVER_SKIP_PAGE_TYPES = {"chart_or_dashboard", "matrix_or_table_diagram"}
 BACKGROUND_COVER_SKIP_KINDS = {"table_cell", "legend", "vertical_nav", "compact_label", "short_label"}
@@ -2597,6 +2693,7 @@ def generate(
     output: Path,
     translations_path: Path,
     layout_path: Path,
+    planned_layout_path: Path | None = None,
 ) -> dict[str, Any]:
     ensure_dir(output.parent)
     fontfile = choose_font()
@@ -2609,6 +2706,8 @@ def generate(
     layout_policy.setdefault("source_language", source_language)
     layout_policy.setdefault("target_language", target_language)
     layout_policy.setdefault("target_text_field", target_field)
+    planned_pages = planned_layout_pages(planned_layout_path)
+    planned_layout_consumed_pages: list[int] = []
     doc = fitz.open(source)
     translation_units: list[dict[str, Any]] = []
     layout_slots: list[dict[str, Any]] = []
@@ -2766,7 +2865,12 @@ def generate(
                     for unit in page_units
                 ],
             }
-            regions = build_regions(page_units, page.rect, layout_policy, page_context)
+            planned_page = planned_pages.get(page_index)
+            if planned_page is not None:
+                regions = build_regions_from_planned_layout(page_units, page.rect, layout_policy, page_context, planned_page)
+                planned_layout_consumed_pages.append(page_index)
+            else:
+                regions = build_regions(page_units, page.rect, layout_policy, page_context)
             for region in regions:
                 sanitize_region_rect(region, page.rect)
             for region in regions:
@@ -2819,6 +2923,9 @@ def generate(
                             "image_background_color": [round(float(v), 4) for v in region.get("background_color", (1.0, 1.0, 1.0))],
                             "region_kind": region["region_kind"],
                             "layout_mode": region["layout_mode"],
+                            "planned_layout_consumed": bool(region.get("planned_layout_consumed")),
+                            "planned_layout_group_id": region.get("planned_layout_group_id"),
+                            "planned_layout_role": region.get("planned_layout_role"),
                             "page_type_guess": region.get("page_type_guess"),
                             "target_language_reflow_applied": bool(region.get("target_language_reflow_applied")),
                             "target_language_reflow_profile": region.get("target_language_reflow_profile"),
@@ -2852,6 +2959,9 @@ def generate(
                             "target_text_field": target_field,
                             "region_kind": region["region_kind"],
                             "layout_mode": region["layout_mode"],
+                            "planned_layout_consumed": bool(region.get("planned_layout_consumed")),
+                            "planned_layout_group_id": region.get("planned_layout_group_id"),
+                            "planned_layout_role": region.get("planned_layout_role"),
                             "page_type_guess": region.get("page_type_guess"),
                             "target_language_reflow_applied": bool(region.get("target_language_reflow_applied")),
                             "target_language_reflow_profile": region.get("target_language_reflow_profile"),
@@ -2900,9 +3010,13 @@ def generate(
         "preserved_target_language_unit_count": preserved_target_language_unit_count,
         "units": translation_units,
     }
+    layout_consumed = bool(planned_layout_path is not None and planned_layout_consumed_pages)
     layout = {
-        "layout_provider": "region_reflow_semantic_layout",
+        "layout_provider": "planned_role_layout_v2_semantic_layout" if layout_consumed else "region_reflow_semantic_layout",
         "layout_policy": rel(layout_policy_path),
+        "layout_plan_input_json": rel(planned_layout_path) if planned_layout_path is not None else None,
+        "layout_plan_consumed_by_generator": layout_consumed,
+        "layout_plan_consumed_page_indexes": planned_layout_consumed_pages,
         "layout_policy_version": layout_policy.get("policy_version"),
         "layout_policy_source": layout_policy.get("policy_source"),
         "language_pair_profile": layout_policy.get("language_pair_profile"),
@@ -2933,6 +3047,9 @@ def generate(
         "input_pdf": rel(source),
         "source_extraction": rel(extraction_path),
         "layout_policy_json": rel(layout_policy_path),
+        "layout_plan_input_json": rel(planned_layout_path) if planned_layout_path is not None else None,
+        "layout_plan_consumed_by_generator": layout_consumed,
+        "layout_plan_consumed_page_indexes": planned_layout_consumed_pages,
         "layout_policy_sha256": sha256_file(layout_policy_path),
         "layout_policy_version": layout_policy.get("policy_version"),
         "layout_policy_source": layout_policy.get("policy_source"),
@@ -2971,6 +3088,7 @@ def main() -> int:
     parser.add_argument("--evidence", required=True)
     parser.add_argument("--translations", required=True)
     parser.add_argument("--layout-plan", required=True)
+    parser.add_argument("--planned-layout")
     args = parser.parse_args()
     result = generate(
         resolve_workspace_path(args.input),
@@ -2980,6 +3098,7 @@ def main() -> int:
         Path(args.output),
         Path(args.translations),
         Path(args.layout_plan),
+        resolve_workspace_path(args.planned_layout) if args.planned_layout else None,
     )
     write_json(Path(args.evidence), result)
     print(args.evidence)

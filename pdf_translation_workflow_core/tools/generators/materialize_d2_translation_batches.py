@@ -251,10 +251,69 @@ def is_neutral_identifier_text(text: str) -> bool:
     return False
 
 
+def is_neutral_metric_text(text: str) -> bool:
+    stripped = compact_spaces(text)
+    if not stripped or CJK_RE.search(stripped) or not re.search(r"\d", stripped):
+        return False
+    metric_unit_re = re.compile(
+        r"\b(per\s+cent|percent|percentage\s+points?|pps?|basis\s+points?|bps?|bp|"
+        r"million|billion|trillion|thousand|dollars?|yuan|renminbi|months?|years?)\b",
+        re.IGNORECASE,
+    )
+    metric_symbol_re = re.compile(r"[%$€£¥]|US\$|HK\$|RMB|CNY|HKD|USD", re.IGNORECASE)
+    if not (metric_unit_re.search(stripped) or metric_symbol_re.search(stripped)):
+        return False
+    return bool(re.fullmatch(r"[A-Za-z0-9\s,.;:()/%$€£¥+\\\-–—']+", stripped))
+
+
+def normalize_metric_phrase_for_zh(text: str) -> str:
+    normalized = compact_spaces(text)
+    normalized = normalized.replace("。", ".").replace("，", ",").replace("：", ":")
+    if not is_neutral_metric_text(normalized):
+        return normalized
+    replacements = [
+        (r"\bper\s+cent\b", "%"),
+        (r"\bpercent\b", "%"),
+        (r"\bpercentage\s+points?\b", "个百分点"),
+        (r"\bpps?\b", "个百分点"),
+        (r"\bbasis\s+points?\b", "个基点"),
+        (r"\bbps?\b", "个基点"),
+        (r"\btrillion\b", "万亿"),
+        (r"\bbillion\b", "十亿"),
+        (r"\bmillion\b", "百万"),
+        (r"\bthousand\b", "千"),
+        (r"\bdollars?\b", "美元"),
+        (r"\byuan\b", "元"),
+        (r"\brenminbi\b", "人民币"),
+        (r"\bmonths?\b", "个月"),
+        (r"\byears?\b", "年"),
+    ]
+    for pattern, replacement in replacements:
+        normalized = re.sub(pattern, replacement, normalized, flags=re.IGNORECASE)
+    normalized = re.sub(r"\s+%", "%", normalized)
+    normalized = re.sub(r"([0-9])\s+([\u3400-\u9fff%])", r"\1\2", normalized)
+    normalized = re.sub(r"([\u3400-\u9fff%])\.$", r"\1", normalized)
+    normalized = re.sub(r"\s+", " ", normalized).strip()
+    return normalized
+
+
+def zh_neutral_metric_target_acceptable(text: str) -> bool:
+    stripped = compact_spaces(text)
+    if not stripped or not re.search(r"\d", stripped):
+        return False
+    if CJK_RE.search(stripped):
+        return True
+    if re.search(r"\b(per\s+cent|percent|percentage|basis|points?|million|billion|trillion|thousand|dollars?|yuan|renminbi|months?|years?)\b", stripped, re.IGNORECASE):
+        return False
+    return bool(re.fullmatch(r"[A-Z]{0,4}[$]?\s*[\d\s,.;:()/%$€£¥+\\\-–—]+", stripped))
+
+
 def target_text_acceptable(text: str, target_language: str, source_text: str) -> bool:
     if has_target_script(text, target_language):
         return True
     if target_language == "zh" and is_neutral_identifier_text(source_text) and text.strip():
+        return True
+    if target_language == "zh" and is_neutral_metric_text(source_text) and zh_neutral_metric_target_acceptable(text):
         return True
     return False
 
@@ -283,6 +342,8 @@ def clean_english_cjk_residue(source_text: str, target_text: str) -> str:
 
 def normalize_translated_text(source_text: str, target_text: str, target_language: str) -> str:
     compact = compact_spaces(target_text)
+    if target_language == "zh" and not CJK_RE.search(compact):
+        compact = normalize_metric_phrase_for_zh(compact)
     if target_language == "en":
         compact = clean_english_cjk_residue(source_text, compact)
     return compact
@@ -395,6 +456,7 @@ def render_prompt(template: dict[str, Any], slot_values: dict[str, Any], batch: 
         "prompt_id": template.get("prompt_id", "D2_translation"),
         "decision_contract": template.get("decision_contract", "D2_translation"),
         "system_prompt": template.get("system_prompt", ""),
+        "normalization_policy": template.get("normalization_policy", ""),
         "user_prompt": user_prompt,
         "slot_values_ref": batch.get("slot_values_ref"),
         "created_at": now_local(),
@@ -451,8 +513,9 @@ def materialize_batch(
     for index, unit in enumerate(translation_units, start=1):
         source_text = str(unit.get("source_text") or "").strip()
         cache_key = json.dumps([provider, source_language, target_language, source_text], ensure_ascii=False)
-        if cache_key in translation_cache and target_text_acceptable(translation_cache[cache_key], target_language, source_text):
-            translated_by_index[index] = translation_cache[cache_key]
+        cached = normalize_translated_text(source_text, translation_cache.get(cache_key, ""), target_language)
+        if cache_key in translation_cache and target_text_acceptable(cached, target_language, source_text):
+            translated_by_index[index] = cached
         else:
             pending.append((index, unit, normalized_request_text(source_text)))
 
@@ -475,7 +538,8 @@ def materialize_batch(
             source_raw = str(unit.get("source_text") or "").strip()
             cache_key = json.dumps([provider, source_language, target_language, source_raw], ensure_ascii=False)
             translated = split.get(index, "")
-            if not translated or not target_text_acceptable(compact_spaces(translated), target_language, source_raw):
+            normalized_candidate = normalize_translated_text(source_raw, translated, target_language)
+            if not translated or not target_text_acceptable(normalized_candidate, target_language, source_raw):
                 fallback_count += 1
                 translated, unit_errors = translate_with_retry(
                     source_text,

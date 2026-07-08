@@ -158,6 +158,36 @@ def number_core(value: str) -> str:
     return match.group(0) if match else value
 
 
+def compact_spaces(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def is_neutral_metric_text(text: str) -> bool:
+    stripped = compact_spaces(text).replace("。", ".").replace("，", ",").replace("：", ":")
+    if not stripped or CJK_RE.search(stripped) or not re.search(r"\d", stripped):
+        return False
+    metric_unit_re = re.compile(
+        r"\b(per\s+cent|percent|percentage\s+points?|pps?|basis\s+points?|bps?|bp|"
+        r"million|billion|trillion|thousand|dollars?|yuan|renminbi|months?|years?)\b",
+        re.IGNORECASE,
+    )
+    metric_symbol_re = re.compile(r"[%$€£¥]|US\$|HK\$|RMB|CNY|HKD|USD", re.IGNORECASE)
+    if not (metric_unit_re.search(stripped) or metric_symbol_re.search(stripped)):
+        return False
+    return bool(re.fullmatch(r"[A-Za-z0-9\s,.;:()/%$€£¥+\\\-–—']+", stripped))
+
+
+def zh_neutral_metric_target_acceptable(text: str) -> bool:
+    stripped = compact_spaces(text).replace("。", ".").replace("，", ",").replace("：", ":")
+    if not stripped or not re.search(r"\d", stripped):
+        return False
+    if CJK_RE.search(stripped):
+        return True
+    if re.search(r"\b(per\s+cent|percent|percentage|basis|points?|million|billion|trillion|thousand|dollars?|yuan|renminbi|months?|years?)\b", stripped, re.IGNORECASE):
+        return False
+    return bool(re.fullmatch(r"[A-Z]{0,4}[$]?\s*[\d\s,.;:()/%$€£¥+\\\-–—]+", stripped))
+
+
 def token_is_present(token: dict[str, str], translation_text: str) -> bool:
     value = token["value"]
     if value in translation_text:
@@ -176,14 +206,19 @@ def validate_target_text(unit_id: str, source_text: str, translation_text: str, 
     if not translation_text:
         reasons.append("empty_translation")
         return reasons
-    if target_language == "zh" and not CJK_RE.search(translation_text):
+    zh_metric_ok = (
+        target_language == "zh"
+        and is_neutral_metric_text(source_text)
+        and zh_neutral_metric_target_acceptable(translation_text)
+    )
+    if target_language == "zh" and not CJK_RE.search(translation_text) and not zh_metric_ok:
         reasons.append("target_text_no_cjk_characters")
     if target_language == "en":
         if not ASCII_OR_DIGIT_RE.search(translation_text):
             reasons.append("target_text_no_ascii_or_digits")
         if CJK_RE.search(translation_text):
             reasons.append("target_text_has_cjk_residue")
-    if translation_text.lower() == source_text.lower():
+    if translation_text.lower() == source_text.lower() and not zh_metric_ok:
         reasons.append("translation_equals_source")
     if has_forbidden_text(translation_text):
         reasons.append("placeholder_translation_text")
@@ -208,7 +243,7 @@ def validate_layout_variants(unit_id: str, translated: dict[str, Any], target_la
         if not isinstance(value, str) or not value.strip():
             reasons.append(f"layout_variant_invalid:{key}")
             continue
-        if target_language == "zh" and not CJK_RE.search(value):
+        if target_language == "zh" and not CJK_RE.search(value) and not zh_neutral_metric_target_acceptable(value):
             reasons.append(f"layout_variant_no_cjk:{key}")
         if target_language == "en" and CJK_RE.search(value):
             reasons.append(f"layout_variant_has_cjk_residue:{key}")

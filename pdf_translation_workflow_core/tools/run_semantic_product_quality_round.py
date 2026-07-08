@@ -23,6 +23,7 @@ from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _common import ensure_dir, read_json, rel, resolve_workspace_path, write_json  # noqa: E402
+from repairs.repair_policy_patch import EXECUTABLE_REPAIR_ATOMS, apply_operations, build_policy_patch_operations  # noqa: E402
 
 
 ROOT = Path.cwd()
@@ -341,11 +342,11 @@ class Runner:
         sem_validation = case_dir / "semantic_translation_validation.json"
         policy = case_dir / "layout_policy.json"
         role_plan = case_dir / "role_plan.json"
-        planned_layout = case_dir / "layout_plan.shadow.json"
+        planned_layout = case_dir / "layout_plan.json"
         output_pdf = self.output_dir / f"{case_id}_candidate.pdf"
         evidence = case_dir / "candidate_generation_evidence.json"
         translations_used = case_dir / "translations.used.json"
-        layout_plan = case_dir / "layout_plan.json"
+        layout_execution = case_dir / "layout_execution.json"
         render_dir = case_dir / "candidate_previews"
         render_manifest = case_dir / "candidate_render_manifest.json"
         visual_metrics = case_dir / "visual_region_metrics.json"
@@ -422,7 +423,7 @@ class Runner:
         )
         self.run_cmd(
             "S6_LayoutPlan",
-            f"S6_BuildLayoutPlanShadow:{case_id}",
+            f"S6_BuildLayoutPlan:{case_id}",
             "build_layout_plan.py",
             [
                 PYTHON,
@@ -431,10 +432,12 @@ class Runner:
                 str(role_plan),
                 "--layout-policy",
                 str(policy),
+                "--source-pdf",
+                str(source_pdf),
                 "--out",
                 str(planned_layout),
             ],
-            [role_plan, policy],
+            [role_plan, policy, source_pdf],
             [planned_layout],
         )
         self.run_cmd(
@@ -459,10 +462,12 @@ class Runner:
                 "--translations",
                 str(translations_used),
                 "--layout-plan",
-                str(layout_plan),
+                str(layout_execution),
+                "--planned-layout",
+                str(planned_layout),
             ],
-            [source_pdf, extraction, sem, policy],
-            [output_pdf, evidence, translations_used, layout_plan],
+            [source_pdf, extraction, sem, policy, planned_layout],
+            [output_pdf, evidence, translations_used, layout_execution],
         )
         self.run_cmd(
             "S8_VerifyProductQuality",
@@ -582,6 +587,7 @@ class Runner:
                     source_pdf,
                     extraction,
                     sem,
+                    role_plan,
                     policy,
                     quality,
                     repair_plan,
@@ -593,13 +599,17 @@ class Runner:
                 attempted_key = repair_result.get("attempted_key")
                 if isinstance(attempted_key, list) and len(attempted_key) == 2:
                     attempted_repairs.add((str(attempted_key[0]), str(attempted_key[1])))
+                for skipped_key in repair_result.get("skipped_attempted_keys", []) or []:
+                    if isinstance(skipped_key, list) and len(skipped_key) == 2:
+                        attempted_repairs.add((str(skipped_key[0]), str(skipped_key[1])))
                 if not (repair_result.get("executed") and isinstance(repair_result.get("artifacts"), dict)):
                     break
                 artifacts = repair_result["artifacts"]
                 output_pdf = Path(artifacts["candidate_pdf"])
                 evidence = Path(artifacts["candidate_generation_evidence"])
                 translations_used = Path(artifacts["translations_used"])
-                layout_plan = Path(artifacts["layout_plan"])
+                planned_layout = Path(artifacts["layout_plan"])
+                layout_execution = Path(artifacts["layout_execution"])
                 render_manifest = Path(artifacts["candidate_render_manifest"])
                 visual_metrics = Path(artifacts["visual_region_metrics"])
                 repair_plan = Path(artifacts["visual_repair_plan"])
@@ -616,7 +626,8 @@ class Runner:
                 "semantic_translation_validation": sem_validation,
                 "layout_policy": policy,
                 "role_plan": role_plan,
-                "planned_layout_plan": planned_layout,
+                "layout_plan": planned_layout,
+                "layout_execution": layout_execution,
                 "candidate_generation_evidence": evidence,
                 "candidate_render_manifest": render_manifest,
                 "visual_region_metrics": visual_metrics,
@@ -640,253 +651,28 @@ class Runner:
         repair_data: dict[str, Any],
         attempted_repairs: set[tuple[str, str]] | None = None,
     ) -> tuple[dict[str, Any] | None, list[dict[str, Any]]]:
-        executable_atoms = {
-            "target_composition_body_reflow_repair",
-            "expandable_text_slot_reflow_repair",
-            "heading_frame_fit_or_short_title_variant",
-            "heading_font_fit_curve_repair",
-            "event_card_local_fit_repair",
-            "footnote_fit_curve_repair",
-            "side_navigation_rotated_image_repair",
-            "matrix_diagram_table_cell_preserve_repair",
-            "short_continuation_and_reflow_frame_repair",
-            "body_flow_grouping",
-            "body_flow_region_reflow",
-            "body_flow_line_joining_or_line_height_adjust",
-            "body_flow_paragraph_gap_rebalance",
-            "font_size_and_region_density_rebalance",
-            "dense_page_body_band_flow_repair",
-            "constrained_slot_layout_fit_repair",
-            "metric_value_font_hierarchy_repair",
-        }
         attempted_repairs = attempted_repairs or set()
         plans = [item for item in repair_data.get("plans", []) if item.get("gate_status") == "fail"]
         for plan in plans:
             key = (str(plan.get("gate_id")), str(plan.get("repair_atom")))
             if key in attempted_repairs:
                 continue
-            if str(plan.get("repair_atom")) in executable_atoms and str(plan.get("target_state")) in {"S6_LayoutPlan", "S7_GenerateCandidate"}:
+            if str(plan.get("repair_atom")) in EXECUTABLE_REPAIR_ATOMS and str(plan.get("target_state")) in {"S6_LayoutPlan", "S7_GenerateCandidate"}:
                 return plan, plans
         return None, plans
 
     def apply_policy_repair_overrides(self, policy_path: Path, selected: dict[str, Any], out: Path) -> list[dict[str, Any]]:
+        """Compatibility wrapper; all executable repairs go through RepairPatch ops."""
         policy = read_json(policy_path)
-        atom = str(selected.get("repair_atom") or "")
-        gate_id = str(selected.get("gate_id") or selected.get("failure_class") or "")
-        target_language = str(policy.get("target_language") or "").lower()
-        language_pair_profile = str(policy.get("language_pair_profile") or "")
-        changes: list[dict[str, Any]] = []
-
-        def section(name: str) -> dict[str, Any]:
-            value = policy.setdefault(name, {})
-            if not isinstance(value, dict):
-                value = {}
-                policy[name] = value
-            return value
-
-        def nested(parent: dict[str, Any], name: str) -> dict[str, Any]:
-            value = parent.setdefault(name, {})
-            if not isinstance(value, dict):
-                value = {}
-                parent[name] = value
-            return value
-
-        def add_unique(container: dict[str, Any], key: str, values: list[str], reason: str) -> None:
-            current = [str(item) for item in container.get(key, []) if str(item)]
-            before = list(current)
-            for value in values:
-                if value not in current:
-                    current.append(value)
-            container[key] = current
-            if current != before:
-                changes.append({"path": key, "before": before, "after": current, "reason": reason})
-
-        def remove_values(container: dict[str, Any], key: str, values: list[str], reason: str) -> None:
-            current = [str(item) for item in container.get(key, []) if str(item)]
-            blocked = set(values)
-            after = [item for item in current if item not in blocked]
-            if after != current:
-                container[key] = after
-                changes.append({"path": key, "before": current, "after": after, "reason": reason})
-
-        def raise_float(container: dict[str, Any], key: str, minimum: float, reason: str) -> None:
-            before = container.get(key)
-            try:
-                old = float(before)
-            except (TypeError, ValueError):
-                old = 0.0
-            if old < minimum:
-                container[key] = minimum
-                changes.append({"path": key, "before": before, "after": minimum, "reason": reason})
-
-        def set_if_changed(container: dict[str, Any], key: str, value: Any, reason: str) -> None:
-            before = container.get(key)
-            if before != value:
-                container[key] = value
-                changes.append({"path": key, "before": before, "after": value, "reason": reason})
-
-        fallback = section("fallback")
-        constrained = section("constrained_text_image_fit")
-        constrained["enabled"] = True
-
-        critical_roles: list[str] = []
-        wrapped_roles: list[str] = []
-        no_constrained_roles: set[str] = set()
-        if atom in {
-            "target_composition_body_reflow_repair",
-            "short_continuation_and_reflow_frame_repair",
-            "body_flow_grouping",
-            "body_flow_region_reflow",
-            "body_flow_line_joining_or_line_height_adjust",
-            "body_flow_paragraph_gap_rebalance",
-            "font_size_and_region_density_rebalance",
-            "dense_page_body_band_flow_repair",
-        }:
-            critical_roles.extend(["body", "body_flow"])
-            wrapped_roles.extend(["body", "body_flow"])
-            composition = section("target_composition")
-            reflow = section("target_language_reflow")
-            if target_language == "en" or language_pair_profile == "zh_to_en":
-                add_unique(composition, "disable_page_type_guesses", ["mixed_image_text"], "zh->en mixed image/text pages keep local anchors instead of page-wide body composition")
-                add_unique(reflow, "disable_page_type_guesses", ["mixed_image_text"], "zh->en mixed image/text pages keep local anchors instead of page-wide reflow")
-                raise_float(composition, "min_width_page_ratio", 0.78, "body readability repair widens fluid body frames before shrinking font")
-                raise_float(composition, "min_source_width_page_ratio_for_composition", 0.42, "body readability repair skips page-wide composition for narrow source columns")
-                raise_float(composition, "height_expand_ratio", 1.55, "body readability repair gives expanded English prose more vertical room")
-                raise_float(composition, "max_bottom_page_ratio", 0.96, "body readability repair can use normal lower-page body area")
-                raise_float(reflow, "min_width_page_ratio", 0.72, "target-language reflow repair widens paragraph frames")
-                raise_float(reflow, "min_source_width_page_ratio_for_reflow", 0.42, "target-language reflow repair skips frame expansion for narrow source columns")
-                raise_float(reflow, "height_expand_ratio", 1.55, "target-language reflow repair gives expanded English prose more vertical room")
-            grouping = nested(section("flow_grouping"), "body")
-            if target_language == "en" or language_pair_profile == "zh_to_en":
-                before = grouping.get("candidate_region_kinds")
-                grouping["candidate_region_kinds"] = ["body"]
-                if before != grouping["candidate_region_kinds"]:
-                    changes.append(
-                        {
-                            "path": "flow_grouping.body.candidate_region_kinds",
-                            "before": before,
-                            "after": grouping["candidate_region_kinds"],
-                            "reason": "repair prevents compact labels and short labels from being merged into English body_flow",
-                        }
-                    )
-                add_unique(grouping, "disable_page_type_guesses", ["mixed_image_text"], "mixed image/text regions are local constrained cards, not continuous body flow")
-        if atom in {"heading_frame_fit_or_short_title_variant", "heading_font_fit_curve_repair"} or gate_id in {"title_readability", "hero_banner_text_readability"}:
-            critical_roles.append("heading")
-            wrapped_roles.append("heading")
-            expandable = section("expandable_text_slots")
-            expandable["enabled"] = True
-            add_unique(expandable, "region_kinds", ["heading"], "readability repair lets page headings use current-page whitespace instead of hard source bbox fitting")
-        if atom == "event_card_local_fit_repair" or gate_id == "event_card_readability":
-            critical_roles.append("event_card")
-            wrapped_roles.append("event_card")
-        if atom == "footnote_fit_curve_repair" or gate_id == "footnote_readability":
-            critical_roles.extend(["footnote", "table_note"])
-            wrapped_roles.extend(["footnote", "table_note"])
-        if atom == "matrix_diagram_table_cell_preserve_repair" or gate_id == "matrix_diagram_integrity":
-            for profile_name in ["target_composition", "target_language_reflow"]:
-                add_unique(section(profile_name), "hard_disable_page_type_guesses", ["matrix_or_table_diagram"], "matrix/table diagrams preserve two-dimensional structure")
-            add_unique(nested(section("flow_grouping"), "body"), "hard_disable_page_type_guesses", ["matrix_or_table_diagram"], "matrix/table diagrams must not be routed through body_flow")
-        if atom == "expandable_text_slot_reflow_repair" or gate_id == "short_label_legibility":
-            expandable = section("expandable_text_slots")
-            expandable["enabled"] = True
-            add_unique(expandable, "region_kinds", ["short_label", "compact_label", "heading"], "expanded target text slots fix long labels before font shrink")
-            add_unique(expandable, "disable_page_type_guesses", ["chart_or_dashboard", "table_or_chart_dense"], "dense chart/table labels remain hard constrained slots")
-            add_unique(expandable, "hard_disable_page_type_guesses", ["matrix_or_table_diagram"], "matrix/table diagrams preserve two-dimensional structure")
-            raise_float(expandable, "min_width_page_ratio", 0.38, "long target labels can use nearby whitespace before shrink")
-            raise_float(expandable, "max_width_page_ratio", 0.78, "long target labels can expand within page margins without crossing into hard structures")
-            raise_float(expandable, "height_expand_ratio", 1.8, "long target labels need enough line height after expansion")
-            raise_float(expandable, "min_height_source_ratio", 2.4, "expanded labels keep readable local height derived from source font size")
-            raise_float(expandable, "compact_label_min_width_page_ratio", 0.18, "compact labels use current-page width before font shrink")
-            raise_float(expandable, "compact_label_max_width_page_ratio", 0.42, "compact label expansion remains local")
-            raise_float(expandable, "compact_label_height_expand_ratio", 1.35, "compact labels get enough source-relative line height")
-            set_if_changed(expandable, "compact_label_min_y_ratio", 0.0, "top page labels can expand when geometry allows")
-            set_if_changed(expandable, "compact_label_min_text_expansion_ratio", 0.0, "compact label expansion is allowed for readability, not only length growth")
-            set_if_changed(expandable, "compact_label_min_target_chars", 1, "compact labels can be short but still need readable font size")
-            add_unique(constrained, "wrapped_region_kinds", ["short_label", "compact_label"], "expanded labels wrap locally if textbox probing still fails")
-        if atom == "metric_value_font_hierarchy_repair" or gate_id == "metric_value_hierarchy":
-            critical_roles.append("metric_value")
-            no_constrained_roles.add("metric_value")
-            add_unique(section("reflow"), "preserve_line_kinds", ["metric_value"], "metric/KPI values preserve local hierarchy and are not paragraph-reflowed")
-            metric_variants = section("layout_text_variants")
-            set_if_changed(
-                metric_variants,
-                "metric_value_en",
-                ["metric_value_en", "compact_en", "display_en"],
-                "metric/KPI values may use semantic compact display variants before geometry shrink",
-            )
-            set_if_changed(
-                metric_variants,
-                "metric_value_zh",
-                ["metric_value_zh", "compact_zh", "display_zh"],
-                "metric/KPI values may use semantic compact display variants before geometry shrink",
-            )
-            expandable = section("expandable_text_slots")
-            expandable["enabled"] = True
-            add_unique(expandable, "region_kinds", ["metric_value"], "metric/KPI values may expand into current-page whitespace before shrink")
-            raise_float(expandable, "metric_value_min_width_page_ratio", 0.12, "metric/KPI repair derives width from current page, not fixed point size")
-            raise_float(expandable, "metric_value_max_width_page_ratio", 0.34, "metric/KPI repair caps expansion within local page geometry")
-            raise_float(expandable, "metric_value_height_expand_ratio", 1.2, "metric/KPI repair allows one readable line-height extension")
-            raise_float(expandable, "metric_value_min_height_source_ratio", 0.85, "metric/KPI minimum visual height is derived from source font size")
-            set_if_changed(expandable, "metric_value_min_text_expansion_ratio", 0.0, "metric/KPI expansion is driven by role hierarchy, not only text length expansion")
-            set_if_changed(expandable, "metric_value_min_target_chars", 1, "metric/KPI values can be short but still visually dominant")
-            metric_rule = nested(section("classification_rules"), "metric_value")
-            set_if_changed(metric_rule, "enabled", True, "metric/KPI hierarchy repair enables generic value-role classification")
-            set_if_changed(metric_rule, "source_size_page_quantile", "q75", "metric/KPI role is relative to current-page font hierarchy")
-            set_if_changed(metric_rule, "min_source_to_page_quantile_ratio", 1.45, "metric/KPI role uses a current-page ratio rather than fixed point size")
-            set_if_changed(
-                metric_rule,
-                "value_token_regex",
-                r"([%\uFF05$]|US\$|HK\$|GBP|EUR|\u7f8e\u5143|\u6e2f\u5143|\u5104\u5143|\u4ebf|bn|billion|million|m|bps|\u57fa\u9ede|\u57fa\u70b9)",
-                "metric/KPI role uses generic value tokens, not literal values",
-            )
-            set_if_changed(
-                metric_rule,
-                "value_amount_regex",
-                r"((?:US\$|HK\$|\$|GBP|EUR)?\s*\d[\d,]*(?:\.\d+)?\s*(?:[%\uFF05]|\u7f8e\u5143|\u6e2f\u5143|\u5104\u5143|\u4ebf|bn|billion|millions?|m|bps|\u57fa\u9ede|\u57fa\u70b9)?)|((?:US\$|HK\$|\$|GBP|EUR)\s*\d)",
-                "metric/KPI role must include a generic numeric amount, so unit labels alone are not promoted to metric callouts",
-            )
-            metric_profile = nested(section("font_profiles"), "metric_value")
-            for key, value in {
-                "sizing_mode": "source_relative",
-                "source_scale": 1.0,
-                "min_source_ratio": 0.70,
-                "max_source_ratio": 1.05,
-                "page_quantile_floor": "q75",
-                "page_quantile_floor_scale": 1.10,
-                "page_quantile_ceiling": "max",
-                "page_quantile_ceiling_scale": 1.05,
-                "min_insert_source_ratio": 0.62,
-                "shrink_scales": [1.0, 0.96, 0.92, 0.88, 0.84, 0.80, 0.76, 0.70],
-            }.items():
-                set_if_changed(metric_profile, key, value, "metric/KPI actual point size is resolved from source_size and current-page font quantiles")
-            add_unique(constrained, "forbid_region_kinds", ["metric_value"], "metric/KPI hierarchy failures must not be repaired by generic compressed text images")
-            remove_values(constrained, "region_kinds", ["metric_value"], "metric/KPI values are repaired by source-relative font and geometry expansion, not constrained image compression")
-            remove_values(constrained, "wrapped_region_kinds", ["metric_value"], "metric/KPI values are repaired as callouts, not wrapped compressed images")
-        if atom == "constrained_slot_layout_fit_repair" or gate_id in {"table_text_legibility", "legend_label_alignment"}:
-            constrained_roles = ["table_cell", "legend", "short_label", "compact_label"]
-            add_unique(constrained, "region_kinds", constrained_roles, "constrained slots use local fit repair before any translation regeneration is considered")
-            add_unique(constrained, "wrapped_region_kinds", ["legend", "short_label", "compact_label"], "multi-line constrained labels wrap locally instead of falling back to point text")
-            constrained["keep_proportion_for_wrapped"] = True
-            raise_float(constrained, "max_font_source_ratio", 0.96, "constrained slot repair keeps labels source-relative without changing translation semantics")
-
-        if critical_roles:
-            unique_critical = sorted(set(critical_roles))
-            add_unique(fallback, "forbid_region_kinds", unique_critical, "critical visual roles must fail visibly instead of falling back to tiny point text")
-            constrained_critical = [role for role in unique_critical if role not in no_constrained_roles]
-            if constrained_critical:
-                add_unique(constrained, "region_kinds", constrained_critical, "critical roles may use policy-declared constrained text images after textbox probing fails")
-        if wrapped_roles:
-            add_unique(constrained, "wrapped_region_kinds", sorted(set(wrapped_roles)), "multi-line critical roles use wrapped constrained text images, not single-line compression")
-            constrained["keep_proportion_for_wrapped"] = True
-            raise_float(constrained, "max_font_source_ratio", 1.05, "repair keeps wrapped critical-role text source-relative")
-            raise_float(constrained, "min_font_source_ratio", 0.62, "repair avoids unreadable wrapped text images through source-relative sizing")
-
+        operations = build_policy_patch_operations(policy, selected)
+        changes = apply_operations(policy, operations)
         policy.setdefault("repair_overrides", []).append(
             {
-                "repair_atom": atom,
-                "gate_id": gate_id,
-                "source": "run_semantic_product_quality_round.apply_policy_repair_overrides",
-                "anti_overfit": "changes are driven by failure class, target language, and region role; no filename, page number, literal text, or fixed coordinate is used",
+                "repair_atom": selected.get("repair_atom"),
+                "gate_id": selected.get("gate_id") or selected.get("failure_class"),
+                "source": "run_semantic_product_quality_round.apply_policy_repair_overrides.compat",
+                "operation_count": len(operations),
+                "anti_overfit": "delegates to repair_policy_patch; operations are derived from failed gate, repair atom, target language, and region role only",
                 "changes": changes,
             }
         )
@@ -900,6 +686,7 @@ class Runner:
         source_pdf: Path,
         extraction: Path,
         semantic_translations: Path,
+        role_plan: Path,
         policy: Path,
         quality_path: Path,
         repair_plan_path: Path,
@@ -911,14 +698,38 @@ class Runner:
         if selected is None:
             record = self.write_repair_loop_record(case_id, case_dir, quality_path, repair_plan_path, repair_data, loop_index=loop_index)
             return {"executed": False, "record": record, "reason": "no executable generic repair atom selected"}
+        policy_data_for_preview = read_json(policy)
+        skipped_noop_repairs: list[dict[str, Any]] = []
+        local_attempted = set(attempted_repairs)
+        while selected is not None and not build_policy_patch_operations(policy_data_for_preview, selected):
+            skipped_noop_repairs.append(
+                {
+                    "gate_id": selected.get("gate_id"),
+                    "repair_atom": selected.get("repair_atom"),
+                    "target_state": selected.get("target_state"),
+                    "reason": "repair atom generated zero policy patch operations for the current run-local layout_policy",
+                }
+            )
+            local_attempted.add((str(selected.get("gate_id")), str(selected.get("repair_atom"))))
+            selected, plans = self.select_executable_repair_plan(repair_data, local_attempted)
+        if selected is None:
+            record = self.write_repair_loop_record(case_id, case_dir, quality_path, repair_plan_path, repair_data, loop_index=loop_index)
+            return {
+                "executed": False,
+                "record": record,
+                "reason": "all executable generic repair atoms were no-op against the current layout_policy",
+                "skipped_attempted_keys": [[str(item["gate_id"]), str(item["repair_atom"])] for item in skipped_noop_repairs],
+            }
 
         loop_tag = f"repair{loop_index:02d}"
         record_path = case_dir / f"repair_loop_{loop_index:04d}.json"
+        repair_patch = case_dir / f"repair_patch_{loop_index:04d}.json"
         repaired_policy = case_dir / f"layout_policy.{loop_tag}.json"
+        planned_layout = case_dir / f"layout_plan.{loop_tag}.json"
         candidate_pdf = self.output_dir / f"{case_id}_{loop_tag}_candidate.pdf"
         evidence = case_dir / f"candidate_generation_evidence.{loop_tag}.json"
         translations_used = case_dir / f"translations.used.{loop_tag}.json"
-        layout_plan = case_dir / f"layout_plan.{loop_tag}.json"
+        layout_execution = case_dir / f"layout_execution.{loop_tag}.json"
         render_dir = case_dir / f"candidate_previews_{loop_tag}"
         render_manifest = case_dir / f"candidate_render_manifest.{loop_tag}.json"
         visual_metrics = case_dir / f"visual_region_metrics.{loop_tag}.json"
@@ -926,14 +737,72 @@ class Runner:
         next_repair_plan = case_dir / f"visual_repair_plan.{loop_tag}.json"
         visual_adj = case_dir / f"visual_adjudication.{loop_tag}.json"
         quality = case_dir / f"product_quality_gates.{loop_tag}.json"
-        changes = self.apply_policy_repair_overrides(policy, selected, repaired_policy)
         self.run_cmd(
             "Lx_RepairLoop",
-            f"Lx_ApplyPolicyRepair:{case_id}:{loop_tag}",
-            "run_semantic_product_quality_round.py",
-            [PYTHON, "-c", "print('layout_policy_repair_overrides_written')"],
+            f"Lx_BuildRepairPatch:{case_id}:{loop_tag}",
+            "build_repair_patch.py",
+            [
+                PYTHON,
+                "pdf_translation_workflow_core/tools/repairs/build_repair_patch.py",
+                "--layout-policy",
+                str(policy),
+                "--visual-repair-plan",
+                str(repair_plan_path),
+                "--product-quality",
+                str(quality_path),
+                "--case-id",
+                case_id,
+                "--loop-index",
+                str(loop_index),
+                "--gate-id",
+                str(selected.get("gate_id") or ""),
+                "--repair-atom",
+                str(selected.get("repair_atom") or ""),
+                "--out",
+                str(repair_patch),
+            ],
             [quality_path, repair_plan_path, policy],
+            [repair_patch],
+        )
+        self.run_cmd(
+            "Lx_RepairLoop",
+            f"Lx_ApplyRepairPatch:{case_id}:{loop_tag}",
+            "apply_repair_patch.py",
+            [
+                PYTHON,
+                "pdf_translation_workflow_core/tools/repairs/apply_repair_patch.py",
+                "--layout-policy",
+                str(policy),
+                "--repair-patch",
+                str(repair_patch),
+                "--out",
+                str(repaired_policy),
+            ],
+            [policy, repair_patch],
             [repaired_policy],
+        )
+        patch_data = read_json(repair_patch)
+        repaired_policy_data = read_json(repaired_policy)
+        repair_overrides = repaired_policy_data.get("repair_overrides") or []
+        changes = repair_overrides[-1].get("changes", []) if repair_overrides else []
+        self.run_cmd(
+            "S6_LayoutPlan",
+            f"S6_RebuildLayoutPlanAfterRepair:{case_id}:{loop_tag}",
+            "build_layout_plan.py",
+            [
+                PYTHON,
+                "pdf_translation_workflow_core/tools/planners/build_layout_plan.py",
+                "--role-plan",
+                str(role_plan),
+                "--layout-policy",
+                str(repaired_policy),
+                "--source-pdf",
+                str(source_pdf),
+                "--out",
+                str(planned_layout),
+            ],
+            [role_plan, repaired_policy, source_pdf],
+            [planned_layout],
         )
         self.run_cmd(
             "S7_GenerateCandidate",
@@ -957,10 +826,12 @@ class Runner:
                 "--translations",
                 str(translations_used),
                 "--layout-plan",
-                str(layout_plan),
+                str(layout_execution),
+                "--planned-layout",
+                str(planned_layout),
             ],
-            [source_pdf, extraction, semantic_translations, repaired_policy],
-            [candidate_pdf, evidence, translations_used, layout_plan],
+            [source_pdf, extraction, semantic_translations, repaired_policy, planned_layout],
+            [candidate_pdf, evidence, translations_used, layout_execution],
         )
         self.run_cmd(
             "S8_VerifyProductQuality",
@@ -1076,7 +947,9 @@ class Runner:
             "target_scope": selected.get("sample_regions", [])[:5],
             "expected_effect": selected.get("description"),
             "verification_to_run": [
-                "build_layout_policy.py policy override materialization",
+                "build_repair_patch.py",
+                "apply_repair_patch.py",
+                "build_layout_plan.py",
                 "generate_semantic_backfill.py",
                 "render_pdf.py",
                 "collect_visual_region_metrics.py",
@@ -1093,13 +966,20 @@ class Runner:
                 for item in plans
                 if item is not selected
             ],
+            "skipped_noop_repairs": skipped_noop_repairs,
             "execution_status": "applied_and_rejudged",
+            "repair_patch": rel(repair_patch),
+            "repair_patch_status": patch_data.get("status"),
+            "repair_patch_operation_count": patch_data.get("operation_count"),
             "applied_policy_changes": changes,
-            "input_artifacts": [rel(quality_path), rel(repair_plan_path), rel(policy)],
+            "input_artifacts": [rel(quality_path), rel(repair_plan_path), rel(policy), rel(repair_patch)],
             "output_artifacts": [
+                rel(repair_patch),
                 rel(repaired_policy),
+                rel(planned_layout),
                 rel(candidate_pdf),
                 rel(evidence),
+                rel(layout_execution),
                 rel(visual_metrics),
                 rel(next_repair_plan),
                 rel(visual_adj),
@@ -1117,19 +997,22 @@ class Runner:
             f"Lx_RecordAppliedRepairLoop:{case_id}:{loop_tag}",
             "run_semantic_product_quality_round.py",
             [PYTHON, "-c", "print('applied_repair_loop_record_written')"],
-            [quality_path, repair_plan_path, repaired_policy, quality],
+            [quality_path, repair_plan_path, repair_patch, repaired_policy, planned_layout, quality],
             [record_path],
         )
         return {
             "executed": True,
             "record": rel(record_path),
             "attempted_key": [str(selected.get("gate_id")), str(selected.get("repair_atom"))],
+            "skipped_attempted_keys": [[str(item["gate_id"]), str(item["repair_atom"])] for item in skipped_noop_repairs],
             "artifacts": {
+                "repair_patch": repair_patch,
                 "layout_policy": repaired_policy,
                 "candidate_pdf": candidate_pdf,
                 "candidate_generation_evidence": evidence,
                 "translations_used": translations_used,
-                "layout_plan": layout_plan,
+                "layout_plan": planned_layout,
+                "layout_execution": layout_execution,
                 "candidate_render_manifest": render_manifest,
                 "visual_region_metrics": visual_metrics,
                 "visual_repair_plan": next_repair_plan,
@@ -1309,35 +1192,35 @@ class Runner:
             [],
             ["D4_layout_plan"],
             [{"gate_id": "semantic_translation_validation", "status": "pass"}],
-            "build layout policies and shadow role/layout plans",
+            "build layout policies and generator-consumable role/layout plans",
         )
         self.decision(
             "D4_layout_plan",
             "S6_LayoutPlan",
-            "Layout policies and shadow role/layout plans are built from current extraction statistics, semantic translations, and language profiles.",
-            [case["layout_policy"] for case in results] + [case["role_plan"] for case in results] + [case["planned_layout_plan"] for case in results],
+            "Layout policies and generator-consumable role/layout plans are built from current extraction statistics, semantic translations, and language profiles.",
+            [case["layout_policy"] for case in results] + [case["role_plan"] for case in results] + [case["layout_plan"] for case in results],
             "D4_layout_plan.prompt.json",
-            ["layout_policy", "role_plan", "layout_plan_shadow", "language_pair_profile", "font_profiles", "fit_risks"],
+            ["layout_policy", "role_plan", "layout_plan", "language_pair_profile", "font_profiles", "fit_risks", "layout_plan_consumed_by_generator"],
             {
                 "verdict": "pass",
                 "backend_model_call_made": False,
                 "policy_source": "build_layout_policy.py",
                 "role_plan_source": "build_role_plan.py",
-                "layout_plan_shadow_source": "build_layout_plan.py",
-                "layout_plan_shadow_consumed_by_generator": False,
+                "layout_plan_source": "build_layout_plan.py",
+                "layout_plan_consumed_by_generator": True,
             },
             "S7_GenerateCandidate",
         )
         self.transition(
             "S6_LayoutPlan",
             "S7_GenerateCandidate",
-            "layout policies exist for every case",
+            "layout policies and generator-consumable layout plans exist for every case",
             ["generate_semantic_backfill.py"],
-            [case["layout_policy"] for case in results],
+            [case["layout_policy"] for case in results] + [case["layout_plan"] for case in results],
             [case["candidate_pdf"] for case in results],
             ["D4_layout_plan"],
             [{"gate_id": "candidate_generation", "status": "pass"}],
-            "generate candidates",
+            "generate candidates from planned layout",
         )
         self.decision(
             "D5_initial_verification",

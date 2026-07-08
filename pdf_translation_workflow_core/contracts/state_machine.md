@@ -10,8 +10,8 @@
 | `S3_SourceExtract` | Extract page geometry, text, images/drawings, source renders | source extraction JSON, source PNGs | All pages represented |
 | `S4_PageStrategy` | Classify page types and region roles | page strategy records | D1/D3 decisions recorded |
 | `S5_TranslationPlan` | Build translation units, materialize D2 batch translations, assemble semantic translation JSON, and validate coverage | `translation_batch_manifest.json`, per-batch boundary/slot/model/validation records, semantic translations JSON, `semantic_translation_validation.json` in product-quality mode | All D2 batches validated and final semantic translation validation passes, or capability failure is recorded |
-| `S6_LayoutPlan` | Build or revise explicit region-aware layout policy and shadow role/layout plans | `layout_policy.json`, `role_plan.json`, `layout_plan.shadow.json`; S7 later writes generator-consumed `layout_plan.json` | D4 decisions recorded, including constrained-slot vs fluid-body split, policy source, role grouping evidence, shadow target-rect evidence, target composition, reflow-vs-preserve-line decisions, font profiles, and fallback policy |
-| `S7_GenerateCandidate` | Generate a candidate PDF with a real backfill attempt if feasible | candidate PDF, candidate PNGs, generation evidence, translations/layout artifacts, semantic translation validation, or explicit generation failure | Candidate contains backfilled target-language text or explicit failure; fluid body uses target composition when policy requires it |
+| `S6_LayoutPlan` | Build or revise explicit region-aware layout policy, role plan, and generator-consumable layout plan | `layout_policy.json`, `role_plan.json`, `layout_plan.json` with `layout_plan_consumable_by_generator=true` | D4 decisions recorded, including constrained-slot vs fluid-body split, policy source, role grouping evidence, planned target-rect evidence, target composition, reflow-vs-preserve-line decisions, font profiles, and fallback policy |
+| `S7_GenerateCandidate` | Generate a candidate PDF with a real backfill attempt if feasible | candidate PDF, candidate PNGs, `candidate_generation_evidence.json`, `layout_execution.json`, translations/layout artifacts, semantic translation validation, or explicit generation failure | Candidate contains backfilled target-language text or explicit failure; fluid body uses target composition when policy requires it; product-quality v2 runs must prove `layout_plan_consumed_by_generator=true` |
 | `S8_VerifyProductQuality` | Evaluate machine and visual quality gates | candidate render manifest, candidate PNGs, `visual_region_metrics.json`, `visual_repair_plan.json`, `visual_adjudication.json`, quality gates JSON | D5/D7 decisions recorded, including target composition, font hierarchy, overlap residue, and constrained-slot integrity |
 | `Lx_RepairLoop` | Repair one documented failure class at a time | repair decision, patch record, verification result | Failure fixed, deferred, or terminal |
 | `Ax_AdaptiveChange` | Modify round-local docs/tools when the package is insufficient | change log, before/after manifests, verification result | Change recorded and verified |
@@ -41,6 +41,15 @@ record must say `execution_status=not_executed_unrepairable` or
 `Lx_RepairLoop` without a `repair_loop_<n>.json` record fails the process
 contract even if final product quality also fails.
 
+When a repair atom is executable, the loop must materialize a `repair_patch_<n>.json`
+before changing layout policy or regenerating a candidate. The patch must be
+generated from the current failed gate, repair atom, target language, region role,
+and current-run policy fields. If the selected atom produces
+`operation_count=0`, that atom is a no-op for the current run; record it under
+`skipped_noop_repairs` and choose the next executable non-no-op atom when one
+exists. Regenerating a candidate from a no-op patch is not counted as an
+effective repair.
+
 The loop exits only through one of these outcomes:
 
 | Outcome | Exit target |
@@ -68,11 +77,11 @@ Every transition must be recorded:
   "transition_id": "T07",
   "from": "S6_LayoutPlan",
   "to": "S7_GenerateCandidate",
-  "entry_condition": "layout slots and render patches exist",
+  "entry_condition": "layout_policy.json, role_plan.json, and generator-consumable layout_plan.json exist",
   "run_mode": "product_quality",
   "tools": ["Python", "PyMuPDF", "Codex/OpenAI model"],
-  "input_artifacts": ["tmp/pdfs/source_extraction.json"],
-  "output_artifacts": ["tmp/pdfs/render_patches.json"],
+  "input_artifacts": ["tmp/pdfs/source_extraction.json", "tmp/pdfs/layout_policy.json", "tmp/pdfs/role_plan.json", "tmp/pdfs/layout_plan.json"],
+  "output_artifacts": ["tmp/pdfs/candidate.pdf", "tmp/pdfs/candidate_generation_evidence.json", "tmp/pdfs/layout_execution.json"],
   "workspace_boundary_check_ref": "docs/reports/<run_id>/workspace_boundary.json",
   "decision_record_ids": ["D4_layout_plan"],
   "gates": [
@@ -99,9 +108,13 @@ Each repair iteration must be recorded. `loop_iteration` increases on every pass
   "repair_atom": "reduce_font_or_reflow",
   "target_state": "S6_LayoutPlan",
   "patch_scope": ["page_index", "region_id", "slot_id"],
+  "repair_patch": "docs/reports/<run_id>/repair_patch_0001.json",
+  "repair_patch_status": "patch_built",
+  "repair_patch_operation_count": 1,
+  "skipped_noop_repairs": [],
   "tools": ["Python", "PyMuPDF", "apply_patch only for explicitly allowed code/doc repair, never runtime artifacts"],
   "expected_effect": "reduce overflow without lowering text-area ratio below threshold",
-  "verification_to_run": ["render_png", "extract_text", "quality_metrics"],
+  "verification_to_run": ["build_repair_patch.py", "apply_repair_patch.py", "build_layout_plan.py", "generate_semantic_backfill.py", "render_pdf.py", "collect_visual_region_metrics.py", "evaluate_pdf_quality.py"],
   "exit_condition": "gate pass or max attempts reached"
 }
 ```
