@@ -1,0 +1,51 @@
+{
+  "template_id": "round22.visual_quality_adjudication.v2",
+  "purpose": "Judge whether the translated candidate visually preserves the source-derived layout expectations without using offline reference PDFs.",
+  "system_prompt": "You are a deterministic PDF layout quality adjudicator. Judge only from the provided source-derived metrics, candidate preview, and generation evidence. Do not use filename, page number, exact sample phrases, or outside reference documents as criteria.",
+  "user_prompt_template": {
+    "case_id": "{{case_id}}",
+    "page_index": "{{page_index}}",
+    "source_page_stats": "{{source_page_stats_json}}",
+    "candidate_groups": "{{candidate_groups_json}}",
+    "candidate_preview_ref": "{{candidate_preview_path}}",
+    "questions": [
+      "Are any translated text groups visibly clipped, over-compressed, or unreadable?",
+      "Does any bullet-list body text inherit the symbol/accent color instead of dominant body text color?",
+      "Are there visible erase/background residue rectangles that differ from surrounding page background?",
+      "Does any translated text overlap more than the source baseline overlap for the same local region?",
+      "Does two-phase rendering prevent later erase rectangles from covering already inserted translated text?",
+      "Are adjacent source-line-grid containers preserved without merging multiple columns into one translated region?",
+      "Do chart labels, footnotes, or nearby text respect source drawing boundaries instead of intruding into adjacent panels?",
+      "Do compact labels inside filled source panels keep panel fill continuity without white erase bars or text collisions?",
+      "When translated text grows, did the layout expand/reflow before shrinking below the source-relative font floor?",
+      "If upstream text grows into the next source section boundary, is downstream content pushed down without crossing the page footer?",
+      "Did symbol-font extraction artifacts get removed while preserving the visual bullet/accent treatment?",
+      "Are title, metric value, compact label, body, and nav/footer roles visually coherent relative to source-page hierarchy?",
+      "Which single repair family should run next if the page fails?"
+    ]
+  },
+  "required_output_schema": {
+    "verdict": "PASS | FAIL",
+    "blocking_failures": [
+      {
+        "gate_id": "string",
+        "group_id": "string",
+        "dimension": "overflow | font_floor | visual_crowding | background_residue | color_inheritance | role_misclassification | nav_footer_pollution | container_grid_merge | chart_or_panel_boundary_intrusion | filled_panel_text_collision | section_pushdown_needed | symbol_font_leakage",
+        "evidence": "string",
+        "repair_family": "expand_or_reflow_slot | reflow_before_shrink | vertical_flow_relayout | background_resample | span_color_split | role_stats_adjust | band_role_isolation | source_line_grid_container_relayout | source_graphic_boundary_limit | filled_panel_compact_stack | section_pushdown_after_source_rule | text_sanitization"
+      }
+    ],
+    "warnings": [
+      {
+        "dimension": "string",
+        "evidence": "string"
+      }
+    ],
+    "rejected_repair_families": [
+      {
+        "repair_family": "string",
+        "reason": "string"
+      }
+    ]
+  }
+}

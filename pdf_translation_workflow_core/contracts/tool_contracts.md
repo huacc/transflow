@@ -184,6 +184,7 @@ Required behavior:
 | expandable text slot | expand only declared `expandable_text_slots.region_kinds` such as headings, explanatory short labels, and profile-declared compact labels; require current-run target/source length ratio, source width ratio, page type, right-side obstacle, and below-same-column obstacle evidence |
 | textbox fit probe | test each candidate font size on a temporary page first; failed attempts must not draw on the real candidate page |
 | rotated navigation | execute `layout_policy.draw_modes.vertical_nav=rotated_horizontal_text_image` for narrow side navigation; target text must be laid out horizontally first and rotated as one unit, not inserted as one-character vertical writing |
+| image overlay background protection | extractable foreground text over an image/photo background must still be translated; when local pixels prove a non-plain image background, use text-only redaction/background protection and record `image_overlay_background_decision` |
 | preserve-line | preserve line-level insertion only for policy-defined compact labels, legends, vertical navigation, chart ticks, or single-line regions |
 | compact labels | consume explicit `layout_variants` from translation input; never invent document-specific abbreviations inside the generator; never reintroduce source-language residue such as `n/m` to make text fit |
 | constrained text image fit | after normal textbox probing fails, table cells, dense-page hard-slot short labels, legends, and dense-page single-line labels may be inserted as text images with full target text preserved; explanatory `short_label` and profile-declared `compact_label` must first try `expandable_text_slots`; `metric_value` must not use this fallback unless a future role-specific contract explicitly allows it; sizing must come from source-relative ratios and current-page font quantiles rather than fixed reusable point-size floors; evidence must record `status=constrained_text_image_fit`, `font_size`, target box, and `horizontal_compression_ratio` |
@@ -207,6 +208,19 @@ Required generation evidence:
   "preserved_target_language_unit_count": 0,
   "fit_warning_count": 0,
   "allowed_non_warning_insert_statuses": ["fit", "point_fit", "rotated_fit", "rotated_horizontal_image_fit", "constrained_text_image_fit"],
+  "redactions": [
+    {
+      "unit_id": "p5_b1_l0",
+      "redaction_fill_mode": "text_only_preserve_background",
+      "image_overlay_background_decision": {
+        "protect_background": true,
+        "reason": "image_overlay_background_protected",
+        "image_overlap_ratio": 1.0,
+        "source_background_saturation": 209.0,
+        "source_background_color_range": 238.0
+      }
+    }
+  ],
   "insertions": [
     {
       "region_id": "region_p0_b2_018",
@@ -226,6 +240,8 @@ Required generation evidence:
 `source_line_indexes` must be contiguous inside one source block unless the skipped line has been explicitly classified as ignorable. If one insertion jumps from line index `1` to `3` in the same block, the generator has crossed a visible source separator and product quality must fail through `source_anchor_order`.
 
 Each generated insertion must retain `redaction_fill_provenance`: the source unit id, chosen fill color, and sampling metadata used before redaction. A multi-unit region keeps one provenance record per source unit. This lets S8 explain whether a visible wipe artifact came from the generator's fill sampling or from later text drawing.
+
+`image_overlay_background_decision` is generated before redaction. It is valid only for extractable foreground text over a non-plain image/photo background: image-block overlap, local background color range/saturation, text/background contrast, and fill/background delta. It changes the redaction fill mode; it must not suppress translation or insertion. Text baked into image pixels is outside this text-object path unless OCR is explicitly authorized.
 
 `generate_semantic_backfill.py` must also materialize `background_covers` when colored-background source redactions would otherwise render as repeated horizontal bands. Two generic cover-scope methods are allowed:
 

@@ -1645,6 +1645,10 @@ BACKGROUND_COVER_SKIP_KINDS = {"table_cell", "legend", "vertical_nav", "compact_
 BACKGROUND_COVER_IMAGE_PATCH_SATURATION = 18.0
 BACKGROUND_COVER_IMAGE_PATCH_MIN_AREA_PT2 = 600.0
 BACKGROUND_COVER_SAMPLE_ZOOM = 2.0
+IMAGE_OVERLAY_MIN_OVERLAP_RATIO = 0.55
+IMAGE_OVERLAY_BACKGROUND_COLOR_RANGE = 36.0
+IMAGE_OVERLAY_BACKGROUND_SATURATION = 18.0
+IMAGE_OVERLAY_TEXT_BACKGROUND_DELTA = 60.0
 
 
 def should_apply_region_background_cover(region: dict[str, Any]) -> bool:
@@ -1655,6 +1659,8 @@ def should_apply_region_background_cover(region: dict[str, Any]) -> bool:
     if page_type in BACKGROUND_COVER_SKIP_PAGE_TYPES and kind not in {"table_note", "footnote"}:
         return False
     items = region.get("items") if isinstance(region.get("items"), list) else []
+    if any(bool(item.get("preserve_background_redaction")) for item in items):
+        return False
     if len(items) < 2 and str(region.get("layout_mode") or "") == "line_preserve":
         return False
     return kind in BACKGROUND_COVER_REGION_KINDS or bool(region.get("target_composition_applied")) or str(region.get("layout_mode") or "") == "region_flow"
@@ -1690,9 +1696,190 @@ def rgb_delta(a: tuple[int, int, int], b: tuple[int, int, int]) -> float:
     return sum(abs(x - y) for x, y in zip(a, b)) / 3.0
 
 
-def dominant_patch_row_color(samples: list[tuple[int, int, int]], fallback_rgb: tuple[int, int, int]) -> tuple[int, int, int]:
+def color_excluded(pixel: tuple[int, int, int], exclude_rgb: list[tuple[int, int, int]]) -> bool:
+    return any(rgb_delta(pixel, excluded) <= 42.0 for excluded in exclude_rgb)
+
+
+def dominant_rgb(
+    samples: list[tuple[int, int, int]],
+    fallback_rgb: tuple[int, int, int],
+    exclude_rgb: list[tuple[int, int, int]] | None = None,
+) -> tuple[int, int, int]:
     if not samples:
         return fallback_rgb
+    if exclude_rgb:
+        filtered = [pixel for pixel in samples if not color_excluded(pixel, exclude_rgb)]
+        if filtered:
+            samples = filtered
+    clusters: dict[tuple[int, int, int], list[tuple[int, int, int]]] = {}
+    for r, g, b in samples:
+        key = (round(r / 8) * 8, round(g / 8) * 8, round(b / 8) * 8)
+        clusters.setdefault(key, []).append((r, g, b))
+    cluster = max(clusters.values(), key=len)
+    return tuple(int(round(sum(pixel[i] for pixel in cluster) / len(cluster))) for i in range(3))
+
+
+def rgb_saturation(rgb: tuple[int, int, int]) -> float:
+    return float(max(rgb) - min(rgb))
+
+
+def source_cover_background_stats(
+    source_image: Image.Image | None,
+    rect: fitz.Rect,
+    fill_rgb: tuple[int, int, int],
+    zoom: float,
+    exclude_rgb: list[tuple[int, int, int]] | None = None,
+) -> dict[str, Any]:
+    if source_image is None:
+        return {
+            "source_background_rgb": list(fill_rgb),
+            "source_background_saturation": rgb_saturation(fill_rgb),
+            "source_background_color_range": 0.0,
+            "source_fill_delta": 0.0,
+            "image_patch_recommended": False,
+        }
+    box = cover_pixel_box(rect, source_image, zoom)
+    width = max(1, box[2] - box[0])
+    height = max(1, box[3] - box[1])
+    x_step = max(1, width // 12)
+    y_step = max(1, height // 12)
+    samples: list[tuple[int, int, int]] = []
+    for y in range(box[1], box[3], y_step):
+        for x in range(box[0], box[2], x_step):
+            samples.append(source_image.getpixel((x, y)))
+    # Always include the lower/right edge in case a narrow text box falls between grid points.
+    for y in {box[1], max(box[1], box[3] - 1)}:
+        for x in range(box[0], box[2], x_step):
+            samples.append(source_image.getpixel((x, y)))
+    for x in {box[0], max(box[0], box[2] - 1)}:
+        for y in range(box[1], box[3], y_step):
+            samples.append(source_image.getpixel((x, y)))
+    filtered_samples = [pixel for pixel in samples if not color_excluded(pixel, exclude_rgb or [])] if exclude_rgb else samples
+    if not filtered_samples:
+        filtered_samples = samples
+    source_rgb = dominant_rgb(filtered_samples, fill_rgb, exclude_rgb)
+    ranges = [max(pixel) - min(pixel) for pixel in filtered_samples] or [0]
+    channel_ranges = [
+        max(pixel[i] for pixel in filtered_samples) - min(pixel[i] for pixel in filtered_samples)
+        for i in range(3)
+    ] if filtered_samples else [0, 0, 0]
+    source_fill_delta = rgb_delta(source_rgb, fill_rgb)
+    color_range = max(max(ranges), max(channel_ranges))
+    image_patch_recommended = (
+        source_fill_delta >= 24.0
+        or rgb_saturation(source_rgb) >= BACKGROUND_COVER_IMAGE_PATCH_SATURATION
+        or color_range >= 36.0
+    )
+    return {
+        "source_background_rgb": list(source_rgb),
+        "source_background_saturation": round(rgb_saturation(source_rgb), 3),
+        "source_background_color_range": round(float(color_range), 3),
+        "source_fill_delta": round(source_fill_delta, 3),
+        "excluded_text_color_count": len(exclude_rgb or []),
+        "source_sample_count": len(samples),
+        "source_filtered_sample_count": len(filtered_samples),
+        "image_patch_recommended": image_patch_recommended,
+    }
+
+
+def page_image_background_rects(page: fitz.Page) -> list[fitz.Rect]:
+    rects: list[fitz.Rect] = []
+    try:
+        blocks = page.get_text("dict").get("blocks", [])
+    except Exception:
+        return rects
+    for block in blocks:
+        if block.get("type") != 1:
+            continue
+        bbox = block.get("bbox")
+        if not isinstance(bbox, (list, tuple)) or len(bbox) != 4:
+            continue
+        rect = fitz.Rect([float(v) for v in bbox])
+        if rect_is_usable(rect):
+            rects.append(rect)
+    return rects
+
+
+def fitz_rect_area(rect: fitz.Rect) -> float:
+    return max(0.0, float(rect.width)) * max(0.0, float(rect.height))
+
+
+def fitz_rect_overlap_ratio(inner: fitz.Rect, outer: fitz.Rect) -> float:
+    overlap = fitz.Rect(
+        max(inner.x0, outer.x0),
+        max(inner.y0, outer.y0),
+        min(inner.x1, outer.x1),
+        min(inner.y1, outer.y1),
+    )
+    inner_area = fitz_rect_area(inner)
+    if inner_area <= 0:
+        return 0.0
+    return max(0.0, fitz_rect_area(overlap)) / inner_area
+
+
+def rect_center_inside(rect: fitz.Rect, container: fitz.Rect) -> bool:
+    center_x = (rect.x0 + rect.x1) / 2.0
+    center_y = (rect.y0 + rect.y1) / 2.0
+    return container.x0 <= center_x <= container.x1 and container.y0 <= center_y <= container.y1
+
+
+def image_overlay_background_protection_decision(
+    source_image: Image.Image | None,
+    image_rects: list[fitz.Rect],
+    rect: fitz.Rect,
+    fill_rgb: tuple[int, int, int],
+    text_rgb: tuple[int, int, int],
+    zoom: float,
+) -> dict[str, Any]:
+    if source_image is None or not image_rects:
+        return {"protect_background": False, "reason": "no_source_image_background"}
+    overlap_ratios = [fitz_rect_overlap_ratio(rect, image_rect) for image_rect in image_rects]
+    max_overlap = max(overlap_ratios or [0.0])
+    center_inside = any(rect_center_inside(rect, image_rect) for image_rect in image_rects)
+    if max_overlap < IMAGE_OVERLAY_MIN_OVERLAP_RATIO and not center_inside:
+        return {
+            "protect_background": False,
+            "reason": "text_bbox_not_on_image_block",
+            "image_overlap_ratio": round(max_overlap, 4),
+            "image_center_inside": center_inside,
+        }
+    stats = source_cover_background_stats(source_image, rect, fill_rgb, zoom, [text_rgb])
+    background_rgb = tuple(int(v) for v in stats.get("source_background_rgb", list(fill_rgb))[:3])
+    background_luma = sum(background_rgb) / 3.0
+    background_saturation = float(stats.get("source_background_saturation") or 0.0)
+    background_color_range = float(stats.get("source_background_color_range") or 0.0)
+    text_background_delta = rgb_delta(background_rgb, text_rgb)
+    light_plain_background = background_luma >= 220.0 and background_saturation < 15.0 and background_color_range < 28.0
+    complex_or_nonplain = (
+        background_color_range >= IMAGE_OVERLAY_BACKGROUND_COLOR_RANGE
+        or background_saturation >= IMAGE_OVERLAY_BACKGROUND_SATURATION
+        or text_background_delta >= IMAGE_OVERLAY_TEXT_BACKGROUND_DELTA
+        or float(stats.get("source_fill_delta") or 0.0) >= 24.0
+    )
+    protect_background = bool(not light_plain_background and complex_or_nonplain)
+    return {
+        "protect_background": protect_background,
+        "reason": "image_overlay_background_protected" if protect_background else "image_block_background_is_plain",
+        "image_overlap_ratio": round(max_overlap, 4),
+        "image_center_inside": center_inside,
+        "text_background_delta": round(text_background_delta, 3),
+        "background_luma": round(background_luma, 3),
+        "light_plain_background": light_plain_background,
+        **stats,
+    }
+
+
+def dominant_patch_row_color(
+    samples: list[tuple[int, int, int]],
+    fallback_rgb: tuple[int, int, int],
+    exclude_rgb: list[tuple[int, int, int]] | None = None,
+) -> tuple[int, int, int]:
+    if not samples:
+        return fallback_rgb
+    if exclude_rgb:
+        filtered = [pixel for pixel in samples if not color_excluded(pixel, exclude_rgb)]
+        if filtered:
+            samples = filtered
     close_samples = [pixel for pixel in samples if rgb_delta(pixel, fallback_rgb) <= 18.0]
     usable = close_samples or samples
     clusters: dict[tuple[int, int, int], list[tuple[int, int, int]]] = {}
@@ -1708,6 +1895,7 @@ def background_cover_patch_png(
     rect: fitz.Rect,
     fallback_rgb: tuple[int, int, int],
     zoom: float,
+    exclude_rgb: list[tuple[int, int, int]] | None = None,
 ) -> tuple[bytes, tuple[int, int]] | None:
     box = cover_pixel_box(rect, source_image, zoom)
     width = max(1, box[2] - box[0])
@@ -1717,6 +1905,7 @@ def background_cover_patch_png(
     pad = max(4, int(round(6 * zoom)))
     edge = max(2, int(round(3 * zoom)))
     patch = Image.new("RGB", (width, height), fallback_rgb)
+    row_colors: list[tuple[int, int, int]] = []
     for row in range(height):
         y = max(0, min(source_image.height - 1, box[1] + row))
         samples: list[tuple[int, int, int]] = []
@@ -1740,7 +1929,21 @@ def background_cover_patch_png(
                         samples.append(source_image.getpixel((x, bottom_y)))
                 if len(samples) >= edge:
                     break
-        row_color = dominant_patch_row_color(samples, fallback_rgb)
+        row_color = dominant_patch_row_color(samples, fallback_rgb, exclude_rgb)
+        row_colors.append(row_color)
+    if row_colors:
+        smooth_radius = max(2, min(18, height // 18))
+        smoothed_colors: list[tuple[int, int, int]] = []
+        for row in range(height):
+            start = max(0, row - smooth_radius)
+            end = min(height, row + smooth_radius + 1)
+            window = row_colors[start:end]
+            smoothed_colors.append(
+                tuple(int(round(sum(color[channel] for color in window) / len(window))) for channel in range(3))
+            )
+    else:
+        smoothed_colors = [fallback_rgb for _ in range(height)]
+    for row, row_color in enumerate(smoothed_colors):
         for x in range(width):
             patch.putpixel((x, row), row_color)
     buf = io.BytesIO()
@@ -1754,15 +1957,24 @@ def draw_background_cover(
     fill: Any,
     source_background_image: Image.Image | None,
     sample_zoom: float,
+    exclude_rgb: list[tuple[int, int, int]] | None = None,
 ) -> dict[str, Any]:
     fallback_rgb = float_color_to_rgba(fill)[:3]
     area = float(cover_rect.width) * float(cover_rect.height)
-    if (
+    source_stats = source_cover_background_stats(source_background_image, cover_rect, fallback_rgb, sample_zoom, exclude_rgb)
+    patch_fallback_rgb = tuple(source_stats.get("source_background_rgb") or fallback_rgb)
+    should_use_patch = (
         source_background_image is not None
-        and fill_saturation(fill) >= BACKGROUND_COVER_IMAGE_PATCH_SATURATION
         and area >= BACKGROUND_COVER_IMAGE_PATCH_MIN_AREA_PT2
+        and (
+            fill_saturation(fill) >= BACKGROUND_COVER_IMAGE_PATCH_SATURATION
+            or bool(source_stats.get("image_patch_recommended"))
+        )
+    )
+    if (
+        should_use_patch
     ):
-        patch = background_cover_patch_png(source_background_image, cover_rect, fallback_rgb, sample_zoom)
+        patch = background_cover_patch_png(source_background_image, cover_rect, patch_fallback_rgb, sample_zoom, exclude_rgb)
         if patch is not None:
             png, patch_size = patch
             page.insert_image(cover_rect, stream=png, keep_proportion=False, overlay=True)
@@ -1771,6 +1983,8 @@ def draw_background_cover(
                 "sample_zoom": sample_zoom,
                 "patch_size_px": list(patch_size),
                 "fallback_rgb": list(fallback_rgb),
+                "patch_fallback_rgb": list(patch_fallback_rgb),
+                **source_stats,
             }
     page.draw_rect(cover_rect, color=None, fill=fill, overlay=True)
     return {
@@ -1778,6 +1992,8 @@ def draw_background_cover(
         "sample_zoom": None,
         "patch_size_px": None,
         "fallback_rgb": list(fallback_rgb),
+        "patch_fallback_rgb": None,
+        **source_stats,
     }
 
 
@@ -1791,13 +2007,15 @@ def apply_region_background_cover(
         return None
     cover_rect = source_background_cover_rect(region, page.rect)
     fill = region.get("background_color", (1.0, 1.0, 1.0))
-    draw_result = draw_background_cover(page, cover_rect, fill, source_background_image, sample_zoom)
+    exclude_rgb = [float_color_to_rgba(item.get("text_color", (0.05, 0.05, 0.05)))[:3] for item in region.get("items", [])]
+    draw_result = draw_background_cover(page, cover_rect, fill, source_background_image, sample_zoom, exclude_rgb)
     return {
         "region_id": region.get("region_id"),
         "unit_ids": [item.get("unit_id") for item in region.get("items", [])],
         "page_index": region.get("page_index"),
         "bbox": [round(float(v), 3) for v in cover_rect],
         "fill_color": [round(float(v), 4) for v in fill],
+        "excluded_text_colors_rgb": [list(color) for color in exclude_rgb],
         **draw_result,
         "method": "region_background_cover",
         "region_kind": region.get("region_kind"),
@@ -1820,6 +2038,8 @@ def should_apply_residual_background_cover(
     policy: dict[str, Any],
     page_context: dict[str, Any] | None,
 ) -> bool:
+    if bool(item.get("preserve_background_redaction")):
+        return False
     rect = item["rect"]
     if rect.width < float(page_rect.width) * 0.45:
         return False
@@ -1884,7 +2104,8 @@ def apply_residual_background_covers(
     for index, group in enumerate(group_residual_cover_items(candidates)):
         cover_rect = residual_cover_rect(group, page.rect)
         fill = dominant_fill_color(group)
-        draw_result = draw_background_cover(page, cover_rect, fill, source_background_image, sample_zoom)
+        exclude_rgb = [float_color_to_rgba(item.get("text_color", (0.05, 0.05, 0.05)))[:3] for item in group]
+        draw_result = draw_background_cover(page, cover_rect, fill, source_background_image, sample_zoom, exclude_rgb)
         records.append(
             {
                 "region_id": f"residual_background_cover_{index:03d}",
@@ -1892,6 +2113,7 @@ def apply_residual_background_covers(
                 "page_index": group[0].get("page_index"),
                 "bbox": [round(float(v), 3) for v in cover_rect],
                 "fill_color": [round(float(v), 4) for v in fill],
+                "excluded_text_colors_rgb": [list(color) for color in exclude_rgb],
                 **draw_result,
                 "method": "residual_wide_line_background_cover",
                 "region_kind": "wide_colored_background_line_group",
@@ -2401,7 +2623,8 @@ def generate(
         page_index = int(page_info["page_index"])
         page = doc[page_index]
         page_units: list[dict[str, Any]] = []
-        source_background_image: Image.Image | None = None
+        source_background_image: Image.Image | None = page_background_sample_image(page, BACKGROUND_COVER_SAMPLE_ZOOM)
+        image_background_rects = page_image_background_rects(page)
         line_repairs = decorative_numeric_merge_repairs(page_info.get("text_lines", []), page.rect)
         for line in page_info.get("text_lines", []):
             source_unit = line_is_translatable(line, source_language)
@@ -2410,6 +2633,22 @@ def generate(
                 continue
             unit_id = str(line["line_id"])
             source_text = str(line.get("text", ""))
+            repair = line_repairs.get(unit_id)
+            bbox = [float(v) for v in (repair.get("bbox") if repair else line["bbox"])]
+            rect = inflate_rect(bbox, page.rect)
+            fill_provenance = sample_fill_detail(page, rect)
+            fill = fill_provenance["fill_color"]
+            text_color = color_int_to_rgb(line.get("color"))
+            text_rgb = float_color_to_rgba(text_color)[:3]
+            fill_rgb = float_color_to_rgba(fill)[:3]
+            image_overlay_background_decision = image_overlay_background_protection_decision(
+                source_background_image,
+                image_background_rects,
+                rect,
+                fill_rgb,
+                text_rgb,
+                BACKGROUND_COVER_SAMPLE_ZOOM,
+            )
             translation_mode = "semantic_translation"
             translated = semantic_by_id.get(unit_id)
             if source_unit:
@@ -2435,13 +2674,20 @@ def generate(
                 translation_mode = "preserve_already_target_language_span"
                 preserved_target_language_unit_count += 1
 
-            repair = line_repairs.get(unit_id)
             if repair and repair.get("trim_trailing_digit"):
                 target_text = trim_trailing_decorative_digit(target_text, str(repair["trim_trailing_digit"]))
-            bbox = [float(v) for v in (repair.get("bbox") if repair else line["bbox"])]
-            rect = inflate_rect(bbox, page.rect)
-            fill_provenance = sample_fill_detail(page, rect)
-            fill = fill_provenance["fill_color"]
+            background_preserve_stats = source_cover_background_stats(
+                source_background_image,
+                rect,
+                fill_rgb,
+                BACKGROUND_COVER_SAMPLE_ZOOM,
+                [text_rgb],
+            )
+            preserve_background_redaction = bool(background_preserve_stats.get("image_patch_recommended"))
+            preserve_background_redaction = bool(
+                preserve_background_redaction
+                or image_overlay_background_decision.get("protect_background")
+            )
             page_unit = {
                 "unit_id": unit_id,
                 "page_index": page_index,
@@ -2455,8 +2701,11 @@ def generate(
                     "rect": rect,
                     "fill_color": fill,
                     "fill_color_provenance": fill_provenance,
+                    "preserve_background_redaction": preserve_background_redaction,
+                    "background_preserve_stats": background_preserve_stats,
+                    "image_overlay_background_decision": image_overlay_background_decision,
                 "font_size": float(line.get("font_size") or 6.0),
-                "text_color": color_int_to_rgb(line.get("color")),
+                "text_color": text_color,
                 "translated": translated,
             }
             if repair:
@@ -2486,15 +2735,18 @@ def generate(
                     "unit_id": unit_id,
                     "page_index": page_index,
                     "bbox": [round(v, 3) for v in rect],
-                    "fill_color": [round(v, 4) for v in fill],
+                    "fill_color": None if preserve_background_redaction else [round(v, 4) for v in fill],
+                    "sampled_fill_color": [round(v, 4) for v in fill],
+                    "redaction_fill_mode": "text_only_preserve_background" if preserve_background_redaction else "solid_fill",
                     "fill_color_provenance": fill_provenance,
+                    "background_preserve_stats": background_preserve_stats,
+                    "image_overlay_background_decision": image_overlay_background_decision,
                 }
             )
-            page.add_redact_annot(rect, fill=fill)
+            page.add_redact_annot(rect, fill=None if preserve_background_redaction else fill)
             page_units.append(page_unit)
 
         if page_units:
-            source_background_image = page_background_sample_image(page, BACKGROUND_COVER_SAMPLE_ZOOM)
             page.apply_redactions(
                 images=fitz.PDF_REDACT_IMAGE_NONE,
                 graphics=fitz.PDF_REDACT_LINE_ART_NONE,

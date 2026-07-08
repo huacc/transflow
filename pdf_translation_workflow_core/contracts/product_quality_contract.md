@@ -101,6 +101,8 @@ The workflow cannot proceed to `S_DONE_PRODUCT_ACCEPTED` until every blocking qu
 
 `background_covers` are the generator-side repair evidence for this class. `region_background_cover` and `residual_wide_line_background_cover` are valid only when derived from current-run geometry and local fill sampling; they must not use sample-specific page numbers, text, or colors. Large covers on saturated/color backgrounds must use `draw_mode=row_sampled_image_patch`, not `solid_vector_fill`. If `redaction_metrics[*].wide_line_patch_risk=true` and `covered_by_background_cover=false`, or if `background_cover_metrics[*].status=fail`, `background_residue_artifact` is blocking and routes to `background_residue_fill_resample`.
 
+Extractable foreground text over an image/photo background is still source text. S7 must translate and insert it, but should protect the image background by recording `redactions[*].image_overlay_background_decision` and using text-only redaction when local pixels prove a complex non-plain background. Text that is baked into the image pixels is outside the normal text backfill path unless OCR is explicitly authorized.
+
 If the run uses `deterministic_placeholder`, the correct terminal state is `S_FAIL_CAPABILITY` or `S_FAIL_QUALITY`; it cannot be counted as a product-quality attempt that is merely awaiting visual repair.
 
 If `docs\input\semantic_translations\<case_id>.translations.json` is missing or fails validation, the correct terminal state is `S_FAIL_CAPABILITY` before candidate generation.

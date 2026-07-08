@@ -185,6 +185,7 @@ selection = quantized majority color cluster, with inner samples weighted above 
 forbidden = filename/page/text/fixed color/known brand coordinate
 output = fill_color + provenance in candidate_generation_evidence.json redactions and insertions.redaction_fill_provenance
 output += background_covers[] when current-run geometry needs region_background_cover or residual_wide_line_background_cover
+output += image_overlay_background_decision in redactions[] when extractable foreground text sits above a complex image/photo background
 background_covers[].method = cover scope policy
 background_covers[].draw_mode = solid_vector_fill for neutral/small covers, row_sampled_image_patch for large saturated/color covers
 ```
@@ -192,6 +193,11 @@ background_covers[].draw_mode = solid_vector_fill for neutral/small covers, row_
 判断逻辑：
 
 ```text
+“图片上的文字”只指照片/位图像素里拍到或烘焙进去的文字，例如照片中公司的英文招牌；这类文字没有独立 PDF text object，当前无 OCR 授权时作为图片自然保留，不进入翻译、擦除或 residue 判定。
+浮在图片或半透明色块上的 PDF 前景文字，只要能被文本抽取器提取，就是可编辑源文本，必须按正常语义翻译回填；不能因为 bbox 与 image block 重叠就跳过翻译。
+如果可抽取前景文字位于照片、复杂图像或高对比图片底色上，S7 仍要翻译回填，但 redaction 必须保护底图：优先使用 text_only_preserve_background，不能用白色/实心色块擦坏图片。
+image_overlay_background_decision 只能来自当前页 image block bbox overlap、bbox 中排除文字颜色后的背景主色、背景色彩范围、饱和度、文字/背景对比和 fill/background 差值，不能来自页码、文件名、固定坐标或样本文字。
+S7 必须在 `candidate_generation_evidence.json.redactions[].image_overlay_background_decision` 记录 protect_background、image_overlap_ratio、source_background_saturation、source_background_color_range、text_background_delta 和 reason。
 如果源字形为红色/蓝色/灰色，但周边背景为白色或米色，则 fill_color 必须接近周边背景。
 如果源文字位于红色/灰色底栏中，且周边背景也是该颜色，则 fill_color 可为该栏底色。
 如果源文字位于彩色条、表头、蓝底页或图片附近，且 bbox 内侧主背景与外环主背景不同，fill_color 必须优先保护 bbox 内侧主背景，避免用页面底色擦掉彩色条。

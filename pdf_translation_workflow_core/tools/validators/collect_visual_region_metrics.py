@@ -12,6 +12,7 @@ anti_overfit_statement: classifies by current-run geometry, region roles, render
 from __future__ import annotations
 
 import argparse
+import hashlib
 import math
 import sys
 from pathlib import Path
@@ -319,8 +320,19 @@ def crop_contact_sheet(source_crop: Image.Image, output_crop: Image.Image, out_p
     draw.text((source_crop.width + pad * 2, 6), f"output {label}", fill="black")
     sheet.paste(source_crop, (pad, label_h + pad))
     sheet.paste(output_crop, (source_crop.width + pad * 2, label_h + pad))
-    sheet.save(out_path)
+    try:
+        ensure_dir(out_path.parent)
+        sheet.save(out_path)
+    except FileNotFoundError:
+        ensure_dir(out_path.parent)
+        sheet.save(out_path)
     return rel(out_path)
+
+
+def crop_file_name(page_index: int, identifier: Any, role: str) -> str:
+    digest = hashlib.sha1(str(identifier or role).encode("utf-8", errors="replace")).hexdigest()[:10]
+    safe_role = "".join(ch if ch.isalnum() else "_" for ch in str(role or "crop"))[:14] or "crop"
+    return f"p{page_index + 1:02d}_{digest}_{safe_role}.png"
 
 
 def region_role(insertion: dict[str, Any], page_rect: fitz.Rect, source_bg: tuple[int, int, int]) -> str:
@@ -558,6 +570,8 @@ def collect(
     zoom: float,
 ) -> dict[str, Any]:
     evidence = read_json(generation_evidence)
+    if crop_dir is not None:
+        ensure_dir(crop_dir)
     cover_rects_by_page: dict[int, list[list[float]]] = {}
     for cover in evidence.get("background_covers", []):
         if not isinstance(cover, dict):
@@ -651,8 +665,7 @@ def collect(
         gate_id = ROLE_RULES.get(role, ROLE_RULES["body"])["gate_id"]
         crop_ref = None
         if crop_dir is not None and status in {"fail", "warn"}:
-            safe_region_id = str(insertion.get("region_id") or "region").replace("/", "_").replace("\\", "_")
-            crop_path = crop_dir / f"page_{page_index + 1:02d}_{safe_region_id}_{role}.png"
+            crop_path = crop_dir / crop_file_name(page_index, insertion.get("region_id") or "region", role)
             crop_ref = crop_contact_sheet(source_crop, output_crop, crop_path, role)
         metric = {
             "region_id": insertion.get("region_id"),
@@ -713,6 +726,7 @@ def collect(
         source_crop = source_image.crop(crop_box)
         output_crop = output_image.crop(crop_box)
         fill_rgb = normalized_float_color_to_rgb(redaction.get("fill_color")) or (255, 255, 255)
+        redaction_fill_mode = str(redaction.get("redaction_fill_mode") or "solid_fill")
         source_ring_bg = ring_dominant_rgb(source_image, box, pad)
         output_ring_bg = ring_dominant_rgb(output_image, box, pad)
         fill_delta = color_delta(fill_rgb, source_ring_bg)
@@ -730,7 +744,9 @@ def collect(
         status = "pass"
         reasons: list[str] = []
         repair_atoms: list[str] = []
-        if wide_line_patch_risk:
+        if redaction_fill_mode == "text_only_preserve_background":
+            reasons.append("text-only redaction preserves source background pixels")
+        elif wide_line_patch_risk:
             status = "fail"
             reasons.append("wide colored-background line redaction has no region_background_cover and can render as a horizontal band")
             repair_atoms.append("background_residue_fill_resample")
@@ -748,8 +764,7 @@ def collect(
             repair_atoms.append("background_residue_fill_resample")
         crop_ref = None
         if crop_dir is not None and status in {"fail", "warn"}:
-            safe_id = str(redaction.get("unit_id") or "redaction").replace("/", "_").replace("\\", "_")
-            crop_path = crop_dir / f"page_{page_index + 1:02d}_{safe_id}_redaction_fill.png"
+            crop_path = crop_dir / crop_file_name(page_index, redaction.get("unit_id") or "redaction", "redaction_fill")
             crop_ref = crop_contact_sheet(source_crop, output_crop, crop_path, "redaction_fill")
         redaction_metrics.append(
             {
@@ -766,6 +781,9 @@ def collect(
                 "patch_score": patch_score,
                 "covered_by_background_cover": covered_by_background_cover,
                 "wide_line_patch_risk": wide_line_patch_risk,
+                "redaction_fill_mode": redaction_fill_mode,
+                "sampled_fill_color_rgb": list(normalized_float_color_to_rgb(redaction.get("sampled_fill_color")) or fill_rgb),
+                "background_preserve_stats": redaction.get("background_preserve_stats"),
                 "fill_method": (redaction.get("fill_color_provenance") or {}).get("method"),
                 "fill_color_provenance": redaction.get("fill_color_provenance"),
                 "reasons": reasons,
@@ -786,20 +804,34 @@ def collect(
         fill_rgb = normalized_float_color_to_rgb(cover.get("fill_color")) or (255, 255, 255)
         draw_mode = str(cover.get("draw_mode") or "solid_vector_fill")
         fill_saturation = saturation(fill_rgb)
+        source_background_rgb = normalized_float_color_to_rgb(cover.get("source_background_rgb"))
+        source_background_saturation = (
+            float(cover.get("source_background_saturation") or saturation(source_background_rgb))
+            if source_background_rgb is not None
+            else 0.0
+        )
+        source_background_color_range = float(cover.get("source_background_color_range") or 0.0)
+        source_fill_delta = float(cover.get("source_fill_delta") or 0.0)
         status = "pass"
         reasons: list[str] = []
         repair_atoms: list[str] = []
-        if draw_mode == "solid_vector_fill" and fill_saturation >= BACKGROUND_COVER_SOLID_PATCH_SATURATION_FAIL:
+        solid_cover_risk = (
+            fill_saturation >= BACKGROUND_COVER_SOLID_PATCH_SATURATION_FAIL
+            or source_background_saturation >= BACKGROUND_COVER_SOLID_PATCH_SATURATION_FAIL
+            or source_background_color_range >= 36.0
+            or source_fill_delta >= 24.0
+        )
+        if draw_mode == "solid_vector_fill" and solid_cover_risk:
             if area_pt2 >= BACKGROUND_COVER_SOLID_PATCH_AREA_FAIL:
                 status = "fail"
                 reasons.append(
-                    "large solid_vector_fill background cover on a saturated/color background can create a visible rectangular block"
+                    "large solid_vector_fill background cover differs from current source background or covers saturated/complex pixels"
                 )
                 repair_atoms.append("background_residue_fill_resample")
             elif area_pt2 >= BACKGROUND_COVER_SOLID_PATCH_AREA_WARN:
                 status = "warn"
                 reasons.append(
-                    "small solid_vector_fill background cover on a saturated/color background should prefer row_sampled_image_patch"
+                    "small solid_vector_fill background cover should prefer row_sampled_image_patch for this source background"
                 )
                 repair_atoms.append("background_residue_fill_resample")
         elif draw_mode == "row_sampled_image_patch" and not cover.get("patch_size_px"):
@@ -817,6 +849,11 @@ def collect(
                 "draw_mode": draw_mode,
                 "fill_color_rgb": list(fill_rgb),
                 "fill_saturation": round(fill_saturation, 3),
+                "source_background_rgb": list(source_background_rgb) if source_background_rgb is not None else None,
+                "source_background_saturation": round(source_background_saturation, 3),
+                "source_background_color_range": round(source_background_color_range, 3),
+                "source_fill_delta": round(source_fill_delta, 3),
+                "image_patch_recommended": bool(cover.get("image_patch_recommended")),
                 "area_pt2": round(area_pt2, 3),
                 "patch_size_px": cover.get("patch_size_px"),
                 "sample_zoom": cover.get("sample_zoom"),
