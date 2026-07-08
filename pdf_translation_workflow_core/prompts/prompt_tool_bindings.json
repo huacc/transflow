@@ -129,7 +129,9 @@
     {
       "state": "S6_LayoutPlan",
       "tool_first": [
-        "tools/planners/build_layout_policy.py"
+        "tools/planners/build_layout_policy.py",
+        "tools/planners/build_role_plan.py",
+        "tools/planners/build_layout_plan.py in phase-1 shadow mode"
       ],
       "model_prompt": "templates/D4_layout_plan.prompt.json",
       "slot_bindings": {
@@ -138,11 +140,15 @@
         "source_geometry": "source_extraction.json bboxes + avoid regions",
         "font_capabilities": "tool_probe.json fonts",
         "language_profile": "pdf_translation_workflow_core/profiles/<source_language>_to_<target_language>.layout_profile.json",
-        "baseline_layout_policy": "layout_policy.json produced by build_layout_policy.py"
+        "baseline_layout_policy": "layout_policy.json produced by build_layout_policy.py",
+        "role_plan": "role_plan.json produced by build_role_plan.py",
+        "layout_plan_shadow": "layout_plan.shadow.json produced by build_layout_plan.py; not generator-consumed until v2 is enabled"
       },
       "produces": [
         "layout_policy.json",
-        "layout_plan.json"
+        "role_plan.json",
+        "layout_plan.shadow.json",
+        "layout_plan.json from S7 generator"
       ],
       "required_decisions": [
         "policy numeric values must come from current-run extraction statistics, explicit D4 judgement, or user feedback evidence",

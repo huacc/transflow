@@ -324,13 +324,13 @@ class Runner:
         )
         raise FileNotFoundError(f"no semantic translation JSON validates against current extraction for {case_id}")
 
-    def language_profile(self, case: dict[str, Any]) -> Path:
+    def language_profile(self, case: dict[str, Any]) -> Path | None:
         source = str(case.get("source_language") or "").lower()
         target = str(case.get("target_language") or "").lower()
         profile = Path("pdf_translation_workflow_core") / "profiles" / f"{source}_to_{target}.layout_profile.json"
         if profile.exists():
             return profile
-        return Path()
+        return None
 
     def run_case(self, case: dict[str, Any]) -> dict[str, Any]:
         case_id = str(case["case_id"])
@@ -340,6 +340,8 @@ class Runner:
         extraction = case_dir / "source_extraction.json"
         sem_validation = case_dir / "semantic_translation_validation.json"
         policy = case_dir / "layout_policy.json"
+        role_plan = case_dir / "role_plan.json"
+        planned_layout = case_dir / "layout_plan.shadow.json"
         output_pdf = self.output_dir / f"{case_id}_candidate.pdf"
         evidence = case_dir / "candidate_generation_evidence.json"
         translations_used = case_dir / "translations.used.json"
@@ -389,15 +391,51 @@ class Runner:
             "--out",
             str(policy),
         ]
-        if profile:
+        if profile is not None:
             cmd.extend(["--language-profile", str(profile)])
         self.run_cmd(
             "S6_LayoutPlan",
             f"S6_BuildLayoutPolicy:{case_id}",
             "build_layout_policy.py",
             cmd,
-            [extraction, sem] + ([profile] if profile else []),
+            [extraction, sem] + ([profile] if profile is not None else []),
             [policy],
+        )
+        self.run_cmd(
+            "S6_LayoutPlan",
+            f"S6_BuildRolePlan:{case_id}",
+            "build_role_plan.py",
+            [
+                PYTHON,
+                "pdf_translation_workflow_core/tools/planners/build_role_plan.py",
+                "--source-extraction",
+                str(extraction),
+                "--semantic-translations",
+                str(sem),
+                "--layout-policy",
+                str(policy),
+                "--out",
+                str(role_plan),
+            ],
+            [extraction, sem, policy],
+            [role_plan],
+        )
+        self.run_cmd(
+            "S6_LayoutPlan",
+            f"S6_BuildLayoutPlanShadow:{case_id}",
+            "build_layout_plan.py",
+            [
+                PYTHON,
+                "pdf_translation_workflow_core/tools/planners/build_layout_plan.py",
+                "--role-plan",
+                str(role_plan),
+                "--layout-policy",
+                str(policy),
+                "--out",
+                str(planned_layout),
+            ],
+            [role_plan, policy],
+            [planned_layout],
         )
         self.run_cmd(
             "S7_GenerateCandidate",
@@ -469,8 +507,8 @@ class Runner:
             [visual_metrics],
         )
         self.run_cmd(
-            "Lx_RepairLoop",
-            f"Lx_PlanVisualRegionRepairs:{case_id}",
+            "S8_VerifyProductQuality",
+            f"S8_PlanVisualRegionRepairs:{case_id}",
             "plan_visual_region_repairs.py",
             [
                 PYTHON,
@@ -577,6 +615,8 @@ class Runner:
                 "source_extraction": extraction,
                 "semantic_translation_validation": sem_validation,
                 "layout_policy": policy,
+                "role_plan": role_plan,
+                "planned_layout_plan": planned_layout,
                 "candidate_generation_evidence": evidence,
                 "candidate_render_manifest": render_manifest,
                 "visual_region_metrics": visual_metrics,
@@ -1264,21 +1304,28 @@ class Runner:
             "S5_TranslationPlan",
             "S6_LayoutPlan",
             "semantic validations completed",
-            ["build_layout_policy.py"],
+            ["build_layout_policy.py", "build_role_plan.py", "build_layout_plan.py"],
             [case["semantic_translation_validation"] for case in results],
             [],
             ["D4_layout_plan"],
             [{"gate_id": "semantic_translation_validation", "status": "pass"}],
-            "build layout policies",
+            "build layout policies and shadow role/layout plans",
         )
         self.decision(
             "D4_layout_plan",
             "S6_LayoutPlan",
-            "Layout policies are built from current extraction statistics and language profiles.",
-            [case["layout_policy"] for case in results],
+            "Layout policies and shadow role/layout plans are built from current extraction statistics, semantic translations, and language profiles.",
+            [case["layout_policy"] for case in results] + [case["role_plan"] for case in results] + [case["planned_layout_plan"] for case in results],
             "D4_layout_plan.prompt.json",
-            ["layout_policy", "language_pair_profile", "font_profiles", "fit_risks"],
-            {"verdict": "pass", "backend_model_call_made": False, "policy_source": "build_layout_policy.py"},
+            ["layout_policy", "role_plan", "layout_plan_shadow", "language_pair_profile", "font_profiles", "fit_risks"],
+            {
+                "verdict": "pass",
+                "backend_model_call_made": False,
+                "policy_source": "build_layout_policy.py",
+                "role_plan_source": "build_role_plan.py",
+                "layout_plan_shadow_source": "build_layout_plan.py",
+                "layout_plan_shadow_consumed_by_generator": False,
+            },
             "S7_GenerateCandidate",
         )
         self.transition(
@@ -1313,6 +1360,8 @@ class Runner:
             "S8_VerifyProductQuality",
         )
         failed_cases = [case for case in results if case.get("product_quality_verdict") != "PASS"]
+        repair_records = [item for case in failed_cases for item in case.get("repair_loop_records", [])]
+        quality_failure_next_state = "Lx_RepairLoop" if repair_records else "S_FAIL_QUALITY"
         self.decision(
             "D7_similarity_gate",
             "S8_VerifyProductQuality",
@@ -1324,8 +1373,10 @@ class Runner:
                 "verdict": "fail" if failed_cases else "pass",
                 "backend_model_call_made": False,
                 "failed_cases": [case["case_id"] for case in failed_cases],
+                "repair_loop_entered": bool(repair_records),
+                "repair_loop_record_count": len(repair_records),
             },
-            "Lx_RepairLoop" if failed_cases else "S9_VerifyProcessContract",
+            quality_failure_next_state if failed_cases else "S9_VerifyProcessContract",
         )
         self.transition(
             "S7_GenerateCandidate",
@@ -1339,7 +1390,6 @@ class Runner:
             "pass to S9 or enter repair loop",
         )
         if failed_cases:
-            repair_records = [item for case in failed_cases for item in case.get("repair_loop_records", [])]
             applied_repair_records: list[str] = []
             not_executed_repair_records: list[str] = []
             for record_ref in repair_records:
@@ -1351,14 +1401,15 @@ class Runner:
                     applied_repair_records.append(record_ref)
                 else:
                     not_executed_repair_records.append(record_ref)
-            d8_reason = (
-                "One generic repair loop was applied and rejudged, but blocking quality failures remain or the configured repair-loop budget was exhausted."
-                if applied_repair_records
-                else "No generic repair atom executor is wired for the remaining failures in this round."
-            )
+            if applied_repair_records:
+                d8_reason = "One generic repair loop was applied and rejudged, but blocking quality failures remain or the configured repair-loop budget was exhausted."
+            elif repair_records:
+                d8_reason = "Repair loop was entered but no generic repair atom executor completed the remaining failures in this round."
+            else:
+                d8_reason = "Product quality failed, but no repair loop was entered because no repair_loop record was produced for the current failure set."
             self.decision(
                 "D8_minimal_repair_selection",
-                "Lx_RepairLoop",
+                "Lx_RepairLoop" if repair_records else "S8_VerifyProductQuality",
                 "Record selected repair atoms and repair-loop execution boundary.",
                 [case["visual_repair_plan"] for case in failed_cases],
                 "D8_repair_selection.prompt.json",
@@ -1373,17 +1424,18 @@ class Runner:
                 },
                 "S_FAIL_QUALITY",
             )
-            self.transition(
-                "S8_VerifyProductQuality",
-                "Lx_RepairLoop",
-                "blocking product-quality failures found",
-                ["plan_visual_region_repairs.py", "run_semantic_product_quality_round.py"],
-                [case["product_quality_gates"] for case in failed_cases],
-                [Path(item) for case in failed_cases for item in case.get("repair_loop_records", [])],
-                ["D8_minimal_repair_selection"],
-                [{"gate_id": "repair_loop_records", "status": "pass", "record_count": sum(len(case.get("repair_loop_records", [])) for case in failed_cases)}],
-                "record loop execution boundary, then fail quality honestly",
-            )
+            if repair_records:
+                self.transition(
+                    "S8_VerifyProductQuality",
+                    "Lx_RepairLoop",
+                    "blocking product-quality failures found and repair-loop records exist",
+                    ["plan_visual_region_repairs.py", "run_semantic_product_quality_round.py"],
+                    [case["product_quality_gates"] for case in failed_cases],
+                    [Path(item) for item in repair_records],
+                    ["D8_minimal_repair_selection"],
+                    [{"gate_id": "repair_loop_records", "status": "pass", "record_count": len(repair_records)}],
+                    "record loop execution boundary, then fail quality honestly",
+                )
             terminal = "S_FAIL_QUALITY"
             product_verdict = "FAIL"
         else:
@@ -1408,17 +1460,30 @@ class Runner:
             terminal,
         )
         if failed_cases:
-            self.transition(
-                "Lx_RepairLoop",
-                "S_FAIL_QUALITY",
-                "repair loop records written but no generic repair executor completed the remaining fixes",
-                ["run_semantic_product_quality_round.py"],
-                [Path(item) for case in failed_cases for item in case.get("repair_loop_records", [])],
-                [],
-                ["D9_final_acceptance"],
-                [{"gate_id": "product_quality", "status": "fail"}],
-                "write final process audit",
-            )
+            if repair_records:
+                self.transition(
+                    "Lx_RepairLoop",
+                    "S_FAIL_QUALITY",
+                    "repair loop records written but no generic repair executor completed the remaining fixes",
+                    ["run_semantic_product_quality_round.py"],
+                    [Path(item) for item in repair_records],
+                    [],
+                    ["D9_final_acceptance"],
+                    [{"gate_id": "product_quality", "status": "fail"}],
+                    "write final process audit",
+                )
+            else:
+                self.transition(
+                    "S8_VerifyProductQuality",
+                    "S_FAIL_QUALITY",
+                    "product-quality failure without an entered repair loop",
+                    ["run_semantic_product_quality_round.py"],
+                    [case["product_quality_gates"] for case in failed_cases],
+                    [],
+                    ["D8_minimal_repair_selection", "D9_final_acceptance"],
+                    [{"gate_id": "product_quality", "status": "fail", "repair_loop_record_count": 0}],
+                    "write final process audit",
+                )
         else:
             self.transition(
                 "S8_VerifyProductQuality",

@@ -135,6 +135,8 @@ The fill sampler is an open function over the current bbox and page pixels. It m
 | `validate_translation_batch.py` | `product_quality` | validates one D2 batch before assembly |
 | `assemble_semantic_translations.py` | `product_quality` | assembles validated batch outputs into semantic translation JSON |
 | `build_layout_policy.py` | `product_quality` and validation runs | derives a run-local layout policy from current extraction statistics plus the matching generic language layout profile; may be revised by D4 model judgement |
+| `build_role_plan.py` | `product_quality` and validation runs | derives current-run role groups from source extraction, semantic translations, page-relative font hierarchy, color, geometry, and generic value/note patterns; produces `role_plan.json` as D4 evidence |
+| `build_layout_plan.py` | `product_quality` and validation runs | projects `role_plan.json` plus `layout_policy.json` into a shadow `layout_plan.shadow.json`; phase-1 output is evidence only and must not be treated as the generator-consumed layout plan until the v2 path is explicitly enabled |
 | `generate_semantic_backfill.py` | `product_quality` | consumes validated semantic translations and explicit layout policy, then performs redaction/backfill with region-level target-language reflow |
 
 `product_quality` must not silently fall back to `generate_backfill_candidate.py`. If semantic translations are missing or fail validation, return `S_FAIL_CAPABILITY` before creating a product candidate.
@@ -164,6 +166,8 @@ Required behavior:
 |---|---|
 | redaction | redact every extractable source text unit by its original bbox |
 | layout policy | read `layout_policy.json`; do not hardcode role thresholds, font scales, shrink arrays, or fallback lengths in generator logic |
+| role plan | after `layout_policy.json`, run `build_role_plan.py` to produce `role_plan.json`; each group must cite current-page source-relative evidence and must not depend on filename, page number, exact sample text, fixed coordinates, or reference PDFs |
+| layout plan shadow | run `build_layout_plan.py` to produce `layout_plan.shadow.json`; in phase 1 this is regression evidence only, while generated `layout_plan.json` remains the artifact written by `generate_semantic_backfill.py` |
 | language profile | `layout_policy.json` must record `language_pair_profile`, `language_profile_json`, `language_profile_sha256`, and `layout_strategy`; language-direction behavior must come from this explicit profile, not sample branches |
 | already-target spans | if a source-language PDF contains visible text that is already in the target language and that text may be covered by a recomposed target frame, the generator may mark it `preserve_already_target_language_span`, redact it, and redraw the same text; this is preservation evidence, not semantic translation evidence |
 | grouping | derive block/region groups from current-run extraction metadata such as `unit_id`, bbox, font size, page geometry, and policy thresholds |

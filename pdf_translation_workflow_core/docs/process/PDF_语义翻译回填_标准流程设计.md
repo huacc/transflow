@@ -2158,3 +2158,32 @@ target_state = S6_LayoutPlan
 ```
 
 D8/repair planner 必须记录左右 region id、page_number、left/right role、left/right kind、两个 bbox 和 `overlap_ratio_of_smaller`。修复优先级是：先回到 S6 重新分类面板/表格标签、收紧不安全的 target_language_reflow/target_composition，再回 S7 重生成；不能用重翻译掩盖布局碰撞。
+## Round22 合入 Phase 1：S6 角色/布局计划影子接口
+
+本节描述 `Round22_合入_Core_计划.md` 的第一阶段已落地逻辑。它不是最终启用 round22 布局生成能力，而是先把 core 缺失的接口补齐，保证后续合入有可验证的中间证据。
+
+### S6 子步骤
+
+`S6_LayoutPlan` 当前必须按以下顺序执行：
+
+1. `build_layout_policy.py` 读取 `source_extraction.json`、语义译文和语言 profile，生成 `layout_policy.json`。
+2. `build_role_plan.py` 读取 `source_extraction.json`、语义译文和 `layout_policy.json`，生成 `role_plan.json`。
+3. `build_layout_plan.py` 读取 `role_plan.json` 和 `layout_policy.json`，生成 `layout_plan.shadow.json`。
+4. `generate_semantic_backfill.py` 仍按 legacy 主路径消费 `layout_policy.json` 并在 S7 输出正式 `layout_plan.json`。
+
+### Artifact 语义
+
+| Artifact | 语义 | 是否影响当前候选 PDF |
+|---|---|---|
+| `layout_policy.json` | 当前生成器实际消费的布局策略 | 是 |
+| `role_plan.json` | 当前页证据驱动的角色分组、source rect、target text 和判定依据 | 否，Phase 1 只作为证据 |
+| `layout_plan.shadow.json` | 由 role plan 投影出的目标 rect、erase rect、draw mode、font profile 和重叠提示 | 否，Phase 1 只作为证据 |
+| `layout_plan.json` | `generate_semantic_backfill.py` 实际生成时写出的正式布局记录 | 是 |
+
+### 反过拟合约束
+
+`build_role_plan.py` 和 `build_layout_plan.py` 只能使用当前运行的 `source_extraction`、语义译文、页面 bbox、字体分位数、颜色、page type、通用数值/注释正则和当前页几何关系。禁止使用文件名、固定页码组合、样本文字、固定坐标、人工对照 PDF 或 round22 输出路径作为判断条件。
+
+### 后续启用条件
+
+只有当回归矩阵证明 `layout_plan.shadow.json` 相比 legacy `layout_plan.json` 在表格/面板/中译英扩展文本上更稳定，且不导致 AIA、01_source、AIA slice 退化时，才允许进入 Phase 3，让 generator 通过显式开关消费 v2 `layout_plan`。在此之前，`layout_plan.shadow.json` 不能作为产品质量通过依据。
