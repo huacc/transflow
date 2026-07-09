@@ -14,7 +14,7 @@
 本文用**多张图分层穿插**表达一条主链，每张图都只画一层，靠共享的 ID 注册表和产物依赖链彼此锁死。阅读顺序：
 
 1. **§1 主脊图** —— PDF 从进到出的产物大状态机。先看这张，知道"现在这份 PDF 处于哪个状态"。
-2. **§2 六段研判流水线** —— S8/Lx 内部把"发现问题→修好"拆成六段，每段产出一个文件，缺上一个就禁止下一个。这是"锁死"的真身。
+2. **§2 六段研判流水线** —— S8/Lx 内部把"发现问题→修好"拆成六段，每段产出一个文件，缺上一个就禁止下一个。这是"锁死"的真身。其中 **§2.5 修复记忆与终止条件** 是跨轮记忆层，专治"改不对→回滚→再改→再回滚"的死循环。
 3. **§3 一级分诊树** —— 候选 PDF 出问题时，先归哪个问题域。不先归域不许选工具。
 4. **§4 分级分类总表** —— 10 问题域 × 严重度 × 采证工具 × 判断机制 × 修复族 × 回跳状态。这是 Codex 查表的地方。
 5. **§5 LayoutIssue 问题对象状态机** —— 单个问题从被发现到被关闭/失败的权威状态机（替代 v0.4 的 4 张漂移版本）。
@@ -245,9 +245,107 @@ flowchart LR
 | ④主问题分诊 | 只选一个主 `failure_class`、定严重度、列 deferred | §4 查该域小节 → 定采证/判断机制 | `triage_result.json` | 判为缺证 → 回①补采；判为流程/语义 → §1 对应失败终态 |
 | ⑤修复分发 | 查 `repair_families.json` 映到 `repair_family`+目标状态 | §4 该域"修复族→atom"列 + §5 进入问题对象状态机 | `dispatch_result.json` | 表外病种/能力`missing` → §1 `翻译/生成能力不足` |
 | ⑥补丁绑定 | 在已选族参数口内绑定 operation 且 `operation_count>0` | §5 状态机 `③待修复→④修复应用中` | `repair_patch_<n>.json` | 绑不出 operation → 回④改判或 deferred |
-| ⑦回测裁决 | 双闸门：目标域改善 **且** 无硬负面回退 | 修好→§1 回主脊图 `重新裁决`；未修好→§2.1 回④ | `repair_acceptance.json` | 预算耗尽 → §1 `PDF质量失败`；被拒 → 回滚到上一候选（§5 `⑧已回滚`） |
+| ⑦回测裁决 | 双闸门：目标域改善 **且** 无硬负面回退 | 修好→§1 回主脊图 `重新裁决`；未修好→**先查 §2.5 记忆台账**，未命中终止条件才回 §2.1 ④ | `repair_acceptance.json` + 更新 `repair_memory_ledger.json` | 命中 §2.5 任一终止条件 → 发布**历史最优候选** + 走 `PDF质量失败`/`Ax`；预算耗尽 → §1 `PDF质量失败`；被拒 → 回滚到历史最优候选 |
 
 > **读法**："跳到哪张图·哪节"是**下一个动作看哪里**；"必须先产出什么文件"是**本段不产出就物理禁止前进**的闸门。两列合起来 = §2.1 那条依赖链的可执行版。
+
+---
+
+## 2.5 修复记忆与终止条件（防死循环 / 防合法震荡）
+
+> **这一节治的病**：候选被判 FAIL → 修 → 回测又 FAIL → 再修…… 如果每一轮都是"崭新的一轮、不记得上一轮试过什么"，Codex 会反复用同一个失败招数（round24 反复用 `vertical_flow_relayout` 就是这样），或者在"修好 A 弄坏 B、修好 B 又弄坏 A"之间**合法地无限震荡**——每一步双闸门都判"通过"，但整页永远收敛不到 0。
+>
+> **§2 的双闸门和 §5.3 只看"单个问题 + 单个 atom + 单轮"，看不到跨轮的转圈。** 要看见转圈，必须有一个**跨轮累积、永不在轮间清空**的记忆台账，外加"什么时候必须停手"的硬终止。本节把**记什么**和**下一轮怎么读、怎么判、怎么动**逐字段写死。
+
+### 2.5.1 记忆载体：`repair_memory_ledger.json`（跨轮持久，永不清空）
+
+现有 `repair_loop_<n>.json` 是**单轮**产物；本节新增一个**跨候选、跨轮累积**的台账 `repair_memory_ledger.json`，贯穿一份 PDF 的整个修复生命周期，**只追加、不在轮间清空**（除非换了新的源 PDF）。它是 §2.1 `⑦→④` 和 §5 `⑪→⑥` 两条回跳边的**唯一守卫依据**。
+
+**台账三块，每个字段都标注"下一轮谁来读、读它判什么"：**
+
+**A. 尝试记录 `attempts[]`（每次修复一条，按问题实例累积）**
+
+| 字段 | 记什么 | **下一轮谁读·判什么** |
+|---|---|---|
+| `issue_key` | 问题实例主键 = `page:region_id:failure_class`（**不含坐标数值**，防过拟合） | 分诊时用它把"本问题"与历史对齐：同 key 才算"同一个问题的再次尝试" |
+| `round` / `candidate_id` | 第几轮、作用在哪个候选上 | 计"这个问题已试过几轮"，喂给终止判据①②ᵍ |
+| `repair_family` / `repair_atom` | 这次派了哪个族、哪个 atom | §5.3 判据：**同 issue_key 不许再选 attempts 里已 FAIL 过的同一 atom** |
+| `params_digest` | 绑定参数的摘要（不是全量数值，是"扩框/压字/换列"等**操作类别+档位**） | 判"是不是换汤不换药"：同 atom 同 params_digest 再来一次 = 视为重试，禁止 |
+| `delta_target` | 本次目标域阻塞数 修前→修后（如 溢出 135→2） | 判据③：闸1 有没有真改善 |
+| `delta_regressions[]` | 本次**其它域**阻塞数变化（如 重叠 49→132） | 判据③：闸2 有没有硬负面回退；也是"震荡"的证据来源 |
+| `verdict` | `accepted` / `rolled_back` / `capability_missing` | 决定这条是"成功经验"还是"失败黑名单" |
+| `rollback_reason` | 回滚原因（闸2哪个域回退 / 预算 / 能力缺） | 决定下一步走"换 atom"还是"升级族"还是"补工具 Ax" |
+
+**B. 状态签名历史 `signature_history[]`（每轮一条，抓合法震荡）**
+
+| 字段 | 记什么 | **下一轮谁读·判什么** |
+|---|---|---|
+| `round` | 第几轮 | 定位 |
+| `open_signature` | 当前**所有未关闭问题**的规范化签名（见 §2.5.2 的算法） | 终止判据②：**新签名 == 历史任一旧签名 → 判定在转圈，立即停** |
+| `best_score` | 该轮候选的综合质量分（阻塞加权总数，越低越好） | 终止判据④：连续 M 轮 `best_score` 不再下降 → 停 |
+
+**C. 最优候选指针 `best_candidate`（全局最好，不是最后一个）**
+
+| 字段 | 记什么 | **下一轮/终止时谁读·判什么** |
+|---|---|---|
+| `candidate_id` | 迄今**综合分最低（最好）**的那个候选 | 任何终止都**发布这个**，不是发布"最后一次"那个可能更烂的候选 |
+| `score` | 它的分 | 每轮回测后比一比：更好就更新指针；不更好不动 |
+| `round` | 它出现在第几轮 | 配合判据④：距今超过 M 轮没被超越 → 说明到顶了，停 |
+
+> **反过拟合红线（承 §3.2）**：`issue_key` 用 `page:region_id:failure_class`，`params_digest` 用**操作类别+档位**，**都不落具体坐标/字号数值**。记忆是为了"记住试过什么招、走到过什么状态"，不是为了给某一页某一坐标开特例。
+
+### 2.5.2 状态签名怎么算（`open_signature`）
+
+签名要"够稳、不误判"：同一个卡死状态必须算出同一个签名，轻微无关抖动不该改变它。规范化算法：
+
+```
+open_signature = hash( 排序后的 [ (problem_domain, severity, open_count) for 每个仍有 open 问题的域 ] )
+```
+
+- **只取域级计数向量**（每个域各严重度还剩几个 open），**不取具体坐标**——因为"转圈"的本质是"问题的域分布回到了老样子"，不是像素级复现。
+- 例：`{geometry-layout: P1×2, text-loading: P1×1}` 与三轮前完全一致 → 判定震荡。
+- 粒度默认取**域×严重度计数向量**（粗而稳）。若发现两个不同卡点被误判成同签名，再在 core 配置里升一档到"域×failure_class 计数"，**但不下探到坐标**。
+
+### 2.5.3 下一轮的判断链：读台账 → 四个终止判据 → 决定动作
+
+**每次准备走 `⑦→④`（§2.1）或 `⑪→⑥`（§5）回跳边之前，Codex 必须先按下面顺序查台账。命中任一终止条件 → 不许再跳，走对应终态。**
+
+```mermaid
+flowchart TD
+  START["准备回跳：本问题 issue_key 已回滚，想再修一次"] --> Q1{"判据① 单问题 atom 尝试<br/>attempts 里同 issue_key 的 FAIL 次数 ≥ 上限N?"}
+  Q1 -->|"未到上限"| Q1b{"该 atom+params_digest<br/>之前 FAIL 过?"}
+  Q1b -->|"是（换汤不换药）"| ESC["强制换招：<br/>换同域未试 atom / 升级修复族"]
+  Q1b -->|"否（确是新招）"| Q2
+  Q1 -->|"到上限"| UPG{"同域还有未试的更强族吗?"}
+  UPG -->|"有（如 vertical_flow → obstacle_aware）"| ESC2["升级修复族，写回 attempts"]
+  UPG -->|"无 / 更强族能力=missing"| CAP(["→ 无可用修复能力<br/>§1 capability_fail 或 Ax 补工具"])
+  ESC --> Q2
+  ESC2 --> Q2
+  Q2{"判据② 状态签名<br/>本轮 open_signature == 历史任一旧签名?"} -->|"命中：在转圈"| STOPOSC(["停止修复循环<br/>发布 best_candidate"])
+  Q2 -->|"未命中"| Q3{"判据③ 进展检查<br/>最近一次尝试 delta_target 改善<br/>但 delta_regressions 抵消掉了?"}
+  Q3 -->|"是：合法震荡苗头"| STOPOSC
+  Q3 -->|"否：确有净改善"| Q4{"判据④ 全局预算<br/>回跳总轮数 ≥ 上限 或<br/>连续 M 轮 best_score 无下降?"}
+  Q4 -->|"到顶"| STOPBEST(["停止<br/>发布 best_candidate"])
+  Q4 -->|"未到"| GO["允许回跳，执行这次修复<br/>结束后把结果写回台账三块"]
+  GO --> UPDATE["回测后：更新 attempts / signature_history；<br/>若本候选更好则更新 best_candidate 指针"]
+```
+
+**四个终止判据（先到者停，缺一不可）：**
+
+| # | 判据 | 读台账哪块 | 触发后动作 |
+|---|---|---|---|
+| ① | **单问题 atom 尝试上限**：同 `issue_key` 用同一 atom FAIL 次数达 N（默认 **N=2**，即最多试 2 次）；或同 atom+同 `params_digest` 重复 | `attempts[]` | 换同域未试 atom → 用尽则升级族 → 更强族 `missing` 则 → `capability_fail`/`Ax` |
+| ② | **状态签名重复**：本轮 `open_signature` 命中 `signature_history` 里任一旧值 | `signature_history[]` | 判定在转圈，**立即停**，发布 `best_candidate` |
+| ③ | **合法震荡检测**：本次 `delta_target` 有改善，但 `delta_regressions` 把总分抵消/反超（净分不降） | `attempts[]` 最近一条 | 停，发布 `best_candidate`（这种循环双闸门抓不到，只能靠台账抓） |
+| ④ | **全局预算**：回跳总轮数达上限（默认 **8 轮**），或连续 **M=3** 轮 `best_score` 不再下降 | `signature_history[]` + `best_candidate` | 停，发布 `best_candidate` |
+
+> **默认阈值（N=2 / 全局 8 轮 / M=3）先写死在这里做兜底，可被 core 配置覆盖**；但"必须存在上限、必须发布 best 而非 last"这两条是硬规则，不可关闭。
+
+### 2.5.4 三条铁律（补在 §2.3 三条铁律之后）
+
+4. **回跳必先查记忆。** 走任何一条回跳边（`⑦→④` / `⑪→⑥`）前，必须先读 `repair_memory_ledger.json` 跑完 §2.5.3 判断链；**未查台账直接重修 = 运行契约违规**。
+5. **失败不许原地复现。** 同 `issue_key` 的同 `atom`+同 `params_digest` 不许出现第二次（§5.3 的可执行化）。想再试必须换 atom、换档位、或升级族。
+6. **终止发布"历史最优"而非"最后一次"。** 任何终止（判据①-④）都发布 `best_candidate` 指针指向的候选；若全程无一候选达标，走 §1 `PDF质量失败`，但仍**保留 best 供人工介入**，绝不发布比 best 更差的最后候选。
 
 ---
 
@@ -408,6 +506,51 @@ flowchart LR
 
 > **所以：域与域既不是全独立（有①②的顺序依赖、有③的相互破坏），也不是全依赖（同优先级、无因果的域之间是并列的，如域2/3/4 三个保护对象之间无固定先后）。Codex 每一轮必须先按①定优先级、再按②在主修区内定上下游、修完按③回测——三步都不能跳。**
 
+### 4.0.1 判断机制总览：哪些域靠规则判、哪些靠提示词判
+
+> 你问的"哪个是规则判、哪个是提示词判、判什么、怎么修"——先看这张总览，再看每个域正下方的流程图。**核心原则：规则是硬判据，提示词只能在规则允许的范围内做质量/取舍裁决，绝不能推翻规则发现的硬问题。**
+
+**图例（下文每张域流程图统一用这套记号）：**
+
+- **`【规则】` 规则闸** = 确定性判据（schema、阈值、bbox 碰撞、覆盖率…），由工具算出，**模型不可翻案**。这是"证据说了算"。
+- **`【提示词】` 提示词闸** = LLM 裁决，只在规则闸放行或规则无法量化的地方补判"质量好不好、该不该取舍"。**只在规则允许范围内生效**。
+- **能力状态**（修复框里标注）：`full`=能真修 / `partial`=只规划或有回退风险 / `missing`=注册表有名字但无实现，选它=直接进 `无可用修复能力`。
+
+| 域 | 中文 label | 判断机制类型 | 第一道·**规则**判什么 | 第二道·**提示词**判什么 | 修复能力概况 |
+|---|---|---|---|---|---|
+| 0 | 流程/证据 | **纯规则** | 产物齐全 / 路径边界 / 页数·页几何一致 | 无（模型不可覆盖） | 不做产品修复，只补证据链 |
+| 1 | 语义/内容 | **规则 + 提示词** | 覆盖率 / placeholder / forbidden pattern | 语义质量裁决（仅文本真存在时） | **full**（重译/补译） |
+| 2 | 图片/图形保护 | 规则为主（+模型辅助） | 图层判断（文本层 vs 像素）/ image bbox overlap | crop diff 辅助（照片内字保护） | partial |
+| 3 | 背景/擦除 | 规则为主（+crop 辅助） | 背景采样差 / 宽条残留检测 | 局部 crop diff 辅助 | atom **full** / 族 partial |
+| 4 | 表格/矩阵 | **规则 + 提示词** | grid / cell / line 检测 | 表格 crop 对比 | grid 逻辑 **missing** / cell partial |
+| 5 | 文字装载 | **规则 + 提示词** | fit / overflow / 装载率 | 源↔候选 crop 对比 | **partial·回退风险** |
+| 6 | 字体层级 | **规则 + 提示词** | role-relative 字号比 | 源↔候选视觉层级对比 | partial |
+| 7 | 几何/布局 | **规则 + 提示词** | 碰撞检测 / 间距图 | 页面密度 / 阅读顺序 | **missing**(障碍感知) / partial·高风险 |
+| 8 | 图表/图例 | 规则为主（+距离/模型） | 颜色-标签绑定检查 | swatch/label 距离 + 可读性 | proposed / **missing** |
+| 9 | 页面节奏/审美 | 规则 + **提示词**(审美) | density / white-space metric | 模型审美裁决（不替代硬 gate） | proposed |
+
+> **一眼结论**：只有**域0 是纯规则**（证据可信度不容模型置喙）；**域1/4/5/6/7 是"规则先判、提示词后判"的双道**（主战场，规则定有没有问题、提示词定质量取舍）；**域2/3/8 以规则为主、模型仅辅助**；**域9 的第二道以模型审美为主**，但绝不替代前面的硬 gate。
+
+**通用判断-修复流程（下面每个域都是这张骨架的具体填空版）：**
+
+```mermaid
+flowchart TD
+  E["① 采证<br/>跑该域采证工具 → 取指定字段"] --> R{"② 规则闸【规则】<br/>确定性阈值 / 结构检查"}
+  R -->|"未命中"| PASS(["本域无问题 → 下一域 / 合格"])
+  R -->|"命中（规则判 FAIL）"| HASP{"该域有提示词第二道?"}
+  HASP -->|"无（纯规则域）"| FC["④ 定 failure_class + severity"]
+  HASP -->|"有"| P{"③ 提示词闸【提示词】<br/>LLM 仅在规则允许范围内裁决质量/取舍"}
+  P -->|"模型也判问题"| FC
+  P -->|"模型判 PASS 但规则=FAIL"| FORCE["以规则为准 = FAIL<br/>（规则发现的硬问题模型不能翻案）"]
+  FORCE --> FC
+  FC --> DISP["⑤ 查注册表分发<br/>failure_class → repair_family → atom（标能力）"]
+  DISP -->|"能力=missing"| CAP(["无可用修复能力 → 升级/补工具"])
+  DISP -->|"能力=full/partial"| FIX["⑥ 绑定并应用修复，重生成"]
+  FIX --> ACC{"⑦ 回测·双闸门【规则】<br/>闸1 本域改善 且 闸2 无硬负面回退"}
+  ACC -->|"通过"| CLOSE(["关闭，回主脊图"])
+  ACC -->|"不通过"| RB(["回滚 → 换 atom / 升级族 / deferred"])
+```
+
 ### 域0 · 流程/证据类（`process-evidence`，优先级最高）
 
 | 项 | 内容 |
@@ -419,6 +562,23 @@ flowchart LR
 | **修复族 → atom** | 不做产品修复。`rebuild_source_or_generation_linkage`(partial) 或 `fix_process_artifact_or_contract`(proposed) |
 | **回跳状态** | `S3 提取源证据` 或 `Ax 方法论适配`；不可修 → `运行契约失败` |
 | **接受条件 / veto** | 证据链补齐且 process gate PASS 才继续。**任一 P0 直接 veto 一切产品修复**——证据不可信时任何视觉判断都无意义。 |
+
+**域0 流程图（纯规则，无提示词第二道）：**
+
+```mermaid
+flowchart TD
+  E0["① 采证<br/>validate_process_artifacts.py / validate_workspace_boundary.py / evaluate_pdf_quality.py"]
+  E0 --> R0{"② 规则闸【规则】<br/>产物清单齐全? 路径 containment 合法?<br/>page_count / page_geometry 一致?"}
+  R0 -->|"全部通过"| PASS0(["证据可信 → 放行域1 分诊"])
+  R0 -->|"任一不通过"| FC0["④ failure_class=证据/流程类<br/>severity=P0（无提示词第二道，模型不可覆盖）"]
+  FC0 --> DISP0["⑤ 分发（不做产品修复）<br/>rebuild_source_or_generation_linkage(partial)<br/>/ fix_process_artifact_or_contract(proposed)"]
+  DISP0 --> FIX0["⑥ 回 S3 提取源证据 / Ax 方法论适配，补齐证据链"]
+  FIX0 --> ACC0{"⑦ 回测【规则】<br/>process gate 是否 PASS?"}
+  ACC0 -->|"PASS"| CLOSE0(["证据链补齐 → 回主脊图继续"])
+  ACC0 -->|"不可修/补不齐"| RB0(["运行契约失败（S_FAIL_PROCESS）"])
+```
+
+> **域0 特殊**：它是全文唯一**纯规则**域，没有提示词第二道——证据可不可信是事实问题，不容模型裁量。且它是 **veto 一切产品修复**的总闸：只要域0 有 open P0，下面 9 个域全部禁止进入。
 
 ### 域1 · 语义/内容类（`semantic-content`）
 
@@ -432,6 +592,25 @@ flowchart LR
 | **回跳状态** | `S5 语义译文` 或 `翻译/生成能力不足` |
 | **接受条件 / veto** | 覆盖率 PASS、非 placeholder、数字/标记 token 保留。**缺译绝不许用布局修复掩盖**，也绝不许降级成 placeholder 混过 product_quality。 |
 
+**域1 流程图（规则先判"有没有译全"，提示词后判"译得好不好"）：**
+
+```mermaid
+flowchart TD
+  E1["① 采证<br/>validate_semantic_translations.py → semantic_translation_validation<br/>翻译单元清单 → unit_coverage；forbidden_pattern_check"]
+  E1 --> R1{"② 规则闸【规则】<br/>覆盖率达标? 无 placeholder?<br/>无 forbidden pattern（伪译/元描述）?"}
+  R1 -->|"通过（文本真实存在）"| P1{"③ 提示词闸【提示词】<br/>译文语义是否忠实/通顺?<br/>数字·标记 token 是否保留?"}
+  R1 -->|"缺译/placeholder/伪译"| FC1["④ failure_class=语义/内容类，severity=P1"]
+  P1 -->|"语义合格"| PASS1(["语义成立 → 放行保护对象域"])
+  P1 -->|"语义不合格"| FC1
+  FC1 --> DISP1["⑤ 分发<br/>retranslate_or_patch_translation_unit →<br/>regenerate_D2_translation_without_meta_description(full)<br/>/ regenerate_missing_D2_units(full)"]
+  DISP1 --> FIX1["⑥ 回 S5 重译/补译（能力 full，能真修）"]
+  FIX1 --> ACC1{"⑦ 回测【规则】<br/>覆盖率 PASS 且非 placeholder 且 token 保留?"}
+  ACC1 -->|"通过"| CLOSE1(["译文合格 → 回主脊图"])
+  ACC1 -->|"补不齐（真缺能力）"| RB1(["翻译/生成能力不足"])
+```
+
+> **域1 铁律**：规则闸发现缺译时**提示词闸无权判 PASS**——缺译是能力问题，不是质量问题。**绝不许用布局修复掩盖缺译，也绝不许降级成 placeholder 混过 product_quality**（这是 §3 分诊顺序②"缺译时谈排版是白费"的落地）。
+
 ### 域2 · 图片/图形保护类（`image-graphic-protection`，保护对象优先）
 
 | 项 | 内容 |
@@ -443,6 +622,25 @@ flowchart LR
 | **修复族 → atom** | `protect_image_layer_or_overlay_text`(partial) / `image_overlay_text_relayout`(partial)；对应 core atom `image_redaction_exclusion_repair`(partial) |
 | **回跳状态** | `S7 回填生成` 或 `S6 布局计划` |
 | **接受条件 / veto** | 图片像素差受控、浮层文字已翻译且不遮主体。**图片被擦是 P1 硬负面，veto 通过。** |
+
+**域2 流程图（规则先分"是图片像素还是文本层"，模型只做 crop 辅助）：**
+
+```mermaid
+flowchart TD
+  E2["① 采证<br/>collect_visual_region_metrics.py → page_metrics(图片数/整页色差)<br/>image bbox overlap；redactions[].image_overlay_background_decision"]
+  E2 --> R2{"② 规则闸【规则】<br/>图层判断：文本层 vs 图片像素<br/>image bbox 是否被回填覆盖/擦除?"}
+  R2 -->|"图片未破坏"| PASS2(["保护对象完好 → 下一保护域"])
+  R2 -->|"图片被擦 / 浮层可抽取文字未译"| P2{"③ 提示词闸【提示词】辅助<br/>crop diff：照片内文字是否属'应保护'?<br/>浮层文字是否属'应翻译'?"}
+  P2 -->|"确认破坏或漏译"| FC2["④ failure_class=图片/图形保护类，severity=P1"]
+  P2 -->|"属保护范围（照片内字）"| PASS2
+  FC2 --> DISP2["⑤ 分发<br/>protect_image_layer_or_overlay_text(partial)<br/>/ image_overlay_text_relayout(partial)<br/>core: image_redaction_exclusion_repair(partial)"]
+  DISP2 --> FIX2["⑥ 回 S7/S6，恢复图层保护 / 浮层文字重排（partial：只能规划，注意回退风险）"]
+  FIX2 --> ACC2{"⑦ 回测·双闸门【规则】<br/>闸1 图片像素差受控 且 浮层文字已译<br/>闸2 未新破坏其它保护对象"}
+  ACC2 -->|"通过"| CLOSE2(["回主脊图"])
+  ACC2 -->|"不通过"| RB2(["回滚 → 换 atom / deferred"])
+```
+
+> **域2 要点**：**照片内文字默认保护、浮在图片上的可抽取文字仍须翻译**——这条边界靠规则的图层判断先分，模型 crop diff 只在边界模糊时辅助，不能推翻"图片被擦=P1硬负面"。
 
 ### 域3 · 背景/擦除类（`background-erasure`，保护对象优先）
 
@@ -456,6 +654,22 @@ flowchart LR
 | **回跳状态** | `S7 回填生成` |
 | **接受条件 / veto** | 局部背景 delta 下降且不丢文字、不覆盖图片/表格线。**大面积背景破坏 veto 通过；`solid_vector_fill` 覆盖高饱和大面积 = 硬负面。** |
 
+**域3 判断-修复流程（规则为主 + crop 辅助）：**
+
+```mermaid
+flowchart TD
+  E3["① 采证<br/>collect_visual_region_metrics.py<br/>→ redaction_metrics(fill_delta/patch_score/wide_line_patch_risk)<br/>→ background_cover_metrics(draw_mode/area/saturation)<br/>→ inner_background_delta / text_image_background_delta"] --> R3{"② 规则闸【规则】<br/>背景采样差超阈? 宽条残留? 大面积色块?"}
+  R3 -->|"delta 受控、无残留"| PASS3(["本域无问题 → 下一域"])
+  R3 -->|"命中：白块/彩条/宽擦除带"| P3{"③ 提示词闸【提示词】<br/>局部 crop diff 辅助确认<br/>（是残留破坏，还是源本就有的底色）"}
+  P3 -->|"确为擦除破坏"| FC3["④ background-erasure + P1<br/>（大面积 / solid_vector_fill 高饱和 = 硬负面）"]
+  P3 -->|"规则=FAIL 不翻案"| FC3
+  FC3 --> DISP3["⑤ 分发：background_resample_or_redaction_limit(partial)<br/>/ redaction_scope_shrink(proposed)<br/>→ core atom background_fill_resample(full) / background_residue_fill_resample(full)"]
+  DISP3 --> FIX3["⑥ 重采背景填充 / 收缩 redaction 范围，重生成<br/>（atom 为 full：真能重采背景）"]
+  FIX3 --> ACC3{"⑦ 回测【规则】<br/>闸1 局部 delta 下降且不丢文字<br/>闸2 未覆盖图片/表格线（Δ≤0）"}
+  ACC3 -->|"通过"| CLOSE3(["关闭，回主脊图"])
+  ACC3 -->|"覆盖了保护对象"| RB3(["回滚 → 缩小 redaction 范围重试"])
+```
+
 ### 域4 · 表格/矩阵类（`table-matrix`，保护对象优先）
 
 | 项 | 内容 |
@@ -467,6 +681,23 @@ flowchart LR
 | **修复族 → atom** | `table_region_reflow_or_preserve_table`(**grid逻辑 missing**) / `table_cell_text_fit`(partial) / `table_header_alignment_repair`(proposed)；core atom `matrix_diagram_table_cell_preserve_repair`(partial) |
 | **回跳状态** | `S6 布局计划` 或 `S7 回填生成` |
 | **接受条件 / veto** | 行列结构不破坏、表头/数字列可读不串列。**完整 `table_integrity`/`chart_integrity` 确定性 validator 目前 `missing`——只能判单元格可读性/矩阵body_flow误用，完整网格校验需补工具或人工/模型补证。** |
+
+**域4 判断-修复流程（规则 + 提示词，⚠️ 完整 grid 校验 missing）：**
+
+```mermaid
+flowchart TD
+  E4["① 采证<br/>page_strategy → page_type（是否表格/矩阵页）<br/>build_layout_plan.py → 表格线/单元格 bbox<br/>collect_visual_region_metrics.py → role_gates.table_text_legibility / matrix_diagram_integrity"] --> R4{"② 规则闸【规则】<br/>矩阵页误走 body_flow? 单元格文字可读?<br/>（⚠️ 完整 grid/列宽/串列校验 = missing）"}
+  R4 -->|"page_type 正确 + 单元格可读"| PASS4(["本域无问题 → 下一域"])
+  R4 -->|"命中：body_flow 误用 / 单元格不可读"| P4{"③ 提示词闸【提示词】<br/>表格 crop 对比：行列结构是否破坏、<br/>表头/数字是否串列（补 missing 的 grid 校验）"}
+  P4 -->|"确认结构破坏"| FC4["④ table-matrix + P1"]
+  P4 -->|"规则=FAIL 不翻案"| FC4
+  FC4 --> DISP4["⑤ 分发：table_region_reflow_or_preserve_table(grid逻辑 missing)<br/>/ table_cell_text_fit(partial) / table_header_alignment_repair(proposed)<br/>→ core atom matrix_diagram_table_cell_preserve_repair(partial)"]
+  DISP4 -->|"需完整 grid 重排 = missing"| CAP4(["无可用修复能力 → 保留原表 / 补 grid validator"])
+  DISP4 -->|"仅单元格文字 fit = partial"| FIX4["⑥ 单元格内文字 fit / 表头对齐，重生成<br/>（不动网格结构）"]
+  FIX4 --> ACC4{"⑦ 回测【规则+提示词】<br/>闸1 单元格可读改善<br/>闸2 行列结构未破坏、未串列（Δ≤0）"}
+  ACC4 -->|"通过"| CLOSE4(["关闭，回主脊图"])
+  ACC4 -->|"结构被破坏"| RB4(["回滚 → 优先 preserve 原表"])
+```
 
 ### 域5 · 文字装载类（`text-loading`，主修区）
 
@@ -480,6 +711,23 @@ flowchart LR
 | **回跳状态** | `S6 布局计划`（策略问题）或 `S7 回填生成`（生成器执行问题） |
 | **接受条件 / veto** | 溢出/截断下降、字号不低于源相对下限、**不新增跨槽重叠**。<br>⚠️ **round25 实盘**：`expand_or_reflow_slot` 把溢出 135→2（目标闸过），但简单扩框把文本推入邻区，`cross_slot_overlap` 49→132（硬负面闸未过）→ 回滚。**这就是为什么 `expand_or_reflow_slot` 标 partial：它不读障碍物/邻接图。** |
 
+**域5 判断-修复流程（规则 + 提示词，⚠️ round25 回退现场）：**
+
+```mermaid
+flowchart TD
+  E5["① 采证<br/>collect_visual_region_metrics.py → region_metrics[].status / output_to_source_font_ratio<br/>candidate_generation_evidence → insertions[].status/font_size<br/>evaluate_pdf_quality.py → text_fit"] --> R5{"② 规则闸【规则】<br/>fit/overflow/装载率：有溢出/截断/行碎片?<br/>字号是否被压到源相对下限以下?"}
+  R5 -->|"全部装载成功"| PASS5(["本域无问题 → 下一域"])
+  R5 -->|"命中：溢出/截断/压字"| CAUSE{"② 前置·因果检查<br/>先判这是主因还是下游<br/>（本溢出是否由字号/几何引起）"}
+  CAUSE -->|"是本域主因"| P5{"③ 提示词闸【提示词】<br/>源↔候选 crop 对比确认确实装不下<br/>（规则发现溢出时模型不能判 PASS）"}
+  P5 -->|"确认"| FC5["④ text-loading + P1"]
+  P5 -->|"规则=FAIL 不翻案"| FC5
+  FC5 --> DISP5["⑤ 分发：expand_or_reflow_slot(partial·回退风险)<br/>/ body_flow_region_reflow(partial) / line_break_rebalance(proposed)"]
+  DISP5 --> FIX5["⑥ 绑定扩框/重排/断行，重生成"]
+  FIX5 --> ACC5{"⑦ 回测·双闸门【规则】<br/>闸1 溢出/截断下降 且 字号≥源下限<br/>闸2 ⚠️ cross_slot_overlap 未新增（Δ≤0）"}
+  ACC5 -->|"两闸都过"| CLOSE5(["关闭，回主脊图"])
+  ACC5 -->|"⚠️ 闸1过但闸2破（round25：溢出135→2 却 overlap 49→132）"| RB5(["回滚 → expand 只会推挤邻区<br/>升级到读障碍图的 obstacle_aware_reflow（域7·missing）"])
+```
+
 ### 域6 · 字体层级类（`font-hierarchy`，主修区）
 
 | 项 | 内容 |
@@ -491,6 +739,22 @@ flowchart LR
 | **修复族 → atom** | `restore_role_font_hierarchy`(partial) / `reflow_before_shrink`(partial)；core atom `metric_value_font_hierarchy_repair`(partial) / `role_font_profile_or_region_classification`(partial) |
 | **回跳状态** | `S6 布局计划` |
 | **接受条件 / veto** | role 比例收敛、文字仍装载成功、metric/header/body 层级保持。**不许大幅压缩正文换取层级相似。** |
+
+**域6 判断-修复流程（规则 + 提示词）：**
+
+```mermaid
+flowchart TD
+  E6["① 采证<br/>collect_visual_region_metrics.py → output_to_source_font_ratio<br/>source_median_font_size / role_gates / font quantile"] --> R6{"② 规则闸【规则】<br/>role-relative 字号比：<br/>标题/正文/脚注/metric 的相对比例是否失真?<br/>（不许用固定字号阈值替代源相对比例）"}
+  R6 -->|"比例在源相对区间内"| PASS6(["本域无问题 → 下一域"])
+  R6 -->|"命中：层级失真/正文过小/metric塌陷"| P6{"③ 提示词闸【提示词】<br/>源↔候选视觉层级对比：<br/>标题还像不像标题、强调是否丢失"}
+  P6 -->|"模型确认层级坏了"| FC6["④ font-hierarchy + P1"]
+  P6 -->|"规则=FAIL 不翻案"| FC6
+  FC6 --> DISP6["⑤ 分发：restore_role_font_hierarchy(partial)<br/>/ reflow_before_shrink(partial)<br/>core: metric_value_font_hierarchy_repair(partial)"]
+  DISP6 --> FIX6["⑥ 绑定：先重排再压字，恢复 role 比例，重生成"]
+  FIX6 --> ACC6{"⑦ 回测·双闸门【规则】<br/>闸1 role 比例收敛且文字仍装载成功<br/>闸2 未把正文压到源下限以下（不拿正文换层级）"}
+  ACC6 -->|"两闸都过"| CLOSE6(["关闭，回主脊图"])
+  ACC6 -->|"闸2破：为凑层级压小正文"| RB6(["回滚 → 改用 reflow_before_shrink 先争取空间再调字号"])
+```
 
 ### 域7 · 几何/布局类（`geometry-layout`，主修区 · round24 翻车点）
 
@@ -504,6 +768,27 @@ flowchart LR
 | **回跳状态** | `S6 布局计划` |
 | **接受条件 / veto** | 重叠下降、阅读顺序稳定、**不挤占图片/表格/页眉页脚**。<br>⚠️ **round24 实盘**：Triage 选 `cross_slot_overlap`→`vertical_flow_relayout`，应用 33 operation，重叠 70→92、阻塞 80→102 → 回滚 → `PDF质量失败`。**根因：`vertical_flow_relayout` 只按页/角色移动文本流，无障碍物图、无列内局部重排、无表格/图片/页脚保护。正确动作是升级到 `obstacle_aware_reflow`（当前 missing，需先补工具），而不是重试同一 atom。** |
 
+**域7 判断-修复流程（规则 + 提示词 · round24 翻车点，重点看能力缺口）：**
+
+```mermaid
+flowchart TD
+  E7["① 采证<br/>collect_visual_region_metrics.py → insertion_collision / region_metrics[].bbox<br/>evaluate_pdf_quality.py → source_anchor_order；构建 bbox/邻接图"] --> R7{"② 规则闸【规则】<br/>碰撞检测 + 间距图：<br/>是否有重叠 / 跨槽重叠 / 锚点漂移?"}
+  R7 -->|"无碰撞"| PASS7(["本域无问题 → 下一域"])
+  R7 -->|"命中：重叠/跨槽/顺序乱"| CAUSE{"②b 因果测试【规则】<br/>该重叠相邻区是否有 open 的 text_fit_overflow<br/>且溢出方向指向本区?"}
+  CAUSE -->|"是：本重叠是 text_fit 下游"| DEFER7(["转 deferred<br/>先修域5 上游，重采后再看是否自动消失"])
+  CAUSE -->|"否：独立几何问题"| P7{"③ 提示词闸【提示词】<br/>页面密度 / 阅读顺序：<br/>必须引用当前页 bbox 和邻接关系"}
+  P7 -->|"确认几何阻塞"| FC7["④ geometry-layout + P1"]
+  P7 -->|"规则=FAIL 不翻案"| FC7
+  FC7 --> DISP7{"⑤ 查注册表分发<br/>该 failure_class 该派哪个 repair_family?"}
+  DISP7 -->|"obstacle_aware_reflow<br/>= missing"| CAP7(["⚠️ 能力缺口：正解工具未实现<br/>→ 无可用修复能力 / Ax 补工具"])
+  DISP7 -->|"退而求其次<br/>vertical_flow_relayout = partial·高风险"| WARN7["⑥ 有限修复（无障碍物图）<br/>只按页/角色移动文本流"]
+  WARN7 --> ACC7{"⑦ 回测·双闸门【规则】<br/>闸1 本域重叠下降且阅读顺序稳定<br/>闸2 不挤占图片/表格/页眉页脚"}
+  ACC7 -->|"两闸都过"| CLOSE7(["关闭，回主脊图"])
+  ACC7 -->|"闸未过（round24：70→92）"| RB7(["回滚 → 禁止重试同一失败 atom<br/>必须升级到 obstacle_aware_reflow（先补工具）"])
+```
+
+> **这张图是"泛化差"的病灶特写**：正确修复族 `obstacle_aware_reflow` 是 `missing`，Codex 只能退用无障碍物图的 `vertical_flow_relayout`，于是每次"修重叠"都制造新重叠。**文档能锁住"不许重试同一失败 atom"，但真正治本要 core 补 `obstacle_aware_reflow` 执行器——这是工具能力问题，不是文档能单独解决的。**
+
 ### 域8 · 图表/图例类（`chart-legend`）
 
 | 项 | 内容 |
@@ -516,6 +801,23 @@ flowchart LR
 | **回跳状态** | `S6 布局计划` 或 `S7 回填生成` |
 | **接受条件 / veto** | swatch 与 label 仍绑定、标签可读不遮图形。**只移动文字导致颜色绑定失真 = 硬负面。完整 chart validator 当前 missing。** |
 
+```mermaid
+flowchart TD
+  E["① 采证<br/>collect_visual_region_metrics→role_gates.legend_label_alignment·swatch/label/chart bbox"] --> R{"② 规则闸【规则】<br/>颜色-标签绑定是否破坏? swatch↔label 是否脱钩?"}
+  R -->|"未命中：绑定完好"| PASS(["无问题 → 下一域"])
+  R -->|"命中：绑定破坏/脱钩"| SEV["定 severity<br/>颜色-标签绑定破坏→升 P1，否则 P2"]
+  SEV --> P{"③ 提示词闸【提示词】<br/>swatch/label 距离是否越界? 标签是否遮图形?<br/>（不能只看文字装没装下）"}
+  P -->|"模型判可读且不遮"| WEAK["仅距离偏差 → 记 P2/deferred"]
+  P -->|"模型判遮挡/失真 或 规则=FAIL"| FC["④ failure_class = chart_legend_misplacement / color_label_decoupling"]
+  WEAK --> FC
+  FC --> DISP{"⑤ 查注册表分发"}
+  DISP -->|"chart_region_preserve_or_label_reflow = missing"| CAP(["⚠️ 完整 chart validator/执行器 missing<br/>→ 无可用修复能力 → Ax 补工具，不许假修"])
+  DISP -->|"chart_label_legend_relayout / legend_swatch_label_binding = proposed"| FIX["⑥ 仅重排标签/图例位置<br/>严禁移动改变颜色-标签绑定"]
+  FIX --> ACC{"⑦ 回测·双闸门【规则】<br/>闸1 标签对齐改善 且 闸2 swatch↔label 绑定未失真 且 未遮图形"}
+  ACC -->|"通过"| CLOSE(["关闭，回主脊图"])
+  ACC -->|"只移动文字致绑定失真=硬负面"| RB(["回滚"])
+```
+
 ### 域9 · 页面节奏/审美类（`page-rhythm`，最低优先级）
 
 | 项 | 内容 |
@@ -527,6 +829,25 @@ flowchart LR
 | **修复族 → atom** | `page_rhythm_rebalance`(proposed) / `section_spacing_reflow`(proposed) |
 | **回跳状态** | `S6 布局计划` |
 | **接受条件 / veto** | 密度和段距接近源页相对关系。**只有 P0/P1 全清空后才允许处理；绝不为审美破坏 P1 硬约束。** |
+
+```mermaid
+flowchart TD
+  G["④ 前置闸【规则】<br/>P0/P1 是否全部 CLOSED?"] -->|"否：还有硬问题未清"| DEFER(["本域全部 deferred<br/>审美一律不许动"])
+  G -->|"是：硬问题已清零"| E["① 采证<br/>density/white-space metric·段落gap·paragraph_density·源候选 rhythm 向量"]
+  E --> R{"② 规则闸【规则】<br/>页面密度/留白带/段距偏离源页相对关系?"}
+  R -->|"未命中：节奏接近源页"| PASS(["无问题 → 候选合格"])
+  R -->|"命中：密度/留白/段距失衡"| P{"③ 提示词闸【提示词·审美主判】<br/>综合审美裁决:整页观感是否需要调?<br/>(唯一以模型审美为第二道主判的域)"}
+  P -->|"模型判无需调"| PASS
+  P -->|"模型判需调 + 规则也命中"| FC["④ failure_class + severity(P2/P3)"]
+  FC --> DISP["⑤ 分发<br/>page_rhythm_rebalance(proposed) / section_spacing_reflow(proposed)"]
+  DISP -->|"两者均 proposed·无真实执行器"| CAP(["多数进 无可用修复能力<br/>或仅做保守 spacing 微调"])
+  DISP -->|"若有可用执行器"| FIX["⑥ 保守重排段距/密度，重生成"]
+  FIX --> ACC{"⑦ 回测·双闸门【规则】<br/>闸1 节奏更接近源页 且 闸2 <b>未破坏任何 P0/P1 硬约束</b>"}
+  ACC -->|"通过"| CLOSE(["关闭，回主脊图"])
+  ACC -->|"闸2 破坏了硬约束"| RB(["立即回滚<br/>审美绝不许换来硬负面"])
+```
+
+> **域9 独特点**：这是**唯一以模型审美为第二道主判**的域——因为"好不好看"难以纯规则量化。但有两条铁律：(1) **前置闸**——P0/P1 没全清零，审美一律 deferred，绝不允许在硬问题还在时动审美；(2) **回测闸2**——审美修复若破坏任何硬 gate(挤压文字/重叠/覆盖保护对象)立即回滚。**审美永远是最后、最弱、最容易被否决的一档。** 且两个修复族都是 `proposed`(无真实执行器)，Codex 多数情况只能做保守微调或直接判无能力，不许为"更好看"制造硬负面。
 
 ### 4.10 能力状态总览（Codex 选修复族前必看）
 
@@ -634,6 +955,8 @@ stateDiagram-v2
 
 这正是 round24 的病根：它对 `cross_slot_overlap` 反复用 `vertical_flow_relayout`，而这个 atom 不读障碍物图，所以每次都制造新重叠。§4.7 的能力状态表已把这条焊死。
 
+> **"不许重试"靠什么记住？** 这条规则本身跨轮有效，但单轮的 `repair_acceptance.json` 记不住上几轮试过什么。**执行时以 §2.5 的 `repair_memory_ledger.json` 为准**——回滚回到 `⑥主阻塞已选定` 前，必须先查该问题键（`page-region+failure_class`）的 `tried[]`，命中过的 `atom` 一律不许再派；`escalation_stage` 已到顶或命中任一终止条件时，不许再跳回 ⑥，直接走 §2.5 规定的终态。
+
 ### 5.4 传送门：LayoutIssue 每个状态的下一跳
 
 > Codex 处理**单个问题**走到状态机的任一状态时，用此表确定"下一步做什么、去哪一节、产出什么文件、什么条件放行"。此表把 §5 的状态机与 §2 的七产物、§4 的查表逐一对齐（一个问题对象的生命周期 = 六段流水线在单个问题上的投影）。
@@ -648,7 +971,7 @@ stateDiagram-v2
 | ⑧RepairPatch已绑定 | 补丁 operation 数 >0 | §2 回测（重生成+重采证） | 重生成候选，`repair_acceptance.json` 起草 | 已用**同一批证据**重采（§5.2 约束6） |
 | ⑨修复候选待回测 | 已重采修后信号 | §2 双闸门（§4 各域接受条件+硬负面 veto） | `repair_acceptance.json` 出 verdict | 闸门1目标改善 **且** 闸门2无硬负面回退 |
 | ⑩修复有效待合并 | 双闸门通过 | §1 主脊图 `修复候选已生成→重新裁决` | 并入 `repair_loop_<n>.json`，问题置 CLOSED | 无 —— 本问题关闭，回主脊图看是否还有其它阻塞 |
-| ⑪修复无效已回滚 | 闸门未过/预算耗尽 | §5.3 换 atom 或升级族 → 回 ⑥ | 回滚到上一候选，`repair_acceptance.json` 记 rollback + 已试 atom | **不许**对同 `failure_class` 再派同一失败 atom（§5.3） |
+| ⑪修复无效已回滚 | 闸门未过/预算耗尽 | **先查 §2.5 记忆台账**：命中任一终止条件 → 走 `PDF质量失败`/`Ax`（不许再回⑥）；否则按 §5.3 换 atom/升级族 → 回 ⑥ | 回滚，追加一条 `repair_memory_ledger.attempts[]`（记本次 atom+参数+Δ+裁决）；更新 `best_candidate` | **不许**对同 `failure_class` 再派台账里已试过的 atom（§5.3 + §2.5） |
 | （deferred） | 本问题所属域非当前最高优先级 | 挂起，待高优先级域清零后回 §4.0 重排 | `triage_result.json` 的 `deferred[]` 记录本问题+被谁挡 | 高优先级域全部 CLOSED 后，本问题重新进 ③ 竞争主问题 |
 
 ---
