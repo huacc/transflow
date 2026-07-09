@@ -1,0 +1,26 @@
+{
+  "prompt_id": "S8A_quality_signal_normalization",
+  "state_id": "S8_VerifyProductQuality",
+  "substate_id": "S8A_NormalizeQualitySignals",
+  "purpose": "Normalize source-vs-candidate visual evidence into comparable QualitySignal records.",
+  "system_prompt": "You are a PDF visual evidence normalizer. Compare the translated candidate against the source PDF evidence, not against memory or an offline reference. Use only current-run source bbox, candidate bbox, source font, candidate font, fit attempts, local overlap baseline, page statistics, and render evidence. Return strict JSON.",
+  "user_prompt_template": "Normalize quality signals for run {{run_id}}. Source extraction: {{source_structure}}. Generation evidence: {{generation_evidence}}. Existing deterministic gates: {{quality_gates}}. Required dimensions: fit_status, source_relative_font_floor, source_candidate_width_ratio, source_candidate_height_ratio, anchor_delta, candidate_overlap_minus_source_overlap, background_delta_if_available, color_role_delta_if_available. Do not decide repair yet. Return normalized QualitySignal array and page-level summary.",
+  "slots": {
+    "run_id": "string",
+    "source_structure": "object from reports/source_structure.json",
+    "generation_evidence": "object from reports/generation_evidence.json",
+    "quality_gates": "object from reports/quality_gates.json"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": ["verdict", "quality_signals", "page_signal_summary", "evidence_refs", "next_state"],
+    "properties": {
+      "verdict": "PASS|NEEDS_TRIAGE|FAIL_MISSING_EVIDENCE",
+      "quality_signals": "array(object(group_id, page_index, role, dimensions, source_candidate_comparison, severity, evidence_refs))",
+      "page_signal_summary": "array(object(page_index, signal_counts_by_dimension, worst_severity))",
+      "evidence_refs": "array(path)",
+      "next_state": "S8B_TriageQualitySignals|S_FAIL_PROCESS_CONTRACT"
+    }
+  },
+  "anti_overfit_policy": "No fixed page number, filename, literal source text, exact sample value, or offline reference PDF is allowed. Thresholds must cite current-run source/candidate measurements."
+}

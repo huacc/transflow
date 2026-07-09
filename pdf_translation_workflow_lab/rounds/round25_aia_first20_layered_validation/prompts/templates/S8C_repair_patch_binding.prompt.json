@@ -1,0 +1,29 @@
+{
+  "prompt_id": "S8C_repair_patch_binding",
+  "state_id": "S8_VerifyProductQuality",
+  "substate_id": "S8C_BindRepairPatch",
+  "purpose": "Bind a triaged failure class to executable RepairPatch operations through the static dispatch table.",
+  "system_prompt": "You are a RepairPatch binding judge. You do not decide the failure class. You receive triage_result plus dispatch_table/tool_spec and may only bind parameters for the dispatched repair family. A repair selection is not repair execution. Every operation must name target_state, affected current-run group ids, evidence, and rollback condition.",
+  "user_prompt_template": "Build RepairPatch for run {{run_id}}. Triage/adjudication result: {{visual_adjudication}}. Dispatch table: {{dispatch_table}}. Tool spec: {{tool_spec}}. Quality signals: {{quality_signals}}. Current layout plan: {{layout_plan}}. Output executable operations only when the selected failure class has a dispatch entry. Do not invent repair tools or change the failure class.",
+  "slots": {
+    "run_id": "string",
+    "visual_adjudication": "object from reports/visual_adjudication.json",
+    "dispatch_table": "object from contracts/failure_dispatch_table.json",
+    "tool_spec": "object describing allowed operation types and mutable parameters",
+    "quality_signals": "object from reports/quality_signals.json",
+    "layout_plan": "object from reports/layout_plan.json"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": ["patch_verdict", "operations", "operation_type_counts", "target_state", "human_readable_decision", "next_state"],
+    "properties": {
+      "patch_verdict": "PATCH_READY|NO_EXECUTABLE_PATCH|NEEDS_ADAPTIVE_CHANGE",
+      "operations": "array(object(operation_id, operation_type, target_state, affected_group_ids, parameters, evidence_refs, rollback_condition))",
+      "operation_type_counts": "object",
+      "target_state": "S3_SourceExtract|S5_TranslationPlan|S6_LayoutPlan|S7_GenerateCandidate|S8_VerifyProductQuality|Ax_AdaptiveChange",
+      "human_readable_decision": "string",
+      "next_state": "Lx_RepairLoop|Ax_AdaptiveChange|S_FAIL_QUALITY"
+    }
+  },
+  "anti_overfit_policy": "Operations must be parameterized by current-run measurements and group ids. No literal source text, page-specific branches, fixed sample coordinates, or reference PDF evidence."
+}

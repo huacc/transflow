@@ -1,0 +1,28 @@
+{
+  "contract_id": "round24_failure_dispatch_table",
+  "purpose": "Map normalized PDF quality failure classes to allowed repair families without letting triage prompts choose arbitrary tools.",
+  "anti_overfit_policy": "Entries are generic failure classes. No filename, page number, fixed coordinate, literal text, or reference PDF evidence is allowed.",
+  "entries": [
+    {
+      "failure_class": "text_fit_overflow",
+      "repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "allowed_operation_types": ["expand_slot"],
+      "tool": "tools/repairs/build_repair_patch.py"
+    },
+    {
+      "failure_class": "font_size_regression",
+      "repair_family": "reflow_before_shrink",
+      "target_state": "S6_LayoutPlan",
+      "allowed_operation_types": ["expand_slot"],
+      "tool": "tools/repairs/build_repair_patch.py"
+    },
+    {
+      "failure_class": "cross_slot_overlap",
+      "repair_family": "vertical_flow_relayout",
+      "target_state": "S6_LayoutPlan",
+      "allowed_operation_types": ["vertical_flow_relayout"],
+      "tool": "tools/repairs/build_repair_patch.py"
+    }
+  ]
+}

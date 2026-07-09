@@ -1,0 +1,267 @@
+{
+  "_meta": {
+    "generated_from": [
+      "pdf_translation_workflow_core/tools/ (disk file listing, verified 2026-07-09)",
+      "pdf_translation_workflow_core/contracts/tool_contracts.md",
+      "pdf_translation_workflow_core/contracts/state_machine.md (State/tool table, S5 materialization loop)",
+      "pdf_translation_workflow_core/prompts/prompt_tool_bindings.json (state->tool bindings)"
+    ],
+    "single_source_of_truth": true,
+    "version": "v1",
+    "note": "Every tool path is verified to exist on disk. category is one of probe|extract|render|plan|generate|validate|repair|orchestrate. consumes/produces list the primary run-time artifact filenames each tool reads/writes; they are the join keys the six-stage pipeline (decision_artifacts.json) and the graph validator use to prove that a repair_atom's wired_to_tool actually reads the evidence it claims. Paths are relative to the workspace execution root."
+  },
+  "tools": [
+    {
+      "id": "tool_probe",
+      "path": "pdf_translation_workflow_core/tools/probes/tool_probe.py",
+      "category": "probe",
+      "bound_state": "S2_ToolProbe",
+      "consumes": [],
+      "produces": ["tool_probe.json"],
+      "purpose": "Probe Python, PDF libs (fitz/pypdf/pdfplumber), fonts, renderers. required_ok=fitz plus at least one CJK font."
+    },
+    {
+      "id": "extract_pdf_structure",
+      "path": "pdf_translation_workflow_core/tools/probes/extract_pdf_structure.py",
+      "category": "extract",
+      "bound_state": "S3_SourceExtract",
+      "consumes": ["<source_pdf>"],
+      "produces": ["source_extraction.json"],
+      "purpose": "Extract page geometry, text lines (line_id/bbox/font_size/color/ascii_tokens/cjk_count), images, drawings; classify page_type_guess."
+    },
+    {
+      "id": "render_pdf",
+      "path": "pdf_translation_workflow_core/tools/renderers/render_pdf.py",
+      "category": "render",
+      "bound_state": "S3_SourceExtract|S8_VerifyProductQuality",
+      "consumes": ["<pdf>"],
+      "produces": ["<prefix>_page_*.png", "<manifest>.json"],
+      "purpose": "Render PDF pages to PNG and write a render manifest. Used for both source and candidate renders."
+    },
+    {
+      "id": "render_source_output_crop",
+      "path": "pdf_translation_workflow_core/tools/renderers/render_source_output_crop.py",
+      "category": "render",
+      "bound_state": "S8_VerifyProductQuality",
+      "consumes": ["<source_pdf>", "<candidate_pdf>"],
+      "produces": ["<crop_name>_source_vs_output.png", "<crop_name>_backrotated_output.png"],
+      "purpose": "Source-vs-candidate crop comparison; supports --backrotate for sidebar orientation checks."
+    },
+    {
+      "id": "build_translation_batch_manifest",
+      "path": "pdf_translation_workflow_core/tools/planners/build_translation_batch_manifest.py",
+      "category": "plan",
+      "bound_state": "S5_TranslationPlan",
+      "consumes": ["source_extraction.json"],
+      "produces": ["translation_batch_manifest.json", "translation_batches/<batch_id>.slot_values.json"],
+      "purpose": "Single source of truth for line_is_translatable. Builds bounded D2 batches."
+    },
+    {
+      "id": "materialize_d2_translation_batches",
+      "path": "pdf_translation_workflow_core/tools/generators/materialize_d2_translation_batches.py",
+      "category": "generate",
+      "bound_state": "S5_TranslationPlan",
+      "consumes": ["translation_batch_manifest.json", "translation_batches/<batch_id>.slot_values.json"],
+      "produces": ["translation_batches/<batch_id>.prompt_instance.json", "translation_batches/<batch_id>.model_output.json", "translation_batches/<batch_id>.decision_record.json", "d2_materialization.json"],
+      "purpose": "Materialize D2 batches via provider (google_translate_web_gtx). NFKC + marker chunking + target-script check. Never placeholder."
+    },
+    {
+      "id": "validate_translation_batch",
+      "path": "pdf_translation_workflow_core/tools/validators/validate_translation_batch.py",
+      "category": "validate",
+      "bound_state": "S5_TranslationPlan",
+      "consumes": ["translation_batches/<batch_id>.slot_values.json", "translation_batches/<batch_id>.model_output.json"],
+      "produces": ["translation_batches/<batch_id>.validation.json"],
+      "purpose": "Per-batch validation of D2 output."
+    },
+    {
+      "id": "assemble_semantic_translations",
+      "path": "pdf_translation_workflow_core/tools/generators/assemble_semantic_translations.py",
+      "category": "generate",
+      "bound_state": "S5_TranslationPlan",
+      "consumes": ["translation_batch_manifest.json", "translation_batches/<batch_id>.model_output.json"],
+      "produces": ["docs/input/semantic_translations/<case_id>.translations.json", "translation_assembly_evidence.json"],
+      "purpose": "Assemble validated batches into full semantic translations by unit_id; marks full_semantic_translation only when complete."
+    },
+    {
+      "id": "validate_semantic_translations",
+      "path": "pdf_translation_workflow_core/tools/validators/validate_semantic_translations.py",
+      "category": "validate",
+      "bound_state": "S5_TranslationPlan",
+      "consumes": ["source_extraction.json", "docs/input/semantic_translations/<case_id>.translations.json"],
+      "produces": ["semantic_translation_validation.json"],
+      "purpose": "Full semantic gate: unit coverage, target script, placeholder/pseudo rejection, token preservation. Also the content-match binder for translations."
+    },
+    {
+      "id": "validate_translation_manifest_boundaries",
+      "path": "pdf_translation_workflow_core/tools/validators/validate_translation_manifest_boundaries.py",
+      "category": "validate",
+      "bound_state": "S5_TranslationPlan",
+      "consumes": ["translation_batch_manifest.json"],
+      "produces": ["translation_manifest_boundaries.json", "translation_batches/<batch_id>.workspace_boundary.json"],
+      "purpose": "Manifest-level workspace-boundary generation for large documents; does not lower the per-batch boundary contract."
+    },
+    {
+      "id": "build_layout_policy",
+      "path": "pdf_translation_workflow_core/tools/planners/build_layout_policy.py",
+      "category": "plan",
+      "bound_state": "S6_LayoutPlan",
+      "consumes": ["source_extraction.json", "docs/input/semantic_translations/<case_id>.translations.json", "profiles/<source>_to_<target>.layout_profile.json"],
+      "produces": ["layout_policy.json"],
+      "purpose": "Build run-local layout policy from current-page font quantiles + language profile. All thresholds source-relative, no sample constants."
+    },
+    {
+      "id": "build_role_plan",
+      "path": "pdf_translation_workflow_core/tools/planners/build_role_plan.py",
+      "category": "plan",
+      "bound_state": "S6_LayoutPlan",
+      "consumes": ["source_extraction.json", "layout_policy.json"],
+      "produces": ["role_plan.json"],
+      "purpose": "Classify each block into a region role from current-page geometry/color/value tokens."
+    },
+    {
+      "id": "build_layout_plan",
+      "path": "pdf_translation_workflow_core/tools/planners/build_layout_plan.py",
+      "category": "plan",
+      "bound_state": "S6_LayoutPlan",
+      "consumes": ["source_extraction.json", "role_plan.json", "layout_policy.json", "<source_pdf>"],
+      "produces": ["layout_plan.json"],
+      "purpose": "Project role groups into generator-consumable target rects; reads vector segments to infer table cells/color bands/lines; obstacle packing; records estimated_overlaps. Sets layout_plan_consumable_by_generator=true."
+    },
+    {
+      "id": "generate_semantic_backfill",
+      "path": "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py",
+      "category": "generate",
+      "bound_state": "S7_GenerateCandidate",
+      "consumes": ["<source_pdf>", "source_extraction.json", "docs/input/semantic_translations/<case_id>.translations.json", "layout_policy.json", "layout_plan.json"],
+      "produces": ["<run_id>_semantic_backfill_candidate.pdf", "candidate_generation_evidence.json", "layout_execution.json", "translations.used.json"],
+      "purpose": "Core generator: background sampling, redact source, consume --planned-layout, temp-page fit probe, insert/text-image/point fallback ladder; records redactions/insertions/background_covers. Proves layout_plan_consumed_by_generator=true."
+    },
+    {
+      "id": "generate_backfill_candidate",
+      "path": "pdf_translation_workflow_core/tools/generators/generate_backfill_candidate.py",
+      "category": "generate",
+      "bound_state": "S7_GenerateCandidate",
+      "consumes": ["<source_pdf>", "source_extraction.json", "layout_policy.json"],
+      "produces": ["<run_id>_backfill_candidate.pdf", "candidate_generation_evidence.json"],
+      "purpose": "backfill_candidate_validation-mode generator; may use placeholder text and must fail semantic_coverage. Not for product_quality."
+    },
+    {
+      "id": "generate_minimal_candidate",
+      "path": "pdf_translation_workflow_core/tools/generators/generate_minimal_candidate.py",
+      "category": "generate",
+      "bound_state": "S7_GenerateCandidate",
+      "consumes": ["<source_pdf>", "source_extraction.json"],
+      "produces": ["<run_id>_minimal_candidate.pdf"],
+      "purpose": "Minimal redact/insert mechanics prover. Not a product-quality generator."
+    },
+    {
+      "id": "collect_visual_region_metrics",
+      "path": "pdf_translation_workflow_core/tools/validators/collect_visual_region_metrics.py",
+      "category": "validate",
+      "bound_state": "S8_VerifyProductQuality",
+      "consumes": ["<source_pdf>", "<candidate_pdf>", "candidate_generation_evidence.json", "source_extraction.json"],
+      "produces": ["visual_region_metrics.json", "visual_region_crops/*"],
+      "purpose": "Per-region visual metrics: page_metrics, region_metrics (role, font ratio, background deltas), redaction_metrics, background_cover_metrics, role_gates, insertion_collision. Primary visual evidence basket."
+    },
+    {
+      "id": "plan_visual_region_repairs",
+      "path": "pdf_translation_workflow_core/tools/repairs/plan_visual_region_repairs.py",
+      "category": "repair",
+      "bound_state": "S8_VerifyProductQuality",
+      "consumes": ["visual_region_metrics.json"],
+      "produces": ["visual_repair_plan.json"],
+      "purpose": "Map role_gates to repair_atom hints. Planning evidence only; does NOT prove a repair loop executed."
+    },
+    {
+      "id": "write_visual_adjudication",
+      "path": "pdf_translation_workflow_core/tools/validators/write_visual_adjudication.py",
+      "category": "validate",
+      "bound_state": "S8_VerifyProductQuality",
+      "consumes": ["visual_region_metrics.json", "candidate_render_manifest.json", "visual_repair_plan.json"],
+      "produces": ["visual_adjudication.json"],
+      "purpose": "Materialize deterministic D7 adjudication (dimensions/verdict/blocking_failure_count) when no backend visual model/human review is called."
+    },
+    {
+      "id": "evaluate_pdf_quality",
+      "path": "pdf_translation_workflow_core/tools/validators/evaluate_pdf_quality.py",
+      "category": "validate",
+      "bound_state": "S8_VerifyProductQuality",
+      "consumes": ["<source_pdf>", "<candidate_pdf>", "candidate_generation_evidence.json", "visual_adjudication.json", "visual_region_metrics.json"],
+      "produces": ["product_quality_gates.json"],
+      "purpose": "Core machine gate. text_residue is load-bearing (zh target: only validated Latin tokens pass; en target: any CJK is residue). Merges machine gates, region gates, D7 adjudication into blocking_failure_count."
+    },
+    {
+      "id": "build_repair_patch",
+      "path": "pdf_translation_workflow_core/tools/repairs/build_repair_patch.py",
+      "category": "repair",
+      "bound_state": "Lx_RepairLoop",
+      "consumes": ["product_quality_gates.json", "visual_region_metrics.json", "layout_policy.json"],
+      "produces": ["repair_patch_<n>.json"],
+      "purpose": "Build a run-local RepairPatch (operations, operation_count, rollback_conditions, anti_overfit_statement) from the selected failure class + repair atom. Delegates policy ops to repair_policy_patch.py."
+    },
+    {
+      "id": "apply_repair_patch",
+      "path": "pdf_translation_workflow_core/tools/repairs/apply_repair_patch.py",
+      "category": "repair",
+      "bound_state": "Lx_RepairLoop",
+      "consumes": ["repair_patch_<n>.json", "layout_policy.json"],
+      "produces": ["layout_policy.json", "repair_patch_application_<n>.json"],
+      "purpose": "Apply a RepairPatch to the run-local layout_policy. operation_count=0 is a no-op (skipped_noop_repairs)."
+    },
+    {
+      "id": "repair_policy_patch",
+      "path": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "category": "repair",
+      "bound_state": "Lx_RepairLoop",
+      "consumes": ["layout_policy.json"],
+      "produces": ["layout_policy.json (mutated)"],
+      "purpose": "Shared lib. EXECUTABLE_REPAIR_ATOMS whitelist + build_policy_patch_operations, branching ONLY on repair_atom/gate_id/language/role, never document identity. Authoritative source for which repair_atoms are executable."
+    },
+    {
+      "id": "run_semantic_product_quality_round",
+      "path": "pdf_translation_workflow_core/tools/run_semantic_product_quality_round.py",
+      "category": "orchestrate",
+      "bound_state": "S3_SourceExtract..S9_VerifyProcessContract",
+      "consumes": ["<source_pdf>", "docs/input/semantic_translations/*.translations.json"],
+      "produces": ["state_trace.json", "operation_log.jsonl", "decision_log.jsonl", "repair_loop_<n>.json", "final_verdict.json"],
+      "purpose": "Current generic execution engine. Chains S3-S9 atomic tools and forces repair_loop_<n>.json on Lx entry. Must not bypass RepairPatch to inline-edit policy."
+    },
+    {
+      "id": "validate_workspace_boundary",
+      "path": "pdf_translation_workflow_core/tools/validators/validate_workspace_boundary.py",
+      "category": "validate",
+      "bound_state": "S1_ContractLoad|S5_TranslationPlan",
+      "consumes": ["--workspace-root", "--path ..."],
+      "produces": ["workspace_boundary_preflight.json", "<batch_id>.workspace_boundary.json"],
+      "purpose": "Prove all planned runtime write paths resolve inside the execution root. workspace_boundary_verdict=PASS required before writing."
+    },
+    {
+      "id": "validate_process_artifacts",
+      "path": "pdf_translation_workflow_core/tools/validators/validate_process_artifacts.py",
+      "category": "validate",
+      "bound_state": "S9_VerifyProcessContract",
+      "consumes": ["state_trace.json", "operation_log.jsonl", "decision_log.jsonl", "repair_loop_<n>.json"],
+      "produces": ["process_validation.json"],
+      "purpose": "Validate state trace, logs, boundary refs, repair-loop execution records. Lx entry without repair_loop_<n>.json = S_FAIL_PROCESS_CONTRACT."
+    },
+    {
+      "id": "scan_core_overfit",
+      "path": "pdf_translation_workflow_core/tools/validators/scan_core_overfit.py",
+      "category": "validate",
+      "bound_state": "S9_VerifyProcessContract",
+      "consumes": ["pdf_translation_workflow_core/", "anti_overfit_tokens.json"],
+      "produces": ["anti_overfit_scan.json"],
+      "purpose": "Scan core source for sample tokens (filenames/pages/text/figures). blocking_hit_count==0 required to pass."
+    },
+    {
+      "id": "collect_change_manifest",
+      "path": "pdf_translation_workflow_core/tools/validators/collect_change_manifest.py",
+      "category": "validate",
+      "bound_state": "Ax_AdaptiveChange",
+      "consumes": ["<files_changed>"],
+      "produces": ["change_manifest_before.json", "change_manifest_after.json"],
+      "purpose": "Before/after file-hash manifests for adaptive methodology changes."
+    }
+  ]
+}

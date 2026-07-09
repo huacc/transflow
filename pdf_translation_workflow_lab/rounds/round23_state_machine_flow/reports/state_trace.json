@@ -1,0 +1,166 @@
+[
+  {
+    "decision": "inputs_declared",
+    "input_artifacts": [
+      "input/source_pdfs/00005_2025_annual_report_zh_pages_001_020.pdf",
+      "input/semantic_translations/R22_GEN_ZH_TO_EN_00005_pages_001_020.translations.json"
+    ],
+    "next_state": "S1_ContractLoad",
+    "output_artifacts": [
+      "reports/run_request.json"
+    ],
+    "purpose": "确认输入、输出、run mode、非目标",
+    "state": "S0_Request",
+    "timestamp_local": "2026-07-09T11:15:48"
+  },
+  {
+    "decision": "contracts_loaded_and_workspace_boundary_pass",
+    "input_artifacts": [
+      "README.md",
+      "EXECUTION.md",
+      "docs/设计/PDF_语义翻译回填_状态机与工具编排设计.md",
+      "contracts/state_machine.md",
+      "contracts/tool_contracts.md",
+      "contracts/execution_procedure.md",
+      "prompts/templates/visual_quality_adjudication.prompt.json",
+      "prompts/templates/repair_selection.prompt.json"
+    ],
+    "next_state": "S2_ToolProbe",
+    "output_artifacts": [
+      "reports/contract_load_record.json",
+      "reports/workspace_boundary_preflight.json"
+    ],
+    "purpose": "读取流程、契约、提示词、工具说明并验证执行根写入边界",
+    "state": "S1_ContractLoad",
+    "timestamp_local": "2026-07-09T11:15:48"
+  },
+  {
+    "decision": "tool_probe_pass",
+    "input_artifacts": [],
+    "next_state": "S3_SourceExtract",
+    "output_artifacts": [
+      "reports/tool_probe.json"
+    ],
+    "purpose": "探测 Python、PDF 库、字体和渲染能力",
+    "state": "S2_ToolProbe",
+    "timestamp_local": "2026-07-09T11:15:48"
+  },
+  {
+    "decision": "source_structure_extracted",
+    "input_artifacts": [
+      "input/source_pdfs/00005_2025_annual_report_zh_pages_001_020.pdf"
+    ],
+    "next_state": "S4_PageStrategy",
+    "output_artifacts": [
+      "reports/source_structure.json"
+    ],
+    "purpose": "提取源 PDF 页尺寸、文本、bbox、字体、颜色和当前页统计",
+    "state": "S3_SourceExtract",
+    "timestamp_local": "2026-07-09T11:15:49"
+  },
+  {
+    "decision": "page_strategy_recorded",
+    "input_artifacts": [
+      "reports/source_structure.json"
+    ],
+    "next_state": "S5_TranslationPlan",
+    "output_artifacts": [
+      "reports/page_strategy.json"
+    ],
+    "purpose": "判断页面类型和区域角色的上游约束",
+    "state": "S4_PageStrategy",
+    "timestamp_local": "2026-07-09T11:15:49"
+  },
+  {
+    "decision": "presupplied_semantic_translation_pass",
+    "input_artifacts": [
+      "input/semantic_translations/R22_GEN_ZH_TO_EN_00005_pages_001_020.translations.json"
+    ],
+    "next_state": "S6_LayoutPlan",
+    "output_artifacts": [
+      "reports/semantic_translation_validation.json"
+    ],
+    "purpose": "校验预供应语义译文是否满足 product-quality 输入前提",
+    "state": "S5_TranslationPlan",
+    "timestamp_local": "2026-07-09T11:15:49"
+  },
+  {
+    "decision": "layout_plan_ready",
+    "input_artifacts": [
+      "reports/source_structure.json",
+      "input/semantic_translations/R22_GEN_ZH_TO_EN_00005_pages_001_020.translations.json",
+      "reports/page_strategy.json"
+    ],
+    "next_state": "S7_GenerateCandidate",
+    "output_artifacts": [
+      "reports/role_plan.json",
+      "reports/layout_plan.json"
+    ],
+    "purpose": "生成角色计划和 generator-consumable 布局计划",
+    "state": "S6_LayoutPlan",
+    "timestamp_local": "2026-07-09T11:15:52"
+  },
+  {
+    "decision": "candidate_generated",
+    "input_artifacts": [
+      "input/source_pdfs/00005_2025_annual_report_zh_pages_001_020.pdf",
+      "reports/layout_plan.json"
+    ],
+    "next_state": "S8_VerifyProductQuality",
+    "output_artifacts": [
+      "output/R23_GEN_ZH_TO_EN_00005_pages_001_020_candidate.pdf",
+      "reports/generation_evidence.json"
+    ],
+    "purpose": "擦除源语文本并回填目标语候选 PDF",
+    "state": "S7_GenerateCandidate",
+    "timestamp_local": "2026-07-09T11:15:59"
+  },
+  {
+    "decision": "product_quality=FAIL",
+    "input_artifacts": [
+      "reports/generation_evidence.json"
+    ],
+    "next_state": "Lx_RepairLoop",
+    "output_artifacts": [
+      "reports/quality_gates.json",
+      "reports/repair_plan_0.json",
+      "reports/visual_adjudication.json"
+    ],
+    "purpose": "执行候选质量 gate、多信号融合和修复族选择",
+    "state": "S8_VerifyProductQuality",
+    "timestamp_local": "2026-07-09T11:16:00"
+  },
+  {
+    "decision": "repair_selection_recorded_but_patch_not_executed",
+    "input_artifacts": [
+      "reports/quality_gates.json",
+      "reports/repair_plan_0.json"
+    ],
+    "next_state": "S_FAIL_QUALITY",
+    "output_artifacts": [
+      "reports/repair_loop_0001.json"
+    ],
+    "purpose": "对一个阻塞失败执行修复闭环；本实验包只能选择修复族，不能应用 RepairPatch",
+    "state": "Lx_RepairLoop",
+    "timestamp_local": "2026-07-09T11:16:00"
+  },
+  {
+    "decision": "process=PASS; product=FAIL",
+    "input_artifacts": [
+      "reports/state_trace.json",
+      "reports/decision_log.jsonl",
+      "reports/operation_log.jsonl",
+      "reports/model_interactions.jsonl",
+      "reports/quality_gates.json",
+      "reports/repair_loop_0001.json"
+    ],
+    "next_state": "S_FAIL_QUALITY",
+    "output_artifacts": [
+      "reports/process_audit.json",
+      "reports/round23_final_verdict.json"
+    ],
+    "purpose": "验证状态 trace、操作日志、写入边界、过程契约和最终终态",
+    "state": "S9_VerifyProcessContract",
+    "timestamp_local": "2026-07-09T11:16:00"
+  }
+]

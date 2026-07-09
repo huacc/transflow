@@ -1,0 +1,300 @@
+{
+  "tool": "build_repair_patch",
+  "patch_verdict": "PATCH_READY",
+  "selected_failure_class": "text_fit_overflow",
+  "dispatch_result": {
+    "dispatch_table": "contracts/failure_dispatch_table.json",
+    "selected_failure_class": "text_fit_overflow",
+    "selected_repair_family": "expand_or_reflow_slot",
+    "target_state": "S6_LayoutPlan",
+    "allowed_operation_types": [
+      "expand_slot"
+    ],
+    "tool": "tools/repairs/build_repair_patch.py"
+  },
+  "selected_repair_family": "expand_or_reflow_slot",
+  "operation_count": 9,
+  "operation_type_counts": {
+    "expand_slot": 9
+  },
+  "deferred_failure_classes": {
+    "cross_slot_overlap": 33
+  },
+  "deferred_operation_count": 33,
+  "human_readable_decision": "已把源/候选对比失败绑定为可执行 RepairPatch；下一步应应用到 layout_plan 并重新生成候选。",
+  "anti_overfit_statement": "RepairPatch 只引用当前运行中的 group_id、bbox、字号和重叠信号，不包含固定页码分支、固定文本或人工参考 PDF。",
+  "source_layout_plan": "reports\\layout_plan.json",
+  "source_quality_signals": "reports\\quality_signals.json",
+  "operations": [
+    {
+      "operation_id": "expand_p1_b6_0",
+      "operation_type": "expand_slot",
+      "group_id": "p1_b6_0",
+      "page_index": 1,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.637,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          41.37,
+          455.349,
+          131.37,
+          467.32
+        ],
+        "candidate_rect": [
+          41.37,
+          455.349,
+          172.332,
+          469.714
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.4,
+        "font_floor": 5.04
+      }
+    },
+    {
+      "operation_id": "expand_p6_b13_0",
+      "operation_type": "expand_slot",
+      "group_id": "p6_b13_0",
+      "page_index": 6,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.759,
+      "grow_right_pt": 14.4,
+      "min_font_start": 4.8,
+      "min_font_min": 4.416,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          390.63,
+          400.734,
+          551.062,
+          440.175
+        ],
+        "candidate_rect": [
+          390.63,
+          422.312,
+          559.28,
+          473.312
+        ],
+        "source_font_size": 8.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 4.8
+      }
+    },
+    {
+      "operation_id": "expand_p9_b17_0",
+      "operation_type": "expand_slot",
+      "group_id": "p9_b17_0",
+      "page_index": 9,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 16.08,
+      "grow_right_pt": 14.4,
+      "min_font_start": 4.8,
+      "min_font_min": 4.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          390.63,
+          402.334,
+          549.11,
+          460.974
+        ],
+        "candidate_rect": [
+          390.63,
+          471.102,
+          559.28,
+          512.734
+        ],
+        "source_font_size": 8.0,
+        "candidate_font_size": 5.6,
+        "font_floor": 4.16
+      }
+    },
+    {
+      "operation_id": "expand_p10_b10_0",
+      "operation_type": "expand_slot",
+      "group_id": "p10_b10_0",
+      "page_index": 10,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 10.0,
+      "grow_right_pt": 14.4,
+      "min_font_start": 4.8,
+      "min_font_min": 4.416,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          41.37,
+          365.235,
+          199.85,
+          395.075
+        ],
+        "candidate_rect": [
+          41.37,
+          369.103,
+          208.0,
+          411.603
+        ],
+        "source_font_size": 8.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 4.8
+      }
+    },
+    {
+      "operation_id": "expand_p12_b10_0",
+      "operation_type": "expand_slot",
+      "group_id": "p12_b10_0",
+      "page_index": 12,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 24.145,
+      "grow_right_pt": 14.4,
+      "min_font_start": 4.8,
+      "min_font_min": 4.416,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          41.37,
+          349.835,
+          203.898,
+          427.675
+        ],
+        "candidate_rect": [
+          41.37,
+          349.835,
+          208.0,
+          439.941
+        ],
+        "source_font_size": 8.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 4.8
+      }
+    },
+    {
+      "operation_id": "expand_p12_b13_0",
+      "operation_type": "expand_slot",
+      "group_id": "p12_b13_0",
+      "page_index": 12,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 10.0,
+      "grow_right_pt": 14.4,
+      "min_font_start": 4.8,
+      "min_font_min": 4.416,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          390.63,
+          349.835,
+          550.63,
+          370.075
+        ],
+        "candidate_rect": [
+          390.63,
+          349.835,
+          559.28,
+          374.123
+        ],
+        "source_font_size": 8.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 4.8
+      }
+    },
+    {
+      "operation_id": "expand_p13_b9_0",
+      "operation_type": "expand_slot",
+      "group_id": "p13_b9_0",
+      "page_index": 13,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 10.0,
+      "grow_right_pt": 14.4,
+      "min_font_start": 4.8,
+      "min_font_min": 4.416,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          216.0,
+          230.034,
+          373.416,
+          250.408
+        ],
+        "candidate_rect": [
+          216.0,
+          230.034,
+          373.416,
+          254.483
+        ],
+        "source_font_size": 8.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 4.8
+      }
+    },
+    {
+      "operation_id": "expand_p13_b11_0",
+      "operation_type": "expand_slot",
+      "group_id": "p13_b11_0",
+      "page_index": 13,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 10.956,
+      "grow_right_pt": 14.4,
+      "min_font_start": 4.8,
+      "min_font_min": 4.416,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          216.0,
+          300.634,
+          375.04,
+          340.075
+        ],
+        "candidate_rect": [
+          216.0,
+          316.863,
+          375.04,
+          367.863
+        ],
+        "source_font_size": 8.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 4.8
+      }
+    },
+    {
+      "operation_id": "expand_p15_b2_0",
+      "operation_type": "expand_slot",
+      "group_id": "p15_b2_0",
+      "page_index": 15,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 10.0,
+      "grow_right_pt": 14.4,
+      "min_font_start": 4.8,
+      "min_font_min": 4.122,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          45.0,
+          116.055,
+          191.528,
+          126.695
+        ],
+        "candidate_rect": [
+          45.0,
+          116.055,
+          250.139,
+          128.823
+        ],
+        "source_font_size": 8.0,
+        "candidate_font_size": 6.4,
+        "font_floor": 4.48
+      }
+    }
+  ]
+}

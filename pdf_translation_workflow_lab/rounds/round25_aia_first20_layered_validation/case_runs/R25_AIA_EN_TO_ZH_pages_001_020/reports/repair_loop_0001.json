@@ -1,0 +1,80 @@
+{
+  "acceptance_rule": "accept only if selected failure improves, total blocking count decreases, and non-selected hard failure classes do not regress",
+  "accepted_candidate_pdf": "output/R25_AIA_EN_TO_ZH_pages_001_020_initial_candidate.pdf",
+  "after": {
+    "blocking_failure_count": 134,
+    "dispatch_result": {
+      "allowed_operation_types": [
+        "expand_slot"
+      ],
+      "dispatch_table": "contracts/failure_dispatch_table.json",
+      "selected_failure_class": "text_fit_overflow",
+      "selected_repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "tool": "tools/repairs/build_repair_patch.py"
+    },
+    "failure_class_counts": {
+      "cross_slot_overlap": 132,
+      "font_size_regression": 3,
+      "text_fit_overflow": 2
+    },
+    "gate_counts": {
+      "all_groups_fit": 2,
+      "local_text_overlap": 132
+    },
+    "human_readable_result": "候选译文与原文视觉关系存在阻塞差异，需要进入 RepairLoop。",
+    "product_quality_verdict": "FAIL",
+    "selected_failure_class": "text_fit_overflow",
+    "selected_repair_family": "expand_or_reflow_slot",
+    "tool_selection_reason": "先由 Triage 按因果优先级选出 text_fit_overflow，再由静态 Dispatch 表映射到 expand_or_reflow_slot。"
+  },
+  "applied_operation_count": 95,
+  "before": {
+    "blocking_failure_count": 144,
+    "dispatch_result": {
+      "allowed_operation_types": [
+        "expand_slot"
+      ],
+      "dispatch_table": "contracts/failure_dispatch_table.json",
+      "selected_failure_class": "text_fit_overflow",
+      "selected_repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "tool": "tools/repairs/build_repair_patch.py"
+    },
+    "failure_class_counts": {
+      "cross_slot_overlap": 49,
+      "font_size_regression": 3,
+      "text_fit_overflow": 95
+    },
+    "gate_counts": {
+      "all_groups_fit": 95,
+      "local_text_overlap": 49
+    },
+    "human_readable_result": "候选译文与原文视觉关系存在阻塞差异，需要进入 RepairLoop。",
+    "product_quality_verdict": "FAIL",
+    "selected_failure_class": "text_fit_overflow",
+    "selected_repair_family": "expand_or_reflow_slot",
+    "tool_selection_reason": "先由 Triage 按因果优先级选出 text_fit_overflow，再由静态 Dispatch 表映射到 expand_or_reflow_slot。"
+  },
+  "entered_from_state": "S8_VerifyProductQuality",
+  "hard_failure_regressions": {
+    "cross_slot_overlap": {
+      "after": 132,
+      "before": 49
+    }
+  },
+  "human_readable_result": "修复前阻塞 144 个，修复候选阻塞 134 个；闭环结果为 REJECTED_ROLLBACK。",
+  "loop_id": "Lx_0001",
+  "loop_iteration": 1,
+  "loop_verdict": "REJECTED_ROLLBACK",
+  "next_state": "S9_VerifyProcessContract",
+  "rejected_candidate_pdf": "output/R25_AIA_EN_TO_ZH_pages_001_020_repair0001_candidate.pdf",
+  "repair_accepted": false,
+  "repair_patch": "reports/repair_patch_0001.json",
+  "repair_patch_application": "reports/repair_patch_application_0001.json",
+  "selected_failure_before_after": {
+    "after": 2,
+    "before": 95,
+    "failure_class": "text_fit_overflow"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "accepted_blocking_failure_count": 80,
+  "applied_operation_count": 33,
+  "before_blocking_failure_count": 80,
+  "candidate_pdf": "output/R24_GEN_ZH_TO_EN_00005_pages_001_020_initial_candidate.pdf",
+  "case_id": "R24_GEN_ZH_TO_EN_00005_pages_001_020",
+  "deferred_failure_classes": {
+    "text_fit_overflow": 9
+  },
+  "initial_candidate_pdf": "output/R24_GEN_ZH_TO_EN_00005_pages_001_020_initial_candidate.pdf",
+  "loop_verdict": "REJECTED_ROLLBACK",
+  "process_contract_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "rejected_candidate_pdf": "output/R24_GEN_ZH_TO_EN_00005_pages_001_020_repair0001_candidate.pdf",
+  "repair_accepted": false,
+  "repair_after_blocking_failure_count": 102,
+  "selected_failure_class": "cross_slot_overlap",
+  "selected_repair_family": "vertical_flow_relayout",
+  "terminal_state": "S_FAIL_QUALITY"
+}

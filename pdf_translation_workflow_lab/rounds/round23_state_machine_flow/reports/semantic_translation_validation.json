@@ -1,0 +1,27 @@
+{
+  "coverage": {
+    "duplicate_unit_ids": [],
+    "extra_unit_ids": [],
+    "matched_unit_count": 2776,
+    "missing_batch_outputs": [],
+    "missing_unit_ids": [],
+    "page_index_max": 20,
+    "page_index_min": 1,
+    "runtime_reference_policy": "no_offline_reference_pdf_consumed",
+    "source_pdf_subset": "00005_2025_annual_report_zh_pages_001_020.pdf",
+    "source_unit_count": 2776,
+    "translated_unit_count": 2776,
+    "unit_count": 1967
+  },
+  "empty_unit_count": 0,
+  "note": "Round23 consumes pre-supplied semantic translations from round22 input; it does not call a translation model.",
+  "pseudo_unit_count": 0,
+  "semantic_coverage": "full_semantic_translation",
+  "source_language": "zh",
+  "target_language": "en",
+  "tool": "round23_inline_presupplied_semantic_translation_validation",
+  "translation_provider": "google_translate_web_gtx",
+  "translation_quality": "semantic_translation",
+  "translation_validation_verdict": "PASS",
+  "unit_count": 1967
+}

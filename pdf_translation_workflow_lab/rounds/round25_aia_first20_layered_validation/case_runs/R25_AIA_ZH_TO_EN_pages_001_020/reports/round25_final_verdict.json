@@ -1,0 +1,32 @@
+{
+  "accepted_blocking_failure_count": 290,
+  "applied_operation_count": 135,
+  "before_blocking_failure_count": 290,
+  "candidate_pdf": "output/R25_AIA_ZH_TO_EN_pages_001_020_initial_candidate.pdf",
+  "case_id": "R25_AIA_ZH_TO_EN_pages_001_020",
+  "deferred_failure_classes": {
+    "cross_slot_overlap": 37,
+    "font_size_regression": 26
+  },
+  "hard_failure_regressions": {
+    "cross_slot_overlap": {
+      "after": 268,
+      "before": 140
+    }
+  },
+  "initial_candidate_pdf": "output/R25_AIA_ZH_TO_EN_pages_001_020_initial_candidate.pdf",
+  "loop_verdict": "REJECTED_ROLLBACK",
+  "process_contract_verdict": "PASS",
+  "product_quality_verdict": "FAIL",
+  "rejected_candidate_pdf": "output/R25_AIA_ZH_TO_EN_pages_001_020_repair0001_candidate.pdf",
+  "repair_accepted": false,
+  "repair_after_blocking_failure_count": 285,
+  "selected_failure_before_after": {
+    "after": 2,
+    "before": 135,
+    "failure_class": "text_fit_overflow"
+  },
+  "selected_failure_class": "text_fit_overflow",
+  "selected_repair_family": "expand_or_reflow_slot",
+  "terminal_state": "S_FAIL_QUALITY"
+}
