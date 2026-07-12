@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "page-run-package/v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "toolbox_key",
+    "page_id",
+    "source_snapshot",
+    "source_sha256",
+    "candidate_output",
+    "required_directories",
+    "source_is_immutable"
+  ],
+  "properties": {
+    "schema_version": {"const": "page-run-package/v1"},
+    "toolbox_key": {"const": "body.flow_text.single"},
+    "source_snapshot": {"const": "input/source.pdf"},
+    "candidate_output": {"const": "output/candidate.pdf"},
+    "source_is_immutable": {"const": true}
+  }
+}

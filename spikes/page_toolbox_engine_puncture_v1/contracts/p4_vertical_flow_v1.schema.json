@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "p4-vertical-flow/v1",
+  "$defs": {
+    "P4Placement": {
+      "type": "object",
+      "required": ["container_id", "source_bbox", "output_bbox", "horizontal_policy", "font_size", "line_height", "fit"],
+      "properties": {
+        "horizontal_policy": {"enum": ["normal_flow_width_invariant", "exceptional_short_line_expand", "fixed_margin"]},
+        "fit": {"type": "boolean"}
+      }
+    },
+    "P4LayoutPlan": {
+      "type": "object",
+      "required": ["page_id", "toolbox_key", "source_language", "target_language", "profile_id", "column_left", "column_right", "content_bottom", "placements"]
+    },
+    "P4RepairAttempt": {
+      "type": "object",
+      "required": ["attempt_index", "profile_id", "font_scale", "line_height", "gap_scale", "fit", "findings"]
+    }
+  }
+}

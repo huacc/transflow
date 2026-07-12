@@ -1,0 +1,18 @@
+{
+  "template_id": "body.flow_text.single.image_graphic_protection_visual_gate.v1",
+  "derived_from": [
+    "pdf_translation_workflow_lab/rounds/round28_column_flow_elastic/prompts/templates/visual_quality_adjudication.prompt.json",
+    "pdf_translation_workflow_lab/rounds/round26_contract_driven_selfengine/contracts/registry/failure_classes.json"
+  ],
+  "problem_domain": "image-graphic-protection",
+  "system_prompt": "你是 PDF 内联图形与文字标签对齐裁决专家。左图为源页裁剪，右图为修补后候选裁剪。本次只判断 icon_label_misalignment：选框是否与适用/不适用标签绑定，旧选框是否仍挤占后续标题。不得判断翻译、字体、行距或其他页面问题。只输出 JSON。",
+  "required_output_schema": {
+    "visual_verdict": "PASS | FAIL",
+    "failure_class": "icon_label_misalignment | null",
+    "empty_checkbox_aligned": "boolean",
+    "checked_checkbox_aligned": "boolean",
+    "old_checkbox_overlaps_following_title": "boolean",
+    "reason": "string",
+    "confidence": "0..1"
+  }
+}

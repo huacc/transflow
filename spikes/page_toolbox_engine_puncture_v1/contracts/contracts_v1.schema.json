@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "page-toolbox-contracts/v1",
+  "title": "Page Toolbox P1 Contracts",
+  "$defs": {
+    "SampleManifest": {"type": "object", "required": ["sample_id", "classification_path", "upstream_pdf", "upstream_sha256", "snapshot_pdf", "snapshot_sha256", "original_document_id", "original_page_number"]},
+    "PageFacts": {"type": "object", "required": ["page_id", "source_pdf_sha256", "width", "height", "native_text_object_count", "origin"]},
+    "PageTemplate": {"type": "object", "required": ["page_id", "toolbox_key", "containers"]},
+    "PageTranslationRequest": {"type": "object", "required": ["request_id", "page_id", "source_language", "target_language", "units"]},
+    "PageTranslationBundle": {"type": "object", "required": ["request_id", "page_id", "provider", "model", "translations"]},
+    "PagePatch": {"type": "object", "required": ["page_id", "toolbox_key", "writes", "source_pdf_sha256", "page_index"]},
+    "Finding": {"type": "object", "required": ["finding_id", "owner", "severity", "message"]},
+    "PageQualityDecision": {"type": "object", "required": ["page_id", "process_verdict", "product_verdict", "findings"]},
+    "RunManifest": {"type": "object", "required": ["run_id", "sample_id", "terminal_state", "process_verdict", "product_verdict", "versions", "artifacts"]},
+    "PromotionManifest": {"type": "object", "required": ["toolbox_key", "toolbox_version", "status", "evidence_refs"]}
+  }
+}

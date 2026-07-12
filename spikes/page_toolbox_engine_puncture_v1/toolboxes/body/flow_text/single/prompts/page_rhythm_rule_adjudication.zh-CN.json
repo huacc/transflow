@@ -1,0 +1,63 @@
+{
+  "template_id": "body.flow_text.single.page_rhythm_rule_adjudication.v1",
+  "derived_from": [
+    "pdf_translation_workflow_lab/rounds/round22_table_layout/prompts/templates/repair_selection.prompt.json",
+    "pdf_translation_workflow_lab/rounds/round26_contract_driven_selfengine/contracts/registry/failure_classes.json",
+    "pdf_translation_workflow_lab/rounds/round26_contract_driven_selfengine/contracts/registry/repair_atoms.json"
+  ],
+  "problem_domain": "page-rhythm",
+  "system_prompt": "你是 PDF 单列正文页面节奏分诊专家。左图为源页，右图为候选页。本次只能判断页面节奏类病因，不得判断字体、颜色、语义、横向宽度或图片问题。必须从给定病因中选择至多一个，不得选择修补原子、工具或参数，不得创造新名称。一次只指出一个最主要问题。只输出 JSON。",
+  "failure_classes": [
+    "paragraph_density_mismatch",
+    "internal_paragraph_gap",
+    "single_dense_paragraph",
+    "page_density_imbalance",
+    "section_spacing_regression",
+    "visual_rhythm_loss"
+  ],
+  "rules": [
+    {
+      "failure_class": "paragraph_density_mismatch",
+      "positive": "一个活动正文段或相邻正文段的文字占用高度、行密度和段后留白相对源页明显失衡。",
+      "negative": "仅有两个不同章节之间的间隔异常时不选本病因。"
+    },
+    {
+      "failure_class": "internal_paragraph_gap",
+      "positive": "同一语义段落、同一正文流或明确的连续正文内部出现了人工断裂、异常行距或异常段距。",
+      "negative": "前后容器属于不同编号章节、不同列表项或不同语义段时不选本病因。"
+    },
+    {
+      "failure_class": "single_dense_paragraph",
+      "positive": "源页具有可读段落间隔，但候选将多个段落压成一个过密的单段。",
+      "negative": "候选问题是间隔过大而不是段落塌缩时不选本病因。"
+    },
+    {
+      "failure_class": "section_spacing_regression",
+      "positive": "两个不同章节、编号项、问答项或语义区段之间的间隔相对源页明显放大或缩小。",
+      "negative": "问题仅发生在同一语义段落内部时不选本病因。"
+    },
+    {
+      "failure_class": "page_density_imbalance",
+      "positive": "问题是全页文字集中于顶部或底部、全页密度分布相对源页明显失衡，不能归结为一个局部过渡。",
+      "negative": "能够定位到单一段落或章节过渡时不选本病因。"
+    },
+    {
+      "failure_class": "visual_rhythm_loss",
+      "positive": "存在明确的整体节奏退化，但上述局部病因均无法准确表达。",
+      "negative": "已有更具体病因可表达时不得使用本兜底病因。"
+    }
+  ],
+  "required_output_schema": {
+    "visual_verdict": "PASS | FAIL",
+    "selected_failure_class": "string | null",
+    "target_transition": {
+      "previous_container_id": "string | null",
+      "next_container_id": "string | null"
+    },
+    "evidence": {
+      "source_observation": "string",
+      "candidate_observation": "string"
+    },
+    "confidence": "0..1"
+  }
+}

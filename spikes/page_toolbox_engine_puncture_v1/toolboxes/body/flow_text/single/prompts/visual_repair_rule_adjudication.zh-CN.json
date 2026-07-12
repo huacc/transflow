@@ -1,0 +1,73 @@
+{
+  "template_id": "body.flow_text.single.visual_repair_rule_adjudication.v1",
+  "derived_from": [
+    "pdf_translation_workflow_lab/rounds/round22_table_layout/prompts/templates/repair_selection.prompt.json",
+    "pdf_translation_workflow_lab/rounds/round26_contract_driven_selfengine/contracts/registry/failure_classes.json",
+    "pdf_translation_workflow_lab/rounds/round26_contract_driven_selfengine/contracts/registry/repair_atoms.json"
+  ],
+  "purpose": "依据源页与候选页并排图，对单列正文逐条判断既有病因，并选择一个既有修补原子。",
+  "system_prompt": "你是 PDF 单列正文排版裁决专家。左图为源页，右图为候选页。你必须依据给定事实和既有病因逐条判断，不得创造新的病因、修补原子或工具名。一次最多选择一个主要病因和一个修补原子。图片、背景、颜色、普通正文左边界和宽度是硬约束，不得建议修改。只输出 JSON。",
+  "adjudication_order": [
+    "source_anchor_order_mismatch",
+    "font_hierarchy_ratio_mismatch",
+    "line_fragmentation",
+    "paragraph_density_mismatch",
+    "internal_paragraph_gap",
+    "single_dense_paragraph",
+    "cross_slot_overlap",
+    "insertion_collision_fail"
+  ],
+  "allowed_repair_atoms": [
+    "split_region_at_source_separator",
+    "role_font_profile_or_region_classification",
+    "body_flow_region_reflow",
+    "body_flow_grouping",
+    "font_size_and_region_density_rebalance",
+    "body_flow_line_joining_or_line_height_adjust",
+    "body_flow_paragraph_gap_rebalance",
+    "obstacle_aware_reflow",
+    "region_collision_layout_repair"
+  ],
+  "rules": [
+    {
+      "failure_class": "paragraph_density_mismatch",
+      "judge": "比较源候选活动段落的行密度、文字占用高度和段后空白。候选段内明显紧而段后明显空时命中。",
+      "candidate_atoms": ["body_flow_grouping", "font_size_and_region_density_rebalance"]
+    },
+    {
+      "failure_class": "internal_paragraph_gap",
+      "judge": "同一语义段落的行距或内部断行不自然时命中。",
+      "candidate_atoms": ["body_flow_line_joining_or_line_height_adjust"]
+    },
+    {
+      "failure_class": "font_hierarchy_ratio_mismatch",
+      "judge": "源页粗体、标题、正文之间的强调层级在候选页丢失或比例明显失真时命中。",
+      "candidate_atoms": ["role_font_profile_or_region_classification"]
+    },
+    {
+      "failure_class": "line_fragmentation",
+      "judge": "出现孤行标点、异常短尾行或正文被不合理切碎时命中。",
+      "candidate_atoms": ["body_flow_region_reflow"]
+    }
+  ],
+  "required_output_schema": {
+    "visual_verdict": "PASS | FAIL",
+    "selected_failure_class": "string | null",
+    "selected_repair_atom": "string | null",
+    "target_regions": ["container_id"],
+    "evidence": [
+      {
+        "dimension": "string",
+        "source_observation": "string",
+        "candidate_observation": "string"
+      }
+    ],
+    "suggested_parameters": {
+      "line_height": "number | null",
+      "paragraph_gap_pt": "number | null",
+      "vertical_shift_pt": "number | null"
+    },
+    "confidence": "0..1",
+    "hard_constraints_respected": true
+  }
+}

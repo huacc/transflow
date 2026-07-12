@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "toolbox-cadence/v1",
+  "$defs": {
+    "ToolboxSampleRecord": {
+      "type": "object",
+      "required": ["sample_id", "toolbox_key", "split", "source_ref", "sha256", "original_document_id", "original_page_number"],
+      "properties": {"split": {"enum": ["development", "regression", "holdout"]}}
+    },
+    "ToolboxStageGate": {
+      "type": "object",
+      "required": ["toolbox_key", "decision", "development", "fixed_translation_regression", "qwen_page_e2e", "regression", "holdout", "visual_review"]
+    },
+    "PromotionManifest": {
+      "type": "object",
+      "required": ["toolbox_key", "toolbox_version", "status", "classification_tree_version", "contract_version", "implementation_fingerprint_sha256", "evidence_refs"],
+      "properties": {"status": {"const": "PROMOTED"}}
+    }
+  }
+}
+

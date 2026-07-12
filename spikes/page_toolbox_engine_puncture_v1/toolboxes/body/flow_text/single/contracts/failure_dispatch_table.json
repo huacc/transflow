@@ -1,0 +1,56 @@
+{
+  "schema_version": "body.flow_text.single.failure-dispatch/v1",
+  "toolbox_key": "body.flow_text.single",
+  "source_registry": "pdf_translation_workflow_lab/rounds/round26_contract_driven_selfengine/contracts/registry",
+  "bindings": [
+    {
+      "failure_class": "paragraph_density_mismatch",
+      "repair_family": "body_flow_region_reflow",
+      "repair_atom": "body_flow_grouping",
+      "bound_tool": "tools/p4_layout_planner.py",
+      "capability_status": "implemented",
+      "evidence_routes": [
+        {
+          "when": "flow_grouping_or_fragmentation_is_wrong",
+          "repair_atom": "body_flow_grouping",
+          "bound_tool": "tools/p4_layout_planner.py"
+        },
+        {
+          "when": "grouping_is_correct_and_candidate_baseline_gap_is_materially_below_source_with_vertical_room",
+          "repair_atom": "font_size_and_region_density_rebalance",
+          "bound_tool": "tools/repairs/paragraph_density_rebalance.py"
+        }
+      ]
+    },
+    {
+      "failure_class": "internal_paragraph_gap",
+      "repair_family": "line_break_rebalance",
+      "repair_atom": "body_flow_line_joining_or_line_height_adjust",
+      "bound_tool": "tools/p4_layout_planner.py",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "section_spacing_regression",
+      "repair_family": "section_spacing_reflow",
+      "repair_atom": "section_spacing_reflow",
+      "bound_tool": "tools/repairs/section_spacing_reflow.py",
+      "deterministic_rules": [
+        "tools/validators/semantic_paragraph_spacing_rule.py",
+        "tools/validators/section_spacing_outlier_rule.py"
+      ],
+      "evidence_probes": [
+        "tools/probes/paragraph_spacing_probe.py"
+      ],
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "icon_label_misalignment",
+      "repair_family": "image_overlay_text_relayout",
+      "repair_atom": "image_overlay_text_relayout",
+      "bound_tool": "tools/repairs/inline_graphic_control_relayout.py",
+      "deterministic_rule": "tools/validators/inline_graphic_control_alignment_rule.py",
+      "evidence_probe": "tools/probes/inline_graphic_control_probe.py",
+      "capability_status": "implemented_in_toolbox"
+    }
+  ]
+}
