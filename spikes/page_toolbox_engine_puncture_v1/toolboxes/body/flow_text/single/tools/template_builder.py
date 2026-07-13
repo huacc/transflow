@@ -298,7 +298,9 @@ def _role(
     if LIST_PREFIX.match(text) or "\n" in text:
         return "list"
     font_names = " ".join(item.font_name.lower() for item in objects)
-    uppercase = len(text) <= 180 and any(character.isalpha() for character in text) and text.upper() == text
+    # 只有拉丁字母才存在此处需要识别的“全大写标题”语义；汉字的 upper() 不变，不能因此把正文误判为标题。
+    latin_letters = [character for character in text if "A" <= character.upper() <= "Z"]
+    uppercase = len(text) <= 180 and bool(latin_letters) and all(character == character.upper() for character in latin_letters)
     if max_font_size >= page_font_median * 1.25 or "bold" in font_names or ("italic" in font_names and len(text) <= 100) or uppercase:
         return "heading"
     return "body"

@@ -49,6 +49,8 @@ def render_candidate(
                 getattr(placement, "font_weight", "regular"),
             )
             required_font_resources.add(font_resource)
+            horizontal_policy = getattr(placement, "horizontal_policy", "")
+            alignment = _textbox_alignment(horizontal_policy)
             result = page.insert_textbox(
                 fitz.Rect(placement.output_bbox),
                 placement.translated_text,
@@ -57,6 +59,8 @@ def render_candidate(
                 fontsize=placement.font_size,
                 lineheight=placement.line_height,
                 color=_color(placement.color_srgb),
+                # 向左借用空白的页级标题仍以原 x1 为视觉锚点，不能因扩框变成左对齐。
+                align=alignment,
                 overlay=True,
             )
             if result < 0:
@@ -66,6 +70,7 @@ def render_candidate(
                     "container_id": placement.container_id,
                     "translated_text_sha256": hashlib.sha256(placement.translated_text.encode("utf-8")).hexdigest(),
                     "insert_textbox_spare_height": result,
+                    "text_alignment": "right" if alignment == fitz.TEXT_ALIGN_RIGHT else "left",
                     "fit": True,
                 }
             )
@@ -154,3 +159,14 @@ def render_candidate(
         "insertion_receipts": insertion_receipts,
     }
     return tuple(findings), evidence
+
+
+def _textbox_alignment(horizontal_policy: str) -> int:
+    """安全向左扩展的右锚定标题或固定覆盖层使用右对齐，其余保持左对齐。"""
+
+    if horizontal_policy in {
+        "safe_heading_left_whitespace_expand",
+        "locked_visual_overlay_safe_left_expand",
+    }:
+        return fitz.TEXT_ALIGN_RIGHT
+    return fitz.TEXT_ALIGN_LEFT
