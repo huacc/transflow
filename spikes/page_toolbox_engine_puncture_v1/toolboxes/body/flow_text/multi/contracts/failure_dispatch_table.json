@@ -1,0 +1,145 @@
+{
+  "schema_version": "body.flow_text.multi.failure-dispatch/v1",
+  "toolbox_key": "body.flow_text.multi",
+  "bindings": [
+    {
+      "failure_class": "cross_column_extraction_merge",
+      "repair_family": "multi_column_template_ownership",
+      "repair_atom": "split_container_by_source_column",
+      "bound_tool": "tools/repairs/cross_column_container_split.py",
+      "deterministic_rule": "tools/validators/cross_column_extraction_merge_rule.py",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "trailing_single_flow_owned_by_column",
+      "repair_family": "multi_column_template_ownership",
+      "repair_atom": "promote_trailing_column_items_to_postlude",
+      "bound_tool": "tools/repairs/trailing_postlude_reassignment.py",
+      "deterministic_rule": "tools/validators/trailing_postlude_ownership_rule.py",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "adjacent_same_paragraph_fragments",
+      "repair_family": "semantic_source_region_grouping",
+      "repair_atom": "merge_adjacent_same_owner_fragments",
+      "bound_tool": "tools/repairs/semantic_paragraph_fragment_merge.py",
+      "deterministic_rule": "tools/validators/semantic_paragraph_fragmentation_rule.py",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "avoidable_short_line_wrap_with_safe_space",
+      "repair_family": "heading_safe_space_reflow",
+      "repair_atom": "safe_heading_width_expansion",
+      "bound_tool": "tools/repairs/safe_heading_width_expansion.py",
+      "deterministic_rule": "tools/validators/avoidable_short_line_wrap_rule.py",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "avoidable_flow_wrap_with_safe_space",
+      "repair_family": "flow_safe_space_reflow",
+      "repair_atom": "safe_flow_width_expansion",
+      "bound_tool": "tools/repairs/safe_heading_width_expansion.py",
+      "deterministic_rule": "tools/validators/avoidable_short_line_wrap_rule.py",
+      "boundary_rule": "span uses the whole single text region; a column-owned block uses only its owner-column boundary",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "avoidable_right_anchored_heading_wrap_with_safe_left_space",
+      "repair_family": "heading_safe_space_reflow",
+      "repair_atom": "safe_heading_left_expansion",
+      "bound_tool": "tools/repairs/safe_heading_left_expansion.py",
+      "deterministic_rule": "tools/validators/avoidable_short_line_wrap_rule.py",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "post_heading_width_vertical_staleness",
+      "repair_family": "heading_safe_space_reflow",
+      "repair_atom": "post_heading_width_vertical_reflow",
+      "bound_tool": "tools/repairs/post_heading_width_vertical_reflow.py",
+      "deterministic_rule": "safe heading expansion applied in the current layout repair loop",
+      "applicable_variants": ["independent_columns", "paired_row_columns"],
+      "variant_constraint": "paired_row_columns only reflows spanning bands; paired columns remain synchronized",
+      "flow_band_constraint": "spanning repairs may affect only the matched FlowBand",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "post_flow_width_vertical_staleness",
+      "repair_family": "flow_safe_space_reflow",
+      "repair_atom": "post_flow_width_vertical_reflow",
+      "bound_tool": "tools/repairs/post_heading_width_vertical_reflow.py",
+      "deterministic_rule": "safe flow-text width expansion applied in the current layout repair loop",
+      "flow_band_constraint": "single and multi bands retain reading order and owner boundaries",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "semantic_paragraph_spacing_loss",
+      "repair_family": "source_relative_semantic_spacing_reflow",
+      "repair_atom": "rendered_semantic_spacing_reflow",
+      "bound_tool": "tools/repairs/rendered_semantic_spacing_reflow.py",
+      "deterministic_rule": "tools/validators/semantic_paragraph_spacing_rule.py",
+      "evidence_probe": "tools/probes/semantic_paragraph_spacing_probe.py",
+      "applicable_variants": ["independent_columns"],
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "semantic_paragraph_spacing_amplification",
+      "repair_family": "source_relative_semantic_spacing_reflow",
+      "repair_atom": "rendered_semantic_spacing_reflow",
+      "bound_tool": "tools/repairs/rendered_semantic_spacing_reflow.py",
+      "deterministic_rule": "tools/validators/rendered_semantic_spacing_rule.py",
+      "evidence_probe": "tools/probes/semantic_paragraph_spacing_probe.py",
+      "applicable_variants": ["independent_columns"],
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "rendered_text_overlap",
+      "repair_family": "source_relative_semantic_spacing_reflow",
+      "repair_atom": "rendered_semantic_spacing_reflow",
+      "bound_tool": "tools/repairs/rendered_semantic_spacing_reflow.py",
+      "deterministic_rule": "tools/validators/rendered_semantic_spacing_rule.py",
+      "evidence_probe": "tools/probes/semantic_paragraph_spacing_probe.py",
+      "applicable_variants": ["independent_columns", "paired_row_columns"],
+      "variant_constraint": "paired_row_columns requires synchronous row repair; otherwise keep hard failure",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "structural_anchor_zone_crossing",
+      "repair_family": "structural_anchor_preserving_reflow",
+      "repair_atom": "owner_local_vertical_reflow_with_anchor_guard",
+      "bound_tool": "tools/repairs/post_heading_width_vertical_reflow.py",
+      "deterministic_rule": "tools/validators/structural_anchor_zone_rule.py",
+      "evidence_probe": "tools/probes/structural_anchor_probe.py",
+      "capability_status": "hard_gate_implemented"
+    },
+    {
+      "failure_class": "translatable_margin_text_omitted",
+      "repair_family": "margin_text_template_inclusion",
+      "repair_atom": "margin_text_template_inclusion",
+      "bound_tool": "tools/template_builder.py",
+      "deterministic_rule": "tools/validators/margin_text_translation_rule.py",
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "body_line_height_too_tight",
+      "repair_family": "typography_density_recovery",
+      "repair_atom": "line_height_recovery",
+      "bound_tool": "tools/repairs/line_height_recovery.py",
+      "deterministic_rule": "tools/validators/typography_density_rule.py",
+      "applicable_variants": ["independent_columns", "paired_row_columns"],
+      "variant_constraint": "independent columns change one owner at a time; paired rows change all columns synchronously",
+      "acceptance_gates": ["column_fit", "render_integrity", "semantic_spacing", "structural_anchors", "no_new_hard_findings", "qwen_rejudgement"],
+      "capability_status": "implemented_in_toolbox"
+    },
+    {
+      "failure_class": "body_font_scale_too_small",
+      "repair_family": "typography_density_recovery",
+      "repair_atom": "font_scale_recovery",
+      "bound_tool": "tools/repairs/font_scale_recovery.py",
+      "deterministic_rule": "tools/validators/typography_density_rule.py",
+      "applicable_variants": ["independent_columns", "paired_row_columns"],
+      "variant_constraint": "independent columns change one owner at a time; paired rows change all columns synchronously",
+      "acceptance_gates": ["column_fit", "render_integrity", "semantic_spacing", "structural_anchors", "no_new_hard_findings", "qwen_rejudgement"],
+      "capability_status": "implemented_in_toolbox"
+    }
+  ]
+}
