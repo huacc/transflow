@@ -138,7 +138,11 @@ class QwenPageTranslationProvider:
                             "source_language": request.source_language,
                             "target_language": request.target_language,
                             "units": [
-                                {"container_id": unit.container_id, "source_text": unit.source_text}
+                                {
+                                    "container_id": unit.container_id,
+                                    "source_text": unit.source_text,
+                                    "required_literals": list(unit.required_literals),
+                                }
                                 for unit in units
                             ],
                         },

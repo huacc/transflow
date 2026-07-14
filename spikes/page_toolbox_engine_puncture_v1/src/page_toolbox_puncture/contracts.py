@@ -140,12 +140,17 @@ class TranslationUnit:
     container_id: str
     source_text: str
     reading_order: int
+    required_literals: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
         _required(self.container_id, "container_id")
         _required(self.source_text, "source_text")
         if self.reading_order < 0:
             raise ContractError("reading_order_must_be_nonnegative")
+        if len(self.required_literals) != len(set(self.required_literals)):
+            raise ContractError("required_literals_must_be_unique")
+        for literal in self.required_literals:
+            _required(literal, "required_literal")
 
 
 @dataclass(frozen=True)
