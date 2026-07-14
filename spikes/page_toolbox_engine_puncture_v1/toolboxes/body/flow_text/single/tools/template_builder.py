@@ -45,7 +45,10 @@ def build_page_template(facts: PageFacts) -> SingleColumnTemplate:
         )
         source_text = _merge_text(ordered)
         max_font_size = max(item.font_size for item in ordered)
-        representative = max(ordered, key=lambda item: (item.font_size, len(item.text)))
+        representative = max(
+            ordered,
+            key=lambda item: (item.font_size, len(item.text), item.line_index, item.span_index),
+        )
         containers.append(
             TextContainer(
                 container_id=f"block-{block_index:04d}-{group_index:03d}",
@@ -223,34 +226,41 @@ def _split_block(objects: list[TextObjectFact]) -> list[list[TextObjectFact]]:
     by_line: dict[int, list[TextObjectFact]] = defaultdict(list)
     for item in objects:
         by_line[item.line_index].append(item)
-    lines: list[tuple[int, list[TextObjectFact], str, float, float, float, float, str]] = []
+    lines: list[tuple[int, list[TextObjectFact], str, float, float, float, float, float, str]] = []
     for line_index, spans in sorted(by_line.items()):
         ordered = sorted(spans, key=lambda item: item.span_index)
         text = "".join(item.text for item in ordered).strip()
         y0 = min(item.bbox[1] for item in ordered)
         y1 = max(item.bbox[3] for item in ordered)
         x0 = min(item.bbox[0] for item in ordered)
+        x1 = max(item.bbox[2] for item in ordered)
         style = "italic" if any("italic" in item.font_name.lower() for item in ordered) else "normal"
-        lines.append((line_index, ordered, text, y0, y1, y1 - y0, x0, style))
+        lines.append((line_index, ordered, text, y0, y1, y1 - y0, x0, x1, style))
 
     groups: list[list[TextObjectFact]] = []
     current: list[TextObjectFact] = []
-    previous: tuple[int, list[TextObjectFact], str, float, float, float, float, str] | None = None
+    previous: tuple[int, list[TextObjectFact], str, float, float, float, float, float, str] | None = None
     current_x0 = 0.0
     current_text = ""
     for line in lines:
-        line_index, spans, text, y0, _, height, x0, style = line
+        line_index, spans, text, y0, y1, height, x0, x1, style = line
         boundary = False
         if previous is not None:
-            previous_index, _, previous_text, previous_y0, previous_y1, previous_height, _, previous_style = previous
+            previous_index, _, previous_text, previous_y0, previous_y1, previous_height, previous_x0, previous_x1, previous_style = previous
             gap = y0 - previous_y1
             paragraph_gap = gap > max(3.0, min(height, previous_height) * 0.45)
             skipped_pdf_line = line_index - previous_index > 1 and gap > 1.0
+            vertical_overlap = min(y1, previous_y1) - max(y0, previous_y0)
+            horizontal_gap = max(x0 - previous_x1, previous_x0 - x1)
+            spatially_separate = (
+                vertical_overlap > max(0.5, min(height, previous_height) * 0.30)
+                and horizontal_gap > max(4.0, min(height, previous_height) * 0.80)
+            )
             new_bullet = (text.strip() in {"\uf0b7", "•", "●", "▪"} or bool(LIST_PREFIX.match(text))) and bool(current)
             current_starts_with_bullet = current_text.lstrip().startswith(("\uf0b7", "•", "●", "▪"))
             indented_body = y0 > previous_y0 + 1.0 and not current_starts_with_bullet and len(current_text) <= 100 and x0 - current_x0 > 15.0
             style_change = previous_style != style and (len(previous_text) <= 100 or len(text) <= 100)
-            boundary = paragraph_gap or skipped_pdf_line or new_bullet or indented_body or style_change
+            boundary = paragraph_gap or skipped_pdf_line or spatially_separate or new_bullet or indented_body or style_change
         if boundary:
             groups.append(current)
             current = []
@@ -269,10 +279,27 @@ def _merge_text(objects: list[TextObjectFact]) -> str:
     lines: dict[int, list[TextObjectFact]] = defaultdict(list)
     for item in objects:
         lines[item.line_index].append(item)
-    merged_lines = ["".join(item.text for item in sorted(items, key=lambda row: row.span_index)).strip() for _, items in sorted(lines.items())]
+    merged_lines: list[tuple[str, tuple[float, float, float, float]]] = []
+    for _, items in sorted(lines.items()):
+        ordered = sorted(items, key=lambda row: row.span_index)
+        merged_lines.append(
+            (
+                "".join(item.text for item in ordered).strip(),
+                (
+                    min(item.bbox[0] for item in ordered),
+                    min(item.bbox[1] for item in ordered),
+                    max(item.bbox[2] for item in ordered),
+                    max(item.bbox[3] for item in ordered),
+                ),
+            )
+        )
     output: list[str] = []
-    for line in merged_lines:
+    previous_line: tuple[str, tuple[float, float, float, float]] | None = None
+    for line, bbox in merged_lines:
         if not line:
+            continue
+        if previous_line is not None and _overlaid_duplicate_line(previous_line, (line, bbox)):
+            previous_line = (line, bbox)
             continue
         if output and LIST_PREFIX.match(line):
             output.append("\n" + line)
@@ -282,7 +309,24 @@ def _merge_text(objects: list[TextObjectFact]) -> str:
             output.append(" " + line)
         else:
             output.append(line)
+        previous_line = (line, bbox)
     return "".join(output).strip()
+
+
+def _overlaid_duplicate_line(
+    left: tuple[str, tuple[float, float, float, float]],
+    right: tuple[str, tuple[float, float, float, float]],
+) -> bool:
+    left_text, left_bbox = left
+    right_text, right_bbox = right
+    if re.sub(r"\s+", " ", left_text).strip() != re.sub(r"\s+", " ", right_text).strip():
+        return False
+    overlap_width = max(0.0, min(left_bbox[2], right_bbox[2]) - max(left_bbox[0], right_bbox[0]))
+    overlap_height = max(0.0, min(left_bbox[3], right_bbox[3]) - max(left_bbox[1], right_bbox[1]))
+    overlap_area = overlap_width * overlap_height
+    left_area = max(0.0, left_bbox[2] - left_bbox[0]) * max(0.0, left_bbox[3] - left_bbox[1])
+    right_area = max(0.0, right_bbox[2] - right_bbox[0]) * max(0.0, right_bbox[3] - right_bbox[1])
+    return overlap_area >= min(left_area, right_area) * 0.90
 
 
 def _role(

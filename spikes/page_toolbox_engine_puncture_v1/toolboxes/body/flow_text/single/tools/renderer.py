@@ -166,6 +166,7 @@ def _textbox_alignment(horizontal_policy: str) -> int:
 
     if horizontal_policy in {
         "safe_heading_left_whitespace_expand",
+        "safe_margin_left_whitespace_expand",
         "locked_visual_overlay_safe_left_expand",
     }:
         return fitz.TEXT_ALIGN_RIGHT

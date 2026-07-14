@@ -19,15 +19,22 @@ class TableCapabilityError(RuntimeError):
     pass
 
 
-_CURRENCY = re.compile(r"(?i)(?:HK\$|US\$|S\$|RMB|CNY|HKD|USD|EUR|GBP|JPY|AUD|CAD|MOP|NT\$)")
+_CURRENCY_LITERAL = r"(?<![A-Z])(?:HK\$|US\$|S\$|RMB|CNY|HKD|USD|EUR|GBP|JPY|AUD|CAD|MOP|NT\$)(?![A-Z])"
+_CURRENCY = re.compile(rf"(?i){_CURRENCY_LITERAL}")
+_IDENTIFIER_LITERAL = r"(?<![A-Za-z0-9])(?=[A-Za-z0-9.-]*[A-Za-z])(?=[A-Za-z0-9.-]*\d)[A-Za-z0-9]+(?:[-.][A-Za-z0-9]+)+(?![A-Za-z0-9])"
 _FINANCIAL_AMOUNT = re.compile(
     r"(?ix)^(?:(?:HK|US|S|RMB|CNY|HKD|USD|EUR|GBP|JPY|AUD|CAD|MOP|NT)\s*\$?\s*)?"
     r"\(?[+\-\u2013\u2014\u2212]?\d[\d,]*(?:\.\d+)?%?\)?\s*"
     r"(?:cent(?:s)?|pence|penny|dollar(?:s)?|yuan|yen|euro(?:s)?)\.?$"
 )
 _PROTECTED_TOKEN = re.compile(
-    r"(?i)(?:HK\$|US\$|S\$|RMB|CNY|HKD|USD|EUR|GBP|JPY|AUD|CAD|MOP|NT\$)"
-    r"|(?:\(?[+\-\u2013\u2014\u2212]?\d[\d,]*(?:\.\d+)?%?\)?)"
+    rf"(?i){_CURRENCY_LITERAL}"
+    rf"|{_IDENTIFIER_LITERAL}"
+    r"|(?:\d{4}[-\u2013\u2014]\d{4})"
+    r"|(?:(?<![A-Za-z0-9-])[+\-\u2013\u2014\u2212]?\d(?:[\d,]*\d)?(?:\.\d+)?%?(?![A-Za-z0-9-]))"
+)
+_LOCALIZABLE_ENUM_NUMBER = re.compile(
+    r"(?i)\b(?:level|stage|phase|tier|grade|step)\s*(?P<number>\d{1,2})\b"
 )
 _END_PUNCTUATION = re.compile(r"[:;.!?。！？；：]\s*$")
 
@@ -72,7 +79,21 @@ def is_protected_text(text: str) -> bool:
 
 
 def protected_tokens(text: str) -> tuple[str, ...]:
-    return tuple(match.group(0) for match in _PROTECTED_TOKEN.finditer(text))
+    localizable_spans = {
+        match.span("number")
+        for match in _LOCALIZABLE_ENUM_NUMBER.finditer(text)
+    }
+    return tuple(
+        dict.fromkeys(
+            match.group(0)
+            for match in _PROTECTED_TOKEN.finditer(text)
+            if match.span() not in localizable_spans
+        )
+    )
+
+
+def is_currency_literal(value: str) -> bool:
+    return bool(_CURRENCY.fullmatch(value.strip()))
 
 
 def build_table_template(source_pdf: Path, facts: PageFacts) -> TableTemplate:
@@ -81,7 +102,7 @@ def build_table_template(source_pdf: Path, facts: PageFacts) -> TableTemplate:
     with fitz.open(source_pdf) as document:
         page = document[facts.page_index]
         numeric_clusters = _numeric_columns(facts)
-        if len(numeric_clusters) < 2:
+        if not numeric_clusters:
             raise TableCapabilityError("TABLE_DIRECT_EVIDENCE_MISSING:repeated_numeric_columns")
 
         numeric_objects = [item for cluster in numeric_clusters for item in cluster]
@@ -113,7 +134,14 @@ def build_table_template(source_pdf: Path, facts: PageFacts) -> TableTemplate:
         drawing_x, drawing_y, horizontal_rules, drawing_modes = _drawing_evidence(
             page, numeric_top, numeric_bottom, table_left, table_right
         )
-        boundaries = _snap_boundaries(raw_boundaries, drawing_x)
+        if len(numeric_clusters) == 1 and len(horizontal_rules) < 2:
+            raise TableCapabilityError("TABLE_DIRECT_EVIDENCE_MISSING:single_numeric_column_rules")
+        boundaries = _drawing_column_boundaries(
+            drawing_x,
+            table_left,
+            table_right,
+            relevant_text,
+        ) or _snap_boundaries(raw_boundaries, drawing_x)
         if any(right - left < 4.0 for left, right in zip(boundaries, boundaries[1:])):
             raise TableCapabilityError("TABLE_DIRECT_EVIDENCE_MISSING:degenerate_columns")
         table_top = min([numeric_top - 3.0] + [value for value in drawing_y if numeric_top - 80.0 <= value <= numeric_top + 8.0])
@@ -144,12 +172,17 @@ def build_table_template(source_pdf: Path, facts: PageFacts) -> TableTemplate:
             "row_boundaries": row_boundaries,
             "locked_objects_sha256": facts.locked_objects_sha256,
         }
+        numeric_evidence = (
+            "repeated_numeric_right_edges"
+            if len(numeric_clusters) > 1
+            else "single_numeric_column_with_rules"
+        )
         structure = TableStructure(
             table_id="table-00",
             bbox=table_bbox,
             column_boundaries=tuple(boundaries),
             row_boundaries=tuple(row_boundaries),
-            direct_evidence=tuple(sorted({"repeated_numeric_right_edges", *drawing_modes})),
+            direct_evidence=tuple(sorted({numeric_evidence, *drawing_modes})),
             structure_sha256=canonical_sha256(structure_payload),
         )
 
@@ -197,6 +230,7 @@ def build_table_template(source_pdf: Path, facts: PageFacts) -> TableTemplate:
                 )
             )
             reading_order += 1
+        table_cells = _clip_overlapping_cell_write_areas(table_cells)
         bottom_cells = _auxiliary_cells(bottom_lines, "table_footnote", facts.width, facts.height * 0.92, reading_order)
         reading_order += len(bottom_cells)
         footer_cells = _auxiliary_cells(footer_lines, "page_footer", facts.width, facts.height, reading_order)
@@ -211,6 +245,35 @@ def build_table_template(source_pdf: Path, facts: PageFacts) -> TableTemplate:
         return TableTemplate(facts.page_id, TOOLBOX_KEY, facts.width, facts.height, structure, ordered, protected_ids)
 
 
+def _clip_overlapping_cell_write_areas(cells: list[TableCell]) -> list[TableCell]:
+    output = []
+    for cell in cells:
+        if not cell.translatable:
+            output.append(cell)
+            continue
+        following = [
+            other
+            for other in cells
+            if other.row_index == cell.row_index
+            and other.container_id != cell.container_id
+            and other.source_bbox[0] > cell.source_bbox[0] + 0.5
+            and other.source_bbox[0] < cell.cell_bbox[2] - 0.5
+        ]
+        if not following:
+            output.append(cell)
+            continue
+        next_left = min(other.source_bbox[0] for other in following)
+        clearance = max(0.8, cell.font_size * 0.10)
+        right = max(cell.source_bbox[2] + 0.5, next_left - clearance)
+        if right < cell.cell_bbox[2] - 0.05:
+            cell = replace(
+                cell,
+                cell_bbox=(cell.cell_bbox[0], cell.cell_bbox[1], round(right, 4), cell.cell_bbox[3]),
+            )
+        output.append(cell)
+    return output
+
+
 def _numeric_columns(facts: PageFacts) -> list[list[TextObjectFact]]:
     candidates = [
         item
@@ -220,20 +283,35 @@ def _numeric_columns(facts: PageFacts) -> list[list[TextObjectFact]]:
         and item.bbox[1] >= facts.height * 0.10
         and item.bbox[3] <= facts.height * 0.92
     ]
+    right_aligned = _stable_numeric_clusters(candidates, 2)
+    left_aligned = _stable_numeric_clusters(candidates, 0)
+    selected = max(
+        (right_aligned, left_aligned),
+        key=lambda clusters: (sum(len(cluster) for cluster in clusters), -len(clusters)),
+    )
+    return sorted(
+        selected,
+        key=lambda cluster: median((item.bbox[0] + item.bbox[2]) / 2.0 for item in cluster),
+    )
+
+
+def _stable_numeric_clusters(
+    candidates: list[TextObjectFact],
+    coordinate_index: int,
+) -> list[list[TextObjectFact]]:
     clusters: list[list[TextObjectFact]] = []
-    for item in sorted(candidates, key=lambda value: value.bbox[2]):
+    for item in sorted(candidates, key=lambda value: value.bbox[coordinate_index]):
         if clusters:
-            center = sum(value.bbox[2] for value in clusters[-1]) / len(clusters[-1])
-            if abs(item.bbox[2] - center) <= 5.0:
+            center = sum(value.bbox[coordinate_index] for value in clusters[-1]) / len(clusters[-1])
+            if abs(item.bbox[coordinate_index] - center) <= 5.0:
                 clusters[-1].append(item)
                 continue
         clusters.append([item])
-    stable = [
+    return [
         sorted(cluster, key=lambda item: (item.bbox[1], item.bbox[0]))
         for cluster in clusters
         if len(cluster) >= 2 and len({round(item.bbox[1], 1) for item in cluster}) >= 2
     ]
-    return stable
 
 
 def _drawing_evidence(
@@ -261,7 +339,10 @@ def _drawing_evidence(
             elif item[0] == "re":
                 rect = fitz.Rect(item[1])
                 modes.add("filled_or_bordered_rectangles")
-                if drawing.get("color") is not None:
+                table_width = max(table_right - table_left, 1.0)
+                table_overlap = max(0.0, min(rect.x1, table_right) - max(rect.x0, table_left))
+                fill_band = drawing.get("fill") is not None and table_overlap >= table_width * 0.60
+                if drawing.get("color") is not None or fill_band:
                     horizontal_rules.extend((round(rect.y0, 4), round(rect.y1, 4)))
                 elif rect.height <= 1.0 and rect.width > 20.0:
                     horizontal_rules.append(round((rect.y0 + rect.y1) / 2.0, 4))
@@ -289,6 +370,32 @@ def _snap_boundaries(raw: list[float], drawing_x: list[tuple[float, int]]) -> li
     return snapped
 
 
+def _drawing_column_boundaries(
+    drawing_x: list[tuple[float, int]],
+    table_left: float,
+    table_right: float,
+    relevant_text: list[TextObjectFact],
+) -> list[float]:
+    if not relevant_text:
+        return []
+    text_right = max(item.bbox[2] for item in relevant_text)
+    font_size = median(item.font_size for item in relevant_text)
+    right_limit = text_right + max(12.0, font_size * 3.0)
+    boundaries = [
+        coordinate
+        for coordinate, count in drawing_x
+        if count >= 3
+        and table_left - 12.0 <= coordinate <= right_limit
+    ]
+    if len(boundaries) < 3:
+        return []
+    if boundaries[0] > table_left + 12.0 or boundaries[-1] < table_right - 0.5:
+        return []
+    if any(right - left < 4.0 for left, right in zip(boundaries, boundaries[1:])):
+        return []
+    return [round(value, 4) for value in boundaries]
+
+
 def _page_lines(facts: PageFacts) -> list[_Row]:
     groups = _visual_line_groups(list(facts.text_objects))
     return [
@@ -311,11 +418,15 @@ def _logical_rows(lines: list[_Row], boundaries: list[float], numeric_top: float
             if _is_single_stacked_header_column(item, start, end, boundaries, numeric_top):
                 start = end
             fragments[(start, max(start, end))].append(item)
+        row_fragments = [
+            _Fragment(start, end, sorted(objects, key=lambda item: item.bbox[0]))
+            for (start, end), objects in sorted(fragments.items())
+        ]
         split_rows.append(
             _Row(
                 line.y0,
                 line.y1,
-                [_Fragment(start, end, sorted(objects, key=lambda item: item.bbox[0])) for (start, end), objects in sorted(fragments.items())],
+                _merge_inline_fragments(row_fragments),
             )
         )
     merged: list[_Row] = []
@@ -366,6 +477,8 @@ def _cell_fragments(rows: list[_Row], numeric_top: float) -> list[tuple[int, int
                     if len(matches) != 1:
                         break
                     next_fragment_index, next_fragment = matches[0]
+                    if not _is_stacked_header_continuation(chain[-1][2], next_fragment):
+                        break
                     chain.append((next_row_index, next_fragment_index, next_fragment))
                     next_row_index += 1
             for consumed_row, consumed_fragment, _ in chain:
@@ -379,6 +492,42 @@ def _cell_fragments(rows: list[_Row], numeric_top: float) -> list[tuple[int, int
                 )
             )
     return output
+
+
+def _merge_inline_fragments(fragments: list[_Fragment]) -> list[_Fragment]:
+    output: list[_Fragment] = []
+    for fragment in sorted(fragments, key=lambda item: item.bbox[0]):
+        if output:
+            previous = output[-1]
+            previous_lines = {(item.block_index, item.line_index) for item in previous.objects}
+            current_lines = {(item.block_index, item.line_index) for item in fragment.objects}
+            gap = fragment.bbox[0] - previous.bbox[2]
+            font_size = min(
+                median(item.font_size for item in previous.objects),
+                median(item.font_size for item in fragment.objects),
+            )
+            if previous_lines & current_lines and -0.5 <= gap <= max(0.8, font_size * 0.25):
+                output[-1] = _Fragment(
+                    previous.column_start,
+                    max(previous.column_end, fragment.column_end),
+                    sorted(previous.objects + fragment.objects, key=lambda item: item.bbox[0]),
+                )
+                continue
+        output.append(fragment)
+    return output
+
+
+def _is_stacked_header_continuation(left: _Fragment, right: _Fragment) -> bool:
+    left_font = median(item.font_size for item in left.objects)
+    right_font = median(item.font_size for item in right.objects)
+    font_size = min(left_font, right_font)
+    gap = right.bbox[1] - left.bbox[3]
+    horizontal_overlap = min(left.bbox[2], right.bbox[2]) - max(left.bbox[0], right.bbox[0])
+    left_aligned = abs(left.bbox[0] - right.bbox[0]) <= max(3.0, font_size * 1.5)
+    return (
+        -font_size * 1.5 <= gap <= max(4.0, font_size * 0.8)
+        and (horizontal_overlap > 0.5 or left_aligned)
+    )
 
 
 def _can_merge_rows(left: _Row, right: _Row) -> bool:
@@ -542,7 +691,7 @@ def _alignment(source_bbox: Rect, cell_bbox: Rect, column_index: int) -> str:
     cell_center = (cell_bbox[0] + cell_bbox[2]) / 2.0
     if abs(source_center - cell_center) <= (cell_bbox[2] - cell_bbox[0]) * 0.18:
         return "center"
-    if cell_bbox[2] - source_bbox[2] <= 3.0:
+    if cell_bbox[2] - source_bbox[2] <= max(3.0, (cell_bbox[2] - cell_bbox[0]) * 0.10):
         return "right"
     return "left"
 

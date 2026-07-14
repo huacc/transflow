@@ -185,6 +185,17 @@ class P3BodyFlowTextSingleTests(unittest.TestCase):
             self.assertIn("body", roles)
             self.assertIn("margin", roles)
 
+    def test_overlaid_duplicate_text_is_translated_once_with_topmost_style(self) -> None:
+        lower = TextObjectFact("lower", "REPORT TITLE", (220.0, 24.0, 360.0, 44.0), "Helvetica-Bold", 18.0, 0xFFFFFF, 0, 0, 0)
+        upper = TextObjectFact("upper", "REPORT TITLE", (220.0, 24.0, 360.0, 44.0), "Helvetica-Bold", 18.0, 0x00B185, 0, 1, 0)
+        facts = PageFacts("overlay", "0" * 64, 420.0, 595.0, 2, "test", text_objects=(lower, upper))
+
+        container = build_page_template(facts).containers[0]
+
+        self.assertEqual("REPORT TITLE", container.source_text)
+        self.assertEqual(("lower", "upper"), container.source_object_ids)
+        self.assertEqual(0x00B185, container.color_srgb)
+
     def test_native_block_is_split_on_paragraph_gaps_and_new_bullets(self) -> None:
         paragraph_lines = [
             self._text_fact(0, "HEADING", 20.0, 30.0),

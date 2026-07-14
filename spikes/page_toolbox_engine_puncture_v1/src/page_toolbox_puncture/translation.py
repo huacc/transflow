@@ -65,6 +65,7 @@ class QwenConfig:
             base_url=os.environ.get("PAGE_TOOLBOX_QWEN_BASE_URL", "http://112.30.139.26:19400/v1").rstrip("/"),
             model=os.environ.get("PAGE_TOOLBOX_QWEN_MODEL", "Qwen/Qwen3.6-35B-A3B"),
             api_key=api_key,
+            timeout_seconds=float(os.environ.get("PAGE_TOOLBOX_QWEN_TIMEOUT_SECONDS", "180")),
         )
 
 

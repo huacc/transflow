@@ -235,6 +235,8 @@ def _translated_text_rule_overlaps(
                 if not normalized_span or normalized_span not in translated or not span_bbox.intersects(placement_rect):
                     continue
                 for orientation, coordinate, start, end in rules:
+                    if _is_text_underline(span_bbox, orientation, coordinate, start, end):
+                        continue
                     if orientation == "horizontal":
                         intersects = (
                             min(span_bbox.x1, end) > max(span_bbox.x0, start)
@@ -265,12 +267,32 @@ def _translated_text_rule_overlaps(
     return tuple(unique.values())
 
 
+def _is_text_underline(
+    span_bbox: fitz.Rect,
+    orientation: str,
+    coordinate: float,
+    start: float,
+    end: float,
+) -> bool:
+    if orientation != "horizontal" or span_bbox.height <= 0.0:
+        return False
+    if coordinate < span_bbox.y0 + span_bbox.height * 0.75:
+        return False
+    overlap = min(span_bbox.x1, end) - max(span_bbox.x0, start)
+    if overlap < span_bbox.width * 0.80:
+        return False
+    side_slack = max(2.0, span_bbox.height * 0.75)
+    return end - start <= span_bbox.width + side_slack * 2.0
+
+
 def _table_rule_segments(page: fitz.Page, table_bbox: fitz.Rect) -> tuple[tuple[str, float, float, float], ...]:
     rules: list[tuple[str, float, float, float]] = []
     for drawing in page.get_drawings():
         for item in drawing.get("items", []):
             if item[0] == "l":
                 first, second = item[1], item[2]
+                if drawing.get("color") is None:
+                    continue
                 if abs(first.y - second.y) <= 0.4 and abs(first.x - second.x) > 10.0:
                     coordinate = (first.y + second.y) / 2.0
                     start, end = sorted((first.x, second.x))
