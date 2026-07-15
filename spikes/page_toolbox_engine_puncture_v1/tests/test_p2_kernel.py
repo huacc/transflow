@@ -11,7 +11,7 @@ from PIL import Image
 from page_toolbox_puncture.contracts import ContainerWrite, PagePatch
 from page_toolbox_puncture.sample_snapshot import sha256_file
 from shared_pdf_kernel.constraints import preflight_patch
-from shared_pdf_kernel.facts import extract_page_facts
+from shared_pdf_kernel.facts import canonical_sha256, extract_page_facts
 from shared_pdf_kernel.fonts import embedded_font_resources, missing_embedded_resources, probe_font
 from shared_pdf_kernel.passthrough import passthrough_pdf
 from shared_pdf_kernel.patch import apply_page_patch
@@ -66,6 +66,11 @@ class P2KernelTests(unittest.TestCase):
             self.assertEqual(len(first.image_objects), 1)
             self.assertGreaterEqual(len(first.drawing_objects), 1)
             self.assertTrue(any(item.font_name for item in first.text_objects))
+
+    def test_fact_hash_normalizes_quad_drawing_coordinates(self) -> None:
+        quad = fitz.Quad((10, 20), (30, 20), (10, 40), (30, 40))
+        coordinates = [[10.0, 20.0], [30.0, 20.0], [10.0, 40.0], [30.0, 40.0]]
+        self.assertEqual(canonical_sha256({"quad": quad}), canonical_sha256({"quad": coordinates}))
 
     def test_render_page_and_contact_sheet(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

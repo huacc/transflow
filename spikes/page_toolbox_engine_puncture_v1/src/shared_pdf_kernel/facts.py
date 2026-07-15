@@ -24,6 +24,8 @@ def _normal(value: Any) -> Any:
         return _rect(value)
     if isinstance(value, fitz.Point):
         return [round(float(value.x), 4), round(float(value.y), 4)]
+    if isinstance(value, fitz.Quad):
+        return [_normal(point) for point in value]
     if isinstance(value, bytes):
         return {"sha256": hashlib.sha256(value).hexdigest(), "length": len(value)}
     if isinstance(value, dict):
