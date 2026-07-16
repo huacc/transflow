@@ -1,0 +1,1056 @@
+from __future__ import annotations
+
+import re
+import statistics
+from dataclasses import dataclass, replace
+
+from page_toolbox_puncture.contracts import PageFacts, TextObjectFact
+from shared_pdf_kernel.facts import canonical_sha256
+
+from . import TOOLBOX_KEY
+from .models import ChartTemplate, ChartTextContainer, ChartVisualRegion, Rect
+
+
+class ChartCapabilityError(RuntimeError):
+    pass
+
+
+@dataclass(frozen=True)
+class _Line:
+    objects: tuple[TextObjectFact, ...]
+    text: str
+    bbox: Rect
+    font_size: float
+    color_srgb: int
+    font_name: str
+
+
+@dataclass(frozen=True)
+class _Visual:
+    object_id: str
+    bbox: Rect
+    kind: str
+
+
+@dataclass(frozen=True)
+class _LocalTableCell:
+    allowed_bbox: Rect
+    alignment: str
+    role: str
+
+
+def build_chart_template(facts: PageFacts) -> ChartTemplate:
+    visuals = tuple(
+        [_Visual(item.object_id, item.bbox, "IMAGE") for item in facts.image_objects]
+        + [_Visual(item.object_id, item.bbox, "DRAWING") for item in facts.drawing_objects]
+    )
+    if not visuals:
+        raise ChartCapabilityError("CHART_VISUAL_NOT_FOUND")
+
+    regions = _visual_regions(visuals, facts.width, facts.height)
+    if not regions:
+        raise ChartCapabilityError("CHART_REGION_NOT_FOUND")
+
+    lines = _logical_lines(facts.text_objects)
+    local_table_cells = _local_table_cells(lines, facts.width, facts.height)
+    semantic_continuations = _semantic_numeric_continuations(lines)
+    protected_lines = [
+        line
+        for line in lines
+        if _line_key(line) not in semantic_continuations and _protected(line, facts.width, facts.height)
+    ]
+    editable_lines = [line for line in lines if line not in protected_lines]
+    regular_lines = [line for line in editable_lines if _line_key(line) not in local_table_cells]
+    table_groups = _table_line_groups(editable_lines, local_table_cells)
+    editable_groups = _merge_overlapping_groups(
+        [*_container_groups(regular_lines, visuals, facts.width * facts.height), *table_groups]
+    )
+    median_font = statistics.median(line.font_size for line in editable_lines) if editable_lines else 8.0
+    visual_by_id = {item.object_id: item for item in visuals}
+    page_area = facts.width * facts.height
+
+    containers: list[ChartTextContainer] = []
+    for reading_order, group in enumerate(editable_groups):
+        source_bbox = _union([line.bbox for line in group])
+        source_ids = tuple(item.object_id for line in group for item in line.objects)
+        source_text = _joined_text(group)
+        font_size = statistics.median(line.font_size for line in group)
+        swatch = _legend_anchor(source_bbox, font_size, visuals, page_area)
+        association = _association(source_bbox, regions)
+        table_cell = _table_group_cell(group, local_table_cells)
+        rotation = _rotation(source_bbox, source_text)
+        role = (
+            table_cell.role
+            if table_cell is not None
+            else _page_role(source_bbox, rotation, facts.width, facts.height)
+            or _role(source_text, source_bbox, font_size, median_font, swatch, association)
+        )
+        alignment = (
+            table_cell.alignment
+            if table_cell is not None
+            else _alignment(group, source_bbox, association, visuals, page_area, facts.width, swatch, role)
+        )
+        allowed_bbox = (
+            table_cell.allowed_bbox
+            if table_cell is not None
+            else _allowed_bbox(
+                group,
+                source_bbox,
+                lines,
+                regions,
+                association,
+                swatch,
+                alignment,
+                facts.width,
+                facts.height,
+            )
+        )
+        overlapping_visual_ids = tuple(
+            item.object_id
+            for item in visuals
+            if _area(item.bbox) < page_area * 0.80
+            and _intersection_area(item.bbox, source_bbox) > 0.01
+        )
+        anchor_ids = tuple(dict.fromkeys((swatch.object_id,) if swatch else overlapping_visual_ids))
+        if swatch:
+            anchor_ids = tuple(dict.fromkeys((swatch.object_id, *overlapping_visual_ids)))
+        elif not anchor_ids:
+            anchor_ids = tuple(
+                object_id
+                for object_id in association.object_ids
+                if object_id in visual_by_id
+            )[:1]
+        containers.append(
+            ChartTextContainer(
+                container_id=f"chart-text-{reading_order:03d}",
+                role=role,
+                association_id=association.region_id,
+                source_object_ids=source_ids,
+                source_text=source_text,
+                source_bbox=_round_rect(source_bbox),
+                allowed_bbox=_round_rect(allowed_bbox),
+                anchor_object_ids=anchor_ids,
+                anchor_relation=_anchor_relation(source_bbox, swatch.bbox if swatch else association.bbox),
+                reading_order=reading_order,
+                required_literals=_required_literals(source_text),
+                font_name=group[0].font_name,
+                font_size=round(font_size, 4),
+                color_srgb=statistics.mode(line.color_srgb for line in group),
+                alignment=alignment,
+                rotation=rotation,
+            )
+        )
+
+    containers = _disjoint_allowed_regions(containers)
+    editable_ids = {object_id for container in containers for object_id in container.source_object_ids}
+    protected_ids = tuple(item.object_id for item in facts.text_objects if item.object_id not in editable_ids)
+    owned_ids = [object_id for container in containers for object_id in container.source_object_ids] + list(protected_ids)
+    expected_ids = [item.object_id for item in facts.text_objects]
+    if sorted(owned_ids) != sorted(expected_ids) or len(owned_ids) != len(set(owned_ids)):
+        raise RuntimeError("CHART_TEXT_OWNERSHIP_NOT_TOTAL")
+
+    locked_hash = facts.locked_objects_sha256 or canonical_sha256(
+        {"images": facts.image_objects, "drawings": facts.drawing_objects}
+    )
+    structure_sha256 = canonical_sha256(
+        {
+            "toolbox_key": TOOLBOX_KEY,
+            "page_id": facts.page_id,
+            "visual_regions": regions,
+            "containers": containers,
+            "protected_object_ids": protected_ids,
+            "locked_objects_sha256": locked_hash,
+        }
+    )
+    return ChartTemplate(
+        page_id=facts.page_id,
+        toolbox_key=TOOLBOX_KEY,
+        width=facts.width,
+        height=facts.height,
+        visual_regions=regions,
+        containers=tuple(containers),
+        protected_object_ids=protected_ids,
+        locked_objects_sha256=locked_hash,
+        structure_sha256=structure_sha256,
+    )
+
+
+def _visual_regions(visuals: tuple[_Visual, ...], width: float, height: float) -> tuple[ChartVisualRegion, ...]:
+    page_area = width * height
+    result: list[ChartVisualRegion] = []
+    page_backgrounds = [item for item in visuals if item.kind == "IMAGE" and _area(item.bbox) >= page_area * 0.80]
+    for item in visuals:
+        if item.kind != "IMAGE" or item in page_backgrounds:
+            continue
+        if _area(item.bbox) >= page_area * 0.004:
+            result.append(
+                ChartVisualRegion(
+                    region_id=f"chart-region-{len(result):03d}",
+                    kind="RASTER",
+                    bbox=_round_rect(item.bbox),
+                    object_ids=(item.object_id,),
+                )
+            )
+
+    drawings = [item for item in visuals if item.kind == "DRAWING"]
+    drawing_merge_gap = min(width, height) * 0.017
+    groups: list[list[_Visual]] = []
+    for drawing in sorted(drawings, key=lambda item: (item.bbox[1], item.bbox[0])):
+        touching = [
+            group
+            for group in groups
+            if _rect_gap(_union([item.bbox for item in group]), drawing.bbox) <= drawing_merge_gap
+        ]
+        if not touching:
+            groups.append([drawing])
+            continue
+        target = touching[0]
+        target.append(drawing)
+        for extra in touching[1:]:
+            target.extend(extra)
+            groups.remove(extra)
+    for group in groups:
+        bbox = _union([item.bbox for item in group])
+        if len(group) < 2 and _area(bbox) < page_area * 0.002:
+            continue
+        result.append(
+            ChartVisualRegion(
+                region_id=f"chart-region-{len(result):03d}",
+                kind="VECTOR",
+                bbox=_round_rect(bbox),
+                object_ids=tuple(item.object_id for item in group),
+            )
+        )
+
+    if not result and page_backgrounds:
+        item = max(page_backgrounds, key=lambda value: _area(value.bbox))
+        result.append(ChartVisualRegion("chart-region-000", "RASTER", _round_rect(item.bbox), (item.object_id,)))
+    return tuple(sorted(result, key=lambda item: (item.bbox[1], item.bbox[0], item.region_id)))
+
+
+def _logical_lines(objects: tuple[TextObjectFact, ...]) -> list[_Line]:
+    canonical, aliases = _canonical_text_objects(objects)
+    bands: list[list[TextObjectFact]] = []
+    for item in sorted(canonical, key=lambda value: (_center_y(value.bbox), value.bbox[0])):
+        target = next((band for band in reversed(bands) if any(_same_baseline(member, item) for member in band)), None)
+        if target is None:
+            bands.append([item])
+        else:
+            target.append(item)
+
+    rows: list[list[TextObjectFact]] = []
+    for band in bands:
+        current: list[TextObjectFact] = []
+        for item in sorted(band, key=lambda value: (value.bbox[0], value.bbox[1])):
+            if current and not _same_row(current[-1], item):
+                rows.append(current)
+                current = []
+            current.append(item)
+        if current:
+            rows.append(current)
+
+    lines = []
+    for row in rows:
+        ordered = tuple(sorted(row, key=lambda value: value.bbox[0]))
+        source_objects = tuple(alias for item in ordered for alias in aliases[item.object_id])
+        lines.append(
+            _Line(
+                objects=source_objects,
+                text=_join_fragments(ordered),
+                bbox=_union([item.bbox for item in ordered]),
+                font_size=statistics.median(item.font_size for item in ordered),
+                color_srgb=statistics.mode(item.color_srgb for item in ordered),
+                font_name=ordered[0].font_name,
+            )
+        )
+    return sorted(lines, key=lambda line: (line.bbox[1], line.bbox[0]))
+
+
+def _line_key(line: _Line) -> tuple[str, ...]:
+    return tuple(sorted(item.object_id for item in line.objects))
+
+
+def _local_table_cells(lines: list[_Line], page_width: float, page_height: float) -> dict[tuple[str, ...], _LocalTableCell]:
+    bands = _row_bands(
+        line
+        for line in lines
+        if page_height * 0.10 <= line.bbox[1] and line.bbox[3] <= page_height * 0.92
+    )
+    candidates = [
+        band
+        for band in bands
+        if len(band) >= 3
+        and sum(_numeric_like(line.text) for line in band) >= 2
+        and any(re.search(r"[A-Za-z\u3400-\u9fff]", line.text) for line in band)
+    ]
+    runs: list[list[tuple[_Line, ...]]] = []
+    for band in candidates:
+        if runs and _stable_table_band(runs[-1][-1], band):
+            runs[-1].append(band)
+        else:
+            runs.append([band])
+
+    result: dict[tuple[str, ...], _LocalTableCell] = {}
+    band_size_by_line = {
+        _line_key(line): len(band)
+        for band in bands
+        for line in band
+    }
+    for run in (item for item in runs if len(item) >= 3):
+        ordered_bands = [tuple(sorted(band, key=lambda line: line.bbox[0])) for band in run]
+        column_count = len(ordered_bands[0])
+        column_lefts = [
+            min(band[index].bbox[0] for band in ordered_bands)
+            for index in range(column_count)
+        ]
+        column_rights = [
+            max(band[index].bbox[2] for band in ordered_bands)
+            for index in range(column_count)
+        ]
+        left_boundaries = [
+            column_lefts[index]
+            if index == 0
+            else (column_rights[index - 1] + column_lefts[index]) / 2.0
+            for index in range(column_count)
+        ]
+        right_boundaries = [
+            (column_rights[index] + column_lefts[index + 1]) / 2.0
+            if index + 1 < column_count
+            else min(page_width * 0.955, column_rights[index] + 24.0)
+            for index in range(column_count)
+        ]
+        centers = [statistics.median(_center_y(line.bbox) for line in band) for band in ordered_bands]
+        row_step = statistics.median(
+            right - left for left, right in zip(centers, centers[1:])
+        )
+        numeric_columns = [
+            all(_numeric_like(band[index].text) for band in ordered_bands)
+            for index in range(column_count)
+        ]
+        for row_index, band in enumerate(ordered_bands):
+            next_top = (
+                min(line.bbox[1] for line in ordered_bands[row_index + 1]) - 0.8
+                if row_index + 1 < len(ordered_bands)
+                else None
+            )
+            for column_index, line in enumerate(band):
+                if not re.search(r"[A-Za-z\u3400-\u9fff]", line.text):
+                    continue
+                bottom = next_top if next_top is not None else line.bbox[3] + max(1.0, row_step - (line.bbox[3] - line.bbox[1]) - 0.8)
+                allowed = (
+                    line.bbox[0],
+                    line.bbox[1],
+                    max(line.bbox[2] + 0.5, right_boundaries[column_index]),
+                    max(line.bbox[3] + 0.5, bottom),
+                )
+                result[_line_key(line)] = _LocalTableCell(_round_rect(allowed), "LEFT", "TABLE_CELL")
+
+        first_body_top = min(line.bbox[1] for line in ordered_bands[0])
+        last_body_bottom = max(line.bbox[3] for line in ordered_bands[-1])
+        table_left = left_boundaries[0]
+        table_right = right_boundaries[-1]
+        first_numeric_column = next((index for index, numeric in enumerate(numeric_columns) if numeric), column_count)
+        section_lines = [
+            line
+            for line in lines
+            if _line_key(line) not in result
+            and band_size_by_line.get(_line_key(line)) == 1
+            and _font_style(line.font_name)[0]
+            and re.search(r"[A-Za-z\u3400-\u9fff]", line.text)
+            and line.bbox[1] >= first_body_top - row_step * 1.5
+            and line.bbox[3] <= last_body_bottom
+            and _axis_overlap((line.bbox[0], line.bbox[2]), (table_left, table_right)) > 0.01
+            and (
+                first_numeric_column == column_count
+                or _center_x(line.bbox) < left_boundaries[first_numeric_column]
+            )
+        ]
+        body_tops = sorted(min(line.bbox[1] for line in band) for band in ordered_bands)
+        for line in section_lines:
+            next_top = next((top for top in body_tops if top > line.bbox[3]), None)
+            bottom = line.bbox[3] + max(1.0, row_step - (line.bbox[3] - line.bbox[1]))
+            if next_top is not None:
+                bottom = min(bottom, next_top - 0.8)
+            right = left_boundaries[first_numeric_column] - 0.8 if first_numeric_column < column_count else right_boundaries[0]
+            allowed = (line.bbox[0], line.bbox[1], max(line.bbox[2], right), max(line.bbox[3], bottom))
+            result[_line_key(line)] = _LocalTableCell(_round_rect(allowed), "LEFT", "TABLE_SECTION")
+
+        header_gap = max(row_step * 3.5, statistics.median(line.font_size for line in ordered_bands[0]) * 4.5)
+        body_font_size = statistics.median(line.font_size for band in ordered_bands for line in band)
+        header_lines = [
+            line
+            for line in lines
+            if _line_key(line) not in result
+            and re.search(r"[A-Za-z\u3400-\u9fff]", line.text)
+            and line.font_size <= body_font_size * 1.25
+            and line.bbox[3] <= first_body_top
+            and first_body_top - line.bbox[3] <= header_gap
+            and _axis_overlap((line.bbox[0], line.bbox[2]), (table_left, table_right)) > 0.01
+        ]
+        for line in header_lines:
+            column_index = min(
+                range(column_count),
+                key=lambda index: abs(_center_x(line.bbox) - (left_boundaries[index] + right_boundaries[index]) / 2.0),
+            )
+            horizontal_padding = max(1.0, line.font_size * 0.25)
+            alignment = "RIGHT" if numeric_columns[column_index] else "LEFT"
+            left = (
+                left_boundaries[column_index] + horizontal_padding
+                if alignment == "RIGHT"
+                else line.bbox[0]
+            )
+            right = (
+                column_rights[column_index]
+                if column_index == column_count - 1
+                else right_boundaries[column_index] - horizontal_padding
+            )
+            allowed = (
+                min(line.bbox[0], left),
+                line.bbox[1],
+                max(line.bbox[2], right),
+                max(line.bbox[3], first_body_top - 0.8),
+            )
+            result[_line_key(line)] = _LocalTableCell(_round_rect(allowed), alignment, "TABLE_HEADER")
+
+        total_gap = max(row_step * 2.0, statistics.median(line.font_size for line in ordered_bands[-1]) * 2.5)
+        total_lines = [
+            line
+            for line in lines
+            if _line_key(line) not in result
+            and _font_style(line.font_name)[0]
+            and re.search(r"[A-Za-z\u3400-\u9fff]", line.text)
+            and line.bbox[1] >= last_body_bottom
+            and line.bbox[1] - last_body_bottom <= total_gap
+            and _axis_overlap((line.bbox[0], line.bbox[2]), (table_left, table_right)) > 0.01
+        ]
+        for line in total_lines:
+            column_index = min(
+                range(column_count),
+                key=lambda index: abs(_center_x(line.bbox) - (left_boundaries[index] + right_boundaries[index]) / 2.0),
+            )
+            right = right_boundaries[column_index]
+            if column_index < first_numeric_column < column_count:
+                right = left_boundaries[first_numeric_column] - 0.8
+            allowed = (
+                min(line.bbox[0], left_boundaries[column_index]),
+                line.bbox[1],
+                max(line.bbox[2], right),
+                line.bbox[3] + max(1.0, row_step - (line.bbox[3] - line.bbox[1])),
+            )
+            alignment = "RIGHT" if numeric_columns[column_index] else "LEFT"
+            result[_line_key(line)] = _LocalTableCell(_round_rect(allowed), alignment, "TABLE_TOTAL")
+    return result
+
+
+def _table_line_groups(
+    lines: list[_Line],
+    cells: dict[tuple[str, ...], _LocalTableCell],
+) -> list[list[_Line]]:
+    groups: list[list[_Line]] = []
+    for line in (item for item in lines if _line_key(item) in cells):
+        cell = cells[_line_key(line)]
+        target = next(
+            (
+                group
+                for group in reversed(groups)
+                if cell.role == "TABLE_HEADER"
+                and cells[_line_key(group[-1])].role == "TABLE_HEADER"
+                and _axis_overlap(
+                    (cell.allowed_bbox[0], cell.allowed_bbox[2]),
+                    (cells[_line_key(group[-1])].allowed_bbox[0], cells[_line_key(group[-1])].allowed_bbox[2]),
+                )
+                >= min(
+                    cell.allowed_bbox[2] - cell.allowed_bbox[0],
+                    cells[_line_key(group[-1])].allowed_bbox[2] - cells[_line_key(group[-1])].allowed_bbox[0],
+                )
+                * 0.80
+                and 0.0 <= line.bbox[1] - group[-1].bbox[3] <= max(line.font_size, group[-1].font_size) * 0.40
+            ),
+            None,
+        )
+        if target is None:
+            groups.append([line])
+        else:
+            target.append(line)
+    return groups
+
+
+def _table_group_cell(
+    group: list[_Line],
+    cells: dict[tuple[str, ...], _LocalTableCell],
+) -> _LocalTableCell | None:
+    group_cells = [cells.get(_line_key(line)) for line in group]
+    if not group_cells or any(cell is None for cell in group_cells):
+        return None
+    concrete = [cell for cell in group_cells if cell is not None]
+    if len({cell.role for cell in concrete}) != 1 or len({cell.alignment for cell in concrete}) != 1:
+        return None
+    return _LocalTableCell(
+        _round_rect(_union([cell.allowed_bbox for cell in concrete])),
+        concrete[0].alignment,
+        concrete[0].role,
+    )
+
+
+def _row_bands(lines) -> list[tuple[_Line, ...]]:
+    bands: list[list[_Line]] = []
+    for line in sorted(lines, key=lambda item: (_center_y(item.bbox), item.bbox[0])):
+        center = _center_y(line.bbox)
+        target = next(
+            (
+                band
+                for band in reversed(bands)
+                if abs(center - statistics.median(_center_y(item.bbox) for item in band))
+                <= line.font_size * 0.30
+            ),
+            None,
+        )
+        if target is None:
+            bands.append([line])
+        else:
+            target.append(line)
+    return [tuple(sorted(band, key=lambda item: item.bbox[0])) for band in bands]
+
+
+def _stable_table_band(previous: tuple[_Line, ...], candidate: tuple[_Line, ...]) -> bool:
+    if len(previous) != len(candidate):
+        return False
+    previous = tuple(sorted(previous, key=lambda line: line.bbox[0]))
+    candidate = tuple(sorted(candidate, key=lambda line: line.bbox[0]))
+    font_size = statistics.median([line.font_size for line in (*previous, *candidate)])
+    vertical_gap = statistics.median(_center_y(line.bbox) for line in candidate) - statistics.median(
+        _center_y(line.bbox) for line in previous
+    )
+    return (
+        font_size * 0.15 < vertical_gap <= font_size * 6.0
+        and all(abs(left.bbox[0] - right.bbox[0]) <= font_size * 1.5 for left, right in zip(previous, candidate))
+    )
+
+
+def _numeric_like(text: str) -> bool:
+    value = text.strip()
+    return bool(re.search(r"\d", value)) and not re.search(r"[A-Za-z\u3400-\u9fff]", value)
+
+
+def _canonical_text_objects(objects: tuple[TextObjectFact, ...]):
+    grouped: dict[tuple[object, ...], list[TextObjectFact]] = {}
+    for item in objects:
+        key = (item.text, tuple(round(value, 3) for value in item.bbox))
+        grouped.setdefault(key, []).append(item)
+    representatives = tuple(items[-1] for items in grouped.values())
+    aliases = {items[-1].object_id: tuple(items) for items in grouped.values()}
+    return representatives, aliases
+
+
+def _same_baseline(left: TextObjectFact, right: TextObjectFact) -> bool:
+    return abs(_center_y(left.bbox) - _center_y(right.bbox)) <= min(left.font_size, right.font_size) * 0.50
+
+
+def _same_row(left: TextObjectFact, right: TextObjectFact) -> bool:
+    gap = right.bbox[0] - left.bbox[2]
+    multiplication_tail = right.text.strip() in {"x", "×"} and gap <= max(left.font_size, right.font_size)
+    style_bridge = (
+        left.color_srgb == right.color_srgb
+        and _font_style(left.font_name) == _font_style(right.font_name)
+        and abs(left.font_size - right.font_size) / max(left.font_size, right.font_size, 0.1) <= 0.15
+    )
+    return (
+        _same_baseline(left, right)
+        and gap >= -max(left.font_size, right.font_size)
+        and gap <= max(left.font_size, right.font_size) * 1.35
+        and (
+            _script(left.text) == _script(right.text)
+            or _neutral(left.text)
+            or _neutral(right.text)
+            or multiplication_tail
+            or style_bridge
+        )
+    )
+
+
+def _container_groups(lines: list[_Line], visuals: tuple[_Visual, ...], page_area: float) -> list[list[_Line]]:
+    groups: list[list[_Line]] = []
+    for line in lines:
+        target = next(
+            (group for group in reversed(groups) if _can_join(group[-1], line, visuals, page_area)),
+            None,
+        )
+        if target is None:
+            groups.append([line])
+        else:
+            target.append(line)
+    return groups
+
+
+def _can_join(previous: _Line, candidate: _Line, visuals: tuple[_Visual, ...], page_area: float) -> bool:
+    previous_swatch = _legend_anchor(previous.bbox, previous.font_size, visuals, page_area)
+    candidate_swatch = _legend_anchor(candidate.bbox, candidate.font_size, visuals, page_area)
+    if previous_swatch is not None and candidate_swatch is not None and previous_swatch.object_id != candidate_swatch.object_id:
+        return False
+    gap = candidate.bbox[1] - previous.bbox[3]
+    size_ratio = abs(candidate.font_size - previous.font_size) / max(candidate.font_size, previous.font_size, 0.1)
+    anchor_delta = min(
+        abs(candidate.bbox[0] - previous.bbox[0]),
+        abs(candidate.bbox[2] - previous.bbox[2]),
+        abs(_center_x(candidate.bbox) - _center_x(previous.bbox)),
+    )
+    return (
+        previous.color_srgb == candidate.color_srgb
+        and _script(previous.text) == _script(candidate.text)
+        and _font_style(previous.font_name) == _font_style(candidate.font_name)
+        and size_ratio <= 0.15
+        and anchor_delta <= max(4.0, min(previous.font_size, candidate.font_size) * 0.8)
+        and -min(previous.font_size, candidate.font_size) <= gap <= max(3.0, min(previous.font_size, candidate.font_size) * 0.9)
+    )
+
+
+def _merge_overlapping_groups(groups: list[list[_Line]]) -> list[list[_Line]]:
+    merged = [list(group) for group in groups]
+    changed = True
+    while changed:
+        changed = False
+        for left_index in range(len(merged)):
+            left_bbox = _union([line.bbox for line in merged[left_index]])
+            match = next(
+                (
+                    right_index
+                    for right_index in range(left_index + 1, len(merged))
+                    if _intersection_area(left_bbox, _union([line.bbox for line in merged[right_index]])) > 0.05
+                ),
+                None,
+            )
+            if match is None:
+                continue
+            merged[left_index].extend(merged.pop(match))
+            merged[left_index].sort(key=lambda line: (line.bbox[1], line.bbox[0]))
+            changed = True
+            break
+    return sorted(merged, key=lambda group: (_union([line.bbox for line in group])[1], _union([line.bbox for line in group])[0]))
+
+
+def _disjoint_allowed_regions(containers: list[ChartTextContainer]) -> list[ChartTextContainer]:
+    result = list(containers)
+    for left_index in range(len(result)):
+        for right_index in range(left_index + 1, len(result)):
+            left = result[left_index]
+            right = result[right_index]
+            if _intersection_area(left.allowed_bbox, right.allowed_bbox) <= 0.05:
+                continue
+            left_bbox = left.source_bbox
+            right_bbox = right.source_bbox
+            horizontal = _horizontal_order(left_bbox, right_bbox)
+            vertical = _vertical_order(left_bbox, right_bbox)
+            if horizontal is None and vertical is None:
+                raise ChartCapabilityError(
+                    f"CHART_OVERLAPPING_TEXT_OWNERS:{left.container_id}:{right.container_id}"
+                )
+            horizontal_gap = (
+                max(0.0, right_bbox[0] - left_bbox[2], left_bbox[0] - right_bbox[2])
+                if horizontal is not None
+                else -1.0
+            )
+            vertical_gap = (
+                max(0.0, right_bbox[1] - left_bbox[3], left_bbox[1] - right_bbox[3])
+                if vertical is not None
+                else -1.0
+            )
+            if horizontal is not None and horizontal_gap >= vertical_gap:
+                first_index, second_index = (
+                    (left_index, right_index) if horizontal == (0, 1) else (right_index, left_index)
+                )
+                first, second = result[first_index], result[second_index]
+                boundary = (first.source_bbox[2] + second.source_bbox[0]) / 2.0
+                result[first_index] = replace(
+                    first,
+                    allowed_bbox=_round_rect((first.allowed_bbox[0], first.allowed_bbox[1], min(first.allowed_bbox[2], boundary), first.allowed_bbox[3])),
+                )
+                result[second_index] = replace(
+                    second,
+                    allowed_bbox=_round_rect((max(second.allowed_bbox[0], boundary), second.allowed_bbox[1], second.allowed_bbox[2], second.allowed_bbox[3])),
+                )
+            else:
+                assert vertical is not None
+                first_index, second_index = (
+                    (left_index, right_index) if vertical == (0, 1) else (right_index, left_index)
+                )
+                first, second = result[first_index], result[second_index]
+                boundary = (first.source_bbox[3] + second.source_bbox[1]) / 2.0
+                result[first_index] = replace(
+                    first,
+                    allowed_bbox=_round_rect((first.allowed_bbox[0], first.allowed_bbox[1], first.allowed_bbox[2], min(first.allowed_bbox[3], boundary))),
+                )
+                result[second_index] = replace(
+                    second,
+                    allowed_bbox=_round_rect((second.allowed_bbox[0], max(second.allowed_bbox[1], boundary), second.allowed_bbox[2], second.allowed_bbox[3])),
+                )
+    unresolved = [
+        (left.container_id, right.container_id)
+        for index, left in enumerate(result)
+        for right in result[index + 1 :]
+        if _intersection_area(left.allowed_bbox, right.allowed_bbox) > 0.05
+    ]
+    if unresolved:
+        raise ChartCapabilityError(f"CHART_TEXT_SLOT_PARTITION_FAILED:{unresolved[0][0]}:{unresolved[0][1]}")
+    return result
+
+
+def _horizontal_order(left: Rect, right: Rect) -> tuple[int, int] | None:
+    if left[2] <= right[0]:
+        return (0, 1)
+    if right[2] <= left[0]:
+        return (1, 0)
+    return None
+
+
+def _vertical_order(left: Rect, right: Rect) -> tuple[int, int] | None:
+    if left[3] <= right[1]:
+        return (0, 1)
+    if right[3] <= left[1]:
+        return (1, 0)
+    return None
+
+
+def _protected(line: _Line, page_width: float, page_height: float) -> bool:
+    text = line.text.strip()
+    if not re.search(r"[A-Za-z\u3400-\u9fff]", text):
+        return True
+    if re.fullmatch(r"(?:https?://|www\.)\S+", text, flags=re.IGNORECASE):
+        return True
+    if re.fullmatch(r"(?:FY|Y)?\d{4}[A-Z]?", text, flags=re.IGNORECASE):
+        return True
+    notation = text.strip("()[]")
+    if re.fullmatch(r"[A-Z][A-Z0-9+./'’$%-]{1,15}", notation) and (
+        notation != text or bool(re.search(r"[0-9+./'’$%-]", notation))
+    ):
+        return True
+    if re.fullmatch(r"[-+]?\d+(?:[.,]\d+)*\s*[A-Za-z%]+", text):
+        return True
+    return False
+
+
+def _semantic_numeric_continuations(lines: list[_Line]) -> set[tuple[str, ...]]:
+    result: set[tuple[str, ...]] = set()
+    for previous, current in zip(lines, lines[1:]):
+        current_text = current.text.strip()
+        if not re.fullmatch(r"[\d\s%.,。()（）+\-]+", current_text):
+            continue
+        if not re.search(r"[=×xX*/÷╱]", previous.text):
+            continue
+        gap = current.bbox[1] - previous.bbox[3]
+        size_ratio = abs(current.font_size - previous.font_size) / max(current.font_size, previous.font_size, 0.1)
+        if (
+            previous.color_srgb == current.color_srgb
+            and _font_style(previous.font_name) == _font_style(current.font_name)
+            and size_ratio <= 0.15
+            and 0.0 <= gap <= max(previous.font_size, current.font_size) * 1.2
+            and abs(current.bbox[0] - previous.bbox[0]) <= max(previous.font_size, current.font_size) * 1.5
+        ):
+            result.add(_line_key(current))
+    return result
+
+
+def _legend_anchor(source: Rect, font_size: float, visuals: tuple[_Visual, ...], page_area: float) -> _Visual | None:
+    candidates = []
+    page_scale = page_area**0.5
+    for item in visuals:
+        width = item.bbox[2] - item.bbox[0]
+        height = item.bbox[3] - item.bbox[1]
+        if _area(item.bbox) <= page_area * 0.0000002 or _area(item.bbox) >= page_area * 0.01:
+            continue
+        swatch_limit = max(page_scale * 0.0255, font_size * 2.0)
+        if width > swatch_limit or height > swatch_limit:
+            continue
+        vertical_overlap = _axis_overlap((source[1], source[3]), (item.bbox[1], item.bbox[3]))
+        if vertical_overlap <= 0 and abs(_center_y(source) - _center_y(item.bbox)) > font_size:
+            continue
+        if _rect_gap(source, item.bbox) <= max(page_scale * 0.0113, font_size * 3.0):
+            candidates.append(item)
+    return min(candidates, key=lambda item: _rect_gap(source, item.bbox)) if candidates else None
+
+
+def _association(source: Rect, regions: tuple[ChartVisualRegion, ...]) -> ChartVisualRegion:
+    return min(regions, key=lambda region: (_rect_gap(source, region.bbox), _area(region.bbox)))
+
+
+def _role(text: str, bbox: Rect, font_size: float, median_font: float, swatch, association) -> str:
+    if swatch is not None:
+        return "LEGEND_LABEL"
+    if font_size >= median_font * 1.45 or (text.isupper() and font_size >= median_font * 1.15 and len(text) >= 5):
+        return "TITLE"
+    if len(text) <= 48 and _rect_gap(bbox, association.bbox) <= font_size * 4.0:
+        return "AXIS_OR_CATEGORY_LABEL"
+    return "ANNOTATION"
+
+
+def _page_role(source: Rect, rotation: int, page_width: float, page_height: float) -> str | None:
+    if source[1] <= page_height * 0.08:
+        return "PAGE_HEADER"
+    if source[3] >= page_height * 0.90:
+        return "PAGE_FOOTER"
+    if rotation and source[0] >= page_width * 0.90 and source[1] >= page_height * 0.70:
+        return "PAGE_FOOTER"
+    return None
+
+
+def _rotation(source: Rect, text: str) -> int:
+    width = source[2] - source[0]
+    height = source[3] - source[1]
+    semantic_count = len(re.findall(r"[A-Za-z\u3400-\u9fff]", text))
+    return 90 if semantic_count >= 4 and height >= width * 2.2 else 0
+
+
+def _alignment(
+    group: list[_Line],
+    source: Rect,
+    association: ChartVisualRegion,
+    visuals: tuple[_Visual, ...],
+    page_area: float,
+    page_width: float,
+    swatch: _Visual | None,
+    role: str,
+) -> str:
+    if role == "TABLE_CELL":
+        return "LEFT"
+    if role in {"PAGE_HEADER", "PAGE_FOOTER"}:
+        if source[3] - source[1] >= max(page_width * 0.04, (source[2] - source[0]) * 2.2):
+            return "LEFT"
+        return "RIGHT" if _center_x(source) >= page_width / 2.0 else "LEFT"
+    if swatch is not None:
+        return "LEFT" if _center_x(swatch.bbox) < _center_x(source) else "RIGHT"
+    edge_tolerance = statistics.median(line.font_size for line in group)
+    association_width = association.bbox[2] - association.bbox[0]
+    source_width = source[2] - source[0]
+    if len(group) >= 2:
+        left_edges = [line.bbox[0] for line in group]
+        if max(left_edges) - min(left_edges) <= statistics.median(line.font_size for line in group) * 0.8:
+            return "LEFT"
+    underlaid = any(
+        _area(item.bbox) < page_area * 0.80
+        and _intersection_area(source, item.bbox) > 0.01
+        and _area(item.bbox) >= _area(association.bbox) * 0.80
+        for item in visuals
+    )
+    near_horizontal_edge = (
+        _center_x(source) <= association.bbox[0] + edge_tolerance
+        or _center_x(source) >= association.bbox[2] - edge_tolerance
+    )
+    if (
+        role == "AXIS_OR_CATEGORY_LABEL"
+        and (not underlaid or near_horizontal_edge)
+        and association_width >= source_width * 2.5
+        and _intersection_area(source, association.bbox) > 0.01
+    ):
+        relative_x = (_center_x(source) - association.bbox[0]) / max(association_width, 0.1)
+        association_height = association.bbox[3] - association.bbox[1]
+        relative_y = (_center_y(source) - association.bbox[1]) / max(association_height, 0.1)
+        if near_horizontal_edge or 0.22 <= relative_y <= 0.78:
+            if relative_x <= 0.35:
+                return "RIGHT"
+            if relative_x >= 0.65:
+                return "LEFT"
+    adjacent_visuals = [
+        item
+        for item in visuals
+        if _area(item.bbox) < page_area * 0.80
+        and _axis_overlap((source[1], source[3]), (item.bbox[1], item.bbox[3]))
+        >= min(source[3] - source[1], item.bbox[3] - item.bbox[1]) * 0.25
+        and _rect_gap(source, item.bbox) <= edge_tolerance * 4.0
+    ]
+    if adjacent_visuals:
+        nearest = min(adjacent_visuals, key=lambda item: (_rect_gap(source, item.bbox), _area(item.bbox)))
+        if source[2] <= nearest.bbox[0] + edge_tolerance:
+            return "RIGHT"
+        if source[0] >= nearest.bbox[2] - edge_tolerance:
+            return "LEFT"
+    relation = _anchor_relation(source, association.bbox)
+    vertically_related = _axis_overlap((source[1], source[3]), (association.bbox[1], association.bbox[3])) > 0.01
+    close_to_association = (
+        _rect_gap(source, association.bbox)
+        <= statistics.median(line.font_size for line in group) * 4.0
+    )
+    if vertically_related or close_to_association:
+        if relation == "LEFT_OF" or source[2] <= association.bbox[0] + edge_tolerance:
+            return "RIGHT"
+        if relation == "RIGHT_OF" or source[0] >= association.bbox[2] - edge_tolerance:
+            return "LEFT"
+    if (
+        relation == "OVERLAY"
+        and association_width <= max(page_width * 0.12, source_width * 2.2)
+        and source[0] >= association.bbox[0] - edge_tolerance
+        and source[2] <= association.bbox[2] + edge_tolerance
+    ):
+        return "CENTER"
+    if role in {"TITLE", "AXIS_OR_CATEGORY_LABEL", "ANNOTATION"}:
+        return "LEFT"
+    if abs(_center_x(source) - page_width / 2.0) <= page_width * 0.08:
+        return "CENTER"
+    return "RIGHT" if source[0] >= page_width * 0.55 else "LEFT"
+
+
+def _allowed_bbox(
+    group: list[_Line],
+    source: Rect,
+    all_lines: list[_Line],
+    regions: tuple[ChartVisualRegion, ...],
+    association: ChartVisualRegion,
+    swatch: _Visual | None,
+    alignment: str,
+    page_width: float,
+    page_height: float,
+) -> Rect:
+    group_ids = {item.object_id for line in group for item in line.objects}
+    others = [line for line in all_lines if not group_ids.intersection(item.object_id for item in line.objects)]
+    page_left = max(12.0, page_width * 0.025)
+    page_right = min(page_width - 12.0, page_width * 0.955)
+    left = source[0]
+    right = page_right
+    if alignment == "RIGHT":
+        left = page_left
+        right = source[2]
+    elif alignment == "CENTER":
+        left = max(page_left, association.bbox[0] + 1.5)
+        right = min(page_right, association.bbox[2] - 1.5)
+    for other in others:
+        overlap = _axis_overlap((source[1], source[3]), (other.bbox[1], other.bbox[3]))
+        if overlap < min(source[3] - source[1], other.bbox[3] - other.bbox[1]) * 0.25:
+            continue
+        if alignment == "RIGHT" and other.bbox[2] <= source[0]:
+            left = max(left, (other.bbox[2] + source[0]) / 2.0)
+        elif alignment != "RIGHT" and other.bbox[0] >= source[2]:
+            right = min(right, (source[2] + other.bbox[0]) / 2.0)
+
+    if swatch is not None and _center_x(swatch.bbox) >= _center_x(source):
+        right = source[2]
+    if alignment == "LEFT":
+        for region in regions:
+            if _intersection_area(source, region.bbox) > 0.01 or region.bbox[0] < source[2]:
+                continue
+            vertical = _axis_overlap((source[1], source[3]), (region.bbox[1], region.bbox[3]))
+            if vertical >= min(source[3] - source[1], region.bbox[3] - region.bbox[1]) * 0.25:
+                right = min(right, region.bbox[0] - 2.0)
+    right = max(right, source[2] + (0.5 if alignment != "RIGHT" else 0.0))
+    left = min(left, source[0] - (0.5 if alignment == "RIGHT" else 0.0))
+
+    bottom_limit = page_height * 0.94
+    if alignment == "CENTER" and _intersection_area(source, association.bbox) > 0.01:
+        bottom_limit = min(bottom_limit, association.bbox[3] - 1.0)
+    lane_width = max(0.1, right - left)
+    for other in others:
+        if other.bbox[1] < source[3] - 0.5:
+            continue
+        horizontal = _axis_overlap((left, right), (other.bbox[0], other.bbox[2]))
+        if horizontal >= min(lane_width, other.bbox[2] - other.bbox[0]) * 0.15:
+            bottom_limit = min(bottom_limit, other.bbox[1] - 0.5)
+    for region in regions:
+        if region.bbox[1] < source[3] or _intersection_area(source, region.bbox) > 0.01:
+            continue
+        horizontal = _axis_overlap((left, right), (region.bbox[0], region.bbox[2]))
+        if horizontal >= min(lane_width, region.bbox[2] - region.bbox[0]) * 0.15:
+            bottom_limit = min(bottom_limit, region.bbox[1] - 2.0)
+    # The extracted glyph bbox is an anchor, not a translated-text cage.  The
+    # safe lane can use all whitespace up to the next text/visual obstacle.
+    bottom = max(source[3], bottom_limit)
+    return (left, source[1], right, bottom)
+
+
+def _required_literals(text: str) -> tuple[str, ...]:
+    return tuple(
+        dict.fromkeys(
+            re.findall(
+                r"(?:https?://\S+|www\.\S+|\b[A-Z]{1,4}\d+[A-Z0-9.-]*\b|"
+                r"\d+(?:[.,:/-]\d+)*%?)",
+                text,
+            )
+        )
+    )
+
+
+def _joined_text(lines: list[_Line]) -> str:
+    result = ""
+    for line in lines:
+        text = line.text.strip()
+        if not result:
+            result = text
+        elif _contains_cjk(result) and _contains_cjk(text):
+            result += text
+        else:
+            result += " " + text
+    return result
+
+
+def _join_fragments(objects: tuple[TextObjectFact, ...]) -> str:
+    result = ""
+    for item in objects:
+        text = item.text.strip()
+        if not result:
+            result = text
+        elif _contains_cjk(result) and _contains_cjk(text):
+            result += text
+        else:
+            result += " " + text
+    return result
+
+
+def _anchor_relation(source: Rect, anchor: Rect) -> str:
+    if _intersection_area(source, anchor) > 0.01:
+        return "OVERLAY"
+    if source[2] <= anchor[0]:
+        return "LEFT_OF"
+    if source[0] >= anchor[2]:
+        return "RIGHT_OF"
+    return "ABOVE" if source[3] <= anchor[1] else "BELOW"
+
+
+def _script(text: str) -> str:
+    has_cjk = bool(re.search(r"[\u3400-\u9fff]", text))
+    has_latin = bool(re.search(r"[A-Za-z]", text))
+    if has_cjk == has_latin:
+        return "MIXED"
+    return "CJK" if has_cjk else "LATIN"
+
+
+def _neutral(text: str) -> bool:
+    return not re.search(r"[A-Za-z\u3400-\u9fff]", text)
+
+
+def _font_style(name: str) -> tuple[bool, bool]:
+    value = name.casefold()
+    return (any(token in value for token in ("bold", "black", "heavy", "semibold")), "italic" in value)
+
+
+def _contains_cjk(text: str) -> bool:
+    return bool(re.search(r"[\u3400-\u9fff]", text))
+
+
+def _round_rect(rect: Rect) -> Rect:
+    return tuple(round(float(value), 4) for value in rect)  # type: ignore[return-value]
+
+
+def _union(rects: list[Rect]) -> Rect:
+    return (min(item[0] for item in rects), min(item[1] for item in rects), max(item[2] for item in rects), max(item[3] for item in rects))
+
+
+def _center_x(rect: Rect) -> float:
+    return (rect[0] + rect[2]) / 2.0
+
+
+def _center_y(rect: Rect) -> float:
+    return (rect[1] + rect[3]) / 2.0
+
+
+def _axis_overlap(left: tuple[float, float], right: tuple[float, float]) -> float:
+    return max(0.0, min(left[1], right[1]) - max(left[0], right[0]))
+
+
+def _intersection_area(left: Rect, right: Rect) -> float:
+    return _axis_overlap((left[0], left[2]), (right[0], right[2])) * _axis_overlap((left[1], left[3]), (right[1], right[3]))
+
+
+def _area(rect: Rect) -> float:
+    return max(0.0, rect[2] - rect[0]) * max(0.0, rect[3] - rect[1])
+
+
+def _rect_gap(left: Rect, right: Rect) -> float:
+    dx = max(0.0, left[0] - right[2], right[0] - left[2])
+    dy = max(0.0, left[1] - right[3], right[1] - left[3])
+    return (dx * dx + dy * dy) ** 0.5

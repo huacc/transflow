@@ -1,0 +1,74 @@
+{
+  "schema_version": "body.chart.failure-dispatch/v1",
+  "toolbox_key": "body.chart",
+  "bindings": [
+    {
+      "failure_class": "source_bbox_too_narrow_with_safe_horizontal_space",
+      "repair_family": "chart_text_safe_space_reflow",
+      "repair_atom": "safe_horizontal_expansion",
+      "bound_tool": "tools/layout_planner.py",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "single_line_or_source_bbox_insufficient_with_safe_vertical_space",
+      "repair_family": "chart_text_safe_space_reflow",
+      "repair_atom": "safe_multiline_reflow",
+      "bound_tool": "tools/layout_planner.py",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "safe_region_requires_source_relative_typography_reduction",
+      "repair_family": "chart_typography_rebalance",
+      "repair_atom": "group_typography_scale_reduction",
+      "bound_tool": "tools/layout_planner.py",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "translated_text_exceeds_safe_page_region",
+      "repair_family": "translated_failure_evidence",
+      "repair_atom": "translated_diagnostic_render",
+      "bound_tool": "tools/renderer.py",
+      "capability_status": "implemented_diagnostic_only"
+    },
+    {
+      "failure_class": "same_visual_line_fragmented_by_script_or_font_variant",
+      "repair_family": "semantic_chart_text_ownership",
+      "repair_atom": "merge_style_compatible_same_baseline_fragments",
+      "bound_tool": "tools/template_builder.py",
+      "deterministic_rule": "same baseline, compatible color/style, source-relative font-size ratio, and bounded inline gap",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "top_edge_overlay_label_expands_toward_adjacent_visual",
+      "repair_family": "chart_overlay_anchor_preservation",
+      "repair_atom": "preserve_top_edge_source_anchor",
+      "bound_tool": "tools/template_builder.py",
+      "deterministic_rule": "outward side-label inference applies only inside the visual middle band; top and bottom overlay labels preserve their source anchor",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "long_chart_label_group_requires_readable_source_relative_reduction",
+      "repair_family": "chart_typography_rebalance",
+      "repair_atom": "grouped_chart_label_65_percent_floor",
+      "bound_tool": "tools/layout_planner.py",
+      "deterministic_rule": "axis/category and legend groups may use the finite 65 percent source-relative profile while retaining one group scale and the absolute readability floor",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "required_literal_missing_after_provider_response",
+      "repair_family": "translation_contract_retry",
+      "repair_atom": "bounded_failed_id_literal_retry_and_revalidation",
+      "bound_tool": "tools/run.py",
+      "deterministic_rule": "retry only failed IDs, mask and restore required literals, revalidate after every response, and stop after two retries",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "outward_chart_label_expands_into_associated_visual",
+      "repair_family": "visual_aware_chart_label_reflow",
+      "repair_atom": "expand_away_from_nearest_protected_visual",
+      "bound_tool": "tools/template_builder.py + tools/layout_planner.py",
+      "deterministic_rule": "tools/renderer.py CHART_TEXT_GRAPHIC_COLLISION hard gate",
+      "capability_status": "detected_not_repaired"
+    }
+  ]
+}
