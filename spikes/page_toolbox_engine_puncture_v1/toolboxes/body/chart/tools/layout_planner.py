@@ -27,6 +27,7 @@ _BASE_PROFILES = (
 _BODY_PROFILES = (
     ("body-spacious-105", 1.05, 1.18),
     ("body-source-spacious", 1.00, 1.18),
+    ("body-font-90-spacious", 0.90, 1.18),
     *_BASE_PROFILES,
 )
 _TABLE_PROFILES = (
@@ -179,7 +180,7 @@ def _slot_profiles(container, font_size: float) -> tuple[tuple[str, Rect], ...]:
         source_center = (source[0] + source[2]) / 2.0
         half_width = min(source_center - allowed[0], allowed[2] - source_center)
         safe_left, safe_right = source_center - half_width, source_center + half_width
-    candidates = (
+    candidates: tuple[tuple[str, Rect], ...] = (
         (
             "source-box",
             (
@@ -195,6 +196,15 @@ def _slot_profiles(container, font_size: float) -> tuple[tuple[str, Rect], ...]:
         ),
         ("safe-wrap", (safe_left, allowed[1], safe_right, allowed[3])),
     )
+    if container.role == "LEGEND_LABEL":
+        row_height = font_size * 1.45
+        source_center = (source[1] + source[3]) / 2.0
+        row_top = max(allowed[1], min(source_center - row_height / 2.0, allowed[3] - row_height))
+        row_bottom = min(allowed[3], row_top + row_height)
+        candidates = (
+            ("legend-row", (safe_left, row_top, safe_right, row_bottom)),
+            *candidates,
+        )
     result: list[tuple[str, Rect]] = []
     seen: set[tuple[float, float, float, float]] = set()
     for policy, bbox in candidates:

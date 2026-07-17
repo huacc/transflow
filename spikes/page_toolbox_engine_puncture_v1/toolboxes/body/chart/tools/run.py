@@ -57,9 +57,16 @@ class ValidatedQwenRetryProvider:
         self.prompt_text = prompt_text
         self.model_name = config.model
         self.primary = QwenPageTranslationProvider(config, prompt_text)
+        self.last_audit: dict[str, object] = {"status": "NOT_RUN"}
 
     def translate(self, request):
-        current = self.primary.translate(request)
+        self.transient_retry_count = 0
+        current = self._translate_with_transient_retry(self.primary, request)
+        observed_texts = {
+            item.container_id: [item.translated_text]
+            for item in current.translations
+        }
+        retried_ids: set[str] = set()
         provider_request_ids = [current.provider_request_id] if current.provider_request_id else []
         response_hashes = [current.response_sha256] if current.response_sha256 else []
         latency_ms = current.latency_ms or 0
@@ -71,8 +78,15 @@ class ValidatedQwenRetryProvider:
         for _ in range(2):
             validation = translation_validation(request, current)
             if validation["status"] == "PASS":
+                self.last_audit = {
+                    "status": "PASS",
+                    "retried_container_ids": sorted(retried_ids),
+                    "confirmed_proper_name_ids": [],
+                    "transient_retry_count": self.transient_retry_count,
+                }
                 return current
             failed_ids = _failed_container_ids(validation)
+            retried_ids.update(failed_ids)
             retry_units = []
             markers_by_id: dict[str, dict[str, str]] = {}
             for unit in request.units:
@@ -94,7 +108,7 @@ class ValidatedQwenRetryProvider:
                 markers_by_id[unit.container_id] = markers
                 retry_units.append(replace(unit, source_text=masked_text, required_literals=()))
             if not retry_units:
-                return current
+                break
             retry_request = PageTranslationRequest(
                 request_id=request.request_id,
                 page_id=request.page_id,
@@ -102,7 +116,10 @@ class ValidatedQwenRetryProvider:
                 target_language=request.target_language,
                 units=tuple(retry_units),
             )
-            retried = QwenPageTranslationProvider(self.config, retry_prompt).translate(retry_request)
+            retried = self._translate_with_transient_retry(
+                QwenPageTranslationProvider(self.config, retry_prompt),
+                retry_request,
+            )
             if retried.provider_request_id:
                 provider_request_ids.append(retried.provider_request_id)
             if retried.response_sha256:
@@ -114,6 +131,7 @@ class ValidatedQwenRetryProvider:
                 for marker, literal in markers_by_id[item.container_id].items():
                     translated_text = translated_text.replace(marker, literal)
                 repaired_by_id[item.container_id] = replace(item, translated_text=translated_text)
+                observed_texts.setdefault(item.container_id, []).append(translated_text)
             current = PageTranslationBundle(
                 request_id=request.request_id,
                 page_id=request.page_id,
@@ -125,7 +143,49 @@ class ValidatedQwenRetryProvider:
                 response_sha256=hashlib.sha256("".join(response_hashes).encode("ascii")).hexdigest(),
             )
             current.validate_against(request)
+        final_validation = translation_validation(request, current)
+        confirmed = _confirmed_retained_proper_name_ids(
+            request,
+            final_validation,
+            observed_texts,
+        )
+        unconfirmed_residue = {
+            container_id: values
+            for container_id, values in final_validation["source_language_residue"].items()
+            if container_id not in confirmed
+        }
+        self.last_audit = {
+            "status": (
+                "PASS"
+                if not unconfirmed_residue
+                and not final_validation["missing_required_literals"]
+                and not final_validation["placeholder_outputs"]
+                and not final_validation["inadequate_outputs"]
+                and not final_validation["magnitude_unit_mismatches"]
+                else "FAIL"
+            ),
+            "retried_container_ids": sorted(retried_ids),
+            "confirmed_proper_name_ids": confirmed,
+            "transient_retry_count": self.transient_retry_count,
+        }
         return current
+
+    def _translate_with_transient_retry(self, provider, request):
+        for attempt in range(3):
+            try:
+                return provider.translate(request)
+            except ProviderError as exc:
+                transient = exc.code == "QWEN_TIMEOUT" or exc.code in {
+                    "QWEN_HTTP_429",
+                    "QWEN_HTTP_500",
+                    "QWEN_HTTP_502",
+                    "QWEN_HTTP_503",
+                    "QWEN_HTTP_504",
+                }
+                if not transient or attempt == 2:
+                    raise
+                self.transient_retry_count += 1
+        raise AssertionError("unreachable")
 
 
 def main() -> int:
@@ -258,7 +318,12 @@ def main() -> int:
 
 def _failed_container_ids(validation: dict[str, object]) -> set[str]:
     failed: set[str] = set()
-    for key in ("missing_required_literals", "source_language_residue", "inadequate_outputs"):
+    for key in (
+        "missing_required_literals",
+        "source_language_residue",
+        "inadequate_outputs",
+        "magnitude_unit_mismatches",
+    ):
         value = validation.get(key)
         if isinstance(value, dict):
             failed.update(str(container_id) for container_id in value)
@@ -266,6 +331,38 @@ def _failed_container_ids(validation: dict[str, object]) -> set[str]:
     if isinstance(placeholders, list):
         failed.update(str(container_id) for container_id in placeholders)
     return failed
+
+
+def _confirmed_retained_proper_name_ids(
+    request: PageTranslationRequest,
+    validation: dict[str, object],
+    observed_texts: dict[str, list[str]],
+) -> list[str]:
+    residue = validation.get("source_language_residue")
+    if not isinstance(residue, dict):
+        return []
+    units = {unit.container_id: unit for unit in request.units}
+    confirmed = []
+    for container_id in residue:
+        unit = units.get(str(container_id))
+        if unit is None:
+            continue
+        source = unit.source_text.strip()
+        words = re.findall(r"[A-Za-z][A-Za-z'’&.-]*", source)
+        title_cased = words and all(
+            word.casefold() in {"a", "an", "and", "of", "the", "vs"}
+            or word[0].isupper()
+            for word in words
+        )
+        observations = observed_texts.get(str(container_id), [])
+        if (
+            1 <= len(words) <= 4
+            and title_cased
+            and len(observations) >= 3
+            and all(text.strip() == source for text in observations)
+        ):
+            confirmed.append(str(container_id))
+    return sorted(confirmed)
 
 
 def _select(parser, records, args):

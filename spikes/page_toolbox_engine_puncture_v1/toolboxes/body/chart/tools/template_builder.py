@@ -63,7 +63,15 @@ def build_chart_template(facts: PageFacts) -> ChartTemplate:
     regular_lines = [line for line in editable_lines if _line_key(line) not in local_table_cells]
     table_groups = _table_line_groups(editable_lines, local_table_cells)
     editable_groups = _merge_overlapping_groups(
-        [*_container_groups(regular_lines, visuals, facts.width * facts.height), *table_groups]
+        [
+            *_container_groups(
+                regular_lines,
+                visuals,
+                facts.width * facts.height,
+                all_lines=lines,
+            ),
+            *table_groups,
+        ]
     )
     median_font = statistics.median(line.font_size for line in editable_lines) if editable_lines else 8.0
     visual_by_id = {item.object_id: item for item in visuals}
@@ -75,7 +83,8 @@ def build_chart_template(facts: PageFacts) -> ChartTemplate:
         source_ids = tuple(item.object_id for line in group for item in line.objects)
         source_text = _joined_text(group)
         font_size = statistics.median(line.font_size for line in group)
-        swatch = _legend_anchor(source_bbox, font_size, visuals, page_area)
+        legend_row = _legend_data_row(group, lines, visuals, page_area)
+        swatch = legend_row[1] if legend_row is not None else _legend_anchor(source_bbox, font_size, visuals, page_area)
         association = _association(source_bbox, regions)
         table_cell = _table_group_cell(group, local_table_cells)
         rotation = _rotation(source_bbox, source_text)
@@ -98,6 +107,7 @@ def build_chart_template(facts: PageFacts) -> ChartTemplate:
                 source_bbox,
                 lines,
                 regions,
+                visuals,
                 association,
                 swatch,
                 alignment,
@@ -105,15 +115,31 @@ def build_chart_template(facts: PageFacts) -> ChartTemplate:
                 facts.height,
             )
         )
+        if legend_row is not None:
+            row_center = _center_y(source_bbox)
+            row_half_height = font_size * 1.45 / 2.0
+            allowed_bbox = (
+                allowed_bbox[0],
+                min(allowed_bbox[1], row_center - row_half_height),
+                allowed_bbox[2],
+                max(allowed_bbox[3], row_center + row_half_height),
+            )
         overlapping_visual_ids = tuple(
             item.object_id
             for item in visuals
             if _area(item.bbox) < page_area * 0.80
             and _intersection_area(item.bbox, source_bbox) > 0.01
         )
-        anchor_ids = tuple(dict.fromkeys((swatch.object_id,) if swatch else overlapping_visual_ids))
+        data_anchor_ids = (
+            tuple(item.object_id for item in legend_row[0].objects)
+            if legend_row is not None
+            else ()
+        )
+        anchor_ids = tuple(
+            dict.fromkeys((*data_anchor_ids, *((swatch.object_id,) if swatch else overlapping_visual_ids)))
+        )
         if swatch:
-            anchor_ids = tuple(dict.fromkeys((swatch.object_id, *overlapping_visual_ids)))
+            anchor_ids = tuple(dict.fromkeys((*data_anchor_ids, swatch.object_id, *overlapping_visual_ids)))
         elif not anchor_ids:
             anchor_ids = tuple(
                 object_id
@@ -130,7 +156,10 @@ def build_chart_template(facts: PageFacts) -> ChartTemplate:
                 source_bbox=_round_rect(source_bbox),
                 allowed_bbox=_round_rect(allowed_bbox),
                 anchor_object_ids=anchor_ids,
-                anchor_relation=_anchor_relation(source_bbox, swatch.bbox if swatch else association.bbox),
+                anchor_relation=_anchor_relation(
+                    source_bbox,
+                    legend_row[0].bbox if legend_row is not None else swatch.bbox if swatch else association.bbox,
+                ),
                 reading_order=reading_order,
                 required_literals=_required_literals(source_text),
                 font_name=group[0].font_name,
@@ -568,11 +597,22 @@ def _same_row(left: TextObjectFact, right: TextObjectFact) -> bool:
     )
 
 
-def _container_groups(lines: list[_Line], visuals: tuple[_Visual, ...], page_area: float) -> list[list[_Line]]:
+def _container_groups(
+    lines: list[_Line],
+    visuals: tuple[_Visual, ...],
+    page_area: float,
+    *,
+    all_lines: list[_Line] | None = None,
+) -> list[list[_Line]]:
+    context = all_lines if all_lines is not None else lines
     groups: list[list[_Line]] = []
     for line in lines:
         target = next(
-            (group for group in reversed(groups) if _can_join(group[-1], line, visuals, page_area)),
+            (
+                group
+                for group in reversed(groups)
+                if _can_join(group[-1], line, visuals, page_area, all_lines=context)
+            ),
             None,
         )
         if target is None:
@@ -582,10 +622,26 @@ def _container_groups(lines: list[_Line], visuals: tuple[_Visual, ...], page_are
     return groups
 
 
-def _can_join(previous: _Line, candidate: _Line, visuals: tuple[_Visual, ...], page_area: float) -> bool:
+def _can_join(
+    previous: _Line,
+    candidate: _Line,
+    visuals: tuple[_Visual, ...],
+    page_area: float,
+    *,
+    all_lines: list[_Line] | None = None,
+) -> bool:
     previous_swatch = _legend_anchor(previous.bbox, previous.font_size, visuals, page_area)
     candidate_swatch = _legend_anchor(candidate.bbox, candidate.font_size, visuals, page_area)
     if previous_swatch is not None and candidate_swatch is not None and previous_swatch.object_id != candidate_swatch.object_id:
+        return False
+    context = all_lines if all_lines is not None else [previous, candidate]
+    previous_row = _legend_data_anchor(previous, context, visuals, page_area)
+    candidate_row = _legend_data_anchor(candidate, context, visuals, page_area)
+    if (
+        previous_row is not None
+        and candidate_row is not None
+        and _line_key(previous_row[0]) != _line_key(candidate_row[0])
+    ):
         return False
     gap = candidate.bbox[1] - previous.bbox[3]
     size_ratio = abs(candidate.font_size - previous.font_size) / max(candidate.font_size, previous.font_size, 0.1)
@@ -596,7 +652,7 @@ def _can_join(previous: _Line, candidate: _Line, visuals: tuple[_Visual, ...], p
     )
     return (
         previous.color_srgb == candidate.color_srgb
-        and _script(previous.text) == _script(candidate.text)
+        and (_scripts_compatible(previous.text, candidate.text) or _body_numeric_tail(previous, candidate))
         and _font_style(previous.font_name) == _font_style(candidate.font_name)
         and size_ratio <= 0.15
         and anchor_delta <= max(4.0, min(previous.font_size, candidate.font_size) * 0.8)
@@ -734,7 +790,7 @@ def _semantic_numeric_continuations(lines: list[_Line]) -> set[tuple[str, ...]]:
         current_text = current.text.strip()
         if not re.fullmatch(r"[\d\s%.,。()（）+\-]+", current_text):
             continue
-        if not re.search(r"[=×xX*/÷╱]", previous.text):
+        if not re.search(r"[=×xX*/÷╱]", previous.text) and not _body_numeric_tail(previous, current):
             continue
         gap = current.bbox[1] - previous.bbox[3]
         size_ratio = abs(current.font_size - previous.font_size) / max(current.font_size, previous.font_size, 0.1)
@@ -747,6 +803,25 @@ def _semantic_numeric_continuations(lines: list[_Line]) -> set[tuple[str, ...]]:
         ):
             result.add(_line_key(current))
     return result
+
+
+def _body_numeric_tail(previous: _Line, current: _Line) -> bool:
+    current_text = current.text.strip()
+    if not re.fullmatch(r"[\d\s%.,。()（）+\-]+", current_text) or not re.search(r"\d", current_text):
+        return False
+    semantic_count = len(re.findall(r"[A-Za-z\u3400-\u9fff]", previous.text))
+    if semantic_count < 20 or previous.text.rstrip().endswith(("。", "！", "？", ".", "!", "?", "；", ";")):
+        return False
+    gap = current.bbox[1] - previous.bbox[3]
+    size_ratio = abs(current.font_size - previous.font_size) / max(current.font_size, previous.font_size, 0.1)
+    return (
+        previous.color_srgb == current.color_srgb
+        and _font_style(previous.font_name) == _font_style(current.font_name)
+        and size_ratio <= 0.15
+        and 0.0 <= gap <= max(previous.font_size, current.font_size) * 1.2
+        and abs(current.bbox[0] - previous.bbox[0]) <= max(previous.font_size, current.font_size) * 1.5
+        and previous.bbox[2] - previous.bbox[0] >= max(current.font_size * 20.0, (current.bbox[2] - current.bbox[0]) * 3.0)
+    )
 
 
 def _legend_anchor(source: Rect, font_size: float, visuals: tuple[_Visual, ...], page_area: float) -> _Visual | None:
@@ -768,6 +843,52 @@ def _legend_anchor(source: Rect, font_size: float, visuals: tuple[_Visual, ...],
     return min(candidates, key=lambda item: _rect_gap(source, item.bbox)) if candidates else None
 
 
+def _legend_data_anchor(
+    line: _Line,
+    all_lines: list[_Line],
+    visuals: tuple[_Visual, ...],
+    page_area: float,
+) -> tuple[_Line, _Visual] | None:
+    if not re.search(r"[A-Za-z\u3400-\u9fff]", line.text):
+        return None
+    candidates: list[tuple[_Line, _Visual]] = []
+    for value in all_lines:
+        if not re.fullmatch(r"[-+]?\d+(?:[.,]\d+)*%", value.text.strip()):
+            continue
+        swatch = _legend_anchor(value.bbox, value.font_size, visuals, page_area)
+        if swatch is None or value.bbox[2] > line.bbox[0] + line.font_size:
+            continue
+        horizontal_gap = max(0.0, line.bbox[0] - value.bbox[2])
+        vertical_delta = abs(_center_y(line.bbox) - _center_y(value.bbox))
+        if horizontal_gap <= max(line.font_size * 4.0, value.font_size * 3.0) and vertical_delta <= max(
+            line.font_size,
+            value.font_size,
+        ) * 0.90:
+            candidates.append((value, swatch))
+    return min(
+        candidates,
+        key=lambda item: (
+            abs(_center_y(line.bbox) - _center_y(item[0].bbox)),
+            max(0.0, line.bbox[0] - item[0].bbox[2]),
+        ),
+    ) if candidates else None
+
+
+def _legend_data_row(
+    group: list[_Line],
+    all_lines: list[_Line],
+    visuals: tuple[_Visual, ...],
+    page_area: float,
+) -> tuple[_Line, _Visual] | None:
+    anchors = [_legend_data_anchor(line, all_lines, visuals, page_area) for line in group]
+    if not anchors or any(item is None for item in anchors):
+        return None
+    resolved = [item for item in anchors if item is not None]
+    if len({_line_key(item[0]) for item in resolved}) != 1:
+        return None
+    return resolved[0]
+
+
 def _association(source: Rect, regions: tuple[ChartVisualRegion, ...]) -> ChartVisualRegion:
     return min(regions, key=lambda region: (_rect_gap(source, region.bbox), _area(region.bbox)))
 
@@ -775,6 +896,11 @@ def _association(source: Rect, regions: tuple[ChartVisualRegion, ...]) -> ChartV
 def _role(text: str, bbox: Rect, font_size: float, median_font: float, swatch, association) -> str:
     if swatch is not None:
         return "LEGEND_LABEL"
+    semantic_count = len(re.findall(r"[A-Za-z\u3400-\u9fff]", text))
+    if semantic_count >= 80 or (
+        semantic_count >= 40 and bbox[3] - bbox[1] >= font_size * 2.2
+    ):
+        return "ANNOTATION"
     if font_size >= median_font * 1.45 or (text.isupper() and font_size >= median_font * 1.15 and len(text) >= 5):
         return "TITLE"
     if len(text) <= 48 and _rect_gap(bbox, association.bbox) <= font_size * 4.0:
@@ -892,6 +1018,7 @@ def _allowed_bbox(
     source: Rect,
     all_lines: list[_Line],
     regions: tuple[ChartVisualRegion, ...],
+    visuals: tuple[_Visual, ...],
     association: ChartVisualRegion,
     swatch: _Visual | None,
     alignment: str,
@@ -947,6 +1074,14 @@ def _allowed_bbox(
         horizontal = _axis_overlap((left, right), (region.bbox[0], region.bbox[2]))
         if horizontal >= min(lane_width, region.bbox[2] - region.bbox[0]) * 0.15:
             bottom_limit = min(bottom_limit, region.bbox[1] - 2.0)
+    for visual in visuals:
+        if visual is swatch or _area(visual.bbox) >= page_width * page_height * 0.80:
+            continue
+        if visual.bbox[1] < source[3] - 0.5 or _intersection_area(source, visual.bbox) > 0.01:
+            continue
+        horizontal = _axis_overlap((left, right), (visual.bbox[0], visual.bbox[2]))
+        if horizontal >= min(lane_width, visual.bbox[2] - visual.bbox[0]) * 0.15:
+            bottom_limit = min(bottom_limit, visual.bbox[1] - 0.5)
     # The extracted glyph bbox is an anchor, not a translated-text cage.  The
     # safe lane can use all whitespace up to the next text/visual obstacle.
     bottom = max(source[3], bottom_limit)
@@ -958,7 +1093,7 @@ def _required_literals(text: str) -> tuple[str, ...]:
         dict.fromkeys(
             re.findall(
                 r"(?:https?://\S+|www\.\S+|\b[A-Z]{1,4}\d+[A-Z0-9.-]*\b|"
-                r"\d+(?:[.,:/-]\d+)*%?)",
+                r"(?<![\d'\u2018\u2019])\d+(?:[.,:/-]\d+)*%?)",
                 text,
             )
         )
@@ -1007,6 +1142,20 @@ def _script(text: str) -> str:
     if has_cjk == has_latin:
         return "MIXED"
     return "CJK" if has_cjk else "LATIN"
+
+
+def _scripts_compatible(left: str, right: str) -> bool:
+    left_script = _script(left)
+    right_script = _script(right)
+    if left_script == right_script:
+        return True
+    return (
+        left_script == "MIXED"
+        and bool(re.search(r"[\u3400-\u9fff]", left)) == bool(re.search(r"[\u3400-\u9fff]", right))
+    ) or (
+        right_script == "MIXED"
+        and bool(re.search(r"[\u3400-\u9fff]", left)) == bool(re.search(r"[\u3400-\u9fff]", right))
+    )
 
 
 def _neutral(text: str) -> bool:

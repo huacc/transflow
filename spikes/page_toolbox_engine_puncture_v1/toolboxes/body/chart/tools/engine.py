@@ -45,6 +45,7 @@ _CAPABILITY_FAILURE_CODES = {
     "CHART_SAFE_REDACTION_REGION_NOT_FOUND",
     "TRANSLATION_REQUIRED_LITERAL_MISSING",
     "TRANSLATION_SOURCE_LANGUAGE_RESIDUE",
+    "TRANSLATION_MAGNITUDE_UNIT_MISMATCH",
     "TRANSLATION_PLACEHOLDER_OUTPUT",
     "TRANSLATION_INADEQUATE_OUTPUT",
 }
@@ -272,6 +273,8 @@ def translation_validation(request, bundle) -> dict[str, object]:
             semantic_text = translated[unit.container_id]
             for literal in unit.required_literals:
                 semantic_text = semantic_text.replace(literal, "")
+            if _retained_standalone_acronym(unit.source_text, semantic_text):
+                continue
             if re.search(r"[A-Za-z]", semantic_text) and not re.search(r"[\u3400-\u9fff]", semantic_text):
                 residue[unit.container_id] = sorted(set(re.findall(r"[A-Za-z]+", semantic_text)))
     placeholders = [
@@ -291,13 +294,50 @@ def translation_validation(request, bundle) -> dict[str, object]:
             )
         )
     }
+    magnitude_mismatches = {}
+    if request.source_language.casefold().startswith("zh") and request.target_language.casefold().startswith("en"):
+        for unit in request.units:
+            expected = _expected_english_magnitude_markers(unit.source_text)
+            translated_text = translated[unit.container_id]
+            missing_markers = [
+                marker
+                for marker in expected
+                if not _english_magnitude_present(marker, translated_text)
+            ]
+            if missing_markers:
+                magnitude_mismatches[unit.container_id] = missing_markers
     return {
-        "status": "FAIL" if missing or residue or placeholders or inadequate else "PASS",
+        "status": "FAIL" if missing or residue or placeholders or inadequate or magnitude_mismatches else "PASS",
         "missing_required_literals": missing,
         "source_language_residue": residue,
         "placeholder_outputs": placeholders,
         "inadequate_outputs": inadequate,
+        "magnitude_unit_mismatches": magnitude_mismatches,
     }
+
+
+def _expected_english_magnitude_markers(source_text: str) -> tuple[str, ...]:
+    expected: list[str] = []
+    unit_suffix = r"(?:元|户|戶|人|吨|噸|平方米|平米|件|次|股|份|个|個|家|公里|千瓦|度)?"
+    for source_unit, marker in (("万", "ten-thousand"), ("萬", "ten-thousand"), ("亿", "hundred-million"), ("億", "hundred-million")):
+        standalone_unit = rf"(?<![百千]){source_unit}"
+        if re.search(rf"(?:\d[\d,.]*\s*{standalone_unit}|{standalone_unit}{unit_suffix})", source_text):
+            expected.append(marker)
+    return tuple(dict.fromkeys(expected))
+
+
+def _english_magnitude_present(marker: str, translated_text: str) -> bool:
+    patterns = {
+        "ten-thousand": r"(?:\bten[-\s]thousand\b|(?<!\d)10[ ,]?000(?!\d))",
+        "hundred-million": r"(?:\bhundred[-\s]million\b|(?<!\d)100[ -]?million\b)",
+    }
+    return bool(re.search(patterns[marker], translated_text, re.IGNORECASE))
+
+
+def _retained_standalone_acronym(source_text: str, translated_text: str) -> bool:
+    source = re.fullmatch(r"([A-Z]{2,6})s?", source_text.strip())
+    target = re.fullmatch(r"([A-Z]{2,6})s?", translated_text.strip())
+    return bool(source and target and source.group(1) == target.group(1))
 
 
 def _translation_validation_findings(validation: dict[str, object]) -> tuple[ChartFinding, ...]:
@@ -305,6 +345,7 @@ def _translation_validation_findings(validation: dict[str, object]) -> tuple[Cha
     checks = (
         ("TRANSLATION_REQUIRED_LITERAL_MISSING", "missing_required_literals"),
         ("TRANSLATION_SOURCE_LANGUAGE_RESIDUE", "source_language_residue"),
+        ("TRANSLATION_MAGNITUDE_UNIT_MISMATCH", "magnitude_unit_mismatches"),
         ("TRANSLATION_PLACEHOLDER_OUTPUT", "placeholder_outputs"),
         ("TRANSLATION_INADEQUATE_OUTPUT", "inadequate_outputs"),
     )

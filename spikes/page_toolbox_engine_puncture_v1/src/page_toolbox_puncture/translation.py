@@ -55,6 +55,8 @@ class QwenConfig:
     model: str
     api_key: str
     timeout_seconds: float = 180.0
+    chunk_max_units: int = 12
+    chunk_max_chars: int = 6000
 
     @classmethod
     def from_environment(cls) -> "QwenConfig":
@@ -66,6 +68,8 @@ class QwenConfig:
             model=os.environ.get("PAGE_TOOLBOX_QWEN_MODEL", "Qwen/Qwen3.6-35B-A3B"),
             api_key=api_key,
             timeout_seconds=float(os.environ.get("PAGE_TOOLBOX_QWEN_TIMEOUT_SECONDS", "180")),
+            chunk_max_units=int(os.environ.get("PAGE_TOOLBOX_QWEN_CHUNK_MAX_UNITS", "12")),
+            chunk_max_chars=int(os.environ.get("PAGE_TOOLBOX_QWEN_CHUNK_MAX_CHARS", "6000")),
         )
 
 
@@ -82,23 +86,35 @@ class QwenPageTranslationProvider:
         request_ids: list[str] = []
         response_hashes: list[str] = []
         total_latency_ms = 0
-        pending = list(_translation_chunks(request.units))
+        pending = [
+            (chunk, 0)
+            for chunk in _translation_chunks(
+                request.units,
+                max_units=self.config.chunk_max_units,
+                max_chars=self.config.chunk_max_chars,
+            )
+        ]
         while pending:
-            units = pending.pop(0)
+            units, transient_attempt = pending.pop(0)
             try:
                 rows, provider_request_id, latency_ms, response_sha256 = self._translate_chunk(request, units)
             except ProviderError as exc:
-                recoverable_chunk_error = exc.code in {
+                splittable_chunk_error = exc.code in {
                     "DUPLICATE_TRANSLATION_CONTAINER_ID",
                     "TRANSLATION_CONTAINER_ID_SET_MISMATCH",
                     "INVALID_TRANSLATION_RESPONSE",
                     "NON_TEXT_TRANSLATION_RESPONSE",
                     "NON_OBJECT_TRANSLATION_RESPONSE",
                     "QWEN_CLIENT_JSONDecodeError",
+                    "QWEN_TIMEOUT",
                 }
-                if recoverable_chunk_error and len(units) > 1:
+                if splittable_chunk_error and len(units) > 1:
                     midpoint = len(units) // 2
-                    pending[0:0] = [units[:midpoint], units[midpoint:]]
+                    pending[0:0] = [(units[:midpoint], 0), (units[midpoint:], 0)]
+                    continue
+                if exc.code in {"QWEN_TIMEOUT", "QWEN_HTTP_503"} and transient_attempt < 2:
+                    time.sleep(2**transient_attempt)
+                    pending.insert(0, (units, transient_attempt + 1))
                     continue
                 raise
             translations.extend(rows)
