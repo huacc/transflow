@@ -1,9 +1,11 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
 from unittest.mock import patch
 
-from toolboxes.body.flow_text.single.tools.p4_layout_planner import _minimum_text_height
+from toolboxes.body.flow_text.single.tools.p4_layout_planner import _font_variant, _minimum_text_height
 
 
 class _ProbePage:
@@ -36,6 +38,18 @@ class _ProbeDocument:
 
 
 class P4TextMeasurementTests(unittest.TestCase):
+    def test_font_variant_uses_hyphenated_bold_file_when_available(self) -> None:
+        with TemporaryDirectory() as directory:
+            regular = Path(directory) / "ExampleSans.ttf"
+            bold = Path(directory) / "ExampleSans-Bold.ttf"
+            regular.touch()
+            bold.touch()
+
+            font_file, font_resource = _font_variant(str(regular), "flow", "bold")
+
+        self.assertEqual(str(bold), font_file)
+        self.assertEqual("flow_bold", font_resource)
+
     def test_minimum_height_reuses_one_preloaded_probe_page(self) -> None:
         document = _ProbeDocument()
         with patch(

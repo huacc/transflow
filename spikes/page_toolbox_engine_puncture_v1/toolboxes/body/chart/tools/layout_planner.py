@@ -114,23 +114,26 @@ def plan_chart_layout(
 def _fit_group(template, group: list[tuple[object, str, str, str]]) -> list[ChartPlacement]:
     profiles = _profiles(group[0][0])
     seen: set[tuple[tuple[float, float], ...]] = set()
+    best_count = -1
+    best: tuple[str, float, tuple[float, ...], list[tuple[str, Rect, str] | None]] | None = None
     for profile, scale, line_height in profiles:
         sizes = tuple(max(_minimum_font_size(container), container.font_size * scale) for container, _, _, _ in group)
         key = tuple((round(size, 3), line_height) for size in sizes)
         if key in seen:
             continue
         seen.add(key)
-        selected_slots: list[tuple[str, Rect]] = []
+        selected_slots: list[tuple[str, Rect, str] | None] = []
         for size, (container, text, font_file, resource) in zip(sizes, group):
             selected = next(
                 (
-                    (slot_policy, bbox)
+                    (f"{slot_policy}{variant_profile}", bbox, variant_text)
+                    for variant_text, variant_profile in _layout_text_variants(container, text)
                     for slot_policy, bbox in _slot_profiles(container, size)
                     if _probe(
                         template.width,
                         template.height,
                         bbox,
-                        text,
+                        variant_text,
                         size,
                         line_height,
                         font_file,
@@ -141,15 +144,21 @@ def _fit_group(template, group: list[tuple[object, str, str, str]]) -> list[Char
                 ),
                 None,
             )
-            if selected is None:
-                break
             selected_slots.append(selected)
-        if len(selected_slots) == len(group):
-            return [
-                ChartPlacement(
+        fit_count = sum(selected is not None for selected in selected_slots)
+        if fit_count > best_count:
+            best_count = fit_count
+            best = (profile, line_height, sizes, selected_slots)
+        if fit_count == len(group):
+            placements: list[ChartPlacement] = []
+            for index, (size, (container, text, font_file, resource)) in enumerate(zip(sizes, group)):
+                selected = selected_slots[index]
+                assert selected is not None
+                placements.append(
+                    ChartPlacement(
                     container.container_id,
-                    text,
-                    selected_slots[index][1],
+                    selected[2],
+                    selected[1],
                     font_file,
                     resource,
                     round(size, 4),
@@ -157,13 +166,59 @@ def _fit_group(template, group: list[tuple[object, str, str, str]]) -> list[Char
                     line_height,
                     container.color_srgb,
                     container.alignment,
-                    f"{selected_slots[index][0]}/{profile}",
+                    f"{selected[0]}/{profile}",
                     True,
                     container.rotation,
                 )
-                for index, (size, (container, text, font_file, resource)) in enumerate(zip(sizes, group))
-            ]
-    return [_unfit(container, text, font_file, resource) for container, text, font_file, resource in group]
+                )
+            return placements
+    if best is None:
+        return [_unfit(container, text, font_file, resource) for container, text, font_file, resource in group]
+    profile, line_height, sizes, selected_slots = best
+    placements: list[ChartPlacement] = []
+    for index, (size, (container, text, font_file, resource)) in enumerate(zip(sizes, group)):
+        selected = selected_slots[index]
+        if selected is None:
+            placements.append(_unfit(container, text, font_file, resource))
+            continue
+        placements.append(
+            ChartPlacement(
+                container.container_id,
+                selected[2],
+                selected[1],
+                font_file,
+                resource,
+                round(size, 4),
+                round(_minimum_font_size(container), 4),
+                line_height,
+                container.color_srgb,
+                container.alignment,
+                f"{selected[0]}/{profile}",
+                True,
+                container.rotation,
+            )
+        )
+    return placements
+
+
+def _layout_text_variants(container, text: str) -> tuple[tuple[str, str], ...]:
+    variants: list[tuple[str, str]] = []
+    if (
+        container.role == "AXIS_OR_CATEGORY_LABEL"
+        and container.anchor_relation == "OVERLAY"
+        and re.fullmatch(r"[\u3400-\u9fff]{5,}", text)
+        and container.allowed_bbox[3] - container.allowed_bbox[1] >= container.font_size * 2.4
+        and len(text) * container.font_size
+        > container.allowed_bbox[2] - container.allowed_bbox[0] - container.font_size * 0.75
+    ):
+        split_at = (len(text) + 1) // 2
+        variants.append((f"{text[:split_at]}\n{text[split_at:]}", "+balanced-cjk-wrap"))
+    variants.append((text, ""))
+    if container.role in {"AXIS_OR_CATEGORY_LABEL", "LEGEND_LABEL"}:
+        hyphen_wrapped = re.sub(r"(?<=[A-Za-z])-(?=[A-Za-z])", "-\n", text)
+        if hyphen_wrapped != text:
+            variants.append((hyphen_wrapped, "+hyphen-wrap"))
+    return tuple(variants)
 
 
 def _slot_profiles(container, font_size: float) -> tuple[tuple[str, Rect], ...]:
@@ -407,6 +462,7 @@ def _typography_group_key(container) -> tuple[object, ...]:
             container.role,
             container.association_id,
             container.alignment,
+            container.rotation,
             _is_bold(container.font_name),
             source_size_bucket,
             container.color_srgb,
@@ -422,11 +478,24 @@ def _profiles(container):
         if source_height >= container.font_size * 2.2:
             return _BODY_PROFILES
         return _BODY_PROFILES[1:]
+    if _narrow_internal_overlay_label(container):
+        return (*_BASE_PROFILES, ("font-50-internal-overlay", 0.50, 0.92))
+    if container.role == "AXIS_OR_CATEGORY_LABEL" and container.rotation:
+        return (*_BASE_PROFILES, ("font-60-vertical", 0.60, 0.90), ("font-55-vertical", 0.55, 0.90))
     return _BASE_PROFILES
 
 
 def _body_text(container) -> bool:
     return container.role == "ANNOTATION"
+
+
+def _narrow_internal_overlay_label(container) -> bool:
+    return (
+        container.role == "AXIS_OR_CATEGORY_LABEL"
+        and container.anchor_relation == "OVERLAY"
+        and container.alignment == "CENTER"
+        and container.allowed_bbox[2] - container.allowed_bbox[0] <= container.font_size * 4.0
+    )
 
 
 def _unfit(container, text: str, font_file: str, resource: str) -> ChartPlacement:
@@ -449,8 +518,15 @@ def _unfit(container, text: str, font_file: str, resource: str) -> ChartPlacemen
 
 
 def _minimum_font_size(container) -> float:
-    floor = 4.5 if container.role in {"AXIS_OR_CATEGORY_LABEL", "LEGEND_LABEL", "PAGE_HEADER", "PAGE_FOOTER"} else 5.5
-    relative_floor = 0.65 if container.role in {"AXIS_OR_CATEGORY_LABEL", "LEGEND_LABEL"} else 0.68
+    if container.role == "AXIS_OR_CATEGORY_LABEL" and container.rotation:
+        floor = 4.0
+        relative_floor = 0.55
+    elif _narrow_internal_overlay_label(container):
+        floor = 4.5
+        relative_floor = 0.50
+    else:
+        floor = 4.5 if container.role in {"AXIS_OR_CATEGORY_LABEL", "LEGEND_LABEL", "PAGE_HEADER", "PAGE_FOOTER"} else 5.5
+        relative_floor = 0.65 if container.role in {"AXIS_OR_CATEGORY_LABEL", "LEGEND_LABEL"} else 0.68
     return max(floor, container.font_size * relative_floor)
 
 
@@ -522,12 +598,35 @@ def _has_word_fragmentation(text: str, lines: list[str]) -> bool:
 
     if len(lines) < 2:
         return False
+    numeric_tokens = set(
+        re.findall(r"\d+(?:[.,:/-]\d+)+(?:%|[A-Za-z\u3400-\u9fff]{1,4})?", text)
+    )
+    for left, right in zip(lines, lines[1:]):
+        for token in numeric_tokens:
+            if any(
+                token[index].isdigit()
+                and left.rstrip().endswith(token[:index])
+                and right.lstrip().startswith(token[index:])
+                for index in range(1, len(token))
+            ):
+                return True
     source_words = {item.casefold() for item in re.findall(r"[A-Za-z]{4,}", text)}
-    for previous, current in zip(lines, lines[1:]):
-        left = re.search(r"([A-Za-z]+)$", previous.rstrip())
-        right = re.match(r"([A-Za-z]+)", current.lstrip())
-        if left and right and (left.group(1) + right.group(1)).casefold() in source_words:
-            return True
+    for start in range(len(lines) - 1):
+        left = re.search(r"([A-Za-z]+)$", lines[start].rstrip())
+        if left is None:
+            continue
+        combined = left.group(1).casefold()
+        for end in range(start + 1, len(lines)):
+            right = re.match(r"([A-Za-z]+)", lines[end].lstrip())
+            if right is None:
+                break
+            combined += right.group(1).casefold()
+            if combined in source_words:
+                return True
+            if not any(word.startswith(combined) for word in source_words):
+                break
+            if not re.fullmatch(r"[A-Za-z]+", lines[end].strip()):
+                break
     return False
 
 

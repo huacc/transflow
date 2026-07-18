@@ -5,6 +5,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from page_toolbox_puncture.contracts import (
     ContractError,
@@ -18,7 +19,14 @@ from page_toolbox_puncture.contracts import (
 from page_toolbox_puncture.runtime import run_translation_slice
 from page_toolbox_puncture.sample_snapshot import snapshot_sample
 from page_toolbox_puncture.state_machine import InvalidTransition, PageState, PageStateMachine
-from page_toolbox_puncture.translation import FixedTranslationProvider, ProviderError, _normalize_translation_order, _translation_chunks
+from page_toolbox_puncture.translation import (
+    FixedTranslationProvider,
+    ProviderError,
+    QwenConfig,
+    QwenPageTranslationProvider,
+    _normalize_translation_order,
+    _translation_chunks,
+)
 
 
 class FailingProvider:
@@ -77,6 +85,75 @@ class P1RuntimeTests(unittest.TestCase):
         chunks = _translation_chunks(units)
         self.assertEqual([12, 12, 1], [len(chunk) for chunk in chunks])
         self.assertEqual(list(units), [unit for chunk in chunks for unit in chunk])
+
+    def test_qwen_chunk_limits_can_be_reduced_for_slow_endpoints(self) -> None:
+        with patch.dict(
+            "os.environ",
+            {
+                "PAGE_TOOLBOX_QWEN_API_KEY": "test-key",
+                "PAGE_TOOLBOX_QWEN_CHUNK_MAX_UNITS": "4",
+                "PAGE_TOOLBOX_QWEN_CHUNK_MAX_CHARS": "1600",
+            },
+        ):
+            config = QwenConfig.from_environment()
+
+        self.assertEqual(4, config.chunk_max_units)
+        self.assertEqual(1600, config.chunk_max_chars)
+
+    def test_qwen_timeout_splits_only_the_failed_multi_unit_chunk(self) -> None:
+        provider = QwenPageTranslationProvider(
+            QwenConfig("http://example.invalid/v1", "test-model", "test-key", chunk_max_units=4),
+            "test prompt",
+        )
+        attempted_sizes: list[int] = []
+
+        def translate_chunk(request, units):
+            attempted_sizes.append(len(units))
+            if len(units) > 1:
+                raise ProviderError("QWEN_TIMEOUT")
+            unit = units[0]
+            return (
+                (TranslationResult(unit.container_id, f"translated-{unit.container_id}"),),
+                f"request-{unit.container_id}",
+                1,
+                hashlib.sha256(unit.container_id.encode("utf-8")).hexdigest(),
+            )
+
+        with patch.object(provider, "_translate_chunk", side_effect=translate_chunk):
+            bundle = provider.translate(self.request)
+
+        self.assertEqual([2, 1, 1], attempted_sizes)
+        self.assertEqual(["c1", "c2"], [item.container_id for item in bundle.translations])
+
+    def test_qwen_503_retries_only_the_current_chunk(self) -> None:
+        units = tuple(TranslationUnit(f"c{index}", f"text-{index}", index) for index in range(4))
+        request = PageTranslationRequest("r503", "p503", "en", "zh-CN", units)
+        provider = QwenPageTranslationProvider(
+            QwenConfig("http://example.invalid/v1", "test-model", "test-key", chunk_max_units=2),
+            "test prompt",
+        )
+        attempts: list[tuple[str, ...]] = []
+
+        def translate_chunk(request, chunk):
+            ids = tuple(unit.container_id for unit in chunk)
+            attempts.append(ids)
+            if ids == ("c2", "c3") and attempts.count(ids) == 1:
+                raise ProviderError("QWEN_HTTP_503")
+            return (
+                tuple(TranslationResult(unit.container_id, f"translated-{unit.container_id}") for unit in chunk),
+                f"request-{'-'.join(ids)}",
+                1,
+                hashlib.sha256("|".join(ids).encode("utf-8")).hexdigest(),
+            )
+
+        with (
+            patch.object(provider, "_translate_chunk", side_effect=translate_chunk),
+            patch("page_toolbox_puncture.translation.time.sleep"),
+        ):
+            bundle = provider.translate(request)
+
+        self.assertEqual([("c0", "c1"), ("c2", "c3"), ("c2", "c3")], attempts)
+        self.assertEqual(["c0", "c1", "c2", "c3"], [item.container_id for item in bundle.translations])
 
     def test_state_machine_rejects_illegal_transition(self) -> None:
         state = PageStateMachine()

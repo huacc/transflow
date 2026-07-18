@@ -112,7 +112,11 @@ class QwenPageTranslationProvider:
                     midpoint = len(units) // 2
                     pending[0:0] = [(units[:midpoint], 0), (units[midpoint:], 0)]
                     continue
-                if exc.code in {"QWEN_TIMEOUT", "QWEN_HTTP_503"} and transient_attempt < 2:
+                if exc.code in {
+                    "QWEN_TIMEOUT",
+                    "QWEN_HTTP_503",
+                    "QWEN_CLIENT_ContractError",
+                } and transient_attempt < 2:
                     time.sleep(2**transient_attempt)
                     pending.insert(0, (units, transient_attempt + 1))
                     continue
@@ -261,11 +265,19 @@ def _parse_json_object(content: object) -> dict[str, object]:
 
 
 def _normalize_translation_order(rows: list[object], expected_ids: list[str]) -> tuple[TranslationResult, ...]:
-    parsed = [
-        TranslationResult(str(row.get("container_id", "")), str(row.get("translated_text", "")))
-        for row in rows
-        if isinstance(row, dict)
-    ]
+    parsed = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        translated_text = row.get("translated_text")
+        if not isinstance(translated_text, str) or not translated_text.strip():
+            raise ProviderError("INVALID_TRANSLATION_RESPONSE")
+        parsed.append(
+            TranslationResult(
+                str(row.get("container_id", "")),
+                translated_text.strip(),
+            )
+        )
     actual_ids = [item.container_id for item in parsed]
     if len(actual_ids) != len(set(actual_ids)):
         raise ProviderError("DUPLICATE_TRANSLATION_CONTAINER_ID")

@@ -103,6 +103,7 @@ def plan_with_profile(
         item.bbox[1]
         for item in facts.text_objects
         if item.object_id not in owned_object_ids and item.bbox[1] >= template.height * 0.90
+        and min(item.bbox[2], column_right) - max(item.bbox[0], column_left) > 0.5
     ]
     locked_text_bboxes = tuple(
         item.bbox
@@ -127,21 +128,64 @@ def plan_with_profile(
         source_gap = 0.0 if previous is None else max(0.0, source_y0 - previous.source_bbox[3])
         target_gap = source_gap if previous is None else min(48.0, source_gap) * profile.gap_scale
         source_font_size = body_font_baseline if container.role in {"body", "list"} else container.font_size
+        font_size = max(6.0, source_font_size * profile.font_scale)
+        placement_font_file, placement_font_resource = _font_variant(font_file, font_resource, container.font_weight)
+        inline_style_fragment = False
+        if previous is not None and "-style-" in previous.container_id and "-style-" in container.container_id:
+            previous_parent = previous.container_id.rsplit("-style-", 1)[0]
+            current_parent = container.container_id.rsplit("-style-", 1)[0]
+            vertical_overlap = max(
+                0.0,
+                min(previous.source_bbox[3], source_y1) - max(previous.source_bbox[1], source_y0),
+            )
+            inline_style_fragment = (
+                previous_parent == current_parent
+                and vertical_overlap
+                >= min(
+                    previous.source_bbox[3] - previous.source_bbox[1],
+                    source_y1 - source_y0,
+                )
+                * 0.65
+                and abs(x0 - previous.source_bbox[2])
+                <= max(previous.font_size, container.font_size) * 0.5
+            )
         flow_policy = "source_anchor_cap"
         if cursor_y is None:
             y0 = source_y0
+        elif inline_style_fragment:
+            previous_placement = placements_by_id[previous.container_id]
+            previous_font_file, _ = _font_variant(font_file, font_resource, previous.font_weight)
+            previous_width = fitz.Font(fontfile=previous_font_file).text_length(
+                previous_placement.translated_text,
+                fontsize=previous_placement.font_size,
+            )
+            current_width = fitz.Font(fontfile=placement_font_file).text_length(
+                translated_by_id[container.container_id],
+                fontsize=font_size,
+            )
+            candidate_x0 = previous_placement.output_bbox[0] + previous_width + font_size * 0.5
+            if candidate_x0 + current_width <= x1 + 0.01:
+                x0 = candidate_x0
+                y0 = previous_placement.output_bbox[1] + max(
+                    0.0,
+                    previous_placement.font_size - font_size,
+                ) * 0.95
+                target_gap = 0.0
+                flow_policy = "inline_style_fragment"
+                horizontal_policy = "inline_style_fragment"
+            else:
+                inline_style_fragment = False
+                y0 = cursor_y + target_gap
         elif previous is not None and previous.role == "body" and container.role == "body":
-            target_gap = source_gap
+            target_gap = source_gap * profile.gap_scale
             y0 = cursor_y + target_gap
             flow_policy = "body_flow_grouping"
         else:
             natural_y0 = cursor_y + target_gap
             upward_limit = source_y0 - source_font_size * 3.0
             y0 = max(natural_y0, upward_limit)
-        font_size = max(6.0, source_font_size * profile.font_scale)
         if font_size + 0.01 < max(6.0, source_font_size * 0.72):
             findings.append(ToolboxFinding("P4_FONT_TOO_SMALL", "HARD", "p4_layout_planner", container.container_id, "字号低于 P4 下限"))
-        placement_font_file, placement_font_resource = _font_variant(font_file, font_resource, container.font_weight)
         placement_line_height = profile.line_height
         safe_left = _safe_heading_left_bound(
             facts=facts,
@@ -208,7 +252,10 @@ def plan_with_profile(
         height_ratio = source_height / max(height, 1.0)
         if len(rendered_lines) >= 3 and height_ratio >= 1.25:
             expansion_factor = min(1.22, 1.0 + (height_ratio - 1.0) * 0.5)
-            placement_line_height = min(1.40, max(placement_line_height, 1.15 * expansion_factor))
+            placement_line_height = max(
+                placement_line_height,
+                min(1.40, 1.15 * expansion_factor),
+            )
             height = _minimum_text_height(
                 page_width=template.width,
                 page_height=template.height,
@@ -244,7 +291,7 @@ def plan_with_profile(
             container.font_weight,
             fit,
         )
-        cursor_y = y1
+        cursor_y = max(cursor_y, y1) if inline_style_fragment and cursor_y is not None else y1
         previous = container
 
     for container in anchored:
@@ -626,6 +673,7 @@ def _font_variant(font_file: str, font_resource: str, font_weight: str) -> tuple
     candidates = []
     if path.name.casefold() == "msyh.ttc":
         candidates.append(path.with_name("msyhbd.ttc"))
+    candidates.append(path.with_name(f"{path.stem}-Bold{path.suffix}"))
     candidates.append(path.with_name(f"{path.stem}bd{path.suffix}"))
     bold_file = next((candidate for candidate in candidates if candidate.is_file()), None)
     return (str(bold_file), f"{font_resource}_bold") if bold_file else (font_file, font_resource)

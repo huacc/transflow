@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 import re
 import statistics
 from dataclasses import dataclass, replace
@@ -25,7 +26,8 @@ _IDENTIFIER = re.compile(
     r"^(?:(?i:(?:https?|ftp)://\S+|www\.\S+)|[^\s@]+@[^\s@]+\.[^\s@]+|(?=[A-Z0-9/-]*\d)[A-Z][A-Z0-9/-]{2,}|\d{4}[./-]\d{1,2}[./-]\d{1,2})$"
 )
 _REQUIRED_LITERAL = re.compile(
-    r"(?<![A-Za-z0-9])(?=[A-Z0-9/-]*\d)(?=[A-Z0-9/-]*[A-Z])[A-Z][A-Z0-9/-]{1,}(?![A-Za-z0-9])"
+    r"(?<![A-Za-z0-9])[A-Z]{2,6}(?=\s*[\u3400-\u9fff])"
+    r"|(?<![A-Za-z0-9])(?=[A-Z0-9/-]*\d)(?=[A-Z0-9/-]*[A-Z])[A-Z][A-Z0-9/-]{1,}(?![A-Za-z0-9])"
     r"|(?<!\d)(?:\d{4}[./-]\d{1,2}[./-]\d{1,2}|[+\-−–—]?[€£¥￥$]?\d(?:[\d,]*\d)?(?:\.\d+)?\+?(?:%|％)?)(?!\d)"
 )
 _ROMAN_ENUMERATION = re.compile(r"^\(?[IVXLCDM]+\)?$")
@@ -1272,7 +1274,13 @@ def _diagram_bbox(details: list[_DrawingDetail], width: float, height: float) ->
 
 
 def _required_literals(text: str) -> tuple[str, ...]:
-    return tuple(dict.fromkeys(match.group(0) for match in _REQUIRED_LITERAL.finditer(text)))
+    return tuple(
+        dict.fromkeys(
+            match.group(0)
+            for match in _REQUIRED_LITERAL.finditer(text)
+            if not _ROMAN_ENUMERATION.fullmatch(match.group(0))
+        )
+    )
 
 
 def _recover_source_text_objects(
@@ -1294,6 +1302,19 @@ def _recover_source_text_objects(
                 continue
             contexts.append((_strip_pdf_subset_prefix(basefont), collection))
 
+    trusted_counts = Counter(
+        token
+        for item in text_objects
+        if not any(
+            _pdf_font_names_match(item.font_name, basefont)
+            for basefont, _ in contexts
+        )
+        for token in re.findall(r"(?<![A-Za-z0-9])[A-Z]{2,6}(?![A-Za-z0-9])", item.text)
+    )
+    trusted_ascii_tokens = {
+        token for token, count in trusted_counts.items() if count >= 2
+    }
+
     recovered = []
     for item in text_objects:
         collection = next(
@@ -1304,7 +1325,12 @@ def _recover_source_text_objects(
             ),
             None,
         )
-        text = _recover_visible_text(item.text, item.font_name, collection)
+        text = _recover_visible_text(
+            item.text,
+            item.font_name,
+            collection,
+            trusted_ascii_tokens,
+        )
         recovered.append(replace(item, text=text) if text != item.text else item)
     return tuple(recovered)
 
@@ -1331,23 +1357,32 @@ def _pdf_font_names_match(span_font: str, basefont: str) -> bool:
     return bool(span) and (span in base or base in span)
 
 
-def _recover_visible_text(text: str, font_name: str, cid_collection: str | None = None) -> str:
+def _recover_visible_text(
+    text: str,
+    font_name: str,
+    cid_collection: str | None = None,
+    trusted_ascii_tokens: set[str] | frozenset[str] = frozenset(),
+) -> str:
     if not cid_collection:
         return text
     unicode_map = CMapDB.get_unicode_map(cid_collection)
     recovered = []
     mapped = 0
-    for char in text:
-        if char.isspace() and char != "\x01":
-            recovered.append(char)
+    for part in re.split(r"([A-Za-z][A-Za-z0-9]{1,})", text):
+        if part in trusted_ascii_tokens:
+            recovered.append(part)
             continue
-        try:
-            value = unicode_map.get_unichr(ord(char))
-        except KeyError:
-            value = char
-        else:
-            mapped += 1
-        recovered.append(value)
+        for char in part:
+            if char.isspace() and char != "\x01":
+                recovered.append(char)
+                continue
+            try:
+                value = unicode_map.get_unichr(ord(char))
+            except KeyError:
+                value = char
+            else:
+                mapped += 1
+            recovered.append(value)
     return "".join(recovered) if mapped else text
 
 

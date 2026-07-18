@@ -256,6 +256,7 @@ def run_p13_page(
 
 def translation_validation(request, bundle) -> dict[str, object]:
     translated = {item.container_id: item.translated_text for item in bundle.translations}
+    cross_container_duplicates = _cross_container_duplicate_outputs(request, translated)
     missing = {
         unit.container_id: [literal for literal in unit.required_literals if literal not in translated[unit.container_id]]
         for unit in request.units
@@ -307,13 +308,37 @@ def translation_validation(request, bundle) -> dict[str, object]:
             if missing_markers:
                 magnitude_mismatches[unit.container_id] = missing_markers
     return {
-        "status": "FAIL" if missing or residue or placeholders or inadequate or magnitude_mismatches else "PASS",
+        "status": "FAIL" if missing or residue or placeholders or inadequate or magnitude_mismatches or cross_container_duplicates else "PASS",
         "missing_required_literals": missing,
         "source_language_residue": residue,
         "placeholder_outputs": placeholders,
         "inadequate_outputs": inadequate,
         "magnitude_unit_mismatches": magnitude_mismatches,
+        "cross_container_duplicate_outputs": cross_container_duplicates,
     }
+
+
+def _cross_container_duplicate_outputs(request, translated: dict[str, str]) -> dict[str, list[str]]:
+    by_output: dict[str, list[str]] = {}
+    source_by_id = {unit.container_id: re.sub(r"\s+", "", unit.source_text).casefold() for unit in request.units}
+    for unit in request.units:
+        text = translated[unit.container_id]
+        if request.target_language.casefold().startswith("en"):
+            long_output = len(re.findall(r"[A-Za-z]+", text)) >= 12
+        elif request.target_language.casefold().startswith("zh"):
+            long_output = len(re.findall(r"[\u3400-\u9fff]", text)) >= 20
+        else:
+            long_output = len(text) >= 80
+        if long_output:
+            by_output.setdefault(re.sub(r"\s+", " ", text).strip().casefold(), []).append(unit.container_id)
+
+    duplicates: dict[str, list[str]] = {}
+    for container_ids in by_output.values():
+        if len(container_ids) < 2 or len({source_by_id[container_id] for container_id in container_ids}) < 2:
+            continue
+        for container_id in container_ids:
+            duplicates[container_id] = [other for other in container_ids if other != container_id]
+    return duplicates
 
 
 def _expected_english_magnitude_markers(source_text: str) -> tuple[str, ...]:
@@ -348,6 +373,7 @@ def _translation_validation_findings(validation: dict[str, object]) -> tuple[Cha
         ("TRANSLATION_MAGNITUDE_UNIT_MISMATCH", "magnitude_unit_mismatches"),
         ("TRANSLATION_PLACEHOLDER_OUTPUT", "placeholder_outputs"),
         ("TRANSLATION_INADEQUATE_OUTPUT", "inadequate_outputs"),
+        ("TRANSLATION_CROSS_CONTAINER_DUPLICATE", "cross_container_duplicate_outputs"),
     )
     for code, key in checks:
         details = validation.get(key)

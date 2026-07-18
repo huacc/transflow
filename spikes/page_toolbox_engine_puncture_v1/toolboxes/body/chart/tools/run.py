@@ -73,7 +73,8 @@ class ValidatedQwenRetryProvider:
         retry_prompt = self.prompt_text + (
             "\n\n# 机械失败定点重试\n"
             "只返回本次请求中的失败 ID。翻译标记以外的全部语义，逐字符原样复制 [[P13_KEEP_n]] 标记并保持其语义位置。"
-            "每个输入标记必须在对应译文中恰好出现一次。不得输出问号占位符或布局信息。"
+            "每个输入标记必须在对应译文中恰好出现一次。每个 ID 只翻译自己的源文，"
+            "不得把一个合并后的长译文复制给多个不同 ID。不得输出问号占位符或布局信息。"
         )
         for _ in range(2):
             validation = translation_validation(request, current)
@@ -81,6 +82,7 @@ class ValidatedQwenRetryProvider:
                 self.last_audit = {
                     "status": "PASS",
                     "retried_container_ids": sorted(retried_ids),
+                    "segmented_container_ids": [],
                     "confirmed_proper_name_ids": [],
                     "transient_retry_count": self.transient_retry_count,
                 }
@@ -144,6 +146,17 @@ class ValidatedQwenRetryProvider:
             )
             current.validate_against(request)
         final_validation = translation_validation(request, current)
+        current, segmented_ids = self._retry_long_units_by_segment(
+            request,
+            current,
+            final_validation,
+            retry_prompt,
+        )
+        if segmented_ids:
+            for item in current.translations:
+                if item.container_id in segmented_ids:
+                    observed_texts.setdefault(item.container_id, []).append(item.translated_text)
+            final_validation = translation_validation(request, current)
         confirmed = _confirmed_retained_proper_name_ids(
             request,
             final_validation,
@@ -162,13 +175,114 @@ class ValidatedQwenRetryProvider:
                 and not final_validation["placeholder_outputs"]
                 and not final_validation["inadequate_outputs"]
                 and not final_validation["magnitude_unit_mismatches"]
+                and not final_validation["cross_container_duplicate_outputs"]
                 else "FAIL"
             ),
             "retried_container_ids": sorted(retried_ids),
+            "segmented_container_ids": sorted(segmented_ids),
             "confirmed_proper_name_ids": confirmed,
             "transient_retry_count": self.transient_retry_count,
         }
         return current
+
+    def _retry_long_units_by_segment(self, request, current, validation, retry_prompt):
+        failed_ids = _failed_container_ids(validation)
+        segment_units = []
+        segment_ids_by_container: dict[str, list[str]] = {}
+        markers_by_segment: dict[str, dict[str, str]] = {}
+        for unit in request.units:
+            if unit.container_id not in failed_ids or len(unit.source_text) < 80:
+                continue
+            segments = _translation_segments(unit.source_text)
+            if len(segments) < 2:
+                continue
+            marker_by_literal = {
+                literal: f"[[P13_KEEP_{index}]]"
+                for index, literal in enumerate(unit.required_literals)
+            }
+            pattern = (
+                re.compile("|".join(re.escape(literal) for literal in sorted(marker_by_literal, key=len, reverse=True)))
+                if marker_by_literal
+                else None
+            )
+            segment_ids = []
+            for index, segment in enumerate(segments):
+                segment_id = f"{unit.container_id}::segment::{index:03d}"
+                markers: dict[str, str] = {}
+                if pattern is not None:
+                    def replace_literal(match):
+                        literal = match.group(0)
+                        marker = marker_by_literal[literal]
+                        markers[marker] = literal
+                        return marker
+
+                    segment = pattern.sub(replace_literal, segment)
+                markers_by_segment[segment_id] = markers
+                segment_ids.append(segment_id)
+                segment_units.append(
+                    replace(
+                        unit,
+                        container_id=segment_id,
+                        source_text=segment,
+                        reading_order=len(segment_units),
+                        required_literals=(),
+                    )
+                )
+            segment_ids_by_container[unit.container_id] = segment_ids
+        if not segment_units:
+            return current, set()
+
+        segment_request = PageTranslationRequest(
+            request_id=request.request_id,
+            page_id=request.page_id,
+            source_language=request.source_language,
+            target_language=request.target_language,
+            units=tuple(segment_units),
+        )
+        segment_prompt = retry_prompt + (
+            "\n\n# Long-unit segmented retry\n"
+            "Translate every segment completely. Return every segment ID exactly once. "
+            "Preserve each [[P13_KEEP_n]] marker exactly once and do not join or omit segments."
+        )
+        segment_config = replace(self.config, chunk_max_units=min(self.config.chunk_max_units, 3))
+        retried = self._translate_with_transient_retry(
+            QwenPageTranslationProvider(segment_config, segment_prompt),
+            segment_request,
+        )
+        translated_segments = {}
+        for item in retried.translations:
+            translated_text = item.translated_text
+            for marker, literal in markers_by_segment[item.container_id].items():
+                translated_text = translated_text.replace(marker, literal)
+            translated_segments[item.container_id] = translated_text.strip()
+
+        separator = " " if request.target_language.casefold().startswith("en") else ""
+        repaired_by_id = {
+            container_id: separator.join(translated_segments[segment_id] for segment_id in segment_ids)
+            for container_id, segment_ids in segment_ids_by_container.items()
+        }
+        request_ids = [value for value in (current.provider_request_id, retried.provider_request_id) if value]
+        response_hashes = [value for value in (current.response_sha256, retried.response_sha256) if value]
+        latency_ms = (current.latency_ms or 0) + (retried.latency_ms or 0)
+        repaired = PageTranslationBundle(
+            request_id=request.request_id,
+            page_id=request.page_id,
+            provider=self.provider_name,
+            model=retried.model,
+            translations=tuple(
+                replace(item, translated_text=repaired_by_id.get(item.container_id, item.translated_text))
+                for item in current.translations
+            ),
+            provider_request_id=",".join(request_ids) or None,
+            latency_ms=latency_ms or None,
+            response_sha256=(
+                hashlib.sha256("".join(response_hashes).encode("ascii")).hexdigest()
+                if response_hashes
+                else None
+            ),
+        )
+        repaired.validate_against(request)
+        return repaired, set(segment_ids_by_container)
 
     def _translate_with_transient_retry(self, provider, request):
         for attempt in range(3):
@@ -176,6 +290,8 @@ class ValidatedQwenRetryProvider:
                 return provider.translate(request)
             except ProviderError as exc:
                 transient = exc.code == "QWEN_TIMEOUT" or exc.code in {
+                    "QWEN_CLIENT_JSONDecodeError",
+                    "QWEN_CLIENT_ReadError",
                     "QWEN_HTTP_429",
                     "QWEN_HTTP_500",
                     "QWEN_HTTP_502",
@@ -316,6 +432,21 @@ def main() -> int:
     return 0 if passed == len(results) else 2
 
 
+def _translation_segments(text: str) -> tuple[str, ...]:
+    segments = [
+        item.strip()
+        for item in re.split(r"(?<=[。！？!?；;])\s*|\r?\n+", text)
+        if item.strip()
+    ]
+    if len(segments) < 2:
+        segments = [
+            item.strip()
+            for item in re.split(r"(?<=[，,：:])\s*", text)
+            if item.strip()
+        ]
+    return tuple(segments)
+
+
 def _failed_container_ids(validation: dict[str, object]) -> set[str]:
     failed: set[str] = set()
     for key in (
@@ -323,6 +454,7 @@ def _failed_container_ids(validation: dict[str, object]) -> set[str]:
         "source_language_residue",
         "inadequate_outputs",
         "magnitude_unit_mismatches",
+        "cross_container_duplicate_outputs",
     ):
         value = validation.get(key)
         if isinstance(value, dict):

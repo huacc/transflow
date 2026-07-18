@@ -137,7 +137,30 @@ def render_diagram_candidate(
     if rendered_placements:
         with fitz.open(source_pdf) as document:
             page = document[facts.page_index]
-            for object_id in sorted(redacted_ids):
+            grouped_redacted_ids: set[str] = set()
+            for placement in rendered_placements:
+                container = container_by_id[placement.container_id]
+                if container.role != "vertical_node_text":
+                    continue
+                source_ids = tuple(container.source_object_ids)
+                source_rects = [source_by_id[object_id].bbox for object_id in source_ids]
+                grouped_bbox = (
+                    min(item[0] for item in source_rects) - 0.3,
+                    min(item[1] for item in source_rects) - 0.3,
+                    max(item[2] for item in source_rects) + 0.3,
+                    max(item[3] for item in source_rects) + 0.3,
+                )
+                safe_grouped_bbox = _safe_redaction_bbox(
+                    grouped_bbox,
+                    tuple(item.bbox for item in redaction_protected),
+                )
+                if safe_grouped_bbox is None:
+                    raise RuntimeError(
+                        f"DIAGRAM_SAFE_REDACTION_REGION_NOT_FOUND:{source_ids[0]}"
+                    )
+                page.add_redact_annot(fitz.Rect(safe_grouped_bbox), fill=None)
+                grouped_redacted_ids.update(source_ids)
+            for object_id in sorted(redacted_ids - grouped_redacted_ids):
                 source_bbox = _safe_redaction_bbox(
                     source_by_id[object_id].bbox,
                     tuple(item.bbox for item in redaction_protected if item.object_id != object_id),
@@ -176,6 +199,7 @@ def render_diagram_candidate(
                     lineheight=placement.line_height,
                     color=_color(placement.color_srgb),
                     align=_fitz_alignment(placement.alignment),
+                    rotate=90 if placement.alignment == "VERTICAL" else 0,
                     overlay=True,
                 )
                 if spare < 0:
@@ -193,6 +217,7 @@ def render_diagram_candidate(
                         "fit_profile": placement.fit_profile,
                         "font_size": placement.font_size,
                         "line_height": placement.line_height,
+                        "text_rotation": 90 if placement.alignment == "VERTICAL" else 0,
                         "insert_textbox_spare_height": round(float(spare), 4),
                         "translated_text_sha256": hashlib.sha256(placement.translated_text.encode("utf-8")).hexdigest(),
                     }
@@ -490,6 +515,8 @@ def _area(rect: Rect) -> float:
 
 
 def _fitz_alignment(value: str) -> int:
+    if value == "VERTICAL":
+        return fitz.TEXT_ALIGN_CENTER
     return {"LEFT": fitz.TEXT_ALIGN_LEFT, "CENTER": fitz.TEXT_ALIGN_CENTER, "RIGHT": fitz.TEXT_ALIGN_RIGHT}[value]
 
 
@@ -498,7 +525,7 @@ def _color(value: int) -> tuple[float, float, float]:
 
 
 def _normalized(value: str) -> str:
-    visual_equivalents = str.maketrans({"·": "•", "‧": "•", "∙": "•", "●": "•", "▪": "•", "◦": "•", "‣": "•"})
+    visual_equivalents = str.maketrans({"\uf0b7": "•", "\uf0d8": "→", "·": "•", "‧": "•", "∙": "•", "●": "•", "▪": "•", "◦": "•", "‣": "•"})
     return "".join(value.translate(visual_equivalents).split()).casefold()
 
 

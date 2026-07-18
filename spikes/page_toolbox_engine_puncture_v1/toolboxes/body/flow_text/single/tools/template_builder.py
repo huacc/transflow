@@ -105,8 +105,12 @@ def build_p4_page_template(facts: PageFacts) -> SingleColumnTemplate:
             )
         )
 
+    return replace(base, containers=merge_flow_containers(tuple(normalized)))
+
+
+def merge_flow_containers(containers: tuple[TextContainer, ...]) -> tuple[TextContainer, ...]:
     merged: list[TextContainer] = []
-    for container in normalized:
+    for container in containers:
         if merged and _can_merge_flow_lines(merged[-1], container):
             previous = merged[-1]
             source_text = previous.source_text.rstrip()
@@ -129,8 +133,7 @@ def build_p4_page_template(facts: PageFacts) -> SingleColumnTemplate:
             )
         else:
             merged.append(container)
-    ordered = tuple(replace(container, reading_order=index) for index, container in enumerate(merged))
-    return replace(base, containers=ordered)
+    return tuple(replace(container, reading_order=index) for index, container in enumerate(merged))
 
 
 def _is_vertical_decoration(container: TextContainer, page_height: float) -> bool:
@@ -197,14 +200,19 @@ def _canonicalize_bullets(text: str) -> str:
 
 
 def _can_merge_flow_lines(previous: TextContainer, current: TextContainer) -> bool:
-    if previous.role not in {"body", "list"} or current.role not in {"body", "heading"}:
+    previous_is_flow = previous.role in {"body", "list"} or (
+        previous.role == "heading"
+        and previous.font_weight == "regular"
+        and current.font_weight == "regular"
+    )
+    if not previous_is_flow or current.role not in {"body", "heading"}:
         return False
     if previous.role == "list" and len(previous.source_text) < 40:
         return False
     if previous.color_srgb != current.color_srgb or abs(previous.font_size - current.font_size) > 0.35:
         return False
     indent = current.source_bbox[0] - previous.source_bbox[0]
-    if indent < -3.0 or indent > max(30.0, previous.font_size * 4.0):
+    if indent < -max(6.0, previous.font_size * 0.75) or indent > max(30.0, previous.font_size * 4.0):
         return False
     gap = current.source_bbox[1] - previous.source_bbox[3]
     if not (-0.5 <= gap <= max(3.0, min(previous.font_size, current.font_size) * 0.75)):
