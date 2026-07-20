@@ -8,9 +8,25 @@ from dataclasses import dataclass
 from pathlib import Path
 from threading import Lock
 
-from transflow.domain.errors import DomainContractError, ErrorCode, PortCallError
+from transflow.application.route_capability import (
+    RouteCapabilityEvidence,
+    RouteCapabilityGuard,
+    RouteCapabilityMismatchFinding,
+)
+from transflow.application.translation_completeness import (
+    CompletenessCheckpointPort,
+    TranslationCompletenessGate,
+    adjudicate_translation_candidates,
+    build_semantic_unit_map,
+)
+from transflow.domain.completeness import (
+    CompletenessStatus,
+    SemanticUnitMap,
+    TranslationCompletenessDecision,
+)
+from transflow.domain.errors import DomainContractError, ErrorCode
 from transflow.domain.pages import PageExecutionContext
-from transflow.domain.toolbox import DecisionDisposition
+from transflow.domain.toolbox import Decision, DecisionDisposition, Finding
 from transflow.pdf_kernel.facts import ExtractedPageFacts
 from transflow.ports.translation import TranslationPort
 from transflow.toolboxes.contracts import (
@@ -70,6 +86,7 @@ class ToolboxPageWork:
     context: PageExecutionContext
     facts: ExtractedPageFacts
     toolbox: PageToolbox
+    capability_evidence: RouteCapabilityEvidence | None = None
 
 
 class ToolboxPageCoordinator:
@@ -79,11 +96,17 @@ class ToolboxPageCoordinator:
         self,
         translation: TranslationPort,
         recorder: TranslationCompatibilityRecorder | None = None,
+        completeness_gate: TranslationCompletenessGate | None = None,
+        completeness_checkpoints: CompletenessCheckpointPort | None = None,
+        route_guard: RouteCapabilityGuard | None = None,
     ) -> None:
-        """绑定 TranslationPort 和可选的无秘密迁移记录器。"""
+        """绑定 TranslationPort、完整性门禁、安全点和可选迁移记录器。"""
 
         self._translation = translation
         self._recorder = recorder
+        self._completeness_gate = completeness_gate or TranslationCompletenessGate()
+        self._completeness_checkpoints = completeness_checkpoints
+        self._route_guard = route_guard or RouteCapabilityGuard()
 
     def execute(self, work: ToolboxPageWork) -> ToolboxExecutionResult:
         """执行单页六阶段；Toolbox 从不获得 TranslationPort 实例。"""
@@ -100,8 +123,28 @@ class ToolboxPageCoordinator:
         if template.context != context or template.owner != descriptor.owner:
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "Toolbox 模板上下文或 owner 漂移")
         batch = toolbox.build_translation_request(template)
+        semantic_map = build_semantic_unit_map(template, batch, work.facts)
+        route_mismatch = self._route_guard.evaluate(
+            descriptor.route,
+            work.facts,
+            semantic_map,
+            work.capability_evidence,
+        )
+        if route_mismatch is not None:
+            return self._route_mismatch_fallback(
+                context,
+                batch.ordered_unit_ids if batch is not None else (),
+                semantic_map,
+                route_mismatch,
+            )
         if batch is None:
-            # 零翻译叶通过显式 Skip 收敛，绝不触碰 TranslationPort。
+            # 零翻译叶仍须证明全部原生文字已显式处置，但绝不触碰 TranslationPort。
+            gate_result = self._completeness_gate.execute(
+                semantic_map,
+                None,
+                self._translation,
+                self._completeness_checkpoints,
+            )
             dispatch = TranslationDispatch(batch=None, skip_reason="TOOLBOX_ZERO_TRANSLATION")
             ordered_unit_ids: tuple[str, ...] = ()
         else:
@@ -109,22 +152,34 @@ class ToolboxPageCoordinator:
                 raise DomainContractError(ErrorCode.INVALID_IDENTITY, "翻译请求包含其他页面单元")
             ordered_unit_ids = batch.ordered_unit_ids
             self._record(context.page_no, batch.batch_id, "request", ordered_unit_ids)
-            try:
-                bundle = self._translation.translate(batch)
+            gate_result = self._completeness_gate.execute(
+                semantic_map,
+                batch,
+                self._translation,
+                self._completeness_checkpoints,
+            )
+            if gate_result.bundle is not None:
                 # 构造 TranslationDispatch 会在交回叶子前再次核对 batch/unit 身份。
-                dispatch = TranslationDispatch(batch=batch, bundle=bundle)
-                returned_ids = bundle.requested_unit_ids
-            except (DomainContractError, PortCallError, TimeoutError) as error:
+                dispatch = TranslationDispatch(batch=batch, bundle=gate_result.bundle)
+                returned_ids = gate_result.bundle.requested_unit_ids
+            else:
                 dispatch = TranslationDispatch(
                     batch=batch,
                     failure=TranslationFailure(
-                        code=getattr(getattr(error, "code", None), "value", type(error).__name__),
-                        retryable=bool(getattr(error, "retryable", False)),
-                        detail="TranslationPort 调用失败，叶必须执行确定性 fallback",
+                        code="TRANSLATION_COMPLETENESS_FAILED",
+                        retryable=False,
+                        detail="翻译完整性未通过，禁止进入布局并执行确定性 fallback",
                     ),
                 )
                 returned_ids = ()
             self._record(context.page_no, batch.batch_id, "consume", returned_ids)
+        if gate_result.decision.status is not CompletenessStatus.PASS:
+            return self._guarded_fallback(
+                context,
+                ordered_unit_ids,
+                gate_result.semantic_map,
+                gate_result.decision,
+            )
         plan = toolbox.consume_translation_bundle(template, dispatch)
         if plan.route != descriptor.route:
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "布局计划 Route 漂移")
@@ -172,6 +227,109 @@ class ToolboxPageCoordinator:
             ordered_unit_ids=ordered_unit_ids,
             # 原始提案只供穿刺和迁移诊断落盘；正式发布仍只能使用上方批准后的 patch。
             proposed_patch=plan.patch,
+            semantic_unit_map=gate_result.semantic_map,
+            translation_bundle=gate_result.bundle,
+            completeness_decision=gate_result.decision,
+        )
+
+    @staticmethod
+    def _guarded_fallback(
+        context: PageExecutionContext,
+        ordered_unit_ids: tuple[str, ...],
+        semantic_map: SemanticUnitMap,
+        decision: TranslationCompletenessDecision,
+    ) -> ToolboxExecutionResult:
+        """在完整性 FAIL 时不调用任何叶布局阶段，直接形成诚实安全终态。"""
+        findings = tuple(
+            Finding(
+                finding_id=f"completeness-p{context.page_no:04d}-{index:03d}",
+                code=(
+                    error.detail.rsplit(":", 1)[-1]
+                    if error.code.value == "PORT_FAILURE" and ":" in error.detail
+                    else error.code.value
+                ),
+                severity="HARD",
+                evidence_ids=tuple(
+                    dict.fromkeys((semantic_map.map_hash, decision.decision_hash, error.unit_id))
+                ),
+            )
+            for index, error in enumerate(decision.errors)
+        )
+        verdict = Decision(
+            decision_id=f"completeness-fallback-p{context.page_no:04d}",
+            disposition=DecisionDisposition.FALLBACK,
+            finding_ids=tuple(item.finding_id for item in findings),
+            reason_code="TRANSLATION_COMPLETENESS_FAILED",
+        )
+        outcome = normalized_page_outcome(
+            context.page_no,
+            accepted=False,
+            translated=False,
+            finding_codes=tuple(dict.fromkeys(item.code for item in findings)),
+            passthrough=True,
+        )
+        return ToolboxExecutionResult(
+            page_no=context.page_no,
+            patch=None,
+            findings=findings,
+            verdict=verdict,
+            outcome=outcome,
+            trace=ToolboxExecutionTrace(
+                (
+                    "prepare",
+                    "build_translation_request",
+                    "translation_completeness",
+                    "outcome",
+                )
+            ),
+            ordered_unit_ids=ordered_unit_ids,
+            semantic_unit_map=semantic_map,
+            translation_bundle=None,
+            completeness_decision=decision,
+        )
+
+    @staticmethod
+    def _route_mismatch_fallback(
+        context: PageExecutionContext,
+        ordered_unit_ids: tuple[str, ...],
+        semantic_map: SemanticUnitMap,
+        mismatch: RouteCapabilityMismatchFinding,
+    ) -> ToolboxExecutionResult:
+        """在 Route 能力错配时禁止翻译/布局，并保留离线纠偏证据。"""
+
+        decision = adjudicate_translation_candidates(semantic_map, ())
+        finding = Finding(
+            finding_id=f"route-capability-mismatch-p{context.page_no:04d}",
+            code=mismatch.code,
+            severity="HARD",
+            evidence_ids=tuple(
+                dict.fromkeys((mismatch.facts_hash, mismatch.map_hash, mismatch.evidence_id))
+            ),
+        )
+        verdict = Decision(
+            decision_id=f"route-capability-fallback-p{context.page_no:04d}",
+            disposition=DecisionDisposition.FALLBACK,
+            finding_ids=(finding.finding_id,),
+            reason_code=mismatch.code,
+        )
+        return ToolboxExecutionResult(
+            page_no=context.page_no,
+            patch=None,
+            findings=(finding,),
+            verdict=verdict,
+            outcome=RouteCapabilityGuard.fallback_outcome(mismatch),
+            trace=ToolboxExecutionTrace(
+                (
+                    "prepare",
+                    "build_translation_request",
+                    "translation_completeness",
+                    "outcome",
+                )
+            ),
+            ordered_unit_ids=ordered_unit_ids,
+            semantic_unit_map=semantic_map,
+            translation_bundle=None,
+            completeness_decision=decision,
         )
 
     def execute_many(

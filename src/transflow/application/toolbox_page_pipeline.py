@@ -118,6 +118,32 @@ class ToolboxPagePipeline:
             if preview is None:
                 raise RuntimeError("候选预览未能原子发布")
             entry = resolution.entry
+            translation_checkpoint = None
+            if (
+                execution.semantic_unit_map is not None
+                and execution.completeness_decision is not None
+            ):
+                translation_checkpoint = {
+                    "bundle": (
+                        {
+                            "batch_id": execution.translation_bundle.batch_id,
+                            "requested_unit_ids": list(
+                                execution.translation_bundle.requested_unit_ids
+                            ),
+                            "units": [
+                                {
+                                    "translated_text": unit.translated_text,
+                                    "unit_id": unit.unit_id,
+                                }
+                                for unit in execution.translation_bundle.units
+                            ],
+                        }
+                        if execution.translation_bundle is not None
+                        else None
+                    ),
+                    "decision": execution.completeness_decision.to_dict(),
+                    "semantic_map": execution.semantic_unit_map.to_dict(),
+                }
             return ProcessedPage(
                 page_no=page.context.page_no,
                 route=route,
@@ -137,6 +163,7 @@ class ToolboxPagePipeline:
                 evidence_attestation_hash=(
                     entry.evidence_attestation_hash if entry is not None else None
                 ),
+                translation_checkpoint=translation_checkpoint,
             )
         except Exception as error:
             LOGGER.exception(

@@ -120,6 +120,7 @@ class ProcessedPage:
     toolbox_version: str | None = None
     catalog_hash: str | None = None
     evidence_attestation_hash: str | None = None
+    translation_checkpoint: dict[str, Any] | None = None
 
     def as_checkpoint_payload(self) -> dict[str, Any]:
         """把页面终态编码为可跨进程恢复的纯 JSON 内容。"""
@@ -171,6 +172,7 @@ class ProcessedPage:
             toolbox_version=payload.get("toolbox_version"),
             catalog_hash=payload.get("catalog_hash"),
             evidence_attestation_hash=payload.get("evidence_attestation_hash"),
+            translation_checkpoint=payload.get("translation_checkpoint"),
         )
 
     def mark_resumed(self) -> ProcessedPage:

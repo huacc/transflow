@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Protocol, runtime_checkable
 
 from transflow.domain.common import require_non_empty, require_sha256, require_unique
+from transflow.domain.completeness import SemanticUnitMap, TranslationCompletenessDecision
 from transflow.domain.errors import DomainContractError, ErrorCode
 from transflow.domain.pages import PageExecutionContext, PageOutcome
 from transflow.domain.states import (
@@ -186,14 +187,23 @@ class ToolboxJudgement:
 
 @dataclass(frozen=True, slots=True)
 class ToolboxExecutionTrace:
-    """记录六阶段顺序及最终 outcome 归一化步骤。"""
+    """记录正常六阶段或被完整性门禁提前截断的真实执行顺序。"""
 
     stages: tuple[str, ...]
 
     def __post_init__(self) -> None:
-        """拒绝遗漏、重排或增加的执行阶段。"""
+        """拒绝正常路径或门禁截断路径之外的虚假执行轨迹。"""
 
-        if self.stages != (*SIX_STAGE_ORDER, "outcome"):
+        allowed = {
+            (*SIX_STAGE_ORDER, "outcome"),
+            (
+                "prepare",
+                "build_translation_request",
+                "translation_completeness",
+                "outcome",
+            ),
+        }
+        if self.stages not in allowed:
             raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Toolbox 执行阶段顺序不闭合")
 
 
@@ -209,6 +219,9 @@ class ToolboxExecutionResult:
     trace: ToolboxExecutionTrace
     ordered_unit_ids: tuple[str, ...]
     proposed_patch: PagePatch | None = None
+    semantic_unit_map: SemanticUnitMap | None = None
+    translation_bundle: TranslationBundle | None = None
+    completeness_decision: TranslationCompletenessDecision | None = None
 
     def __post_init__(self) -> None:
         """校验页面身份和翻译单元身份唯一性。"""

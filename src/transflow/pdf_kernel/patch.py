@@ -29,6 +29,73 @@ RENDER_CONFIG_HASH = content_sha256(
         "writer": "pymupdf.insert_textbox",
     }
 )
+DIAGNOSTIC_MIN_FONT_SIZE = 1.0
+
+
+def _probe_textbox_fit(
+    facts: ExtractedPageFacts,
+    operation: PatchOperation,
+    font_path: Path,
+    font_size: float,
+) -> float:
+    """用空白内存页探测指定字号，避免在真实候选上试写后留下半成品。"""
+
+    if operation.rect is None or operation.replacement_text is None:
+        raise DomainContractError(ErrorCode.PATCH_OPERATION_INVALID, "Patch 操作字段不完整")
+    with pymupdf.open() as probe_document:
+        page = probe_document.new_page(
+            width=facts.page.width_points,
+            height=facts.page.height_points,
+        )
+        font_name = f"TFP6Probe{operation.payload_hash[:8]}"
+        page.insert_font(fontname=font_name, fontfile=str(font_path))
+        return float(
+            page.insert_textbox(
+                pymupdf.Rect(operation.rect),
+                operation.replacement_text,
+                fontname=font_name,
+                fontsize=font_size,
+                color=(0, 0, 0),
+            )
+        )
+
+
+def _diagnostic_font_size(
+    facts: ExtractedPageFacts,
+    operation: PatchOperation,
+    font_path: Path,
+) -> float:
+    """在原 owner 矩形内求可完整写入的最大字号，仅供隔离诊断候选使用。"""
+
+    if operation.font_size is None:
+        raise DomainContractError(ErrorCode.PATCH_OPERATION_INVALID, "Patch 字号缺失")
+    requested = operation.font_size
+    if _probe_textbox_fit(facts, operation, font_path, requested) >= 0:
+        return requested
+    minimum = min(requested, DIAGNOSTIC_MIN_FONT_SIZE)
+    if _probe_textbox_fit(facts, operation, font_path, minimum) < 0:
+        raise DomainContractError(
+            ErrorCode.DIAGNOSTIC_MATERIALIZATION_FAILED,
+            "诊断文字在 owner 矩形内使用最小字号仍无法完整物化",
+        )
+    lower = minimum
+    upper = requested
+    # 固定轮数二分保证相同输入得到相同字号，同时尽量保留可读性。
+    for _ in range(12):
+        candidate = (lower + upper) / 2
+        if _probe_textbox_fit(facts, operation, font_path, candidate) >= 0:
+            lower = candidate
+        else:
+            upper = candidate
+    return lower
+
+
+def _required_operation_font_size(operation: PatchOperation) -> float:
+    """读取已验证操作字号，并为静态检查保留显式非空边界。"""
+
+    if operation.font_size is None:
+        raise DomainContractError(ErrorCode.PATCH_OPERATION_INVALID, "Patch 字号缺失")
+    return operation.font_size
 
 
 def patch_operation_hash(
@@ -97,22 +164,7 @@ def probe_operation_fit(
         or operation.font_size is None
     ):
         raise DomainContractError(ErrorCode.PATCH_OPERATION_INVALID, "Patch 操作字段不完整")
-    with pymupdf.open() as probe_document:
-        page = probe_document.new_page(
-            width=facts.page.width_points,
-            height=facts.page.height_points,
-        )
-        font_name = f"TFP6Probe{operation.payload_hash[:8]}"
-        page.insert_font(fontname=font_name, fontfile=str(font_path))
-        return float(
-            page.insert_textbox(
-                pymupdf.Rect(operation.rect),
-                operation.replacement_text,
-                fontname=font_name,
-                fontsize=operation.font_size,
-                color=(0, 0, 0),
-            )
-        )
+    return _probe_textbox_fit(facts, operation, font_path, operation.font_size)
 
 
 @dataclass(frozen=True, slots=True)
@@ -213,6 +265,8 @@ class PagePatchInterpreter:
         facts: ExtractedPageFacts,
         patch: PagePatch,
         expected_owner: str,
+        *,
+        diagnostic: bool = False,
     ) -> PatchApplicationResult:
         """预校验全部操作后，按声明顺序对指定源页面执行受控替换。"""
 
@@ -230,16 +284,38 @@ class PagePatchInterpreter:
         font_paths = tuple(
             self._validate_operation(item, patch, facts) for item in patch.operations
         )
+        font_sizes = tuple(
+            (
+                _diagnostic_font_size(facts, operation, font_path)
+                if diagnostic
+                else _required_operation_font_size(operation)
+            )
+            for operation, font_path in zip(patch.operations, font_paths, strict=True)
+        )
         manifest = build_patch_manifest(patch)
         page = document[context.page_no - 1]
         remainders: list[float] = []
-        for operation, font_path in zip(patch.operations, font_paths, strict=True):
+        for operation, font_path, font_size in zip(
+            patch.operations,
+            font_paths,
+            font_sizes,
+            strict=True,
+        ):
             if (
                 operation.rect is None
                 or operation.replacement_text is None
-                or operation.font_size is None
+                or font_size is None
             ):
                 raise AssertionError("预校验后的 Patch 操作字段不应为空")
+            requested_font_size = _required_operation_font_size(operation)
+            if diagnostic and font_size < requested_font_size:
+                LOGGER.info(
+                    "调用诊断字号收敛，意图=在原 owner 内完整物化译文 "
+                    "operation_id=%s requested=%s applied=%s",
+                    operation.operation_id,
+                    requested_font_size,
+                    round(font_size, 4),
+                )
             font_name = f"TFP4{operation.payload_hash[:8]}"
             rectangle = pymupdf.Rect(operation.rect)
             page.add_redact_annot(rectangle, fill=(1, 1, 1))
@@ -249,7 +325,7 @@ class PagePatchInterpreter:
                 rectangle,
                 operation.replacement_text,
                 fontname=font_name,
-                fontsize=operation.font_size,
+                fontsize=font_size,
                 color=(0, 0, 0),
             )
             remainders.append(float(remainder))
@@ -269,7 +345,13 @@ class PagePatchInterpreter:
             render_config_hash=manifest.render_config_hash,
         )
 
-    def replay_document(self, document_path: Path, pages: tuple[ReplayPage, ...]) -> frozenset[int]:
+    def replay_document(
+        self,
+        document_path: Path,
+        pages: tuple[ReplayPage, ...],
+        *,
+        diagnostic: bool = False,
+    ) -> frozenset[int]:
         """一次打开源副本，按 1-based 页码串行回放全部批准 Patch 并增量保存。"""
 
         LOGGER.info(
@@ -285,6 +367,7 @@ class PagePatchInterpreter:
                     item.facts,
                     item.patch,
                     item.expected_owner,
+                    diagnostic=diagnostic,
                 )
                 applied_pages.add(item.context.page_no)
             if applied_pages:

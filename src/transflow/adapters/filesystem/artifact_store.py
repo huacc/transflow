@@ -17,11 +17,14 @@ from transflow.adapters.filesystem.common import (
     sha256_file,
 )
 from transflow.domain.artifacts import ArtifactPayload, ArtifactReference
+from transflow.domain.delivery import ReleaseArtifactGuard, ReleaseSurface
 from transflow.domain.errors import ErrorCode, PortCallError
 
 LOGGER = logging.getLogger("transflow.adapters.filesystem.artifact_store")
 FILESYSTEM_ROOT = Path(__file__).resolve().parent.parent
-ALLOWED_LABELS = frozenset({"final", "audit", "rebuildable-temp", "page", "preview", "report"})
+ALLOWED_LABELS = frozenset(
+    {"final", "diagnostic", "audit", "rebuildable-temp", "page", "preview", "report"}
+)
 
 
 class SharedFilesystemArtifactAdapter:
@@ -215,6 +218,7 @@ class SharedFilesystemArtifactAdapter:
     ) -> None:
         """原子更新 standalone 最终发布指针，且只允许已验证 final Artifact。"""
 
+        ReleaseArtifactGuard.assert_allowed(reference, ReleaseSurface.STANDALONE_FINAL)
         if reference.label != "final" or not self.verify(reference):
             raise PortCallError(ErrorCode.ARTIFACT_INTEGRITY_FAILED, False, "最终 Artifact 无效")
         inject_crash(crash_at, "before_final_manifest")
