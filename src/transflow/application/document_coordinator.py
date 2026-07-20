@@ -7,6 +7,7 @@ import logging
 from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from typing import Protocol
 
 from transflow.application.contracts import (
     DocumentExecution,
@@ -15,10 +16,15 @@ from transflow.application.contracts import (
     ProcessedPage,
 )
 from transflow.application.document_finalizer import DocumentFinalizer
+from transflow.application.document_layout_memory import (
+    DocumentLayoutMemoryBuildInput,
+    LayoutMemoryPolicyConfig,
+)
 from transflow.application.page_pipeline import ROUTE_PASSTHROUGH
 from transflow.classification.engine import ClassificationEngine, ClassifiedPage
 from transflow.domain.errors import ErrorCode, PortCallError
 from transflow.domain.jobs import DocumentResult, DocumentRunRequest
+from transflow.domain.layout_memory import DocumentLayoutMemoryIdentity, DocumentLayoutMemoryRef
 from transflow.domain.pages import PageExecutionContext
 from transflow.domain.states import DocumentOutcome, Fallback
 from transflow.pdf_kernel.facts import PageFactsExtractor
@@ -30,6 +36,29 @@ from transflow.pdf_kernel.preservation import (
 LOGGER = logging.getLogger("transflow.application.document_coordinator")
 APPLICATION_ROOT = Path(__file__).resolve().parent.parent
 RouteResolver = Callable[[EnumeratedPage], str]
+
+
+class DocumentLayoutMemoryRuntimePort(Protocol):
+    """描述协调器冻结记忆所需的最小运行时能力，隔离文件 Adapter 实现。"""
+
+    def prepare(
+        self,
+        request: DocumentLayoutMemoryBuildInput,
+        *,
+        crash_at: str | None = None,
+    ) -> DocumentLayoutMemoryRef:
+        """构建或恢复唯一权威文档记忆引用。"""
+
+        ...
+
+    def bind_page_contexts(
+        self,
+        contexts: tuple[PageExecutionContext, ...],
+        memory_ref: DocumentLayoutMemoryRef,
+    ) -> tuple[PageExecutionContext, ...]:
+        """把同一不可变引用绑定到全部 PageContext。"""
+
+        ...
 
 
 def _passthrough_route(_page: EnumeratedPage) -> str:
@@ -140,6 +169,37 @@ class DocumentCoordinator:
                 "分类结果遗漏、重复或乱序未收敛",
             )
         return ordered
+
+    def freeze_document_layout_memory(
+        self,
+        pages: tuple[EnumeratedPage, ...],
+        routes: tuple[tuple[int, str], ...],
+        identity: DocumentLayoutMemoryIdentity,
+        policy: LayoutMemoryPolicyConfig,
+        runtime: DocumentLayoutMemoryRuntimePort,
+        *,
+        crash_at: str | None = None,
+    ) -> tuple[tuple[EnumeratedPage, ...], DocumentLayoutMemoryRef]:
+        """在页面 ready 前闭合全页事实/Route 屏障、原子冻结记忆并绑定同一引用。"""
+
+        LOGGER.info(
+            "调用文档记忆屏障，意图=冻结后再放行全部页面 pages=%s",
+            len(pages),
+        )
+        request = DocumentLayoutMemoryBuildInput(
+            expected_page_count=len(pages),
+            page_facts=tuple(page.facts for page in pages),
+            routes=routes,
+            identity=identity,
+            policy=policy,
+        )
+        memory_ref = runtime.prepare(request, crash_at=crash_at)
+        contexts = runtime.bind_page_contexts(tuple(page.context for page in pages), memory_ref)
+        bound = tuple(
+            EnumeratedPage(context=context, facts=page.facts)
+            for context, page in zip(contexts, pages, strict=True)
+        )
+        return bound, memory_ref
 
     def run_classified(
         self,

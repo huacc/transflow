@@ -8,6 +8,7 @@ from typing import Any
 
 from transflow.domain.common import require_non_empty, require_sha256, require_unique
 from transflow.domain.errors import DomainContractError, ErrorCode
+from transflow.domain.layout_memory import DocumentLayoutMemoryRef
 from transflow.domain.states import (
     ArtifactIntegrity,
     ArtifactProduced,
@@ -58,6 +59,7 @@ class PageExecutionContext:
     page_no: int
     geometry_hash: str
     config_snapshot_hash: str
+    document_layout_memory_ref: DocumentLayoutMemoryRef | None = None
 
     def __post_init__(self) -> None:
         """校验上下文身份完整且页面编号非负。"""
@@ -74,7 +76,11 @@ class PageExecutionContext:
     def from_dict(cls, payload: dict[str, Any]) -> PageExecutionContext:
         """从 JSON 字典恢复页面执行上下文。"""
 
-        return cls(**payload)
+        normalized = dict(payload)
+        memory_ref = normalized.get("document_layout_memory_ref")
+        if isinstance(memory_ref, dict):
+            normalized["document_layout_memory_ref"] = DocumentLayoutMemoryRef(**memory_ref)
+        return cls(**normalized)
 
 
 @dataclass(frozen=True, slots=True)

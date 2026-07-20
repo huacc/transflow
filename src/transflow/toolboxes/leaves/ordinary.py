@@ -11,6 +11,7 @@ from pathlib import Path
 from transflow.domain.common import content_sha256
 from transflow.domain.errors import DomainContractError, ErrorCode
 from transflow.domain.pages import PageExecutionContext
+from transflow.domain.text_inventory import InventoryDisposition
 from transflow.domain.toolbox import (
     Decision,
     DecisionDisposition,
@@ -20,8 +21,13 @@ from transflow.domain.toolbox import (
     ToolboxDescriptor,
 )
 from transflow.domain.translation import TranslationBatch, TranslationUnit
-from transflow.pdf_kernel.facts import ExtractedPageFacts, KernelTextFact, RectTuple
+from transflow.pdf_kernel.facts import ExtractedPageFacts, RectTuple
 from transflow.pdf_kernel.patch import patch_operation_hash, probe_operation_fit
+from transflow.pdf_kernel.text_inventory import (
+    CanonicalTextRecord,
+    canonical_text_records,
+    freeze_page_text_inventory,
+)
 from transflow.toolboxes.contracts import (
     TOOLBOX_CONTRACT_VERSION,
     PageTemplate,
@@ -62,7 +68,7 @@ class P9LeafSnapshot:
     def owner_coverage_complete(self) -> bool:
         """验证每个可编辑文本恰好属于一个 owner 或显式 KEEP_SOURCE。"""
 
-        editable = {item.object_id for item in self.facts.text_spans if item.text.strip()}
+        editable = {item.object_id for item in canonical_text_records(self.facts)}
         owned = tuple(item.object_id for item in self.atoms)
         return (
             len(owned) == len(set(owned))
@@ -94,10 +100,10 @@ def _intersects(first: RectTuple, second: RectTuple) -> bool:
     )
 
 
-def _text_objects(facts: ExtractedPageFacts) -> tuple[KernelTextFact, ...]:
-    """返回全部非空原生文字 span，不读取文件名、样本 ID 或 OCR 结果。"""
+def _text_objects(facts: ExtractedPageFacts) -> tuple[CanonicalTextRecord, ...]:
+    """返回 Kernel 机械选定的原生文字层级，不读取 Route、样本身份或 OCR。"""
 
-    return tuple(item for item in facts.text_spans if item.text.strip())
+    return canonical_text_records(facts)
 
 
 def _axis_clusters(values: tuple[float, ...], tolerance: float) -> tuple[int, ...]:
@@ -677,7 +683,7 @@ class MultiFlowTextToolbox(StructuredOrdinaryLeafToolbox):
 
 
 class TableToolbox(StructuredOrdinaryLeafToolbox):
-    """只处理有直接结构证据的原生表格，并以整表为回退原子。"""
+    """处理有直接结构证据的原生表格及其页内上下文，并以整表为回退原子。"""
 
     def __init__(self, policy: P9OrdinaryLeafPolicy, font_path: Path) -> None:
         """注入统一配置和受控字体；图片表格不 OCR。"""
@@ -717,9 +723,28 @@ class TableToolbox(StructuredOrdinaryLeafToolbox):
                         item.bbox,
                     )
                 )
+        # table Route 仍负责整页翻译闭合：表外标题和说明不能被无理由降为源文透传。
+        # 只有 Kernel 在翻译前机械批准的页码、代码和共享边距等对象才进入 KEEP_SOURCE。
+        inventory = {item.object_id: item for item in freeze_page_text_inventory(facts).items}
+        keep: list[str] = []
+        for context_index, item in enumerate(
+            (record for record in text if record.object_id not in claimed),
+            start=1,
+        ):
+            inventory_item = inventory[item.object_id]
+            if inventory_item.disposition is InventoryDisposition.KEEP_SOURCE:
+                keep.append(item.object_id)
+                continue
+            atoms.append(
+                P9OwnedAtom(
+                    item.object_id,
+                    f"table-page-context-{context_index:03d}",
+                    item.text,
+                    item.bbox,
+                )
+            )
         atoms.sort(key=lambda item: (item.group_id, item.bbox[1], item.bbox[0]))
-        keep = tuple(item.object_id for item in text if item.object_id not in claimed)
-        return tuple(atoms), keep
+        return tuple(atoms), tuple(keep)
 
 
 class AnchoredBlocksToolbox(StructuredOrdinaryLeafToolbox):

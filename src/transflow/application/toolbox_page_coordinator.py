@@ -13,6 +13,7 @@ from transflow.application.route_capability import (
     RouteCapabilityGuard,
     RouteCapabilityMismatchFinding,
 )
+from transflow.application.toolbox_repair import P9BToolboxRepairHandler
 from transflow.application.translation_completeness import (
     CompletenessCheckpointPort,
     TranslationCompletenessGate,
@@ -28,6 +29,7 @@ from transflow.domain.errors import DomainContractError, ErrorCode
 from transflow.domain.pages import PageExecutionContext
 from transflow.domain.toolbox import Decision, DecisionDisposition, Finding
 from transflow.pdf_kernel.facts import ExtractedPageFacts
+from transflow.pdf_kernel.text_inventory import freeze_page_text_inventory
 from transflow.ports.translation import TranslationPort
 from transflow.toolboxes.contracts import (
     PageToolbox,
@@ -99,6 +101,7 @@ class ToolboxPageCoordinator:
         completeness_gate: TranslationCompletenessGate | None = None,
         completeness_checkpoints: CompletenessCheckpointPort | None = None,
         route_guard: RouteCapabilityGuard | None = None,
+        repair_handler: P9BToolboxRepairHandler | None = None,
     ) -> None:
         """绑定 TranslationPort、完整性门禁、安全点和可选迁移记录器。"""
 
@@ -107,6 +110,7 @@ class ToolboxPageCoordinator:
         self._completeness_gate = completeness_gate or TranslationCompletenessGate()
         self._completeness_checkpoints = completeness_checkpoints
         self._route_guard = route_guard or RouteCapabilityGuard()
+        self._repair_handler = repair_handler
 
     def execute(self, work: ToolboxPageWork) -> ToolboxExecutionResult:
         """执行单页六阶段；Toolbox 从不获得 TranslationPort 实例。"""
@@ -119,11 +123,13 @@ class ToolboxPageCoordinator:
             context.page_no,
             descriptor.route,
         )
+        # 文字分母必须早于 Toolbox.prepare 冻结，避免叶或 Provider 决定清单边界。
+        inventory = freeze_page_text_inventory(work.facts)
         template = toolbox.prepare(context, work.facts)
         if template.context != context or template.owner != descriptor.owner:
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "Toolbox 模板上下文或 owner 漂移")
         batch = toolbox.build_translation_request(template)
-        semantic_map = build_semantic_unit_map(template, batch, work.facts)
+        semantic_map = build_semantic_unit_map(template, batch, work.facts, inventory)
         route_mismatch = self._route_guard.evaluate(
             descriptor.route,
             work.facts,
@@ -187,9 +193,31 @@ class ToolboxPageCoordinator:
             plan.patch.validate_binding(context, descriptor.owner)
         candidate = toolbox.render(context, work.facts, plan)
         judgement = toolbox.judge(candidate)
-        repaired = toolbox.repair(candidate, judgement)
-        # Repair 产生新候选后必须重新裁决，不能沿用修复前 verdict。
-        final_judgement = toolbox.judge(repaired) if repaired != candidate else judgement
+        repair_memory_hash: str | None = None
+        repair_attempt_count = 0
+        repair_stop_reason: str | None = None
+        if self._repair_handler is not None and gate_result.bundle is not None:
+            repair_execution = self._repair_handler.execute(
+                context,
+                work.facts,
+                toolbox,
+                candidate,
+                judgement,
+                gate_result.bundle,
+            )
+            repaired = repair_execution.candidate
+            final_judgement = repair_execution.judgement
+            repair_memory_hash = repair_execution.memory.memory_hash
+            repair_attempt_count = len(repair_execution.memory.attempts)
+            repair_stop_reason = (
+                repair_execution.memory.stop_reason.value
+                if repair_execution.memory.stop_reason is not None
+                else None
+            )
+        else:
+            repaired = toolbox.repair(candidate, judgement)
+            # Repair 产生新候选后必须重新裁决，不能沿用修复前 verdict。
+            final_judgement = toolbox.judge(repaired) if repaired != candidate else judgement
         accepted = (
             final_judgement.decision.disposition is DecisionDisposition.ACCEPT
             and not repaired.plan.fallback_requested
@@ -230,6 +258,9 @@ class ToolboxPageCoordinator:
             semantic_unit_map=gate_result.semantic_map,
             translation_bundle=gate_result.bundle,
             completeness_decision=gate_result.decision,
+            repair_memory_hash=repair_memory_hash,
+            repair_attempt_count=repair_attempt_count,
+            repair_stop_reason=repair_stop_reason,
         )
 
     @staticmethod

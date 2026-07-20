@@ -25,6 +25,7 @@ from transflow.domain.completeness import (
     bundle_content_hash,
 )
 from transflow.domain.errors import DomainContractError, ErrorCode, PortCallError
+from transflow.domain.text_inventory import InventoryDisposition, PageTextInventory
 from transflow.domain.translation import (
     TranslatedUnit,
     TranslationBatch,
@@ -32,6 +33,7 @@ from transflow.domain.translation import (
     TranslationUnit,
 )
 from transflow.pdf_kernel.facts import ExtractedPageFacts, RectTuple
+from transflow.pdf_kernel.text_inventory import freeze_page_text_inventory
 from transflow.ports.translation import TranslationPort
 from transflow.toolboxes.contracts import PageTemplate
 
@@ -110,8 +112,7 @@ def extract_required_literals(source_text: str) -> tuple[str, ...]:
     if prefix is not None:
         literals.append(prefix.group(1))
     literals.extend(
-        match.group(0).strip()
-        for match in REQUIRED_LITERAL_PATTERN.finditer(source_text)
+        match.group(0).strip() for match in REQUIRED_LITERAL_PATTERN.finditer(source_text)
     )
     return tuple(dict.fromkeys(literals))
 
@@ -191,44 +192,68 @@ def build_semantic_unit_map(
     template: PageTemplate,
     batch: TranslationBatch | None,
     facts: ExtractedPageFacts,
+    inventory: PageTextInventory | None = None,
 ) -> SemanticUnitMap:
-    """在调用 TranslationPort 前冻结全部原生文字的唯一 owner 与处置。"""
+    """把独立文字清单映射为唯一 owner/翻译单元，并执行双向覆盖门禁。"""
 
     LOGGER.info(
         "调用 SemanticUnitMap 构建，意图=冻结翻译分母 page_no=%s owner=%s",
         template.context.page_no,
         template.owner,
     )
-    # P7 legacy/fake 适配器只声明 page-level facts_hash，且其测试批次可能是聚合单元；
-    # 该兼容边界只以叶已声明的 Batch 建图。生产叶使用 kernel_facts_hash，必须审计原生文字。
-    records = (
-        ()
-        if template.facts_hash == facts.page.facts_hash
-        else _canonical_records(template, facts)
+    frozen_inventory = inventory or freeze_page_text_inventory(facts)
+    if (
+        frozen_inventory.page_no != template.context.page_no
+        or frozen_inventory.page_identity != facts.page_identity
+        or frozen_inventory.kernel_facts_hash != facts.kernel_facts_hash
+    ):
+        raise DomainContractError(
+            ErrorCode.INVALID_IDENTITY, "PageTextInventory 页面或 Kernel 身份漂移"
+        )
+    native_records = {
+        item.object_id: _NativeTextRecord(item.object_id, item.text, item.bbox)
+        for item in facts.text_spans
+        if item.text.strip()
+    }
+    native_records.update(
+        {
+            item.object_id: _NativeTextRecord(item.object_id, item.text, item.bbox)
+            for item in facts.objects
+            if item.kind == "text" and not item.protected and item.text.strip()
+        }
     )
+    # 清单冻结最细分母；SemanticUnitMap 可按叶声明投影为等价 block/span 层级，
+    # 但正文仍只从不可变 Kernel 事实读取，绝不从 Provider 回填。
+    records = _canonical_records(template, facts)
     record_by_id = {item.object_id: item for item in records}
     batch_units = batch.units if batch is not None else ()
     object_by_unit: dict[str, str] = {}
+    canonical_ids = set(record_by_id)
     if len(template.object_ids) == len(batch_units):
         object_by_unit = {
             unit.unit_id: object_id
             for unit, object_id in zip(batch_units, template.object_ids, strict=True)
+            if object_id in canonical_ids
         }
-    else:
-        unused = list(template.object_ids)
-        for unit in batch_units:
-            matched = next(
-                (
-                    object_id
-                    for object_id in unused
-                    if object_id in record_by_id
-                    and record_by_id[object_id].text.strip() == unit.source_text.strip()
-                ),
-                None,
-            )
-            if matched is not None:
-                object_by_unit[unit.unit_id] = matched
-                unused.remove(matched)
+    # 旧叶可能声明 block 身份而 Kernel 清单采用 span 身份；只允许按真实原文精确对齐，
+    # 不允许为批次凭空生成 inventory 外对象。
+    unused = [
+        item.object_id for item in records if item.object_id not in object_by_unit.values()
+    ]
+    for unit in batch_units:
+        if unit.unit_id in object_by_unit:
+            continue
+        matched = next(
+            (
+                object_id
+                for object_id in unused
+                if record_by_id[object_id].text.strip() == unit.source_text.strip()
+            ),
+            None,
+        )
+        if matched is not None:
+            object_by_unit[unit.unit_id] = matched
+            unused.remove(matched)
     unit_by_object: dict[str, TranslationUnit] = {}
     for batch_unit in batch_units:
         owned_object_id = object_by_unit.get(batch_unit.unit_id)
@@ -256,9 +281,7 @@ def build_semantic_unit_map(
                     owner=template.owner,
                     ordinal=len(entries),
                     source_text=owned_unit.source_text,
-                    source_hash=hashlib.sha256(
-                        owned_unit.source_text.encode("utf-8")
-                    ).hexdigest(),
+                    source_hash=hashlib.sha256(owned_unit.source_text.encode("utf-8")).hexdigest(),
                     required_literals=extract_required_literals(owned_unit.source_text),
                     disposition=disposition,
                     keep_source_reason=reason,
@@ -313,12 +336,107 @@ def build_semantic_unit_map(
                 keep_source_reason=reason,
             )
         )
-    return SemanticUnitMap(
+    semantic_map = SemanticUnitMap(
         map_id=f"semantic-{template.template_id}",
         page_no=template.context.page_no,
         source_hash=template.context.source_hash,
         entries=tuple(entries),
     )
+    validate_inventory_coverage(frozen_inventory, semantic_map, facts)
+    return semantic_map
+
+
+def validate_inventory_coverage(
+    inventory: PageTextInventory,
+    semantic_map: SemanticUnitMap,
+    facts: ExtractedPageFacts | None = None,
+) -> None:
+    """核对精细 Inventory 与等价 block/span 投影的文字覆盖及预授权处置。"""
+
+    LOGGER.info(
+        "调用文字覆盖门禁，意图=阻止漏对象或事后 KEEP_SOURCE page_no=%s",
+        inventory.page_no,
+    )
+    inventory_by_id = {item.object_id: item for item in inventory.items}
+    map_by_id = {item.object_id: item for item in semantic_map.entries}
+    exact_identity = set(inventory_by_id) == set(map_by_id)
+    if not exact_identity and facts is None:
+        missing = sorted(set(inventory_by_id) - set(map_by_id))
+        added = sorted(set(map_by_id) - set(inventory_by_id))
+        raise DomainContractError(
+            ErrorCode.INVALID_CONTRACT,
+            f"PageTextInventory/SemanticUnitMap 双向覆盖失败 missing={missing} added={added}",
+        )
+    if not exact_identity:
+        assert facts is not None
+        text_blocks = tuple(
+            item
+            for item in facts.objects
+            if item.kind == "text" and not item.protected and item.text.strip()
+        )
+        block_by_id = {item.object_id: item for item in text_blocks}
+        covered: set[str] = set()
+        for mapped in semantic_map.entries:
+            projected_ids: tuple[str, ...]
+            if mapped.object_id in inventory_by_id:
+                projected_ids = (mapped.object_id,)
+            elif mapped.object_id in block_by_id:
+                block = block_by_id[mapped.object_id]
+                projected_ids = tuple(
+                    item.object_id
+                    for item in facts.text_spans
+                    if item.text.strip()
+                    and block.bbox[0] <= (item.bbox[0] + item.bbox[2]) / 2 <= block.bbox[2]
+                    and block.bbox[1] <= (item.bbox[1] + item.bbox[3]) / 2 <= block.bbox[3]
+                )
+                if (
+                    not projected_ids
+                    or _normalized(mapped.source_text) != _normalized(block.text)
+                ):
+                    raise DomainContractError(
+                        ErrorCode.INVALID_CONTRACT,
+                        "SemanticUnit block 无法机械投影到 Inventory span",
+                    )
+            else:
+                raise DomainContractError(
+                    ErrorCode.INVALID_CONTRACT,
+                    "SemanticUnit 使用了 Inventory 无法追溯的文字对象",
+                )
+            if set(projected_ids) & covered:
+                raise DomainContractError(ErrorCode.INVALID_CONTRACT, "文字对象被重复归属")
+            if (
+                mapped.disposition is SemanticUnitDisposition.KEEP_SOURCE
+                and any(
+                    inventory_by_id[object_id].disposition
+                    is not InventoryDisposition.KEEP_SOURCE
+                    for object_id in projected_ids
+                )
+            ):
+                raise DomainContractError(
+                    ErrorCode.INVALID_CONTRACT,
+                    "聚合文字块未经全部 Kernel span 预授权却事后 KEEP_SOURCE",
+                )
+            covered.update(projected_ids)
+        if covered != set(inventory_by_id):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "PageTextInventory/SemanticUnitMap 层级投影文字覆盖失败",
+            )
+        return
+    for object_id, item in inventory_by_id.items():
+        if object_id not in map_by_id:
+            continue
+        mapped = map_by_id[object_id]
+        if mapped.source_hash != item.source_hash:
+            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "文字内容哈希在映射期间变化")
+        if (
+            mapped.disposition is SemanticUnitDisposition.KEEP_SOURCE
+            and item.disposition is not InventoryDisposition.KEEP_SOURCE
+        ):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                f"对象未经 Kernel 预授权却事后 KEEP_SOURCE object_id={object_id}",
+            )
 
 
 def _normalized(value: str) -> str:
@@ -468,9 +586,7 @@ def adjudicate_translation_candidates(
                     "语义单元尚未建立 owner/处置",
                 )
             )
-            dispositions.append(
-                SemanticUnitDecision(unit.unit_id, CompletenessDisposition.FAILED)
-            )
+            dispositions.append(SemanticUnitDecision(unit.unit_id, CompletenessDisposition.FAILED))
             continue
         rows = by_id.get(unit.unit_id, [])
         if not rows:
@@ -481,9 +597,7 @@ def adjudicate_translation_candidates(
                     "候选缺少预期 unit_id",
                 )
             )
-            dispositions.append(
-                SemanticUnitDecision(unit.unit_id, CompletenessDisposition.FAILED)
-            )
+            dispositions.append(SemanticUnitDecision(unit.unit_id, CompletenessDisposition.FAILED))
             continue
         content_errors = _candidate_content_errors(unit, rows[0].translated_text)
         errors.extend(content_errors)
@@ -503,10 +617,7 @@ def adjudicate_translation_candidates(
     status = CompletenessStatus.FAIL if errors else CompletenessStatus.PASS
     provisional_hash = (
         hashlib.sha256(
-            b"\0".join(
-                f"{item.unit_id}\0{item.translated_text}".encode()
-                for item in candidates
-            )
+            b"\0".join(f"{item.unit_id}\0{item.translated_text}".encode() for item in candidates)
         ).hexdigest()
         if status is CompletenessStatus.PASS and candidates
         else None
@@ -526,8 +637,10 @@ def _port_failure_decision(
 ) -> TranslationCompletenessDecision:
     """把 TranslationPort 结构化失败映射为完整 map 的 FAIL 裁决。"""
 
-    failed_ids = semantic_map.translated_unit_ids or semantic_map.unresolved_unit_ids or (
-        f"page-{semantic_map.page_no}",
+    failed_ids = (
+        semantic_map.translated_unit_ids
+        or semantic_map.unresolved_unit_ids
+        or (f"page-{semantic_map.page_no}",)
     )
     dispositions = tuple(
         SemanticUnitDecision(
@@ -736,8 +849,7 @@ class TranslationCompletenessGate:
                 unit.unit_id,
                 (
                     unit.source_text
-                    if map_by_id[unit.unit_id].disposition
-                    is SemanticUnitDisposition.KEEP_SOURCE
+                    if map_by_id[unit.unit_id].disposition is SemanticUnitDisposition.KEEP_SOURCE
                     else merged[unit.unit_id]
                 ),
             )

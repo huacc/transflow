@@ -222,6 +222,9 @@ class ToolboxExecutionResult:
     semantic_unit_map: SemanticUnitMap | None = None
     translation_bundle: TranslationBundle | None = None
     completeness_decision: TranslationCompletenessDecision | None = None
+    repair_memory_hash: str | None = None
+    repair_attempt_count: int = 0
+    repair_stop_reason: str | None = None
 
     def __post_init__(self) -> None:
         """校验页面身份和翻译单元身份唯一性。"""
@@ -229,6 +232,10 @@ class ToolboxExecutionResult:
         if self.page_no != self.outcome.page_no:
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "执行结果与 PageOutcome 串页")
         require_unique(self.ordered_unit_ids, "ordered_unit_ids")
+        if self.repair_memory_hash is not None:
+            require_sha256(self.repair_memory_hash, "repair_memory_hash")
+        if self.repair_attempt_count < 0:
+            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "repair_attempt_count 不得为负")
 
 
 @runtime_checkable

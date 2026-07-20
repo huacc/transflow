@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "transflow.document-layout-memory/v1",
+  "title": "DocumentLayoutMemory V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "identity", "source_layout_baseline", "target_layout_policy", "memory_hash"],
+  "properties": {
+    "schema_version": {"const": "transflow.document-layout-memory/v1"},
+    "memory_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identity": {"type": "object"},
+    "source_layout_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["page_refs", "shared_regions", "role_profiles"],
+      "properties": {
+        "page_refs": {"type": "array", "minItems": 1},
+        "shared_regions": {"type": "array"},
+        "role_profiles": {"type": "array", "minItems": 1}
+      }
+    },
+    "target_layout_policy": {"type": "object"}
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": "transflow.repair-policy/v1",
+  "max_repair_rounds": 3,
+  "max_no_improvement": 2,
+  "real_sample_pressure_factor": 8,
+  "static_registry_version": "p9b-v1-empty",
+  "static_registry_entries": [],
+  "catalogs": [
+    {
+      "route": "cover",
+      "toolbox_id": "cover",
+      "toolbox_version": "0.1.0-review",
+      "catalog_version": "p9b-cover/v1",
+      "comparator_version": "p9b-cover-comparator/v1",
+      "atoms": [{"atom_id": "cover.legacy_repair/v1", "priority": 10}]
+    },
+    {
+      "route": "contents",
+      "toolbox_id": "contents",
+      "toolbox_version": "0.1.0-review",
+      "catalog_version": "p9b-contents/v1",
+      "comparator_version": "p9b-contents-comparator/v1",
+      "atoms": [{"atom_id": "contents.legacy_repair/v1", "priority": 10}]
+    },
+    {
+      "route": "end",
+      "toolbox_id": "end",
+      "toolbox_version": "0.1.0-review",
+      "catalog_version": "p9b-end/v1",
+      "comparator_version": "p9b-end-comparator/v1",
+      "atoms": [{"atom_id": "end.legacy_repair/v1", "priority": 10}]
+    },
+    {
+      "route": "body.flow_text.multi",
+      "toolbox_id": "body.flow_text.multi",
+      "toolbox_version": "0.1.0-review",
+      "catalog_version": "p9b-multi/v1",
+      "comparator_version": "p9b-multi-comparator/v1",
+      "atoms": [{"atom_id": "body.flow_text.multi.legacy_repair/v1", "priority": 10}]
+    },
+    {
+      "route": "body.table",
+      "toolbox_id": "body.table",
+      "toolbox_version": "0.1.0-review",
+      "catalog_version": "p9b-table/v1",
+      "comparator_version": "p9b-table-comparator/v1",
+      "atoms": [{"atom_id": "body.table.legacy_repair/v1", "priority": 10}]
+    },
+    {
+      "route": "body.anchored_blocks",
+      "toolbox_id": "body.anchored_blocks",
+      "toolbox_version": "0.1.0-review",
+      "catalog_version": "p9b-anchored-blocks/v1",
+      "comparator_version": "p9b-anchored-blocks-comparator/v1",
+      "atoms": [{"atom_id": "body.anchored_blocks.legacy_repair/v1", "priority": 10}]
+    }
+  ],
+  "atom_defaults": {
+    "applicable_finding_codes": ["P9_TEXT_LAYOUT_OVERFLOW"],
+    "required_facts": ["route_capability_match", "translation_complete"],
+    "excluded_conditions": ["route_capability_mismatch"],
+    "hard_guards": ["owner_violation", "protected_region_violation", "source_text_residual"],
+    "apply_adapter": "legacy_repair",
+    "bounded_parameters": [
+      {"name": "legacy_step", "minimum": 1.0, "maximum": 1.0, "default": 1.0}
+    ]
+  },
+  "comparator_defaults": {
+    "metrics": [
+      {"name": "overflow", "direction": "MINIMIZE"},
+      {"name": "unresolved_hard_findings", "direction": "MINIMIZE"}
+    ],
+    "hard_rejection_codes": [
+      "OWNER_VIOLATION",
+      "PROTECTED_REGION_VIOLATION",
+      "SOURCE_TEXT_RESIDUAL"
+    ],
+    "precision": 6,
+    "epsilon": 0.000001,
+    "tie_policy": "KEEP_CURRENT"
+  }
+}

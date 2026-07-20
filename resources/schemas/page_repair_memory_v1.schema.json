@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "transflow.page-repair-memory/v1",
+  "title": "PageRepairMemory V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "identity",
+    "initial_layout",
+    "current_layout",
+    "initial_state_hash",
+    "attempts",
+    "max_repair_rounds",
+    "max_no_improvement",
+    "consecutive_no_improvement",
+    "stop_reason",
+    "finalized",
+    "memory_hash"
+  ],
+  "properties": {
+    "schema_version": {"const": "transflow.page-repair-memory/v1"},
+    "identity": {"$ref": "#/$defs/identity"},
+    "initial_layout": {"$ref": "#/$defs/layout"},
+    "current_layout": {"$ref": "#/$defs/layout"},
+    "initial_state_hash": {"$ref": "#/$defs/sha256"},
+    "attempts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/attempt"}
+    },
+    "max_repair_rounds": {"type": "integer", "minimum": 1},
+    "max_no_improvement": {"type": "integer", "minimum": 1},
+    "consecutive_no_improvement": {"type": "integer", "minimum": 0},
+    "stop_reason": {
+      "type": ["string", "null"],
+      "enum": [
+        "PASSED",
+        "BUDGET_EXHAUSTED",
+        "NO_IMPROVEMENT",
+        "STATE_CYCLE",
+        "NO_APPLICABLE_ACTION",
+        "HARD_CONSTRAINT_FAILED",
+        null
+      ]
+    },
+    "finalized": {"type": "boolean"},
+    "memory_hash": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "identity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "run_id",
+        "run_token",
+        "source_hash",
+        "page_no",
+        "route",
+        "toolbox_id",
+        "toolbox_version",
+        "config_hash",
+        "document_memory_hash",
+        "atom_catalog_hash",
+        "comparator_hash",
+        "translation_bundle_hash",
+        "schema_hash",
+        "implementation_hash",
+        "static_registry_hash"
+      ],
+      "properties": {
+        "run_id": {"type": "string", "minLength": 1},
+        "run_token": {"type": "string", "minLength": 1},
+        "source_hash": {"$ref": "#/$defs/sha256"},
+        "page_no": {"type": "integer", "minimum": 1},
+        "route": {"type": "string", "minLength": 1},
+        "toolbox_id": {"type": "string", "minLength": 1},
+        "toolbox_version": {"type": "string", "minLength": 1},
+        "config_hash": {"$ref": "#/$defs/sha256"},
+        "document_memory_hash": {"$ref": "#/$defs/sha256"},
+        "atom_catalog_hash": {"$ref": "#/$defs/sha256"},
+        "comparator_hash": {"$ref": "#/$defs/sha256"},
+        "translation_bundle_hash": {"$ref": "#/$defs/sha256"},
+        "schema_hash": {"$ref": "#/$defs/sha256"},
+        "implementation_hash": {"$ref": "#/$defs/sha256"},
+        "static_registry_hash": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "numberPair": {
+      "type": "array",
+      "prefixItems": [
+        {"type": "string", "minLength": 1},
+        {"type": "number"}
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_memory_hash",
+        "page_no",
+        "route",
+        "source_facts_hash",
+        "translation_bundle_hash",
+        "font_scale",
+        "line_spacing",
+        "paragraph_spacing",
+        "wrap_mode",
+        "page_adjustments"
+      ],
+      "properties": {
+        "document_memory_hash": {"$ref": "#/$defs/sha256"},
+        "page_no": {"type": "integer", "minimum": 1},
+        "route": {"type": "string", "minLength": 1},
+        "source_facts_hash": {"$ref": "#/$defs/sha256"},
+        "translation_bundle_hash": {"$ref": "#/$defs/sha256"},
+        "font_scale": {"type": "number", "exclusiveMinimum": 0},
+        "line_spacing": {"type": "number", "exclusiveMinimum": 0},
+        "paragraph_spacing": {"type": "number", "exclusiveMinimum": 0},
+        "wrap_mode": {"type": "string", "minLength": 1},
+        "page_adjustments": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/numberPair"}
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["metrics", "hard_failure_codes"],
+      "properties": {
+        "metrics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/numberPair"}
+        },
+        "hard_failure_codes": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "proposal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action_key",
+        "atom_id",
+        "failure_code",
+        "owner",
+        "parameters",
+        "input_state_hash"
+      ],
+      "properties": {
+        "action_key": {"$ref": "#/$defs/sha256"},
+        "atom_id": {"type": "string", "minLength": 1},
+        "failure_code": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "minLength": 1},
+        "parameters": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/numberPair"}
+        },
+        "input_state_hash": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "attempt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attempt_no",
+        "proposal",
+        "status",
+        "layout_before_hash",
+        "layout_after",
+        "quality_before",
+        "quality_after",
+        "output_state_hash",
+        "candidate_artifact_ref",
+        "patch_hash",
+        "evidence_hash",
+        "error_code"
+      ],
+      "properties": {
+        "attempt_no": {"type": "integer", "minimum": 1},
+        "proposal": {"$ref": "#/$defs/proposal"},
+        "status": {
+          "enum": ["ACCEPTED", "ROLLED_BACK", "REJECTED", "MATERIALIZATION_FAILED"]
+        },
+        "layout_before_hash": {"$ref": "#/$defs/sha256"},
+        "layout_after": {"anyOf": [{"$ref": "#/$defs/layout"}, {"type": "null"}]},
+        "quality_before": {"$ref": "#/$defs/quality"},
+        "quality_after": {"anyOf": [{"$ref": "#/$defs/quality"}, {"type": "null"}]},
+        "output_state_hash": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+        "candidate_artifact_ref": {
+          "type": ["string", "null"],
+          "pattern": "^(?![A-Za-z]:[\\\\/])(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "patch_hash": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+        "evidence_hash": {"$ref": "#/$defs/sha256"},
+        "error_code": {"type": ["string", "null"]}
+      },
+      "allOf": [
+        {
+          "if": {"properties": {"status": {"const": "MATERIALIZATION_FAILED"}}},
+          "then": {
+            "properties": {
+              "layout_after": {"type": "null"},
+              "quality_after": {"type": "null"},
+              "output_state_hash": {"type": "null"},
+              "candidate_artifact_ref": {"type": "null"},
+              "patch_hash": {"type": "null"},
+              "error_code": {"type": "string", "minLength": 1}
+            }
+          },
+          "else": {
+            "properties": {
+              "layout_after": {"$ref": "#/$defs/layout"},
+              "quality_after": {"$ref": "#/$defs/quality"},
+              "output_state_hash": {"$ref": "#/$defs/sha256"},
+              "candidate_artifact_ref": {"type": "string", "minLength": 1},
+              "patch_hash": {"$ref": "#/$defs/sha256"}
+            }
+          }
+        }
+      ]
+    }
+  }
+}
