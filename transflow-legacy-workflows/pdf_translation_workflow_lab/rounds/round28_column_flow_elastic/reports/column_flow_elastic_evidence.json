@@ -1,0 +1,398 @@
+{
+  "output_layout_plan": "reports\\layout_plan.json",
+  "page_profiles": "reports\\page_profiles.json",
+  "page_reports": [
+    {
+      "applied": false,
+      "layout_flow": "visual_freeform",
+      "page_index": 0,
+      "page_role": "mixed_page",
+      "reason": "page_profile_not_normal_flow_or_no_columns"
+    },
+    {
+      "applied": true,
+      "column_count": 2,
+      "layout_flow": "multi_column_text",
+      "operation_count": 9,
+      "overflow_group_count": 0,
+      "overflow_groups": [],
+      "page_index": 1,
+      "page_role": "body_text_page",
+      "protected_group_count": 2,
+      "uniform_font_update_count": 6,
+      "uniform_paragraph_font": {
+        "font_start": 7.83,
+        "source_font": 8.0,
+        "target_text_len": 53.0
+      }
+    },
+    {
+      "applied": false,
+      "layout_flow": "chart_metric_grid",
+      "page_index": 2,
+      "page_role": "chart_or_metric_page",
+      "reason": "page_profile_not_normal_flow_or_no_columns"
+    },
+    {
+      "applied": false,
+      "layout_flow": "visual_freeform",
+      "page_index": 3,
+      "page_role": "mixed_page",
+      "reason": "page_profile_not_normal_flow_or_no_columns"
+    },
+    {
+      "applied": true,
+      "column_count": 2,
+      "layout_flow": "multi_column_text",
+      "operation_count": 13,
+      "overflow_group_count": 0,
+      "overflow_groups": [],
+      "page_index": 4,
+      "page_role": "body_text_page",
+      "protected_group_count": 0,
+      "uniform_font_update_count": 11,
+      "uniform_paragraph_font": {
+        "font_start": 8.8,
+        "source_font": 9.0,
+        "target_text_len": 44.0
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 2,
+      "layout_flow": "multi_column_text",
+      "operation_count": 10,
+      "overflow_group_count": 0,
+      "overflow_groups": [],
+      "page_index": 5,
+      "page_role": "body_text_page",
+      "protected_group_count": 1,
+      "uniform_font_update_count": 8,
+      "uniform_paragraph_font": {
+        "font_start": 10.2,
+        "source_font": 15.0,
+        "target_text_len": 30.0
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 2,
+      "layout_flow": "multi_column_text",
+      "operation_count": 8,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c1",
+          "group_id": "p6_b0_0",
+          "target_bottom": 823.558
+        }
+      ],
+      "page_index": 6,
+      "page_role": "body_text_page",
+      "protected_group_count": 0,
+      "uniform_font_update_count": 7,
+      "uniform_paragraph_font": {
+        "font_start": 7.92,
+        "source_font": 9.0,
+        "target_text_len": 30.0
+      }
+    },
+    {
+      "applied": false,
+      "layout_flow": "chart_metric_grid",
+      "page_index": 7,
+      "page_role": "chart_or_metric_page",
+      "reason": "page_profile_not_normal_flow_or_no_columns"
+    },
+    {
+      "applied": true,
+      "column_count": 4,
+      "layout_flow": "multi_column_text",
+      "operation_count": 32,
+      "overflow_group_count": 0,
+      "overflow_groups": [],
+      "page_index": 8,
+      "page_role": "body_text_page",
+      "protected_group_count": 3,
+      "uniform_font_update_count": 33,
+      "uniform_paragraph_font": {
+        "font_start": 8.6,
+        "source_font": 9.405,
+        "target_text_len": 4.5
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 1,
+      "layout_flow": "single_column_text",
+      "operation_count": 9,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c0",
+          "group_id": "p9_b0_0",
+          "target_bottom": 824.692
+        }
+      ],
+      "page_index": 9,
+      "page_role": "body_text_page",
+      "protected_group_count": 3,
+      "uniform_font_update_count": 6,
+      "uniform_paragraph_font": {
+        "font_start": 8.8,
+        "source_font": 9.5,
+        "target_text_len": 119.5
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 3,
+      "layout_flow": "multi_column_text",
+      "operation_count": 5,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c2",
+          "group_id": "p10_b0_0",
+          "target_bottom": 822.507
+        }
+      ],
+      "page_index": 10,
+      "page_role": "body_text_page",
+      "protected_group_count": 1,
+      "uniform_font_update_count": 4,
+      "uniform_paragraph_font": {
+        "font_start": 7.105,
+        "source_font": 7.25,
+        "target_text_len": 20.5
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 1,
+      "layout_flow": "single_column_text",
+      "operation_count": 6,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c0",
+          "group_id": "p11_b0_0",
+          "target_bottom": 824.564
+        }
+      ],
+      "page_index": 11,
+      "page_role": "body_text_page",
+      "protected_group_count": 2,
+      "uniform_font_update_count": 6,
+      "uniform_paragraph_font": {
+        "font_start": 8.7,
+        "source_font": 9.5,
+        "target_text_len": 80.0
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 3,
+      "layout_flow": "multi_column_text",
+      "operation_count": 5,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c2",
+          "group_id": "p12_b0_0",
+          "target_bottom": 822.507
+        }
+      ],
+      "page_index": 12,
+      "page_role": "body_text_page",
+      "protected_group_count": 2,
+      "uniform_font_update_count": 4,
+      "uniform_paragraph_font": {
+        "font_start": 7.105,
+        "source_font": 7.25,
+        "target_text_len": 20.5
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 1,
+      "layout_flow": "single_column_text",
+      "operation_count": 9,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c0",
+          "group_id": "p13_b0_0",
+          "target_bottom": 824.692
+        }
+      ],
+      "page_index": 13,
+      "page_role": "body_text_page",
+      "protected_group_count": 2,
+      "uniform_font_update_count": 8,
+      "uniform_paragraph_font": {
+        "font_start": 8.8,
+        "source_font": 9.5,
+        "target_text_len": 142.0
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 2,
+      "layout_flow": "multi_column_text",
+      "operation_count": 9,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c1",
+          "group_id": "p14_b0_0",
+          "target_bottom": 824.692
+        }
+      ],
+      "page_index": 14,
+      "page_role": "body_text_page",
+      "protected_group_count": 1,
+      "uniform_font_update_count": 9,
+      "uniform_paragraph_font": {
+        "font_start": 8.8,
+        "source_font": 9.5,
+        "target_text_len": 135.5
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 1,
+      "layout_flow": "single_column_text",
+      "operation_count": 6,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c0",
+          "group_id": "p15_b0_0",
+          "target_bottom": 826.436
+        }
+      ],
+      "page_index": 15,
+      "page_role": "body_text_page",
+      "protected_group_count": 4,
+      "uniform_font_update_count": 5,
+      "uniform_paragraph_font": {
+        "font_start": 8.8,
+        "source_font": 9.5,
+        "target_text_len": 120.0
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 2,
+      "layout_flow": "multi_column_text",
+      "operation_count": 11,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c1",
+          "group_id": "p16_b0_0",
+          "target_bottom": 824.564
+        }
+      ],
+      "page_index": 16,
+      "page_role": "body_text_page",
+      "protected_group_count": 1,
+      "uniform_font_update_count": 10,
+      "uniform_paragraph_font": {
+        "font_start": 8.7,
+        "source_font": 9.5,
+        "target_text_len": 95.5
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 1,
+      "layout_flow": "single_column_text",
+      "operation_count": 10,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c0",
+          "group_id": "p17_b0_0",
+          "target_bottom": 826.436
+        }
+      ],
+      "page_index": 17,
+      "page_role": "body_text_page",
+      "protected_group_count": 2,
+      "uniform_font_update_count": 9,
+      "uniform_paragraph_font": {
+        "font_start": 8.8,
+        "source_font": 9.5,
+        "target_text_len": 78.0
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 2,
+      "layout_flow": "multi_column_text",
+      "operation_count": 7,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c1",
+          "group_id": "p18_b0_0",
+          "target_bottom": 825.621
+        }
+      ],
+      "page_index": 18,
+      "page_role": "body_text_page",
+      "protected_group_count": 0,
+      "uniform_font_update_count": 6,
+      "uniform_paragraph_font": {
+        "font_start": 9.52,
+        "source_font": 14.0,
+        "target_text_len": 8.5
+      }
+    },
+    {
+      "applied": true,
+      "column_count": 2,
+      "layout_flow": "multi_column_text",
+      "operation_count": 4,
+      "overflow_group_count": 1,
+      "overflow_groups": [
+        {
+          "bottom_limit": 820.843,
+          "column_id": "c0",
+          "group_id": "p19_b0_0",
+          "target_bottom": 822.823
+        }
+      ],
+      "page_index": 19,
+      "page_role": "mixed_page",
+      "protected_group_count": 1,
+      "uniform_font_update_count": 3,
+      "uniform_paragraph_font": {
+        "font_start": 7.35,
+        "source_font": 7.5,
+        "target_text_len": 15.0
+      }
+    }
+  ],
+  "source_layout_plan": "reports\\layout_plan.raw.json",
+  "summary": {
+    "applied_pages": 16,
+    "overflow_pages": 12,
+    "skipped_pages": 4,
+    "uniform_font_updates": 135
+  },
+  "tool": "apply_column_flow_elastic"
+}

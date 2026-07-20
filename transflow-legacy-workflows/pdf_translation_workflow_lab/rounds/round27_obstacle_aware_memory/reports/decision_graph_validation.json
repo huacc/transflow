@@ -1,0 +1,25 @@
+{
+  "checked_artifacts": [
+    "evidence_basket.json",
+    "quality_signal_ledger.json",
+    "problem_domain_buckets.json",
+    "triage_result.json",
+    "dispatch_result.json",
+    "decision_artifacts/repair_patch_0001.json",
+    "decision_artifacts/repair_patch_0002.json",
+    "repair_acceptance.json",
+    "repair_memory_ledger.json"
+  ],
+  "decision_graph_verdict": "PASS",
+  "dispatch_conflict_detected": false,
+  "failure_count": 0,
+  "failures": [],
+  "registry_capability_status": "partial",
+  "registry_default_repair_atom": "reduce_font_or_reflow",
+  "selected_failure_class": "text_fit_overflow",
+  "selected_problem_domain": "text-loading",
+  "tool": "validate_decision_graph",
+  "validator_scope": "phase_a_minimum",
+  "warning_count": 0,
+  "warnings": []
+}

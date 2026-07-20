@@ -1,0 +1,22 @@
+{
+  "schema_version": "transflow.p6-determinism/v1",
+  "approved_roles": ["development", "target"],
+  "runtime_baseline": "resources/manifests/runtime_baseline.json",
+  "exact_metrics": [
+    "page_identity",
+    "kernel_facts_hash",
+    "owner",
+    "patch_manifest_hash",
+    "preservation_failure_codes"
+  ],
+  "tolerances": {
+    "png_outside_allowed_changed_pixel_ratio_max": 0.0,
+    "pdf_page_count_difference_max": 0,
+    "pdf_geometry_difference_max": 0,
+    "pdf_feature_hash_difference_max": 0
+  },
+  "allowed_pdf_byte_differences": [
+    "producer-generated incremental xref offsets",
+    "producer-generated modification timestamp when present"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "transflow.runtime-baseline/v1",
+  "frozen_at": "2026-07-19T23:15:46+08:00",
+  "environment_roles": {
+    "development": "current_windows_host",
+    "target": "current_windows_host",
+    "co_located": true,
+    "decision_basis": "用户在目标服务器信息待确认后指示继续；本轮仅声明同一主机的两个验证角色"
+  },
+  "host": {
+    "os_family": "Windows",
+    "os_version": "10.0.26200",
+    "architecture": "AMD64",
+    "cpu": "Intel(R) Core(TM) Ultra 5 336H",
+    "logical_processors": 12,
+    "memory_bytes": 33840197632,
+    "filesystem": "NTFS",
+    "service_manager": "Windows Service Control Manager"
+  },
+  "python": {
+    "implementation": "CPython",
+    "version": "3.14.3",
+    "executable_sha256": "cce21c0e8710e304273e98ac4b2b0f5aceb639acbcd2343cbaa5c4e81619c45b",
+    "license_id": "PSF-2.0"
+  },
+  "pymupdf": {
+    "version": "1.28.0",
+    "wheel": "pymupdf-1.28.0-cp310-abi3-win_amd64.whl",
+    "wheel_sha256": "e01e90fd86abfeb37ceb921eddb951f988a11d45ff6ce6b7664f2039849068ec",
+    "module_sha256": "16929dab87b4e55c2b2cb1a9eb3ab947c6335c203edc31723af480cfa22903b5",
+    "direct_dependencies": [],
+    "license_expression": "AGPL-3.0-only OR LicenseRef-Artifex-Commercial",
+    "license_decision_id": "D-P1-001",
+    "license_status": "OWNER_ACCEPTED_OUTSIDE_TECHNICAL_GATE"
+  },
+  "lock": {
+    "path": "requirements.lock",
+    "pip_version": "26.1.2"
+  },
+  "unresolved_license_items": []
+}

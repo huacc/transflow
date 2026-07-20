@@ -1,0 +1,16 @@
+{
+  "schema_version": "transflow.gate-catalog/v1",
+  "gates": {
+    "TEST_PASS": [
+      {
+        "id": "INJECTED-SUCCESS",
+        "intent": "用真实零退出命令验证 Gate 成功路径",
+        "command": [
+          "{python}",
+          "-c",
+          "print('INJECTED_SUCCESS_EXIT_0')"
+        ]
+      }
+    ]
+  }
+}

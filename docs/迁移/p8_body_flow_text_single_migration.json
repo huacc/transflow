@@ -1,0 +1,49 @@
+{
+  "allowed_changes": [
+    "统一 PageToolbox 六阶段包装",
+    "TranslationPort 上移到 PageCoordinator",
+    "使用 G6 字体、Patch 和 Preservation 合同"
+  ],
+  "anti_overfit_passed": true,
+  "blind_passed": true,
+  "catalog_hash": "22e0a59e586d16c3b84f1894b7825fbfe39edaa743cb5707c0f058bd902f9b7e",
+  "code_hash": "07914b5513ba1d377179fe065683be2cb572848cea4db0aa1d734642be56be84",
+  "contract_passed": true,
+  "document_e2e_passed": true,
+  "equivalence_passed": true,
+  "evidence_hash": "8bf6c29427abde84ba5337528a4813fc24f5a7cf8eae0cc0741995bcf2cb823d",
+  "failure_passed": true,
+  "fallback": "PAGE_PASSTHROUGH",
+  "fallback_has_complete_pdf": true,
+  "fallback_has_page_outcome": true,
+  "fixture_refs": [
+    "tests/test_p8.py::body_flow_text_single",
+    "output/pdf/P8_first_batch_mixed_final.pdf"
+  ],
+  "font_hash": "af58ee3fa10bc0ab0d1fbed7b4ba7302dd22d19fe85b43d12e7f26cd57fbc042",
+  "gold_refs": [
+    "resources/evidence/p8/p8_acceptance_summary.json"
+  ],
+  "limitations": [
+    "V1 只领取页面中部单栏连续正文"
+  ],
+  "migration_differences": [
+    "删除叶内 Provider 调用",
+    "最终 PDF 从完整源副本回放 Patch",
+    "失败统一形成 PageOutcome 和页面透传"
+  ],
+  "new_evidence": true,
+  "original_state": "PASS",
+  "owner": "body.flow_text.single",
+  "route": "body.flow_text.single",
+  "schema_hash": "be5d02aa3a45c6ccfceebaa23cfb661e0bc319930d59a7aff4a22751855f6cd6",
+  "schema_version": "transflow.leaf-migration-evidence/v1",
+  "source_hash": "57557579c9c691d94fe6c817839e50ecf7a7d8ddea87a3ed03b977ab680abe57",
+  "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/single",
+  "target_toolbox_key": "body.flow_text.single",
+  "target_version": "1.0.0",
+  "threshold_hash": "059526d8efe01400928641c11db45cb17ee918b42f9053d518dc3f759dc953c0",
+  "threshold_refs": [
+    "resources/manifests/p8_leaf_thresholds.json"
+  ]
+}

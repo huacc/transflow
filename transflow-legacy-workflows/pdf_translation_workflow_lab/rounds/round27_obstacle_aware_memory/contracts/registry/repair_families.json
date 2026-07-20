@@ -1,0 +1,417 @@
+{
+  "_meta": {
+    "generated_from": [
+      "docs/设计/PDF_语义翻译回填_状态机与工具编排设计.md (v0.4 §7.3 default repair families, §8.2 problem-domain dispatch table, §8.3 failure-class to repair family table)"
+    ],
+    "single_source_of_truth": true,
+    "version": "v1",
+    "note": "repair_family is a v0.4 concept that does NOT exist in core contracts. All entries are status=proposed. They group core repair_atoms under a per-domain dispatch bucket. handles_failure_classes references failure_classes.json ids."
+  },
+  "repair_families": [
+    {
+      "id": "retranslate_or_patch_translation_unit",
+      "label_zh": "重译或补译翻译单元",
+      "problem_domain": "semantic-content",
+      "handles_failure_classes": [
+        "semantic_translation_authenticity_fail",
+        "semantic_coverage_fail",
+        "source_text_residue_fail",
+        "translation_segment_missing",
+        "placeholder_translation",
+        "pseudo_translation"
+      ],
+      "default_target_state": "S5_TranslationPlan",
+      "forbidden_actions": [
+        "treat a layout/visual failure as a retranslation trigger",
+        "invent translations",
+        "use placeholder or metadata-style pseudo translations"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "compact_translation_variant",
+      "label_zh": "紧凑译文变体",
+      "problem_domain": "semantic-content",
+      "handles_failure_classes": [
+        "table_text_legibility_fail",
+        "legend_label_alignment_fail",
+        "short_label_legibility_fail"
+      ],
+      "default_target_state": "S5_TranslationPlan",
+      "forbidden_actions": [
+        "produce compact variant when a layout-fit repair is the correct first step",
+        "hardcode abbreviations"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2"
+    },
+    {
+      "id": "rebuild_source_or_generation_linkage",
+      "label_zh": "重建源证据或生成链接",
+      "problem_domain": "process-evidence",
+      "handles_failure_classes": [
+        "source_relative_visual_baseline_fail",
+        "candidate_generation_fail",
+        "source_baseline_missing"
+      ],
+      "default_target_state": "S3_SourceExtract",
+      "forbidden_actions": [
+        "mask process evidence gaps with visual repair"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.3"
+    },
+    {
+      "id": "expand_or_reflow_slot",
+      "label_zh": "扩展或重排文本槽",
+      "problem_domain": "text-loading",
+      "handles_failure_classes": [
+        "text_fit_overflow",
+        "target_text_clipped",
+        "tiny_text_fallback",
+        "line_fragmentation",
+        "short_label_legibility_fail"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "shrink font as the first action",
+        "expand a single bbox without checking neighbors/obstacles"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3",
+      "known_regression_risk": "v0.4 §7.18: simple slot expansion pushes text into adjacent regions and worsens cross_slot_overlap (round25 real runs)"
+    },
+    {
+      "id": "body_flow_region_reflow",
+      "label_zh": "正文流式区域重排",
+      "problem_domain": "text-loading",
+      "handles_failure_classes": [
+        "line_fragmentation",
+        "body_flow_fallback_truncation",
+        "dense_page_body_band_fragmentation",
+        "body_paragraph_readability_fail"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "merge across visible source anchors",
+        "reflow constrained slots (table cells, legends, side navigation)"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2"
+    },
+    {
+      "id": "line_break_rebalance",
+      "label_zh": "换行重平衡",
+      "problem_domain": "text-loading",
+      "handles_failure_classes": [
+        "line_fragmentation"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "insert fixed newline between every source-wrapped line"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2"
+    },
+    {
+      "id": "restore_role_font_hierarchy",
+      "label_zh": "恢复角色字体层级",
+      "problem_domain": "font-hierarchy",
+      "handles_failure_classes": [
+        "font_hierarchy_ratio_mismatch",
+        "role_hierarchy_loss",
+        "heading_body_ratio_loss",
+        "text_color_hierarchy_regression",
+        "font_size_regression"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "use fixed point sizes or sample-page parameters",
+        "shrink body heavily to match hierarchy"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "reflow_before_shrink",
+      "label_zh": "先重排后缩字",
+      "problem_domain": "font-hierarchy",
+      "handles_failure_classes": [
+        "font_size_regression",
+        "metric_value_hierarchy_fail"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "shrink font before finding available space"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "obstacle_aware_reflow",
+      "label_zh": "障碍感知重排",
+      "problem_domain": "geometry-layout",
+      "handles_failure_classes": [
+        "cross_slot_overlap",
+        "insertion_collision_fail",
+        "reading_order_regression",
+        "unused_space_with_overflow"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "intrude image/table/header/footer obstacles",
+        "move regions without reading an obstacle graph"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §7.18, §8.2, §8.3",
+      "known_regression_risk": "v0.4 §7.18.1: proposed as the upgrade target because vertical_flow_relayout alone created new overlaps; obstacle graph / column-local reflow / protection-object awareness not yet implemented in core"
+    },
+    {
+      "id": "vertical_flow_relayout",
+      "label_zh": "纵向流式重排",
+      "problem_domain": "geometry-layout",
+      "handles_failure_classes": [
+        "cross_slot_overlap",
+        "paragraph_gap_collapse",
+        "unused_space_with_overflow"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "push whole page/role downward without obstacle awareness"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §7.18, §8.2, §8.3",
+      "known_regression_risk": "v0.4 §7.18.1: round24 applied 33 vertical_flow_relayout operations, overlap rose 70->92, blocking 80->102, loop REJECTED_ROLLBACK -> S_FAIL_QUALITY; moves text flow by page/role only with no obstacle graph or table/image/footer protection"
+    },
+    {
+      "id": "column_flow_rebalance",
+      "label_zh": "列流重平衡",
+      "problem_domain": "geometry-layout",
+      "handles_failure_classes": [
+        "cross_slot_overlap",
+        "reading_order_regression"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "cross column boundaries",
+        "break reading order"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2"
+    },
+    {
+      "id": "region_collision_layout_repair",
+      "label_zh": "区域碰撞布局修复",
+      "problem_domain": "geometry-layout",
+      "handles_failure_classes": [
+        "insertion_collision_fail"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "allow unsafe target-language reflow expansion on same-row panel labels"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §7.16"
+    },
+    {
+      "id": "table_region_reflow_or_preserve_table",
+      "label_zh": "表格区域重排或保表",
+      "problem_domain": "table-matrix",
+      "handles_failure_classes": [
+        "table_integrity_fail",
+        "matrix_diagram_integrity_fail",
+        "table_text_legibility_fail",
+        "table_header_misalignment",
+        "cell_text_collision",
+        "table_region_intrusion",
+        "numeric_column_alignment_fail",
+        "table_grid_or_cell_regression"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "treat table cells as ordinary body flow",
+        "merge rows across numeric columns"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "table_cell_text_fit",
+      "label_zh": "表格单元格文字适配",
+      "problem_domain": "table-matrix",
+      "handles_failure_classes": [
+        "table_text_legibility_fail",
+        "cell_text_collision"
+      ],
+      "default_target_state": "S7_GenerateCandidate",
+      "forbidden_actions": [
+        "break grid lines or numeric column alignment"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2"
+    },
+    {
+      "id": "table_header_alignment_repair",
+      "label_zh": "表头对齐修复",
+      "problem_domain": "table-matrix",
+      "handles_failure_classes": [
+        "table_header_misalignment",
+        "numeric_column_alignment_fail"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "detach header from its column group"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2"
+    },
+    {
+      "id": "protect_image_layer_or_overlay_text",
+      "label_zh": "保护图片层或浮层文字",
+      "problem_domain": "image-graphic-protection",
+      "handles_failure_classes": [
+        "image_color_integrity_fail",
+        "image_content_erased",
+        "floating_text_on_image_untranslated",
+        "text_image_collision_fail"
+      ],
+      "default_target_state": "S7_GenerateCandidate",
+      "forbidden_actions": [
+        "skip floating extractable text as if it were baked image text",
+        "erase or recolor image pixels"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "image_overlay_text_relayout",
+      "label_zh": "图片浮层文字重排",
+      "problem_domain": "image-graphic-protection",
+      "handles_failure_classes": [
+        "text_over_image_collision",
+        "icon_label_misalignment"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "occlude the image subject with relocated text"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §7.16, §8.2"
+    },
+    {
+      "id": "background_resample_or_redaction_limit",
+      "label_zh": "背景重采样或限制擦除",
+      "problem_domain": "background-erasure",
+      "handles_failure_classes": [
+        "background_delta_fail",
+        "background_residue_artifact",
+        "redaction_fill_mismatch",
+        "wide_line_residue",
+        "text_image_background_delta"
+      ],
+      "default_target_state": "S7_GenerateCandidate",
+      "forbidden_actions": [
+        "cover complex backgrounds with a fixed solid color",
+        "erase image/table lines"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "redaction_scope_shrink",
+      "label_zh": "擦除范围收缩",
+      "problem_domain": "background-erasure",
+      "handles_failure_classes": [
+        "background_residue_artifact",
+        "redaction_fill_mismatch"
+      ],
+      "default_target_state": "S7_GenerateCandidate",
+      "forbidden_actions": [
+        "lose text by over-shrinking redaction"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2"
+    },
+    {
+      "id": "chart_label_legend_relayout",
+      "label_zh": "图表标签图例重排",
+      "problem_domain": "chart-legend",
+      "handles_failure_classes": [
+        "chart_integrity_fail",
+        "legend_label_alignment_fail",
+        "legend_label_misalignment",
+        "chart_label_overlap"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "move labels without maintaining color binding"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "legend_swatch_label_binding",
+      "label_zh": "图例色块-标签绑定",
+      "problem_domain": "chart-legend",
+      "handles_failure_classes": [
+        "swatch_label_binding_loss"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "detach swatch color from its label"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "page_rhythm_rebalance",
+      "label_zh": "页面节奏重平衡",
+      "problem_domain": "page-rhythm",
+      "handles_failure_classes": [
+        "paragraph_density_mismatch",
+        "internal_paragraph_gap",
+        "single_dense_paragraph",
+        "visual_similarity_fail",
+        "page_density_imbalance",
+        "visual_rhythm_loss"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "break P0/P1 hard constraints for the sake of rhythm"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "section_spacing_reflow",
+      "label_zh": "章节间距重排",
+      "problem_domain": "page-rhythm",
+      "handles_failure_classes": [
+        "section_spacing_regression"
+      ],
+      "default_target_state": "S6_LayoutPlan",
+      "forbidden_actions": [
+        "process rhythm before hard failures are resolved"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3"
+    },
+    {
+      "id": "fix_process_artifact_or_contract",
+      "label_zh": "修复流程产物或契约",
+      "problem_domain": "process-evidence",
+      "handles_failure_classes": [
+        "missing_artifact",
+        "schema_invalid",
+        "workspace_escape"
+      ],
+      "default_target_state": "Ax_AdaptiveChange",
+      "forbidden_actions": [
+        "run product repair while process evidence is missing"
+      ],
+      "status": "proposed",
+      "proposed_in": "v0.4 §7.3, §7.16"
+    }
+  ]
+}

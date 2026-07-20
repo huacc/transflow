@@ -1,0 +1,880 @@
+{
+  "_meta": {
+    "generated_from": [
+      "pdf_translation_workflow_core/contracts/page_type_repair_matrix.md (Repair Atoms table, all rows)",
+      "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py (EXECUTABLE_REPAIR_ATOMS set + build_policy_patch_operations)",
+      "pdf_translation_workflow_core/tools/repairs/plan_visual_region_repairs.py (gate->repair_atom routing)",
+      "docs/设计/PDF_语义翻译回填_状态机与工具编排设计.md (v0.4 §7.2.6 repair_atom_hint, §8.3 proposed atoms)"
+    ],
+    "single_source_of_truth": true,
+    "version": "v1",
+    "note": "wired_to_tool reflects disk reality. Atoms in repair_policy_patch.py EXECUTABLE_REPAIR_ATOMS produce real layout-policy operations via build_repair_patch.py->apply_repair_patch.py and are wired to repair_policy_patch.py. Atoms only routed by plan_visual_region_repairs.py are planning-only (no policy executor), wired_to_tool=plan_visual_region_repairs.py with capability_status=partial. Atoms with no executor are wired_to_tool=null. capability_status: full=has executor that changes policy; partial=planned/routed but no policy-level executor OR known regression risk; missing=no tool at all."
+  },
+  "repair_atoms": [
+    {
+      "id": "regenerate_D2_translation_without_meta_description",
+      "repair_family": "retranslate_or_patch_translation_unit",
+      "target_state": "S5_TranslationPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/materialize_d2_translation_batches.py",
+      "reads_evidence": [
+        "translation_units",
+        "semantic_translation_validation",
+        "forbidden_pattern_check"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L24 (semantic_translation_authenticity_fail row)"
+    },
+    {
+      "id": "regenerate_missing_D2_units",
+      "repair_family": "retranslate_or_patch_translation_unit",
+      "target_state": "S5_TranslationPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/assemble_semantic_translations.py",
+      "reads_evidence": [
+        "translation_units",
+        "unit_coverage",
+        "semantic_translation_validation"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L25 (semantic_coverage_fail row)"
+    },
+    {
+      "id": "rerun_source_extraction_or_generation_evidence_linkage",
+      "repair_family": "rebuild_source_or_generation_linkage",
+      "target_state": "S3_SourceExtract",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/probes/extract_pdf_structure.py",
+      "reads_evidence": [
+        "source_extraction",
+        "candidate_generation_evidence",
+        "unit_linkage",
+        "source_font_ratio"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L26 (source_relative_visual_baseline_fail row)"
+    },
+    {
+      "id": "retranslate_or_cover_residue",
+      "repair_family": "retranslate_or_patch_translation_unit",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py",
+      "reads_evidence": [
+        "source_text_residue",
+        "translation_units",
+        "redactions"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L27 (source_text_residue_fail row)"
+    },
+    {
+      "id": "regenerate_semantic_backfill",
+      "repair_family": "rebuild_source_or_generation_linkage",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py",
+      "reads_evidence": [
+        "candidate_generation_evidence",
+        "redactions",
+        "insertions",
+        "unit_linkage"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L28 (candidate_generation_fail row)"
+    },
+    {
+      "id": "reduce_font_or_reflow",
+      "repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "insertions",
+        "region_bbox",
+        "source_font_ratio",
+        "text_area_ratio"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "generic font-reduce/reflow atom named in matrix but not in EXECUTABLE_REPAIR_ATOMS; policy executor covers specific reflow atoms (body_flow_*, target_composition_body_reflow_repair) instead of this generic name",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L29 (text_fit_overflow row)"
+    },
+    {
+      "id": "constrained_slot_text_image_fit",
+      "repair_family": "expand_or_reflow_slot",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py",
+      "reads_evidence": [
+        "insertions",
+        "horizontal_compression_ratio",
+        "region_bbox",
+        "text_image_background_delta"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "generator-side constrained text-image fit; enabled by policy flag but relies on probing fallback and can still be visually unreadable per D7",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L29 (text_fit_overflow, constrained slot variant)"
+    },
+    {
+      "id": "split_region_at_source_separator",
+      "repair_family": "body_flow_region_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "source_block_ids",
+        "source_line_indexes",
+        "source_anchor_order",
+        "region_bbox"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "source-anchor splitting expressed via source_separator_policy in generator evidence but no dedicated policy-patch executor in EXECUTABLE_REPAIR_ATOMS",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L30 (source_anchor_order_mismatch row)"
+    },
+    {
+      "id": "textbox_probe_isolation_repair",
+      "repair_family": null,
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py",
+      "reads_evidence": [
+        "insertions",
+        "failed_probe_residue",
+        "candidate_generation_evidence"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L31 (failed_probe_residue row)"
+    },
+    {
+      "id": "body_flow_region_reflow",
+      "repair_family": "body_flow_region_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "whitespace_band",
+        "source_font_ratio",
+        "fragmentation_ratio",
+        "flow_grouping"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L32 (line_fragmentation row)"
+    },
+    {
+      "id": "body_flow_grouping",
+      "repair_family": "body_flow_region_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "y_gap",
+        "paragraph_gap_pt",
+        "source_font_ratio"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L33 (paragraph_density_mismatch row)"
+    },
+    {
+      "id": "font_size_and_region_density_rebalance",
+      "repair_family": "page_rhythm_rebalance",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "source_font_ratio",
+        "blank_area_delta",
+        "paragraph_gap_pt"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L33 (paragraph_density_mismatch row, alternate atom)"
+    },
+    {
+      "id": "body_flow_line_joining_or_line_height_adjust",
+      "repair_family": "line_break_rebalance",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "y_gap",
+        "line_joiner",
+        "paragraph_separator",
+        "region_bbox"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L34 (internal_paragraph_gap row)"
+    },
+    {
+      "id": "body_flow_paragraph_gap_rebalance",
+      "repair_family": "page_rhythm_rebalance",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "y_gap",
+        "paragraph_gap_pt",
+        "region_bbox"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L35 (single_dense_paragraph row)"
+    },
+    {
+      "id": "short_continuation_and_reflow_frame_repair",
+      "repair_family": "body_flow_region_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "min_continuation_width_page_ratio",
+        "whitespace_band",
+        "source_font_ratio"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L36 (body_flow_fallback_truncation row)"
+    },
+    {
+      "id": "dense_page_body_band_flow_repair",
+      "repair_family": "body_flow_region_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "allow_dense_page_body_below_y_ratio",
+        "page_type_guess",
+        "source_font_ratio"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L37 (dense_page_body_band_fragmentation row)"
+    },
+    {
+      "id": "role_font_profile_or_region_classification",
+      "repair_family": "restore_role_font_hierarchy",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "source_font_ratio",
+        "font_hierarchy",
+        "role_gate_status",
+        "region_bbox"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "role/font profile classification is expressed in layout_policy/role_plan planners but has no dedicated policy-patch executor in EXECUTABLE_REPAIR_ATOMS",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L38 (font_hierarchy_ratio_mismatch row)"
+    },
+    {
+      "id": "metric_value_font_hierarchy_repair",
+      "repair_family": "reflow_before_shrink",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "source_font_ratio",
+        "metric_value.output_to_source_font_ratio",
+        "font_hierarchy",
+        "region_bbox"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L39 (metric_value_hierarchy_fail row)"
+    },
+    {
+      "id": "heading_frame_fit_or_short_title_variant",
+      "repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "whitespace_band",
+        "source_font_ratio",
+        "role_gate_status"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L40 (hero_banner_text_readability_fail row)"
+    },
+    {
+      "id": "heading_font_fit_curve_repair",
+      "repair_family": "restore_role_font_hierarchy",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "source_font_ratio",
+        "font_hierarchy.large_to_body_ratio",
+        "region_bbox"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L41 (title_readability_fail row)"
+    },
+    {
+      "id": "decorative_numeric_merge_repair",
+      "repair_family": null,
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py",
+      "reads_evidence": [
+        "region_bbox",
+        "source_font_ratio",
+        "neighbor_graph",
+        "decorative_numeric_merge_repair_count"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L42 (decorative_numeric_merge_bbox_fail row)"
+    },
+    {
+      "id": "target_composition_body_reflow_repair",
+      "repair_family": "body_flow_region_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "whitespace_band",
+        "source_font_ratio",
+        "body_band",
+        "overlap_guard"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "v0.4 §7.18.2: target-composition/expand reflow widens fluid body frames but simple expansion has pushed text into adjacent regions (cross_slot_overlap regression) without an obstacle graph",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L43 (body_paragraph_readability_fail row)"
+    },
+    {
+      "id": "top_lead_body_reflow_policy_repair",
+      "repair_family": "body_flow_region_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "region_bbox",
+        "page_type_guess",
+        "source_font_ratio",
+        "hard_disable_page_type_guesses"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "top-lead-body exception is policy-expressed but has no dedicated policy-patch executor in EXECUTABLE_REPAIR_ATOMS",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L44 (top_lead_body_reflow_fail row)"
+    },
+    {
+      "id": "constrained_slot_layout_fit_repair",
+      "repair_family": "table_cell_text_fit",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "horizontal_compression_ratio",
+        "source_font_ratio",
+        "text_image_background_delta"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L45,L47,L48 (table_text_legibility_fail / legend_label_alignment_fail / short_label_legibility_fail rows)"
+    },
+    {
+      "id": "footnote_fit_curve_repair",
+      "repair_family": "restore_role_font_hierarchy",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "source_font_ratio",
+        "font_hierarchy.small_to_body_ratio",
+        "region_bbox"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L46 (footnote_readability_fail row)"
+    },
+    {
+      "id": "expandable_text_slot_reflow_repair",
+      "repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "whitespace_band",
+        "source_anchor_bbox",
+        "obstacle_graph",
+        "expandable_text_slot_profile"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "v0.4 §7.18.2: expandable-slot/expand_or_reflow_slot widened labels but simple expansion without full obstacle-graph awareness pushed neighbors and grew cross_slot_overlap in round25",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L48 (short_label_legibility_fail row)"
+    },
+    {
+      "id": "side_navigation_rotated_image_repair",
+      "repair_family": null,
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "sidebar_draw_mode",
+        "role_gate_status"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L49 (sidebar_navigation_legibility_fail row)"
+    },
+    {
+      "id": "rotated_horizontal_text_image_draw_mode",
+      "repair_family": null,
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/generate_semantic_backfill.py",
+      "reads_evidence": [
+        "region_bbox",
+        "sidebar_draw_mode",
+        "sidebar_glyph_orientation"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "rotated-horizontal draw mode is a generator draw_mode (vertical_nav) and policy flag, not a policy-patch executable atom in EXECUTABLE_REPAIR_ATOMS",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L50 (sidebar_glyph_orientation_fail row)"
+    },
+    {
+      "id": "side_nav_group_writing_mode_policy",
+      "repair_family": null,
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "region_bbox",
+        "sidebar_orientation_group_consistency",
+        "sidebar_draw_mode"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "group writing-mode consistency is contract-defined but has no dedicated policy-patch executor",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L51 (side_nav_group_consistency_fail row)"
+    },
+    {
+      "id": "event_card_local_fit_repair",
+      "repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "region_bbox",
+        "neighbor_graph",
+        "source_font_ratio",
+        "role_gate_status"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L52 (event_card_readability_fail row)"
+    },
+    {
+      "id": "image_redaction_exclusion_repair",
+      "repair_family": "protect_image_layer_or_overlay_text",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/plan_visual_region_repairs.py",
+      "reads_evidence": [
+        "image_bbox_overlap",
+        "source_image_count",
+        "output_image_count",
+        "image_overlay_background_decision",
+        "mean_rgb_delta"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "routed by plan_visual_region_repairs.py for image_color_integrity but NOT in EXECUTABLE_REPAIR_ATOMS, so build_repair_patch/apply_repair_patch cannot execute it as a layout-policy operation; requires generator-side handling",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L53 (image_color_integrity_fail row)"
+    },
+    {
+      "id": "background_fill_resample",
+      "repair_family": "background_resample_or_redaction_limit",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/plan_visual_region_repairs.py",
+      "reads_evidence": [
+        "background_delta",
+        "redactions.fill_color",
+        "outside_ring_median_pixel_cluster"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "routed by plan_visual_region_repairs.py for background_delta but not in EXECUTABLE_REPAIR_ATOMS; executed generator-side, not via layout-policy patch",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L54 (background_delta_fail row)"
+    },
+    {
+      "id": "background_residue_fill_resample",
+      "repair_family": "background_resample_or_redaction_limit",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/plan_visual_region_repairs.py",
+      "reads_evidence": [
+        "inner_background_delta",
+        "redaction_metrics",
+        "wide_line_patch_risk",
+        "background_cover_metrics",
+        "text_image_background_delta"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "routed by plan_visual_region_repairs.py for background_residue but not in EXECUTABLE_REPAIR_ATOMS; executed generator-side via background_covers, not via layout-policy patch",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L55 (background_residue_artifact row)"
+    },
+    {
+      "id": "region_collision_layout_repair",
+      "repair_family": "region_collision_layout_repair",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/plan_visual_region_repairs.py",
+      "reads_evidence": [
+        "insertion_collision.overlap_ratio_of_smaller",
+        "region_bbox",
+        "neighbor_graph",
+        "min_source_width_page_ratio_for_reflow"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "routed by plan_visual_region_repairs.py for insertion_collision but not in EXECUTABLE_REPAIR_ATOMS; no obstacle-graph-aware policy executor yet",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L56 (insertion_collision_fail row)"
+    },
+    {
+      "id": "avoid_region_reflow",
+      "repair_family": "image_overlay_text_relayout",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "image_bbox_overlap",
+        "region_bbox",
+        "neighbor_graph"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "named in matrix for text_image_collision but no executor in either repair tool",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L57 (text_image_collision_fail row)"
+    },
+    {
+      "id": "visual_similarity_targeted_repair",
+      "repair_family": "page_rhythm_rebalance",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "visual_similarity",
+        "region_bbox",
+        "role_gate_status"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "matrix defines it as a D7 decomposition step into concrete gate evidence, not a single executable atom",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L58 (visual_similarity_fail row)"
+    },
+    {
+      "id": "table_cell_variant_or_grid_preserve_repair",
+      "repair_family": "table_region_reflow_or_preserve_table",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "table_grid",
+        "cell_bbox",
+        "region_bbox",
+        "role_gate_status"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "no grid/cell-specific validator or executor exists; table_integrity is uncovered automation (product_quality_contract.md)",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L59 (table_integrity_fail row)"
+    },
+    {
+      "id": "matrix_diagram_table_cell_preserve_repair",
+      "repair_family": "table_region_reflow_or_preserve_table",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "page_type_guess",
+        "region_kind",
+        "generation_status",
+        "hard_disable_page_type_guesses"
+      ],
+      "capability_status": "full",
+      "known_regression_risk": null,
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L60 (matrix_diagram_integrity_fail row)"
+    },
+    {
+      "id": "chart_region_preserve_or_label_reflow",
+      "repair_family": "chart_label_legend_relayout",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "chart_region_bbox",
+        "legend_label_bbox",
+        "swatch_color",
+        "role_gate_status"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "no chart-region-specific validator or executor exists; chart_integrity is uncovered automation (product_quality_contract.md)",
+      "status": "core_implemented",
+      "source_ref": "page_type_repair_matrix.md L61 (chart_integrity_fail row)"
+    },
+    {
+      "id": "compact_translation_variant",
+      "repair_family": "compact_translation_variant",
+      "target_state": "S5_TranslationPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/generators/materialize_d2_translation_batches.py",
+      "reads_evidence": [
+        "layout_variants",
+        "layout_risk",
+        "translation_units"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "v0.4 §8.3 proposed atom; D2 layout_variants exist in contract but compact-variant repair is not wired as a standalone repair executor",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.3",
+      "source_ref": "v0.4 §8.3 (semantic/content dispatch row)"
+    },
+    {
+      "id": "obstacle_aware_reflow",
+      "repair_family": "obstacle_aware_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "tools/repairs/obstacle_aware_reflow.py",
+      "reads_evidence": [
+        "quality_signals.overlap_signals",
+        "layout_plan.groups",
+        "page_rect",
+        "role",
+        "region_bbox"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "Round27 implements same-column lower-flow movement from current-run overlap signals. It is executable, but still partial because it does not yet build a full obstacle graph with image/table/whitespace-band optimization.",
+      "status": "round27_partial_executor",
+      "proposed_in": "v0.4 §7.18, §8.3",
+      "source_ref": "v0.4 §8.2, §8.3 (geometry/layout dispatch rows)"
+    },
+    {
+      "id": "vertical_flow_relayout",
+      "repair_family": "vertical_flow_relayout",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "region_bbox",
+        "column_band",
+        "y_gap"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "v0.4 §7.18.1: round24 ran 33 vertical_flow_relayout operations; overlap 70->92, blocking 80->102, REJECTED_ROLLBACK, S_FAIL_QUALITY. Moves flow by page/role only, no obstacle graph, creates new overlaps",
+      "status": "proposed",
+      "proposed_in": "v0.4 §7.18, §8.3",
+      "source_ref": "v0.4 §8.3 (geometry/layout dispatch row); real round24 evidence §7.18.1"
+    },
+    {
+      "id": "column_flow_rebalance",
+      "repair_family": "column_flow_rebalance",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "column_band",
+        "neighbor_graph",
+        "region_bbox",
+        "reading_order"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §7.16 proposed atom; no core executor",
+      "status": "proposed",
+      "proposed_in": "v0.4 §7.16, §8.2",
+      "source_ref": "v0.4 §7.16, §8.2 (geometry/layout dispatch rows)"
+    },
+    {
+      "id": "table_region_reflow_or_preserve_table",
+      "repair_family": "table_region_reflow_or_preserve_table",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "table_grid",
+        "cell_bbox",
+        "page_type_guess",
+        "region_kind"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §8.2/§8.3 proposed family-atom; only matrix_diagram_table_cell_preserve_repair is executable, full table grid reflow/preserve has no executor",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3",
+      "source_ref": "v0.4 §8.2, §8.3 (table/matrix dispatch rows)"
+    },
+    {
+      "id": "table_cell_text_fit",
+      "repair_family": "table_cell_text_fit",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "cell_bbox",
+        "horizontal_compression_ratio",
+        "source_font_ratio"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "v0.4 §8.2 proposed; core covers this via constrained_slot_layout_fit_repair (executable), the distinct table_cell_text_fit atom name is not itself in EXECUTABLE_REPAIR_ATOMS",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2",
+      "source_ref": "v0.4 §8.2 (table/matrix dispatch row)"
+    },
+    {
+      "id": "table_header_alignment_repair",
+      "repair_family": "table_header_alignment_repair",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "table_grid",
+        "cell_bbox",
+        "numeric_column_alignment"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §8.2 proposed; no core executor",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2",
+      "source_ref": "v0.4 §8.2 (table/matrix dispatch row)"
+    },
+    {
+      "id": "protect_image_layer_or_overlay_text",
+      "repair_family": "protect_image_layer_or_overlay_text",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "image_bbox_overlap",
+        "text_layer_vs_image_layer",
+        "crop_diff",
+        "image_overlay_background_decision"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "v0.4 §8.2/§8.3 proposed family-atom; generator protects image backgrounds but there is no distinct policy-patch executor for this atom name",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3",
+      "source_ref": "v0.4 §8.2, §8.3 (image/graphic protection dispatch rows)"
+    },
+    {
+      "id": "image_overlay_text_relayout",
+      "repair_family": "image_overlay_text_relayout",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "image_bbox_overlap",
+        "region_bbox",
+        "neighbor_graph",
+        "crop_diff"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §7.16 proposed atom; no core executor",
+      "status": "proposed",
+      "proposed_in": "v0.4 §7.16, §8.2",
+      "source_ref": "v0.4 §7.16, §8.2 (image/graphic protection dispatch rows)"
+    },
+    {
+      "id": "redaction_scope_shrink",
+      "repair_family": "redaction_scope_shrink",
+      "target_state": "S7_GenerateCandidate",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "redaction_metrics",
+        "redaction_bbox",
+        "background_sample"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §8.2 proposed atom; no core executor distinct from generator redaction logic",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2",
+      "source_ref": "v0.4 §8.2 (background/erasure dispatch row)"
+    },
+    {
+      "id": "chart_label_legend_relayout",
+      "repair_family": "chart_label_legend_relayout",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "chart_region_bbox",
+        "legend_label_bbox",
+        "swatch_color",
+        "neighbor_graph"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §8.2/§8.3 proposed family-atom; no chart-specific executor exists (chart_integrity uncovered)",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3",
+      "source_ref": "v0.4 §8.2, §8.3 (chart/legend dispatch rows)"
+    },
+    {
+      "id": "legend_swatch_label_binding",
+      "repair_family": "legend_swatch_label_binding",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "swatch_color",
+        "legend_label_bbox",
+        "swatch_label_proximity"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §8.2/§8.3 proposed atom; no core executor",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3",
+      "source_ref": "v0.4 §8.2, §8.3 (chart/legend dispatch rows)"
+    },
+    {
+      "id": "page_rhythm_rebalance",
+      "repair_family": "page_rhythm_rebalance",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "page_density",
+        "whitespace_band",
+        "paragraph_gap_pt",
+        "role_rhythm"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §8.2/§8.3 proposed family-atom; specific rhythm atoms (body_flow_paragraph_gap_rebalance, font_size_and_region_density_rebalance) are executable, but a page-level rhythm rebalancer is not",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3",
+      "source_ref": "v0.4 §8.2, §8.3 (page rhythm dispatch rows)"
+    },
+    {
+      "id": "section_spacing_reflow",
+      "repair_family": "section_spacing_reflow",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": null,
+      "reads_evidence": [
+        "paragraph_gap_pt",
+        "whitespace_band",
+        "region_bbox"
+      ],
+      "capability_status": "missing",
+      "known_regression_risk": "v0.4 §8.2/§8.3 proposed atom; no core executor",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2, §8.3",
+      "source_ref": "v0.4 §8.2, §8.3 (page rhythm dispatch rows)"
+    },
+    {
+      "id": "line_break_rebalance",
+      "repair_family": "line_break_rebalance",
+      "target_state": "S6_LayoutPlan",
+      "wired_to_tool": "pdf_translation_workflow_core/tools/repairs/repair_policy_patch.py",
+      "reads_evidence": [
+        "line_joiner",
+        "y_gap",
+        "paragraph_separator",
+        "region_bbox"
+      ],
+      "capability_status": "partial",
+      "known_regression_risk": "v0.4 §8.2 proposed atom; core covers it via body_flow_line_joining_or_line_height_adjust (executable), the distinct line_break_rebalance name is not itself in EXECUTABLE_REPAIR_ATOMS",
+      "status": "proposed",
+      "proposed_in": "v0.4 §8.2",
+      "source_ref": "v0.4 §8.2 (text loading dispatch row)"
+    }
+  ]
+}

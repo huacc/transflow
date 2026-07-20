@@ -1,0 +1,210 @@
+{
+  "_meta": {
+    "generated_from": [
+      "docs/设计/PDF_语义翻译回填_状态机与工具编排设计.md (v0.4 §7.3, §7.5, §7.7, §7.16)",
+      "pdf_translation_workflow_core/contracts/page_type_repair_matrix.md",
+      "pdf_translation_workflow_core/contracts/product_quality_contract.md"
+    ],
+    "single_source_of_truth": true,
+    "version": "v1",
+    "note": "Ten problem domains are a v0.4 (proposed) concept: core contracts have no problem_domain field yet. Each failure_class in failure_classes.json is assigned to exactly one domain here. label_zh is the v0.4 Chinese name; id is the authoritative English kebab id."
+  },
+  "problem_domains": [
+    {
+      "id": "process-evidence",
+      "label_zh": "流程/证据类",
+      "description": "Missing state trace, tool log, render evidence, workspace-boundary escape, or missing candidate generation evidence. Evidence chain is untrusted so the product cannot be judged.",
+      "default_severity_bias": "P0",
+      "typical_failure_classes": [
+        "candidate_generation_fail",
+        "source_relative_visual_baseline_fail",
+        "missing_artifact",
+        "schema_invalid",
+        "workspace_escape",
+        "source_baseline_missing",
+        "page_count_fail",
+        "page_geometry_fail"
+      ],
+      "judge_first_mechanism": "schema/path/log rule check",
+      "judge_second_mechanism": "none",
+      "model_may_adjudicate": false,
+      "priority": 0
+    },
+    {
+      "id": "semantic-content",
+      "label_zh": "语义/内容类",
+      "description": "Missing translation, placeholder, pseudo translation, dropped text unit, or insufficient coverage. Not a layout problem.",
+      "default_severity_bias": "P1",
+      "typical_failure_classes": [
+        "semantic_translation_authenticity_fail",
+        "semantic_coverage_fail",
+        "source_text_residue_fail",
+        "translation_segment_missing",
+        "placeholder_translation",
+        "pseudo_translation"
+      ],
+      "judge_first_mechanism": "coverage and placeholder rule check",
+      "judge_second_mechanism": "semantic model adjudication",
+      "model_may_adjudicate": true,
+      "priority": 1
+    },
+    {
+      "id": "text-loading",
+      "label_zh": "文字装载类",
+      "description": "Text overflow, truncation, line fragmentation, over-short lines, or body copy shrunk to tiny fonts.",
+      "default_severity_bias": "P1",
+      "typical_failure_classes": [
+        "text_fit_overflow",
+        "line_fragmentation",
+        "body_flow_fallback_truncation",
+        "dense_page_body_band_fragmentation",
+        "body_paragraph_readability_fail",
+        "short_label_legibility_fail",
+        "event_card_readability_fail",
+        "failed_probe_residue",
+        "target_text_clipped",
+        "tiny_text_fallback"
+      ],
+      "judge_first_mechanism": "fit/overflow/line metric",
+      "judge_second_mechanism": "source-vs-output crop comparison",
+      "model_may_adjudicate": true,
+      "priority": 3
+    },
+    {
+      "id": "font-hierarchy",
+      "label_zh": "字体层级类",
+      "description": "Title does not look like a title, body too small, footnote too large, role-relative size ratios distorted, emphasis/color hierarchy lost.",
+      "default_severity_bias": "P1",
+      "typical_failure_classes": [
+        "font_hierarchy_ratio_mismatch",
+        "metric_value_hierarchy_fail",
+        "hero_banner_text_readability_fail",
+        "title_readability_fail",
+        "footnote_readability_fail",
+        "font_size_regression",
+        "role_hierarchy_loss",
+        "heading_body_ratio_loss",
+        "text_color_hierarchy_regression"
+      ],
+      "judge_first_mechanism": "role-relative font ratio",
+      "judge_second_mechanism": "source-vs-output visual hierarchy comparison",
+      "model_may_adjudicate": true,
+      "priority": 3
+    },
+    {
+      "id": "geometry-layout",
+      "label_zh": "几何/布局类",
+      "description": "Region overlap, abnormal paragraph spacing, unused whitespace, anchor drift, reading-order chaos.",
+      "default_severity_bias": "P1",
+      "typical_failure_classes": [
+        "insertion_collision_fail",
+        "source_anchor_order_mismatch",
+        "decorative_numeric_merge_bbox_fail",
+        "top_lead_body_reflow_fail",
+        "sidebar_navigation_legibility_fail",
+        "sidebar_glyph_orientation_fail",
+        "side_nav_group_consistency_fail",
+        "sidebar_orientation_fail",
+        "cross_slot_overlap",
+        "unused_space_with_overflow",
+        "paragraph_gap_collapse",
+        "reading_order_regression"
+      ],
+      "judge_first_mechanism": "collision and spacing graph",
+      "judge_second_mechanism": "page density / reading order",
+      "model_may_adjudicate": true,
+      "priority": 3
+    },
+    {
+      "id": "table-matrix",
+      "label_zh": "表格/矩阵类",
+      "description": "Header disorder, broken column widths, misaligned numbers, grid lines crossing glyphs, unreadable cell text, matrix/table-diagram body-flow merge.",
+      "default_severity_bias": "P1",
+      "typical_failure_classes": [
+        "table_text_legibility_fail",
+        "table_integrity_fail",
+        "matrix_diagram_integrity_fail",
+        "table_header_misalignment",
+        "cell_text_collision",
+        "table_region_intrusion",
+        "numeric_column_alignment_fail",
+        "table_grid_or_cell_regression"
+      ],
+      "judge_first_mechanism": "grid/cell/line detection",
+      "judge_second_mechanism": "table crop comparison",
+      "model_may_adjudicate": true,
+      "priority": 2
+    },
+    {
+      "id": "image-graphic-protection",
+      "label_zh": "图片/图形保护类",
+      "description": "Image erased, overlay text misclassified as image text, icon/legend displaced, photo-baked text replaced.",
+      "default_severity_bias": "P1",
+      "typical_failure_classes": [
+        "image_color_integrity_fail",
+        "text_image_collision_fail",
+        "image_content_erased",
+        "floating_text_on_image_untranslated",
+        "text_over_image_collision",
+        "icon_label_misalignment"
+      ],
+      "judge_first_mechanism": "image/text layer separation",
+      "judge_second_mechanism": "crop diff",
+      "model_may_adjudicate": true,
+      "priority": 2
+    },
+    {
+      "id": "background-erasure",
+      "label_zh": "背景/擦除类",
+      "description": "Redaction white blocks, inconsistent background color, residual colored bands, redaction damaging gradients or photos.",
+      "default_severity_bias": "P1",
+      "typical_failure_classes": [
+        "background_delta_fail",
+        "background_residue_artifact",
+        "redaction_fill_mismatch",
+        "wide_line_residue",
+        "text_image_background_delta"
+      ],
+      "judge_first_mechanism": "pixel diff / background sampling",
+      "judge_second_mechanism": "crop diff",
+      "model_may_adjudicate": true,
+      "priority": 2
+    },
+    {
+      "id": "chart-legend",
+      "label_zh": "图表/图例类",
+      "description": "Pie label misplacement, legend misalignment, color-to-label decoupling, chart labels occluding graphics.",
+      "default_severity_bias": "P2",
+      "typical_failure_classes": [
+        "legend_label_alignment_fail",
+        "chart_integrity_fail",
+        "legend_label_misalignment",
+        "swatch_label_binding_loss",
+        "chart_label_overlap"
+      ],
+      "judge_first_mechanism": "color-label binding check",
+      "judge_second_mechanism": "swatch/label proximity",
+      "model_may_adjudicate": true,
+      "priority": 4
+    },
+    {
+      "id": "page-rhythm",
+      "label_zh": "页面节奏/审美类",
+      "description": "Paragraphs too dense or too sparse, crowded top with empty bottom, disproportionate title/body ratio, overall visual similarity mismatch.",
+      "default_severity_bias": "P2",
+      "typical_failure_classes": [
+        "paragraph_density_mismatch",
+        "internal_paragraph_gap",
+        "single_dense_paragraph",
+        "visual_similarity_fail",
+        "page_density_imbalance",
+        "section_spacing_regression",
+        "visual_rhythm_loss"
+      ],
+      "judge_first_mechanism": "page density / white-space distribution metric",
+      "judge_second_mechanism": "aesthetic model adjudication",
+      "model_may_adjudicate": true,
+      "priority": 4
+    }
+  ]
+}

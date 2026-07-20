@@ -1,0 +1,101 @@
+{
+  "schema_version": "transflow.gate-report/v1",
+  "gate": "G1",
+  "started_at": "2026-07-19T23:39:21+08:00",
+  "finished_at": "2026-07-19T23:42:09+08:00",
+  "duration_ms": 168954,
+  "catalog": "resources/manifests/gate_catalog.json",
+  "conclusion": "PASS",
+  "steps": [
+    {
+      "step_id": "G1-STATIC",
+      "intent": "检查 P1 Python 文件的格式、导入和静态错误",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "return_code": 0,
+      "duration_ms": 139,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G1-TYPES",
+      "intent": "检查 P1 生产包和工程脚本的类型边界",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "return_code": 0,
+      "duration_ms": 309,
+      "stdout": "Success: no issues found in 12 source files\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G1-P0-REGRESSION",
+      "intent": "确认 P1 改动没有破坏已通过的 P0 施工基线",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_p0.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 38235,
+      "stdout": "...............                                                          [100%]\n15 passed in 37.62s\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G1-FONT-ASSETS",
+      "intent": "核对实际字体与许可证文件的冻结哈希",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.bootstrap_p1",
+        "--check"
+      ],
+      "return_code": 0,
+      "duration_ms": 177,
+      "stdout": "{\n  \"noto-sans-cjk-sc-regular:font\": true,\n  \"noto-sans-cjk-sc-regular:license\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G1-P1-TESTS",
+      "intent": "运行 P1.1 至 P1.4 的十五项真实验收测试",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p1.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 128703,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 15 items\n\ntests/test_p1.py::test_p1_1_t01_development_and_target_environment_inventories_are_comparable PASSED [  6%]\ntests/test_p1.py::test_p1_1_t02_frozen_pymupdf_opens_and_saves_minimal_pdf PASSED [ 13%]\ntests/test_p1.py::test_p1_1_t03_font_manifest_matches_real_files_and_licenses PASSED [ 20%]\ntests/test_p1.py::test_p1_2_t01_two_empty_venv_installs_have_identical_packages PASSED [ 26%]\ntests/test_p1.py::test_p1_2_t02_dependency_consistency_has_zero_errors PASSED [ 33%]\ntests/test_p1.py::test_p1_2_t03_forbidden_production_dependency_is_blocked PASSED [ 40%]\ntests/test_p1.py::test_p1_2_t04_isolated_import_has_no_cross_repository_visibility PASSED [ 46%]\ntests/test_p1.py::test_p1_3_t01_live_and_ready_succeed_with_reachable_real_stub PASSED [ 53%]\ntests/test_p1.py::test_p1_3_t02_font_missing_and_workspace_unwritable_are_not_ready PASSED [ 60%]\ntests/test_p1.py::test_p1_3_t03_unreachable_stub_is_not_ready_without_secret_leak PASSED [ 66%]\ntests/test_p1.py::test_p1_3_t04_committed_config_and_health_logs_have_zero_plaintext_secrets PASSED [ 73%]\ntests/test_p1.py::test_p1_4_t01_atomic_partial_fsync_rename_and_reread_hash_match PASSED [ 80%]\ntests/test_p1.py::test_p1_4_t02_different_filesystem_facts_reject_atomic_claim PASSED [ 86%]\ntests/test_p1.py::test_p1_4_t03_process_pool_opens_path_and_rejects_document PASSED [ 93%]\ntests/test_p1.py::test_p1_4_t04_registered_font_renders_cjk_latin_and_reports_missing_glyph PASSED [100%]\n\n======================= 15 passed in 127.99s (0:02:07) ========================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G1-BASELINE",
+      "intent": "裁决运行基线、依赖、配置、主机能力和许可决定",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p1",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 1390,
+      "stdout": "{\n  \"configuration\": [],\n  \"dependencies\": [],\n  \"host_smoke\": [],\n  \"open_license_decisions\": [],\n  \"runtime_baseline\": []\n}\n",
+      "stderr": "INFO transflow.p1.verify 调用运行基线核验，意图=阻止解释器、PDF 引擎和字体漂移\nINFO transflow.runtime.probes 调用字体探针，意图=验证受控字体清单 path=D:\\项目\\开源项目\\translation\\transflow\\resources\\manifests\\font_manifest.json\nINFO transflow.p1.verify 调用依赖核验，意图=阻止未锁版本、禁止包和跨仓库路径\nINFO transflow.p1.verify 调用配置核验，意图=验证无秘密模板与统一读取入口\nINFO transflow.runtime.config 调用配置读取，意图=构造健康探针运行参数 path=D:\\项目\\开源项目\\translation\\transflow\\config\\transflow.example.toml\nINFO transflow.p1.verify 调用主机 smoke，意图=验证后续 PDF 开发硬条件\nINFO transflow.runtime.probes 调用环境探针，意图=采集 P1.1 主机角色 role=development\nINFO transflow.runtime.probes 调用环境探针，意图=采集 P1.1 主机角色 role=target\nINFO transflow.runtime.probes 调用 PDF 探针，意图=验证创建保存和重开 path=D:\\项目\\开源项目\\translation\\transflow\\tmp\\p1-host-smoke\\minimal.pdf\nINFO transflow.runtime.probes 调用字体渲染探针，意图=验证 CJK/Latin/缺字 path=D:\\项目\\开源项目\\translation\\transflow\\resources\\fonts\\assets\\NotoSansCJKsc-Regular.otf\n"
+    }
+  ]
+}

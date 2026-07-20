@@ -1,0 +1,84 @@
+{
+  "schema_version": "transflow.preservation-support/v1",
+  "features": [
+    {
+      "name": "metadata",
+      "disposition": "VERIFY",
+      "detector": "document.metadata",
+      "validator": "stable_metadata_hash",
+      "fixture_id": "P6-F3-metadata"
+    },
+    {
+      "name": "bookmarks",
+      "disposition": "VERIFY",
+      "detector": "document.get_toc",
+      "validator": "stable_toc_hash",
+      "fixture_id": "P6-F3-bookmarks"
+    },
+    {
+      "name": "page_labels",
+      "disposition": "VERIFY",
+      "detector": "document.get_page_labels",
+      "validator": "stable_page_label_hash",
+      "fixture_id": "P6-F3-page-labels"
+    },
+    {
+      "name": "links",
+      "disposition": "VERIFY",
+      "detector": "page.get_links",
+      "validator": "stable_link_hash",
+      "fixture_id": "P6-F3-links"
+    },
+    {
+      "name": "annotations",
+      "disposition": "VERIFY",
+      "detector": "page.annots",
+      "validator": "stable_annotation_hash",
+      "fixture_id": "P6-F3-annotations"
+    },
+    {
+      "name": "forms",
+      "disposition": "VERIFY",
+      "detector": "page.widgets",
+      "validator": "stable_form_hash",
+      "fixture_id": "P6-F3-forms"
+    },
+    {
+      "name": "attachments",
+      "disposition": "VERIFY",
+      "detector": "document.embfile_names",
+      "validator": "stable_attachment_hash",
+      "fixture_id": "P6-F3-attachments"
+    },
+    {
+      "name": "digital_signatures",
+      "disposition": "PASSTHROUGH",
+      "detector": "signature_widgets",
+      "validator": "whole_source_byte_identity",
+      "fixture_id": "P6-F3-signature"
+    },
+    {
+      "name": "encryption",
+      "disposition": "PASSTHROUGH",
+      "detector": "document.needs_pass",
+      "validator": "whole_source_byte_identity",
+      "fixture_id": "P6-F3-encrypted"
+    },
+    {
+      "name": "structured_tags",
+      "disposition": "PASSTHROUGH",
+      "detector": "catalog_key",
+      "validator": "whole_source_byte_identity",
+      "fixture_id": "P6-F3-struct-tree",
+      "catalog_keys": ["StructTreeRoot"]
+    },
+    {
+      "name": "unknown_critical",
+      "disposition": "PASSTHROUGH",
+      "detector": "catalog_key",
+      "validator": "whole_source_byte_identity",
+      "fixture_id": "P6-F3-unknown-critical",
+      "catalog_keys": ["TransflowCritical"]
+    }
+  ]
+}

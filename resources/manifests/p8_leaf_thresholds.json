@@ -1,0 +1,29 @@
+{
+  "chart": {
+    "fallback_completion_rate": 1.0,
+    "minimum_real_anonymous_documents": 6,
+    "ocr_calls": 0,
+    "protected_visual_modifications": 0,
+    "severe_owner_violations": 0
+  },
+  "diagram": {
+    "fallback_completion_rate": 1.0,
+    "minimum_real_anonymous_documents": 6,
+    "protected_visual_modifications": 0,
+    "severe_owner_violations": 0
+  },
+  "schema_version": "transflow.p8-leaf-thresholds/v1",
+  "single": {
+    "document_completion_rate": 1.0,
+    "maximum_repair_rounds": 1,
+    "protected_object_modifications": 0,
+    "sample_identity_branches": 0
+  },
+  "visual_only": {
+    "minimum_contract_cases": 5,
+    "ocr_calls": 0,
+    "patch_operations": 0,
+    "translation_calls": 0,
+    "visual_object_modifications": 0
+  }
+}

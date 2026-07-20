@@ -1,0 +1,93 @@
+{
+  "schema_version": "transflow.gate-report/v1",
+  "gate": "G0",
+  "started_at": "2026-07-19T22:25:00+08:00",
+  "finished_at": "2026-07-19T22:25:47+08:00",
+  "duration_ms": 47293,
+  "catalog": "resources/manifests/gate_catalog.json",
+  "conclusion": "PASS",
+  "steps": [
+    {
+      "step_id": "G0-STATIC",
+      "intent": "检查 P0 新增 Python 文件的格式、导入和静态错误",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\tmp\\p0-verify-venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "return_code": 0,
+      "duration_ms": 132,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G0-TYPES",
+      "intent": "检查生产包和 P0 工程脚本的类型边界",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\tmp\\p0-verify-venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "return_code": 0,
+      "duration_ms": 233,
+      "stdout": "Success: no issues found in 5 source files\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G0-BASELINE",
+      "intent": "重算并核对设计、穿刺和迁移台账基线",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\tmp\\p0-verify-venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.build_p0_assets",
+        "--check"
+      ],
+      "return_code": 0,
+      "duration_ms": 4292,
+      "stdout": "",
+      "stderr": "INFO transflow.p0.assets 收集 P0 输入基线\nINFO transflow.p0.assets 清点分类、Kernel、合同与全部路由行为叶\nINFO transflow.p0.assets 解析详细计划并生成双向追溯矩阵\nINFO transflow.p0.assets P0 基线资产核验通过\n"
+    },
+    {
+      "step_id": "G0-BOUNDARIES",
+      "intent": "检查目录、包边界、追溯、决策和排期不变量",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\tmp\\p0-verify-venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p0",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 4257,
+      "stdout": "{\n  \"baseline\": [],\n  \"ci\": [],\n  \"governance\": [],\n  \"package_boundary\": [],\n  \"schedule\": [],\n  \"traceability\": []\n}\n",
+      "stderr": "INFO transflow.p0.verify 核验 P0 可重算基线\nINFO transflow.p0.assets 收集 P0 输入基线\nINFO transflow.p0.assets 清点分类、Kernel、合同与全部路由行为叶\nINFO transflow.p0.assets 解析详细计划并生成双向追溯矩阵\nINFO transflow.p0.verify 核验生产目录和包边界\nINFO transflow.p0.verify 核验快速 CI 配置\nINFO transflow.p0.verify 核验设计、任务、测试和 Gate 双向追溯\nINFO transflow.p0.verify 核验待决策和治理登记规则\nINFO transflow.p0.verify 核验 P1-P14 迭代依赖排期\n"
+    },
+    {
+      "step_id": "G0-TESTS",
+      "intent": "运行 P0.1 至 P0.5 的真实测试并生成覆盖率证据",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\tmp\\p0-verify-venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "-m",
+        "not e2e",
+        "--cov=transflow",
+        "--cov=scripts",
+        "--cov-branch",
+        "--cov-report=term-missing",
+        "--cov-report=json:coverage.json",
+        "--cov-fail-under=85"
+      ],
+      "return_code": 0,
+      "duration_ms": 38379,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\tmp\\p0-verify-venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: cov-7.1.0\ncollecting ... collected 15 items\n\ntests/test_p0.py::test_p0_1_t01_migration_units_are_complete_and_unique PASSED [  6%]\ntests/test_p0.py::test_p0_1_t02_hashes_are_reproducible PASSED           [ 13%]\ntests/test_p0.py::test_p0_1_t03_maturity_is_not_promoted PASSED          [ 20%]\ntests/test_p0.py::test_p0_2_t01_import_resolves_only_from_src PASSED     [ 26%]\ntests/test_p0.py::test_p0_2_t02_production_import_graph_is_clean PASSED  [ 33%]\ntests/test_p0.py::test_p0_2_t03_real_wheel_excludes_non_production_material PASSED [ 40%]\ntests/test_p0.py::test_p0_3_t01_smoke_coverage_and_architecture_checks_execute PASSED [ 46%]\ntests/test_p0.py::test_p0_3_t02_failed_command_blocks_gate PASSED        [ 53%]\ntests/test_p0.py::test_p0_3_t03_ci_runs_fast_gate_only PASSED            [ 60%]\ntests/test_p0.py::test_p0_3_t04_forbidden_wheel_member_is_rejected PASSED [ 66%]\ntests/test_p0.py::test_p0_4_t01_traceability_has_no_dangling_reference PASSED [ 73%]\ntests/test_p0.py::test_p0_4_t02_open_decision_blocks_pass PASSED         [ 80%]\ntests/test_p0.py::test_p0_4_t03_design_and_test_reverse_indexes_resolve PASSED [ 86%]\ntests/test_p0.py::test_p0_5_t01_schedule_is_topologically_valid PASSED   [ 93%]\ntests/test_p0.py::test_p0_5_t02_gate_delay_shifts_all_downstream_windows PASSED [100%]\n\n=============================== tests coverage ================================\n_______________ coverage: platform win32, python 3.14.3-final-0 _______________\n\nName                         Stmts   Miss Branch BrPart  Cover   Missing\n------------------------------------------------------------------------\nscripts\\__init__.py              0      0      0      0   100%\nscripts\\build_p0_assets.py     248     16     78     11    91%   143, 162, 203, 489, 538, 563, 651-652, 655, 675-677, 680-682, 688\nscripts\\run_gate.py             87      2     18      3    95%   95->97, 98, 165\nscripts\\verify_p0.py           205     20    114     21    87%   79, 82, 87, 93, 100, 116->105, 155, 174, 213, 221, 223, 225, 237, 319, 321, 323, 325, 327, 329, 332, 340\nsrc\\transflow\\__init__.py        2      0      0      0   100%\n------------------------------------------------------------------------\nTOTAL                          542     38    210     35    90%\nCoverage JSON written to file coverage.json\nRequired test coverage of 85% reached. Total coverage: 90.03%\n============================= 15 passed in 37.65s =============================\n",
+      "stderr": ""
+    }
+  ]
+}

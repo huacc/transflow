@@ -1,0 +1,46 @@
+{
+  "classification_spike": {
+    "git_head": "1429ad15a0afa5b2eeb25c5515561274bae17050",
+    "path": "spikes/page_classification_engine_puncture_v1",
+    "preexisting_dirty_entries": [
+      "M spikes/page_classification_engine_puncture_v1/prompts/body_composite_kind/decide.zh-CN.md",
+      " M spikes/page_classification_engine_puncture_v1/prompts/body_composite_kind/review.zh-CN.md"
+    ],
+    "tracked_file_count": 61,
+    "tracked_worktree_sha256": "88514cd79a72c33935ab985811aee50eeedc414f553fd890680b3a3d02d54587"
+  },
+  "design": {
+    "path": "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md",
+    "sha256": "3acc3f107bd7c4aef79ca8cf04d370f16efa275ac62fbd91b3c6f39bbba8f59d",
+    "version": "v0.1"
+  },
+  "merqfin_reference": {
+    "design_main_commit": "3d831c5",
+    "local_branch": "feature_dhc",
+    "local_head": "ecf30dc3b961cec50c19fdb3c5fcc1c6e7d089d2",
+    "origin_main_commit": "3d831c5b82faf85cf36bf6a351494624e4ee5b9c",
+    "origin_main_matches_design": true,
+    "path": "../MerqFin",
+    "role": "REFERENCE_ONLY_UNTIL_P15"
+  },
+  "plan": {
+    "path": "docs/计划/Transflow_PDF翻译排版引擎_详细开发计划_v0.1.md",
+    "sha256": "788cbfbf3312f46c8c5d078aac94208391ca57a83d63fc5f9a215096c5f4efbd",
+    "version": "v0.1-r1"
+  },
+  "schema_version": "transflow.baseline-manifest/v1",
+  "toolbox_spike": {
+    "git_head": "1429ad15a0afa5b2eeb25c5515561274bae17050",
+    "path": "spikes/page_toolbox_engine_puncture_v1",
+    "preexisting_dirty_entries": [
+      "M \"spikes/page_toolbox_engine_puncture_v1/docs/\\350\\256\\241\\345\\210\\222/\\345\\210\\206\\347\\261\\273\\344\\270\\223\\347\\224\\250\\345\\267\\245\\345\\205\\267\\347\\256\\261\\347\\251\\277\\345\\210\\272\\345\\273\\272\\350\\256\\276\\350\\256\\241\\345\\210\\222.md\"",
+      " M spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/facts.py"
+    ],
+    "tracked_file_count": 331,
+    "tracked_worktree_sha256": "1fda3a925e1c8e83765baa453b6ad5d3f67b70e435d5ff3be5767398621c58f3"
+  },
+  "transflow_repository": {
+    "branch": "feature_dhc",
+    "head": "1429ad15a0afa5b2eeb25c5515561274bae17050"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "diagnostic_publishable": false,
+  "diagnostic_render": {
+    "applied_count": 38,
+    "clipped_operation_count": 0,
+    "error_type": null,
+    "layout_remainders": [
+      3.372000930786129,
+      -4.707759470033668,
+      -4.707759470033668,
+      -4.707759470033668,
+      -4.707759470033668,
+      -4.707759470033668,
+      -4.707759470033668,
+      -4.707759470033668,
+      -4.707759470033668,
+      -4.707759470033668,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -4.707759470033611,
+      -5.199959414768202,
+      -21.901798840951905,
+      -5.199959414768202,
+      -21.901798840951905,
+      -5.199959414768202,
+      -21.901798840951905,
+      -5.199959414768202,
+      -21.901798840951905,
+      -5.199959414768202,
+      -21.901798840951905,
+      -5.199959414768259,
+      -21.90179884095196,
+      -5.199959414768202,
+      -21.901798840951905,
+      -5.199959414768259,
+      -21.90179884095196,
+      -5.199959414768202
+    ],
+    "status": "WRITTEN_UNSAFE_DIAGNOSTIC"
+  },
+  "findings": [
+    {
+      "code": "P9_PROTECTED_REGION_REJECTED",
+      "evidence_ids": [
+        "patch-4639efcfa1eb3deb2313cc88-contents"
+      ],
+      "finding_id": "plan-contents-4639efcfa1eb3deb2313cc88-p9_protected_region_rejected-0",
+      "severity": "HARD"
+    }
+  ],
+  "outcome": {
+    "artifact_produced": "NO",
+    "capability": "PARTIAL",
+    "fallback": "PAGE_PASSTHROUGH",
+    "finding_codes": [
+      "P9_PROTECTED_REGION_REJECTED"
+    ],
+    "integrity": "FAIL",
+    "page_no": 1,
+    "quality": "FAIL",
+    "state": "FINALIZED",
+    "translation_coverage": "NONE"
+  },
+  "schema_version": "transflow.p9-diagnostic-judgement/v1",
+  "verdict": {
+    "decision_id": "decision-candidate-plan-contents-4639efcfa1eb3deb2313cc88-0",
+    "disposition": "FALLBACK",
+    "finding_ids": [
+      "plan-contents-4639efcfa1eb3deb2313cc88-p9_protected_region_rejected-0"
+    ],
+    "reason_code": "P9_PLAN_FALLBACK"
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "schema_version": "transflow.gate-report/v1",
+  "gate": "G6",
+  "started_at": "2026-07-20T12:31:12+08:00",
+  "finished_at": "2026-07-20T12:32:15+08:00",
+  "duration_ms": 63185,
+  "catalog": "resources/manifests/gate_catalog.json",
+  "conclusion": "PASS",
+  "steps": [
+    {
+      "step_id": "G6-STATIC",
+      "intent": "检查 P6 Kernel、应用接线、验收脚本和测试的格式与静态错误",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "return_code": 0,
+      "duration_ms": 144,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-TYPES",
+      "intent": "检查 SharedPdfKernel、Preservation 与应用边界的类型合同",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "return_code": 0,
+      "duration_ms": 318,
+      "stdout": "Success: no issues found in 75 source files\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-AUDIT",
+      "intent": "复核迁移来源、支持矩阵、禁止调用、机械语义边界、确定性和测试编号",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p6",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 277,
+      "stdout": "P6_VERIFY check=migration status=PASS violations=0\nP6_VERIFY check=support_matrix status=PASS violations=0\nP6_VERIFY check=forbidden_api status=PASS violations=0\nP6_VERIFY check=semantic_boundary status=PASS violations=0\nP6_VERIFY check=determinism status=PASS violations=0\nP6_VERIFY check=test_inventory status=PASS violations=0\nP6_VERIFY_SUMMARY status=PASS checks=6\n",
+      "stderr": "INFO transflow.pdf_kernel.preservation 调用 Preservation 支持矩阵，意图=冻结特征承诺 path=p6_preservation_support.json\nINFO transflow.pdf_kernel.preservation 调用 Preservation 支持矩阵，意图=冻结特征承诺 path=p6_preservation_support.json\nINFO transflow.pdf_kernel.fingerprint 调用内核指纹，意图=拒绝资源漂移后的旧 Checkpoint\n"
+    },
+    {
+      "step_id": "G6-1-FACTS-WORKSPACE",
+      "intent": "验证迁移事实、稳定身份、只读源、组合 fixture、序列化和工作区隔离",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p6.py",
+        "-k",
+        "p6_1"
+      ],
+      "return_code": 0,
+      "duration_ms": 1753,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p6.py::test_p6_1_t01_spike_and_production_facts_match_with_declared_differences PASSED [ 16%]\ntests/test_p6.py::test_p6_1_t02_facts_ids_and_serialization_are_stable_across_processes PASSED [ 33%]\ntests/test_p6.py::test_p6_1_t03_workspace_isolates_runs_pages_logs_and_temp PASSED [ 50%]\ntests/test_p6.py::test_p6_1_t04_facts_extraction_never_modifies_source PASSED [ 66%]\ntests/test_p6.py::test_p6_1_t05_rotation_crop_image_drawing_table_and_locked_facts_exist PASSED [ 83%]\ntests/test_p6.py::test_p6_1_t06_open_document_and_page_are_rejected_at_serialization_boundary PASSED [100%]\n\n====================== 6 passed, 24 deselected in 1.09s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-2-FONT-PATCH-RENDER",
+      "intent": "验证受控字体、唯一 Patch 语义、禁止路径和重复渲染确定性",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p6.py",
+        "-k",
+        "p6_2"
+      ],
+      "return_code": 0,
+      "duration_ms": 2415,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p6.py::test_p6_2_t01_candidate_and_final_share_patch_manifest_semantics PASSED [ 16%]\ntests/test_p6.py::test_p6_2_t02_manifest_font_covers_cjk_latin_numeric_and_financial_symbols PASSED [ 33%]\ntests/test_p6.py::test_p6_2_t03_missing_font_hash_file_and_glyph_fail_without_system_fallback PASSED [ 50%]\ntests/test_p6.py::test_p6_2_t04_protected_owner_and_bounds_reject_before_source_commit PASSED [ 66%]\ntests/test_p6.py::test_p6_2_t05_forbidden_renderers_and_system_fonts_are_absent PASSED [ 83%]\ntests/test_p6.py::test_p6_2_t06_repeated_candidate_render_has_identical_manifest_and_pixels PASSED [100%]\n\n====================== 6 passed, 24 deselected in 1.77s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-3-CONSTRAINT-REPAIR",
+      "intent": "验证全部机械硬约束、结构化 Finding、应用前拒绝和有界 Repair",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p6.py",
+        "-k",
+        "p6_3"
+      ],
+      "return_code": 0,
+      "duration_ms": 9804,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p6.py::test_p6_3_t01_hard_constraints_emit_structured_findings PASSED [ 16%]\ntests/test_p6.py::test_p6_3_t02_multiple_findings_are_retained_and_stably_sorted PASSED [ 33%]\ntests/test_p6.py::test_p6_3_t03_wrong_source_page_owner_and_protected_target_never_write PASSED [ 50%]\ntests/test_p6.py::test_p6_3_t04_bounded_repair_rechecks_full_constraints_before_accepting PASSED [ 66%]\ntests/test_p6.py::test_p6_3_t05_irreparable_and_looping_repair_stop_within_budget PASSED [ 83%]\ntests/test_p6.py::test_p6_3_t06_kernel_constraints_have_no_classification_or_toolbox_semantics PASSED [100%]\n\n====================== 6 passed, 24 deselected in 8.94s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-4-PRESERVATION",
+      "intent": "验证 F3 特征、签名加密预检、目标突变检出和整文应急透传",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p6.py",
+        "-k",
+        "p6_4"
+      ],
+      "return_code": 0,
+      "duration_ms": 1316,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p6.py::test_p6_4_t01_f3_features_match_support_matrix_after_byte_copy PASSED [ 16%]\ntests/test_p6.py::test_p6_4_t02_signature_preflight_forces_whole_source_passthrough PASSED [ 33%]\ntests/test_p6.py::test_p6_4_t03_encrypted_readable_unreadable_and_unknown_critical_are_explicit PASSED [ 50%]\ntests/test_p6.py::test_p6_4_t04_bookmark_link_order_rotation_and_crop_mutations_are_detected PASSED [ 66%]\ntests/test_p6.py::test_p6_4_t05_validation_failure_falls_back_and_unpublishable_source_fails PASSED [ 83%]\ntests/test_p6.py::test_p6_4_t06_support_matrix_never_promises_unverified_features PASSED [100%]\n\n====================== 6 passed, 24 deselected in 0.65s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-5-PROCESS-DETERMINISM",
+      "intent": "验证多进程同名输入、批准角色、worker 崩溃重建和统一指纹",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p6.py",
+        "-k",
+        "p6_5"
+      ],
+      "return_code": 0,
+      "duration_ms": 10937,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p6.py::test_p6_5_t01_multi_process_same_name_runs_have_no_facts_crosstalk PASSED [ 16%]\ntests/test_p6.py::test_p6_5_t02_approved_roles_share_frozen_font_and_kernel_fingerprint PASSED [ 33%]\ntests/test_p6.py::test_p6_5_t03_rebuilt_worker_replays_same_facts_without_affecting_other_run PASSED [ 50%]\ntests/test_p6.py::test_p6_5_t04_g4_static_and_real_fixture_checks_remain_green PASSED [ 66%]\ntests/test_p6.py::test_p6_5_t05_g5_anonymous_baseline_identity_and_routes_have_no_drift PASSED [ 83%]\ntests/test_p6.py::test_p6_5_t06_kernel_fingerprint_mismatch_rejects_old_checkpoint PASSED [100%]\n\n====================== 6 passed, 24 deselected in 10.10s ======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-6-G4-REAL-E2E",
+      "intent": "重跑 G4 完整真实年报、恢复、末页故障、全透传和原子发布用例",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_5_t01 or p4_5_t02 or p4_5_t03 or p4_5_t04 or p4_5_t05"
+      ],
+      "return_code": 0,
+      "duration_ms": 25303,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 20 deselected / 5 selected\n\ntests/test_p4.py::test_p4_5_t01_complete_real_annual_report_produces_single_pdf PASSED [ 20%]\ntests/test_p4.py::test_p4_5_t02_restart_skips_all_committed_pages PASSED [ 40%]\ntests/test_p4.py::test_p4_5_t03_last_page_translation_failure_passthroughs_and_completes PASSED [ 60%]\ntests/test_p4.py::test_p4_5_t04_all_passthrough_preserves_structure_and_marks_degradation PASSED [ 80%]\ntests/test_p4.py::test_p4_5_t05_final_write_failure_retries_without_partial_authority PASSED [100%]\n\n====================== 5 passed, 20 deselected in 24.40s ======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-6-G5-BASELINE",
+      "intent": "重算 G5 二十二个真实匿名输入、答案密封和阈值冻结哈希",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.build_p5_baseline",
+        "--check"
+      ],
+      "return_code": 0,
+      "duration_ms": 4121,
+      "stdout": "P5_ANONYMOUS_BASELINE PASS anonymous_case_count=22 baseline_content_sha256=bb689f23d3aef97c6fe3ca65581d992e988855c81400cc283c56dab8e2cf0139 identity_leak_count=0 located_real_pdf_count=22 post_freeze_change_count=0 stratum_count=11\n",
+      "stderr": "INFO transflow.p5.baseline 调用匿名基线核对，意图=验证 P5.1 可重放且未泄漏身份\n"
+    },
+    {
+      "step_id": "G6-6-G5-KEY-ROUTES",
+      "intent": "重跑 G5 迁移等价、文档身份和反文件名顺序过拟合关键集合",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p5.py",
+        "-k",
+        "p5_2_t01 or p5_4_t01 or p5_5_t01"
+      ],
+      "return_code": 0,
+      "duration_ms": 2098,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 23 items / 19 deselected / 4 selected\n\ntests/test_p5.py::test_p5_2_t01_rule_and_evidence_match_legacy_except_declared_identity_fields PASSED [ 25%]\ntests/test_p5.py::test_p5_4_t01_mixed_pdf_has_one_route_per_page_and_stable_identity PASSED [ 50%]\ntests/test_p5.py::test_p5_4_t01_run_classified_finalizes_one_complete_pdf PASSED [ 75%]\ntests/test_p5.py::test_p5_5_t01_filename_and_body_page_order_do_not_change_route PASSED [100%]\n\n====================== 4 passed, 19 deselected in 1.38s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G6-6-G5-AUDIT",
+      "intent": "复核 G5 Prompt、生产无直连、协调器、架构与真实模型质量冻结证据",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p5",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 4697,
+      "stdout": "P5_VERIFY check=baseline status=PASS violations=0\nP5_VERIFY check=prompts status=PASS violations=0\nP5_VERIFY check=production status=PASS violations=0\nP5_VERIFY check=architecture status=PASS violations=0\nP5_VERIFY check=migration_adapter status=PASS violations=0\nP5_VERIFY check=quality status=PASS violations=0\nP5_VERIFY_SUMMARY status=PASS checks=6\n",
+      "stderr": "INFO transflow.p5.baseline 调用匿名基线核对，意图=验证 P5.1 可重放且未泄漏身份\n"
+    }
+  ]
+}

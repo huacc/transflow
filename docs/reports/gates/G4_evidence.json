@@ -1,0 +1,226 @@
+{
+  "schema_version": "transflow.gate-report/v1",
+  "gate": "G4",
+  "started_at": "2026-07-20T01:00:26+08:00",
+  "finished_at": "2026-07-20T01:04:06+08:00",
+  "duration_ms": 220162,
+  "catalog": "resources/manifests/gate_catalog.json",
+  "conclusion": "PASS",
+  "steps": [
+    {
+      "step_id": "G4-STATIC",
+      "intent": "检查 P4 Kernel、应用编排、测试装配和验收脚本的格式与静态错误",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "return_code": 0,
+      "duration_ms": 138,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-TYPES",
+      "intent": "检查 P4 最小 Kernel、页面流水线和文档最终化类型边界",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "return_code": 0,
+      "duration_ms": 309,
+      "stdout": "Success: no issues found in 56 source files\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-REGRESSION",
+      "intent": "确认 P4 改动没有破坏已通过的 P0、P1、P2 与 P3 技术基线",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_p0.py",
+        "tests/test_p1.py",
+        "tests/test_p2.py",
+        "tests/test_p3.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 183043,
+      "stdout": "........................................................................ [ 85%]\n............                                                             [100%]\n84 passed in 182.30s (0:03:02)\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-7-KERNEL",
+      "intent": "验证唯一解释器、owner/protected guard、受控字体与最小 Preservation",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_0"
+      ],
+      "return_code": 0,
+      "duration_ms": 2049,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 20 deselected / 5 selected\n\ntests/test_p4.py::test_p4_0_t01_candidate_and_final_use_same_interpreter_and_order PASSED [ 20%]\ntests/test_p4.py::test_p4_0_t02_all_binding_and_protected_failures_write_zero_operations PASSED [ 40%]\ntests/test_p4.py::test_p4_0_t03_only_manifest_font_is_usable_without_system_probe PASSED [ 60%]\ntests/test_p4.py::test_p4_0_t04_mixed_replay_preserves_all_page_structure PASSED [ 80%]\ntests/test_p4.py::test_p4_0_t05_kernel_and_runtime_forbidden_implementation_count_is_zero PASSED [100%]\n\n====================== 5 passed, 20 deselected in 1.38s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-1-ENUMERATION",
+      "intent": "验证 1-based 稳定页枚举、完整几何和枚举期间源哈希复核",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_1"
+      ],
+      "return_code": 0,
+      "duration_ms": 1126,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 22 deselected / 3 selected\n\ntests/test_p4.py::test_p4_1_t01_three_pages_are_one_based_ordered_and_geometry_exact PASSED [ 33%]\ntests/test_p4.py::test_p4_1_t02_rotation_and_cropbox_are_preserved_in_context PASSED [ 66%]\ntests/test_p4.py::test_p4_1_t03_source_change_during_enumeration_aborts_run PASSED [100%]\n\n====================== 3 passed, 22 deselected in 0.44s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-2-ROUTES",
+      "intent": "验证固定 Route 只在测试按稳定页面身份生效且未声明页全部透传",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_2"
+      ],
+      "return_code": 0,
+      "duration_ms": 1163,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 21 deselected / 4 selected\n\ntests/test_p4.py::test_p4_2_t01_explicit_visual_and_single_routes_hit_only_declared_pages PASSED [ 25%]\ntests/test_p4.py::test_p4_2_t02_undeclared_page_is_always_passthrough PASSED [ 50%]\ntests/test_p4.py::test_p4_2_t03_rename_and_identity_labels_do_not_change_routes PASSED [ 75%]\ntests/test_p4.py::test_p4_2_t04_production_wiring_has_no_fixed_route_fixture PASSED [100%]\n\n====================== 4 passed, 21 deselected in 0.48s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-3-PAGE-PIPELINE",
+      "intent": "验证 single、visual、翻译失败和 Judge/PNG 失败均收敛为页面终态",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_3"
+      ],
+      "return_code": 0,
+      "duration_ms": 1925,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 21 deselected / 4 selected\n\ntests/test_p4.py::test_p4_3_t01_single_page_completes_unit_bundle_patch_judge_and_preview PASSED [ 25%]\ntests/test_p4.py::test_p4_3_t02_visual_only_has_no_units_and_passthroughs_source PASSED [ 50%]\ntests/test_p4.py::test_p4_3_t03_translation_missing_and_judge_failure_both_finalize PASSED [ 75%]\ntests/test_p4.py::test_p4_3_t04_invalid_or_partial_png_never_commits_preview_pointer PASSED [100%]\n\n====================== 4 passed, 21 deselected in 1.23s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-4-FINALIZER",
+      "intent": "验证源副本串行回放、顺序屏障、应急透传与禁止页级合并",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_4"
+      ],
+      "return_code": 0,
+      "duration_ms": 2042,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 21 deselected / 4 selected\n\ntests/test_p4.py::test_p4_4_t01_mixed_patch_and_passthrough_produce_one_complete_pdf PASSED [ 25%]\ntests/test_p4.py::test_p4_4_t02_finalizer_sorts_shuffled_results_and_rejects_incomplete PASSED [ 50%]\ntests/test_p4.py::test_p4_4_t03_patch_replay_failure_publishes_valid_source_copy PASSED [ 75%]\ntests/test_p4.py::test_p4_4_t04_finalizer_has_no_page_merge_or_browser_render_calls PASSED [100%]\n\n====================== 4 passed, 21 deselected in 1.35s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-5-ANNUAL-E2E",
+      "intent": "对登记哈希的 F2 完整真实年报执行全部页面并产生单一完整 PDF",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_5_t01"
+      ],
+      "return_code": 0,
+      "duration_ms": 6910,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 24 deselected / 1 selected\n\ntests/test_p4.py::test_p4_5_t01_complete_real_annual_report_produces_single_pdf PASSED [100%]\n\n====================== 1 passed, 24 deselected in 6.25s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-6-RECOVERY",
+      "intent": "验证页面重启、最后页失败、全透传和最终写失败均确定收敛",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_5_t02 or p4_5_t03 or p4_5_t04 or p4_5_t05"
+      ],
+      "return_code": 0,
+      "duration_ms": 2305,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 21 deselected / 4 selected\n\ntests/test_p4.py::test_p4_5_t02_restart_skips_all_committed_pages PASSED [ 25%]\ntests/test_p4.py::test_p4_5_t03_last_page_translation_failure_passthroughs_and_completes PASSED [ 50%]\ntests/test_p4.py::test_p4_5_t04_all_passthrough_preserves_structure_and_marks_degradation PASSED [ 75%]\ntests/test_p4.py::test_p4_5_t05_final_write_failure_retries_without_partial_authority PASSED [100%]\n\n====================== 4 passed, 21 deselected in 1.64s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-8-FAKE-AI",
+      "intent": "随纵向 Gate 复核 fake AI 两个真实 HTTP 合同及错误响应合同",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py",
+        "-k",
+        "p3_4_t02 or p3_4_t03 or p3_4_t04"
+      ],
+      "return_code": 0,
+      "duration_ms": 7550,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items / 31 deselected / 3 selected\n\ntests/test_p3.py::test_p3_4_t02_real_fake_service_returns_valid_decision_and_translation PASSED [ 33%]\ntests/test_p3.py::test_p3_4_t03_timeout_5xx_and_429_map_to_retryable_errors PASSED [ 66%]\ntests/test_p3.py::test_p3_4_t04_invalid_json_schema_and_unit_identity_are_rejected PASSED [100%]\n\n====================== 3 passed, 31 deselected in 6.81s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-FULL-EVIDENCE",
+      "intent": "在单一隔离工作区执行 P4.0 至 P4.5 全部二十五项验收",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 11263,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items\n\ntests/test_p4.py::test_p4_0_t01_candidate_and_final_use_same_interpreter_and_order PASSED [  4%]\ntests/test_p4.py::test_p4_0_t02_all_binding_and_protected_failures_write_zero_operations PASSED [  8%]\ntests/test_p4.py::test_p4_0_t03_only_manifest_font_is_usable_without_system_probe PASSED [ 12%]\ntests/test_p4.py::test_p4_0_t04_mixed_replay_preserves_all_page_structure PASSED [ 16%]\ntests/test_p4.py::test_p4_0_t05_kernel_and_runtime_forbidden_implementation_count_is_zero PASSED [ 20%]\ntests/test_p4.py::test_p4_1_t01_three_pages_are_one_based_ordered_and_geometry_exact PASSED [ 24%]\ntests/test_p4.py::test_p4_1_t02_rotation_and_cropbox_are_preserved_in_context PASSED [ 28%]\ntests/test_p4.py::test_p4_1_t03_source_change_during_enumeration_aborts_run PASSED [ 32%]\ntests/test_p4.py::test_p4_2_t01_explicit_visual_and_single_routes_hit_only_declared_pages PASSED [ 36%]\ntests/test_p4.py::test_p4_2_t02_undeclared_page_is_always_passthrough PASSED [ 40%]\ntests/test_p4.py::test_p4_2_t03_rename_and_identity_labels_do_not_change_routes PASSED [ 44%]\ntests/test_p4.py::test_p4_2_t04_production_wiring_has_no_fixed_route_fixture PASSED [ 48%]\ntests/test_p4.py::test_p4_3_t01_single_page_completes_unit_bundle_patch_judge_and_preview PASSED [ 52%]\ntests/test_p4.py::test_p4_3_t02_visual_only_has_no_units_and_passthroughs_source PASSED [ 56%]\ntests/test_p4.py::test_p4_3_t03_translation_missing_and_judge_failure_both_finalize PASSED [ 60%]\ntests/test_p4.py::test_p4_3_t04_invalid_or_partial_png_never_commits_preview_pointer PASSED [ 64%]\ntests/test_p4.py::test_p4_4_t01_mixed_patch_and_passthrough_produce_one_complete_pdf PASSED [ 68%]\ntests/test_p4.py::test_p4_4_t02_finalizer_sorts_shuffled_results_and_rejects_incomplete PASSED [ 72%]\ntests/test_p4.py::test_p4_4_t03_patch_replay_failure_publishes_valid_source_copy PASSED [ 76%]\ntests/test_p4.py::test_p4_4_t04_finalizer_has_no_page_merge_or_browser_render_calls PASSED [ 80%]\ntests/test_p4.py::test_p4_5_t01_complete_real_annual_report_produces_single_pdf PASSED [ 84%]\ntests/test_p4.py::test_p4_5_t02_restart_skips_all_committed_pages PASSED [ 88%]\ntests/test_p4.py::test_p4_5_t03_last_page_translation_failure_passthroughs_and_completes PASSED [ 92%]\ntests/test_p4.py::test_p4_5_t04_all_passthrough_preserves_structure_and_marks_degradation PASSED [ 96%]\ntests/test_p4.py::test_p4_5_t05_final_write_failure_retries_without_partial_authority PASSED [100%]\n\n============================= 25 passed in 10.58s =============================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G4-AUDIT",
+      "intent": "复核唯一 Kernel、固定路由隔离、最终化边界、F2 fixture 与架构规则",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p4",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 327,
+      "stdout": "P4_VERIFY check=kernel status=PASS violations=0\nP4_VERIFY check=routes status=PASS violations=0\nP4_VERIFY check=finalizer status=PASS violations=0\nP4_VERIFY check=fixture status=PASS violations=0\nP4_VERIFY check=architecture status=PASS violations=0\nP4_VERIFY check=review status=PASS violations=0\nP4_VERIFY_SUMMARY status=PASS checks=6\n",
+      "stderr": ""
+    }
+  ]
+}

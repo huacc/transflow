@@ -1,0 +1,91 @@
+{
+  "tool": "compare_source_candidate",
+  "judgement_basis": "候选译文与原文的源 bbox、候选 bbox、源字号、候选字号、fit 状态和候选相对原文的重叠增量对比。",
+  "product_quality_verdict": "FAIL",
+  "failed_group_signal_count": 28,
+  "overlap_signal_count": 230,
+  "failure_class_counts": {
+    "font_size_regression": 26,
+    "text_fit_overflow": 2,
+    "cross_slot_overlap": 230
+  },
+  "selected_failure_class": "text_fit_overflow",
+  "triage_result": {
+    "selected_failure_class": "text_fit_overflow",
+    "blocking_failure_classes": {
+      "font_size_regression": 26,
+      "text_fit_overflow": 2,
+      "cross_slot_overlap": 230
+    },
+    "needs_more_evidence": false,
+    "triage_rule": "causal_priority_then_current_run_blocking_failure_count",
+    "causal_priority": [
+      "text_fit_overflow",
+      "font_size_regression",
+      "cross_slot_overlap"
+    ]
+  },
+  "dispatch_result": {
+    "dispatch_table": "contracts/failure_dispatch_table.json",
+    "selected_failure_class": "text_fit_overflow",
+    "selected_repair_family": "expand_or_reflow_slot",
+    "target_state": "S6_LayoutPlan",
+    "allowed_operation_types": [
+      "expand_slot"
+    ],
+    "tool": "tools/repairs/build_repair_patch.py"
+  },
+  "selected_repair_family": "expand_or_reflow_slot",
+  "page_failure_summary": [
+    {
+      "page_number": 8,
+      "failure_count": 74
+    },
+    {
+      "page_number": 3,
+      "failure_count": 62
+    },
+    {
+      "page_number": 6,
+      "failure_count": 16
+    },
+    {
+      "page_number": 14,
+      "failure_count": 16
+    },
+    {
+      "page_number": 5,
+      "failure_count": 15
+    },
+    {
+      "page_number": 16,
+      "failure_count": 12
+    },
+    {
+      "page_number": 15,
+      "failure_count": 11
+    },
+    {
+      "page_number": 12,
+      "failure_count": 9
+    },
+    {
+      "page_number": 17,
+      "failure_count": 9
+    },
+    {
+      "page_number": 18,
+      "failure_count": 8
+    },
+    {
+      "page_number": 10,
+      "failure_count": 6
+    },
+    {
+      "page_number": 1,
+      "failure_count": 4
+    }
+  ],
+  "human_readable_result": "候选译文与原文视觉关系存在阻塞差异，需要进入 RepairLoop。",
+  "tool_selection_reason": "先由 Triage 按因果优先级选出 text_fit_overflow，再由静态 Dispatch 表映射到 expand_or_reflow_slot。"
+}

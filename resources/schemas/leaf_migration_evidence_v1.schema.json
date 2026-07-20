@@ -1,0 +1,176 @@
+{
+  "$id": "https://transflow.local/schemas/leaf_migration_evidence_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "allowed_changes": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "anti_overfit_passed": {
+      "type": "boolean"
+    },
+    "blind_passed": {
+      "type": "boolean"
+    },
+    "catalog_hash": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "code_hash": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "contract_passed": {
+      "type": "boolean"
+    },
+    "document_e2e_passed": {
+      "type": "boolean"
+    },
+    "equivalence_passed": {
+      "type": "boolean"
+    },
+    "evidence_hash": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "failure_passed": {
+      "type": "boolean"
+    },
+    "fallback": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "fallback_has_complete_pdf": {
+      "type": "boolean"
+    },
+    "fallback_has_page_outcome": {
+      "type": "boolean"
+    },
+    "fixture_refs": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "font_hash": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "gold_refs": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "limitations": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "migration_differences": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "new_evidence": {
+      "type": "boolean"
+    },
+    "original_state": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "owner": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "route": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_hash": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "transflow.leaf-migration-evidence/v1"
+    },
+    "source_hash": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "source_path": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "target_toolbox_key": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "target_version": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "threshold_hash": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "threshold_refs": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "schema_version",
+    "route",
+    "source_path",
+    "source_hash",
+    "original_state",
+    "target_toolbox_key",
+    "target_version",
+    "fallback",
+    "owner",
+    "code_hash",
+    "schema_hash",
+    "catalog_hash",
+    "font_hash",
+    "threshold_hash",
+    "evidence_hash",
+    "allowed_changes",
+    "migration_differences",
+    "fixture_refs",
+    "gold_refs",
+    "threshold_refs",
+    "limitations",
+    "contract_passed",
+    "equivalence_passed",
+    "blind_passed",
+    "anti_overfit_passed",
+    "failure_passed",
+    "document_e2e_passed",
+    "fallback_has_page_outcome",
+    "fallback_has_complete_pdf",
+    "new_evidence"
+  ],
+  "schema_version": "transflow.leaf-migration-evidence-schema/v1",
+  "title": "Transflow Leaf Migration Evidence v1",
+  "type": "object"
+}

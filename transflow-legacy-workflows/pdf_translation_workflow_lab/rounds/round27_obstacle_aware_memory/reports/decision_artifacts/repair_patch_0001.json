@@ -1,0 +1,4081 @@
+{
+  "tool": "build_repair_patch",
+  "patch_verdict": "PATCH_READY",
+  "selected_failure_class": "text_fit_overflow",
+  "dispatch_result": {
+    "dispatch_table": "contracts/failure_dispatch_table.json",
+    "selected_failure_class": "text_fit_overflow",
+    "selected_repair_family": "expand_or_reflow_slot",
+    "target_state": "S6_LayoutPlan",
+    "allowed_operation_types": [
+      "expand_slot"
+    ],
+    "tool": "tools/repairs/build_repair_patch.py"
+  },
+  "selected_repair_family": "expand_or_reflow_slot",
+  "operation_count": 135,
+  "operation_type_counts": {
+    "expand_slot": 135
+  },
+  "deferred_failure_classes": {
+    "font_size_regression": 26,
+    "cross_slot_overlap": 37
+  },
+  "deferred_operation_count": 63,
+  "human_readable_decision": "已把源/候选对比失败绑定为可执行 RepairPatch；下一步应应用到 layout_plan 并重新生成候选。",
+  "anti_overfit_statement": "RepairPatch 只引用当前运行中的 group_id、bbox、字号和重叠信号，不包含固定页码分支、固定文本或人工参考 PDF。",
+  "source_layout_plan": "reports\\layout_plan.json",
+  "source_quality_signals": "reports\\quality_signals.json",
+  "operations": [
+    {
+      "operation_id": "expand_p0_b1_0",
+      "operation_type": "expand_slot",
+      "group_id": "p0_b1_0",
+      "page_index": 0,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 117.681,
+      "grow_right_pt": 169.461,
+      "min_font_start": 56.487,
+      "min_font_min": 48.503,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          45.354,
+          484.219,
+          381.66,
+          662.692
+        ],
+        "candidate_rect": [
+          45.354,
+          484.219,
+          381.66,
+          698.387
+        ],
+        "source_font_size": 94.14500045776367,
+        "candidate_font_size": 61.194,
+        "font_floor": 52.721
+      }
+    },
+    {
+      "operation_id": "expand_p2_b0_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b0_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          102.677,
+          295.162,
+          121.566,
+          308.434
+        ],
+        "candidate_rect": [
+          102.677,
+          295.162,
+          121.566,
+          308.434
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b1_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b1_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          115.011,
+          375.501,
+          134.417,
+          388.773
+        ],
+        "candidate_rect": [
+          115.011,
+          375.501,
+          134.417,
+          388.773
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b2_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b2_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          102.677,
+          444.34,
+          122.03,
+          457.612
+        ],
+        "candidate_rect": [
+          102.677,
+          444.34,
+          122.03,
+          457.612
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b4_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b4_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          102.677,
+          541.847,
+          121.934,
+          555.119
+        ],
+        "candidate_rect": [
+          102.677,
+          541.847,
+          121.934,
+          555.119
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b6_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b6_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          102.677,
+          639.355,
+          122.378,
+          652.627
+        ],
+        "candidate_rect": [
+          102.677,
+          639.355,
+          122.378,
+          652.627
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b7_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b7_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          205.984,
+          295.162,
+          225.661,
+          308.434
+        ],
+        "candidate_rect": [
+          205.984,
+          295.162,
+          225.661,
+          308.434
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b8_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b8_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          205.984,
+          364.001,
+          225.625,
+          377.273
+        ],
+        "candidate_rect": [
+          41.016,
+          364.001,
+          531.583,
+          377.273
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b9_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b9_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          205.984,
+          421.34,
+          226.277,
+          434.612
+        ],
+        "candidate_rect": [
+          205.984,
+          421.34,
+          226.277,
+          434.612
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b10_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b10_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          205.984,
+          501.678,
+          225.481,
+          514.95
+        ],
+        "candidate_rect": [
+          205.984,
+          501.678,
+          225.481,
+          514.95
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b11_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b11_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          309.291,
+          295.162,
+          328.5,
+          308.434
+        ],
+        "candidate_rect": [
+          309.291,
+          295.162,
+          328.5,
+          308.434
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b13_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b13_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          309.291,
+          369.67,
+          328.74,
+          382.942
+        ],
+        "candidate_rect": [
+          309.291,
+          369.67,
+          328.74,
+          382.942
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b15_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b15_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          309.291,
+          467.178,
+          328.788,
+          480.45
+        ],
+        "candidate_rect": [
+          309.291,
+          467.178,
+          328.788,
+          480.45
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b17_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b17_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          412.598,
+          295.766,
+          432.023,
+          309.038
+        ],
+        "candidate_rect": [
+          41.016,
+          295.766,
+          531.583,
+          309.038
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b18_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b18_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          412.598,
+          410.282,
+          432.023,
+          423.554
+        ],
+        "candidate_rect": [
+          412.598,
+          410.282,
+          432.023,
+          423.554
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b20_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b20_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          412.598,
+          519.29,
+          432.071,
+          532.562
+        ],
+        "candidate_rect": [
+          412.598,
+          519.29,
+          432.071,
+          532.562
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p2_b21_0",
+      "operation_type": "expand_slot",
+      "group_id": "p2_b21_0",
+      "page_index": 2,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 15.0,
+      "grow_right_pt": 21.6,
+      "min_font_start": 7.2,
+      "min_font_min": 6.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          412.598,
+          576.628,
+          432.071,
+          589.9
+        ],
+        "candidate_rect": [
+          412.598,
+          576.628,
+          432.071,
+          589.9
+        ],
+        "source_font_size": 12.0,
+        "candidate_font_size": 8.64,
+        "font_floor": 6.29
+      }
+    },
+    {
+      "operation_id": "expand_p5_b9_0",
+      "operation_type": "expand_slot",
+      "group_id": "p5_b9_0",
+      "page_index": 5,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 42.5,
+      "grow_right_pt": 61.2,
+      "min_font_start": 20.4,
+      "min_font_min": 17.517,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          100.866,
+          331.166,
+          264.556,
+          414.406
+        ],
+        "candidate_rect": [
+          100.866,
+          333.923,
+          273.827,
+          433.811
+        ],
+        "source_font_size": 34.0,
+        "candidate_font_size": 22.1,
+        "font_floor": 19.04
+      }
+    },
+    {
+      "operation_id": "expand_p7_b0_1",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b0_1",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.75,
+      "grow_right_pt": 12.6,
+      "min_font_start": 4.2,
+      "min_font_min": 3.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          34.385,
+          813.345,
+          47.196,
+          821.297
+        ],
+        "candidate_rect": [
+          34.385,
+          813.345,
+          42.385,
+          821.345
+        ],
+        "source_font_size": 7.0,
+        "candidate_font_size": 5.04,
+        "font_floor": 3.7
+      }
+    },
+    {
+      "operation_id": "expand_p7_b4_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b4_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          100.315,
+          533.937,
+          136.855,
+          560.481
+        ],
+        "candidate_rect": [
+          100.315,
+          533.937,
+          136.855,
+          560.481
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b4_1",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b4_1",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          161.56,
+          533.937,
+          196.643,
+          560.481
+        ],
+        "candidate_rect": [
+          161.56,
+          533.937,
+          198.04,
+          560.481
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b5_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b5_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 7.5,
+      "grow_right_pt": 10.8,
+      "min_font_start": 3.6,
+      "min_font_min": 3.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          89.617,
+          560.191,
+          208.369,
+          568.015
+        ],
+        "candidate_rect": [
+          89.617,
+          560.191,
+          235.634,
+          575.112
+        ],
+        "source_font_size": 6.0,
+        "candidate_font_size": 5.6,
+        "font_floor": 3.12
+      }
+    },
+    {
+      "operation_id": "expand_p7_b5_1",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b5_1",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          254.463,
+          533.937,
+          290.741,
+          560.481
+        ],
+        "candidate_rect": [
+          254.463,
+          533.937,
+          290.943,
+          560.481
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b5_2",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b5_2",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          314.666,
+          533.937,
+          351.583,
+          560.481
+        ],
+        "candidate_rect": [
+          314.666,
+          533.937,
+          351.583,
+          560.481
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b6_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b6_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 7.5,
+      "grow_right_pt": 10.8,
+      "min_font_start": 3.6,
+      "min_font_min": 3.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          243.634,
+          560.191,
+          362.386,
+          568.015
+        ],
+        "candidate_rect": [
+          243.634,
+          560.191,
+          397.479,
+          575.112
+        ],
+        "source_font_size": 6.0,
+        "candidate_font_size": 5.6,
+        "font_floor": 3.12
+      }
+    },
+    {
+      "operation_id": "expand_p7_b7_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b7_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          103.776,
+          298.425,
+          133.395,
+          324.969
+        ],
+        "candidate_rect": [
+          103.776,
+          298.425,
+          133.395,
+          324.969
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b7_1",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b7_1",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          164.31,
+          298.425,
+          193.896,
+          324.969
+        ],
+        "candidate_rect": [
+          164.31,
+          298.425,
+          193.896,
+          324.969
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b8_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b8_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 7.5,
+      "grow_right_pt": 10.8,
+      "min_font_start": 3.6,
+      "min_font_min": 3.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          89.617,
+          324.679,
+          208.369,
+          332.503
+        ],
+        "candidate_rect": [
+          89.617,
+          324.679,
+          235.634,
+          339.6
+        ],
+        "source_font_size": 6.0,
+        "candidate_font_size": 5.6,
+        "font_floor": 3.12
+      }
+    },
+    {
+      "operation_id": "expand_p7_b8_1",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b8_1",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          258.366,
+          298.425,
+          286.839,
+          324.969
+        ],
+        "candidate_rect": [
+          258.366,
+          298.425,
+          286.839,
+          324.969
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b8_2",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b8_2",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          319.793,
+          298.425,
+          346.453,
+          324.969
+        ],
+        "candidate_rect": [
+          319.793,
+          298.425,
+          347.153,
+          324.969
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b9_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b9_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 7.5,
+      "grow_right_pt": 10.8,
+      "min_font_start": 3.6,
+      "min_font_min": 3.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          243.634,
+          324.679,
+          362.386,
+          332.503
+        ],
+        "candidate_rect": [
+          243.634,
+          324.679,
+          389.649,
+          339.6
+        ],
+        "source_font_size": 6.0,
+        "candidate_font_size": 5.6,
+        "font_floor": 3.12
+      }
+    },
+    {
+      "operation_id": "expand_p7_b9_1",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b9_1",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          412.414,
+          298.425,
+          440.821,
+          324.969
+        ],
+        "candidate_rect": [
+          412.414,
+          298.425,
+          440.821,
+          324.969
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b9_2",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b9_2",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          472.336,
+          298.425,
+          501.937,
+          324.969
+        ],
+        "candidate_rect": [
+          472.336,
+          298.425,
+          501.937,
+          324.969
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b10_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b10_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 7.5,
+      "grow_right_pt": 10.8,
+      "min_font_start": 3.6,
+      "min_font_min": 3.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          397.649,
+          324.679,
+          516.401,
+          332.503
+        ],
+        "candidate_rect": [
+          397.649,
+          324.679,
+          559.276,
+          339.6
+        ],
+        "source_font_size": 6.0,
+        "candidate_font_size": 5.6,
+        "font_floor": 3.12
+      }
+    },
+    {
+      "operation_id": "expand_p7_b11_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b11_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          456.502,
+          533.937,
+          493.143,
+          560.481
+        ],
+        "candidate_rect": [
+          456.502,
+          533.937,
+          493.143,
+          560.481
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b12_1",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b12_1",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 30.0,
+      "grow_right_pt": 43.2,
+      "min_font_start": 14.4,
+      "min_font_min": 12.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          396.459,
+          533.937,
+          435.139,
+          560.481
+        ],
+        "candidate_rect": [
+          396.459,
+          533.937,
+          435.139,
+          560.481
+        ],
+        "source_font_size": 24.0,
+        "candidate_font_size": 17.28,
+        "font_floor": 11.52
+      }
+    },
+    {
+      "operation_id": "expand_p7_b15_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b15_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.274,
+          263.137,
+          84.459,
+          268.682
+        ],
+        "candidate_rect": [
+          72.274,
+          263.137,
+          84.459,
+          272.137
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b16_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b16_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          76.059,
+          273.608,
+          84.459,
+          279.153
+        ],
+        "candidate_rect": [
+          76.059,
+          273.608,
+          84.459,
+          282.608
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b17_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b17_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.274,
+          242.086,
+          84.459,
+          247.632
+        ],
+        "candidate_rect": [
+          72.274,
+          242.086,
+          84.459,
+          251.086
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b18_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b18_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.274,
+          252.472,
+          84.459,
+          258.017
+        ],
+        "candidate_rect": [
+          72.274,
+          252.472,
+          84.459,
+          261.472
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b19_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b19_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.274,
+          210.375,
+          84.459,
+          215.92
+        ],
+        "candidate_rect": [
+          72.274,
+          210.375,
+          84.459,
+          219.375
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b20_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b20_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.274,
+          199.905,
+          84.459,
+          205.45
+        ],
+        "candidate_rect": [
+          72.274,
+          199.905,
+          84.459,
+          208.905
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b21_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b21_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.274,
+          189.309,
+          84.459,
+          194.855
+        ],
+        "candidate_rect": [
+          72.274,
+          189.309,
+          84.459,
+          198.309
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b22_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b22_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.274,
+          231.506,
+          84.459,
+          237.051
+        ],
+        "candidate_rect": [
+          72.274,
+          231.506,
+          84.459,
+          240.506
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b23_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b23_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.274,
+          221.036,
+          84.459,
+          226.581
+        ],
+        "candidate_rect": [
+          72.274,
+          221.036,
+          84.459,
+          230.036
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b26_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b26_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          118.061,
+          220.563,
+          132.862,
+          227.772
+        ],
+        "candidate_rect": [
+          118.061,
+          220.821,
+          241.854,
+          229.472
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.0,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b27_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b27_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          95.891,
+          232.197,
+          110.692,
+          239.406
+        ],
+        "candidate_rect": [
+          95.891,
+          232.197,
+          218.291,
+          240.848
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.0,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b28_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b28_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          140.232,
+          210.971,
+          155.033,
+          218.179
+        ],
+        "candidate_rect": [
+          140.232,
+          210.971,
+          218.291,
+          219.621
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.0,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b29_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b29_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          97.432,
+          288.787,
+          198.433,
+          295.496
+        ],
+        "candidate_rect": [
+          97.432,
+          288.787,
+          243.449,
+          297.787
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b30_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b30_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.267,
+          179.7,
+          91.924,
+          186.22
+        ],
+        "candidate_rect": [
+          72.267,
+          188.878,
+          215.847,
+          197.878
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b32_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b32_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          226.291,
+          270.536,
+          238.476,
+          276.081
+        ],
+        "candidate_rect": [
+          226.291,
+          270.536,
+          238.476,
+          279.536
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b33_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b33_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          226.291,
+          256.996,
+          238.476,
+          262.541
+        ],
+        "candidate_rect": [
+          226.291,
+          256.996,
+          238.476,
+          265.996
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b34_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b34_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          226.291,
+          243.455,
+          238.476,
+          249.0
+        ],
+        "candidate_rect": [
+          226.291,
+          243.455,
+          238.476,
+          252.455
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b35_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b35_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          226.291,
+          229.92,
+          238.476,
+          235.465
+        ],
+        "candidate_rect": [
+          226.291,
+          229.92,
+          238.476,
+          238.92
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b36_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b36_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          226.291,
+          216.379,
+          238.476,
+          221.924
+        ],
+        "candidate_rect": [
+          226.291,
+          216.379,
+          238.476,
+          225.379
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b37_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b37_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          226.291,
+          189.303,
+          238.476,
+          194.848
+        ],
+        "candidate_rect": [
+          226.291,
+          189.303,
+          238.476,
+          198.303
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b38_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b38_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          226.291,
+          202.838,
+          238.476,
+          208.384
+        ],
+        "candidate_rect": [
+          226.291,
+          202.838,
+          238.476,
+          211.838
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b40_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b40_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          316.419,
+          189.209,
+          353.782,
+          197.525
+        ],
+        "candidate_rect": [
+          316.419,
+          189.209,
+          372.306,
+          199.188
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.4,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b41_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b41_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          294.25,
+          202.353,
+          309.05,
+          209.562
+        ],
+        "candidate_rect": [
+          294.25,
+          202.353,
+          372.306,
+          211.004
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.0,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b42_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b42_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          249.854,
+          224.459,
+          264.763,
+          231.667
+        ],
+        "candidate_rect": [
+          249.854,
+          224.459,
+          372.306,
+          233.109
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.0,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b44_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b44_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          251.449,
+          288.787,
+          352.45,
+          295.495
+        ],
+        "candidate_rect": [
+          251.449,
+          288.787,
+          397.464,
+          297.787
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b45_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b45_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.847,
+          179.7,
+          243.504,
+          186.22
+        ],
+        "candidate_rect": [
+          223.847,
+          188.867,
+          273.827,
+          197.867
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b47_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b47_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          380.306,
+          268.282,
+          392.491,
+          273.827
+        ],
+        "candidate_rect": [
+          380.306,
+          268.282,
+          392.491,
+          277.282
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b48_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b48_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          380.306,
+          252.486,
+          392.491,
+          258.031
+        ],
+        "candidate_rect": [
+          380.306,
+          252.486,
+          392.491,
+          261.486
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b49_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b49_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          380.306,
+          236.691,
+          392.491,
+          242.236
+        ],
+        "candidate_rect": [
+          380.306,
+          236.691,
+          392.491,
+          245.691
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b50_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b50_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          380.306,
+          220.895,
+          392.491,
+          226.44
+        ],
+        "candidate_rect": [
+          380.306,
+          220.895,
+          392.491,
+          229.895
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b51_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b51_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          380.306,
+          189.304,
+          392.491,
+          194.849
+        ],
+        "candidate_rect": [
+          380.306,
+          189.304,
+          392.491,
+          198.304
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b52_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b52_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          380.306,
+          205.099,
+          392.491,
+          210.645
+        ],
+        "candidate_rect": [
+          380.306,
+          205.099,
+          392.491,
+          214.099
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b56_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b56_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          448.265,
+          205.282,
+          463.066,
+          212.49
+        ],
+        "candidate_rect": [
+          448.265,
+          205.282,
+          559.276,
+          213.932
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.0,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b57_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b57_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          405.464,
+          288.787,
+          506.465,
+          295.496
+        ],
+        "candidate_rect": [
+          405.464,
+          288.787,
+          559.276,
+          297.787
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b58_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b58_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          380.299,
+          179.7,
+          399.956,
+          186.22
+        ],
+        "candidate_rect": [
+          380.299,
+          188.873,
+          559.276,
+          197.873
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b60_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b60_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          72.275,
+          505.999,
+          84.46,
+          511.544
+        ],
+        "candidate_rect": [
+          72.275,
+          505.999,
+          84.46,
+          514.999
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b61_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b61_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          69.475,
+          492.544,
+          84.46,
+          498.089
+        ],
+        "candidate_rect": [
+          69.475,
+          497.302,
+          215.49,
+          506.302
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b62_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b62_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          69.475,
+          478.978,
+          84.46,
+          484.523
+        ],
+        "candidate_rect": [
+          69.475,
+          487.102,
+          215.49,
+          496.102
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b63_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b63_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          69.475,
+          465.438,
+          84.46,
+          470.983
+        ],
+        "candidate_rect": [
+          69.475,
+          465.438,
+          86.376,
+          474.438
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b64_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b64_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          69.475,
+          451.927,
+          84.46,
+          457.472
+        ],
+        "candidate_rect": [
+          69.475,
+          454.992,
+          86.376,
+          463.992
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b65_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b65_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          69.475,
+          438.362,
+          84.46,
+          443.907
+        ],
+        "candidate_rect": [
+          69.475,
+          444.792,
+          215.49,
+          453.792
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b66_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b66_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          69.475,
+          424.826,
+          84.46,
+          430.371
+        ],
+        "candidate_rect": [
+          69.475,
+          434.592,
+          152.714,
+          443.592
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b71_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b71_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          97.433,
+          524.299,
+          198.434,
+          531.008
+        ],
+        "candidate_rect": [
+          97.433,
+          524.299,
+          243.448,
+          533.299
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b72_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b72_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          69.446,
+          415.212,
+          89.103,
+          421.733
+        ],
+        "candidate_rect": [
+          69.446,
+          424.392,
+          215.49,
+          433.392
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b74_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b74_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.49,
+          506.079,
+          238.475,
+          511.624
+        ],
+        "candidate_rect": [
+          223.49,
+          508.689,
+          273.827,
+          517.689
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b75_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b75_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.49,
+          492.513,
+          238.475,
+          498.058
+        ],
+        "candidate_rect": [
+          223.49,
+          498.489,
+          273.827,
+          507.489
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b76_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b76_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.49,
+          478.978,
+          238.475,
+          484.523
+        ],
+        "candidate_rect": [
+          223.49,
+          488.289,
+          273.827,
+          497.289
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b77_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b77_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.49,
+          465.412,
+          238.475,
+          470.957
+        ],
+        "candidate_rect": [
+          223.49,
+          478.089,
+          240.299,
+          487.089
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b78_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b78_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.49,
+          451.872,
+          238.475,
+          457.417
+        ],
+        "candidate_rect": [
+          223.49,
+          467.889,
+          240.299,
+          476.889
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b79_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b79_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.49,
+          438.361,
+          238.475,
+          443.906
+        ],
+        "candidate_rect": [
+          223.49,
+          444.794,
+          273.827,
+          453.794
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b80_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b80_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.49,
+          424.826,
+          238.475,
+          430.371
+        ],
+        "candidate_rect": [
+          223.49,
+          434.594,
+          273.827,
+          443.594
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b82_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b82_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          336.58,
+          427.334,
+          355.397,
+          434.718
+        ],
+        "candidate_rect": [
+          336.58,
+          427.334,
+          376.193,
+          436.195
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.4,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b85_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b85_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          251.448,
+          524.298,
+          352.449,
+          531.007
+        ],
+        "candidate_rect": [
+          251.448,
+          524.298,
+          381.693,
+          533.298
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b86_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b86_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          223.515,
+          415.212,
+          243.172,
+          421.733
+        ],
+        "candidate_rect": [
+          223.515,
+          424.394,
+          273.827,
+          433.394
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b90_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b90_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.25,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          423.275,
+          455.807,
+          433.581,
+          463.015
+        ],
+        "candidate_rect": [
+          423.275,
+          455.807,
+          431.275,
+          464.807
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 5.2,
+        "font_floor": 3.38
+      }
+    },
+    {
+      "operation_id": "expand_p7_b91_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b91_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          490.922,
+          424.033,
+          501.632,
+          431.417
+        ],
+        "candidate_rect": [
+          490.922,
+          424.033,
+          559.276,
+          432.894
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.4,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b94_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b94_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.125,
+      "grow_right_pt": 11.7,
+      "min_font_start": 3.9,
+      "min_font_min": 3.349,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          468.386,
+          441.215,
+          512.016,
+          449.746
+        ],
+        "candidate_rect": [
+          468.386,
+          441.215,
+          559.276,
+          451.452
+        ],
+        "source_font_size": 6.500199794769287,
+        "candidate_font_size": 6.4,
+        "font_floor": 3.64
+      }
+    },
+    {
+      "operation_id": "expand_p7_b98_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b98_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          384.093,
+          487.96,
+          392.493,
+          493.505
+        ],
+        "candidate_rect": [
+          384.093,
+          487.96,
+          392.493,
+          496.96
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b99_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b99_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          384.093,
+          472.199,
+          392.493,
+          477.745
+        ],
+        "candidate_rect": [
+          384.093,
+          472.199,
+          392.493,
+          481.199
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b100_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b100_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          384.388,
+          440.668,
+          392.788,
+          446.213
+        ],
+        "candidate_rect": [
+          384.388,
+          440.668,
+          392.788,
+          449.668
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b101_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b101_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          384.388,
+          456.414,
+          392.788,
+          461.959
+        ],
+        "candidate_rect": [
+          384.388,
+          456.414,
+          392.788,
+          465.414
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b102_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b102_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          384.193,
+          424.828,
+          392.593,
+          430.373
+        ],
+        "candidate_rect": [
+          384.193,
+          424.828,
+          392.593,
+          433.828
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.2,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p7_b103_0",
+      "operation_type": "expand_slot",
+      "group_id": "p7_b103_0",
+      "page_index": 7,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 6.25,
+      "grow_right_pt": 9.0,
+      "min_font_start": 3.0,
+      "min_font_min": 2.5,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          384.336,
+          415.212,
+          404.182,
+          421.733
+        ],
+        "candidate_rect": [
+          384.336,
+          424.392,
+          559.276,
+          433.392
+        ],
+        "source_font_size": 5.000149726867676,
+        "candidate_font_size": 5.6,
+        "font_floor": 2.6
+      }
+    },
+    {
+      "operation_id": "expand_p9_b5_0",
+      "operation_type": "expand_slot",
+      "group_id": "p9_b5_0",
+      "page_index": 9,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          310.7,
+          515.907,
+          322.652
+        ],
+        "candidate_rect": [
+          62.362,
+          310.7,
+          515.907,
+          325.042
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p9_b8_0",
+      "operation_type": "expand_slot",
+      "group_id": "p9_b8_0",
+      "page_index": 9,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.353,
+          374.708,
+          518.419,
+          386.66
+        ],
+        "candidate_rect": [
+          62.353,
+          374.708,
+          518.419,
+          389.05
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p9_b10_0",
+      "operation_type": "expand_slot",
+      "group_id": "p9_b10_0",
+      "page_index": 9,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.353,
+          406.712,
+          518.419,
+          418.664
+        ],
+        "candidate_rect": [
+          62.353,
+          406.712,
+          518.419,
+          421.054
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p10_b0_0",
+      "operation_type": "expand_slot",
+      "group_id": "p10_b0_0",
+      "page_index": 10,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.75,
+      "grow_right_pt": 12.6,
+      "min_font_start": 4.68,
+      "min_font_min": 4.306,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          510.099,
+          813.08,
+          560.777,
+          821.92
+        ],
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "source_font_size": 7.0,
+        "candidate_font_size": 5.2,
+        "font_floor": 4.68
+      }
+    },
+    {
+      "operation_id": "expand_p12_b0_0",
+      "operation_type": "expand_slot",
+      "group_id": "p12_b0_0",
+      "page_index": 12,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.75,
+      "grow_right_pt": 12.6,
+      "min_font_start": 4.68,
+      "min_font_min": 4.306,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          510.099,
+          813.08,
+          560.868,
+          821.92
+        ],
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "source_font_size": 7.0,
+        "candidate_font_size": 5.2,
+        "font_floor": 4.68
+      }
+    },
+    {
+      "operation_id": "expand_p14_b0_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b0_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.75,
+      "grow_right_pt": 12.6,
+      "min_font_start": 4.68,
+      "min_font_min": 4.306,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          510.099,
+          813.08,
+          560.032,
+          821.92
+        ],
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "source_font_size": 7.0,
+        "candidate_font_size": 5.2,
+        "font_floor": 4.68
+      }
+    },
+    {
+      "operation_id": "expand_p14_b3_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b3_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          126.469,
+          532.97,
+          138.646
+        ],
+        "candidate_rect": [
+          79.37,
+          126.469,
+          532.97,
+          141.081
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p14_b4_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b4_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          142.696,
+          532.88,
+          154.648
+        ],
+        "candidate_rect": [
+          79.37,
+          142.701,
+          532.88,
+          157.043
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p14_b5_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b5_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          158.698,
+          532.881,
+          170.65
+        ],
+        "candidate_rect": [
+          79.37,
+          158.698,
+          532.881,
+          173.04
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p14_b7_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b7_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          206.479,
+          532.889,
+          218.656
+        ],
+        "candidate_rect": [
+          79.37,
+          206.479,
+          532.889,
+          221.091
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p14_b9_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b9_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          238.708,
+          532.871,
+          250.66
+        ],
+        "candidate_rect": [
+          79.37,
+          238.708,
+          532.871,
+          253.05
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p14_b11_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b11_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          286.489,
+          532.847,
+          298.666
+        ],
+        "candidate_rect": [
+          79.37,
+          286.489,
+          532.847,
+          301.101
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p14_b15_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b15_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          366.499,
+          532.898,
+          378.676
+        ],
+        "candidate_rect": [
+          79.37,
+          366.499,
+          532.898,
+          383.499
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p14_b16_0",
+      "operation_type": "expand_slot",
+      "group_id": "p14_b16_0",
+      "page_index": 14,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          382.726,
+          532.864,
+          394.678
+        ],
+        "candidate_rect": [
+          79.37,
+          385.119,
+          532.864,
+          399.461
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p15_b4_0",
+      "operation_type": "expand_slot",
+      "group_id": "p15_b4_0",
+      "page_index": 15,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          142.694,
+          518.428,
+          154.646
+        ],
+        "candidate_rect": [
+          62.362,
+          143.114,
+          518.428,
+          157.456
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p15_b6_0",
+      "operation_type": "expand_slot",
+      "group_id": "p15_b6_0",
+      "page_index": 15,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          174.698,
+          515.944,
+          186.65
+        ],
+        "candidate_rect": [
+          62.362,
+          175.038,
+          515.944,
+          189.38
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p15_b8_0",
+      "operation_type": "expand_slot",
+      "group_id": "p15_b8_0",
+      "page_index": 15,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          222.704,
+          515.782,
+          234.656
+        ],
+        "candidate_rect": [
+          62.362,
+          222.704,
+          515.782,
+          237.046
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p15_b9_0",
+      "operation_type": "expand_slot",
+      "group_id": "p15_b9_0",
+      "page_index": 15,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          238.706,
+          515.944,
+          250.658
+        ],
+        "candidate_rect": [
+          62.362,
+          238.706,
+          515.944,
+          253.048
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p15_b11_0",
+      "operation_type": "expand_slot",
+      "group_id": "p15_b11_0",
+      "page_index": 15,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          286.712,
+          515.908,
+          298.664
+        ],
+        "candidate_rect": [
+          62.362,
+          286.712,
+          515.908,
+          301.054
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p15_b12_0",
+      "operation_type": "expand_slot",
+      "group_id": "p15_b12_0",
+      "page_index": 15,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          302.714,
+          515.899,
+          314.666
+        ],
+        "candidate_rect": [
+          62.362,
+          302.714,
+          515.899,
+          317.056
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p15_b14_0",
+      "operation_type": "expand_slot",
+      "group_id": "p15_b14_0",
+      "page_index": 15,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          334.718,
+          515.781,
+          346.67
+        ],
+        "candidate_rect": [
+          62.362,
+          334.718,
+          515.781,
+          349.06
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p16_b0_0",
+      "operation_type": "expand_slot",
+      "group_id": "p16_b0_0",
+      "page_index": 16,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.75,
+      "grow_right_pt": 12.6,
+      "min_font_start": 4.68,
+      "min_font_min": 4.306,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          510.099,
+          813.08,
+          560.256,
+          821.92
+        ],
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "source_font_size": 7.0,
+        "candidate_font_size": 5.2,
+        "font_floor": 4.68
+      }
+    },
+    {
+      "operation_id": "expand_p16_b3_0",
+      "operation_type": "expand_slot",
+      "group_id": "p16_b3_0",
+      "page_index": 16,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          110.694,
+          532.753,
+          122.646
+        ],
+        "candidate_rect": [
+          79.37,
+          110.694,
+          532.753,
+          125.036
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p16_b5_0",
+      "operation_type": "expand_slot",
+      "group_id": "p16_b5_0",
+      "page_index": 16,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          158.7,
+          532.912,
+          170.652
+        ],
+        "candidate_rect": [
+          79.37,
+          158.7,
+          532.912,
+          173.042
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p16_b8_0",
+      "operation_type": "expand_slot",
+      "group_id": "p16_b8_0",
+      "page_index": 16,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          222.708,
+          532.754,
+          234.66
+        ],
+        "candidate_rect": [
+          79.37,
+          222.708,
+          532.754,
+          237.05
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p16_b10_0",
+      "operation_type": "expand_slot",
+      "group_id": "p16_b10_0",
+      "page_index": 16,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          270.714,
+          532.79,
+          282.666
+        ],
+        "candidate_rect": [
+          79.37,
+          270.714,
+          532.79,
+          285.056
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p16_b12_0",
+      "operation_type": "expand_slot",
+      "group_id": "p16_b12_0",
+      "page_index": 16,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          318.72,
+          532.79,
+          330.672
+        ],
+        "candidate_rect": [
+          79.37,
+          318.72,
+          532.79,
+          333.062
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p16_b13_0",
+      "operation_type": "expand_slot",
+      "group_id": "p16_b13_0",
+      "page_index": 16,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.37,
+          334.722,
+          532.79,
+          346.674
+        ],
+        "candidate_rect": [
+          79.37,
+          334.722,
+          532.79,
+          349.064
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p17_b3_0",
+      "operation_type": "expand_slot",
+      "group_id": "p17_b3_0",
+      "page_index": 17,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          126.694,
+          515.899,
+          138.646
+        ],
+        "candidate_rect": [
+          62.362,
+          126.694,
+          515.899,
+          141.036
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p17_b4_0",
+      "operation_type": "expand_slot",
+      "group_id": "p17_b4_0",
+      "page_index": 17,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          142.696,
+          515.891,
+          154.648
+        ],
+        "candidate_rect": [
+          62.362,
+          142.696,
+          515.891,
+          157.038
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p17_b6_0",
+      "operation_type": "expand_slot",
+      "group_id": "p17_b6_0",
+      "page_index": 17,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          174.7,
+          515.914,
+          186.652
+        ],
+        "candidate_rect": [
+          62.362,
+          174.7,
+          515.914,
+          189.042
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p17_b9_0",
+      "operation_type": "expand_slot",
+      "group_id": "p17_b9_0",
+      "page_index": 17,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          238.708,
+          515.746,
+          250.66
+        ],
+        "candidate_rect": [
+          62.362,
+          238.708,
+          515.746,
+          255.708
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p17_b11_0",
+      "operation_type": "expand_slot",
+      "group_id": "p17_b11_0",
+      "page_index": 17,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          286.714,
+          515.746,
+          298.666
+        ],
+        "candidate_rect": [
+          62.362,
+          286.714,
+          515.746,
+          301.056
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p17_b12_0",
+      "operation_type": "expand_slot",
+      "group_id": "p17_b12_0",
+      "page_index": 17,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 11.25,
+      "grow_right_pt": 16.2,
+      "min_font_start": 5.4,
+      "min_font_min": 4.968,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          62.362,
+          302.716,
+          515.782,
+          314.668
+        ],
+        "candidate_rect": [
+          62.362,
+          302.716,
+          515.782,
+          317.058
+        ],
+        "source_font_size": 9.0,
+        "candidate_font_size": 6.0,
+        "font_floor": 5.4
+      }
+    },
+    {
+      "operation_id": "expand_p18_b0_0",
+      "operation_type": "expand_slot",
+      "group_id": "p18_b0_0",
+      "page_index": 18,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 8.75,
+      "grow_right_pt": 12.6,
+      "min_font_start": 7.28,
+      "min_font_min": 6.698,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          510.099,
+          813.08,
+          560.266,
+          821.92
+        ],
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "source_font_size": 7.0,
+        "candidate_font_size": 5.2,
+        "font_floor": 7.28
+      }
+    },
+    {
+      "operation_id": "expand_p18_b5_0",
+      "operation_type": "expand_slot",
+      "group_id": "p18_b5_0",
+      "page_index": 18,
+      "target_state": "S6_LayoutPlan",
+      "grow_down_pt": 17.5,
+      "grow_right_pt": 25.2,
+      "min_font_start": 8.4,
+      "min_font_min": 7.0,
+      "failure_class": "text_fit_overflow",
+      "reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "source_candidate_evidence": {
+        "source_rect": [
+          79.356,
+          220.705,
+          207.806,
+          239.185
+        ],
+        "candidate_rect": [
+          79.356,
+          220.705,
+          273.827,
+          241.957
+        ],
+        "source_font_size": 14.0,
+        "candidate_font_size": 9.52,
+        "font_floor": 7.28
+      }
+    }
+  ]
+}

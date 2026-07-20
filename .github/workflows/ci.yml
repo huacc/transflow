@@ -1,0 +1,21 @@
+name: transflow-fast-gate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  gate-g0:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - name: Install project and development checks
+        run: python -m pip install -e ".[dev]"
+      - name: Run fast Gate G0
+        run: python scripts/run_gate.py G0 --report tmp/gates/G0/ci-report.json

@@ -1,0 +1,60 @@
+{
+  "schema_version": "transflow.gate-report/v1",
+  "gate": "G3",
+  "started_at": "2026-07-20T00:32:42+08:00",
+  "finished_at": "2026-07-20T00:35:22+08:00",
+  "duration_ms": 159949,
+  "catalog": "resources/manifests/gate_catalog.json",
+  "conclusion": "FAIL",
+  "steps": [
+    {
+      "step_id": "G3-STATIC",
+      "intent": "检查 P3 生产代码、工程脚本和测试的格式、导入与静态错误",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "return_code": 0,
+      "duration_ms": 130,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-TYPES",
+      "intent": "检查 P3 Standalone、文件 Adapter、HTTP Adapter 和验收脚本类型边界",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "return_code": 0,
+      "duration_ms": 302,
+      "stdout": "Success: no issues found in 44 source files\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-REGRESSION",
+      "intent": "确认 P3 改动没有破坏已通过的 P0、P1 与 P2 技术基线",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_p0.py",
+        "tests/test_p1.py",
+        "tests/test_p2.py"
+      ],
+      "return_code": 1,
+      "duration_ms": 159512,
+      "stdout": "....F.F...........................................                       [100%]\n================================== FAILURES ===================================\n_______________ test_p0_2_t02_production_import_graph_is_clean ________________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001BBBBDD8050>\n\n    def test_p0_2_t02_production_import_graph_is_clean(\n        monkeypatch: pytest.MonkeyPatch,\n    ) -> None:\n        \"\"\"P0.2-T02：真实生产源码 AST 不含 spike 或 MerqFin 导入边。\"\"\"\n    \n>       assert verify_p0.check_package_boundary() == []\nE       AssertionError: assert ['ABSOLUTE_DR...njectedCrash'] == []\nE         \nE         Left contains 2 more items, first extra item: 'ABSOLUTE_DRIVE_PATH:src/transflow/adapters/ai/http.py'\nE         Use -v to get more diff\n\ntests\\test_p0.py:123: AssertionError\n________ test_p0_3_t01_smoke_coverage_and_architecture_checks_execute _________\n\nmonkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001BBBEB2CD10>\n\n    def test_p0_3_t01_smoke_coverage_and_architecture_checks_execute(\n        monkeypatch: pytest.MonkeyPatch,\n    ) -> None:\n        \"\"\"P0.3-T01：快速检查均真实执行，覆盖率由当前 pytest Gate 采集。\"\"\"\n    \n        results = verify_p0.all_checks()\n>       assert results == {key: [] for key in results}\nE       AssertionError: assert {'baseline': ...ity': [], ...} == {'baseline': ...ity': [], ...}\nE         \nE         Omitting 5 identical items, use -vv to show\nE         Differing items:\nE         {'package_boundary': ['ABSOLUTE_DRIVE_PATH:src/transflow/adapters/ai/http.py', 'EMPTY_CLASS:src/transflow/adapters/filesystem/common.py:InjectedCrash']} != {'package_boundary': []}\nE         Use -v to get more diff\n\ntests\\test_p0.py:171: AssertionError\n=========================== short test summary info ===========================\nFAILED tests/test_p0.py::test_p0_2_t02_production_import_graph_is_clean - Ass...\nFAILED tests/test_p0.py::test_p0_3_t01_smoke_coverage_and_architecture_checks_execute\n2 failed, 48 passed in 158.79s (0:02:38)\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "schema_version": "transflow.gate-report/v1",
+  "gate": "G3",
+  "started_at": "2026-07-20T00:37:32+08:00",
+  "finished_at": "2026-07-20T00:41:10+08:00",
+  "duration_ms": 218210,
+  "catalog": "resources/manifests/gate_catalog.json",
+  "conclusion": "PASS",
+  "steps": [
+    {
+      "step_id": "G3-STATIC",
+      "intent": "检查 P3 生产代码、工程脚本和测试的格式、导入与静态错误",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "return_code": 0,
+      "duration_ms": 131,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-TYPES",
+      "intent": "检查 P3 Standalone、文件 Adapter、HTTP Adapter 和验收脚本类型边界",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "return_code": 0,
+      "duration_ms": 306,
+      "stdout": "Success: no issues found in 44 source files\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-REGRESSION",
+      "intent": "确认 P3 改动没有破坏已通过的 P0、P1 与 P2 技术基线",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_p0.py",
+        "tests/test_p1.py",
+        "tests/test_p2.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 165707,
+      "stdout": "..................................................                       [100%]\n50 passed in 165.00s (0:02:45)\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-1-STANDALONE-VALID",
+      "intent": "验证三页/一页完整 PDF 与重复提交的 Standalone 正向合同",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py",
+        "-k",
+        "p3_1_t01 or p3_1_t02 or p3_1_t09"
+      ],
+      "return_code": 0,
+      "duration_ms": 1325,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items / 31 deselected / 3 selected\n\ntests/test_p3.py::test_p3_1_t01_accepts_three_page_complete_pdf_with_correct_hash PASSED [ 33%]\ntests/test_p3.py::test_p3_1_t02_accepts_one_page_complete_document PASSED [ 66%]\ntests/test_p3.py::test_p3_1_t09_duplicate_submission_creates_independent_run_identity PASSED [100%]\n\n====================== 3 passed, 31 deselected in 0.65s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-2-STANDALONE-INVALID",
+      "intent": "验证列表、目录、逃逸、重解析、损坏和缺字段全部拒绝且无副作用",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py",
+        "-k",
+        "p3_1_t03 or p3_1_t04 or p3_1_t05 or p3_1_t06 or p3_1_t07 or p3_1_t08"
+      ],
+      "return_code": 0,
+      "duration_ms": 1243,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items / 28 deselected / 6 selected\n\ntests/test_p3.py::test_p3_1_t03_rejects_every_pdf_list_without_creating_run PASSED [ 16%]\ntests/test_p3.py::test_p3_1_t04_rejects_directory_without_recursive_search PASSED [ 33%]\ntests/test_p3.py::test_p3_1_t05_rejects_relative_and_normalized_escape_paths PASSED [ 50%]\ntests/test_p3.py::test_p3_1_t06_rejects_reparse_target_outside_allowed_root PASSED [ 66%]\ntests/test_p3.py::test_p3_1_t07_rejects_unsupported_empty_damaged_and_encrypted_files PASSED [ 83%]\ntests/test_p3.py::test_p3_1_t08_rejects_missing_or_wrong_typed_fields_without_workspace PASSED [100%]\n\n====================== 6 passed, 28 deselected in 0.56s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-3-CHECKPOINT",
+      "intent": "验证 Checkpoint 单调、幂等、冲突、原子恢复与路径隔离",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py",
+        "-k",
+        "p3_2"
+      ],
+      "return_code": 0,
+      "duration_ms": 1489,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items / 26 deselected / 8 selected\n\ntests/test_p3.py::test_p3_2_t01_first_page_checkpoint_and_manifest_are_consistent PASSED [ 12%]\ntests/test_p3.py::test_p3_2_t02_higher_version_replaces_authority_and_lower_is_rejected PASSED [ 25%]\ntests/test_p3.py::test_p3_2_t03_same_version_is_idempotent_but_fork_conflicts PASSED [ 37%]\ntests/test_p3.py::test_p3_2_t04_crash_before_checkpoint_rename_cleans_registered_partial PASSED [ 50%]\ntests/test_p3.py::test_p3_2_t05_crash_after_rename_reports_unreferenced_orphan PASSED [ 62%]\ntests/test_p3.py::test_p3_2_t06_restart_after_manifest_loads_v2_without_replay PASSED [ 75%]\ntests/test_p3.py::test_p3_2_t07_page_path_escape_and_external_reparse_are_rejected PASSED [ 87%]\ntests/test_p3.py::test_p3_2_t08_recovery_preserves_unknown_and_other_run_files PASSED [100%]\n\n====================== 8 passed, 26 deselected in 0.75s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-4-ARTIFACT-LOG",
+      "intent": "验证不可变 Artifact、引用完整性及结构化日志脱敏截断",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py",
+        "-k",
+        "p3_3"
+      ],
+      "return_code": 0,
+      "duration_ms": 1256,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items / 29 deselected / 5 selected\n\ntests/test_p3.py::test_p3_3_t01_artifact_put_and_verify_match_content_hash_path_and_label PASSED [ 20%]\ntests/test_p3.py::test_p3_3_t02_artifact_replay_is_idempotent_and_overwrite_is_rejected PASSED [ 40%]\ntests/test_p3.py::test_p3_3_t03_checkpoint_rejects_missing_corrupt_and_hash_mismatch_artifacts PASSED [ 60%]\ntests/test_p3.py::test_p3_3_t04_success_degradation_and_error_logs_have_all_fields PASSED [ 80%]\ntests/test_p3.py::test_p3_3_t05_logs_redact_secrets_and_truncate_unbounded_payloads PASSED [100%]\n\n====================== 5 passed, 29 deselected in 0.58s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-5-TEST-TRANSLATION",
+      "intent": "验证固定翻译可复现且 production wheel 无真实 Provider 测试接线",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py",
+        "-k",
+        "p3_4_t01 or p3_4_t06"
+      ],
+      "return_code": 0,
+      "duration_ms": 12432,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items / 32 deselected / 2 selected\n\ntests/test_p3.py::test_p3_4_t01_fixed_and_deterministic_translation_are_reproducible PASSED [ 50%]\ntests/test_p3.py::test_p3_4_t06_production_wheel_excludes_real_provider_and_fake_service PASSED [100%]\n\n====================== 2 passed, 32 deselected in 11.75s ======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-6-FAKE-AI",
+      "intent": "验证两个真实 HTTP 合同的成功、错误、鉴权、大小和 readiness",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py",
+        "-k",
+        "p3_4_t02 or p3_4_t03 or p3_4_t04 or p3_4_t05 or p3_4_t07"
+      ],
+      "return_code": 0,
+      "duration_ms": 9867,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items / 29 deselected / 5 selected\n\ntests/test_p3.py::test_p3_4_t02_real_fake_service_returns_valid_decision_and_translation PASSED [ 20%]\ntests/test_p3.py::test_p3_4_t03_timeout_5xx_and_429_map_to_retryable_errors PASSED [ 40%]\ntests/test_p3.py::test_p3_4_t04_invalid_json_schema_and_unit_identity_are_rejected PASSED [ 60%]\ntests/test_p3.py::test_p3_4_t05_bad_token_and_oversized_request_are_rejected_without_leak PASSED [ 80%]\ntests/test_p3.py::test_p3_4_t07_real_fake_liveness_readiness_and_shutdown_are_truthful PASSED [100%]\n\n====================== 5 passed, 29 deselected in 9.15s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-7-CRASH-WINDOWS",
+      "intent": "验证五类文件崩溃窗口无权威歧义且跨 Run 删除为零",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py",
+        "-k",
+        "p3_5"
+      ],
+      "return_code": 0,
+      "duration_ms": 1378,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items / 29 deselected / 5 selected\n\ntests/test_p3.py::test_p3_5_t01_artifact_crash_before_rename_has_no_authority_and_replays PASSED [ 20%]\ntests/test_p3.py::test_p3_5_t02_artifact_after_rename_is_orphan_not_committed_state PASSED [ 40%]\ntests/test_p3.py::test_p3_5_t03_crash_after_manifest_reads_by_hash_and_skips_replay PASSED [ 60%]\ntests/test_p3.py::test_p3_5_t04_final_rename_before_publish_preserves_old_authority PASSED [ 80%]\ntests/test_p3.py::test_p3_5_t05_recovery_never_deletes_unknown_cross_run_or_reparse_targets PASSED [100%]\n\n====================== 5 passed, 29 deselected in 0.68s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-FULL-EVIDENCE",
+      "intent": "在单一隔离工作区执行 P3.1 至 P3.5 全部三十四项验收",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p3.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 22793,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 34 items\n\ntests/test_p3.py::test_p3_1_t01_accepts_three_page_complete_pdf_with_correct_hash PASSED [  2%]\ntests/test_p3.py::test_p3_1_t02_accepts_one_page_complete_document PASSED [  5%]\ntests/test_p3.py::test_p3_1_t03_rejects_every_pdf_list_without_creating_run PASSED [  8%]\ntests/test_p3.py::test_p3_1_t04_rejects_directory_without_recursive_search PASSED [ 11%]\ntests/test_p3.py::test_p3_1_t05_rejects_relative_and_normalized_escape_paths PASSED [ 14%]\ntests/test_p3.py::test_p3_1_t06_rejects_reparse_target_outside_allowed_root PASSED [ 17%]\ntests/test_p3.py::test_p3_1_t07_rejects_unsupported_empty_damaged_and_encrypted_files PASSED [ 20%]\ntests/test_p3.py::test_p3_1_t08_rejects_missing_or_wrong_typed_fields_without_workspace PASSED [ 23%]\ntests/test_p3.py::test_p3_1_t09_duplicate_submission_creates_independent_run_identity PASSED [ 26%]\ntests/test_p3.py::test_p3_2_t01_first_page_checkpoint_and_manifest_are_consistent PASSED [ 29%]\ntests/test_p3.py::test_p3_2_t02_higher_version_replaces_authority_and_lower_is_rejected PASSED [ 32%]\ntests/test_p3.py::test_p3_2_t03_same_version_is_idempotent_but_fork_conflicts PASSED [ 35%]\ntests/test_p3.py::test_p3_2_t04_crash_before_checkpoint_rename_cleans_registered_partial PASSED [ 38%]\ntests/test_p3.py::test_p3_2_t05_crash_after_rename_reports_unreferenced_orphan PASSED [ 41%]\ntests/test_p3.py::test_p3_2_t06_restart_after_manifest_loads_v2_without_replay PASSED [ 44%]\ntests/test_p3.py::test_p3_2_t07_page_path_escape_and_external_reparse_are_rejected PASSED [ 47%]\ntests/test_p3.py::test_p3_2_t08_recovery_preserves_unknown_and_other_run_files PASSED [ 50%]\ntests/test_p3.py::test_p3_3_t01_artifact_put_and_verify_match_content_hash_path_and_label PASSED [ 52%]\ntests/test_p3.py::test_p3_3_t02_artifact_replay_is_idempotent_and_overwrite_is_rejected PASSED [ 55%]\ntests/test_p3.py::test_p3_3_t03_checkpoint_rejects_missing_corrupt_and_hash_mismatch_artifacts PASSED [ 58%]\ntests/test_p3.py::test_p3_3_t04_success_degradation_and_error_logs_have_all_fields PASSED [ 61%]\ntests/test_p3.py::test_p3_3_t05_logs_redact_secrets_and_truncate_unbounded_payloads PASSED [ 64%]\ntests/test_p3.py::test_p3_4_t01_fixed_and_deterministic_translation_are_reproducible PASSED [ 67%]\ntests/test_p3.py::test_p3_4_t02_real_fake_service_returns_valid_decision_and_translation PASSED [ 70%]\ntests/test_p3.py::test_p3_4_t03_timeout_5xx_and_429_map_to_retryable_errors PASSED [ 73%]\ntests/test_p3.py::test_p3_4_t04_invalid_json_schema_and_unit_identity_are_rejected PASSED [ 76%]\ntests/test_p3.py::test_p3_4_t05_bad_token_and_oversized_request_are_rejected_without_leak PASSED [ 79%]\ntests/test_p3.py::test_p3_4_t06_production_wheel_excludes_real_provider_and_fake_service PASSED [ 82%]\ntests/test_p3.py::test_p3_4_t07_real_fake_liveness_readiness_and_shutdown_are_truthful PASSED [ 85%]\ntests/test_p3.py::test_p3_5_t01_artifact_crash_before_rename_has_no_authority_and_replays PASSED [ 88%]\ntests/test_p3.py::test_p3_5_t02_artifact_after_rename_is_orphan_not_committed_state PASSED [ 91%]\ntests/test_p3.py::test_p3_5_t03_crash_after_manifest_reads_by_hash_and_skips_replay PASSED [ 94%]\ntests/test_p3.py::test_p3_5_t04_final_rename_before_publish_preserves_old_authority PASSED [ 97%]\ntests/test_p3.py::test_p3_5_t05_recovery_never_deletes_unknown_cross_run_or_reparse_targets PASSED [100%]\n\n============================= 34 passed in 22.07s =============================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G3-AUDIT",
+      "intent": "复核权威 manifest、半写文件、日志秘密、production wheel 和评审问题",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p3",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 272,
+      "stdout": "P3_VERIFY check=checkpoints status=PASS violations=0\nP3_VERIFY check=artifacts status=PASS violations=0\nP3_VERIFY check=safety status=PASS violations=0\nP3_VERIFY check=production status=PASS violations=0\nP3_VERIFY check=review status=PASS violations=0\nP3_VERIFY_SUMMARY status=PASS checks=5\n",
+      "stderr": "INFO transflow.p3.verify 调用 P3 汇总检查，意图=验证外部副作用闭环 check=checkpoints\nINFO transflow.p3.verify 调用 P3 汇总检查，意图=验证外部副作用闭环 check=artifacts\nINFO transflow.p3.verify 调用 P3 汇总检查，意图=验证外部副作用闭环 check=safety\nINFO transflow.p3.verify 调用 P3 汇总检查，意图=验证外部副作用闭环 check=production\nINFO transflow.p3.verify 调用 P3 汇总检查，意图=验证外部副作用闭环 check=review\n"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "allowed_conclusions": [
+    "PASS_ENABLE",
+    "PASS_DISABLED_WITH_FALLBACK",
+    "FAIL"
+  ],
+  "evidence_schema": "resources/schemas/leaf_migration_evidence_v1.schema.json",
+  "invalidation_inputs": [
+    "code_hash",
+    "schema_hash",
+    "catalog_hash",
+    "font_hash",
+    "threshold_hash"
+  ],
+  "publication_rule": "enabled 仅允许匹配 PASS_ENABLE 的版本、evidence hash 和 attestation hash",
+  "required_fields": [
+    "schema_version",
+    "route",
+    "source_path",
+    "source_hash",
+    "original_state",
+    "target_toolbox_key",
+    "target_version",
+    "fallback",
+    "owner",
+    "code_hash",
+    "schema_hash",
+    "catalog_hash",
+    "font_hash",
+    "threshold_hash",
+    "evidence_hash",
+    "allowed_changes",
+    "migration_differences",
+    "fixture_refs",
+    "gold_refs",
+    "threshold_refs",
+    "limitations",
+    "contract_passed",
+    "equivalence_passed",
+    "blind_passed",
+    "anti_overfit_passed",
+    "failure_passed",
+    "document_e2e_passed",
+    "fallback_has_page_outcome",
+    "fallback_has_complete_pdf",
+    "new_evidence"
+  ],
+  "schema_version": "transflow.leaf-migration-template/v1"
+}

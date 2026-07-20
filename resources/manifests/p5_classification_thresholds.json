@@ -1,0 +1,28 @@
+{
+  "schema_version": "transflow.classification-threshold-registry/v1",
+  "frozen_at": "2026-07-20T09:30:54+08:00",
+  "freeze_reason": "P5.1 事前冻结；本次迁移质量结果尚未生成",
+  "global_thresholds": {
+    "freeform_rate_max": 0.25,
+    "high_cost_misroute_rate_max": 0.15,
+    "model_failure_route_coverage_min": 1.0
+  },
+  "leaf_thresholds": {
+    "body.anchored_blocks": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "body.chart": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "body.composite.anchored_blocks_chart": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "body.composite.chart_table": {"evidence_status": "EVIDENCE_INSUFFICIENT", "minimum_samples": 0, "precision_min": 0.0, "recall_min": 0.0},
+    "body.composite.flow_text_chart": {"evidence_status": "EVIDENCE_INSUFFICIENT", "minimum_samples": 0, "precision_min": 0.0, "recall_min": 0.0},
+    "body.composite.flow_text_diagram": {"evidence_status": "EVIDENCE_INSUFFICIENT", "minimum_samples": 0, "precision_min": 0.0, "recall_min": 0.0},
+    "body.composite.flow_text_table": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "body.diagram": {"evidence_status": "EVIDENCE_INSUFFICIENT", "minimum_samples": 0, "precision_min": 0.0, "recall_min": 0.0},
+    "body.flow_text.multi": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "body.flow_text.single": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "body.flow_text.visual_anchored": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "body.table": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "contents": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "cover": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5},
+    "end": {"evidence_status": "EVIDENCE_INSUFFICIENT", "minimum_samples": 0, "precision_min": 0.0, "recall_min": 0.0},
+    "visual_only": {"evidence_status": "SUPPORTED", "minimum_samples": 2, "precision_min": 0.5, "recall_min": 0.5}
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "phase": "A",
+  "purpose": "Discipline puncture seed evidence only. It proves rollback/memory boundaries, not product quality or generalization.",
+  "seed_count": 3,
+  "seed_evidence": [
+    {
+      "seed_case": "R25_AIA_EN_TO_ZH_pages_001_020",
+      "source": "round25_aia_first20_layered_validation\\case_runs\\R25_AIA_EN_TO_ZH_pages_001_020\\reports\\repair_loop_0001.json",
+      "selected_failure_before_after": {
+        "after": 2,
+        "before": 95,
+        "failure_class": "text_fit_overflow"
+      },
+      "before_failure_class_counts": {
+        "cross_slot_overlap": 49,
+        "font_size_regression": 3,
+        "text_fit_overflow": 95
+      },
+      "after_failure_class_counts": {
+        "cross_slot_overlap": 132,
+        "font_size_regression": 3,
+        "text_fit_overflow": 2
+      },
+      "hard_failure_regressions": {
+        "cross_slot_overlap": {
+          "after": 132,
+          "before": 49
+        }
+      },
+      "loop_verdict": "REJECTED_ROLLBACK",
+      "repair_accepted": false,
+      "fixed_number_policy": "Counts are read from seed evidence. No fixed value is used as a gate."
+    },
+    {
+      "seed_case": "R25_AIA_ZH_TO_EN_pages_001_020",
+      "source": "round25_aia_first20_layered_validation\\case_runs\\R25_AIA_ZH_TO_EN_pages_001_020\\reports\\repair_loop_0001.json",
+      "selected_failure_before_after": {
+        "after": 2,
+        "before": 135,
+        "failure_class": "text_fit_overflow"
+      },
+      "before_failure_class_counts": {
+        "cross_slot_overlap": 140,
+        "font_size_regression": 26,
+        "text_fit_overflow": 135
+      },
+      "after_failure_class_counts": {
+        "cross_slot_overlap": 268,
+        "font_size_regression": 26,
+        "text_fit_overflow": 2
+      },
+      "hard_failure_regressions": {
+        "cross_slot_overlap": {
+          "after": 268,
+          "before": 140
+        }
+      },
+      "loop_verdict": "REJECTED_ROLLBACK",
+      "repair_accepted": false,
+      "fixed_number_policy": "Counts are read from seed evidence. No fixed value is used as a gate."
+    },
+    {
+      "seed_case": "R25_REGRESSION_00005_ZH_TO_EN_pages_001_020",
+      "source": "round25_aia_first20_layered_validation\\case_runs\\R25_REGRESSION_00005_ZH_TO_EN_pages_001_020\\reports\\repair_loop_0001.json",
+      "selected_failure_before_after": {
+        "after": 0,
+        "before": 9,
+        "failure_class": "text_fit_overflow"
+      },
+      "before_failure_class_counts": {
+        "cross_slot_overlap": 70,
+        "text_fit_overflow": 9
+      },
+      "after_failure_class_counts": {
+        "cross_slot_overlap": 78
+      },
+      "hard_failure_regressions": {
+        "cross_slot_overlap": {
+          "after": 78,
+          "before": 70
+        }
+      },
+      "loop_verdict": "REJECTED_ROLLBACK",
+      "repair_accepted": false,
+      "fixed_number_policy": "Counts are read from seed evidence. No fixed value is used as a gate."
+    }
+  ],
+  "verdict": "PASS"
+}

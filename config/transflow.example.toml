@@ -1,0 +1,19 @@
+# Transflow P1 无秘密运行配置模板。
+# 路径均相对仓库根解析；生产部署应复制本文件并通过 TRANSFLOW_CONFIG 指向副本。
+schema_version = "transflow.runtime-config/v1"
+workspace = "tmp/p1-workspace"
+font_manifest = "resources/manifests/font_manifest.json"
+preservation_support_matrix = "resources/manifests/p6_preservation_support.json"
+toolbox_catalog = "resources/catalogs/page_toolbox_catalog_v4.json"
+margin_policy = "resources/manifests/p7_margin_policy.json"
+leaf_evidence_schema = "resources/schemas/leaf_migration_evidence_v1.schema.json"
+toolbox_policy = "resources/manifests/p8_toolbox_policy.json"
+ordinary_leaf_policy = "resources/manifests/p9_ordinary_leaf_policy.json"
+ai_capability_url = "http://127.0.0.1:65535/health/live"
+log_level = "INFO"
+document_concurrency = 1
+page_concurrency = 1
+pdf_processes = 1
+source_roots = ["样本/年报", "tmp/p3-tests/inputs"]
+ai_timeout_seconds = 2.0
+ai_max_request_bytes = 1048576

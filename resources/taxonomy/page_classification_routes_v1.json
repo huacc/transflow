@@ -1,0 +1,73 @@
+{
+  "routes": [
+    {
+      "ordinal": 0,
+      "route": "cover"
+    },
+    {
+      "ordinal": 1,
+      "route": "contents"
+    },
+    {
+      "ordinal": 2,
+      "route": "end"
+    },
+    {
+      "ordinal": 3,
+      "route": "visual_only"
+    },
+    {
+      "ordinal": 4,
+      "route": "body.flow_text.single"
+    },
+    {
+      "ordinal": 5,
+      "route": "body.flow_text.multi"
+    },
+    {
+      "ordinal": 6,
+      "route": "body.flow_text.visual_anchored"
+    },
+    {
+      "ordinal": 7,
+      "route": "body.table"
+    },
+    {
+      "ordinal": 8,
+      "route": "body.chart"
+    },
+    {
+      "ordinal": 9,
+      "route": "body.diagram"
+    },
+    {
+      "ordinal": 10,
+      "route": "body.anchored_blocks"
+    },
+    {
+      "ordinal": 11,
+      "route": "body.composite.flow_text_table"
+    },
+    {
+      "ordinal": 12,
+      "route": "body.composite.anchored_blocks_chart"
+    },
+    {
+      "ordinal": 13,
+      "route": "body.composite.chart_table"
+    },
+    {
+      "ordinal": 14,
+      "route": "body.composite.flow_text_chart"
+    },
+    {
+      "ordinal": 15,
+      "route": "body.composite.flow_text_diagram"
+    },
+    {
+      "ordinal": 16,
+      "route": "body.freeform"
+    }
+  ],
+  "schema_version": "transflow.page-route-taxonomy/v1"
+}

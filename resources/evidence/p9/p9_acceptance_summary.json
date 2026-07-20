@@ -1,0 +1,33 @@
+{
+  "catalog_hash": "a43dccd10447943a8b3701265c9e85638a65a874d6876b8d1493d6f6886a2f8a",
+  "catalog_path": "resources/catalogs/page_toolbox_catalog_v4.json",
+  "catalog_policy_hash": "0b9a52219679353bd84c73c8621de608d11cd7eaab5bb1eee51c8bfd82f43312",
+  "conclusions": {
+    "body.anchored_blocks": "PASS_DISABLED_WITH_FALLBACK",
+    "body.flow_text.multi": "PASS_DISABLED_WITH_FALLBACK",
+    "body.table": "PASS_DISABLED_WITH_FALLBACK",
+    "contents": "PASS_DISABLED_WITH_FALLBACK",
+    "cover": "PASS_DISABLED_WITH_FALLBACK",
+    "end": "PASS_DISABLED_WITH_FALLBACK"
+  },
+  "known_classified_sample_counts": {
+    "body.anchored_blocks": 30,
+    "body.flow_text.multi": 23,
+    "body.table": 20,
+    "contents": 34,
+    "cover": 60,
+    "end": 20
+  },
+  "real_anonymous_document_counts": {
+    "body.anchored_blocks": 0,
+    "body.flow_text.multi": 0,
+    "body.table": 0,
+    "contents": 0,
+    "cover": 0,
+    "end": 0
+  },
+  "real_qwen_candidate_count": 12,
+  "real_qwen_http_calls": 14,
+  "schema_version": "transflow.p9-acceptance-summary/v1",
+  "threshold_real_anonymous_documents": 6
+}

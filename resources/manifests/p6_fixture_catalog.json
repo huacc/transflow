@@ -1,0 +1,16 @@
+{
+  "schema_version": "transflow.p6-fixture-catalog/v1",
+  "fixtures": [
+    {"fixture_id": "P6-F3-metadata", "producer": "tests.test_p6.create_feature_pdf", "test_id": "P6.4-T01"},
+    {"fixture_id": "P6-F3-bookmarks", "producer": "tests.test_p6.create_feature_pdf", "test_id": "P6.4-T01"},
+    {"fixture_id": "P6-F3-page-labels", "producer": "tests.test_p6.create_feature_pdf", "test_id": "P6.4-T01"},
+    {"fixture_id": "P6-F3-links", "producer": "tests.test_p6.create_feature_pdf", "test_id": "P6.4-T01"},
+    {"fixture_id": "P6-F3-annotations", "producer": "tests.test_p6.create_feature_pdf", "test_id": "P6.4-T01"},
+    {"fixture_id": "P6-F3-forms", "producer": "tests.test_p6.create_feature_pdf", "test_id": "P6.4-T01"},
+    {"fixture_id": "P6-F3-attachments", "producer": "tests.test_p6.create_feature_pdf", "test_id": "P6.4-T01"},
+    {"fixture_id": "P6-F3-signature", "producer": "tests.test_p6.create_feature_pdf(signature=True)", "test_id": "P6.4-T02"},
+    {"fixture_id": "P6-F3-encrypted", "producer": "tests.test_p6.create_encrypted_pdf", "test_id": "P6.4-T03"},
+    {"fixture_id": "P6-F3-struct-tree", "producer": "tests.test_p6.catalog_key_fixture", "test_id": "P6.4-T03"},
+    {"fixture_id": "P6-F3-unknown-critical", "producer": "tests.test_p6.catalog_key_fixture", "test_id": "P6.4-T03"}
+  ]
+}

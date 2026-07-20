@@ -143,4 +143,3 @@ def extract_page_facts(pdf_path: Path, *, page_index: int = 0, page_id: str | No
             text_objects_sha256=text_objects_sha256,
             locked_objects_sha256=locked_objects_sha256,
         )
-

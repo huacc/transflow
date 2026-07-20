@@ -1,0 +1,192 @@
+{
+  "entries": [
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/cover/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "cover",
+      "toolbox_id": "cover"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/contents/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "contents",
+      "toolbox_id": "contents"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/end/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "end",
+      "toolbox_id": "end"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_classification_engine_puncture_v1/分类结果/visual_only"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "route": "visual_only",
+      "toolbox_id": "visual_only"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/single/stage_gate.json"
+      ],
+      "evidence_status": "PASS",
+      "promotion_manifest_present": false,
+      "route": "body.flow_text.single",
+      "toolbox_id": "body.flow_text.single"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/multi/stage_gate.json"
+      ],
+      "evidence_status": "NOT_EVALUATED",
+      "promotion_manifest_present": false,
+      "route": "body.flow_text.multi",
+      "toolbox_id": "body.flow_text.multi"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/visual_anchored/stage_gate.json"
+      ],
+      "evidence_status": "FAIL",
+      "promotion_manifest_present": false,
+      "route": "body.flow_text.visual_anchored",
+      "toolbox_id": "body.flow_text.visual_anchored"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/table/stage_gate.json"
+      ],
+      "evidence_status": "NOT_EVALUATED",
+      "promotion_manifest_present": false,
+      "route": "body.table",
+      "toolbox_id": "body.table"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/chart/stage_gate.json"
+      ],
+      "evidence_status": "PASS_NON_BLIND",
+      "promotion_manifest_present": false,
+      "route": "body.chart",
+      "toolbox_id": "body.chart"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/diagram/stage_gate.json"
+      ],
+      "evidence_status": "PASS_NON_BLIND",
+      "promotion_manifest_present": false,
+      "route": "body.diagram",
+      "toolbox_id": "body.diagram"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/anchored_blocks/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "body.anchored_blocks",
+      "toolbox_id": "body.anchored_blocks"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_table"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "route": "body.composite.flow_text_table",
+      "toolbox_id": "body.composite.flow_text_table"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/anchored_blocks_chart/stage_gate.json"
+      ],
+      "evidence_status": "FAIL",
+      "promotion_manifest_present": false,
+      "route": "body.composite.anchored_blocks_chart",
+      "toolbox_id": "body.composite.anchored_blocks_chart"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/chart_table/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "body.composite.chart_table",
+      "toolbox_id": "body.composite.chart_table"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_chart/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "body.composite.flow_text_chart",
+      "toolbox_id": "body.composite.flow_text_chart"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_diagram/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "body.composite.flow_text_diagram",
+      "toolbox_id": "body.composite.flow_text_diagram"
+    },
+    {
+      "disabled_reason": "PENDING_PRODUCTION_PROMOTION",
+      "enabled": false,
+      "evidence_refs": [
+        "spikes/page_classification_engine_puncture_v1/分类结果/body/freeform"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "route": "body.freeform",
+      "toolbox_id": "body.freeform"
+    }
+  ],
+  "schema_version": "transflow.page-toolbox-catalog/v1"
+}

@@ -1,0 +1,24 @@
+{
+  "acceptance_verdict": "REJECTED_ROLLBACK",
+  "after_blocking_failure_count": 125,
+  "artifact": "repair_acceptance",
+  "before_blocking_failure_count": 145,
+  "hard_failure_regressions": {
+    "cross_slot_overlap": {
+      "after": 110,
+      "before": 25
+    }
+  },
+  "repair_accepted": false,
+  "rollback_reason": {
+    "cross_slot_overlap": {
+      "after": 110,
+      "before": 25
+    }
+  },
+  "selected_failure_before_after": {
+    "after": 15,
+    "before": 120,
+    "failure_class": "text_fit_overflow"
+  }
+}

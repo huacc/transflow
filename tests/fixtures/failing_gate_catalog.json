@@ -1,0 +1,16 @@
+{
+  "schema_version": "transflow.gate-catalog/v1",
+  "gates": {
+    "TEST_FAIL": [
+      {
+        "id": "INJECTED-FAILURE",
+        "intent": "验证真实失败命令能够阻断 Gate",
+        "command": [
+          "{python}",
+          "-c",
+          "import sys; print('INJECTED_FAILURE_EXIT_9'); sys.exit(9)"
+        ]
+      }
+    ]
+  }
+}

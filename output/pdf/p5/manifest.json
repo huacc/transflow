@@ -1,0 +1,24 @@
+{
+  "schema_version": "transflow.p5-showcase/v1",
+  "generated_at": "2026-07-20T11:39:37+08:00",
+  "stage": "P5",
+  "gate": "G5",
+  "gate_conclusion": "PASS",
+  "classification_route": "body.flow_text.single",
+  "document_outcome": "COMPLETED",
+  "model_decision_mode": "deterministic_local_test_port",
+  "translation_mode": "fixed_test_translation",
+  "real_quality_source": "test-results/P5_classification_metrics.json",
+  "source_pdf": "source/p5_classification_wiring_source.pdf",
+  "final_pdf": "final/p5_classification_wiring_demo.pdf",
+  "final_preview": "final/p5_classification_wiring_demo.png",
+  "final_pdf_sha256": "5694aa86fc00e7e8c803ac7edae72b9099d88c4212757fcf12ae1b6e9b7e603f",
+  "final_pdf_bytes": 16701023,
+  "page_count": 1,
+  "question_mark_replacement_count": 0,
+  "test_results": [
+    "test-results/G5_evidence.json",
+    "test-results/P5_classification_metrics.json",
+    "test-results/P5阶段_页面分类引擎迁移_20260720_110945.md"
+  ]
+}

@@ -1,0 +1,6733 @@
+{
+  "artifact": "quality_signal_ledger",
+  "signal_count": 301,
+  "signals": [
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          45.354,
+          484.219,
+          381.66,
+          698.387
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.65,
+        "source_rect": [
+          45.354,
+          484.219,
+          381.66,
+          662.692
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 0,
+      "problem_domain": "text-loading",
+      "region_id": "p0_b1_0",
+      "severity": "P1",
+      "signal_id": "group_00000",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          7.0,
+          646.089,
+          588.275,
+          710.165
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.86,
+        "source_rect": [
+          51.024,
+          692.838,
+          102.356,
+          703.27
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 0,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p0_b7_0",
+      "severity": "P1",
+      "signal_id": "group_00002",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          102.677,
+          295.162,
+          121.566,
+          308.434
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          102.677,
+          295.162,
+          121.566,
+          308.434
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b0_0",
+      "severity": "P1",
+      "signal_id": "group_00014",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          115.011,
+          375.501,
+          134.417,
+          388.773
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          115.011,
+          375.501,
+          134.417,
+          388.773
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b1_0",
+      "severity": "P1",
+      "signal_id": "group_00016",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          102.677,
+          444.34,
+          122.03,
+          457.612
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          102.677,
+          444.34,
+          122.03,
+          457.612
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b2_0",
+      "severity": "P1",
+      "signal_id": "group_00018",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          102.677,
+          541.847,
+          121.934,
+          555.119
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          102.677,
+          541.847,
+          121.934,
+          555.119
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b4_0",
+      "severity": "P1",
+      "signal_id": "group_00021",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          102.677,
+          639.355,
+          122.378,
+          652.627
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          102.677,
+          639.355,
+          122.378,
+          652.627
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b6_0",
+      "severity": "P1",
+      "signal_id": "group_00024",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          205.984,
+          295.162,
+          225.661,
+          308.434
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          205.984,
+          295.162,
+          225.661,
+          308.434
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b7_0",
+      "severity": "P1",
+      "signal_id": "group_00026",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          41.016,
+          364.001,
+          531.583,
+          377.273
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          205.984,
+          364.001,
+          225.625,
+          377.273
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b8_0",
+      "severity": "P1",
+      "signal_id": "group_00028",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          205.984,
+          421.34,
+          226.277,
+          434.612
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          205.984,
+          421.34,
+          226.277,
+          434.612
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b9_0",
+      "severity": "P1",
+      "signal_id": "group_00030",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          205.984,
+          501.678,
+          225.481,
+          514.95
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          205.984,
+          501.678,
+          225.481,
+          514.95
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b10_0",
+      "severity": "P1",
+      "signal_id": "group_00032",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          309.291,
+          295.162,
+          328.5,
+          308.434
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          309.291,
+          295.162,
+          328.5,
+          308.434
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b11_0",
+      "severity": "P1",
+      "signal_id": "group_00034",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          309.291,
+          369.67,
+          328.74,
+          382.942
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          309.291,
+          369.67,
+          328.74,
+          382.942
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b13_0",
+      "severity": "P1",
+      "signal_id": "group_00037",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          309.291,
+          467.178,
+          328.788,
+          480.45
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          309.291,
+          467.178,
+          328.788,
+          480.45
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b15_0",
+      "severity": "P1",
+      "signal_id": "group_00040",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          41.016,
+          295.766,
+          531.583,
+          309.038
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          412.598,
+          295.766,
+          432.023,
+          309.038
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b17_0",
+      "severity": "P1",
+      "signal_id": "group_00043",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          412.598,
+          410.282,
+          432.023,
+          423.554
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          412.598,
+          410.282,
+          432.023,
+          423.554
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b18_0",
+      "severity": "P1",
+      "signal_id": "group_00045",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          412.598,
+          519.29,
+          432.071,
+          532.562
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          412.598,
+          519.29,
+          432.071,
+          532.562
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b20_0",
+      "severity": "P1",
+      "signal_id": "group_00048",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          412.598,
+          576.628,
+          432.071,
+          589.9
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          412.598,
+          576.628,
+          432.071,
+          589.9
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 2,
+      "problem_domain": "text-loading",
+      "region_id": "p2_b21_0",
+      "severity": "P1",
+      "signal_id": "group_00050",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          242.48,
+          351.122,
+          404.582,
+          419.434
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.8152,
+        "source_rect": [
+          242.48,
+          351.122,
+          395.905,
+          391.516
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 4,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p4_b8_0",
+      "severity": "P1",
+      "signal_id": "group_00061",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          242.48,
+          463.468,
+          404.582,
+          534.157
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.8152,
+        "source_rect": [
+          242.48,
+          463.468,
+          398.137,
+          517.865
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 4,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p4_b10_0",
+      "severity": "P1",
+      "signal_id": "group_00063",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          412.582,
+          239.065,
+          568.363,
+          353.628
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.8152,
+        "source_rect": [
+          412.582,
+          227.783,
+          568.363,
+          324.189
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 4,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p4_b13_0",
+      "severity": "P1",
+      "signal_id": "group_00065",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          412.582,
+          415.799,
+          568.363,
+          486.488
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.8152,
+        "source_rect": [
+          412.582,
+          415.799,
+          568.363,
+          470.196
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 4,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p4_b15_0",
+      "severity": "P1",
+      "signal_id": "group_00067",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          100.866,
+          333.923,
+          273.827,
+          433.811
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.65,
+        "source_rect": [
+          100.866,
+          331.166,
+          264.556,
+          414.406
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 5,
+      "problem_domain": "text-loading",
+      "region_id": "p5_b9_0",
+      "severity": "P1",
+      "signal_id": "group_00078",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          100.866,
+          755.216,
+          302.074,
+          777.41
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.98,
+        "source_rect": [
+          100.866,
+          749.816,
+          302.074,
+          769.115
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 5,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p5_b12_0",
+      "severity": "P1",
+      "signal_id": "group_00081",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          34.385,
+          813.345,
+          42.385,
+          821.345
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          34.385,
+          813.345,
+          47.196,
+          821.297
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b0_1",
+      "severity": "P1",
+      "signal_id": "group_00117",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          100.315,
+          533.937,
+          136.855,
+          560.481
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          100.315,
+          533.937,
+          136.855,
+          560.481
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b4_0",
+      "severity": "P1",
+      "signal_id": "group_00125",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          161.56,
+          533.937,
+          198.04,
+          560.481
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          161.56,
+          533.937,
+          196.643,
+          560.481
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b4_1",
+      "severity": "P1",
+      "signal_id": "group_00126",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          89.617,
+          560.191,
+          235.634,
+          575.112
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9333,
+        "source_rect": [
+          89.617,
+          560.191,
+          208.369,
+          568.015
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b5_0",
+      "severity": "P1",
+      "signal_id": "group_00127",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          254.463,
+          533.937,
+          290.943,
+          560.481
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          254.463,
+          533.937,
+          290.741,
+          560.481
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b5_1",
+      "severity": "P1",
+      "signal_id": "group_00128",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          314.666,
+          533.937,
+          351.583,
+          560.481
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          314.666,
+          533.937,
+          351.583,
+          560.481
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b5_2",
+      "severity": "P1",
+      "signal_id": "group_00129",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          243.634,
+          560.191,
+          397.479,
+          575.112
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9333,
+        "source_rect": [
+          243.634,
+          560.191,
+          362.386,
+          568.015
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b6_0",
+      "severity": "P1",
+      "signal_id": "group_00130",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          103.776,
+          298.425,
+          133.395,
+          324.969
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          103.776,
+          298.425,
+          133.395,
+          324.969
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b7_0",
+      "severity": "P1",
+      "signal_id": "group_00131",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          164.31,
+          298.425,
+          193.896,
+          324.969
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          164.31,
+          298.425,
+          193.896,
+          324.969
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b7_1",
+      "severity": "P1",
+      "signal_id": "group_00132",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          89.617,
+          324.679,
+          235.634,
+          339.6
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9333,
+        "source_rect": [
+          89.617,
+          324.679,
+          208.369,
+          332.503
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b8_0",
+      "severity": "P1",
+      "signal_id": "group_00133",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          258.366,
+          298.425,
+          286.839,
+          324.969
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          258.366,
+          298.425,
+          286.839,
+          324.969
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b8_1",
+      "severity": "P1",
+      "signal_id": "group_00134",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          319.793,
+          298.425,
+          347.153,
+          324.969
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          319.793,
+          298.425,
+          346.453,
+          324.969
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b8_2",
+      "severity": "P1",
+      "signal_id": "group_00135",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          243.634,
+          324.679,
+          389.649,
+          339.6
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9333,
+        "source_rect": [
+          243.634,
+          324.679,
+          362.386,
+          332.503
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b9_0",
+      "severity": "P1",
+      "signal_id": "group_00136",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          412.414,
+          298.425,
+          440.821,
+          324.969
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          412.414,
+          298.425,
+          440.821,
+          324.969
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b9_1",
+      "severity": "P1",
+      "signal_id": "group_00137",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          472.336,
+          298.425,
+          501.937,
+          324.969
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          472.336,
+          298.425,
+          501.937,
+          324.969
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b9_2",
+      "severity": "P1",
+      "signal_id": "group_00138",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          397.649,
+          324.679,
+          559.276,
+          339.6
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9333,
+        "source_rect": [
+          397.649,
+          324.679,
+          516.401,
+          332.503
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b10_0",
+      "severity": "P1",
+      "signal_id": "group_00139",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          456.502,
+          533.937,
+          493.143,
+          560.481
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          456.502,
+          533.937,
+          493.143,
+          560.481
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b11_0",
+      "severity": "P1",
+      "signal_id": "group_00140",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          396.459,
+          533.937,
+          435.139,
+          560.481
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.72,
+        "source_rect": [
+          396.459,
+          533.937,
+          435.139,
+          560.481
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b12_1",
+      "severity": "P1",
+      "signal_id": "group_00142",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.274,
+          263.137,
+          84.459,
+          272.137
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.274,
+          263.137,
+          84.459,
+          268.682
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b15_0",
+      "severity": "P1",
+      "signal_id": "group_00145",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          76.059,
+          273.608,
+          84.459,
+          282.608
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          76.059,
+          273.608,
+          84.459,
+          279.153
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b16_0",
+      "severity": "P1",
+      "signal_id": "group_00146",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.274,
+          242.086,
+          84.459,
+          251.086
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.274,
+          242.086,
+          84.459,
+          247.632
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b17_0",
+      "severity": "P1",
+      "signal_id": "group_00147",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.274,
+          252.472,
+          84.459,
+          261.472
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.274,
+          252.472,
+          84.459,
+          258.017
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b18_0",
+      "severity": "P1",
+      "signal_id": "group_00148",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.274,
+          210.375,
+          84.459,
+          219.375
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.274,
+          210.375,
+          84.459,
+          215.92
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b19_0",
+      "severity": "P1",
+      "signal_id": "group_00149",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.274,
+          199.905,
+          84.459,
+          208.905
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.274,
+          199.905,
+          84.459,
+          205.45
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b20_0",
+      "severity": "P1",
+      "signal_id": "group_00150",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.274,
+          189.309,
+          84.459,
+          198.309
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.274,
+          189.309,
+          84.459,
+          194.855
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b21_0",
+      "severity": "P1",
+      "signal_id": "group_00151",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.274,
+          231.506,
+          84.459,
+          240.506
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.274,
+          231.506,
+          84.459,
+          237.051
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b22_0",
+      "severity": "P1",
+      "signal_id": "group_00152",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.274,
+          221.036,
+          84.459,
+          230.036
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.274,
+          221.036,
+          84.459,
+          226.581
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b23_0",
+      "severity": "P1",
+      "signal_id": "group_00153",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          118.061,
+          220.821,
+          241.854,
+          229.472
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.923,
+        "source_rect": [
+          118.061,
+          220.563,
+          132.862,
+          227.772
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b26_0",
+      "severity": "P1",
+      "signal_id": "group_00156",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          95.891,
+          232.197,
+          218.291,
+          240.848
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.923,
+        "source_rect": [
+          95.891,
+          232.197,
+          110.692,
+          239.406
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b27_0",
+      "severity": "P1",
+      "signal_id": "group_00157",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          140.232,
+          210.971,
+          218.291,
+          219.621
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.923,
+        "source_rect": [
+          140.232,
+          210.971,
+          155.033,
+          218.179
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b28_0",
+      "severity": "P1",
+      "signal_id": "group_00158",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          97.432,
+          288.787,
+          243.449,
+          297.787
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          97.432,
+          288.787,
+          198.433,
+          295.496
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b29_0",
+      "severity": "P1",
+      "signal_id": "group_00159",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.267,
+          188.878,
+          215.847,
+          197.878
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          72.267,
+          179.7,
+          91.924,
+          186.22
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b30_0",
+      "severity": "P1",
+      "signal_id": "group_00160",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          226.291,
+          270.536,
+          238.476,
+          279.536
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          226.291,
+          270.536,
+          238.476,
+          276.081
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b32_0",
+      "severity": "P1",
+      "signal_id": "group_00162",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          226.291,
+          256.996,
+          238.476,
+          265.996
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          226.291,
+          256.996,
+          238.476,
+          262.541
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b33_0",
+      "severity": "P1",
+      "signal_id": "group_00163",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          226.291,
+          243.455,
+          238.476,
+          252.455
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          226.291,
+          243.455,
+          238.476,
+          249.0
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b34_0",
+      "severity": "P1",
+      "signal_id": "group_00164",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          226.291,
+          229.92,
+          238.476,
+          238.92
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          226.291,
+          229.92,
+          238.476,
+          235.465
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b35_0",
+      "severity": "P1",
+      "signal_id": "group_00165",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          226.291,
+          216.379,
+          238.476,
+          225.379
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          226.291,
+          216.379,
+          238.476,
+          221.924
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b36_0",
+      "severity": "P1",
+      "signal_id": "group_00166",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          226.291,
+          189.303,
+          238.476,
+          198.303
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          226.291,
+          189.303,
+          238.476,
+          194.848
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b37_0",
+      "severity": "P1",
+      "signal_id": "group_00167",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          226.291,
+          202.838,
+          238.476,
+          211.838
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          226.291,
+          202.838,
+          238.476,
+          208.384
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b38_0",
+      "severity": "P1",
+      "signal_id": "group_00168",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          316.419,
+          189.209,
+          372.306,
+          199.188
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9846,
+        "source_rect": [
+          316.419,
+          189.209,
+          353.782,
+          197.525
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b40_0",
+      "severity": "P1",
+      "signal_id": "group_00170",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          294.25,
+          202.353,
+          372.306,
+          211.004
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.923,
+        "source_rect": [
+          294.25,
+          202.353,
+          309.05,
+          209.562
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b41_0",
+      "severity": "P1",
+      "signal_id": "group_00171",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          249.854,
+          224.459,
+          372.306,
+          233.109
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.923,
+        "source_rect": [
+          249.854,
+          224.459,
+          264.763,
+          231.667
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b42_0",
+      "severity": "P1",
+      "signal_id": "group_00172",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          251.449,
+          288.787,
+          397.464,
+          297.787
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          251.449,
+          288.787,
+          352.45,
+          295.495
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b44_0",
+      "severity": "P1",
+      "signal_id": "group_00174",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.847,
+          188.867,
+          273.827,
+          197.867
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.847,
+          179.7,
+          243.504,
+          186.22
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b45_0",
+      "severity": "P1",
+      "signal_id": "group_00175",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          380.306,
+          268.282,
+          392.491,
+          277.282
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          380.306,
+          268.282,
+          392.491,
+          273.827
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b47_0",
+      "severity": "P1",
+      "signal_id": "group_00177",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          380.306,
+          252.486,
+          392.491,
+          261.486
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          380.306,
+          252.486,
+          392.491,
+          258.031
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b48_0",
+      "severity": "P1",
+      "signal_id": "group_00178",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          380.306,
+          236.691,
+          392.491,
+          245.691
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          380.306,
+          236.691,
+          392.491,
+          242.236
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b49_0",
+      "severity": "P1",
+      "signal_id": "group_00179",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          380.306,
+          220.895,
+          392.491,
+          229.895
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          380.306,
+          220.895,
+          392.491,
+          226.44
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b50_0",
+      "severity": "P1",
+      "signal_id": "group_00180",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          380.306,
+          189.304,
+          392.491,
+          198.304
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          380.306,
+          189.304,
+          392.491,
+          194.849
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b51_0",
+      "severity": "P1",
+      "signal_id": "group_00181",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          380.306,
+          205.099,
+          392.491,
+          214.099
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          380.306,
+          205.099,
+          392.491,
+          210.645
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b52_0",
+      "severity": "P1",
+      "signal_id": "group_00182",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          448.265,
+          205.282,
+          559.276,
+          213.932
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.923,
+        "source_rect": [
+          448.265,
+          205.282,
+          463.066,
+          212.49
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b56_0",
+      "severity": "P1",
+      "signal_id": "group_00186",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          405.464,
+          288.787,
+          559.276,
+          297.787
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          405.464,
+          288.787,
+          506.465,
+          295.496
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b57_0",
+      "severity": "P1",
+      "signal_id": "group_00187",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          380.299,
+          188.873,
+          559.276,
+          197.873
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          380.299,
+          179.7,
+          399.956,
+          186.22
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b58_0",
+      "severity": "P1",
+      "signal_id": "group_00188",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          72.275,
+          505.999,
+          84.46,
+          514.999
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          72.275,
+          505.999,
+          84.46,
+          511.544
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b60_0",
+      "severity": "P1",
+      "signal_id": "group_00190",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          69.475,
+          497.302,
+          215.49,
+          506.302
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          69.475,
+          492.544,
+          84.46,
+          498.089
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b61_0",
+      "severity": "P1",
+      "signal_id": "group_00191",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          69.475,
+          487.102,
+          215.49,
+          496.102
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          69.475,
+          478.978,
+          84.46,
+          484.523
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b62_0",
+      "severity": "P1",
+      "signal_id": "group_00192",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          69.475,
+          465.438,
+          86.376,
+          474.438
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          69.475,
+          465.438,
+          84.46,
+          470.983
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b63_0",
+      "severity": "P1",
+      "signal_id": "group_00193",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          69.475,
+          454.992,
+          86.376,
+          463.992
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          69.475,
+          451.927,
+          84.46,
+          457.472
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b64_0",
+      "severity": "P1",
+      "signal_id": "group_00194",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          69.475,
+          444.792,
+          215.49,
+          453.792
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          69.475,
+          438.362,
+          84.46,
+          443.907
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b65_0",
+      "severity": "P1",
+      "signal_id": "group_00195",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          69.475,
+          434.592,
+          152.714,
+          443.592
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          69.475,
+          424.826,
+          84.46,
+          430.371
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b66_0",
+      "severity": "P1",
+      "signal_id": "group_00196",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          97.433,
+          524.299,
+          243.448,
+          533.299
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          97.433,
+          524.299,
+          198.434,
+          531.008
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b71_0",
+      "severity": "P1",
+      "signal_id": "group_00201",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          69.446,
+          424.392,
+          215.49,
+          433.392
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          69.446,
+          415.212,
+          89.103,
+          421.733
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b72_0",
+      "severity": "P1",
+      "signal_id": "group_00202",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.49,
+          508.689,
+          273.827,
+          517.689
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.49,
+          506.079,
+          238.475,
+          511.624
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b74_0",
+      "severity": "P1",
+      "signal_id": "group_00204",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.49,
+          498.489,
+          273.827,
+          507.489
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.49,
+          492.513,
+          238.475,
+          498.058
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b75_0",
+      "severity": "P1",
+      "signal_id": "group_00205",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.49,
+          488.289,
+          273.827,
+          497.289
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.49,
+          478.978,
+          238.475,
+          484.523
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b76_0",
+      "severity": "P1",
+      "signal_id": "group_00206",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.49,
+          478.089,
+          240.299,
+          487.089
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.49,
+          465.412,
+          238.475,
+          470.957
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b77_0",
+      "severity": "P1",
+      "signal_id": "group_00207",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.49,
+          467.889,
+          240.299,
+          476.889
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.49,
+          451.872,
+          238.475,
+          457.417
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b78_0",
+      "severity": "P1",
+      "signal_id": "group_00208",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.49,
+          444.794,
+          273.827,
+          453.794
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.49,
+          438.361,
+          238.475,
+          443.906
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b79_0",
+      "severity": "P1",
+      "signal_id": "group_00209",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.49,
+          434.594,
+          273.827,
+          443.594
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.49,
+          424.826,
+          238.475,
+          430.371
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b80_0",
+      "severity": "P1",
+      "signal_id": "group_00210",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          336.58,
+          427.334,
+          376.193,
+          436.195
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9846,
+        "source_rect": [
+          336.58,
+          427.334,
+          355.397,
+          434.718
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b82_0",
+      "severity": "P1",
+      "signal_id": "group_00212",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          251.448,
+          524.298,
+          381.693,
+          533.298
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          251.448,
+          524.298,
+          352.449,
+          531.007
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b85_0",
+      "severity": "P1",
+      "signal_id": "group_00215",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          223.515,
+          424.394,
+          273.827,
+          433.394
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          223.515,
+          415.212,
+          243.172,
+          421.733
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b86_0",
+      "severity": "P1",
+      "signal_id": "group_00216",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          423.275,
+          455.807,
+          431.275,
+          464.807
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.8,
+        "source_rect": [
+          423.275,
+          455.807,
+          433.581,
+          463.015
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b90_0",
+      "severity": "P1",
+      "signal_id": "group_00220",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          490.922,
+          424.033,
+          559.276,
+          432.894
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9846,
+        "source_rect": [
+          490.922,
+          424.033,
+          501.632,
+          431.417
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b91_0",
+      "severity": "P1",
+      "signal_id": "group_00221",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          468.386,
+          441.215,
+          559.276,
+          451.452
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.9846,
+        "source_rect": [
+          468.386,
+          441.215,
+          512.016,
+          449.746
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b94_0",
+      "severity": "P1",
+      "signal_id": "group_00224",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          384.093,
+          487.96,
+          392.493,
+          496.96
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          384.093,
+          487.96,
+          392.493,
+          493.505
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b98_0",
+      "severity": "P1",
+      "signal_id": "group_00228",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          384.093,
+          472.199,
+          392.493,
+          481.199
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          384.093,
+          472.199,
+          392.493,
+          477.745
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b99_0",
+      "severity": "P1",
+      "signal_id": "group_00229",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          384.388,
+          440.668,
+          392.788,
+          449.668
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          384.388,
+          440.668,
+          392.788,
+          446.213
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b100_0",
+      "severity": "P1",
+      "signal_id": "group_00230",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          384.388,
+          456.414,
+          392.788,
+          465.414
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          384.388,
+          456.414,
+          392.788,
+          461.959
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b101_0",
+      "severity": "P1",
+      "signal_id": "group_00231",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          384.193,
+          424.828,
+          392.593,
+          433.828
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.04,
+        "source_rect": [
+          384.193,
+          424.828,
+          392.593,
+          430.373
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b102_0",
+      "severity": "P1",
+      "signal_id": "group_00232",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          384.336,
+          424.392,
+          559.276,
+          433.392
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 1.12,
+        "source_rect": [
+          384.336,
+          415.212,
+          404.182,
+          421.733
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 7,
+      "problem_domain": "text-loading",
+      "region_id": "p7_b103_0",
+      "severity": "P1",
+      "signal_id": "group_00233",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          310.7,
+          515.907,
+          325.042
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          310.7,
+          515.907,
+          322.652
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 9,
+      "problem_domain": "text-loading",
+      "region_id": "p9_b5_0",
+      "severity": "P1",
+      "signal_id": "group_00280",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.353,
+          374.708,
+          518.419,
+          389.05
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.353,
+          374.708,
+          518.419,
+          386.66
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 9,
+      "problem_domain": "text-loading",
+      "region_id": "p9_b8_0",
+      "severity": "P1",
+      "signal_id": "group_00283",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.353,
+          406.712,
+          518.419,
+          421.054
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.353,
+          406.712,
+          518.419,
+          418.664
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 9,
+      "problem_domain": "text-loading",
+      "region_id": "p9_b10_0",
+      "severity": "P1",
+      "signal_id": "group_00285",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.7429,
+        "source_rect": [
+          510.099,
+          813.08,
+          560.777,
+          821.92
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 10,
+      "problem_domain": "text-loading",
+      "region_id": "p10_b0_0",
+      "severity": "P1",
+      "signal_id": "group_00303",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          486.694,
+          543.685,
+          500.439
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          79.37,
+          486.694,
+          535.436,
+          498.646
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 10,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p10_b3_0",
+      "severity": "P1",
+      "signal_id": "group_00306",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          502.696,
+          543.685,
+          521.476
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.7216,
+        "source_rect": [
+          79.37,
+          502.696,
+          459.89,
+          514.648
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 10,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p10_b4_0",
+      "severity": "P1",
+      "signal_id": "group_00307",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          534.7,
+          543.685,
+          548.445
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          79.37,
+          534.7,
+          535.292,
+          546.652
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 10,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p10_b5_0",
+      "severity": "P1",
+      "signal_id": "group_00308",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          94.694,
+          526.677,
+          108.439
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          94.694,
+          515.818,
+          106.646
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 11,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p11_b2_0",
+      "severity": "P1",
+      "signal_id": "group_00319",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          110.696,
+          526.677,
+          124.441
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          110.696,
+          515.854,
+          122.648
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 11,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p11_b3_0",
+      "severity": "P1",
+      "signal_id": "group_00320",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          126.698,
+          526.677,
+          140.443
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.6688,
+        "source_rect": [
+          62.362,
+          126.698,
+          515.782,
+          138.65
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 11,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p11_b4_0",
+      "severity": "P1",
+      "signal_id": "group_00321",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          174.704,
+          526.677,
+          188.449
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          174.704,
+          518.428,
+          186.656
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 11,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p11_b6_0",
+      "severity": "P1",
+      "signal_id": "group_00323",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          190.706,
+          526.677,
+          204.451
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          190.706,
+          515.782,
+          202.658
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 11,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p11_b7_0",
+      "severity": "P1",
+      "signal_id": "group_00324",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          206.708,
+          526.677,
+          220.453
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          206.708,
+          515.782,
+          218.66
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 11,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p11_b8_0",
+      "severity": "P1",
+      "signal_id": "group_00325",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          254.714,
+          526.677,
+          268.459
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.6688,
+        "source_rect": [
+          62.362,
+          254.714,
+          515.905,
+          266.666
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 11,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p11_b10_0",
+      "severity": "P1",
+      "signal_id": "group_00327",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.7429,
+        "source_rect": [
+          510.099,
+          813.08,
+          560.868,
+          821.92
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 12,
+      "problem_domain": "text-loading",
+      "region_id": "p12_b0_0",
+      "severity": "P1",
+      "signal_id": "group_00337",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          94.694,
+          526.677,
+          114.134
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.6688,
+        "source_rect": [
+          62.362,
+          94.694,
+          515.907,
+          106.646
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b2_0",
+      "severity": "P1",
+      "signal_id": "group_00352",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          110.696,
+          526.677,
+          124.441
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          110.696,
+          515.872,
+          122.648
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b3_0",
+      "severity": "P1",
+      "signal_id": "group_00353",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          158.702,
+          526.677,
+          172.447
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.6688,
+        "source_rect": [
+          62.362,
+          158.702,
+          515.854,
+          170.654
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b5_0",
+      "severity": "P1",
+      "signal_id": "group_00355",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          174.704,
+          526.677,
+          188.449
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          174.704,
+          515.782,
+          186.656
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b6_0",
+      "severity": "P1",
+      "signal_id": "group_00356",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          190.706,
+          526.677,
+          204.451
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          190.706,
+          515.818,
+          202.658
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b7_0",
+      "severity": "P1",
+      "signal_id": "group_00357",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          238.712,
+          526.677,
+          252.457
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          238.712,
+          515.926,
+          250.664
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b9_0",
+      "severity": "P1",
+      "signal_id": "group_00359",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          254.714,
+          526.677,
+          273.494
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.6688,
+        "source_rect": [
+          62.362,
+          254.714,
+          514.162,
+          266.666
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b10_0",
+      "severity": "P1",
+      "signal_id": "group_00360",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          286.718,
+          526.677,
+          300.463
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          286.718,
+          515.854,
+          298.67
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b11_0",
+      "severity": "P1",
+      "signal_id": "group_00361",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          334.724,
+          526.677,
+          348.469
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          334.724,
+          515.782,
+          346.676
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b13_0",
+      "severity": "P1",
+      "signal_id": "group_00363",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          350.726,
+          526.677,
+          364.471
+        ],
+        "fit_status": "fit",
+        "font_scale_ratio": 0.5,
+        "source_rect": [
+          62.362,
+          350.726,
+          515.872,
+          362.678
+        ]
+      },
+      "failure_class": "font_size_regression",
+      "human_readable_reason": "候选字号相对原文字号和本页字号基线过小，应优先重排，不应继续压缩。",
+      "page_index": 13,
+      "problem_domain": "font-hierarchy",
+      "region_id": "p13_b14_0",
+      "severity": "P1",
+      "signal_id": "group_00364",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.7429,
+        "source_rect": [
+          510.099,
+          813.08,
+          560.032,
+          821.92
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b0_0",
+      "severity": "P1",
+      "signal_id": "group_00378",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          126.469,
+          532.97,
+          141.081
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          126.469,
+          532.97,
+          138.646
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b3_0",
+      "severity": "P1",
+      "signal_id": "group_00381",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          142.701,
+          532.88,
+          157.043
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          142.696,
+          532.88,
+          154.648
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b4_0",
+      "severity": "P1",
+      "signal_id": "group_00382",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          158.698,
+          532.881,
+          173.04
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          158.698,
+          532.881,
+          170.65
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b5_0",
+      "severity": "P1",
+      "signal_id": "group_00383",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          206.479,
+          532.889,
+          221.091
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          206.479,
+          532.889,
+          218.656
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b7_0",
+      "severity": "P1",
+      "signal_id": "group_00385",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          238.708,
+          532.871,
+          253.05
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          238.708,
+          532.871,
+          250.66
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b9_0",
+      "severity": "P1",
+      "signal_id": "group_00387",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          286.489,
+          532.847,
+          301.101
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          286.489,
+          532.847,
+          298.666
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b11_0",
+      "severity": "P1",
+      "signal_id": "group_00389",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          366.499,
+          532.898,
+          383.499
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          366.499,
+          532.898,
+          378.676
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b15_0",
+      "severity": "P1",
+      "signal_id": "group_00393",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          385.119,
+          532.864,
+          399.461
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          382.726,
+          532.864,
+          394.678
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 14,
+      "problem_domain": "text-loading",
+      "region_id": "p14_b16_0",
+      "severity": "P1",
+      "signal_id": "group_00394",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          143.114,
+          518.428,
+          157.456
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          142.694,
+          518.428,
+          154.646
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 15,
+      "problem_domain": "text-loading",
+      "region_id": "p15_b4_0",
+      "severity": "P1",
+      "signal_id": "group_00412",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          175.038,
+          515.944,
+          189.38
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          174.698,
+          515.944,
+          186.65
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 15,
+      "problem_domain": "text-loading",
+      "region_id": "p15_b6_0",
+      "severity": "P1",
+      "signal_id": "group_00414",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          222.704,
+          515.782,
+          237.046
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          222.704,
+          515.782,
+          234.656
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 15,
+      "problem_domain": "text-loading",
+      "region_id": "p15_b8_0",
+      "severity": "P1",
+      "signal_id": "group_00416",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          238.706,
+          515.944,
+          253.048
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          238.706,
+          515.944,
+          250.658
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 15,
+      "problem_domain": "text-loading",
+      "region_id": "p15_b9_0",
+      "severity": "P1",
+      "signal_id": "group_00417",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          286.712,
+          515.908,
+          301.054
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          286.712,
+          515.908,
+          298.664
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 15,
+      "problem_domain": "text-loading",
+      "region_id": "p15_b11_0",
+      "severity": "P1",
+      "signal_id": "group_00419",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          302.714,
+          515.899,
+          317.056
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          302.714,
+          515.899,
+          314.666
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 15,
+      "problem_domain": "text-loading",
+      "region_id": "p15_b12_0",
+      "severity": "P1",
+      "signal_id": "group_00420",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          334.718,
+          515.781,
+          349.06
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          334.718,
+          515.781,
+          346.67
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 15,
+      "problem_domain": "text-loading",
+      "region_id": "p15_b14_0",
+      "severity": "P1",
+      "signal_id": "group_00422",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.7429,
+        "source_rect": [
+          510.099,
+          813.08,
+          560.256,
+          821.92
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 16,
+      "problem_domain": "text-loading",
+      "region_id": "p16_b0_0",
+      "severity": "P1",
+      "signal_id": "group_00436",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          110.694,
+          532.753,
+          125.036
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          110.694,
+          532.753,
+          122.646
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 16,
+      "problem_domain": "text-loading",
+      "region_id": "p16_b3_0",
+      "severity": "P1",
+      "signal_id": "group_00439",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          158.7,
+          532.912,
+          173.042
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          158.7,
+          532.912,
+          170.652
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 16,
+      "problem_domain": "text-loading",
+      "region_id": "p16_b5_0",
+      "severity": "P1",
+      "signal_id": "group_00441",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          222.708,
+          532.754,
+          237.05
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          222.708,
+          532.754,
+          234.66
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 16,
+      "problem_domain": "text-loading",
+      "region_id": "p16_b8_0",
+      "severity": "P1",
+      "signal_id": "group_00444",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          270.714,
+          532.79,
+          285.056
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          270.714,
+          532.79,
+          282.666
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 16,
+      "problem_domain": "text-loading",
+      "region_id": "p16_b10_0",
+      "severity": "P1",
+      "signal_id": "group_00446",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          318.72,
+          532.79,
+          333.062
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          318.72,
+          532.79,
+          330.672
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 16,
+      "problem_domain": "text-loading",
+      "region_id": "p16_b12_0",
+      "severity": "P1",
+      "signal_id": "group_00448",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.37,
+          334.722,
+          532.79,
+          349.064
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          79.37,
+          334.722,
+          532.79,
+          346.674
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 16,
+      "problem_domain": "text-loading",
+      "region_id": "p16_b13_0",
+      "severity": "P1",
+      "signal_id": "group_00449",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          126.694,
+          515.899,
+          141.036
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          126.694,
+          515.899,
+          138.646
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 17,
+      "problem_domain": "text-loading",
+      "region_id": "p17_b3_0",
+      "severity": "P1",
+      "signal_id": "group_00470",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          142.696,
+          515.891,
+          157.038
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          142.696,
+          515.891,
+          154.648
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 17,
+      "problem_domain": "text-loading",
+      "region_id": "p17_b4_0",
+      "severity": "P1",
+      "signal_id": "group_00471",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          174.7,
+          515.914,
+          189.042
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          174.7,
+          515.914,
+          186.652
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 17,
+      "problem_domain": "text-loading",
+      "region_id": "p17_b6_0",
+      "severity": "P1",
+      "signal_id": "group_00473",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          238.708,
+          515.746,
+          255.708
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          238.708,
+          515.746,
+          250.66
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 17,
+      "problem_domain": "text-loading",
+      "region_id": "p17_b9_0",
+      "severity": "P1",
+      "signal_id": "group_00476",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          286.714,
+          515.746,
+          301.056
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          286.714,
+          515.746,
+          298.666
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 17,
+      "problem_domain": "text-loading",
+      "region_id": "p17_b11_0",
+      "severity": "P1",
+      "signal_id": "group_00478",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          62.362,
+          302.716,
+          515.782,
+          317.058
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.6667,
+        "source_rect": [
+          62.362,
+          302.716,
+          515.782,
+          314.668
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 17,
+      "problem_domain": "text-loading",
+      "region_id": "p17_b12_0",
+      "severity": "P1",
+      "signal_id": "group_00479",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          510.099,
+          813.08,
+          559.276,
+          821.89
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.7429,
+        "source_rect": [
+          510.099,
+          813.08,
+          560.266,
+          821.92
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 18,
+      "problem_domain": "text-loading",
+      "region_id": "p18_b0_0",
+      "severity": "P1",
+      "signal_id": "group_00495",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "candidate_rect": [
+          79.356,
+          220.705,
+          273.827,
+          241.957
+        ],
+        "fit_status": "overflow_after_fit",
+        "font_scale_ratio": 0.68,
+        "source_rect": [
+          79.356,
+          220.705,
+          207.806,
+          239.185
+        ]
+      },
+      "failure_class": "text_fit_overflow",
+      "human_readable_reason": "译文没有装入候选文本框，需要优先扩大或重排该文本槽。",
+      "page_index": 18,
+      "problem_domain": "text-loading",
+      "region_id": "p18_b5_0",
+      "severity": "P1",
+      "signal_id": "group_00500",
+      "signal_type": "text_region",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 66.076,
+        "other_region_id": "p0_b6_0",
+        "overlap_pt": 64.076,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p0_b1_0",
+      "severity": "P1",
+      "signal_id": "overlap_00000",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 54.298,
+        "other_region_id": "p0_b7_0",
+        "overlap_pt": 52.298,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p0_b1_0",
+      "severity": "P1",
+      "signal_id": "overlap_00001",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 20.444,
+        "other_region_id": "p0_b8_0",
+        "overlap_pt": 64.076,
+        "source_baseline_pt": 45.632
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p0_b1_0",
+      "severity": "P1",
+      "signal_id": "overlap_00002",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 13.417,
+        "other_region_id": "p2_b8_0",
+        "overlap_pt": 12.737,
+        "source_baseline_pt": 1.32
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b0_1",
+      "severity": "P1",
+      "signal_id": "overlap_00003",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 34.415,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 66.5,
+        "source_baseline_pt": 34.085
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b0_1",
+      "severity": "P1",
+      "signal_id": "overlap_00004",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b1_0",
+      "severity": "P1",
+      "signal_id": "overlap_00005",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 34.117,
+        "other_region_id": "p2_b8_1",
+        "overlap_pt": 54.702,
+        "source_baseline_pt": 22.585
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b1_1",
+      "severity": "P1",
+      "signal_id": "overlap_00006",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 56.702,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 54.702,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b1_1",
+      "severity": "P1",
+      "signal_id": "overlap_00007",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b8_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b2_0",
+      "severity": "P1",
+      "signal_id": "overlap_00008",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b2_0",
+      "severity": "P1",
+      "signal_id": "overlap_00009",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 56.702,
+        "other_region_id": "p2_b8_1",
+        "overlap_pt": 54.702,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b2_1",
+      "severity": "P1",
+      "signal_id": "overlap_00010",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 56.702,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 54.702,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b2_1",
+      "severity": "P1",
+      "signal_id": "overlap_00011",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.935,
+        "other_region_id": "p2_b4_0",
+        "overlap_pt": 5.935,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b3_0",
+      "severity": "P1",
+      "signal_id": "overlap_00012",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 36.137,
+        "other_region_id": "p2_b8_1",
+        "overlap_pt": 34.137,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b3_0",
+      "severity": "P1",
+      "signal_id": "overlap_00013",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 22.498,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 20.498,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b3_0",
+      "severity": "P1",
+      "signal_id": "overlap_00014",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b8_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b4_0",
+      "severity": "P1",
+      "signal_id": "overlap_00015",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 49.458,
+        "other_region_id": "p2_b8_1",
+        "overlap_pt": 47.458,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b4_1",
+      "severity": "P1",
+      "signal_id": "overlap_00016",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 9.915,
+        "other_region_id": "p2_b6_0",
+        "overlap_pt": 7.915,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b5_0",
+      "severity": "P1",
+      "signal_id": "overlap_00017",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 20.615,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 52.7,
+        "source_baseline_pt": 34.085
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b7_1",
+      "severity": "P1",
+      "signal_id": "overlap_00018",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.544,
+        "other_region_id": "p2_b12_0",
+        "overlap_pt": 3.544,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_0",
+      "severity": "P1",
+      "signal_id": "overlap_00019",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_0",
+      "severity": "P1",
+      "signal_id": "overlap_00020",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b9_0",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00021",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 70.502,
+        "other_region_id": "p2_b9_1",
+        "overlap_pt": 68.502,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00022",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b10_0",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00023",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 89.627,
+        "other_region_id": "p2_b10_1",
+        "overlap_pt": 87.627,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00024",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 14.486,
+        "other_region_id": "p2_b13_1",
+        "overlap_pt": 40.902,
+        "source_baseline_pt": 28.416
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00025",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 42.902,
+        "other_region_id": "p2_b14_0",
+        "overlap_pt": 40.902,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00026",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b15_0",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00027",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 69.398,
+        "other_region_id": "p2_b15_1",
+        "overlap_pt": 67.398,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00028",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 48.023,
+        "other_region_id": "p2_b16_0",
+        "overlap_pt": 46.023,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00029",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 157.67,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 155.67,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00030",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 14.395,
+        "other_region_id": "p2_b18_0",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.877
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00031",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 29.101,
+        "other_region_id": "p2_b18_1",
+        "overlap_pt": 27.101,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00032",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 70.503,
+        "other_region_id": "p2_b19_0",
+        "overlap_pt": 68.503,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00033",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b20_0",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00034",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 41.198,
+        "other_region_id": "p2_b20_1",
+        "overlap_pt": 39.198,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00035",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b21_0",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00036",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 14.677,
+        "other_region_id": "p2_b21_1",
+        "overlap_pt": 12.677,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b8_1",
+      "severity": "P1",
+      "signal_id": "overlap_00037",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b9_0",
+      "severity": "P1",
+      "signal_id": "overlap_00038",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 70.502,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 68.502,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b9_1",
+      "severity": "P1",
+      "signal_id": "overlap_00039",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b10_0",
+      "severity": "P1",
+      "signal_id": "overlap_00040",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 21.392,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 19.392,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b10_1",
+      "severity": "P1",
+      "signal_id": "overlap_00041",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.118,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 25.099,
+        "source_baseline_pt": 21.981
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b11_1",
+      "severity": "P1",
+      "signal_id": "overlap_00042",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 26.621,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 30.639,
+        "source_baseline_pt": 6.018
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b12_0",
+      "severity": "P1",
+      "signal_id": "overlap_00043",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b13_0",
+      "severity": "P1",
+      "signal_id": "overlap_00044",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 42.902,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 40.902,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b13_1",
+      "severity": "P1",
+      "signal_id": "overlap_00045",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 42.902,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 40.902,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b14_0",
+      "severity": "P1",
+      "signal_id": "overlap_00046",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b15_0",
+      "severity": "P1",
+      "signal_id": "overlap_00047",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 55.892,
+        "other_region_id": "p2_b17_1",
+        "overlap_pt": 53.892,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b15_1",
+      "severity": "P1",
+      "signal_id": "overlap_00048",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b18_0",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b17_1",
+      "severity": "P1",
+      "signal_id": "overlap_00049",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 29.101,
+        "other_region_id": "p2_b18_1",
+        "overlap_pt": 27.101,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b17_1",
+      "severity": "P1",
+      "signal_id": "overlap_00050",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 70.503,
+        "other_region_id": "p2_b19_0",
+        "overlap_pt": 68.503,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b17_1",
+      "severity": "P1",
+      "signal_id": "overlap_00051",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.272,
+        "other_region_id": "p2_b20_0",
+        "overlap_pt": 13.272,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b17_1",
+      "severity": "P1",
+      "signal_id": "overlap_00052",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 3.78,
+        "other_region_id": "p2_b20_1",
+        "overlap_pt": 1.78,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p2_b17_1",
+      "severity": "P1",
+      "signal_id": "overlap_00053",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 65.706,
+        "other_region_id": "p4_b5_0",
+        "overlap_pt": 63.706,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b4_0",
+      "severity": "P1",
+      "signal_id": "overlap_00054",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 10.625,
+        "other_region_id": "p4_b6_0",
+        "overlap_pt": 8.625,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b5_0",
+      "severity": "P1",
+      "signal_id": "overlap_00055",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 16.751,
+        "other_region_id": "p4_b12_0",
+        "overlap_pt": 34.311,
+        "source_baseline_pt": 19.56
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b5_0",
+      "severity": "P1",
+      "signal_id": "overlap_00056",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 75.071,
+        "other_region_id": "p4_b7_0",
+        "overlap_pt": 73.071,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b6_0",
+      "severity": "P1",
+      "signal_id": "overlap_00057",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 14.833,
+        "other_region_id": "p4_b12_0",
+        "overlap_pt": 12.833,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b7_0",
+      "severity": "P1",
+      "signal_id": "overlap_00058",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 88.411,
+        "other_region_id": "p4_b13_0",
+        "overlap_pt": 104.834,
+        "source_baseline_pt": 18.423
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b7_0",
+      "severity": "P1",
+      "signal_id": "overlap_00059",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 50.301,
+        "other_region_id": "p4_b17_0",
+        "overlap_pt": 48.301,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b9_0",
+      "severity": "P1",
+      "signal_id": "overlap_00060",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 48.929,
+        "other_region_id": "p4_b14_0",
+        "overlap_pt": 46.929,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b10_0",
+      "severity": "P1",
+      "signal_id": "overlap_00061",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 72.689,
+        "other_region_id": "p4_b15_0",
+        "overlap_pt": 70.689,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p4_b14_0",
+      "severity": "P1",
+      "signal_id": "overlap_00062",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 131.03,
+        "other_region_id": "p5_b2_0",
+        "overlap_pt": 129.03,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b1_0",
+      "severity": "P1",
+      "signal_id": "overlap_00063",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 44.526,
+        "other_region_id": "p5_b8_0",
+        "overlap_pt": 42.526,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b1_0",
+      "severity": "P1",
+      "signal_id": "overlap_00064",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 83.017,
+        "other_region_id": "p5_b6_0",
+        "overlap_pt": 81.017,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b3_0",
+      "severity": "P1",
+      "signal_id": "overlap_00065",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 47.77,
+        "other_region_id": "p5_b10_0",
+        "overlap_pt": 45.77,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b3_0",
+      "severity": "P1",
+      "signal_id": "overlap_00066",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 98.989,
+        "other_region_id": "p5_b11_0",
+        "overlap_pt": 96.989,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b3_0",
+      "severity": "P1",
+      "signal_id": "overlap_00067",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 90.739,
+        "other_region_id": "p5_b7_0",
+        "overlap_pt": 88.739,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b4_0",
+      "severity": "P1",
+      "signal_id": "overlap_00068",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 61.431,
+        "other_region_id": "p5_b7_0",
+        "overlap_pt": 59.431,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b5_0",
+      "severity": "P1",
+      "signal_id": "overlap_00069",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 19.359,
+        "other_region_id": "p5_b8_0",
+        "overlap_pt": 17.359,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b7_0",
+      "severity": "P1",
+      "signal_id": "overlap_00070",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 101.888,
+        "other_region_id": "p5_b9_0",
+        "overlap_pt": 99.888,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b7_0",
+      "severity": "P1",
+      "signal_id": "overlap_00071",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 53.175,
+        "other_region_id": "p5_b10_0",
+        "overlap_pt": 51.175,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p5_b7_0",
+      "severity": "P1",
+      "signal_id": "overlap_00072",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 16.246,
+        "other_region_id": "p6_b32_0",
+        "overlap_pt": 14.246,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p6_b31_0",
+      "severity": "P1",
+      "signal_id": "overlap_00073",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 12.607,
+        "other_region_id": "p6_b33_0",
+        "overlap_pt": 10.607,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p6_b31_0",
+      "severity": "P1",
+      "signal_id": "overlap_00074",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 12.607,
+        "other_region_id": "p6_b33_0",
+        "overlap_pt": 10.607,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p6_b32_0",
+      "severity": "P1",
+      "signal_id": "overlap_00075",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 10.569,
+        "other_region_id": "p7_b30_0",
+        "overlap_pt": 8.569,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b21_0",
+      "severity": "P1",
+      "signal_id": "overlap_00076",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 9.04,
+        "other_region_id": "p7_b30_0",
+        "overlap_pt": 7.04,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b25_0",
+      "severity": "P1",
+      "signal_id": "overlap_00077",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.197,
+        "other_region_id": "p7_b36_0",
+        "overlap_pt": 4.558,
+        "source_baseline_pt": 1.361
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b26_0",
+      "severity": "P1",
+      "signal_id": "overlap_00078",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.455,
+        "other_region_id": "p7_b31_0",
+        "overlap_pt": 4.29,
+        "source_baseline_pt": 0.835
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b29_0",
+      "severity": "P1",
+      "signal_id": "overlap_00079",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 10.564,
+        "other_region_id": "p7_b45_0",
+        "overlap_pt": 8.564,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b37_0",
+      "severity": "P1",
+      "signal_id": "overlap_00080",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.455,
+        "other_region_id": "p7_b46_0",
+        "overlap_pt": 4.291,
+        "source_baseline_pt": 0.836
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b44_0",
+      "severity": "P1",
+      "signal_id": "overlap_00081",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 10.569,
+        "other_region_id": "p7_b58_0",
+        "overlap_pt": 8.569,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b51_0",
+      "severity": "P1",
+      "signal_id": "overlap_00082",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 11.0,
+        "other_region_id": "p7_b58_0",
+        "overlap_pt": 9.0,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b54_0",
+      "severity": "P1",
+      "signal_id": "overlap_00083",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 3.397,
+        "other_region_id": "p7_b68_0",
+        "overlap_pt": 1.397,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b67_0",
+      "severity": "P1",
+      "signal_id": "overlap_00084",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 11.0,
+        "other_region_id": "p7_b72_0",
+        "overlap_pt": 9.0,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b68_0",
+      "severity": "P1",
+      "signal_id": "overlap_00085",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.454,
+        "other_region_id": "p7_b73_0",
+        "overlap_pt": 4.29,
+        "source_baseline_pt": 0.836
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b71_0",
+      "severity": "P1",
+      "signal_id": "overlap_00086",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 10.502,
+        "other_region_id": "p7_b103_0",
+        "overlap_pt": 8.502,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b91_0",
+      "severity": "P1",
+      "signal_id": "overlap_00087",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 10.564,
+        "other_region_id": "p7_b103_0",
+        "overlap_pt": 8.564,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p7_b102_0",
+      "severity": "P1",
+      "signal_id": "overlap_00088",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.886,
+        "other_region_id": "p8_b7_0",
+        "overlap_pt": 5.886,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p8_b6_0",
+      "severity": "P1",
+      "signal_id": "overlap_00089",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.886,
+        "other_region_id": "p8_b8_0",
+        "overlap_pt": 5.886,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p8_b7_0",
+      "severity": "P1",
+      "signal_id": "overlap_00090",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.886,
+        "other_region_id": "p8_b9_0",
+        "overlap_pt": 5.886,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p8_b8_0",
+      "severity": "P1",
+      "signal_id": "overlap_00091",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.08,
+        "other_region_id": "p8_b10_0",
+        "overlap_pt": 4.08,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p8_b9_0",
+      "severity": "P1",
+      "signal_id": "overlap_00092",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.967,
+        "other_region_id": "p9_b4_0",
+        "overlap_pt": 4.967,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p9_b3_0",
+      "severity": "P1",
+      "signal_id": "overlap_00093",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 9.542,
+        "other_region_id": "p9_b13_0",
+        "overlap_pt": 7.542,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p9_b12_0",
+      "severity": "P1",
+      "signal_id": "overlap_00094",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 17.873,
+        "other_region_id": "p9_b17_0",
+        "overlap_pt": 15.873,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p9_b16_0",
+      "severity": "P1",
+      "signal_id": "overlap_00095",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 17.362,
+        "other_region_id": "p9_b23_0",
+        "overlap_pt": 15.362,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p9_b21_0",
+      "severity": "P1",
+      "signal_id": "overlap_00096",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 8.465,
+        "other_region_id": "p9_b23_0",
+        "overlap_pt": 6.465,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p9_b22_0",
+      "severity": "P1",
+      "signal_id": "overlap_00097",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 18.689,
+        "other_region_id": "p10_b12_0",
+        "overlap_pt": 16.689,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p10_b10_0",
+      "severity": "P1",
+      "signal_id": "overlap_00098",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.138,
+        "other_region_id": "p10_b12_0",
+        "overlap_pt": 5.138,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p10_b11_0",
+      "severity": "P1",
+      "signal_id": "overlap_00099",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.878,
+        "other_region_id": "p11_b13_0",
+        "overlap_pt": 13.878,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p11_b12_0",
+      "severity": "P1",
+      "signal_id": "overlap_00100",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.878,
+        "other_region_id": "p11_b16_0",
+        "overlap_pt": 13.878,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p11_b15_0",
+      "severity": "P1",
+      "signal_id": "overlap_00101",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.493,
+        "other_region_id": "p11_b18_0",
+        "overlap_pt": 4.493,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p11_b17_0",
+      "severity": "P1",
+      "signal_id": "overlap_00102",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.967,
+        "other_region_id": "p11_b19_0",
+        "overlap_pt": 4.967,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p11_b18_0",
+      "severity": "P1",
+      "signal_id": "overlap_00103",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.135,
+        "other_region_id": "p12_b4_0",
+        "overlap_pt": 5.135,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p12_b3_0",
+      "severity": "P1",
+      "signal_id": "overlap_00104",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 12.874,
+        "other_region_id": "p12_b9_0",
+        "overlap_pt": 10.874,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p12_b7_0",
+      "severity": "P1",
+      "signal_id": "overlap_00105",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 12.953,
+        "other_region_id": "p12_b9_0",
+        "overlap_pt": 10.953,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p12_b8_0",
+      "severity": "P1",
+      "signal_id": "overlap_00106",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.438,
+        "other_region_id": "p13_b3_0",
+        "overlap_pt": 3.438,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p13_b2_0",
+      "severity": "P1",
+      "signal_id": "overlap_00107",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.878,
+        "other_region_id": "p13_b18_0",
+        "overlap_pt": 13.878,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p13_b17_0",
+      "severity": "P1",
+      "signal_id": "overlap_00108",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.967,
+        "other_region_id": "p13_b20_0",
+        "overlap_pt": 4.967,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p13_b19_0",
+      "severity": "P1",
+      "signal_id": "overlap_00109",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 9.542,
+        "other_region_id": "p13_b21_0",
+        "overlap_pt": 7.542,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p13_b20_0",
+      "severity": "P1",
+      "signal_id": "overlap_00110",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.967,
+        "other_region_id": "p13_b22_0",
+        "overlap_pt": 4.967,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p13_b21_0",
+      "severity": "P1",
+      "signal_id": "overlap_00111",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.966,
+        "other_region_id": "p13_b23_0",
+        "overlap_pt": 4.966,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p13_b22_0",
+      "severity": "P1",
+      "signal_id": "overlap_00112",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.966,
+        "other_region_id": "p13_b25_0",
+        "overlap_pt": 4.966,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p13_b24_0",
+      "severity": "P1",
+      "signal_id": "overlap_00113",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.966,
+        "other_region_id": "p13_b26_0",
+        "overlap_pt": 4.966,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p13_b25_0",
+      "severity": "P1",
+      "signal_id": "overlap_00114",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.967,
+        "other_region_id": "p14_b14_0",
+        "overlap_pt": 4.967,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p14_b13_0",
+      "severity": "P1",
+      "signal_id": "overlap_00115",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.161,
+        "other_region_id": "p14_b18_0",
+        "overlap_pt": 3.161,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p14_b17_0",
+      "severity": "P1",
+      "signal_id": "overlap_00116",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.912,
+        "other_region_id": "p14_b21_0",
+        "overlap_pt": 13.912,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p14_b20_0",
+      "severity": "P1",
+      "signal_id": "overlap_00117",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 18.544,
+        "other_region_id": "p14_b24_0",
+        "overlap_pt": 16.544,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p14_b23_0",
+      "severity": "P1",
+      "signal_id": "overlap_00118",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.001,
+        "other_region_id": "p14_b25_0",
+        "overlap_pt": 5.001,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p14_b24_0",
+      "severity": "P1",
+      "signal_id": "overlap_00119",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 16.137,
+        "other_region_id": "p14_b28_0",
+        "overlap_pt": 14.137,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p14_b27_0",
+      "severity": "P1",
+      "signal_id": "overlap_00120",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.967,
+        "other_region_id": "p15_b14_0",
+        "overlap_pt": 4.967,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p15_b13_0",
+      "severity": "P1",
+      "signal_id": "overlap_00121",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 4.199,
+        "other_region_id": "p15_b20_0",
+        "overlap_pt": 2.199,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p15_b18_0",
+      "severity": "P1",
+      "signal_id": "overlap_00122",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 21.628,
+        "other_region_id": "p15_b20_0",
+        "overlap_pt": 19.628,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p15_b19_0",
+      "severity": "P1",
+      "signal_id": "overlap_00123",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 23.137,
+        "other_region_id": "p15_b24_0",
+        "overlap_pt": 21.137,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p15_b23_0",
+      "severity": "P1",
+      "signal_id": "overlap_00124",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.135,
+        "other_region_id": "p15_b26_0",
+        "overlap_pt": 5.135,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p15_b25_0",
+      "severity": "P1",
+      "signal_id": "overlap_00125",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 6.967,
+        "other_region_id": "p15_b27_0",
+        "overlap_pt": 4.967,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p15_b26_0",
+      "severity": "P1",
+      "signal_id": "overlap_00126",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.135,
+        "other_region_id": "p16_b18_0",
+        "overlap_pt": 5.135,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p16_b17_0",
+      "severity": "P1",
+      "signal_id": "overlap_00127",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 8.619,
+        "other_region_id": "p16_b23_0",
+        "overlap_pt": 6.619,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p16_b21_0",
+      "severity": "P1",
+      "signal_id": "overlap_00128",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 17.208,
+        "other_region_id": "p16_b23_0",
+        "overlap_pt": 15.208,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p16_b22_0",
+      "severity": "P1",
+      "signal_id": "overlap_00129",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 5.251,
+        "other_region_id": "p16_b27_0",
+        "overlap_pt": 3.251,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p16_b25_0",
+      "severity": "P1",
+      "signal_id": "overlap_00130",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 8.844,
+        "other_region_id": "p16_b27_0",
+        "overlap_pt": 6.844,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p16_b26_0",
+      "severity": "P1",
+      "signal_id": "overlap_00131",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.135,
+        "other_region_id": "p17_b16_0",
+        "overlap_pt": 5.135,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p17_b15_0",
+      "severity": "P1",
+      "signal_id": "overlap_00132",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 7.135,
+        "other_region_id": "p17_b18_0",
+        "overlap_pt": 5.135,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p17_b17_0",
+      "severity": "P1",
+      "signal_id": "overlap_00133",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.878,
+        "other_region_id": "p17_b21_0",
+        "overlap_pt": 13.878,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p17_b20_0",
+      "severity": "P1",
+      "signal_id": "overlap_00134",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 15.878,
+        "other_region_id": "p17_b24_0",
+        "overlap_pt": 13.878,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p17_b23_0",
+      "severity": "P1",
+      "signal_id": "overlap_00135",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 20.017,
+        "other_region_id": "p18_b2_0",
+        "overlap_pt": 18.017,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p18_b1_0",
+      "severity": "P1",
+      "signal_id": "overlap_00136",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 23.252,
+        "other_region_id": "p18_b5_0",
+        "overlap_pt": 21.252,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p18_b2_0",
+      "severity": "P1",
+      "signal_id": "overlap_00137",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 23.252,
+        "other_region_id": "p18_b6_0",
+        "overlap_pt": 21.252,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p18_b2_0",
+      "severity": "P1",
+      "signal_id": "overlap_00138",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    },
+    {
+      "evidence_ref": {
+        "needed_shift_pt": 23.137,
+        "other_region_id": "p19_b9_0",
+        "overlap_pt": 21.137,
+        "source_baseline_pt": 0.0
+      },
+      "failure_class": "cross_slot_overlap",
+      "human_readable_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。",
+      "page_index": null,
+      "problem_domain": "geometry-layout",
+      "region_id": "p19_b8_0",
+      "severity": "P1",
+      "signal_id": "overlap_00139",
+      "signal_type": "region_overlap",
+      "source_file": "reports/quality_signals.json"
+    }
+  ]
+}

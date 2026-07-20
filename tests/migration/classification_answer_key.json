@@ -1,0 +1,27 @@
+{
+  "schema_version": "transflow.classification-answer-key/v1",
+  "answers": [
+    {"case_key": "case-0cd090b377b4", "evaluation_role": "calibration", "route": "body.anchored_blocks"},
+    {"case_key": "case-2d5673252659", "evaluation_role": "blind", "route": "body.anchored_blocks"},
+    {"case_key": "case-dabc26fe52f4", "evaluation_role": "calibration", "route": "body.chart"},
+    {"case_key": "case-b381a3ec2811", "evaluation_role": "blind", "route": "body.chart"},
+    {"case_key": "case-80747876830d", "evaluation_role": "calibration", "route": "body.composite.anchored_blocks_chart"},
+    {"case_key": "case-e2fcc1b95624", "evaluation_role": "blind", "route": "body.composite.anchored_blocks_chart"},
+    {"case_key": "case-f760ac5f0831", "evaluation_role": "calibration", "route": "body.composite.flow_text_table"},
+    {"case_key": "case-469f447e1fcb", "evaluation_role": "blind", "route": "body.composite.flow_text_table"},
+    {"case_key": "case-463012ae9009", "evaluation_role": "calibration", "route": "body.flow_text.multi"},
+    {"case_key": "case-ef8658337d5d", "evaluation_role": "blind", "route": "body.flow_text.multi"},
+    {"case_key": "case-238690020c1b", "evaluation_role": "calibration", "route": "body.flow_text.single"},
+    {"case_key": "case-0464da42816a", "evaluation_role": "blind", "route": "body.flow_text.single"},
+    {"case_key": "case-ee29094db0da", "evaluation_role": "calibration", "route": "body.flow_text.visual_anchored"},
+    {"case_key": "case-74efe5766274", "evaluation_role": "blind", "route": "body.flow_text.visual_anchored"},
+    {"case_key": "case-c616f2dfb48f", "evaluation_role": "calibration", "route": "body.table"},
+    {"case_key": "case-dd40019d37db", "evaluation_role": "blind", "route": "body.table"},
+    {"case_key": "case-5174768cbd78", "evaluation_role": "calibration", "route": "contents"},
+    {"case_key": "case-0ef5c7adb95e", "evaluation_role": "blind", "route": "contents"},
+    {"case_key": "case-d086cf3c06e3", "evaluation_role": "calibration", "route": "cover"},
+    {"case_key": "case-a38d804edd61", "evaluation_role": "blind", "route": "cover"},
+    {"case_key": "case-fa7b33f7af7c", "evaluation_role": "calibration", "route": "visual_only"},
+    {"case_key": "case-0802d29a8318", "evaluation_role": "blind", "route": "visual_only"}
+  ]
+}

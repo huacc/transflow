@@ -1,0 +1,46 @@
+{
+  "diagnostic_publishable": false,
+  "diagnostic_render": {
+    "applied_count": 3,
+    "clipped_operation_count": 0,
+    "error_type": null,
+    "layout_remainders": [
+      -4.7657794630527555,
+      -4.663939474105792,
+      -4.663939474105849
+    ],
+    "status": "WRITTEN_UNSAFE_DIAGNOSTIC"
+  },
+  "findings": [
+    {
+      "code": "P9_PROTECTED_REGION_REJECTED",
+      "evidence_ids": [
+        "patch-04780afc7f93c9fc36a94eba-body.anchored_blocks"
+      ],
+      "finding_id": "plan-body-anchored_blocks-04780afc7f93c9fc36a94eba-p9_protected_region_rejected-0",
+      "severity": "HARD"
+    }
+  ],
+  "outcome": {
+    "artifact_produced": "NO",
+    "capability": "PARTIAL",
+    "fallback": "PAGE_PASSTHROUGH",
+    "finding_codes": [
+      "P9_PROTECTED_REGION_REJECTED"
+    ],
+    "integrity": "FAIL",
+    "page_no": 1,
+    "quality": "FAIL",
+    "state": "FINALIZED",
+    "translation_coverage": "NONE"
+  },
+  "schema_version": "transflow.p9-diagnostic-judgement/v1",
+  "verdict": {
+    "decision_id": "decision-candidate-plan-body-anchored_blocks-04780afc7f93c9fc36a94eba-0",
+    "disposition": "FALLBACK",
+    "finding_ids": [
+      "plan-body-anchored_blocks-04780afc7f93c9fc36a94eba-p9_protected_region_rejected-0"
+    ],
+    "reason_code": "P9_PLAN_FALLBACK"
+  }
+}

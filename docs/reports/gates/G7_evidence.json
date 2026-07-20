@@ -1,0 +1,203 @@
+{
+  "schema_version": "transflow.gate-report/v1",
+  "gate": "G7",
+  "started_at": "2026-07-20T13:02:51+08:00",
+  "finished_at": "2026-07-20T13:03:00+08:00",
+  "duration_ms": 8988,
+  "catalog": "resources/manifests/gate_catalog.json",
+  "conclusion": "PASS",
+  "steps": [
+    {
+      "step_id": "G7-STATIC",
+      "intent": "检查 P7 Toolbox、协调器、资源脚本、审计和测试的格式与静态错误",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "return_code": 0,
+      "duration_ms": 147,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-TYPES",
+      "intent": "检查六阶段合同、Catalog、Margin、叶 Gate 和 PageCoordinator 类型边界",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "return_code": 0,
+      "duration_ms": 466,
+      "stdout": "Success: no issues found in 84 source files\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-ASSETS",
+      "intent": "确定性复算 v2 Catalog、Margin 策略、叶证据 Schema、模板和初始状态",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.build_p7_assets",
+        "--check"
+      ],
+      "return_code": 0,
+      "duration_ms": 274,
+      "stdout": "P7_ASSET_CHECK PASS path=resources/catalogs/page_toolbox_catalog_v2.json\nP7_ASSET_CHECK PASS path=resources/manifests/p7_margin_policy.json\nP7_ASSET_CHECK PASS path=resources/schemas/leaf_migration_evidence_v1.schema.json\nP7_ASSET_CHECK PASS path=docs/迁移/p7_leaf_migration_template.json\nP7_ASSET_CHECK PASS path=docs/迁移/p7_leaf_initial_state.json\nP7_ASSET_CHECK PASS path=resources/manifests/p7_resource_fingerprints.json\nP7_ASSET_DRIFT PASS count=0 checked=6\n",
+      "stderr": "INFO transflow.p7.assets 调用 P7 资源构建，意图=冻结 Catalog、Margin 和叶 Gate 资源 check=True\n"
+    },
+    {
+      "step_id": "G7-AUDIT",
+      "intent": "复核六阶段、架构、全 Route、叶原状态、资源、测试编号和评审结论",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p7",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 157,
+      "stdout": "P7_VERIFY check=contract status=PASS violations=0\nP7_VERIFY check=architecture status=PASS violations=0\nP7_VERIFY check=catalog status=PASS violations=0\nP7_VERIFY check=leaf_state status=PASS violations=0\nP7_VERIFY check=resources status=PASS violations=0\nP7_VERIFY check=test_inventory status=PASS violations=0\nP7_VERIFY check=review status=PASS violations=0\nP7_VERIFY_SUMMARY status=PASS checks=7\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-1-TOOLBOX-CONTRACT",
+      "intent": "验证六阶段闭合、legacy 非权威单页、严格 mapper、依赖和迁移等价",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p7.py",
+        "-k",
+        "p7_1"
+      ],
+      "return_code": 0,
+      "duration_ms": 1482,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p7.py::test_p7_1_t01_fake_leaf_closes_all_six_stages PASSED   [ 16%]\ntests/test_p7.py::test_p7_1_t02_legacy_single_page_is_private_traced_and_rebuildable PASSED [ 33%]\ntests/test_p7.py::test_p7_1_t03_legacy_mapper_rejects_free_unknown_and_unbound_results PASSED [ 50%]\ntests/test_p7.py::test_p7_1_t04_legacy_artifact_has_zero_authoritative_references PASSED [ 66%]\ntests/test_p7.py::test_p7_1_t05_toolbox_dependency_mutations_are_detected PASSED [ 83%]\ntests/test_p7.py::test_p7_1_t06_legacy_wrapper_preserves_algorithm_order_and_result PASSED [100%]\n\n====================== 6 passed, 24 deselected in 0.80s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-2-TRANSLATION-SPLIT",
+      "intent": "验证翻译兼容记录、拆分等价、身份拒绝、乱序归位和超时 fallback",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p7.py",
+        "-k",
+        "p7_2"
+      ],
+      "return_code": 0,
+      "duration_ms": 1272,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p7.py::test_p7_2_t01_compatibility_recorder_preserves_request_consume_order PASSED [ 16%]\ntests/test_p7.py::test_p7_2_t02_fixed_bundle_embedded_and_split_results_are_equivalent PASSED [ 33%]\ntests/test_p7.py::test_p7_2_t03_invalid_bundle_ids_are_rejected_before_leaf PASSED [ 50%]\ntests/test_p7.py::test_p7_2_t04_direct_http_retry_and_concurrency_mutations_fail PASSED [ 66%]\ntests/test_p7.py::test_p7_2_t05_concurrent_translation_results_are_reordered_by_page_and_unit PASSED [ 83%]\ntests/test_p7.py::test_p7_2_t06_translation_timeout_falls_back_without_leaf_retry PASSED [100%]\n\n====================== 6 passed, 24 deselected in 0.59s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-3-CATALOG",
+      "intent": "验证全 Route 唯一解析、全部 fallback、不可变和 checkpoint 漂移拒绝",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p7.py",
+        "-k",
+        "p7_3"
+      ],
+      "return_code": 0,
+      "duration_ms": 1072,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p7.py::test_p7_3_t01_all_design_routes_resolve_uniquely PASSED [ 16%]\ntests/test_p7.py::test_p7_3_t02_all_catalog_failure_modes_have_page_outcomes PASSED [ 33%]\ntests/test_p7.py::test_p7_3_t03_duplicate_binding_or_missing_fallback_blocks_readiness PASSED [ 50%]\ntests/test_p7.py::test_p7_3_t04_catalog_file_mutation_is_detected_without_changing_old_snapshot PASSED [ 66%]\ntests/test_p7.py::test_p7_3_t05_dynamic_discovery_and_model_selection_mutations_fail PASSED [ 83%]\ntests/test_p7.py::test_p7_3_t06_catalog_drift_rejects_old_checkpoint PASSED [100%]\n\n====================== 6 passed, 24 deselected in 0.38s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-4-MARGIN",
+      "intent": "验证共享边缘 owner、保护对象、语义 handback、结构证据和冲突拒绝",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p7.py",
+        "-k",
+        "p7_4"
+      ],
+      "return_code": 0,
+      "duration_ms": 921,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p7.py::test_p7_4_t01_repeated_semantic_margins_receive_one_shared_owner PASSED [ 16%]\ntests/test_p7.py::test_p7_4_t02_page_numbers_logos_and_decorations_are_protected PASSED [ 33%]\ntests/test_p7.py::test_p7_4_t03_edge_body_table_note_and_chart_label_are_handed_back PASSED [ 50%]\ntests/test_p7.py::test_p7_4_t04_insufficient_repetition_is_uncertain_and_handed_back PASSED [ 66%]\ntests/test_p7.py::test_p7_4_t05_decision_follows_geometry_and_style_not_sample_identity PASSED [ 83%]\ntests/test_p7.py::test_p7_4_t06_margin_and_body_owner_conflict_is_rejected PASSED [100%]\n\n====================== 6 passed, 24 deselected in 0.26s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-5-LEAF-GATE",
+      "intent": "验证叶模板、三态判定、原状态不升级、发布一致性和证据过期",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p7.py",
+        "-k",
+        "p7_5"
+      ],
+      "return_code": 0,
+      "duration_ms": 908,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 30 items / 24 deselected / 6 selected\n\ntests/test_p7.py::test_p7_5_t01_complete_leaf_evidence_enables_matching_catalog_entry PASSED [ 16%]\ntests/test_p7.py::test_p7_5_t02_missing_hard_evidence_stays_disabled_with_fallback PASSED [ 33%]\ntests/test_p7.py::test_p7_5_t03_incomplete_fallback_fails_leaf_and_stage_gate PASSED [ 50%]\ntests/test_p7.py::test_p7_5_t04_nonblind_unevaluated_and_failed_states_are_not_upgraded PASSED [ 66%]\ntests/test_p7.py::test_p7_5_t05_tampered_catalog_enable_or_evidence_hash_is_rejected PASSED [ 83%]\ntests/test_p7.py::test_p7_5_t06_component_changes_expire_old_leaf_evidence PASSED [100%]\n\n====================== 6 passed, 24 deselected in 0.25s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-6-ARCHITECTURE",
+      "intent": "以真实突变复核 DB、API、lease、Provider、重试、并发和动态发现全部被捕获",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p7.py",
+        "tests/test_p2.py",
+        "-k",
+        "p7_1_t05 or p7_2_t04 or p7_3_t05 or p2_5"
+      ],
+      "return_code": 0,
+      "duration_ms": 1171,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 50 items / 43 deselected / 7 selected\n\ntests/test_p7.py::test_p7_1_t05_toolbox_dependency_mutations_are_detected PASSED [ 14%]\ntests/test_p7.py::test_p7_2_t04_direct_http_retry_and_concurrency_mutations_fail PASSED [ 28%]\ntests/test_p7.py::test_p7_3_t05_dynamic_discovery_and_model_selection_mutations_fail PASSED [ 42%]\ntests/test_p2.py::test_p2_5_t01_domain_to_pdf_engine_mutation_is_detected PASSED [ 57%]\ntests/test_p2.py::test_p2_5_t02_spike_and_host_references_are_detected PASSED [ 71%]\ntests/test_p2.py::test_p2_5_t03_forbidden_ai_browser_and_page_merge_mutations_are_detected PASSED [ 85%]\ntests/test_p2.py::test_p2_5_t04_legal_layer_dependencies_pass PASSED     [100%]\n\n====================== 7 passed, 43 deselected in 0.45s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-UPSTREAM-P2",
+      "intent": "确认新增 toolboxes 层没有破坏 P2 领域合同、Port、Catalog 和架构基线",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_p2.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 836,
+      "stdout": "....................                                                     [100%]\n20 passed in 0.23s\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G7-UPSTREAM-G6-AUDIT",
+      "intent": "复核已通过的 P6 Kernel 迁移、Preservation、确定性和测试编号仍无漂移",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p6",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 277,
+      "stdout": "P6_VERIFY check=migration status=PASS violations=0\nP6_VERIFY check=support_matrix status=PASS violations=0\nP6_VERIFY check=forbidden_api status=PASS violations=0\nP6_VERIFY check=semantic_boundary status=PASS violations=0\nP6_VERIFY check=determinism status=PASS violations=0\nP6_VERIFY check=test_inventory status=PASS violations=0\nP6_VERIFY_SUMMARY status=PASS checks=6\n",
+      "stderr": "INFO transflow.pdf_kernel.preservation 调用 Preservation 支持矩阵，意图=冻结特征承诺 path=p6_preservation_support.json\nINFO transflow.pdf_kernel.preservation 调用 Preservation 支持矩阵，意图=冻结特征承诺 path=p6_preservation_support.json\nINFO transflow.pdf_kernel.fingerprint 调用内核指纹，意图=拒绝资源漂移后的旧 Checkpoint\n"
+    }
+  ]
+}

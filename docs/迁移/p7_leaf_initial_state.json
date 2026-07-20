@@ -1,0 +1,192 @@
+{
+  "leaves": [
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "cover",
+      "source_hash": "4800af37fe016ec8f6db4a1c38828b851ee851b7227a3a5e43ce252479a8491f",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/cover",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "contents",
+      "source_hash": "6ca5862e757eea6bc149bae5d06a49c980bc4fc81bc2e3c2c1732db4b22fb059",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/contents",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "end",
+      "source_hash": "7dd474626e4bfdb0dd17d0158ed3cd852a89c2cfe8728088435802fc5dcf44a1",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/end",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "route": "visual_only",
+      "source_hash": "c9cee1fee556cde22b4281e2d54ce93df14a1de744de70a1d5d6cd48569bca2c",
+      "source_path": "spikes/page_classification_engine_puncture_v1/分类结果/visual_only",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "PASS",
+      "promotion_manifest_present": false,
+      "route": "body.flow_text.single",
+      "source_hash": "57557579c9c691d94fe6c817839e50ecf7a7d8ddea87a3ed03b977ab680abe57",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/single",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "NOT_EVALUATED",
+      "promotion_manifest_present": false,
+      "route": "body.flow_text.multi",
+      "source_hash": "6e2ed344c41c9a03f96aa0a6e3a06da1d3e84d492414911c3046e3b6970132d4",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/multi",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "FAIL",
+      "promotion_manifest_present": false,
+      "route": "body.flow_text.visual_anchored",
+      "source_hash": "552002f0b1fc454b5fdbb80a8dcfa10d6de5dc0cddf391387799ff284edd2c3f",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/visual_anchored",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "NOT_EVALUATED",
+      "promotion_manifest_present": false,
+      "route": "body.table",
+      "source_hash": "28a912cc5d546487715ad083a33bb65eaae982400a90d0df7e6253754a583ce9",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/table",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "PASS_NON_BLIND",
+      "promotion_manifest_present": false,
+      "route": "body.chart",
+      "source_hash": "3cd828ef5840f365ea774fb7c847d58daa27ac1980fb28c16a172c73779e8630",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/chart",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "PASS_NON_BLIND",
+      "promotion_manifest_present": false,
+      "route": "body.diagram",
+      "source_hash": "9a246312a3da716d95258608d4455fda10449bf3d1fa9e36efd4cd4a786630ef",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/diagram",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "body.anchored_blocks",
+      "source_hash": "db399de3662713c5f7d3a3b1e8473b8733c58d701f6e86b98ca5d8ae33baca13",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/anchored_blocks",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "route": "body.composite.flow_text_table",
+      "source_hash": "5be12b7cf2f8f72cb696d9135b6cf386451a05ee96d713b5de107f3a990ee2a4",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_table",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "FAIL",
+      "promotion_manifest_present": false,
+      "route": "body.composite.anchored_blocks_chart",
+      "source_hash": "e69dd119c365f1ae589cb73f6f46bfe5715b2a7f3ae9125a76b3c73426d3c17b",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/anchored_blocks_chart",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "body.composite.chart_table",
+      "source_hash": "c5ab47404fff278e64ce59693031ea2b59b3465f1279d95a647b9d078eeef7e1",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/chart_table",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "body.composite.flow_text_chart",
+      "source_hash": "82efde628040406636fc8fdeee2ad8a23fabe410566e0b283e4a6f40e2956714",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_chart",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "route": "body.composite.flow_text_diagram",
+      "source_hash": "5cfd668a58327bc25a4382dcd3a8a50975da2d18bbddcb76fb1babbfa57d45fb",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_diagram",
+      "upgrade_performed": false
+    },
+    {
+      "conclusion": "PASS_DISABLED_WITH_FALLBACK",
+      "enabled": false,
+      "fallback": "PAGE_PASSTHROUGH",
+      "original_state": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "route": "body.freeform",
+      "source_hash": "caf19cf3ac09403c1bd26e6ed3eea8916be7a654dbe80f5b7690d4a3b7e8eb58",
+      "source_path": "spikes/page_classification_engine_puncture_v1/分类结果/body/freeform",
+      "upgrade_performed": false
+    }
+  ],
+  "schema_version": "transflow.p7-leaf-initial-state/v1"
+}

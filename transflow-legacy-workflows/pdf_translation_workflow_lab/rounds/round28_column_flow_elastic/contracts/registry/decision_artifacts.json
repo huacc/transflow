@@ -1,0 +1,194 @@
+{
+  "_meta": {
+    "generated_from": [
+      "docs/设计/PDF_语义翻译回填_执行契约.md (§2 六段研判流水线, 七产物依赖链)",
+      "docs/设计/PDF_语义翻译回填_状态机与工具编排设计.md (v0.4 §7.19.1 必须新增或补齐的产物)",
+      "pdf_translation_workflow_core/contracts/state_machine.md (Lx composite state, repair_loop_<n>.json)"
+    ],
+    "single_source_of_truth": true,
+    "version": "v1",
+    "note": "This file is the machine-readable form of the six-stage judgement pipeline (execution contract §2). Each artifact is a gate: it lists produced_by (which stage/tool writes it), depends_on (which upstream artifact must exist first), and blocks_if_missing (which downstream stage is forbidden when it is absent). The graph validator uses depends_on to prove there is no orphan stage and no downstream stage without its upstream artifact. IMPORTANT: today only a flat quality_signals.json exists in core; artifacts marked exists_in_core=false are the gap that makes Codex output unreadable (problems never bucketed by domain). pipeline_order is authoritative; a stage may run only after every artifact in its depends_on chain is present."
+  },
+  "pipeline_stages": [
+    {
+      "stage_id": "S8A_signal_normalize",
+      "label_zh": "信号归一",
+      "order": 1,
+      "produces": ["evidence_basket", "quality_signal_ledger"],
+      "prompt_template_proposed": "S8A_quality_signal_normalization.prompt.json",
+      "prompt_exists_in_core": false,
+      "allowed_judgement": "证据是否充分、信号属于哪个原始 gate、归入哪个 problem_domain",
+      "forbidden": ["选工具", "改布局", "推翻语义", "携带 repair 参数"]
+    },
+    {
+      "stage_id": "S8A_domain_bucket",
+      "label_zh": "问题域归类",
+      "order": 2,
+      "produces": ["problem_domain_buckets"],
+      "prompt_template_proposed": null,
+      "prompt_exists_in_core": false,
+      "allowed_judgement": "按 10 个 problem_domain 聚合、标每域阻塞数、标上下游因果关系",
+      "forbidden": ["携带 repair 参数", "选主问题"]
+    },
+    {
+      "stage_id": "S8B_triage",
+      "label_zh": "主问题分诊",
+      "order": 3,
+      "produces": ["triage_result"],
+      "prompt_template_proposed": "S8B_problem_triage.prompt.json",
+      "prompt_exists_in_core": false,
+      "maps_to_core_decision": "D8_minimal_repair_selection (分诊部分)",
+      "allowed_judgement": "只选一个主 failure_class、定 severity、列 deferred_failures、判是否需补证",
+      "forbidden": ["输出工具名", "输出参数/几何数值", "直接修复"]
+    },
+    {
+      "stage_id": "S8C_dispatch",
+      "label_zh": "修复分发",
+      "order": 4,
+      "produces": ["dispatch_result"],
+      "prompt_template_proposed": "S8C_repair_dispatch.prompt.json",
+      "prompt_exists_in_core": false,
+      "allowed_judgement": "查静态注册表把 failure_class 映到 repair_family + 目标状态 + 允许 operation 类型",
+      "forbidden": ["改判 problem_domain", "发明注册表外工具", "由模型自由选择工具"]
+    },
+    {
+      "stage_id": "S8C_bind",
+      "label_zh": "RepairPatch 绑定",
+      "order": 5,
+      "produces": ["repair_patch"],
+      "prompt_template_proposed": "S8D_repair_binding.prompt.json",
+      "prompt_exists_in_core": false,
+      "produced_by_tool": "build_repair_patch",
+      "allowed_judgement": "在已选 repair_family 的参数口内绑定 operation；operation_count>0 才算数",
+      "forbidden": ["改判 failure_class", "跨 repair_family 借工具", "改变 problem_domain"]
+    },
+    {
+      "stage_id": "Lx_rejudge",
+      "label_zh": "回测裁决",
+      "order": 6,
+      "produces": ["repair_acceptance"],
+      "prompt_template_proposed": "Lx_repair_acceptance.prompt.json",
+      "prompt_exists_in_core": false,
+      "produced_by_tool": "apply_repair_patch",
+      "allowed_judgement": "按 problem_domain 对比修前/修后，出 接受/回滚/继续/失败",
+      "forbidden": ["只看目标指标忽略硬负面", "不重测就宣称修好", "把被拒候选当最终 PDF"]
+    }
+  ],
+  "artifacts": [
+    {
+      "seq": 1,
+      "id": "evidence_basket",
+      "label_zh": "证据篮",
+      "filename": "evidence_basket.json",
+      "produced_by_stage": "S8A_signal_normalize",
+      "produced_by_tools": ["extract_pdf_structure", "render_pdf", "collect_visual_region_metrics", "generate_semantic_backfill"],
+      "depends_on": [],
+      "min_fields": ["source_refs", "candidate_refs", "render_refs", "generation_evidence_refs", "schema_version"],
+      "blocks_if_missing": "无证据 → 运行契约失败 (S_FAIL_PROCESS_CONTRACT)",
+      "exists_in_core": false,
+      "anti_overfit": "只能引用当前 run 证据；禁止人工对照 PDF、样本页码、固定文本"
+    },
+    {
+      "seq": 2,
+      "id": "quality_signal_ledger",
+      "label_zh": "信号账本",
+      "filename": "quality_signal_ledger.json",
+      "produced_by_stage": "S8A_signal_normalize",
+      "produced_by_tools": ["collect_visual_region_metrics", "evaluate_pdf_quality"],
+      "depends_on": ["evidence_basket"],
+      "min_fields": ["signal_id", "producer_tool", "source_json_path", "problem_domain", "failure_class", "severity", "evidence_refs", "observed_value", "threshold_or_rule"],
+      "blocks_if_missing": "无账本 → 禁止分诊",
+      "exists_in_core": false,
+      "replaces_flat": "quality_signals.json (round24 里是 {group_signals:1411, overlap_signals:70} 的扁平结构)",
+      "anti_overfit": "每条信号必须反引 producer_tool + source_json_path + threshold_or_rule；不许只写“失败”"
+    },
+    {
+      "seq": 3,
+      "id": "problem_domain_buckets",
+      "label_zh": "问题域桶",
+      "filename": "problem_domain_buckets.json",
+      "produced_by_stage": "S8A_domain_bucket",
+      "produced_by_tools": [],
+      "depends_on": ["quality_signal_ledger"],
+      "min_fields": ["domain", "severity_counts", "blocking_count", "sample_signals", "upstream_downstream_relation"],
+      "blocks_if_missing": "无桶 → 禁止选主问题",
+      "exists_in_core": false,
+      "anti_overfit": "domain 必须来自 problem_domains.json 的 10 个固定域，不许临时造域"
+    },
+    {
+      "seq": 4,
+      "id": "triage_result",
+      "label_zh": "分诊结果",
+      "filename": "triage_result.json",
+      "produced_by_stage": "S8B_triage",
+      "produced_by_tools": [],
+      "depends_on": ["problem_domain_buckets"],
+      "min_fields": ["selected_problem_domain", "selected_failure_class", "severity", "selection_reason", "evidence_refs", "deferred_failures", "needs_more_evidence"],
+      "blocks_if_missing": "无分诊 → 禁止分发",
+      "exists_in_core": "partial",
+      "anti_overfit": "selected_failure_class 必须来自 failure_classes.json；不许出现工具名/参数"
+    },
+    {
+      "seq": 5,
+      "id": "dispatch_result",
+      "label_zh": "分发结果",
+      "filename": "dispatch_result.json",
+      "produced_by_stage": "S8C_dispatch",
+      "produced_by_tools": [],
+      "depends_on": ["triage_result"],
+      "min_fields": ["dispatch_table", "problem_domain_dispatch", "repair_family", "target_state", "allowed_operation_types", "tool"],
+      "blocks_if_missing": "无分发 → 禁止绑定",
+      "exists_in_core": false,
+      "anti_overfit": "repair_family 必须来自 repair_families.json；表外病种 → 无可用修复能力"
+    },
+    {
+      "seq": 6,
+      "id": "repair_patch",
+      "label_zh": "修复补丁",
+      "filename": "repair_patch_<n>.json",
+      "produced_by_stage": "S8C_bind",
+      "produced_by_tools": ["build_repair_patch"],
+      "depends_on": ["dispatch_result"],
+      "min_fields": ["patch_id", "selected_failure", "dispatch_result", "repair_atom", "target_state", "operations", "operation_count", "rollback_conditions", "anti_overfit_statement"],
+      "blocks_if_missing": "无补丁 → 禁止改布局/重生成候选",
+      "exists_in_core": true,
+      "noop_rule": "operation_count=0 是 no-op，必须记 skipped_noop_repairs 并换下一个非 no-op atom",
+      "anti_overfit": "operations 只能引用当前 run 的 group_id/bbox/font/fit 状态；禁止文件名/页码/固定坐标/固定文本"
+    },
+    {
+      "seq": 7,
+      "id": "repair_acceptance",
+      "label_zh": "回测账本",
+      "filename": "repair_acceptance.json",
+      "merged_into": "repair_loop_<n>.json",
+      "produced_by_stage": "Lx_rejudge",
+      "produced_by_tools": ["apply_repair_patch", "render_pdf", "collect_visual_region_metrics", "evaluate_pdf_quality"],
+      "depends_on": ["repair_patch"],
+      "min_fields": ["loop_id", "loop_iteration", "before_by_domain", "after_by_domain", "target_delta", "hard_negative_regressions", "repair_accepted", "accepted_candidate_pdf", "rejected_candidate_pdf", "rollback_reason", "next_state"],
+      "blocks_if_missing": "无回测 → 不算“修过” → 运行契约失败",
+      "exists_in_core": "partial",
+      "acceptance_gates": [
+        "闸门1 目标改善：selected_failure_class 修后计数 < 修前计数",
+        "闸门2 硬负面无回退：其它 problem_domain 的阻塞 hard negative 未上升",
+        "两个闸门必须同时通过才 repair_accepted=true；否则回滚"
+      ],
+      "anti_overfit": "before/after 必须按 problem_domain 分列，不做平均/投票/抵消"
+    }
+  ],
+  "dependency_chain": [
+    "evidence_basket -> quality_signal_ledger -> problem_domain_buckets -> triage_result -> dispatch_result -> repair_patch -> repair_acceptance"
+  ],
+  "loop_back_edges": [
+    {
+      "from": "repair_acceptance",
+      "to": "triage_result",
+      "condition": "目标未修好 或 硬负面回退，且预算未耗尽",
+      "rule": "回滚后同一 failure_class 不许再派同一个已失败的 repair_atom；必须换同域其它 atom 或升级 repair_family 或进 Ax_AdaptiveChange"
+    },
+    {
+      "from": "repair_acceptance",
+      "to": "closed",
+      "condition": "目标修好 且 无硬负面回退 且 无剩余 deferred 阻塞"
+    }
+  ]
+}

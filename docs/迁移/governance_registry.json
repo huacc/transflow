@@ -1,0 +1,103 @@
+{
+  "schema_version": "transflow.governance-registry/v1",
+  "allowed_stage_statuses": [
+    "PLANNED",
+    "IN_PROGRESS",
+    "READY_FOR_GATE",
+    "PASS",
+    "FAIL",
+    "BLOCKED_BY_DECISION"
+  ],
+  "gate_rule": {
+    "open_decision_blocks_pass": true,
+    "failed_check_blocks_pass": true,
+    "allowed_conclusions": ["PASS", "FAIL", "BLOCKED_BY_DECISION"]
+  },
+  "current_stage": {
+    "stage": "P5",
+    "status": "IN_PROGRESS",
+    "open_decision_ids": [],
+    "gate_evidence": null,
+    "completed_at": null
+  },
+  "decisions": [
+    {
+      "id": "D-P1-001",
+      "stage": "P1",
+      "status": "CLOSED",
+      "summary": "选择 PyMuPDF 1.28.0 的 AGPLv3 或 Artifex 商业许可发布依据",
+      "evidence": [
+        "pyproject.toml: project license 尚未冻结",
+        "resources/manifests/runtime_baseline.json: PyMuPDF 双许可表达式"
+      ],
+      "affected_scope": [
+        "G1",
+        "Transflow 发布许可"
+      ],
+      "options": [
+        "将 Transflow 按 AGPL-3.0-only 兼容方式发布",
+        "登记已获得的 Artifex 商业许可证依据"
+      ],
+      "owner_answer": "2026-07-19T23:39:07+08:00 项目负责人明确要求忽略 PyMuPDF 法律许可问题，本阶段只验收技术问题；该裁决不构成法律合规结论",
+      "closed_by_gate": "G1"
+    }
+  ],
+  "behavior_changes": [
+    {
+      "id": "BC-P5-001",
+      "stage": "P5",
+      "source_unit": "classification model payload",
+      "old_behavior": "旧穿刺模型载荷包含 sample_id",
+      "new_behavior": "生产与迁移模型载荷只包含匿名页面证据、节点合同和允许动作",
+      "approval_ref": "总体设计 §8.1、§20.3",
+      "regression_tests": [
+        "P5.1-T01",
+        "P5.5-T01"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "R-P0-001",
+      "stage": "P0",
+      "summary": "P0 开始前工具箱 spike 已有用户工作树修改",
+      "control": "基线同时记录 commit、当前工作树哈希和 dirty 条目；P0 不修改 spike"
+    },
+    {
+      "id": "R-P1-001",
+      "stage": "P1",
+      "summary": "开发与目标环境角色当前共用一台 Windows 主机，尚无第二服务器交叉平台证据",
+      "evidence": [
+        "resources/manifests/runtime_baseline.json: environment_roles.co_located=true"
+      ],
+      "control": "目标服务器、OS、架构、Python patch 或文件系统变化时必须重新执行 G1",
+      "owner": "Transflow maintainer"
+    }
+  ],
+  "record_templates": {
+    "decision": {
+      "id": "D-阶段-序号",
+      "status": "OPEN",
+      "evidence": [],
+      "affected_scope": [],
+      "options": [],
+      "owner_answer": null,
+      "closed_by_gate": null
+    },
+    "behavior_change": {
+      "id": "BC-阶段-序号",
+      "source_unit": "",
+      "old_behavior": "",
+      "new_behavior": "",
+      "approval_ref": "",
+      "regression_tests": []
+    },
+    "risk": {
+      "id": "R-阶段-序号",
+      "summary": "",
+      "evidence": [],
+      "control": "",
+      "owner": ""
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "acceptance_rule": "accept if promoted failure improves, current total blocking count is no worse than the original baseline, and non-promoted hard failures do not regress against the promoted baseline",
+  "accepted_candidate_pdf": "output/R28_AIA_EN_TO_ZH_pages_001_020_repair0002_candidate.pdf",
+  "after": {
+    "blocking_failure_count": 117,
+    "dispatch_result": {
+      "allowed_operation_types": [
+        "expand_slot"
+      ],
+      "dispatch_table": "contracts/failure_dispatch_table.json",
+      "selected_failure_class": "text_fit_overflow",
+      "selected_repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "tool": "tools/repairs/build_repair_patch.py"
+    },
+    "failure_class_counts": {
+      "cross_slot_overlap": 102,
+      "font_size_regression": 1,
+      "text_fit_overflow": 15
+    },
+    "gate_counts": {
+      "all_groups_fit": 15,
+      "local_text_overlap": 102
+    },
+    "human_readable_result": "候选译文与原文视觉关系存在阻塞差异，需要进入 RepairLoop。",
+    "product_quality_verdict": "FAIL",
+    "selected_failure_class": "text_fit_overflow",
+    "selected_repair_family": "expand_or_reflow_slot",
+    "tool_selection_reason": "先由 Triage 按因果优先级选出 text_fit_overflow，再由静态 Dispatch 表映射到 expand_or_reflow_slot。"
+  },
+  "applied_operation_count": 99,
+  "before": {
+    "blocking_failure_count": 125,
+    "dispatch_result": {
+      "allowed_operation_types": [
+        "expand_slot"
+      ],
+      "dispatch_table": "contracts/failure_dispatch_table.json",
+      "selected_failure_class": "text_fit_overflow",
+      "selected_repair_family": "expand_or_reflow_slot",
+      "target_state": "S6_LayoutPlan",
+      "tool": "tools/repairs/build_repair_patch.py"
+    },
+    "failure_class_counts": {
+      "cross_slot_overlap": 110,
+      "font_size_regression": 1,
+      "text_fit_overflow": 15
+    },
+    "gate_counts": {
+      "all_groups_fit": 15,
+      "local_text_overlap": 110
+    },
+    "human_readable_result": "候选译文与原文视觉关系存在阻塞差异，需要进入 RepairLoop。",
+    "product_quality_verdict": "FAIL",
+    "selected_failure_class": "text_fit_overflow",
+    "selected_repair_family": "expand_or_reflow_slot",
+    "tool_selection_reason": "先由 Triage 按因果优先级选出 text_fit_overflow，再由静态 Dispatch 表映射到 expand_or_reflow_slot。"
+  },
+  "entered_from_state": "Lx_RepairLoop",
+  "hard_failure_regressions": {},
+  "human_readable_result": "Second loop promoted cross_slot_overlap: before=110, after=102, total=117, verdict=IMPROVED.",
+  "loop_id": "Lx_0002",
+  "loop_iteration": 2,
+  "loop_verdict": "IMPROVED",
+  "next_state": "S9_VerifyProcessContract",
+  "promotion_reason": "loop1 fixed text_fit_overflow but introduced or worsened cross_slot_overlap; same issue atom cannot be retried, so cross_slot_overlap is promoted to obstacle_aware_reflow",
+  "rejected_candidate_pdf": null,
+  "repair_accepted": true,
+  "repair_patch": "reports/repair_patch_0002.json",
+  "repair_patch_application": "reports/repair_patch_application_0002.json",
+  "selected_failure_before_after": {
+    "after": 102,
+    "before": 110,
+    "failure_class": "cross_slot_overlap"
+  },
+  "selected_failure_class": "cross_slot_overlap",
+  "selected_repair_atom": "obstacle_aware_reflow",
+  "selected_repair_family": "obstacle_aware_reflow"
+}

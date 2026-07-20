@@ -1,0 +1,27 @@
+{
+  "schema_version": "transflow.p6-kernel-migration/v1",
+  "source_root": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel",
+  "target_root": "src/transflow/pdf_kernel",
+  "policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+  "approved_differences": [
+    "把 spike 的页内 0-based 对象标签替换为 source_hash/page_no/geometry 绑定的稳定内容身份",
+    "把 spike 重复 DTO 合并到生产领域合同，并拒绝跨进程传递 Document/Page",
+    "生产 Facts 保留每个绘图 path 的独立锁定身份，不沿用 spike 的组合绘图计数粒度",
+    "把单页临时 PDF 写法替换为完整源副本上的声明式 Patch 串行回放",
+    "字体只从 P1 manifest 解析，不搜索宿主机系统字体",
+    "Preservation 使用显式支持矩阵，未知关键特征整文透传"
+  ],
+  "units": [
+    {"source": "__init__.py", "source_sha256": "f4a3c30e53b4c28229388e45bb97ab87be6b23b2aa24324ba66b42d9a29a16a8", "target": "__init__.py"},
+    {"source": "constraints.py", "source_sha256": "02b43bc27dee00d5b89f09a84ae1fe476647b1efbf0d6598856c0bd35499a86b", "target": "constraints.py"},
+    {"source": "facts.py", "source_sha256": "e60a73f54a45b78964382f6bc6f88236ab4ee21d7cdbe38ad48271874b7bcf43", "target": "facts.py"},
+    {"source": "fonts.py", "source_sha256": "8fa87e61eb1a9b9f11e428d93a99f25c87034c6f3d03fe716734513b6067a754", "target": "fonts.py"},
+    {"source": "models.py", "source_sha256": "01d61ee5b7c7cda7565a18aaccfc64457ed00ed541f38bcf12bb61657c29ed5f", "target": "models.py"},
+    {"source": "passthrough.py", "source_sha256": "5d1a54c0e69d0befaae8720f9e9a67466b330dff416f264ac4a4d30c0cb24c66", "target": "passthrough.py"},
+    {"source": "patch.py", "source_sha256": "31b035c72fbf38bba4d02847dea0d9dd2fedddbfd2086fcb3519ad42c333a4cc", "target": "patch.py"},
+    {"source": "probe.py", "source_sha256": "1504a56d1a035e6bb782c75f848af9723dd5651a748c4003791dc4a7723c15d8", "target": "facts.py"},
+    {"source": "render.py", "source_sha256": "d8c75c7e4a79494f60b5a5df0daa79f3eac8e29317e5555567300a8a57dbecdf", "target": "renderer.py"},
+    {"source": "repair.py", "source_sha256": "73de47bd9e35905100a2d86b827d30d0db4cf1b5c79c239836a40ee8938d758f", "target": "repair.py"},
+    {"source": "workspace.py", "source_sha256": "6e576257f6d8cf192728c662cfea21c7f362bbfbdda22495e3d8725dc69139a9", "target": "workspace.py"}
+  ]
+}

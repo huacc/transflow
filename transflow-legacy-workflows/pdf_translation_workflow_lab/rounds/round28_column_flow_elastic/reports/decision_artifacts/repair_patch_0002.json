@@ -1,0 +1,2508 @@
+{
+  "anti_overfit_statement": "Operations are derived only from current-run overlap signals, group bboxes, roles, and page geometry. No filename, fixed page branch, text literal, or reference PDF is used.",
+  "deferred_operation_count": 0,
+  "deferred_operations": [],
+  "operation_count": 99,
+  "operations": [
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 104.667,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p0_b1_0"
+      ],
+      "operation_id": "obstacle_flow_0000",
+      "operation_type": "move_region_group",
+      "page_index": 0,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p0_b1_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 104.667,
+          "other_group_id": "p0_b2_0",
+          "overlap_pt": 102.667,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 92.889,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p0_b7_0"
+      ],
+      "operation_id": "obstacle_flow_0001",
+      "operation_type": "move_region_group",
+      "page_index": 0,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p0_b2_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 92.889,
+          "other_group_id": "p0_b7_0",
+          "overlap_pt": 90.889,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 11.372,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b10_1"
+      ],
+      "operation_id": "obstacle_flow_0002",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b10_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.372,
+          "other_group_id": "p2_b10_1",
+          "overlap_pt": 9.372,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b0_1"
+      ],
+      "operation_id": "obstacle_flow_0003",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b0_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b0_1",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b3_1"
+      ],
+      "operation_id": "obstacle_flow_0004",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b3_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b3_1",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b6_1"
+      ],
+      "operation_id": "obstacle_flow_0005",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b6_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b6_1",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b11_1"
+      ],
+      "operation_id": "obstacle_flow_0006",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b11_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b11_1",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 10.269,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b0_2"
+      ],
+      "operation_id": "obstacle_flow_0007",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b0_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 10.269,
+          "other_group_id": "p2_b0_2",
+          "overlap_pt": 8.269,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 10.269,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b3_2"
+      ],
+      "operation_id": "obstacle_flow_0008",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b3_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 10.269,
+          "other_group_id": "p2_b3_2",
+          "overlap_pt": 8.269,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b0_3"
+      ],
+      "operation_id": "obstacle_flow_0009",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b0_2",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b0_3",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b3_3"
+      ],
+      "operation_id": "obstacle_flow_0010",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b3_2",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b3_3",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.578,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b12_0"
+      ],
+      "operation_id": "obstacle_flow_0011",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b7_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.578,
+          "other_group_id": "p2_b12_0",
+          "overlap_pt": 5.578,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.452,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b7_1"
+      ],
+      "operation_id": "obstacle_flow_0012",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b7_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.452,
+          "other_group_id": "p2_b7_1",
+          "overlap_pt": 5.452,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b12_1"
+      ],
+      "operation_id": "obstacle_flow_0013",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b12_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b12_1",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b7_2"
+      ],
+      "operation_id": "obstacle_flow_0014",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b7_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b7_2",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 4.389,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b3_4"
+      ],
+      "operation_id": "obstacle_flow_0015",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b3_3",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 4.389,
+          "other_group_id": "p2_b3_4",
+          "overlap_pt": 2.389,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.349,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b0_4"
+      ],
+      "operation_id": "obstacle_flow_0016",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b0_3",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.349,
+          "other_group_id": "p2_b0_4",
+          "overlap_pt": 4.349,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b3_5"
+      ],
+      "operation_id": "obstacle_flow_0017",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b3_4",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b3_5",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b0_5"
+      ],
+      "operation_id": "obstacle_flow_0018",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b0_4",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b0_5",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 8.31,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b13_1"
+      ],
+      "operation_id": "obstacle_flow_0019",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b13_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 8.31,
+          "other_group_id": "p2_b13_1",
+          "overlap_pt": 6.31,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.453,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b8_1"
+      ],
+      "operation_id": "obstacle_flow_0020",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b8_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.453,
+          "other_group_id": "p2_b8_1",
+          "overlap_pt": 5.453,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b13_2"
+      ],
+      "operation_id": "obstacle_flow_0021",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b13_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b13_2",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b8_2"
+      ],
+      "operation_id": "obstacle_flow_0022",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b8_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b8_2",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 10.269,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b3_6"
+      ],
+      "operation_id": "obstacle_flow_0023",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b3_5",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 10.269,
+          "other_group_id": "p2_b3_6",
+          "overlap_pt": 8.269,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b3_7"
+      ],
+      "operation_id": "obstacle_flow_0024",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b3_6",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b3_7",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.029,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b1_1"
+      ],
+      "operation_id": "obstacle_flow_0025",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b1_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.029,
+          "other_group_id": "p2_b1_1",
+          "overlap_pt": 4.029,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b13_4"
+      ],
+      "operation_id": "obstacle_flow_0026",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b13_3",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b13_4",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 16.872,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b1_2"
+      ],
+      "operation_id": "obstacle_flow_0027",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b1_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 16.872,
+          "other_group_id": "p2_b1_2",
+          "overlap_pt": 14.872,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 11.643,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b2_1"
+      ],
+      "operation_id": "obstacle_flow_0028",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b2_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.643,
+          "other_group_id": "p2_b2_1",
+          "overlap_pt": 9.643,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 12.995,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p2_b2_2"
+      ],
+      "operation_id": "obstacle_flow_0029",
+      "operation_type": "move_region_group",
+      "page_index": 2,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p2_b2_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 12.995,
+          "other_group_id": "p2_b2_2",
+          "overlap_pt": 10.995,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 22.418,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p5_b2_1"
+      ],
+      "operation_id": "obstacle_flow_0030",
+      "operation_type": "move_region_group",
+      "page_index": 5,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p5_b2_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 22.418,
+          "other_group_id": "p5_b4_0",
+          "overlap_pt": 20.418,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 95.687,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p5_b9_0"
+      ],
+      "operation_id": "obstacle_flow_0031",
+      "operation_type": "move_region_group",
+      "page_index": 5,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p5_b2_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 95.687,
+          "other_group_id": "p5_b9_0",
+          "overlap_pt": 93.687,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 38.526,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p5_b5_0"
+      ],
+      "operation_id": "obstacle_flow_0032",
+      "operation_type": "move_region_group",
+      "page_index": 5,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p5_b2_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 38.526,
+          "other_group_id": "p5_b5_0",
+          "overlap_pt": 36.526,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.745,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b21_1"
+      ],
+      "operation_id": "obstacle_flow_0033",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b21_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.745,
+          "other_group_id": "p7_b21_1",
+          "overlap_pt": 1.745,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.744,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b37_1"
+      ],
+      "operation_id": "obstacle_flow_0034",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b37_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.744,
+          "other_group_id": "p7_b37_1",
+          "overlap_pt": 1.744,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 4.18,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b30_0"
+      ],
+      "operation_id": "obstacle_flow_0035",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b21_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 4.18,
+          "other_group_id": "p7_b30_0",
+          "overlap_pt": 2.18,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 4.175,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b45_0"
+      ],
+      "operation_id": "obstacle_flow_0036",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b37_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 4.175,
+          "other_group_id": "p7_b45_0",
+          "overlap_pt": 2.175,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.655,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b9_0"
+      ],
+      "operation_id": "obstacle_flow_0037",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b9_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.655,
+          "other_group_id": "p7_b10_0",
+          "overlap_pt": 4.655,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.959,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b32_0"
+      ],
+      "operation_id": "obstacle_flow_0038",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b31_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.959,
+          "other_group_id": "p7_b32_0",
+          "overlap_pt": 4.959,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.714,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b29_0"
+      ],
+      "operation_id": "obstacle_flow_0039",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b28_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.714,
+          "other_group_id": "p7_b29_0",
+          "overlap_pt": 1.714,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.78,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b8_0"
+      ],
+      "operation_id": "obstacle_flow_0040",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b8_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.78,
+          "other_group_id": "p7_b9_0",
+          "overlap_pt": 4.78,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 8.497,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b34_0"
+      ],
+      "operation_id": "obstacle_flow_0041",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b32_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 8.497,
+          "other_group_id": "p7_b34_0",
+          "overlap_pt": 6.925,
+          "source_baseline_pt": 0.428,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 8.447,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b47_0"
+      ],
+      "operation_id": "obstacle_flow_0042",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b47_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 8.447,
+          "other_group_id": "p7_b48_0",
+          "overlap_pt": 6.447,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.71,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b27_0"
+      ],
+      "operation_id": "obstacle_flow_0043",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b27_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.71,
+          "other_group_id": "p7_b29_0",
+          "overlap_pt": 1.71,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 11.446,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b15_0"
+      ],
+      "operation_id": "obstacle_flow_0044",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b15_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 8.925,
+          "other_group_id": "p7_b17_0",
+          "overlap_pt": 6.925,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b15_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.446,
+          "other_group_id": "p7_b27_0",
+          "overlap_pt": 10.807,
+          "source_baseline_pt": 1.361,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.589,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b12_0"
+      ],
+      "operation_id": "obstacle_flow_0045",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b8_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.589,
+          "other_group_id": "p7_b12_0",
+          "overlap_pt": 4.589,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.521,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b33_0"
+      ],
+      "operation_id": "obstacle_flow_0046",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b33_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.521,
+          "other_group_id": "p7_b34_0",
+          "overlap_pt": 4.521,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 9.678,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b26_0"
+      ],
+      "operation_id": "obstacle_flow_0047",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b15_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 9.678,
+          "other_group_id": "p7_b26_0",
+          "overlap_pt": 7.678,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b26_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.709,
+          "other_group_id": "p7_b27_0",
+          "overlap_pt": 1.709,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.78,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b11_0"
+      ],
+      "operation_id": "obstacle_flow_0048",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b11_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.78,
+          "other_group_id": "p7_b12_0",
+          "overlap_pt": 4.78,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.401,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b16_0"
+      ],
+      "operation_id": "obstacle_flow_0049",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b15_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.401,
+          "other_group_id": "p7_b16_0",
+          "overlap_pt": 5.401,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.669,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b6_0"
+      ],
+      "operation_id": "obstacle_flow_0050",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b6_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.669,
+          "other_group_id": "p7_b11_0",
+          "overlap_pt": 4.669,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.715,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b25_0"
+      ],
+      "operation_id": "obstacle_flow_0051",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b25_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.715,
+          "other_group_id": "p7_b26_0",
+          "overlap_pt": 1.715,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.865,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b7_0"
+      ],
+      "operation_id": "obstacle_flow_0052",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b6_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.865,
+          "other_group_id": "p7_b7_0",
+          "overlap_pt": 4.865,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.709,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b24_0"
+      ],
+      "operation_id": "obstacle_flow_0053",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b24_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.709,
+          "other_group_id": "p7_b25_0",
+          "overlap_pt": 1.709,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.584,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b4_0"
+      ],
+      "operation_id": "obstacle_flow_0054",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b4_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.584,
+          "other_group_id": "p7_b7_0",
+          "overlap_pt": 4.584,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.71,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b23_0"
+      ],
+      "operation_id": "obstacle_flow_0055",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b23_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.71,
+          "other_group_id": "p7_b24_0",
+          "overlap_pt": 1.71,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.78,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b5_0"
+      ],
+      "operation_id": "obstacle_flow_0056",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b4_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.78,
+          "other_group_id": "p7_b5_0",
+          "overlap_pt": 4.78,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.709,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b22_0"
+      ],
+      "operation_id": "obstacle_flow_0057",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b22_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.709,
+          "other_group_id": "p7_b23_0",
+          "overlap_pt": 1.709,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.59,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b3_0"
+      ],
+      "operation_id": "obstacle_flow_0058",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b3_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.59,
+          "other_group_id": "p7_b5_0",
+          "overlap_pt": 4.59,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 5.455,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b18_0"
+      ],
+      "operation_id": "obstacle_flow_0059",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b18_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.455,
+          "other_group_id": "p7_b22_0",
+          "overlap_pt": 4.29,
+          "source_baseline_pt": 0.835,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 5.455,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b35_0"
+      ],
+      "operation_id": "obstacle_flow_0060",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b35_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.455,
+          "other_group_id": "p7_b38_0",
+          "overlap_pt": 4.291,
+          "source_baseline_pt": 0.836,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 11.11,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b19_0"
+      ],
+      "operation_id": "obstacle_flow_0061",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b19_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.11,
+          "other_group_id": "p7_b19_1",
+          "overlap_pt": 9.4,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b19_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.11,
+          "other_group_id": "p7_b19_2",
+          "overlap_pt": 9.4,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 11.11,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b36_0"
+      ],
+      "operation_id": "obstacle_flow_0062",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b36_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.11,
+          "other_group_id": "p7_b36_1",
+          "overlap_pt": 9.4,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b36_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.11,
+          "other_group_id": "p7_b36_2",
+          "overlap_pt": 9.4,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 11.11,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b50_0"
+      ],
+      "operation_id": "obstacle_flow_0063",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b50_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.11,
+          "other_group_id": "p7_b50_1",
+          "overlap_pt": 9.4,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b50_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.11,
+          "other_group_id": "p7_b50_2",
+          "overlap_pt": 9.4,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.744,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b51_1"
+      ],
+      "operation_id": "obstacle_flow_0064",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b51_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.744,
+          "other_group_id": "p7_b51_1",
+          "overlap_pt": 1.744,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 4.169,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b60_0"
+      ],
+      "operation_id": "obstacle_flow_0065",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b51_1",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 4.169,
+          "other_group_id": "p7_b60_0",
+          "overlap_pt": 2.169,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.397,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b61_0"
+      ],
+      "operation_id": "obstacle_flow_0066",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b60_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.397,
+          "other_group_id": "p7_b61_0",
+          "overlap_pt": 1.397,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 8.438,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b77_0"
+      ],
+      "operation_id": "obstacle_flow_0067",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b76_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 8.438,
+          "other_group_id": "p7_b77_0",
+          "overlap_pt": 6.438,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 4.541,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b73_0"
+      ],
+      "operation_id": "obstacle_flow_0068",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b73_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 4.541,
+          "other_group_id": "p7_b74_0",
+          "overlap_pt": 2.541,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 5.337,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b58_0"
+      ],
+      "operation_id": "obstacle_flow_0069",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b58_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.714,
+          "other_group_id": "p7_b59_0",
+          "overlap_pt": 1.714,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b58_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.337,
+          "other_group_id": "p7_b61_0",
+          "overlap_pt": 3.454,
+          "source_baseline_pt": 0.117,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 5.671,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b62_0"
+      ],
+      "operation_id": "obstacle_flow_0070",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b58_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.671,
+          "other_group_id": "p7_b62_0",
+          "overlap_pt": 5.05,
+          "source_baseline_pt": 1.379,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b62_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.67,
+          "other_group_id": "p7_b73_0",
+          "overlap_pt": 5.049,
+          "source_baseline_pt": 1.379,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.685,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b57_0"
+      ],
+      "operation_id": "obstacle_flow_0071",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b57_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.685,
+          "other_group_id": "p7_b58_0",
+          "overlap_pt": 1.685,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.731,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b89_0"
+      ],
+      "operation_id": "obstacle_flow_0072",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b88_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.731,
+          "other_group_id": "p7_b89_0",
+          "overlap_pt": 5.731,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 11.916,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b87_0"
+      ],
+      "operation_id": "obstacle_flow_0073",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b84_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 11.916,
+          "other_group_id": "p7_b87_0",
+          "overlap_pt": 14.338,
+          "source_baseline_pt": 4.422,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.739,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b56_0"
+      ],
+      "operation_id": "obstacle_flow_0074",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b56_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.739,
+          "other_group_id": "p7_b57_0",
+          "overlap_pt": 1.739,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.05,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b71_0"
+      ],
+      "operation_id": "obstacle_flow_0075",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b71_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.05,
+          "other_group_id": "p7_b72_0",
+          "overlap_pt": 5.05,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.05,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b70_0"
+      ],
+      "operation_id": "obstacle_flow_0076",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b70_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.05,
+          "other_group_id": "p7_b71_0",
+          "overlap_pt": 5.05,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 6.593,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b69_0"
+      ],
+      "operation_id": "obstacle_flow_0077",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b69_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 6.593,
+          "other_group_id": "p7_b70_0",
+          "overlap_pt": 4.593,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 5.375,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b54_0"
+      ],
+      "operation_id": "obstacle_flow_0078",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b54_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.375,
+          "other_group_id": "p7_b55_0",
+          "overlap_pt": 3.375,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.794,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b53_0"
+      ],
+      "operation_id": "obstacle_flow_0079",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b53_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.794,
+          "other_group_id": "p7_b54_0",
+          "overlap_pt": 1.794,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.685,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b68_0"
+      ],
+      "operation_id": "obstacle_flow_0080",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b68_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.685,
+          "other_group_id": "p7_b69_0",
+          "overlap_pt": 1.685,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.66,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b52_0"
+      ],
+      "operation_id": "obstacle_flow_0081",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b52_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.66,
+          "other_group_id": "p7_b53_0",
+          "overlap_pt": 1.66,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 3.739,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b67_0"
+      ],
+      "operation_id": "obstacle_flow_0082",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b67_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 3.739,
+          "other_group_id": "p7_b68_0",
+          "overlap_pt": 1.739,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 5.455,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b64_0"
+      ],
+      "operation_id": "obstacle_flow_0083",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b64_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.455,
+          "other_group_id": "p7_b67_0",
+          "overlap_pt": 4.29,
+          "source_baseline_pt": 0.835,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 12.263,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b97_0"
+      ],
+      "operation_id": "obstacle_flow_0084",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b97_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 12.263,
+          "other_group_id": "p7_b97_1",
+          "overlap_pt": 10.618,
+          "source_baseline_pt": 0.355,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b97_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 12.263,
+          "other_group_id": "p7_b97_3",
+          "overlap_pt": 10.618,
+          "source_baseline_pt": 0.355,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 12.263,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b97_2"
+      ],
+      "operation_id": "obstacle_flow_0085",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b97_2",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 12.263,
+          "other_group_id": "p7_b97_3",
+          "overlap_pt": 10.618,
+          "source_baseline_pt": 0.355,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 12.159,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b65_0"
+      ],
+      "operation_id": "obstacle_flow_0086",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b65_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 12.159,
+          "other_group_id": "p7_b65_1",
+          "overlap_pt": 10.449,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b65_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 12.159,
+          "other_group_id": "p7_b65_2",
+          "overlap_pt": 10.449,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 12.159,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p7_b80_0"
+      ],
+      "operation_id": "obstacle_flow_0087",
+      "operation_type": "move_region_group",
+      "page_index": 7,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b80_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 12.121,
+          "other_group_id": "p7_b80_1",
+          "overlap_pt": 10.449,
+          "source_baseline_pt": 0.328,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p7_b80_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 12.159,
+          "other_group_id": "p7_b80_2",
+          "overlap_pt": 10.449,
+          "source_baseline_pt": 0.29,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 14.332,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b24_0"
+      ],
+      "operation_id": "obstacle_flow_0088",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b19_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 10.2,
+          "other_group_id": "p8_b24_0",
+          "overlap_pt": 18.715,
+          "source_baseline_pt": 10.515,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        },
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b24_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 14.332,
+          "other_group_id": "p8_b34_0",
+          "overlap_pt": 22.847,
+          "source_baseline_pt": 10.515,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 4.132,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b15_0"
+      ],
+      "operation_id": "obstacle_flow_0089",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b15_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 4.132,
+          "other_group_id": "p8_b24_0",
+          "overlap_pt": 2.132,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 10.477,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b18_0"
+      ],
+      "operation_id": "obstacle_flow_0090",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b15_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 10.477,
+          "other_group_id": "p8_b18_0",
+          "overlap_pt": 9.756,
+          "source_baseline_pt": 1.279,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 8.452,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b23_0"
+      ],
+      "operation_id": "obstacle_flow_0091",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b22_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 8.452,
+          "other_group_id": "p8_b23_0",
+          "overlap_pt": 6.452,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 5.952,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b17_0"
+      ],
+      "operation_id": "obstacle_flow_0092",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b17_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.952,
+          "other_group_id": "p8_b23_0",
+          "overlap_pt": 9.756,
+          "source_baseline_pt": 5.804,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.756,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b32_0"
+      ],
+      "operation_id": "obstacle_flow_0093",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b32_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.756,
+          "other_group_id": "p8_b33_0",
+          "overlap_pt": 5.756,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 10.911,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b28_0"
+      ],
+      "operation_id": "obstacle_flow_0094",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b28_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 10.911,
+          "other_group_id": "p8_b32_0",
+          "overlap_pt": 8.911,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 5.977,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b31_0"
+      ],
+      "operation_id": "obstacle_flow_0095",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b28_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 5.977,
+          "other_group_id": "p8_b31_0",
+          "overlap_pt": 9.756,
+          "source_baseline_pt": 5.779,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 10.836,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b27_0"
+      ],
+      "operation_id": "obstacle_flow_0096",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b27_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 10.836,
+          "other_group_id": "p8_b31_0",
+          "overlap_pt": 8.836,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 7.704,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b30_0"
+      ],
+      "operation_id": "obstacle_flow_0097",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b27_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 7.704,
+          "other_group_id": "p8_b30_0",
+          "overlap_pt": 5.704,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    },
+    {
+      "delta_x_pt": 0.0,
+      "delta_y_pt": 4.317,
+      "failure_class": "cross_slot_overlap",
+      "group_ids": [
+        "p8_b12_0"
+      ],
+      "operation_id": "obstacle_flow_0098",
+      "operation_type": "move_region_group",
+      "page_index": 8,
+      "reason": "Move only the lower same-column local flow that participates in current-run overlap signals; protected table/chart/footer roles are excluded.",
+      "source_candidate_evidence": [
+        {
+          "failure_class": "cross_slot_overlap",
+          "group_id": "p8_b11_0",
+          "human_judgement": "FAIL",
+          "needed_shift_pt": 4.317,
+          "other_group_id": "p8_b12_0",
+          "overlap_pt": 2.317,
+          "source_baseline_pt": 0.0,
+          "triage_reason": "候选译文之间的垂直重叠超过原文同位置重叠基线，应移动下游同列文本流。"
+        }
+      ]
+    }
+  ],
+  "patch_verdict": "PATCH_READY",
+  "previous_hard_regressions": {
+    "cross_slot_overlap": {
+      "after": 110,
+      "before": 25
+    }
+  },
+  "previous_loop": "reports\\repair_loop_0001.json",
+  "previous_loop_verdict": "REJECTED_ROLLBACK",
+  "selected_failure_class": "cross_slot_overlap",
+  "selected_repair_family": "obstacle_aware_reflow",
+  "source_layout_plan": "reports\\layout_plan.repair0001.json",
+  "source_quality_signals": "reports\\quality_signals.repair0001.json",
+  "tool": "obstacle_aware_reflow"
+}

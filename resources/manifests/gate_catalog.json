@@ -1,0 +1,567 @@
+{
+  "schema_version": "transflow.gate-catalog/v1",
+  "gates": {
+    "G0": [
+      {
+        "id": "G0-STATIC",
+        "intent": "检查 P0 新增 Python 文件的格式、导入和静态错误",
+        "command": ["{python}", "-m", "ruff", "check", "src", "scripts", "tests"]
+      },
+      {
+        "id": "G0-TYPES",
+        "intent": "检查生产包和 P0 工程脚本的类型边界",
+        "command": ["{python}", "-m", "mypy", "src", "scripts"]
+      },
+      {
+        "id": "G0-BASELINE",
+        "intent": "重算并核对设计、穿刺和迁移台账基线",
+        "command": ["{python}", "-m", "scripts.build_p0_assets", "--check"]
+      },
+      {
+        "id": "G0-BOUNDARIES",
+        "intent": "检查目录、包边界、追溯、决策和排期不变量",
+        "command": ["{python}", "-m", "scripts.verify_p0", "all"]
+      },
+      {
+        "id": "G0-TESTS",
+        "intent": "运行 P0.1 至 P0.5 的真实测试并生成覆盖率证据",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "-m",
+          "not e2e",
+          "--cov=transflow",
+          "--cov=scripts",
+          "--cov-branch",
+          "--cov-report=term-missing",
+          "--cov-report=json:coverage.json",
+          "--cov-fail-under=85"
+        ]
+      }
+    ],
+    "G1": [
+      {
+        "id": "G1-STATIC",
+        "intent": "检查 P1 Python 文件的格式、导入和静态错误",
+        "command": ["{python}", "-m", "ruff", "check", "src", "scripts", "tests"]
+      },
+      {
+        "id": "G1-TYPES",
+        "intent": "检查 P1 生产包和工程脚本的类型边界",
+        "command": ["{python}", "-m", "mypy", "src", "scripts"]
+      },
+      {
+        "id": "G1-P0-REGRESSION",
+        "intent": "确认 P1 改动没有破坏已通过的 P0 施工基线",
+        "command": ["{python}", "-m", "pytest", "-q", "tests/test_p0.py"]
+      },
+      {
+        "id": "G1-FONT-ASSETS",
+        "intent": "核对实际字体与许可证文件的冻结哈希",
+        "command": ["{python}", "-m", "scripts.bootstrap_p1", "--check"]
+      },
+      {
+        "id": "G1-P1-TESTS",
+        "intent": "运行 P1.1 至 P1.4 的十五项真实验收测试",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p1.py"]
+      },
+      {
+        "id": "G1-BASELINE",
+        "intent": "裁决运行基线、依赖、配置、主机能力和许可决定",
+        "command": ["{python}", "-m", "scripts.verify_p1", "all"]
+      }
+    ],
+    "G2": [
+      {
+        "id": "G2-STATIC",
+        "intent": "检查 P2 生产代码、脚本和测试的格式、导入与静态错误",
+        "command": ["{python}", "-m", "ruff", "check", "src", "scripts", "tests"]
+      },
+      {
+        "id": "G2-TYPES",
+        "intent": "检查 P2 领域合同、Ports 与工程脚本的类型边界",
+        "command": ["{python}", "-m", "mypy", "src", "scripts"]
+      },
+      {
+        "id": "G2-REGRESSION",
+        "intent": "确认 P2 改动没有破坏已通过的 P0 与 P1 技术基线",
+        "command": ["{python}", "-m", "pytest", "-q", "tests/test_p0.py", "tests/test_p1.py"]
+      },
+      {
+        "id": "G2-1-CONTRACTS",
+        "intent": "验证领域模型往返、单 PDF 输入、翻译身份和 Patch 绑定",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p2.py", "-k", "p2_1"]
+      },
+      {
+        "id": "G2-2-STATES",
+        "intent": "验证全部状态边、终态屏障、Checkpoint 和 Repair 不变量及分支覆盖率",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p2.py",
+          "-k",
+          "p2_2",
+          "--cov=transflow.domain.states",
+          "--cov-branch",
+          "--cov-report=term-missing",
+          "--cov-fail-under=90"
+        ]
+      },
+      {
+        "id": "G2-3-PORTS",
+        "intent": "验证五个 Port 的成功失败合同、实现替换和公开集合",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p2.py", "-k", "p2_3"]
+      },
+      {
+        "id": "G2-4-CATALOG",
+        "intent": "验证设计路由恰好出现一次且无证据叶子不能启用",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p2.py",
+          "-k",
+          "p2_4_t01 or p2_4_t04"
+        ]
+      },
+      {
+        "id": "G2-5-ASSETS",
+        "intent": "重新生成并核对版本化 Taxonomy、Catalog、两份 Schema 和固定哈希",
+        "command": ["{python}", "-m", "scripts.build_p2_assets", "--check"]
+      },
+      {
+        "id": "G2-5-FINGERPRINTS",
+        "intent": "验证四类资源字节变更触发指纹变化且重复生成无漂移",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p2.py",
+          "-k",
+          "p2_4_t02 or p2_4_t03"
+        ]
+      },
+      {
+        "id": "G2-6-MUTATIONS",
+        "intent": "验证全部禁止依赖突变被捕获且合法依赖方向通过",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p2.py", "-k", "p2_5"]
+      },
+      {
+        "id": "G2-6-ACTUAL",
+        "intent": "扫描真实生产包并确认架构红线命中数为零",
+        "command": ["{python}", "-m", "scripts.verify_architecture"]
+      },
+      {
+        "id": "G2-7-REVIEW",
+        "intent": "汇总验证合同、Ports、Catalog、Schema 与评审遗留问题",
+        "command": ["{python}", "-m", "scripts.verify_p2", "all"]
+      }
+    ],
+    "G3": [
+      {
+        "id": "G3-STATIC",
+        "intent": "检查 P3 生产代码、工程脚本和测试的格式、导入与静态错误",
+        "command": ["{python}", "-m", "ruff", "check", "src", "scripts", "tests"]
+      },
+      {
+        "id": "G3-TYPES",
+        "intent": "检查 P3 Standalone、文件 Adapter、HTTP Adapter 和验收脚本类型边界",
+        "command": ["{python}", "-m", "mypy", "src", "scripts"]
+      },
+      {
+        "id": "G3-REGRESSION",
+        "intent": "确认 P3 改动没有破坏已通过的 P0、P1 与 P2 技术基线",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/test_p0.py",
+          "tests/test_p1.py",
+          "tests/test_p2.py"
+        ]
+      },
+      {
+        "id": "G3-1-STANDALONE-VALID",
+        "intent": "验证三页/一页完整 PDF 与重复提交的 Standalone 正向合同",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p3.py",
+          "-k",
+          "p3_1_t01 or p3_1_t02 or p3_1_t09"
+        ]
+      },
+      {
+        "id": "G3-2-STANDALONE-INVALID",
+        "intent": "验证列表、目录、逃逸、重解析、损坏和缺字段全部拒绝且无副作用",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p3.py",
+          "-k",
+          "p3_1_t03 or p3_1_t04 or p3_1_t05 or p3_1_t06 or p3_1_t07 or p3_1_t08"
+        ]
+      },
+      {
+        "id": "G3-3-CHECKPOINT",
+        "intent": "验证 Checkpoint 单调、幂等、冲突、原子恢复与路径隔离",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p3.py", "-k", "p3_2"]
+      },
+      {
+        "id": "G3-4-ARTIFACT-LOG",
+        "intent": "验证不可变 Artifact、引用完整性及结构化日志脱敏截断",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p3.py", "-k", "p3_3"]
+      },
+      {
+        "id": "G3-5-TEST-TRANSLATION",
+        "intent": "验证固定翻译可复现且 production wheel 无真实 Provider 测试接线",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p3.py",
+          "-k",
+          "p3_4_t01 or p3_4_t06"
+        ]
+      },
+      {
+        "id": "G3-6-FAKE-AI",
+        "intent": "验证两个真实 HTTP 合同的成功、错误、鉴权、大小和 readiness",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p3.py",
+          "-k",
+          "p3_4_t02 or p3_4_t03 or p3_4_t04 or p3_4_t05 or p3_4_t07"
+        ]
+      },
+      {
+        "id": "G3-7-CRASH-WINDOWS",
+        "intent": "验证五类文件崩溃窗口无权威歧义且跨 Run 删除为零",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p3.py", "-k", "p3_5"]
+      },
+      {
+        "id": "G3-FULL-EVIDENCE",
+        "intent": "在单一隔离工作区执行 P3.1 至 P3.5 全部三十四项验收",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p3.py"]
+      },
+      {
+        "id": "G3-AUDIT",
+        "intent": "复核权威 manifest、半写文件、日志秘密、production wheel 和评审问题",
+        "command": ["{python}", "-m", "scripts.verify_p3", "all"]
+      }
+    ],
+    "G4": [
+      {
+        "id": "G4-STATIC",
+        "intent": "检查 P4 Kernel、应用编排、测试装配和验收脚本的格式与静态错误",
+        "command": ["{python}", "-m", "ruff", "check", "src", "scripts", "tests"]
+      },
+      {
+        "id": "G4-TYPES",
+        "intent": "检查 P4 最小 Kernel、页面流水线和文档最终化类型边界",
+        "command": ["{python}", "-m", "mypy", "src", "scripts"]
+      },
+      {
+        "id": "G4-REGRESSION",
+        "intent": "确认 P4 改动没有破坏已通过的 P0、P1、P2 与 P3 技术基线",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/test_p0.py",
+          "tests/test_p1.py",
+          "tests/test_p2.py",
+          "tests/test_p3.py"
+        ]
+      },
+      {
+        "id": "G4-7-KERNEL",
+        "intent": "验证唯一解释器、owner/protected guard、受控字体与最小 Preservation",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p4.py", "-k", "p4_0"]
+      },
+      {
+        "id": "G4-1-ENUMERATION",
+        "intent": "验证 1-based 稳定页枚举、完整几何和枚举期间源哈希复核",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p4.py", "-k", "p4_1"]
+      },
+      {
+        "id": "G4-2-ROUTES",
+        "intent": "验证固定 Route 只在测试按稳定页面身份生效且未声明页全部透传",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p4.py", "-k", "p4_2"]
+      },
+      {
+        "id": "G4-3-PAGE-PIPELINE",
+        "intent": "验证 single、visual、翻译失败和 Judge/PNG 失败均收敛为页面终态",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p4.py", "-k", "p4_3"]
+      },
+      {
+        "id": "G4-4-FINALIZER",
+        "intent": "验证源副本串行回放、顺序屏障、应急透传与禁止页级合并",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p4.py", "-k", "p4_4"]
+      },
+      {
+        "id": "G4-5-ANNUAL-E2E",
+        "intent": "对登记哈希的 F2 完整真实年报执行全部页面并产生单一完整 PDF",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p4.py",
+          "-k",
+          "p4_5_t01"
+        ]
+      },
+      {
+        "id": "G4-6-RECOVERY",
+        "intent": "验证页面重启、最后页失败、全透传和最终写失败均确定收敛",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p4.py",
+          "-k",
+          "p4_5_t02 or p4_5_t03 or p4_5_t04 or p4_5_t05"
+        ]
+      },
+      {
+        "id": "G4-8-FAKE-AI",
+        "intent": "随纵向 Gate 复核 fake AI 两个真实 HTTP 合同及错误响应合同",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p3.py",
+          "-k",
+          "p3_4_t02 or p3_4_t03 or p3_4_t04"
+        ]
+      },
+      {
+        "id": "G4-FULL-EVIDENCE",
+        "intent": "在单一隔离工作区执行 P4.0 至 P4.5 全部二十五项验收",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p4.py"]
+      },
+      {
+        "id": "G4-AUDIT",
+        "intent": "复核唯一 Kernel、固定路由隔离、最终化边界、F2 fixture 与架构规则",
+        "command": ["{python}", "-m", "scripts.verify_p4", "all"]
+      }
+    ],
+    "G5": [
+      {
+        "id": "G5-STATIC",
+        "intent": "检查 P5 分类生产代码、迁移测试和 Gate 脚本的格式与静态错误",
+        "command": ["{python}", "-m", "ruff", "check", "src", "scripts", "tests"]
+      },
+      {
+        "id": "G5-TYPES",
+        "intent": "检查分类合同、证据、规则、有界决策和协调器接线类型边界",
+        "command": ["{python}", "-m", "mypy", "src", "scripts"]
+      },
+      {
+        "id": "G5-UPSTREAM-REGRESSION",
+        "intent": "确认页面分类迁移没有破坏直接受影响的 P2 领域、P3 HTTP 与 P4 PDF 技术基线",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-q",
+          "tests/test_p2.py",
+          "tests/test_p3.py",
+          "tests/test_p4.py"
+        ]
+      },
+      {
+        "id": "G5-1-ANONYMOUS-BASELINE",
+        "intent": "核对二十二个真实匿名输入、十一层分层和事前冻结阈值无漂移",
+        "command": ["{python}", "-m", "scripts.build_p5_baseline", "--check"]
+      },
+      {
+        "id": "G5-2-6-P5-TESTS",
+        "intent": "运行规则等价、有界模型、文档接线、反过拟合和全部失败出口测试",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p5.py"]
+      },
+      {
+        "id": "G5-5-REAL-QWEN-QUALITY",
+        "intent": "使用隔离真实迁移适配器计算匿名逐叶指标和高代价误路由",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "-rs",
+          "tests/migration/test_p5_qwen_quality.py"
+        ]
+      },
+      {
+        "id": "G5-7-G4-E2E",
+        "intent": "复核 G4 完整真实年报、重启、末页失败、全透传和最终写失败",
+        "command": [
+          "{python}",
+          "-m",
+          "pytest",
+          "-vv",
+          "tests/test_p4.py",
+          "-k",
+          "p4_5_t01 or p4_5_t02 or p4_5_t03 or p4_5_t04 or p4_5_t05"
+        ]
+      },
+      {
+        "id": "G5-AUDIT",
+        "intent": "复核 Prompt、生产无直连、协调器接线、架构和真实质量冻结哈希",
+        "command": ["{python}", "-m", "scripts.verify_p5", "all"]
+      }
+    ],
+    "G6": [
+      {
+        "id": "G6-STATIC",
+        "intent": "检查 P6 Kernel、应用接线、验收脚本和测试的格式与静态错误",
+        "command": ["{python}", "-m", "ruff", "check", "src", "scripts", "tests"]
+      },
+      {
+        "id": "G6-TYPES",
+        "intent": "检查 SharedPdfKernel、Preservation 与应用边界的类型合同",
+        "command": ["{python}", "-m", "mypy", "src", "scripts"]
+      },
+      {
+        "id": "G6-AUDIT",
+        "intent": "复核迁移来源、支持矩阵、禁止调用、机械语义边界、确定性和测试编号",
+        "command": ["{python}", "-m", "scripts.verify_p6", "all"]
+      },
+      {
+        "id": "G6-1-FACTS-WORKSPACE",
+        "intent": "验证迁移事实、稳定身份、只读源、组合 fixture、序列化和工作区隔离",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p6.py", "-k", "p6_1"]
+      },
+      {
+        "id": "G6-2-FONT-PATCH-RENDER",
+        "intent": "验证受控字体、唯一 Patch 语义、禁止路径和重复渲染确定性",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p6.py", "-k", "p6_2"]
+      },
+      {
+        "id": "G6-3-CONSTRAINT-REPAIR",
+        "intent": "验证全部机械硬约束、结构化 Finding、应用前拒绝和有界 Repair",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p6.py", "-k", "p6_3"]
+      },
+      {
+        "id": "G6-4-PRESERVATION",
+        "intent": "验证 F3 特征、签名加密预检、目标突变检出和整文应急透传",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p6.py", "-k", "p6_4"]
+      },
+      {
+        "id": "G6-5-PROCESS-DETERMINISM",
+        "intent": "验证多进程同名输入、批准角色、worker 崩溃重建和统一指纹",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p6.py", "-k", "p6_5"]
+      },
+      {
+        "id": "G6-6-G4-REAL-E2E",
+        "intent": "重跑 G4 完整真实年报、恢复、末页故障、全透传和原子发布用例",
+        "command": [
+          "{python}", "-m", "pytest", "-vv", "tests/test_p4.py", "-k",
+          "p4_5_t01 or p4_5_t02 or p4_5_t03 or p4_5_t04 or p4_5_t05"
+        ]
+      },
+      {
+        "id": "G6-6-G5-BASELINE",
+        "intent": "重算 G5 二十二个真实匿名输入、答案密封和阈值冻结哈希",
+        "command": ["{python}", "-m", "scripts.build_p5_baseline", "--check"]
+      },
+      {
+        "id": "G6-6-G5-KEY-ROUTES",
+        "intent": "重跑 G5 迁移等价、文档身份和反文件名顺序过拟合关键集合",
+        "command": [
+          "{python}", "-m", "pytest", "-vv", "tests/test_p5.py", "-k",
+          "p5_2_t01 or p5_4_t01 or p5_5_t01"
+        ]
+      },
+      {
+        "id": "G6-6-G5-AUDIT",
+        "intent": "复核 G5 Prompt、生产无直连、协调器、架构与真实模型质量冻结证据",
+        "command": ["{python}", "-m", "scripts.verify_p5", "all"]
+      }
+    ],
+    "G7": [
+      {
+        "id": "G7-STATIC",
+        "intent": "检查 P7 Toolbox、协调器、资源脚本、审计和测试的格式与静态错误",
+        "command": ["{python}", "-m", "ruff", "check", "src", "scripts", "tests"]
+      },
+      {
+        "id": "G7-TYPES",
+        "intent": "检查六阶段合同、Catalog、Margin、叶 Gate 和 PageCoordinator 类型边界",
+        "command": ["{python}", "-m", "mypy", "src", "scripts"]
+      },
+      {
+        "id": "G7-ASSETS",
+        "intent": "确定性复算 v2 Catalog、Margin 策略、叶证据 Schema、模板和初始状态",
+        "command": ["{python}", "-m", "scripts.build_p7_assets", "--check"]
+      },
+      {
+        "id": "G7-AUDIT",
+        "intent": "复核六阶段、架构、全 Route、叶原状态、资源、测试编号和评审结论",
+        "command": ["{python}", "-m", "scripts.verify_p7", "all"]
+      },
+      {
+        "id": "G7-1-TOOLBOX-CONTRACT",
+        "intent": "验证六阶段闭合、legacy 非权威单页、严格 mapper、依赖和迁移等价",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p7.py", "-k", "p7_1"]
+      },
+      {
+        "id": "G7-2-TRANSLATION-SPLIT",
+        "intent": "验证翻译兼容记录、拆分等价、身份拒绝、乱序归位和超时 fallback",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p7.py", "-k", "p7_2"]
+      },
+      {
+        "id": "G7-3-CATALOG",
+        "intent": "验证全 Route 唯一解析、全部 fallback、不可变和 checkpoint 漂移拒绝",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p7.py", "-k", "p7_3"]
+      },
+      {
+        "id": "G7-4-MARGIN",
+        "intent": "验证共享边缘 owner、保护对象、语义 handback、结构证据和冲突拒绝",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p7.py", "-k", "p7_4"]
+      },
+      {
+        "id": "G7-5-LEAF-GATE",
+        "intent": "验证叶模板、三态判定、原状态不升级、发布一致性和证据过期",
+        "command": ["{python}", "-m", "pytest", "-vv", "tests/test_p7.py", "-k", "p7_5"]
+      },
+      {
+        "id": "G7-6-ARCHITECTURE",
+        "intent": "以真实突变复核 DB、API、lease、Provider、重试、并发和动态发现全部被捕获",
+        "command": [
+          "{python}", "-m", "pytest", "-vv", "tests/test_p7.py", "tests/test_p2.py", "-k",
+          "p7_1_t05 or p7_2_t04 or p7_3_t05 or p2_5"
+        ]
+      },
+      {
+        "id": "G7-UPSTREAM-P2",
+        "intent": "确认新增 toolboxes 层没有破坏 P2 领域合同、Port、Catalog 和架构基线",
+        "command": ["{python}", "-m", "pytest", "-q", "tests/test_p2.py"]
+      },
+      {
+        "id": "G7-UPSTREAM-G6-AUDIT",
+        "intent": "复核已通过的 P6 Kernel 迁移、Preservation、确定性和测试编号仍无漂移",
+        "command": ["{python}", "-m", "scripts.verify_p6", "all"]
+      }
+    ]
+  }
+}

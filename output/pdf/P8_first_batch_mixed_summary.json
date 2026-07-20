@@ -1,0 +1,56 @@
+{
+  "catalog_hash": "b3fde8b3ec7650578af00b9330ea84b8dcaa6585795a9bcbf223c4bbc0acf025",
+  "document_outcome": "COMPLETED_WITH_DEGRADATION",
+  "output_hash": "266a8c5e890e0b04e7ba6930bf1d1a88b60c88d79b25ba30c3d1d5beee3787f5",
+  "output_path": "output/pdf/P8_first_batch_mixed_final.pdf",
+  "page_count": 4,
+  "pages": [
+    {
+      "fallback": "PAGE_PASSTHROUGH",
+      "finding_codes": [],
+      "page_no": 1,
+      "patch_operations": 0,
+      "route": "visual_only",
+      "toolbox_id": "visual_only",
+      "toolbox_version": "1.0.0"
+    },
+    {
+      "fallback": "NONE",
+      "finding_codes": [
+        "TEXT_LAYOUT_OVERFLOW"
+      ],
+      "page_no": 2,
+      "patch_operations": 1,
+      "route": "body.flow_text.single",
+      "toolbox_id": "body.flow_text.single",
+      "toolbox_version": "1.0.0"
+    },
+    {
+      "fallback": "PAGE_PASSTHROUGH",
+      "finding_codes": [
+        "TOOLBOX_DISABLED"
+      ],
+      "page_no": 3,
+      "patch_operations": 0,
+      "route": "body.chart",
+      "toolbox_id": "body.chart",
+      "toolbox_version": "0.1.0-review"
+    },
+    {
+      "fallback": "PAGE_PASSTHROUGH",
+      "finding_codes": [
+        "TOOLBOX_DISABLED"
+      ],
+      "page_no": 4,
+      "patch_operations": 0,
+      "route": "body.diagram",
+      "toolbox_id": "body.diagram",
+      "toolbox_version": "0.1.0-review"
+    }
+  ],
+  "preservation_passed": true,
+  "run_id": "run-p8-acceptance-20260720_142303",
+  "schema_version": "transflow.p8-runtime-acceptance/v1",
+  "source_hash": "003fcb4a3f251d24b59f14843300e67b2426959c3127fb3b30df79c99513c987",
+  "source_path": "tmp/pdfs/p8/P8_first_batch_mixed_source_20260720_142303.pdf"
+}

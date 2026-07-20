@@ -1,0 +1,47 @@
+{
+  "$id": "https://transflow.local/schemas/model_decision_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "type": "number"
+    },
+    "decision_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "decision_kind": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "evidence_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "reason_summary": {
+      "type": "string"
+    },
+    "result_code": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "transflow.model-decision/v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "decision_id",
+    "decision_kind",
+    "result_code",
+    "evidence_ids"
+  ],
+  "title": "Transflow ModelDecision v1",
+  "type": "object"
+}

@@ -1,0 +1,46 @@
+{
+  "diagnostic_publishable": false,
+  "diagnostic_render": {
+    "applied_count": 3,
+    "clipped_operation_count": 0,
+    "error_type": null,
+    "layout_remainders": [
+      -19.589578963613516,
+      -5.1530194200038935,
+      -5.1530194200038935
+    ],
+    "status": "WRITTEN_UNSAFE_DIAGNOSTIC"
+  },
+  "findings": [
+    {
+      "code": "P9_TEXT_LAYOUT_OVERFLOW",
+      "evidence_ids": [
+        "end-owner-000",
+        "end-owner-001",
+        "end-owner-002"
+      ],
+      "finding_id": "plan-end-d3d959a2d63d204ce0e5183f-overflow-r0",
+      "severity": "HARD"
+    }
+  ],
+  "outcome": {
+    "artifact_produced": "YES",
+    "capability": "SUPPORTED",
+    "fallback": "NONE",
+    "finding_codes": [
+      "P9_TEXT_LAYOUT_OVERFLOW"
+    ],
+    "integrity": "PASS",
+    "page_no": 1,
+    "quality": "PASS",
+    "state": "FINALIZED",
+    "translation_coverage": "FULL"
+  },
+  "schema_version": "transflow.p9-diagnostic-judgement/v1",
+  "verdict": {
+    "decision_id": "decision-candidate-plan-end-d3d959a2d63d204ce0e5183f-1",
+    "disposition": "ACCEPT",
+    "finding_ids": [],
+    "reason_code": "P9_PATCH_ACCEPTED"
+  }
+}

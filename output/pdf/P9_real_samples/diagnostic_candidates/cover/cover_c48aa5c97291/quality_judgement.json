@@ -1,0 +1,57 @@
+{
+  "diagnostic_publishable": false,
+  "diagnostic_render": {
+    "applied_count": 14,
+    "clipped_operation_count": 0,
+    "error_type": null,
+    "layout_remainders": [
+      6.231100930786127,
+      -7.532179151821136,
+      -5.71199906921386,
+      -4.764499069213869,
+      -6.480199069213853,
+      -28.82087847504617,
+      -28.82087847504617,
+      -4.95723944211003,
+      -18.894078999996193,
+      -18.84355900311467,
+      -18.84355900311467,
+      -18.894078999996193,
+      -4.957239442110144,
+      -18.843559003114784
+    ],
+    "status": "WRITTEN_UNSAFE_DIAGNOSTIC"
+  },
+  "findings": [
+    {
+      "code": "P9_PROTECTED_REGION_REJECTED",
+      "evidence_ids": [
+        "patch-15b0155d75965dbda4b8c79e-cover"
+      ],
+      "finding_id": "plan-cover-15b0155d75965dbda4b8c79e-p9_protected_region_rejected-0",
+      "severity": "HARD"
+    }
+  ],
+  "outcome": {
+    "artifact_produced": "NO",
+    "capability": "PARTIAL",
+    "fallback": "PAGE_PASSTHROUGH",
+    "finding_codes": [
+      "P9_PROTECTED_REGION_REJECTED"
+    ],
+    "integrity": "FAIL",
+    "page_no": 1,
+    "quality": "FAIL",
+    "state": "FINALIZED",
+    "translation_coverage": "NONE"
+  },
+  "schema_version": "transflow.p9-diagnostic-judgement/v1",
+  "verdict": {
+    "decision_id": "decision-candidate-plan-cover-15b0155d75965dbda4b8c79e-0",
+    "disposition": "FALLBACK",
+    "finding_ids": [
+      "plan-cover-15b0155d75965dbda4b8c79e-p9_protected_region_rejected-0"
+    ],
+    "reason_code": "P9_PLAN_FALLBACK"
+  }
+}

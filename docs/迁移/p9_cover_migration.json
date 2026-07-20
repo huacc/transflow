@@ -1,0 +1,56 @@
+{
+  "allowed_changes": [
+    "统一 PageToolbox 六阶段包装",
+    "TranslationPort 上移到 PageCoordinator",
+    "增加 owner/clip/source guard 和有界原子回退"
+  ],
+  "anti_overfit_passed": true,
+  "blind_passed": false,
+  "catalog_hash": "0b9a52219679353bd84c73c8621de608d11cd7eaab5bb1eee51c8bfd82f43312",
+  "code_hash": "6d93c4e16fc573f7f46bc46f49304b75d827bd7ed5e321e82705bf9b0a026e63",
+  "contract_passed": true,
+  "document_e2e_passed": true,
+  "equivalence_passed": false,
+  "evidence_hash": "7231a9fe676bb08ddacf27d3533cb92436e06193cd4c1a229e9841e699267fc6",
+  "failure_passed": true,
+  "fallback": "PAGE_PASSTHROUGH",
+  "fallback_has_complete_pdf": true,
+  "fallback_has_page_outcome": true,
+  "fixture_refs": [
+    "tests/test_p9.py::cover",
+    "tests/migration/test_p9_real_samples.py",
+    "spikes/page_classification_engine_puncture_v1/分类结果",
+    "output/pdf/P9_second_batch_mixed_final.pdf",
+    "output/pdf/P9_real_samples/P9_real_samples_showcase.pdf"
+  ],
+  "font_hash": "af58ee3fa10bc0ab0d1fbed7b4ba7302dd22d19fe85b43d12e7f26cd57fbc042",
+  "gold_refs": [
+    "resources/evidence/p9/p9_acceptance_summary.json",
+    "resources/evidence/p9/real_sample_regression.json"
+  ],
+  "limitations": [
+    "旧叶正式状态为 EVIDENCE_INSUFFICIENT，且没有 PromotionManifest",
+    "187 份分类结果已完成真实结构回归，12 份英文页已调用真实千问形成候选 PDF",
+    "这些已知样本不能充当新的独立真实盲测，候选失败也不得按样本身份修补",
+    "迁移骨架可单独验证，但生产运行必须确定性整页透传"
+  ],
+  "migration_differences": [
+    "删除叶内 Provider 和样本身份输入",
+    "最终 PDF 从完整源副本串行回放 Patch",
+    "未达真实盲测阈值时 Catalog 保持 disabled"
+  ],
+  "new_evidence": true,
+  "original_state": "EVIDENCE_INSUFFICIENT",
+  "owner": "cover",
+  "route": "cover",
+  "schema_hash": "be5d02aa3a45c6ccfceebaa23cfb661e0bc319930d59a7aff4a22751855f6cd6",
+  "schema_version": "transflow.leaf-migration-evidence/v1",
+  "source_hash": "68cec4819f0c915535e239f59f6c28efee021aef6d0f2a722c6b58ccaac9f2cb",
+  "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/cover",
+  "target_toolbox_key": "cover",
+  "target_version": "0.1.0-review",
+  "threshold_hash": "c2eac89ffb945181e2745b54d0eaa75386b0a47a3b7a93ff7f963ad20b79d8c4",
+  "threshold_refs": [
+    "resources/manifests/p9_leaf_thresholds.json"
+  ]
+}

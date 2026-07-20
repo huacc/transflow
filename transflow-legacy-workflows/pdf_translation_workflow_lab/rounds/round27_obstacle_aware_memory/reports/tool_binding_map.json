@@ -1,0 +1,95 @@
+{
+  "artifact": "tool_binding_map",
+  "binding_count": 14,
+  "bindings": [
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "extract_pdf_structure.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/probes/extract_source_structure.py"
+    },
+    {
+      "binding_status": "partial",
+      "contract_tool_name": "render_pdf.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/generators/generate_candidate.py"
+    },
+    {
+      "binding_status": "partial",
+      "contract_tool_name": "collect_visual_region_metrics.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/judges/compare_source_candidate.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "generate_semantic_backfill.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/generators/generate_candidate.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "build_role_plan.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/planners/plan_roles.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "build_layout_plan.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/planners/plan_layout.py"
+    },
+    {
+      "binding_status": "partial",
+      "contract_tool_name": "validate_semantic_translations.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "embedded:run_round27_contract_case.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "validate_process_artifacts.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/validators/validate_process.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "evaluate_pdf_quality.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/validators/validate_quality.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "build_repair_patch.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/repairs/build_repair_patch.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "apply_repair_patch.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/repairs/apply_repair_patch.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "materialize_decision_artifacts.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/validators/materialize_round27_artifacts.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "validate_decision_graph.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/validators/validate_decision_graph.py"
+    },
+    {
+      "binding_status": "implemented",
+      "contract_tool_name": "obstacle_aware_reflow.py",
+      "notes": "Round25/26 seed bindings were re-evaluated inside round27; global core is read-only.",
+      "round27_target": "tools/repairs/obstacle_aware_reflow.py"
+    }
+  ],
+  "boundary": {
+    "global_core_read_only": true,
+    "round25_dispatch_is_seed_not_authority": true,
+    "round27_tools_only": true
+  }
+}

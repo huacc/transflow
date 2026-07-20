@@ -1,0 +1,72 @@
+{
+  "schema_version": "transflow.iteration-schedule/v1",
+  "schedule_type": "dependency_iteration",
+  "resource_assumptions": {
+    "implementation_lanes": 1,
+    "implementation_owner": "Codex",
+    "gate_approver": "项目负责人",
+    "target_server_verification_stage": "P1",
+    "calendar_commitment": false,
+    "reason": "当前未冻结单阶段工作量、目标服务器能力和重型样本耗时，采用单执行通道迭代窗口，避免虚构日期"
+  },
+  "estimation_inputs": {
+    "fixture_inventory_at_p0": {
+      "annual_report_pdf_files": 112,
+      "classification_result_pdf_files": 712
+    },
+    "heavy_e2e_runtime": {
+      "status": "UNMEASURED",
+      "first_measurement_stage": "P4",
+      "full_measurement_stage": "P14"
+    },
+    "manual_review": {
+      "reviewer": "项目负责人",
+      "reserved_window_rule": "每阶段 execution_window 后紧邻 gate_window"
+    },
+    "target_server": {
+      "status": "TO_BE_VERIFIED",
+      "verification_stage": "P1"
+    }
+  },
+  "first_part": [
+    {"stage": "P1", "order": 1, "dependency_gate": "G0", "execution_window": "I01", "gate_window": "I01-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P1 独立环境与依赖"},
+    {"stage": "P2", "order": 2, "dependency_gate": "G1", "execution_window": "I02", "gate_window": "I02-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P2 领域合同与架构边界"},
+    {"stage": "P3", "order": 3, "dependency_gate": "G2", "execution_window": "I03", "gate_window": "I03-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P3 Standalone 与文件账本"},
+    {"stage": "P4", "order": 4, "dependency_gate": "G3", "execution_window": "I04", "gate_window": "I04-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P4 完整 PDF 纵向闭环"},
+    {"stage": "P5", "order": 5, "dependency_gate": "G4", "execution_window": "I05", "gate_window": "I05-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P5 分类迁移"},
+    {"stage": "P6", "order": 6, "dependency_gate": "G5", "execution_window": "I06", "gate_window": "I06-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P6 SharedPdfKernel"},
+    {"stage": "P7", "order": 7, "dependency_gate": "G6", "execution_window": "I07", "gate_window": "I07-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P7 Toolbox 迁移骨架"},
+    {"stage": "P8", "order": 8, "dependency_gate": "G7", "execution_window": "I08", "gate_window": "I08-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P8 第一批 Toolbox 叶"},
+    {"stage": "P9", "order": 9, "dependency_gate": "G8", "execution_window": "I09", "gate_window": "I09-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P9 第二批 Toolbox 叶"},
+    {"stage": "P9C", "order": 10, "dependency_gate": "G9", "execution_window": "I10", "gate_window": "I10-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P9C 已完成阶段问题回顾与横切合同补齐"},
+    {"stage": "P9A", "order": 11, "dependency_gate": "G9C", "execution_window": "I11", "gate_window": "I11-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P9A 文档级布局记忆"},
+    {"stage": "P9B", "order": 12, "dependency_gate": "G9A", "execution_window": "I12", "gate_window": "I12-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P9B 页级修复记忆与多轮重排"},
+    {"stage": "P10", "order": 13, "dependency_gate": "G9B", "execution_window": "I13", "gate_window": "I13-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P10 第三批 Toolbox 叶"},
+    {"stage": "P11", "order": 14, "dependency_gate": "G10", "execution_window": "I14", "gate_window": "I14-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P11 Freeform 有界恢复"},
+    {"stage": "P12", "order": 15, "dependency_gate": "G11", "execution_window": "I15", "gate_window": "I15-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P12 暂停恢复与幂等"},
+    {"stage": "P13", "order": 16, "dependency_gate": "G12", "execution_window": "I16", "gate_window": "I16-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P13 并发、观测与服务化"},
+    {"stage": "P14", "order": 17, "dependency_gate": "G13", "execution_window": "I17", "gate_window": "I17-G", "owner": "Codex", "approver": "项目负责人", "commit_scope": "P14 独立闭环总验收"}
+  ],
+  "g14_stop": {
+    "required": true,
+    "window": "I17-REVIEW",
+    "approver": "项目负责人",
+    "next_stage_without_approval": null
+  },
+  "delay_policy": {
+    "skip_gate_allowed": false,
+    "downstream_shift": "从延迟阶段起的全部下游迭代窗口等量顺延",
+    "parallel_override": false
+  },
+  "second_part": [
+    {"stage": "P15", "order": 1, "dependency": "G14 + 项目负责人批准", "fixed_date": null},
+    {"stage": "P16", "order": 2, "dependency": "G15", "fixed_date": null},
+    {"stage": "P17", "order": 3, "dependency": "G16", "fixed_date": null},
+    {"stage": "P18", "order": 4, "dependency": "G17", "fixed_date": null},
+    {"stage": "P19", "order": 5, "dependency": "G18", "fixed_date": null},
+    {"stage": "P20", "order": 6, "dependency": "G19", "fixed_date": null},
+    {"stage": "P21", "order": 7, "dependency": "G20", "fixed_date": null},
+    {"stage": "P22", "order": 8, "dependency": "G21", "fixed_date": null},
+    {"stage": "P23", "order": 9, "dependency": "G22", "fixed_date": null}
+  ]
+}

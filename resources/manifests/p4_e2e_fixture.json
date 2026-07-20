@@ -1,0 +1,11 @@
+{
+  "schema_version": "transflow.p4-e2e-fixture/v1",
+  "fixture_tier": "F2",
+  "relative_source": "样本/年报/83168_HS RMB GOLD ETF_英文_2025.pdf",
+  "source_sha256": "c490e711878585476cc287cb329601a452b71ab173e8721e98e3ebcd1ae20866",
+  "page_count": 38,
+  "routes_by_page_identity": {
+    "26c2da737bb9658ad2622453a5d4cf4afa91d1f895731cff978413103f831ee1": "visual_only",
+    "a823746a0c40aafb26d609556f64a6f6fc94e25289dfe2c2c722d6397c418fb2": "body.flow_text.single"
+  }
+}

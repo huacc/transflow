@@ -1,0 +1,710 @@
+{
+  "required_fields": [
+    "source_path",
+    "source_hash",
+    "target_path",
+    "change_policy",
+    "evidence_status",
+    "evidence_ref"
+  ],
+  "route_behavior_keys": [
+    "cover",
+    "contents",
+    "end",
+    "visual_only",
+    "body.flow_text.single",
+    "body.flow_text.multi",
+    "body.flow_text.visual_anchored",
+    "body.table",
+    "body.chart",
+    "body.diagram",
+    "body.anchored_blocks",
+    "body.composite.flow_text_table",
+    "body.composite.anchored_blocks_chart",
+    "body.composite.chart_table",
+    "body.composite.flow_text_chart",
+    "body.composite.flow_text_diagram",
+    "body.freeform"
+  ],
+  "schema_version": "transflow.migration-ledger/v1",
+  "units": [
+    {
+      "category": "classification_exemplar",
+      "change_policy": "APPROVED_MINIMUM_ONLY",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/exemplars/manifest.jsonl"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "37f710f87d9be2a836b97fae590dfcc7ebf1453186401464d01ceb9d5f7cf24e",
+      "source_path": "spikes/page_classification_engine_puncture_v1/exemplars/manifest.jsonl",
+      "target_path": "resources/exemplars/classification/manifest.jsonl",
+      "unit_id": "classification.exemplars.manifest"
+    },
+    {
+      "category": "classification_prompt",
+      "change_policy": "COPY_VERSIONED_REMOVE_IDENTITY_LEAKAGE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "a9a198dcfb36f572334ce82e31e4d9e0d6e63dc12f45883afbcbebe96371ba9d",
+      "source_path": "spikes/page_classification_engine_puncture_v1/prompts/body_composite_kind/decide.zh-CN.md",
+      "target_path": "resources/prompts/classification/body_composite_kind/decide.zh-CN.md",
+      "unit_id": "classification.prompt.body_composite_kind.decide.zh-CN"
+    },
+    {
+      "category": "classification_prompt",
+      "change_policy": "COPY_VERSIONED_REMOVE_IDENTITY_LEAKAGE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "d45c7e86ebea3f96a9eb5c448e7a7108e16769f8e70969db96fc386996cc23d8",
+      "source_path": "spikes/page_classification_engine_puncture_v1/prompts/body_composite_kind/review.zh-CN.md",
+      "target_path": "resources/prompts/classification/body_composite_kind/review.zh-CN.md",
+      "unit_id": "classification.prompt.body_composite_kind.review.zh-CN"
+    },
+    {
+      "category": "classification_prompt",
+      "change_policy": "COPY_VERSIONED_REMOVE_IDENTITY_LEAKAGE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "1de205ae8267ea53829e379384c4567cb7f672ad860b79f75bb8adca60fd49c1",
+      "source_path": "spikes/page_classification_engine_puncture_v1/prompts/body_flow_topology/decide.zh-CN.md",
+      "target_path": "resources/prompts/classification/body_flow_topology/decide.zh-CN.md",
+      "unit_id": "classification.prompt.body_flow_topology.decide.zh-CN"
+    },
+    {
+      "category": "classification_prompt",
+      "change_policy": "COPY_VERSIONED_REMOVE_IDENTITY_LEAKAGE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "03c6c915ed0f285ec5c85bdd123ad0b72bd50c29be97058cd7d2ad06ab7e695c",
+      "source_path": "spikes/page_classification_engine_puncture_v1/prompts/body_flow_topology/review.zh-CN.md",
+      "target_path": "resources/prompts/classification/body_flow_topology/review.zh-CN.md",
+      "unit_id": "classification.prompt.body_flow_topology.review.zh-CN"
+    },
+    {
+      "category": "classification_prompt",
+      "change_policy": "COPY_VERSIONED_REMOVE_IDENTITY_LEAKAGE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "afa8b3043688731199ef93772ce3f86239f310c4d637fc086a939be5b44003b1",
+      "source_path": "spikes/page_classification_engine_puncture_v1/prompts/body_layout_owner/decide.zh-CN.md",
+      "target_path": "resources/prompts/classification/body_layout_owner/decide.zh-CN.md",
+      "unit_id": "classification.prompt.body_layout_owner.decide.zh-CN"
+    },
+    {
+      "category": "classification_prompt",
+      "change_policy": "COPY_VERSIONED_REMOVE_IDENTITY_LEAKAGE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "09cfc02b0fccc585cec6f3057c779776764f4d8c9623f829006805f776c56d6e",
+      "source_path": "spikes/page_classification_engine_puncture_v1/prompts/body_layout_owner/review.zh-CN.md",
+      "target_path": "resources/prompts/classification/body_layout_owner/review.zh-CN.md",
+      "unit_id": "classification.prompt.body_layout_owner.review.zh-CN"
+    },
+    {
+      "category": "classification_prompt",
+      "change_policy": "COPY_VERSIONED_REMOVE_IDENTITY_LEAKAGE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "492ae7a1b21390ef2081fece79ffa46ca137f684deee0c3570a417d01825e155",
+      "source_path": "spikes/page_classification_engine_puncture_v1/prompts/page_role/decide.zh-CN.md",
+      "target_path": "resources/prompts/classification/page_role/decide.zh-CN.md",
+      "unit_id": "classification.prompt.page_role.decide.zh-CN"
+    },
+    {
+      "category": "classification_prompt",
+      "change_policy": "COPY_VERSIONED_REMOVE_IDENTITY_LEAKAGE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "f9674a7208f5161965336c568c8daadd52840379071a02ddb54c2c5481db285c",
+      "source_path": "spikes/page_classification_engine_puncture_v1/prompts/page_role/review.zh-CN.md",
+      "target_path": "resources/prompts/classification/page_role/review.zh-CN.md",
+      "unit_id": "classification.prompt.page_role.review.zh-CN"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "9ff4c6fede677f8266f69856fc58412606c468990d96bc26418c7b15217be7c3",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/__init__.py",
+      "target_path": "src/transflow/classification/",
+      "unit_id": "classification.source.__init__"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "6f92c68bcf8b2532e8bf7c9e45c720bfebb754de0d8391205d2000ec70643871",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/config.py",
+      "target_path": "src/transflow/runtime/settings.py",
+      "unit_id": "classification.source.config"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "208528d2359a9a2c0960d39e7bd68cb57648dd3e870858e206da093963a4e1b3",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/engine.py",
+      "target_path": "src/transflow/classification/engine.py",
+      "unit_id": "classification.source.engine"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "9570517a0663636d0ad72dd6f5b26fab5e016cd7fc65e4d80e1ba04bb9113200",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/evidence.py",
+      "target_path": "src/transflow/classification/evidence.py",
+      "unit_id": "classification.source.evidence"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "7a6518ed8638aff98e15e46cf8ce431e82507018176e862ffa2b66e41bf25f20",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/io_utils.py",
+      "target_path": "tests/migration/classification/",
+      "unit_id": "classification.source.io_utils"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "3d8e5f9361bfd1e02332cc093a8b769dfdec8c4a4ca38b576bc7ea653ca5a6f9",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/models.py",
+      "target_path": "src/transflow/domain/classification.py",
+      "unit_id": "classification.source.models"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "ece42aaadf5caae5d03a20b824309a5b7ae1d88c2b45ac2d10c6019f05cee17e",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/provider.py",
+      "target_path": "tests/migration/classification/provider.py",
+      "unit_id": "classification.source.provider"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "9915738e854a75d61219d593ccc2e8252ddcdba6d28c610b52d6a98425c81155",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/qwen.py",
+      "target_path": "src/transflow/classification/decision_adapter.py",
+      "unit_id": "classification.source.qwen"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "c359ebd42f464abc450965c1a8376aa945098708adeff1697c3721311d41414c",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/resolver.py",
+      "target_path": "src/transflow/classification/resolver.py",
+      "unit_id": "classification.source.resolver"
+    },
+    {
+      "category": "classification_source",
+      "change_policy": "LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "76d06728ccbeb71497a9a38a80fc5d1f0505e0e81f52ab375278644e05ec548c",
+      "source_path": "spikes/page_classification_engine_puncture_v1/src/page_classifier/rules.py",
+      "target_path": "src/transflow/classification/rules.py",
+      "unit_id": "classification.source.rules"
+    },
+    {
+      "category": "classification_taxonomy",
+      "change_policy": "FREEZE_SEMANTICS_REBUILD_ANONYMOUS_BASELINE",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/README.md",
+        "spikes/page_classification_engine_puncture_v1/分类结果/分类说明.md"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "eafa5ca8c528959f15457f3a9df3cd32d94840b3076d99265a6bee56d79f1c01",
+      "source_path": "spikes/page_classification_engine_puncture_v1/README.md + spikes/page_classification_engine_puncture_v1/分类结果/分类说明.md",
+      "target_path": "resources/manifests/classification_taxonomy.json",
+      "unit_id": "classification.taxonomy_and_result_semantics"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "6321ab1edbce7e0c4196258c89e227f0224a059f5186863571245dec08f26cf4",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/__init__.py",
+      "target_path": "src/transflow/pdf_kernel/__init__.py",
+      "unit_id": "pdf_kernel.source.__init__"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "656065e5951830fbee264b87d91131656ad1a9e8910310f7efd0ac818eeddd97",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/constraints.py",
+      "target_path": "src/transflow/pdf_kernel/constraints.py",
+      "unit_id": "pdf_kernel.source.constraints"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "e9c68209dde97e08c506d3a03db91f52ee3afe2efa7cf9ea0af9424d16650dbd",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/facts.py",
+      "target_path": "src/transflow/pdf_kernel/facts.py",
+      "unit_id": "pdf_kernel.source.facts"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "a874dd0530719a5aece6bdc5441988bef12b379033b30e7ded51f80c8a47649b",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/fonts.py",
+      "target_path": "src/transflow/pdf_kernel/fonts.py",
+      "unit_id": "pdf_kernel.source.fonts"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "556bb3c1d24631d1f02aa7a68d92ae45473a1c846ba67f30d4439253ad8bbfd1",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/models.py",
+      "target_path": "src/transflow/pdf_kernel/models.py",
+      "unit_id": "pdf_kernel.source.models"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "b9c982e216ff7d2f4d6d3313a0c2f85dbc51f9bf10fa63f568e9e3b02a2ad50f",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/passthrough.py",
+      "target_path": "src/transflow/pdf_kernel/passthrough.py",
+      "unit_id": "pdf_kernel.source.passthrough"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "b85fb3553c77b08e9b591d01b36495b6a9c750df3f435777fa57fa7ada934679",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/patch.py",
+      "target_path": "src/transflow/pdf_kernel/patch.py",
+      "unit_id": "pdf_kernel.source.patch"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "e7c2663c627062137b38a08b60ffbb63368367c7c11e54e64b3f5e67e5f98c0e",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/probe.py",
+      "target_path": "src/transflow/pdf_kernel/probe.py",
+      "unit_id": "pdf_kernel.source.probe"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "f9ece4ee15ddbfc827cfe5fd897541d3f4a633f207b77d5c23b3c6318cd4d432",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/render.py",
+      "target_path": "src/transflow/pdf_kernel/render.py",
+      "unit_id": "pdf_kernel.source.render"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "6b1e73aebdd23b8ba7966e38fe4efd6364aa0cc14902ac0b0ea406ffc2b59e9a",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/repair.py",
+      "target_path": "src/transflow/pdf_kernel/repair.py",
+      "unit_id": "pdf_kernel.source.repair"
+    },
+    {
+      "category": "pdf_kernel_source",
+      "change_policy": "LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
+      "evidence_ref": [
+        "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "1dc75d3c174696bbfe898e3a9358dbf026ada7ea4573e29edf38168d028b0e04",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/shared_pdf_kernel/workspace.py",
+      "target_path": "src/transflow/pdf_kernel/workspace.py",
+      "unit_id": "pdf_kernel.source.workspace"
+    },
+    {
+      "category": "toolbox_contract",
+      "change_policy": "MERGE_DUPLICATE_DTOS_PRESERVE_IDS",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/src/page_toolbox_puncture/contracts.py"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "b856fe96c9b05761a464b1bd69cf1efeedff8b2f519bdd5effe7aabb599bf89f",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/page_toolbox_puncture/contracts.py",
+      "target_path": "src/transflow/domain/toolbox.py + src/transflow/domain/translation.py",
+      "unit_id": "toolbox.contract.python"
+    },
+    {
+      "category": "toolbox_contract",
+      "change_policy": "PRESERVE_AS_MIGRATION_CONTRACT",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/contracts/contracts_v1.schema.json"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "c22771c48ae5313211b7b21bc9a16c67645265894f3bf008f0a688c5c3a13d49",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/contracts/contracts_v1.schema.json",
+      "target_path": "tests/migration/contracts/contracts_v1.schema.json",
+      "unit_id": "toolbox.contract.schema.contracts_v1.schema"
+    },
+    {
+      "category": "toolbox_contract",
+      "change_policy": "PRESERVE_AS_MIGRATION_CONTRACT",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/contracts/p4_vertical_flow_v1.schema.json"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "97c3646dc1d125e3827d73cb45a7b540d4da23d277e29dd9b6c823e9e039cef7",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/contracts/p4_vertical_flow_v1.schema.json",
+      "target_path": "tests/migration/contracts/p4_vertical_flow_v1.schema.json",
+      "unit_id": "toolbox.contract.schema.p4_vertical_flow_v1.schema"
+    },
+    {
+      "category": "toolbox_contract",
+      "change_policy": "PRESERVE_AS_MIGRATION_CONTRACT",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/contracts/page_run_package_v1.schema.json"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "426fa1ad48713cd0a6ca98e29ccff13ea9730cbaf6943c68dfc45169589c967c",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/contracts/page_run_package_v1.schema.json",
+      "target_path": "tests/migration/contracts/page_run_package_v1.schema.json",
+      "unit_id": "toolbox.contract.schema.page_run_package_v1.schema"
+    },
+    {
+      "category": "toolbox_contract",
+      "change_policy": "PRESERVE_AS_MIGRATION_CONTRACT",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/contracts/toolbox_cadence_v1.schema.json"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "9eca92865718b93d28b36db47a1391240d7f6a48cd1c641e9f616b49d674fca3",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/contracts/toolbox_cadence_v1.schema.json",
+      "target_path": "tests/migration/contracts/toolbox_cadence_v1.schema.json",
+      "unit_id": "toolbox.contract.schema.toolbox_cadence_v1.schema"
+    },
+    {
+      "category": "toolbox_governance",
+      "change_policy": "GATE_TOOLING_ONLY_NOT_RUNTIME",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/src/toolbox_cadence"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "659471faf33fe2def6cfd9d696082ffbc1d71c941deb49d3b3c90262e66282b9",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/toolbox_cadence",
+      "target_path": "scripts/ + tests/migration/",
+      "unit_id": "toolbox.governance.cadence"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/anchored_blocks/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "source_hash": "db399de3662713c5f7d3a3b1e8473b8733c58d701f6e86b98ca5d8ae33baca13",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/anchored_blocks",
+      "target_path": "src/transflow/toolboxes/body/anchored_blocks/",
+      "unit_id": "toolbox.leaf.body.anchored_blocks"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/chart/stage_gate.json"
+      ],
+      "evidence_status": "PASS_NON_BLIND",
+      "promotion_manifest_present": false,
+      "source_hash": "3cd828ef5840f365ea774fb7c847d58daa27ac1980fb28c16a172c73779e8630",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/chart",
+      "target_path": "src/transflow/toolboxes/body/chart/",
+      "unit_id": "toolbox.leaf.body.chart"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/anchored_blocks_chart/stage_gate.json"
+      ],
+      "evidence_status": "FAIL",
+      "promotion_manifest_present": false,
+      "source_hash": "e69dd119c365f1ae589cb73f6f46bfe5715b2a7f3ae9125a76b3c73426d3c17b",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/anchored_blocks_chart",
+      "target_path": "src/transflow/toolboxes/body/composite/anchored_blocks_chart/",
+      "unit_id": "toolbox.leaf.body.composite.anchored_blocks_chart"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/chart_table/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "source_hash": "c5ab47404fff278e64ce59693031ea2b59b3465f1279d95a647b9d078eeef7e1",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/chart_table",
+      "target_path": "src/transflow/toolboxes/body/composite/chart_table/",
+      "unit_id": "toolbox.leaf.body.composite.chart_table"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_chart/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "source_hash": "82efde628040406636fc8fdeee2ad8a23fabe410566e0b283e4a6f40e2956714",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_chart",
+      "target_path": "src/transflow/toolboxes/body/composite/flow_text_chart/",
+      "unit_id": "toolbox.leaf.body.composite.flow_text_chart"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_diagram/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "source_hash": "5cfd668a58327bc25a4382dcd3a8a50975da2d18bbddcb76fb1babbfa57d45fb",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_diagram",
+      "target_path": "src/transflow/toolboxes/body/composite/flow_text_diagram/",
+      "unit_id": "toolbox.leaf.body.composite.flow_text_diagram"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_table"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "source_hash": "5be12b7cf2f8f72cb696d9135b6cf386451a05ee96d713b5de107f3a990ee2a4",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/composite/flow_text_table",
+      "target_path": "src/transflow/toolboxes/body/composite/flow_text_table/",
+      "unit_id": "toolbox.leaf.body.composite.flow_text_table"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/diagram/stage_gate.json"
+      ],
+      "evidence_status": "PASS_NON_BLIND",
+      "promotion_manifest_present": false,
+      "source_hash": "9a246312a3da716d95258608d4455fda10449bf3d1fa9e36efd4cd4a786630ef",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/diagram",
+      "target_path": "src/transflow/toolboxes/body/diagram/",
+      "unit_id": "toolbox.leaf.body.diagram"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/multi/stage_gate.json"
+      ],
+      "evidence_status": "NOT_EVALUATED",
+      "promotion_manifest_present": false,
+      "source_hash": "6e2ed344c41c9a03f96aa0a6e3a06da1d3e84d492414911c3046e3b6970132d4",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/multi",
+      "target_path": "src/transflow/toolboxes/body/flow_text/multi/",
+      "unit_id": "toolbox.leaf.body.flow_text.multi"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/single/stage_gate.json"
+      ],
+      "evidence_status": "PASS",
+      "promotion_manifest_present": false,
+      "source_hash": "57557579c9c691d94fe6c817839e50ecf7a7d8ddea87a3ed03b977ab680abe57",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/single",
+      "target_path": "src/transflow/toolboxes/body/flow_text/single/",
+      "unit_id": "toolbox.leaf.body.flow_text.single"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/visual_anchored/stage_gate.json"
+      ],
+      "evidence_status": "FAIL",
+      "promotion_manifest_present": false,
+      "source_hash": "552002f0b1fc454b5fdbb80a8dcfa10d6de5dc0cddf391387799ff284edd2c3f",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/flow_text/visual_anchored",
+      "target_path": "src/transflow/toolboxes/body/flow_text/visual_anchored/",
+      "unit_id": "toolbox.leaf.body.flow_text.visual_anchored"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "NEW_BOUNDED_RECOVERY_NO_EXISTING_TOOLBOX",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/分类结果/body/freeform"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "source_hash": "caf19cf3ac09403c1bd26e6ed3eea8916be7a654dbe80f5b7690d4a3b7e8eb58",
+      "source_path": "spikes/page_classification_engine_puncture_v1/分类结果/body/freeform",
+      "target_path": "src/transflow/freeform/recovery.py",
+      "unit_id": "toolbox.leaf.body.freeform"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/table/stage_gate.json"
+      ],
+      "evidence_status": "NOT_EVALUATED",
+      "promotion_manifest_present": false,
+      "source_hash": "28a912cc5d546487715ad083a33bb65eaae982400a90d0df7e6253754a583ce9",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/table",
+      "target_path": "src/transflow/toolboxes/body/table/",
+      "unit_id": "toolbox.leaf.body.table"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/contents/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "source_hash": "6ca5862e757eea6bc149bae5d06a49c980bc4fc81bc2e3c2c1732db4b22fb059",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/contents",
+      "target_path": "src/transflow/toolboxes/contents/",
+      "unit_id": "toolbox.leaf.contents"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/cover/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "source_hash": "4800af37fe016ec8f6db4a1c38828b851ee851b7227a3a5e43ce252479a8491f",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/cover",
+      "target_path": "src/transflow/toolboxes/cover/",
+      "unit_id": "toolbox.leaf.cover"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "LIFT_AND_WRAP_ENABLE_ONLY_AFTER_NEW_GATE",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/toolboxes/end/stage_gate.json"
+      ],
+      "evidence_status": "EVIDENCE_INSUFFICIENT",
+      "promotion_manifest_present": false,
+      "source_hash": "7dd474626e4bfdb0dd17d0158ed3cd852a89c2cfe8728088435802fc5dcf44a1",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/end",
+      "target_path": "src/transflow/toolboxes/end/",
+      "unit_id": "toolbox.leaf.end"
+    },
+    {
+      "category": "toolbox_leaf",
+      "change_policy": "DEFINE_DETERMINISTIC_PASSTHROUGH",
+      "evidence_ref": [
+        "spikes/page_classification_engine_puncture_v1/分类结果/visual_only"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "promotion_manifest_present": false,
+      "source_hash": "c9cee1fee556cde22b4281e2d54ce93df14a1de744de70a1d5d6cd48569bca2c",
+      "source_path": "spikes/page_classification_engine_puncture_v1/分类结果/visual_only",
+      "target_path": "src/transflow/toolboxes/catalog.py#visual_only_passthrough",
+      "unit_id": "toolbox.leaf.visual_only"
+    },
+    {
+      "category": "toolbox_contract",
+      "change_policy": "FIRST_STAGE_FIXED_ADAPTER",
+      "evidence_ref": [
+        "spikes/page_toolbox_engine_puncture_v1/src/page_toolbox_puncture/translation.py"
+      ],
+      "evidence_status": "NO_ROOT_GATE",
+      "source_hash": "58c0739f6d6e71ad8eabdb083088c28a027140ff0bd537fed422fb27c7b4aec7",
+      "source_path": "spikes/page_toolbox_engine_puncture_v1/src/page_toolbox_puncture/translation.py",
+      "target_path": "src/transflow/adapters/translation/fixed.py",
+      "unit_id": "toolbox.translation.compatibility"
+    }
+  ]
+}

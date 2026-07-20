@@ -1,0 +1,136 @@
+{
+  "schema_version": "transflow.gate-report/v1",
+  "gate": "G5",
+  "started_at": "2026-07-20T11:32:48+08:00",
+  "finished_at": "2026-07-20T11:36:20+08:00",
+  "duration_ms": 211959,
+  "catalog": "resources/manifests/gate_catalog.json",
+  "conclusion": "PASS",
+  "steps": [
+    {
+      "step_id": "G5-STATIC",
+      "intent": "检查 P5 分类生产代码、迁移测试和 Gate 脚本的格式与静态错误",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "scripts",
+        "tests"
+      ],
+      "return_code": 0,
+      "duration_ms": 160,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G5-TYPES",
+      "intent": "检查分类合同、证据、规则、有界决策和协调器接线类型边界",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "mypy",
+        "src",
+        "scripts"
+      ],
+      "return_code": 0,
+      "duration_ms": 365,
+      "stdout": "Success: no issues found in 67 source files\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G5-UPSTREAM-REGRESSION",
+      "intent": "确认页面分类迁移没有破坏直接受影响的 P2 领域、P3 HTTP 与 P4 PDF 技术基线",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_p2.py",
+        "tests/test_p3.py",
+        "tests/test_p4.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 42216,
+      "stdout": "........................................................................ [ 91%]\n.......                                                                  [100%]\n79 passed in 41.05s\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G5-1-ANONYMOUS-BASELINE",
+      "intent": "核对二十二个真实匿名输入、十一层分层和事前冻结阈值无漂移",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.build_p5_baseline",
+        "--check"
+      ],
+      "return_code": 0,
+      "duration_ms": 5108,
+      "stdout": "P5_ANONYMOUS_BASELINE PASS anonymous_case_count=22 baseline_content_sha256=bb689f23d3aef97c6fe3ca65581d992e988855c81400cc283c56dab8e2cf0139 identity_leak_count=0 located_real_pdf_count=22 post_freeze_change_count=0 stratum_count=11\n",
+      "stderr": "INFO transflow.p5.baseline 调用匿名基线核对，意图=验证 P5.1 可重放且未泄漏身份\n"
+    },
+    {
+      "step_id": "G5-2-6-P5-TESTS",
+      "intent": "运行规则等价、有界模型、文档接线、反过拟合和全部失败出口测试",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p5.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 38261,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 23 items\n\ntests/test_p5.py::test_p5_1_t01_model_payload_and_fixture_have_zero_identity_leaks PASSED [  4%]\ntests/test_p5.py::test_p5_1_t02_anonymous_hashes_and_strata_regenerate_stably PASSED [  8%]\ntests/test_p5.py::test_p5_1_t03_threshold_change_after_freeze_is_blocked PASSED [ 13%]\ntests/test_p5.py::test_p5_2_t01_rule_and_evidence_match_legacy_except_declared_identity_fields PASSED [ 17%]\ntests/test_p5.py::test_p5_2_t02_threshold_boundary_changes_with_evidence_not_identity PASSED [ 21%]\ntests/test_p5.py::test_p5_2_t03_image_text_is_classification_only_and_never_translation_input PASSED [ 26%]\ntests/test_p5.py::test_p5_3_t01_direct_table_rule_skips_layout_model_call PASSED [ 30%]\ntests/test_p5.py::test_p5_3_t02_conflict_has_one_review_then_resolver PASSED [ 34%]\ntests/test_p5.py::test_p5_3_t03_model_failures_have_deterministic_unclassified_route[timeout] PASSED [ 39%]\ntests/test_p5.py::test_p5_3_t03_model_failures_have_deterministic_unclassified_route[invalid_action] PASSED [ 43%]\ntests/test_p5.py::test_p5_3_t03_model_failures_have_deterministic_unclassified_route[invalid_evidence] PASSED [ 47%]\ntests/test_p5.py::test_p5_3_t03_model_failures_have_deterministic_unclassified_route[invalid_json] PASSED [ 52%]\ntests/test_p5.py::test_p5_3_t04_production_wheel_has_no_direct_model_provider PASSED [ 56%]\ntests/test_p5.py::test_p5_4_t01_mixed_pdf_has_one_route_per_page_and_stable_identity PASSED [ 60%]\ntests/test_p5.py::test_p5_4_t01_run_classified_finalizes_one_complete_pdf PASSED [ 65%]\ntests/test_p5.py::test_p5_4_t02_out_of_order_model_responses_merge_by_page_no PASSED [ 69%]\ntests/test_p5.py::test_p5_4_t03_failed_page_role_is_unclassified_not_freeform PASSED [ 73%]\ntests/test_p5.py::test_p5_5_t01_filename_and_body_page_order_do_not_change_route PASSED [ 78%]\ntests/test_p5.py::test_p5_5_t02_scale_and_text_replacement_follow_structure_not_fixed_coordinates PASSED [ 82%]\ntests/test_p5.py::test_p5_5_t03_blind_cases_are_frozen_and_counted_without_gold_repair PASSED [ 86%]\ntests/test_p5.py::test_p5_5_t03_composite_prompts_freeze_card_chart_and_table_boundaries PASSED [ 91%]\ntests/test_p5.py::test_p5_5_t04_every_model_failure_has_a_defined_route PASSED [ 95%]\ntests/test_p5.py::test_p5_showcase_t01_exports_readable_chinese_pdf_and_gate_results PASSED [100%]\n\n============================= 23 passed in 37.29s =============================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G5-5-REAL-QWEN-QUALITY",
+      "intent": "使用隔离真实迁移适配器计算匿名逐叶指标和高代价误路由",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "-rs",
+        "tests/migration/test_p5_qwen_quality.py"
+      ],
+      "return_code": 0,
+      "duration_ms": 112440,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 1 item\n\ntests/migration/test_p5_qwen_quality.py::test_p5_5_t03_real_qwen_anonymous_quality_meets_frozen_thresholds PASSED [100%]\n\n======================== 1 passed in 111.62s (0:01:51) ========================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G5-7-G4-E2E",
+      "intent": "复核 G4 完整真实年报、重启、末页失败、全透传和最终写失败",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-vv",
+        "tests/test_p4.py",
+        "-k",
+        "p4_5_t01 or p4_5_t02 or p4_5_t03 or p4_5_t04 or p4_5_t05"
+      ],
+      "return_code": 0,
+      "duration_ms": 9148,
+      "stdout": "============================= test session starts =============================\nplatform win32 -- Python 3.14.3, pytest-9.1.1, pluggy-1.6.0 -- D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe\ncachedir: .pytest_cache\nrootdir: D:\\项目\\开源项目\\translation\\transflow\nconfigfile: pyproject.toml\nplugins: anyio-4.14.2, cov-7.1.0\ncollecting ... collected 25 items / 20 deselected / 5 selected\n\ntests/test_p4.py::test_p4_5_t01_complete_real_annual_report_produces_single_pdf PASSED [ 20%]\ntests/test_p4.py::test_p4_5_t02_restart_skips_all_committed_pages PASSED [ 40%]\ntests/test_p4.py::test_p4_5_t03_last_page_translation_failure_passthroughs_and_completes PASSED [ 60%]\ntests/test_p4.py::test_p4_5_t04_all_passthrough_preserves_structure_and_marks_degradation PASSED [ 80%]\ntests/test_p4.py::test_p4_5_t05_final_write_failure_retries_without_partial_authority PASSED [100%]\n\n====================== 5 passed, 20 deselected in 8.35s =======================\n",
+      "stderr": ""
+    },
+    {
+      "step_id": "G5-AUDIT",
+      "intent": "复核 Prompt、生产无直连、协调器接线、架构和真实质量冻结哈希",
+      "command": [
+        "D:\\项目\\开源项目\\translation\\transflow\\.venv\\Scripts\\python.exe",
+        "-m",
+        "scripts.verify_p5",
+        "all"
+      ],
+      "return_code": 0,
+      "duration_ms": 4260,
+      "stdout": "P5_VERIFY check=baseline status=PASS violations=0\nP5_VERIFY check=prompts status=PASS violations=0\nP5_VERIFY check=production status=PASS violations=0\nP5_VERIFY check=architecture status=PASS violations=0\nP5_VERIFY check=migration_adapter status=PASS violations=0\nP5_VERIFY check=quality status=PASS violations=0\nP5_VERIFY_SUMMARY status=PASS checks=6\n",
+      "stderr": "INFO transflow.p5.baseline 调用匿名基线核对，意图=验证 P5.1 可重放且未泄漏身份\n"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "$id": "https://transflow.local/schemas/translation_bundle_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "batch_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "requested_unit_ids": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "minItems": 1,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schema_version": {
+      "const": "transflow.translation-bundle/v1"
+    },
+    "units": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "translated_text": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "unit_id": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "unit_id",
+          "translated_text"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "batch_id",
+    "requested_unit_ids",
+    "units"
+  ],
+  "title": "Transflow TranslationBundle v1",
+  "type": "object"
+}

@@ -1,0 +1,4725 @@
+{
+  "tool": "apply_repair_patch",
+  "source_layout_plan": "reports\\layout_plan.repair0001.json",
+  "repair_patch": "reports\\repair_patch_0002.json",
+  "output_layout_plan": "reports\\layout_plan.repair0002.json",
+  "applied_operation_count": 205,
+  "operation_results": [
+    {
+      "operation_id": "obstacle_flow_0000",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p0_b8_0",
+          "before": [
+            7.0,
+            491.725,
+            588.275,
+            555.801
+          ],
+          "after": [
+            5.071860000000015,
+            512.169,
+            586.34686,
+            576.245
+          ],
+          "delta_x_pt": -1.928,
+          "delta_y_pt": 20.444
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0001",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p0_b6_0",
+          "before": [
+            7.0,
+            568.907,
+            588.275,
+            632.983
+          ],
+          "after": [
+            5.071860000000015,
+            634.9830000000001,
+            586.34686,
+            699.059
+          ],
+          "delta_x_pt": -1.928,
+          "delta_y_pt": 66.076
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0002",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p0_b7_0",
+          "before": [
+            7.0,
+            646.089,
+            588.275,
+            710.165
+          ],
+          "after": [
+            5.071860000000015,
+            712.1650000000001,
+            586.34686,
+            776.241
+          ],
+          "delta_x_pt": -1.928,
+          "delta_y_pt": 66.076
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0003",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b17_0",
+          "before": [
+            41.016,
+            295.766,
+            544.465,
+            324.038
+          ],
+          "after": [
+            41.01565999999995,
+            312.766,
+            544.46466,
+            341.038
+          ],
+          "delta_x_pt": -0.0,
+          "delta_y_pt": 17.0
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0004",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b0_1",
+          "before": [
+            102.677,
+            308.235,
+            197.984,
+            376.738
+          ],
+          "after": [
+            102.677,
+            325.235,
+            197.984,
+            393.738
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.0
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0005",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b7_1",
+          "before": [
+            205.984,
+            308.235,
+            291.749,
+            362.938
+          ],
+          "after": [
+            205.984,
+            325.235,
+            291.749,
+            379.938
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.0
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0006",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b11_1",
+          "before": [
+            309.291,
+            308.235,
+            404.598,
+            335.337
+          ],
+          "after": [
+            309.291,
+            325.235,
+            404.598,
+            352.337
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.0
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0007",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b17_1",
+          "before": [
+            41.016,
+            310.238,
+            531.583,
+            534.143
+          ],
+          "after": [
+            41.016,
+            344.653,
+            531.583,
+            568.558
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 34.415
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0008",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b12_0",
+          "before": [
+            309.291,
+            336.906,
+            404.598,
+            367.545
+          ],
+          "after": [
+            309.291,
+            363.527,
+            404.598,
+            394.166
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 26.621
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0009",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b8_0",
+          "before": [
+            41.016,
+            364.001,
+            544.465,
+            392.273
+          ],
+          "after": [
+            41.01565999999995,
+            394.27299999999997,
+            544.46466,
+            422.545
+          ],
+          "delta_x_pt": -0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0010",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b13_0",
+          "before": [
+            309.291,
+            369.67,
+            350.34,
+            397.942
+          ],
+          "after": [
+            309.291,
+            399.942,
+            350.34,
+            428.214
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0011",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b1_0",
+          "before": [
+            115.011,
+            375.501,
+            156.017,
+            403.773
+          ],
+          "after": [
+            115.011,
+            405.77299999999997,
+            156.017,
+            434.045
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0012",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b8_1",
+          "before": [
+            41.016,
+            378.473,
+            531.583,
+            602.378
+          ],
+          "after": [
+            41.016,
+            536.143,
+            531.583,
+            760.048
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 157.67
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0013",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b13_1",
+          "before": [
+            309.291,
+            382.743,
+            404.598,
+            423.645
+          ],
+          "after": [
+            309.291,
+            425.645,
+            404.598,
+            466.54699999999997
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 42.902
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0014",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b1_1",
+          "before": [
+            115.011,
+            388.574,
+            197.984,
+            443.276
+          ],
+          "after": [
+            115.011,
+            445.276,
+            197.984,
+            499.978
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 56.702
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0015",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b18_0",
+          "before": [
+            412.598,
+            410.282,
+            453.623,
+            438.554
+          ],
+          "after": [
+            412.598,
+            440.554,
+            453.623,
+            468.82599999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0016",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b9_0",
+          "before": [
+            205.984,
+            421.34,
+            247.877,
+            449.612
+          ],
+          "after": [
+            205.984,
+            451.61199999999997,
+            247.877,
+            479.884
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0017",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b18_1",
+          "before": [
+            412.598,
+            423.355,
+            516.756,
+            450.456
+          ],
+          "after": [
+            412.598,
+            452.456,
+            516.756,
+            479.557
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 29.101
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0018",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b14_0",
+          "before": [
+            309.291,
+            425.175,
+            404.598,
+            466.077
+          ],
+          "after": [
+            309.291,
+            468.077,
+            404.598,
+            508.979
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 42.902
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0019",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b9_1",
+          "before": [
+            205.984,
+            434.413,
+            287.414,
+            502.915
+          ],
+          "after": [
+            205.984,
+            504.915,
+            287.414,
+            573.417
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 70.502
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0020",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b2_0",
+          "before": [
+            102.677,
+            444.34,
+            143.63,
+            472.612
+          ],
+          "after": [
+            102.677,
+            474.61199999999997,
+            143.63,
+            502.884
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0021",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b19_0",
+          "before": [
+            412.598,
+            452.025,
+            516.756,
+            520.528
+          ],
+          "after": [
+            412.598,
+            522.528,
+            516.756,
+            591.0310000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 70.503
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0022",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b2_1",
+          "before": [
+            102.677,
+            457.413,
+            197.984,
+            512.115
+          ],
+          "after": [
+            102.677,
+            514.115,
+            197.984,
+            568.817
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 56.702
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0023",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b15_0",
+          "before": [
+            309.291,
+            467.178,
+            350.388,
+            495.45
+          ],
+          "after": [
+            309.291,
+            497.45,
+            350.388,
+            525.722
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0024",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b15_1",
+          "before": [
+            309.291,
+            480.251,
+            404.598,
+            545.9
+          ],
+          "after": [
+            309.291,
+            549.649,
+            404.598,
+            615.298
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 69.398
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0025",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b10_0",
+          "before": [
+            205.984,
+            501.678,
+            247.081,
+            529.95
+          ],
+          "after": [
+            205.984,
+            531.95,
+            247.081,
+            560.2220000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0026",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b3_0",
+          "before": [
+            102.677,
+            513.645,
+            197.984,
+            544.283
+          ],
+          "after": [
+            102.677,
+            549.7819999999999,
+            197.984,
+            580.4200000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 36.137
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0027",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b10_1",
+          "before": [
+            205.984,
+            514.751,
+            293.789,
+            599.304
+          ],
+          "after": [
+            205.984,
+            604.3779999999999,
+            293.789,
+            688.9309999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 89.627
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0028",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b20_0",
+          "before": [
+            412.598,
+            519.29,
+            453.671,
+            547.562
+          ],
+          "after": [
+            412.598,
+            549.562,
+            453.671,
+            577.8340000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0029",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b20_1",
+          "before": [
+            408.348,
+            532.363,
+            516.756,
+            571.561
+          ],
+          "after": [
+            408.348,
+            573.561,
+            516.756,
+            612.759
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 41.198
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0030",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b4_0",
+          "before": [
+            102.677,
+            541.847,
+            143.534,
+            570.119
+          ],
+          "after": [
+            102.677,
+            572.119,
+            143.534,
+            600.3910000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 30.272
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0031",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b4_1",
+          "before": [
+            102.677,
+            554.92,
+            197.984,
+            607.344
+          ],
+          "after": [
+            102.677,
+            604.3779999999999,
+            197.984,
+            656.802
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 49.458
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0032",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b16_0",
+          "before": [
+            309.291,
+            556.355,
+            400.348,
+            622.004
+          ],
+          "after": [
+            309.291,
+            604.378,
+            400.348,
+            670.027
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 48.023
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0033",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b21_0",
+          "before": [
+            412.598,
+            576.628,
+            453.671,
+            604.9
+          ],
+          "after": [
+            412.598,
+            604.378,
+            453.671,
+            632.65
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 27.75
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0034",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b21_1",
+          "before": [
+            412.598,
+            589.701,
+            516.756,
+            628.899
+          ],
+          "after": [
+            412.598,
+            606.701,
+            516.756,
+            645.899
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.0
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0035",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b6_0",
+          "before": [
+            102.677,
+            639.355,
+            143.978,
+            667.627
+          ],
+          "after": [
+            102.677,
+            649.27,
+            143.978,
+            677.5419999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 9.915
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0036",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p2_b6_1",
+          "before": [
+            102.677,
+            654.226,
+            254.268,
+            706.65
+          ],
+          "after": [
+            102.677,
+            669.428,
+            254.268,
+            721.852
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 15.202
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0037",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p4_b4_0",
+          "before": [
+            242.48,
+            73.512,
+            559.276,
+            137.218
+          ],
+          "after": [
+            242.48,
+            139.21800000000002,
+            559.276,
+            202.92399999999998
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 65.706
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0038",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p4_b12_0",
+          "before": [
+            412.582,
+            143.089,
+            559.276,
+            237.355
+          ],
+          "after": [
+            412.582,
+            159.84,
+            559.276,
+            254.106
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 16.751
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0039",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p4_b6_0",
+          "before": [
+            242.48,
+            168.775,
+            404.582,
+            295.745
+          ],
+          "after": [
+            242.48,
+            179.4,
+            404.582,
+            306.37
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 10.625
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0040",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p4_b7_0",
+          "before": [
+            227.158,
+            224.522,
+            596.78,
+            343.899
+          ],
+          "after": [
+            216.72486,
+            299.59299999999996,
+            586.34686,
+            418.97
+          ],
+          "delta_x_pt": -10.433,
+          "delta_y_pt": 75.071
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0041",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p4_b13_0",
+          "before": [
+            412.582,
+            239.065,
+            568.363,
+            349.932
+          ],
+          "after": [
+            412.582,
+            327.476,
+            568.363,
+            438.343
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 88.411
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0042",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p4_b15_0",
+          "before": [
+            412.582,
+            415.799,
+            568.363,
+            482.792
+          ],
+          "after": [
+            412.582,
+            488.48799999999994,
+            568.363,
+            555.481
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 72.689
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0043",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p4_b10_0",
+          "before": [
+            242.48,
+            463.468,
+            404.582,
+            530.461
+          ],
+          "after": [
+            242.48,
+            512.397,
+            404.582,
+            579.39
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 48.929
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0044",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p4_b17_0",
+          "before": [
+            412.582,
+            561.815,
+            568.363,
+            608.268
+          ],
+          "after": [
+            412.582,
+            612.1160000000001,
+            568.363,
+            658.5690000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 50.301
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0045",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b2_0",
+          "before": [
+            331.89,
+            144.326,
+            559.276,
+            305.798
+          ],
+          "after": [
+            331.89,
+            275.356,
+            559.276,
+            436.828
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 131.03
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0046",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b8_0",
+          "before": [
+            100.866,
+            230.83,
+            291.816,
+            327.803
+          ],
+          "after": [
+            100.866,
+            275.356,
+            291.816,
+            372.329
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 44.526
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0047",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b7_0",
+          "before": [
+            58.024,
+            310.444,
+            528.748,
+            491.761
+          ],
+          "after": [
+            58.024,
+            329.803,
+            528.748,
+            511.12
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 19.359
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0048",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b4_0",
+          "before": [
+            331.89,
+            327.436,
+            559.276,
+            416.175
+          ],
+          "after": [
+            331.89,
+            418.17499999999995,
+            559.276,
+            506.914
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 90.739
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0049",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b9_0",
+          "before": [
+            100.866,
+            333.923,
+            335.027,
+            476.311
+          ],
+          "after": [
+            100.866,
+            478.31100000000004,
+            335.027,
+            620.699
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 144.388
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0050",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b5_0",
+          "before": [
+            331.89,
+            432.33,
+            559.276,
+            516.929
+          ],
+          "after": [
+            331.89,
+            493.76099999999997,
+            559.276,
+            578.36
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 61.431
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0051",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b10_0",
+          "before": [
+            100.866,
+            440.586,
+            273.827,
+            574.618
+          ],
+          "after": [
+            100.866,
+            493.761,
+            273.827,
+            627.793
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 53.175
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0052",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b3_0",
+          "before": [
+            58.024,
+            528.848,
+            528.748,
+            710.165
+          ],
+          "after": [
+            58.024,
+            611.865,
+            528.748,
+            793.182
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 83.017
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0053",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p5_b11_0",
+          "before": [
+            100.866,
+            590.076,
+            277.251,
+            687.065
+          ],
+          "after": [
+            100.866,
+            689.065,
+            277.251,
+            786.0540000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 98.989
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0054",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p6_b32_0",
+          "before": [
+            338.654,
+            805.644,
+            588.276,
+            819.89
+          ],
+          "after": [
+            336.72486000000004,
+            806.59675,
+            586.34686,
+            820.84275
+          ],
+          "delta_x_pt": -1.929,
+          "delta_y_pt": 0.953
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0055",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p6_b33_0",
+          "before": [
+            338.654,
+            809.283,
+            588.276,
+            819.89
+          ],
+          "after": [
+            336.72486000000004,
+            810.23575,
+            586.34686,
+            820.84275
+          ],
+          "delta_x_pt": -1.929,
+          "delta_y_pt": 0.953
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0056",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b58_0",
+          "before": [
+            380.299,
+            188.873,
+            568.276,
+            204.123
+          ],
+          "after": [
+            380.299,
+            206.123,
+            568.276,
+            221.373
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.25
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0057",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b37_0",
+          "before": [
+            226.291,
+            189.303,
+            247.476,
+            204.553
+          ],
+          "after": [
+            226.291,
+            206.117,
+            247.476,
+            221.367
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 16.814
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0058",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b51_0",
+          "before": [
+            380.306,
+            189.304,
+            401.491,
+            204.554
+          ],
+          "after": [
+            380.306,
+            206.123,
+            401.491,
+            221.373
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 16.819
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0059",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b21_0",
+          "before": [
+            72.274,
+            189.309,
+            93.459,
+            204.559
+          ],
+          "after": [
+            72.274,
+            206.128,
+            93.459,
+            221.378
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 16.819
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0060",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b25_0",
+          "before": [
+            162.402,
+            190.838,
+            218.291,
+            204.65
+          ],
+          "after": [
+            162.402,
+            206.128,
+            218.291,
+            219.94
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 15.29
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0061",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b20_0",
+          "before": [
+            72.274,
+            199.905,
+            93.459,
+            215.155
+          ],
+          "after": [
+            72.274,
+            206.559,
+            93.459,
+            221.809
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.654
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0062",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b41_0",
+          "before": [
+            294.25,
+            202.353,
+            384.006,
+            219.129
+          ],
+          "after": [
+            294.25,
+            209.31300000000002,
+            384.006,
+            226.089
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.96
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0063",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b38_0",
+          "before": [
+            226.291,
+            202.838,
+            247.476,
+            218.088
+          ],
+          "after": [
+            226.291,
+            206.553,
+            247.476,
+            221.803
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 3.715
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0064",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b19_0",
+          "before": [
+            72.274,
+            210.375,
+            93.459,
+            225.625
+          ],
+          "after": [
+            72.274,
+            217.155,
+            93.459,
+            232.405
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.78
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0065",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b55_0",
+          "before": [
+            403.924,
+            215.611,
+            559.276,
+            232.317
+          ],
+          "after": [
+            403.924,
+            224.057,
+            559.276,
+            240.763
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 8.446
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0066",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b36_0",
+          "before": [
+            226.291,
+            216.379,
+            247.476,
+            231.629
+          ],
+          "after": [
+            226.291,
+            220.088,
+            247.476,
+            235.338
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 3.709
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0067",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b26_0",
+          "before": [
+            118.061,
+            220.821,
+            253.554,
+            237.597
+          ],
+          "after": [
+            118.061,
+            232.268,
+            253.554,
+            249.044
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.447
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0068",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b23_0",
+          "before": [
+            72.274,
+            221.036,
+            93.459,
+            236.286
+          ],
+          "after": [
+            72.274,
+            227.625,
+            93.459,
+            242.875
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.589
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0069",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b35_0",
+          "before": [
+            226.291,
+            229.92,
+            247.476,
+            245.17
+          ],
+          "after": [
+            226.291,
+            239.59699999999998,
+            247.476,
+            254.84699999999998
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 9.677
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0070",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b22_0",
+          "before": [
+            72.274,
+            231.506,
+            93.459,
+            246.756
+          ],
+          "after": [
+            72.274,
+            238.286,
+            93.459,
+            253.536
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.78
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0071",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b27_0",
+          "before": [
+            95.891,
+            232.197,
+            229.991,
+            248.973
+          ],
+          "after": [
+            95.891,
+            239.597,
+            229.991,
+            256.373
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.4
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0072",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b17_0",
+          "before": [
+            72.274,
+            242.086,
+            93.459,
+            257.336
+          ],
+          "after": [
+            72.274,
+            248.756,
+            93.459,
+            264.00600000000003
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.67
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0073",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b34_0",
+          "before": [
+            226.291,
+            243.455,
+            247.476,
+            258.705
+          ],
+          "after": [
+            226.291,
+            247.17000000000002,
+            247.476,
+            262.41999999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 3.715
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0074",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b18_0",
+          "before": [
+            72.274,
+            252.472,
+            93.459,
+            267.722
+          ],
+          "after": [
+            72.274,
+            259.336,
+            93.459,
+            274.58599999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.864
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0075",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b33_0",
+          "before": [
+            226.291,
+            256.996,
+            247.476,
+            272.246
+          ],
+          "after": [
+            226.291,
+            260.705,
+            247.476,
+            275.955
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 3.709
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0076",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b15_0",
+          "before": [
+            72.274,
+            263.137,
+            93.459,
+            278.387
+          ],
+          "after": [
+            72.274,
+            269.722,
+            93.459,
+            284.972
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.585
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0077",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b32_0",
+          "before": [
+            226.291,
+            270.536,
+            247.476,
+            285.786
+          ],
+          "after": [
+            226.291,
+            274.246,
+            247.476,
+            289.496
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 3.71
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0078",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b16_0",
+          "before": [
+            76.059,
+            273.608,
+            93.459,
+            288.858
+          ],
+          "after": [
+            76.059,
+            280.387,
+            93.459,
+            295.637
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.779
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0079",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b31_0",
+          "before": [
+            235.676,
+            284.077,
+            243.676,
+            293.077
+          ],
+          "after": [
+            235.676,
+            287.786,
+            243.676,
+            296.786
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 3.709
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0080",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b14_0",
+          "before": [
+            81.659,
+            284.268,
+            89.659,
+            293.268
+          ],
+          "after": [
+            81.659,
+            290.85799999999995,
+            89.659,
+            299.85799999999995
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0081",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b29_0",
+          "before": [
+            97.432,
+            288.787,
+            252.449,
+            304.037
+          ],
+          "after": [
+            97.432,
+            294.24199999999996,
+            252.449,
+            309.49199999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 5.455
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0082",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b44_0",
+          "before": [
+            251.449,
+            288.787,
+            406.464,
+            304.037
+          ],
+          "after": [
+            251.449,
+            294.24199999999996,
+            406.464,
+            309.49199999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 5.455
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0083",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b7_0",
+          "before": [
+            103.776,
+            298.425,
+            176.595,
+            354.969
+          ],
+          "after": [
+            103.776,
+            306.03700000000003,
+            176.595,
+            362.581
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.612
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0084",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b7_1",
+          "before": [
+            164.31,
+            298.425,
+            237.096,
+            354.969
+          ],
+          "after": [
+            164.31,
+            306.03700000000003,
+            237.096,
+            362.581
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.612
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0085",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b8_1",
+          "before": [
+            258.366,
+            298.425,
+            330.039,
+            354.969
+          ],
+          "after": [
+            258.366,
+            306.03700000000003,
+            330.039,
+            362.581
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.612
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0086",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b8_2",
+          "before": [
+            319.793,
+            298.425,
+            390.353,
+            354.969
+          ],
+          "after": [
+            319.793,
+            306.03700000000003,
+            390.353,
+            362.581
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.612
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0087",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b9_1",
+          "before": [
+            412.414,
+            298.425,
+            484.021,
+            354.969
+          ],
+          "after": [
+            412.414,
+            306.03700000000003,
+            484.021,
+            362.581
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.612
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0088",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b9_2",
+          "before": [
+            472.336,
+            298.425,
+            545.137,
+            354.969
+          ],
+          "after": [
+            472.336,
+            306.03700000000003,
+            545.137,
+            362.581
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.612
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0089",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b8_0",
+          "before": [
+            89.617,
+            324.679,
+            246.434,
+            347.1
+          ],
+          "after": [
+            89.617,
+            348.80999999999995,
+            246.434,
+            371.231
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 24.131
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0090",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b9_0",
+          "before": [
+            243.634,
+            324.679,
+            400.449,
+            347.1
+          ],
+          "after": [
+            243.634,
+            348.80999999999995,
+            400.449,
+            371.231
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 24.131
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0091",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b10_0",
+          "before": [
+            397.649,
+            324.679,
+            570.076,
+            347.1
+          ],
+          "after": [
+            397.649,
+            348.80999999999995,
+            570.076,
+            371.231
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 24.131
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0092",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b68_0",
+          "before": [
+            160.714,
+            421.795,
+            215.49,
+            441.815
+          ],
+          "after": [
+            160.714,
+            425.192,
+            215.49,
+            445.212
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 3.397
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0093",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b72_0",
+          "before": [
+            69.446,
+            424.392,
+            224.49,
+            439.642
+          ],
+          "after": [
+            69.446,
+            441.642,
+            224.49,
+            456.892
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.25
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0094",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b103_0",
+          "before": [
+            384.336,
+            424.392,
+            568.276,
+            439.642
+          ],
+          "after": [
+            384.336,
+            441.642,
+            568.276,
+            456.892
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.25
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0095",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b102_0",
+          "before": [
+            384.193,
+            424.828,
+            401.593,
+            440.078
+          ],
+          "after": [
+            384.193,
+            441.642,
+            401.593,
+            456.892
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 16.814
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0096",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b66_0",
+          "before": [
+            69.475,
+            434.592,
+            161.714,
+            449.842
+          ],
+          "after": [
+            69.475,
+            441.642,
+            161.714,
+            456.892
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0097",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b80_0",
+          "before": [
+            223.49,
+            434.594,
+            282.827,
+            449.844
+          ],
+          "after": [
+            223.49,
+            441.644,
+            282.827,
+            456.894
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0098",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b83_0",
+          "before": [
+            292.559,
+            437.882,
+            376.388,
+            452.094
+          ],
+          "after": [
+            292.559,
+            446.32,
+            376.388,
+            460.532
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 8.438
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0099",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b65_0",
+          "before": [
+            69.475,
+            444.792,
+            224.49,
+            460.042
+          ],
+          "after": [
+            69.475,
+            451.842,
+            224.49,
+            467.092
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0100",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b79_0",
+          "before": [
+            223.49,
+            444.794,
+            282.827,
+            460.044
+          ],
+          "after": [
+            223.49,
+            451.844,
+            282.827,
+            467.094
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0101",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b95_0",
+          "before": [
+            478.193,
+            453.846,
+            488.463,
+            462.846
+          ],
+          "after": [
+            478.193,
+            461.577,
+            488.463,
+            470.577
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.731
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0102",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b64_0",
+          "before": [
+            69.475,
+            454.992,
+            95.376,
+            470.242
+          ],
+          "after": [
+            69.475,
+            462.04200000000003,
+            95.376,
+            477.29200000000003
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0103",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b69_0",
+          "before": [
+            138.544,
+            454.994,
+            273.827,
+            463.994
+          ],
+          "after": [
+            138.544,
+            460.66600000000005,
+            273.827,
+            469.66600000000005
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 5.672
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0104",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b84_0",
+          "before": [
+            248.299,
+            455.989,
+            376.388,
+            470.257
+          ],
+          "after": [
+            248.299,
+            462.044,
+            376.388,
+            476.312
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.055
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0105",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b93_0",
+          "before": [
+            433.156,
+            458.594,
+            470.193,
+            476.6
+          ],
+          "after": [
+            433.156,
+            470.51099999999997,
+            470.193,
+            488.517
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.917
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0106",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b63_0",
+          "before": [
+            69.475,
+            465.438,
+            95.376,
+            480.688
+          ],
+          "after": [
+            69.475,
+            472.24199999999996,
+            95.376,
+            487.49199999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.804
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0107",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b77_0",
+          "before": [
+            223.49,
+            478.089,
+            249.299,
+            493.339
+          ],
+          "after": [
+            223.49,
+            485.139,
+            249.299,
+            500.389
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0108",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b76_0",
+          "before": [
+            223.49,
+            488.289,
+            282.827,
+            503.539
+          ],
+          "after": [
+            223.49,
+            495.339,
+            282.827,
+            510.589
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0109",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b61_0",
+          "before": [
+            69.475,
+            497.302,
+            224.49,
+            512.552
+          ],
+          "after": [
+            69.475,
+            504.35200000000003,
+            224.49,
+            519.602
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0110",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b75_0",
+          "before": [
+            223.49,
+            498.489,
+            282.827,
+            513.739
+          ],
+          "after": [
+            223.49,
+            505.539,
+            282.827,
+            520.789
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0111",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b60_0",
+          "before": [
+            72.275,
+            505.999,
+            93.46,
+            521.249
+          ],
+          "after": [
+            72.275,
+            514.552,
+            93.46,
+            529.802
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 8.553
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0112",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b74_0",
+          "before": [
+            223.49,
+            508.689,
+            282.827,
+            523.939
+          ],
+          "after": [
+            223.49,
+            515.739,
+            282.827,
+            530.9889999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.05
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0113",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b73_0",
+          "before": [
+            235.675,
+            519.589,
+            243.675,
+            528.589
+          ],
+          "after": [
+            235.675,
+            525.9390000000001,
+            243.675,
+            534.9390000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.35
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0114",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b59_0",
+          "before": [
+            81.66,
+            519.59,
+            89.66,
+            528.59
+          ],
+          "after": [
+            81.66,
+            523.249,
+            89.66,
+            532.249
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 3.659
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0115",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b71_0",
+          "before": [
+            97.433,
+            524.299,
+            252.448,
+            539.549
+          ],
+          "after": [
+            97.433,
+            529.7529999999999,
+            252.448,
+            545.0029999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 5.454
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0116",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b4_0",
+          "before": [
+            100.315,
+            533.937,
+            180.055,
+            590.481
+          ],
+          "after": [
+            100.315,
+            541.549,
+            180.055,
+            598.093
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.612
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0117",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b4_1",
+          "before": [
+            161.56,
+            533.937,
+            241.24,
+            590.481
+          ],
+          "after": [
+            161.56,
+            541.549,
+            241.24,
+            598.093
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.612
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0118",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b5_1",
+          "before": [
+            254.463,
+            533.937,
+            334.143,
+            590.481
+          ],
+          "after": [
+            254.463,
+            541.548,
+            334.143,
+            598.092
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.611
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0119",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b5_2",
+          "before": [
+            314.666,
+            533.937,
+            394.783,
+            590.481
+          ],
+          "after": [
+            314.666,
+            541.548,
+            394.783,
+            598.092
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.611
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0120",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b5_0",
+          "before": [
+            89.617,
+            560.191,
+            246.434,
+            582.612
+          ],
+          "after": [
+            89.617,
+            584.322,
+            246.434,
+            606.7429999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 24.131
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0121",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b6_0",
+          "before": [
+            243.634,
+            560.191,
+            408.279,
+            582.612
+          ],
+          "after": [
+            243.634,
+            584.322,
+            408.279,
+            606.7429999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 24.131
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0122",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b12_0",
+          "before": [
+            464.502,
+            560.191,
+            559.276,
+            569.191
+          ],
+          "after": [
+            464.502,
+            571.8810000000001,
+            559.276,
+            580.8810000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.69
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0123",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p7_b13_0",
+          "before": [
+            405.479,
+            560.191,
+            456.502,
+            569.191
+          ],
+          "after": [
+            405.479,
+            571.8810000000001,
+            456.502,
+            580.8810000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.69
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0124",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p8_b7_0",
+          "before": [
+            450.934,
+            201.742,
+            493.774,
+            215.404
+          ],
+          "after": [
+            450.934,
+            209.628,
+            493.774,
+            223.29
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.886
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0125",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p8_b8_0",
+          "before": [
+            450.934,
+            216.742,
+            475.414,
+            230.404
+          ],
+          "after": [
+            450.934,
+            224.628,
+            475.414,
+            238.29
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.886
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0126",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p8_b9_0",
+          "before": [
+            450.934,
+            231.742,
+            483.829,
+            245.404
+          ],
+          "after": [
+            450.934,
+            239.628,
+            483.829,
+            253.29
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.886
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0127",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p8_b10_0",
+          "before": [
+            450.934,
+            246.742,
+            493.054,
+            260.404
+          ],
+          "after": [
+            450.934,
+            252.822,
+            493.054,
+            266.484
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.08
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0128",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p9_b4_0",
+          "before": [
+            62.362,
+            278.696,
+            291.862,
+            300.519
+          ],
+          "after": [
+            62.362,
+            285.663,
+            291.862,
+            307.486
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.967
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0129",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p9_b6_0",
+          "before": [
+            62.362,
+            326.702,
+            518.419,
+            341.044
+          ],
+          "after": [
+            62.362,
+            338.292,
+            518.419,
+            352.63399999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0130",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p9_b9_0",
+          "before": [
+            62.353,
+            390.71,
+            518.419,
+            405.052
+          ],
+          "after": [
+            62.353,
+            402.29999999999995,
+            518.419,
+            416.642
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0131",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p9_b11_0",
+          "before": [
+            62.353,
+            422.714,
+            92.323,
+            444.537
+          ],
+          "after": [
+            62.353,
+            434.304,
+            92.323,
+            456.12699999999995
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0132",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p9_b13_0",
+          "before": [
+            62.353,
+            470.72,
+            559.276,
+            492.543
+          ],
+          "after": [
+            62.353,
+            480.262,
+            559.276,
+            502.085
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 9.542
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0133",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p9_b16_0",
+          "before": [
+            62.353,
+            552.214,
+            518.419,
+            565.959
+          ],
+          "after": [
+            62.353,
+            570.0870000000001,
+            518.419,
+            583.832
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.873
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0134",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p9_b23_0",
+          "before": [
+            62.344,
+            662.744,
+            395.884,
+            684.567
+          ],
+          "after": [
+            62.344,
+            680.106,
+            395.884,
+            701.929
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.362
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0135",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p9_b22_0",
+          "before": [
+            62.344,
+            681.714,
+            518.41,
+            695.459
+          ],
+          "after": [
+            62.344,
+            690.1790000000001,
+            518.41,
+            703.924
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 8.465
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0136",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p10_b12_0",
+          "before": [
+            79.361,
+            662.716,
+            226.241,
+            684.539
+          ],
+          "after": [
+            79.361,
+            681.405,
+            226.241,
+            703.228
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 18.689
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0137",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p10_b11_0",
+          "before": [
+            79.361,
+            683.013,
+            535.427,
+            696.758
+          ],
+          "after": [
+            79.361,
+            690.1510000000001,
+            535.427,
+            703.8960000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.138
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0138",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p11_b13_0",
+          "before": [
+            62.362,
+            302.72,
+            405.082,
+            324.543
+          ],
+          "after": [
+            62.362,
+            318.598,
+            405.082,
+            340.421
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 15.878
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0139",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p11_b16_0",
+          "before": [
+            62.362,
+            366.728,
+            129.682,
+            388.551
+          ],
+          "after": [
+            62.362,
+            382.606,
+            129.682,
+            404.429
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 15.878
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0140",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p11_b18_0",
+          "before": [
+            62.362,
+            494.726,
+            166.402,
+            508.471
+          ],
+          "after": [
+            62.362,
+            501.219,
+            166.402,
+            514.964
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.493
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0141",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p11_b19_0",
+          "before": [
+            62.362,
+            510.728,
+            123.769,
+            524.473
+          ],
+          "after": [
+            62.362,
+            517.695,
+            123.769,
+            531.4399999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.967
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0142",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p12_b4_0",
+          "before": [
+            79.37,
+            566.696,
+            250.73,
+            588.519
+          ],
+          "after": [
+            79.37,
+            573.831,
+            250.73,
+            595.654
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.135
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0143",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p12_b9_0",
+          "before": [
+            79.37,
+            662.708,
+            189.53,
+            684.531
+          ],
+          "after": [
+            79.37,
+            675.582,
+            189.53,
+            697.405
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 12.874
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0144",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p12_b8_0",
+          "before": [
+            79.37,
+            677.19,
+            532.997,
+            690.935
+          ],
+          "after": [
+            79.37,
+            690.143,
+            532.997,
+            703.8879999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 12.953
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0145",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p13_b3_0",
+          "before": [
+            62.362,
+            110.696,
+            526.677,
+            124.441
+          ],
+          "after": [
+            62.362,
+            116.134,
+            526.677,
+            129.879
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 5.438
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0146",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p13_b18_0",
+          "before": [
+            62.362,
+            430.736,
+            559.276,
+            452.559
+          ],
+          "after": [
+            62.362,
+            446.614,
+            559.276,
+            468.437
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 15.878
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0147",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p13_b20_0",
+          "before": [
+            62.362,
+            478.742,
+            515.917,
+            496.742
+          ],
+          "after": [
+            62.362,
+            485.709,
+            515.917,
+            503.709
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.967
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0148",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p13_b21_0",
+          "before": [
+            62.362,
+            494.744,
+            555.022,
+            508.489
+          ],
+          "after": [
+            62.362,
+            504.286,
+            555.022,
+            518.031
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 9.542
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0149",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p13_b22_0",
+          "before": [
+            62.362,
+            510.746,
+            559.276,
+            524.491
+          ],
+          "after": [
+            62.362,
+            517.713,
+            559.276,
+            531.458
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.967
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0150",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p13_b23_0",
+          "before": [
+            62.362,
+            526.749,
+            151.102,
+            548.572
+          ],
+          "after": [
+            62.362,
+            533.715,
+            151.102,
+            555.538
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.966
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0151",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p13_b25_0",
+          "before": [
+            62.362,
+            574.755,
+            559.276,
+            588.499
+          ],
+          "after": [
+            62.362,
+            581.721,
+            559.276,
+            595.465
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.966
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0152",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p13_b26_0",
+          "before": [
+            62.362,
+            590.757,
+            356.122,
+            612.58
+          ],
+          "after": [
+            62.362,
+            597.723,
+            356.122,
+            619.546
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.966
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0153",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b4_0",
+          "before": [
+            79.37,
+            142.701,
+            549.08,
+            168.293
+          ],
+          "after": [
+            79.37,
+            154.331,
+            549.08,
+            179.923
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.63
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0154",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b5_0",
+          "before": [
+            79.37,
+            158.698,
+            549.081,
+            184.29
+          ],
+          "after": [
+            79.37,
+            170.293,
+            549.081,
+            195.885
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.595
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0155",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b6_0",
+          "before": [
+            79.37,
+            174.7,
+            504.71,
+            196.523
+          ],
+          "after": [
+            79.37,
+            186.29,
+            504.71,
+            208.113
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0156",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b8_0",
+          "before": [
+            79.37,
+            222.711,
+            532.916,
+            237.053
+          ],
+          "after": [
+            79.37,
+            234.341,
+            532.916,
+            248.683
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.63
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0157",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b10_0",
+          "before": [
+            79.37,
+            254.71,
+            321.11,
+            276.533
+          ],
+          "after": [
+            79.37,
+            266.3,
+            321.11,
+            288.123
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0158",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b12_0",
+          "before": [
+            79.37,
+            302.721,
+            533.003,
+            317.063
+          ],
+          "after": [
+            79.37,
+            314.351,
+            533.003,
+            328.693
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.63
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0159",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b14_0",
+          "before": [
+            79.37,
+            334.72,
+            376.19,
+            356.543
+          ],
+          "after": [
+            79.37,
+            341.687,
+            376.19,
+            363.51
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.967
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0160",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b16_0",
+          "before": [
+            79.37,
+            385.119,
+            549.064,
+            410.711
+          ],
+          "after": [
+            79.37,
+            396.749,
+            549.064,
+            422.341
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.63
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0161",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b17_0",
+          "before": [
+            79.37,
+            398.728,
+            532.82,
+            412.473
+          ],
+          "after": [
+            79.37,
+            412.711,
+            532.82,
+            426.456
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 13.983
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0162",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b18_0",
+          "before": [
+            79.37,
+            414.73,
+            357.83,
+            436.553
+          ],
+          "after": [
+            79.37,
+            419.891,
+            357.83,
+            441.714
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 5.161
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0163",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b21_0",
+          "before": [
+            79.37,
+            478.738,
+            565.637,
+            500.561
+          ],
+          "after": [
+            79.37,
+            494.65,
+            565.637,
+            516.473
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 15.912
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0164",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b24_0",
+          "before": [
+            79.352,
+            542.521,
+            565.637,
+            556.525
+          ],
+          "after": [
+            79.352,
+            561.0649999999999,
+            565.637,
+            575.069
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 18.544
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0165",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b25_0",
+          "before": [
+            79.352,
+            558.748,
+            302.732,
+            580.571
+          ],
+          "after": [
+            79.352,
+            565.749,
+            302.732,
+            587.572
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.001
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0166",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p14_b28_0",
+          "before": [
+            79.343,
+            622.756,
+            210.923,
+            644.579
+          ],
+          "after": [
+            79.343,
+            638.893,
+            210.923,
+            660.7159999999999
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 16.137
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0167",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b5_0",
+          "before": [
+            62.362,
+            159.076,
+            515.764,
+            173.418
+          ],
+          "after": [
+            62.362,
+            170.706,
+            515.764,
+            185.048
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.63
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0168",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b7_0",
+          "before": [
+            62.362,
+            190.7,
+            414.262,
+            212.523
+          ],
+          "after": [
+            62.362,
+            202.63,
+            414.262,
+            224.453
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.93
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0169",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b9_0",
+          "before": [
+            62.362,
+            238.706,
+            532.144,
+            264.298
+          ],
+          "after": [
+            62.362,
+            250.296,
+            532.144,
+            275.888
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0170",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b10_0",
+          "before": [
+            62.362,
+            254.708,
+            559.276,
+            276.531
+          ],
+          "after": [
+            62.362,
+            266.298,
+            559.276,
+            288.121
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0171",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b12_0",
+          "before": [
+            62.362,
+            302.714,
+            532.099,
+            328.306
+          ],
+          "after": [
+            62.362,
+            314.304,
+            532.099,
+            339.89599999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0172",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b13_0",
+          "before": [
+            62.362,
+            318.716,
+            559.276,
+            332.461
+          ],
+          "after": [
+            62.362,
+            330.306,
+            559.276,
+            344.051
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0173",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b14_0",
+          "before": [
+            62.362,
+            334.718,
+            531.981,
+            360.31
+          ],
+          "after": [
+            62.362,
+            341.685,
+            531.981,
+            367.277
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.967
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0174",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b15_0",
+          "before": [
+            62.362,
+            350.72,
+            200.512,
+            372.543
+          ],
+          "after": [
+            62.362,
+            362.31,
+            200.512,
+            384.133
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0175",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b20_0",
+          "before": [
+            62.362,
+            446.7,
+            478.153,
+            468.523
+          ],
+          "after": [
+            62.362,
+            450.899,
+            478.153,
+            472.72200000000004
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 4.199
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0176",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b19_0",
+          "before": [
+            62.362,
+            452.507,
+            515.917,
+            466.252
+          ],
+          "after": [
+            62.362,
+            474.135,
+            515.917,
+            487.88
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 21.628
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0177",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b23_0",
+          "before": [
+            62.362,
+            528.194,
+            515.91,
+            541.939
+          ],
+          "after": [
+            62.362,
+            551.3309999999999,
+            515.91,
+            565.076
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 23.137
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0178",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b26_0",
+          "before": [
+            62.362,
+            574.716,
+            559.276,
+            588.461
+          ],
+          "after": [
+            62.362,
+            581.851,
+            559.276,
+            595.596
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.135
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0179",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p15_b27_0",
+          "before": [
+            62.362,
+            590.718,
+            221.482,
+            612.541
+          ],
+          "after": [
+            62.362,
+            597.685,
+            221.482,
+            619.508
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 6.967
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0180",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b4_0",
+          "before": [
+            79.37,
+            126.696,
+            247.67,
+            148.519
+          ],
+          "after": [
+            79.37,
+            138.286,
+            247.67,
+            160.109
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0181",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b6_0",
+          "before": [
+            79.37,
+            174.702,
+            532.826,
+            189.044
+          ],
+          "after": [
+            79.37,
+            186.292,
+            532.826,
+            200.63400000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0182",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b9_0",
+          "before": [
+            79.37,
+            238.71,
+            565.637,
+            260.533
+          ],
+          "after": [
+            79.37,
+            250.3,
+            565.637,
+            272.123
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0183",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b11_0",
+          "before": [
+            79.37,
+            286.716,
+            532.25,
+            308.539
+          ],
+          "after": [
+            79.37,
+            298.306,
+            532.25,
+            320.12899999999996
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0184",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b13_0",
+          "before": [
+            79.37,
+            334.722,
+            548.99,
+            360.314
+          ],
+          "after": [
+            79.37,
+            346.31199999999995,
+            548.99,
+            371.904
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0185",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b14_0",
+          "before": [
+            79.37,
+            350.724,
+            140.57,
+            372.547
+          ],
+          "after": [
+            79.37,
+            362.31399999999996,
+            140.57,
+            384.137
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0186",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b18_0",
+          "before": [
+            79.37,
+            462.698,
+            207.89,
+            484.521
+          ],
+          "after": [
+            79.37,
+            469.83299999999997,
+            207.89,
+            491.656
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.135
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0187",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b23_0",
+          "before": [
+            79.37,
+            558.71,
+            348.65,
+            580.533
+          ],
+          "after": [
+            79.37,
+            567.3290000000001,
+            348.65,
+            589.152
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 8.619
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0188",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b22_0",
+          "before": [
+            79.37,
+            568.937,
+            535.436,
+            582.682
+          ],
+          "after": [
+            79.37,
+            586.145,
+            535.436,
+            599.89
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 17.208
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0189",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b27_0",
+          "before": [
+            79.37,
+            638.72,
+            171.395,
+            652.465
+          ],
+          "after": [
+            79.37,
+            643.971,
+            171.395,
+            657.716
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 5.251
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0190",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p16_b26_0",
+          "before": [
+            79.37,
+            647.427,
+            532.88,
+            665.427
+          ],
+          "after": [
+            79.37,
+            656.2710000000001,
+            532.88,
+            674.2710000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 8.844
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0191",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b4_0",
+          "before": [
+            62.362,
+            142.696,
+            532.091,
+            168.288
+          ],
+          "after": [
+            62.362,
+            154.286,
+            532.091,
+            179.87800000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0192",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b5_0",
+          "before": [
+            62.362,
+            158.698,
+            515.782,
+            173.04
+          ],
+          "after": [
+            62.362,
+            170.288,
+            515.782,
+            184.63
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0193",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b7_0",
+          "before": [
+            62.362,
+            190.702,
+            172.522,
+            212.525
+          ],
+          "after": [
+            62.362,
+            202.292,
+            172.522,
+            224.115
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0194",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b10_0",
+          "before": [
+            62.362,
+            254.71,
+            184.762,
+            276.533
+          ],
+          "after": [
+            62.362,
+            268.958,
+            184.762,
+            290.781
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 14.248
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0195",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b12_0",
+          "before": [
+            62.362,
+            302.716,
+            531.982,
+            328.308
+          ],
+          "after": [
+            62.362,
+            314.306,
+            531.982,
+            339.89799999999997
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0196",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b13_0",
+          "before": [
+            62.362,
+            318.718,
+            209.242,
+            340.541
+          ],
+          "after": [
+            62.362,
+            330.308,
+            209.242,
+            352.131
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 11.59
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0197",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b16_0",
+          "before": [
+            62.362,
+            382.726,
+            249.022,
+            404.549
+          ],
+          "after": [
+            62.362,
+            389.861,
+            249.022,
+            411.68399999999997
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.135
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0198",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b18_0",
+          "before": [
+            62.362,
+            430.732,
+            386.722,
+            452.555
+          ],
+          "after": [
+            62.362,
+            437.867,
+            386.722,
+            459.69
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 7.135
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0199",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b21_0",
+          "before": [
+            62.362,
+            494.74,
+            126.712,
+            516.563
+          ],
+          "after": [
+            62.362,
+            510.618,
+            126.712,
+            532.441
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 15.878
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0200",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p17_b24_0",
+          "before": [
+            62.362,
+            558.748,
+            559.276,
+            580.571
+          ],
+          "after": [
+            62.362,
+            574.6260000000001,
+            559.276,
+            596.4490000000001
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 15.878
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0201",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p18_b2_0",
+          "before": [
+            7.0,
+            92.039,
+            588.275,
+            298.301
+          ],
+          "after": [
+            5.071860000000015,
+            112.056,
+            586.34686,
+            318.318
+          ],
+          "delta_x_pt": -1.928,
+          "delta_y_pt": 20.017
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0202",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p18_b5_0",
+          "before": [
+            79.356,
+            220.705,
+            299.027,
+            259.457
+          ],
+          "after": [
+            79.356,
+            261.457,
+            299.027,
+            300.209
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 40.752
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0203",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p18_b6_0",
+          "before": [
+            79.356,
+            244.701,
+            273.827,
+            265.953
+          ],
+          "after": [
+            79.356,
+            267.953,
+            273.827,
+            289.205
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 23.252
+        }
+      ]
+    },
+    {
+      "operation_id": "obstacle_flow_0204",
+      "status": "applied",
+      "affected_groups": [
+        {
+          "group_id": "p19_b8_0",
+          "before": [
+            62.362,
+            616.184,
+            515.782,
+            629.929
+          ],
+          "after": [
+            62.362,
+            639.3209999999999,
+            515.782,
+            653.066
+          ],
+          "delta_x_pt": 0.0,
+          "delta_y_pt": 23.137
+        }
+      ]
+    }
+  ],
+  "human_readable_result": "RepairPatch 已应用到布局计划；下一步需要重新生成候选并再次执行 S8 质量研判。"
+}

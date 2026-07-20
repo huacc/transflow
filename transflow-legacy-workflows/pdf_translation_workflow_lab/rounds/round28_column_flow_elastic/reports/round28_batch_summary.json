@@ -1,0 +1,40 @@
+{
+  "round": "round28",
+  "run_started_at": "2026-07-10T01:57:21",
+  "run_ended_at": "2026-07-10T01:58:22",
+  "stage_a_seed_evidence": "reports/stage_a_seed_evidence.json",
+  "stage_a_seed_verdict": "PASS",
+  "case_count": 2,
+  "cases": [
+    {
+      "case_id": "R28_AIA_ZH_TO_EN_pages_001_020",
+      "returncode": 0,
+      "case_dir": "case_runs\\R28_AIA_ZH_TO_EN_pages_001_020",
+      "process_contract_verdict": "PASS",
+      "product_quality_verdict": "FAIL",
+      "terminal_state": "S_FAIL_QUALITY",
+      "decision_graph_verdict": "PASS",
+      "candidate_pdf": "output/R28_AIA_ZH_TO_EN_pages_001_020_repair0002_candidate.pdf",
+      "repair_accepted": false,
+      "repair2_accepted": true,
+      "loop_verdict": "REJECTED_ROLLBACK",
+      "loop2_verdict": "IMPROVED",
+      "selected_failure_class": "text_fit_overflow"
+    },
+    {
+      "case_id": "R28_AIA_EN_TO_ZH_pages_001_020",
+      "returncode": 0,
+      "case_dir": "case_runs\\R28_AIA_EN_TO_ZH_pages_001_020",
+      "process_contract_verdict": "PASS",
+      "product_quality_verdict": "FAIL",
+      "terminal_state": "S_FAIL_QUALITY",
+      "decision_graph_verdict": "PASS",
+      "candidate_pdf": "output/R28_AIA_EN_TO_ZH_pages_001_020_repair0002_candidate.pdf",
+      "repair_accepted": false,
+      "repair2_accepted": true,
+      "loop_verdict": "REJECTED_ROLLBACK",
+      "loop2_verdict": "IMPROVED",
+      "selected_failure_class": "text_fit_overflow"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "prompt_id": "S5_materialize_translation",
+  "state_id": "S5_TranslationPlan",
+  "substate_id": "S5C_MaterializeSemanticTranslations",
+  "purpose": "Materialize target-language semantic translations from current-run source extraction when no pre-supplied translation JSON exists.",
+  "system_prompt": "Translate extracted PDF text units into the requested target language. Preserve unit identity. Do not use reference PDFs, fixed page branches, fixed text mappings, or sample-specific corrections.",
+  "user_prompt_template": "Translate run {{run_id}} from {{source_language}} to {{target_language}} using current-run extracted source units {{source_structure}}. Return one target text per unit_id with full semantic coverage.",
+  "slots": {
+    "run_id": "string",
+    "source_language": "string",
+    "target_language": "string",
+    "source_structure": "object from reports/source_structure.json"
+  },
+  "required_output_schema": {
+    "type": "object",
+    "required": ["translation_provider", "source_language", "target_language", "target_text_field", "translation_quality", "semantic_coverage", "units"],
+    "properties": {
+      "translation_provider": "string",
+      "source_language": "zh|en|other",
+      "target_language": "zh|en|other",
+      "target_text_field": "string",
+      "translation_quality": "semantic_translation|capability_failure",
+      "semantic_coverage": "full_semantic_translation|partial|failed",
+      "units": "array(object(unit_id, page_index, source_text, translation_target_text))"
+    }
+  },
+  "anti_overfit_policy": "The translator may consume only current-run extracted text. Human reference PDFs and known paired translations are forbidden runtime evidence."
+}

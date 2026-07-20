@@ -1,0 +1,105 @@
+{
+  "anti_overfit_statement": "issue_key uses case scope and failure class, not coordinates, text literals, or fixed page branches.",
+  "artifact": "repair_memory_ledger",
+  "attempts": [
+    {
+      "candidate_id": "repair0001",
+      "delta_regressions": {
+        "cross_slot_overlap": {
+          "after": 110,
+          "before": 25
+        }
+      },
+      "delta_target": {
+        "after": 15,
+        "before": 120,
+        "failure_class": "text_fit_overflow"
+      },
+      "issue_key": "R28_AIA_EN_TO_ZH_pages_001_020:aggregate:text_fit_overflow",
+      "params_digest": "operation_family:expand_or_reflow_slot",
+      "promotion_reason": null,
+      "repair_atom": "expand_or_reflow_slot",
+      "repair_family": "expand_or_reflow_slot",
+      "rollback_reason": {
+        "cross_slot_overlap": {
+          "after": 110,
+          "before": 25
+        }
+      },
+      "round": 1,
+      "verdict": "rolled_back"
+    },
+    {
+      "candidate_id": "repair0002",
+      "delta_regressions": {},
+      "delta_target": {
+        "after": 102,
+        "before": 110,
+        "failure_class": "cross_slot_overlap"
+      },
+      "issue_key": "R28_AIA_EN_TO_ZH_pages_001_020:aggregate:cross_slot_overlap",
+      "params_digest": "operation_family:obstacle_aware_reflow",
+      "promotion_reason": "loop1 fixed text_fit_overflow but introduced or worsened cross_slot_overlap; same issue atom cannot be retried, so cross_slot_overlap is promoted to obstacle_aware_reflow",
+      "repair_atom": "obstacle_aware_reflow",
+      "repair_family": "obstacle_aware_reflow",
+      "rollback_reason": "not_applicable",
+      "round": 2,
+      "verdict": "accepted"
+    }
+  ],
+  "best_candidate": {
+    "candidate_id": "repair0002",
+    "round": 2,
+    "score": 11800
+  },
+  "scope": "R28_AIA_EN_TO_ZH_pages_001_020",
+  "signature_history": [
+    {
+      "open_signature_components": [
+        [
+          "font-hierarchy",
+          "P1",
+          1
+        ],
+        [
+          "geometry-layout",
+          "P1",
+          110
+        ],
+        [
+          "text-loading",
+          "P1",
+          15
+        ]
+      ],
+      "round": 1,
+      "score": 12600
+    },
+    {
+      "open_signature_components": [
+        [
+          "font-hierarchy",
+          "P1",
+          1
+        ],
+        [
+          "geometry-layout",
+          "P1",
+          102
+        ],
+        [
+          "text-loading",
+          "P1",
+          15
+        ]
+      ],
+      "round": 2,
+      "score": 11800
+    }
+  ],
+  "stop_policy_probe": {
+    "same_atom_retry_allowed": false,
+    "same_atom_retry_reason": "A failed atom is recorded in attempts and must not be retried for the same issue_key.",
+    "same_atom_retry_violation_detected": false
+  }
+}

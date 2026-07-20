@@ -1,0 +1,33 @@
+{
+  "artifact": "dispatch_result",
+  "capability_boundary": "available_or_partial",
+  "conflict_resolution": {
+    "reason": "No conflict between seed dispatch and registry default.",
+    "winner": "round25_seed_dispatch"
+  },
+  "dispatch_conflict_detected": false,
+  "registry_capability_status": "partial",
+  "registry_default_repair_atom": "reduce_font_or_reflow",
+  "registry_default_repair_family": "expand_or_reflow_slot",
+  "round25_seed_dispatch": {
+    "allowed_operation_types": [
+      "expand_slot"
+    ],
+    "failure_class": "text_fit_overflow",
+    "repair_family": "expand_or_reflow_slot",
+    "target_state": "S6_LayoutPlan",
+    "tool": "tools/repairs/build_repair_patch.py"
+  },
+  "selected_failure_class": "text_fit_overflow",
+  "selected_repair_family_for_this_run": "expand_or_reflow_slot",
+  "visual_adjudication_dispatch": {
+    "allowed_operation_types": [
+      "expand_slot"
+    ],
+    "dispatch_table": "contracts/failure_dispatch_table.json",
+    "selected_failure_class": "text_fit_overflow",
+    "selected_repair_family": "expand_or_reflow_slot",
+    "target_state": "S6_LayoutPlan",
+    "tool": "tools/repairs/build_repair_patch.py"
+  }
+}

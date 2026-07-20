@@ -1,0 +1,51 @@
+{
+  "allowed_changes": [
+    "统一 PageToolbox 六阶段包装",
+    "TranslationPort 上移到 PageCoordinator",
+    "使用 G6 字体、Patch 和 Preservation 合同"
+  ],
+  "anti_overfit_passed": true,
+  "blind_passed": false,
+  "catalog_hash": "22e0a59e586d16c3b84f1894b7825fbfe39edaa743cb5707c0f058bd902f9b7e",
+  "code_hash": "b952d9c4cf7a27b4cbccc95f2c82318242921e9fb5594c40aa299a252619f8af",
+  "contract_passed": true,
+  "document_e2e_passed": true,
+  "equivalence_passed": true,
+  "evidence_hash": "039552eac00bc061fcd951d3dd3460ccca8d0a1345849b00384d5d35192ee958",
+  "failure_passed": true,
+  "fallback": "PAGE_PASSTHROUGH",
+  "fallback_has_complete_pdf": true,
+  "fallback_has_page_outcome": true,
+  "fixture_refs": [
+    "tests/test_p8.py::body_chart",
+    "output/pdf/P8_first_batch_mixed_final.pdf"
+  ],
+  "font_hash": "af58ee3fa10bc0ab0d1fbed7b4ba7302dd22d19fe85b43d12e7f26cd57fbc042",
+  "gold_refs": [
+    "resources/evidence/p8/p8_acceptance_summary.json"
+  ],
+  "limitations": [
+    "现有真实 chart 样本均已进入旧开发、回归或 holdout，独立匿名真实文档数为 0",
+    "旧 holdout 已用于修复，不能支持生产启用",
+    "Catalog 保持 disabled，完整页面走确定透传"
+  ],
+  "migration_differences": [
+    "删除叶内 Provider 调用",
+    "最终 PDF 从完整源副本回放 Patch",
+    "失败统一形成 PageOutcome 和页面透传"
+  ],
+  "new_evidence": true,
+  "original_state": "PASS_NON_BLIND",
+  "owner": "body.chart",
+  "route": "body.chart",
+  "schema_hash": "be5d02aa3a45c6ccfceebaa23cfb661e0bc319930d59a7aff4a22751855f6cd6",
+  "schema_version": "transflow.leaf-migration-evidence/v1",
+  "source_hash": "3cd828ef5840f365ea774fb7c847d58daa27ac1980fb28c16a172c73779e8630",
+  "source_path": "spikes/page_toolbox_engine_puncture_v1/toolboxes/body/chart",
+  "target_toolbox_key": "body.chart",
+  "target_version": "0.1.0-review",
+  "threshold_hash": "059526d8efe01400928641c11db45cb17ee918b42f9053d518dc3f759dc953c0",
+  "threshold_refs": [
+    "resources/manifests/p8_leaf_thresholds.json"
+  ]
+}
