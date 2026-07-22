@@ -196,6 +196,16 @@ class ToolboxExecutionTrace:
 
         allowed = {
             (*SIX_STAGE_ORDER, "outcome"),
+            ("route_capability", "outcome"),
+            ("prepare", "build_translation_request", "route_capability", "outcome"),
+            (
+                "prepare",
+                "build_translation_request",
+                "consume_translation_bundle",
+                "render",
+                "judge",
+                "outcome",
+            ),
             (
                 "prepare",
                 "build_translation_request",
@@ -225,6 +235,7 @@ class ToolboxExecutionResult:
     repair_memory_hash: str | None = None
     repair_attempt_count: int = 0
     repair_stop_reason: str | None = None
+    route_capability_mismatch: dict[str, object] | None = None
 
     def __post_init__(self) -> None:
         """校验页面身份和翻译单元身份唯一性。"""

@@ -287,7 +287,10 @@ class TranslatedDiagnosticMaterializer:
             for semantic in item.semantic_map.entries:
                 if decision_by_id[semantic.unit_id] is CompletenessDisposition.TRANSLATED:
                     text = bundle_by_id[semantic.unit_id]
-                elif decision_by_id[semantic.unit_id] is CompletenessDisposition.KEEP_SOURCE:
+                elif decision_by_id[semantic.unit_id] in {
+                    CompletenessDisposition.KEEP_SOURCE,
+                    CompletenessDisposition.PROTECTED,
+                }:
                     text = semantic.source_text
                 else:
                     return self._no_candidate(source_path, page_inputs, "FAILED_UNIT_PRESENT")

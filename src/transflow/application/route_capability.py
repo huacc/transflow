@@ -8,6 +8,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+from transflow.domain.classification import ClassificationRoute
 from transflow.domain.common import require_non_empty, require_sha256
 from transflow.domain.completeness import SemanticUnitMap
 from transflow.domain.errors import ErrorCode
@@ -25,6 +26,25 @@ from transflow.pdf_kernel.facts import ExtractedPageFacts
 
 LOGGER = logging.getLogger("transflow.application.route_capability")
 APPLICATION_ROOT = Path(__file__).resolve().parent.parent
+
+
+def _has_credible_native_table(facts: ExtractedPageFacts) -> bool:
+    """只把形成多行、多列且有足够文字归属的候选视为能力边界。"""
+
+    for table in facts.table_objects:
+        cell_count = len(table.cell_bboxes)
+        row_count = len({round(cell[1], 2) for cell in table.cell_bboxes})
+        column_count = len({round(cell[0], 2) for cell in table.cell_bboxes})
+        grid_coverage = cell_count / max(1, row_count * column_count)
+        if (
+            cell_count >= 6
+            and row_count >= 3
+            and column_count >= 2
+            and grid_coverage >= 0.2
+            and len(table.text_object_ids) >= max(4, cell_count * 0.5)
+        ):
+            return True
+    return False
 
 
 @dataclass(frozen=True, slots=True)
@@ -57,8 +77,10 @@ class RouteCapabilityMismatchFinding:
     required_owner: str
     reason_code: str
     facts_hash: str
-    map_hash: str
+    map_hash: str | None
     evidence_id: str
+    route_evidence_ids: tuple[str, ...] = ()
+    failure_stage: str = "SEMANTIC_UNIT_MAP"
     code: str = ErrorCode.ROUTE_CAPABILITY_MISMATCH.value
     fallback: str = Fallback.PAGE_PASSTHROUGH.value
 
@@ -75,7 +97,11 @@ class RouteCapabilityMismatchFinding:
         ):
             require_non_empty(value, name)
         require_sha256(self.facts_hash, "facts_hash")
-        require_sha256(self.map_hash, "map_hash")
+        if self.map_hash is not None:
+            require_sha256(self.map_hash, "map_hash")
+        if len(self.route_evidence_ids) != len(set(self.route_evidence_ids)):
+            raise ValueError("Route mismatch 分类证据不得重复")
+        require_non_empty(self.failure_stage, "failure_stage")
         if self.code != ErrorCode.ROUTE_CAPABILITY_MISMATCH.value:
             raise ValueError("Route mismatch 错误码不可改写")
         if self.fallback != Fallback.PAGE_PASSTHROUGH.value:
@@ -89,10 +115,12 @@ class RouteCapabilityMismatchFinding:
             "evidence_id": self.evidence_id,
             "facts_hash": self.facts_hash,
             "fallback": self.fallback,
+            "failure_stage": self.failure_stage,
             "map_hash": self.map_hash,
             "page_no": self.page_no,
             "reason_code": self.reason_code,
             "required_owner": self.required_owner,
+            "route_evidence_ids": list(self.route_evidence_ids),
             "selected_route": self.selected_route,
         }
 
@@ -123,6 +151,7 @@ class RouteCapabilityGuard:
         facts: ExtractedPageFacts,
         semantic_map: SemanticUnitMap,
         evidence: RouteCapabilityEvidence | None = None,
+        classification_route: ClassificationRoute | None = None,
     ) -> RouteCapabilityMismatchFinding | None:
         """在 owner/map 不成立时返回 finding，否则保持冻结 Route 原样。"""
 
@@ -131,10 +160,19 @@ class RouteCapabilityGuard:
             selected_route,
             semantic_map.page_no,
         )
+        self._validate_classification_route(selected_route, classification_route)
         required_owner: str | None = None
         reason_code: str | None = None
         evidence_id = semantic_map.map_hash
-        if semantic_map.unresolved_unit_ids:
+        if semantic_map.unsupported_unit_ids:
+            unsupported = next(
+                item
+                for item in semantic_map.entries
+                if item.unit_id == semantic_map.unsupported_unit_ids[0]
+            )
+            required_owner = unsupported.owner
+            reason_code = "semantic_unit_capability_unsupported"
+        elif semantic_map.unresolved_unit_ids:
             required_owner = "unresolved.owner"
             reason_code = "semantic_unit_owner_unresolved"
         elif evidence is not None and evidence.required_owner != selected_route:
@@ -143,7 +181,7 @@ class RouteCapabilityGuard:
             evidence_id = evidence.evidence_id
         elif (
             selected_route in {"body.flow_text.single", "body.flow_text.multi"}
-            and facts.table_objects
+            and _has_credible_native_table(facts)
         ):
             required_owner = "body.table"
             reason_code = "detected_table_requires_table_owner"
@@ -157,7 +195,55 @@ class RouteCapabilityGuard:
             facts.kernel_facts_hash,
             semantic_map.map_hash,
             evidence_id,
+            classification_route.evidence_ids if classification_route is not None else (),
         )
+
+    def evaluate_facts(
+        self,
+        selected_route: str,
+        facts: ExtractedPageFacts,
+        evidence: RouteCapabilityEvidence | None = None,
+        classification_route: ClassificationRoute | None = None,
+    ) -> RouteCapabilityMismatchFinding | None:
+        """在建 SemanticUnitMap 前拒绝事实已足够确定的能力错配。"""
+
+        self._validate_classification_route(selected_route, classification_route)
+        required_owner: str | None = None
+        reason_code: str | None = None
+        evidence_id = facts.kernel_facts_hash
+        if evidence is not None and evidence.required_owner != selected_route:
+            required_owner = evidence.required_owner
+            reason_code = evidence.reason_code
+            evidence_id = evidence.evidence_id
+        elif (
+            selected_route in {"body.flow_text.single", "body.flow_text.multi"}
+            and _has_credible_native_table(facts)
+        ):
+            required_owner = "body.table"
+            reason_code = "detected_table_requires_table_owner"
+        if required_owner is None or reason_code is None:
+            return None
+        return RouteCapabilityMismatchFinding(
+            facts.page.page_no,
+            selected_route,
+            required_owner,
+            reason_code,
+            facts.kernel_facts_hash,
+            None,
+            evidence_id,
+            classification_route.evidence_ids if classification_route is not None else (),
+            "ROUTE_CAPABILITY_PREFLIGHT",
+        )
+
+    @staticmethod
+    def _validate_classification_route(
+        selected_route: str,
+        classification_route: ClassificationRoute | None,
+    ) -> None:
+        """保证贯穿进来的分类证据没有在 Router 与 Guard 之间换 Route。"""
+
+        if classification_route is not None and classification_route.route != selected_route:
+            raise ValueError("ClassificationRoute 与已绑定 Route 不一致")
 
     @staticmethod
     def fallback_outcome(finding: RouteCapabilityMismatchFinding) -> PageOutcome:

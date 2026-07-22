@@ -40,7 +40,11 @@ from transflow.classification.decision_adapter import (
 )
 from transflow.classification.engine import ClassificationEngine
 from transflow.classification.evidence import build_evidence, compact_evidence
-from transflow.classification.rules import decide_layout_owner, estimate_text_columns
+from transflow.classification.rules import (
+    decide_composite_kind,
+    decide_layout_owner,
+    estimate_text_columns,
+)
 from transflow.domain.classification import ModelDecision, ModelDecisionRequest
 from transflow.domain.errors import ErrorCode, PortCallError
 from transflow.domain.jobs import DocumentRunRequest
@@ -201,6 +205,16 @@ def test_p5_1_t01_model_payload_and_fixture_have_zero_identity_leaks(tmp_path: P
     assert "renamed-input" not in json.dumps(payload, ensure_ascii=False)
 
 
+@pytest.mark.contract
+def test_p5_1_t01a_web_url_is_not_mistaken_for_windows_host_path() -> None:
+    """页面正文中的网页 URL 不是宿主路径，但真实盘符路径仍必须被阻断。"""
+
+    assert find_identity_leaks({"text": "website: https://example.com/fund"}) == ()
+    assert find_identity_leaks({"text": "host file C:/workspace/sample.pdf"}) == (
+        "$.text",
+    )
+
+
 @pytest.mark.migration
 def test_p5_1_t02_anonymous_hashes_and_strata_regenerate_stably() -> None:
     """P5.1-T02：重复重建得到相同 case 哈希、分层和真实文件命中。"""
@@ -272,7 +286,19 @@ def test_p5_2_t02_threshold_boundary_changes_with_evidence_not_identity() -> Non
         "blocks": [],
         "borderless_table": {"confidence": 0.0},
         "images": {"area_ratio": 0.0},
-        "tables": {"area_ratio": 0.49, "count": 1},
+        "tables": {
+            "area_ratio": 0.49,
+            "count": 1,
+            "details": [
+                {
+                    "cell_count": 24,
+                    "column_count": 4,
+                    "grid_coverage": 1.0,
+                    "row_count": 6,
+                    "text_object_count": 20,
+                }
+            ],
+        },
         "text": {
             "block_count": 8,
             "native_char_count": 500,
@@ -287,6 +313,46 @@ def test_p5_2_t02_threshold_boundary_changes_with_evidence_not_identity() -> Non
     assert below.status == "INCONCLUSIVE"
     assert above.selected_child == "table"
     assert find_identity_leaks(base) == ()
+
+
+@pytest.mark.migration
+def test_p5_2_t02a_small_semantic_table_with_substantial_prose_is_composite() -> None:
+    """A small detected table remains a table owner when prose is also substantial."""
+
+    evidence: dict[str, Any] = {
+        "blocks": [],
+        "borderless_table": {"confidence": 0.0},
+        "images": {"area_ratio": 0.0},
+        "tables": {
+            "area_ratio": 0.026,
+            "count": 1,
+            "details": [
+                {
+                    "cell_count": 7,
+                    "column_count": 2,
+                    "grid_coverage": 0.875,
+                    "row_count": 4,
+                    "text_object_count": 9,
+                }
+            ],
+        },
+        "text": {
+            "block_count": 18,
+            "native_char_count": 3800,
+            "outside_table_chars": 3580,
+            "text_area_ratio": 0.46,
+        },
+    }
+
+    owner = decide_layout_owner(evidence)
+    kind = decide_composite_kind(evidence)
+
+    assert owner.status == "DECIDED"
+    assert owner.selected_child == "composite"
+    assert owner.confidence >= 0.9
+    assert kind.status == "DECIDED"
+    assert kind.selected_child == "flow_text_table"
+    assert kind.confidence >= 0.9
 
 
 @pytest.mark.migration
@@ -440,6 +506,13 @@ def test_p5_4_t01_run_classified_finalizes_one_complete_pdf(tmp_path: Path) -> N
         runtime.finalizer,
     )
     assert len(execution.pages) == 2
+    assert all(page.classification_route is not None for page in execution.pages)
+    assert all(
+        page.classification_route is not None
+        and page.classification_route.route == page.route
+        and page.classification_route.evidence_ids
+        for page in execution.pages
+    )
     assert execution.final_artifact is not None
     assert runtime.artifacts.get(execution.final_artifact.artifact_id).startswith(b"%PDF")
 

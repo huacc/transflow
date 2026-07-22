@@ -331,7 +331,10 @@ def _candidate_evidence(
         raise DomainContractError(ErrorCode.INVALID_CONTRACT, "候选 Artifact 缺少相对路径")
     findings = tuple((*candidate.plan.findings, *judgement.findings))
     unique = {item.finding_id: item for item in findings}
-    overflow = sum(item.code == "P9_TEXT_LAYOUT_OVERFLOW" for item in unique.values())
+    overflow = sum(
+        item.code in {"P9_TEXT_LAYOUT_OVERFLOW", "TEXT_LAYOUT_OVERFLOW"}
+        for item in unique.values()
+    )
     hard = tuple(sorted({item.code for item in unique.values() if item.severity == "HARD"}))
     quality = QualityVector(
         metrics=(

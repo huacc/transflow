@@ -22,7 +22,10 @@ MIGRATION_ROOT = REPO_ROOT / "docs" / "迁移"
 
 BASELINE_PATH = MIGRATION_ROOT / "baseline_manifest.json"
 LEDGER_PATH = MIGRATION_ROOT / "migration_ledger.json"
-TRACEABILITY_PATH = MIGRATION_ROOT / "traceability_matrix.json"
+HISTORICAL_TRACEABILITY_PATH = MIGRATION_ROOT / "traceability_matrix.json"
+CURRENT_BASELINE_PATH = MIGRATION_ROOT / "current_baseline_overlay.json"
+TRACEABILITY_PATH = MIGRATION_ROOT / "current_traceability_overlay.json"
+P9A_REVISION_ANCHOR = "fa6bfbe3e5189e1797f30ec218e447cc2c0aa06f"
 
 SKIPPED_DIRECTORY_NAMES = {
     ".git",
@@ -211,9 +214,7 @@ def collect_baseline_manifest() -> dict[str, Any]:
     classification_hash, classification_count = tracked_worktree_hash(
         "spikes/page_classification_engine_puncture_v1"
     )
-    toolbox_hash, toolbox_count = tracked_worktree_hash(
-        "spikes/page_toolbox_engine_puncture_v1"
-    )
+    toolbox_hash, toolbox_count = tracked_worktree_hash("spikes/page_toolbox_engine_puncture_v1")
     design_merqfin_commit = extract_design_merqfin_commit()
     merqfin_origin_main = run_git(MERQFIN_ROOT, ["rev-parse", "origin/main"])
     return {
@@ -256,6 +257,58 @@ def collect_baseline_manifest() -> dict[str, Any]:
             "local_head": run_git(MERQFIN_ROOT, ["rev-parse", "HEAD"]),
             "local_branch": run_git(MERQFIN_ROOT, ["branch", "--show-current"]),
             "role": "REFERENCE_ONLY_UNTIL_P15",
+        },
+    }
+
+
+def collect_current_baseline_overlay() -> dict[str, Any]:
+    """登记 P9A 当前文档修订、负责人授权和只读历史锚点。"""
+
+    def historical_sha256(path: Path) -> str:
+        """从冻结 Git 锚点读取修订前字节，不改写工作树历史材料。"""
+
+        relative = repository_relative(path)
+        content = subprocess.run(
+            ["git", "show", f"{P9A_REVISION_ANCHOR}:{relative}"],
+            cwd=REPO_ROOT,
+            check=True,
+            capture_output=True,
+        ).stdout
+        return sha256_bytes(content)
+
+    return {
+        "schema_version": "transflow.current-baseline-overlay/v1",
+        "stage": "P9A.0",
+        "effective_point": "G9A-0 前置硬停点",
+        "authorization": {
+            "authorized_by": "项目负责人",
+            "authorized_at": "2026-07-20T23:31:00+08:00",
+            "basis": "当前会话明确要求执行 P9A 及全部二级子计划",
+        },
+        "revision_anchor_commit": P9A_REVISION_ANCHOR,
+        "documents": {
+            "design": {
+                "path": repository_relative(DESIGN_PATH),
+                "old_sha256": historical_sha256(DESIGN_PATH),
+                "new_sha256": sha256_file(DESIGN_PATH),
+            },
+            "plan": {
+                "path": repository_relative(PLAN_PATH),
+                "old_sha256": historical_sha256(PLAN_PATH),
+                "new_sha256": sha256_file(PLAN_PATH),
+            },
+        },
+        "correction": {
+            "incorrect_attribution": "硬失败不产候选",
+            "current_fact": (
+                "完整翻译可形成诊断候选；无法形成完整翻译时记录 NO_TRANSLATED_CANDIDATE"
+            ),
+            "effective_scope": "P9A 及后续阶段，不改判 P5-P9/P9C 历史结论",
+        },
+        "historical_assets": {
+            "baseline_manifest_sha256": sha256_file(BASELINE_PATH),
+            "migration_ledger_sha256": sha256_file(LEDGER_PATH),
+            "traceability_matrix_sha256": sha256_file(HISTORICAL_TRACEABILITY_PATH),
         },
     }
 
@@ -310,7 +363,9 @@ def classification_records() -> list[dict[str, Any]]:
                 target_path=source_targets[path.name],
                 change_policy="LIFT_AND_WRAP_OR_MIGRATION_TEST_ONLY",
                 evidence_status="NO_ROOT_GATE",
-                evidence_refs=["docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"],
+                evidence_refs=[
+                    "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#205-分类-spike-到生产模块"
+                ],
             )
         )
     prompt_root = CLASSIFICATION_ROOT / "prompts"
@@ -337,7 +392,9 @@ def classification_records() -> list[dict[str, Any]]:
             target_path="resources/exemplars/classification/manifest.jsonl",
             change_policy="APPROVED_MINIMUM_ONLY",
             evidence_status="NO_ROOT_GATE",
-            evidence_refs=["spikes/page_classification_engine_puncture_v1/exemplars/manifest.jsonl"],
+            evidence_refs=[
+                "spikes/page_classification_engine_puncture_v1/exemplars/manifest.jsonl"
+            ],
         )
     )
     taxonomy_paths = [
@@ -372,7 +429,9 @@ def kernel_and_contract_records() -> list[dict[str, Any]]:
                 target_path=f"src/transflow/pdf_kernel/{path.name}",
                 change_policy="LIFT_AND_WRAP_NO_PAGE_SEMANTICS",
                 evidence_status="NO_ROOT_GATE",
-                evidence_refs=["docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"],
+                evidence_refs=[
+                    "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md#206-工具箱-spike-到生产模块"
+                ],
             )
         )
     for path in sorted((TOOLBOX_ROOT / "contracts").glob("*.json"), key=lambda item: item.name):
@@ -503,10 +562,10 @@ def collect_migration_ledger() -> dict[str, Any]:
 
 
 def expand_test_references(text: str) -> set[str]:
-    """展开 Gate 中 P0.1-T01~T03 一类测试范围引用。"""
+    """展开包含可选字母阶段的 Gate 测试范围引用。"""
 
-    references = set(re.findall(r"P\d+\.\d+-T\d{2}", text))
-    pattern = re.compile(r"(?P<prefix>P\d+\.\d+-T)(?P<start>\d{2})(?:～|~)T(?P<end>\d{2})")
+    references = set(re.findall(r"P\d+[A-Z]?\.\d+-T\d{2}", text))
+    pattern = re.compile(r"(?P<prefix>P\d+[A-Z]?\.\d+-T)(?P<start>\d{2})(?:～|~)T(?P<end>\d{2})")
     for match in pattern.finditer(text):
         start = int(match.group("start"))
         end = int(match.group("end"))
@@ -522,31 +581,31 @@ def collect_traceability_matrix() -> dict[str, Any]:
     LOGGER.info("解析详细计划并生成双向追溯矩阵")
     plan_text = PLAN_PATH.read_text(encoding="utf-8")
     design_text = DESIGN_PATH.read_text(encoding="utf-8")
-    design_headings = set(
-        re.findall(r"(?m)^#{1,6} (?P<section>\d+(?:\.\d+)*)\b", design_text)
-    )
+    design_headings = set(re.findall(r"(?m)^#{1,6} (?P<section>\d+(?:\.\d+)*)\b", design_text))
     task_pattern = re.compile(
-        r"(?ms)^### (?P<id>P\d+\.\d+) (?P<title>[^\r\n]+)\r?\n"
+        r"(?ms)^### (?P<id>P\d+[A-Z]?\.\d+) (?P<title>[^\r\n]+)\r?\n"
         r"(?P<body>.*?)(?=^### |^## P|^# 第二部分|^# 附录|\Z)"
     )
     gate_rows: list[dict[str, Any]] = []
     for line in plan_text.splitlines():
-        if not re.match(r"^\| G\d+-\d+ \|", line):
+        if not re.match(r"^\| G\d+[A-Z]?(?:-\d+)+ \|", line):
             continue
         cells = [cell.strip() for cell in line.strip("|").split("|")]
-        if len(cells) != 5:
+        if len(cells) not in {4, 5}:
             raise ValueError(f"Gate 行列数不正确: {line}")
+        trace_cell = (
+            cells[3] if len(cells) == 5 else " ".join(sorted(expand_test_references(cells[3])))
+        )
+        evidence_cell = cells[4] if len(cells) == 5 else cells[3]
         gate_rows.append(
             {
                 "gate_item": cells[0],
-                "trace": cells[3],
-                "evidence": cells[4],
-                "test_refs": sorted(expand_test_references(cells[4])),
+                "trace": trace_cell,
+                "evidence": evidence_cell,
+                "test_refs": sorted(expand_test_references(evidence_cell)),
             }
         )
-    defined_tests = set(
-        re.findall(r"(?m)^- `(?P<id>P\d+\.\d+-T\d{2})`：", plan_text)
-    )
+    defined_tests = set(re.findall(r"(?m)^- `(?P<id>P\d+[A-Z]?\.\d+-T\d{2})`：", plan_text))
     referenced_tests = set()
     for row in gate_rows:
         referenced_tests.update(row["test_refs"])
@@ -556,22 +615,19 @@ def collect_traceability_matrix() -> dict[str, Any]:
         task_id = match.group("id")
         body = match.group("body")
         trace_match = re.search(r"\*\*设计追溯：\*\*(?P<value>[^\r\n]+)", body)
-        delivery_match = re.search(
-            r"\*\*前置依赖与交付接口：\*\*(?P<value>[^\r\n]+)", body
-        )
+        delivery_match = re.search(r"\*\*前置依赖与交付接口：\*\*(?P<value>[^\r\n]+)", body)
         if trace_match is None or delivery_match is None:
             raise ValueError(f"任务缺少追溯或交付接口: {task_id}")
         trace_text = trace_match.group("value")
         design_part = trace_text.split("本计划", maxsplit=1)[0]
         design_sections = sorted(set(re.findall(r"§(\d+(?:\.\d+)*)", design_part)))
         invalid_design_refs.update(set(design_sections) - design_headings)
-        task_tests = sorted(set(re.findall(r"P\d+\.\d+-T\d{2}", body)))
+        task_tests = sorted(set(re.findall(r"P\d+[A-Z]?\.\d+-T\d{2}", body)))
         related_gates = sorted(
             {
                 str(row["gate_item"])
                 for row in gate_rows
-                if task_id in str(row["trace"])
-                or bool(set(task_tests) & set(row["test_refs"]))
+                if task_id in str(row["trace"]) or bool(set(task_tests) & set(row["test_refs"]))
             }
         )
         tasks.append(
@@ -626,17 +682,16 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 
 
 def expected_assets() -> dict[Path, dict[str, Any]]:
-    """在内存中重算全部 P0 生成资产。"""
+    """重算 current overlay；历史 P0/P9C 资产保持只读。"""
 
     return {
-        BASELINE_PATH: collect_baseline_manifest(),
-        LEDGER_PATH: collect_migration_ledger(),
+        CURRENT_BASELINE_PATH: collect_current_baseline_overlay(),
         TRACEABILITY_PATH: collect_traceability_matrix(),
     }
 
 
 def write_assets() -> None:
-    """首次冻结并写入 P0 三类权威资产。"""
+    """写入当前 overlay，绝不覆盖历史 P0/P9C 基线。"""
 
     for path, payload in expected_assets().items():
         write_json(path, payload)

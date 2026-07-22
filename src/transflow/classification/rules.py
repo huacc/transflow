@@ -35,6 +35,77 @@ def _inconclusive(
     return _judgement(node_key, "INCONCLUSIVE", None, 0.0, refs, reason)
 
 
+def _credible_native_table(tables: dict[str, Any]) -> bool:
+    """候选框至少应形成有文字归属的多行多列表格拓扑。"""
+
+    return any(
+        int(detail.get("cell_count") or 0) >= 6
+        and int(detail.get("row_count") or 0) >= 3
+        and int(detail.get("column_count") or 0) >= 2
+        and float(detail.get("grid_coverage") or 0) >= 0.2
+        and int(detail.get("text_object_count") or 0)
+        >= max(4, int(detail.get("cell_count") or 0) * 0.5)
+        for detail in tables.get("details", ())
+    )
+
+
+def _narrow_semantic_table(tables: dict[str, Any]) -> bool:
+    """识别正文中的窄列语义表，同时排除两行装饰框和宽图表网格。"""
+
+    return any(
+        int(detail.get("cell_count") or 0) >= 5
+        and 3 <= int(detail.get("row_count") or 0) <= 8
+        and 2 <= int(detail.get("column_count") or 0) <= 3
+        and float(detail.get("grid_coverage") or 0) >= 0.6
+        and int(detail.get("text_object_count") or 0) >= 4
+        for detail in tables.get("details", ())
+    )
+
+
+def _body_blocks(evidence: dict[str, Any]) -> list[dict[str, Any]]:
+    """排除页眉、页脚和纯页码所在页边带，只返回正文候选文字块。"""
+
+    page_height = float(evidence["page"]["height"])
+    result = []
+    for block in evidence["blocks"]:
+        _, y0, _, y1 = (float(value) for value in block["bbox"])
+        center_y = (y0 + y1) / 2
+        if center_y <= page_height * 0.08 or center_y >= page_height * 0.92:
+            continue
+        result.append(block)
+    return result
+
+
+def _visual_anchor_geometry(evidence: dict[str, Any]) -> tuple[float, float]:
+    """返回正文起点和左右栏起点差，用于识别被固定视觉切开的正文槽位。"""
+
+    page_width = float(evidence["page"]["width"])
+    page_height = float(evidence["page"]["height"])
+    blocks = [
+        block
+        for block in _body_blocks(evidence)
+        if int(block["char_count"]) >= 12
+    ]
+    if not blocks:
+        return 0.92, 0.0
+    body_start = min(float(block["bbox"][1]) for block in blocks) / page_height
+    column_starts: list[float] = []
+    for lower, upper in ((0.0, 0.5), (0.5, 1.0)):
+        starts = [
+            float(block["bbox"][1]) / page_height
+            for block in blocks
+            if lower
+            <= (
+                (float(block["bbox"][0]) + float(block["bbox"][2]))
+                / 2
+                / page_width
+            )
+            < upper
+        ]
+        column_starts.append(min(starts, default=0.92))
+    return body_start, abs(column_starts[0] - column_starts[1])
+
+
 def decide_page_role(evidence: dict[str, Any]) -> NodeJudgement:
     """依据导航关系、标题、正文规模和页序辅助事实判断一级角色。"""
 
@@ -107,11 +178,14 @@ def decide_layout_owner(evidence: dict[str, Any]) -> NodeJudgement:
     outside = int(text_meta["outside_table_chars"])
     table_count = int(tables["count"])
     table_ratio = float(tables["area_ratio"])
+    inside_table_chars = max(0, chars - outside)
     image_ratio = float(evidence["images"]["area_ratio"])
     block_count = int(text_meta["block_count"])
     text_ratio = float(text_meta["text_area_ratio"])
     borderless = evidence.get("borderless_table") or {}
     borderless_confidence = float(borderless.get("confidence") or 0)
+    credible_native_table = _credible_native_table(tables)
+    inside_ratio = inside_table_chars / max(chars, 1)
     if image_ratio >= 0.6 and block_count <= 4 and text_ratio <= 0.25:
         return _judgement(
             "body.layout_owner",
@@ -121,36 +195,39 @@ def decide_layout_owner(evidence: dict[str, Any]) -> NodeJudgement:
             ("IMAGE1", "TEXT1", "IMG1"),
             "大面积固定视觉中只有一个局部连续正文区",
         )
-    if borderless_confidence >= 0.9:
-        borderless_outside = int(borderless.get("outside_chars") or 0)
-        borderless_area = float(borderless.get("area_ratio") or 0)
-        outside_ratio = borderless_outside / max(chars, 1)
-        if borderless_outside >= 550 and borderless_area >= 0.15:
-            return _judgement(
-                "body.layout_owner",
-                "DECIDED",
-                "composite",
-                borderless_confidence,
-                ("BTABLE1", "TEXT1", "IMG1"),
-                "稳定重复行和列锚点确认无边框表格，且表外存在实质正文",
-            )
-        if borderless_outside <= 150 and outside_ratio <= 0.2:
-            return _judgement(
-                "body.layout_owner",
-                "DECIDED",
-                "table",
-                borderless_confidence,
-                ("BTABLE1", "TEXT1", "IMG1"),
-                "稳定重复行和列锚点确认无边框表格，表外只有少量附属文字",
-            )
-    if table_count and table_ratio >= 0.5 and outside < max(350, chars * 0.25):
+    if credible_native_table and (
+        (table_ratio >= 0.5 and outside < max(350, chars * 0.25))
+        or (table_ratio >= 0.4 and chars >= 1000 and inside_ratio >= 0.65)
+    ):
         return _judgement(
             "body.layout_owner",
             "DECIDED",
             "table",
             0.9,
             ("TABLE1", "TEXT1", "IMG1"),
-            "表格区域占主体且大多数文字绑定表格",
+            "多行多列表格占据页面主体，且主要文字归属于表格",
+        )
+    if borderless_confidence >= 0.9:
+        return _inconclusive(
+            "body.layout_owner",
+            "重复对齐只能确认无边框候选，仍需区分语义表格、公司资料块和卡片网格",
+            ("BTABLE1", "TEXT1", "IMG1"),
+        )
+    if (
+        table_count
+        and _narrow_semantic_table(tables)
+        and table_ratio >= 0.02
+        and inside_table_chars >= 40
+        and outside >= 350
+        and text_ratio >= 0.30
+    ):
+        return _judgement(
+            "body.layout_owner",
+            "DECIDED",
+            "composite",
+            0.9,
+            ("TABLE1", "TEXT1", "IMG1"),
+            "检测到含实质文字的小型表格，且表外正文同样构成主要内容",
         )
     if table_count and table_ratio >= 0.18 and outside >= 350:
         return _judgement(
@@ -161,7 +238,11 @@ def decide_layout_owner(evidence: dict[str, Any]) -> NodeJudgement:
             ("TABLE1", "TEXT1", "IMG1"),
             "表格和表外正文都包含实质内容",
         )
-    if chars >= 700 and table_count == 0:
+    if (
+        chars >= 700
+        and table_count == 0
+        and int(evidence["drawings"]["count"]) < 20
+    ):
         return _judgement(
             "body.layout_owner",
             "DECIDED",
@@ -181,16 +262,11 @@ def estimate_text_columns(evidence: dict[str, Any]) -> int:
     """按文字块横向起点聚类估计稳定正文栏道数量。"""
 
     page_width = float(evidence["page"]["width"])
-    page_height = float(evidence["page"]["height"])
     candidates = []
-    for block in evidence["blocks"]:
-        x0, y0, x1, _ = (float(value) for value in block["bbox"])
+    for block in _body_blocks(evidence):
+        x0, _, x1, _ = (float(value) for value in block["bbox"])
         width = x1 - x0
-        if (
-            int(block["char_count"]) < 12
-            or y0 >= page_height * 0.94
-            or width >= page_width * 0.68
-        ):
+        if int(block["char_count"]) < 12 or width >= page_width * 0.68:
             continue
         candidates.append(block)
     if not candidates:
@@ -223,11 +299,12 @@ def decide_flow_topology(evidence: dict[str, Any]) -> NodeJudgement:
     """判断正文流是单栏、多栏还是受固定视觉锚定。"""
 
     text = evidence["text"]
-    blocks = [block for block in evidence["blocks"] if int(block["char_count"]) >= 12]
+    blocks = [block for block in _body_blocks(evidence) if int(block["char_count"]) >= 12]
     block_count = len(blocks)
     image_ratio = float(evidence["images"]["area_ratio"])
     text_ratio = float(text["text_area_ratio"])
     columns = estimate_text_columns(evidence)
+    body_start, column_start_spread = _visual_anchor_geometry(evidence)
     if image_ratio >= 0.35 and block_count <= 6 and text_ratio <= 0.28:
         return _judgement(
             "body.flow.topology",
@@ -236,6 +313,20 @@ def decide_flow_topology(evidence: dict[str, Any]) -> NodeJudgement:
             0.86,
             ("IMAGE1", "TEXT1", "IMG1"),
             "大面积固定视觉中只有少量锚定文字流",
+        )
+    if (
+        image_ratio >= 0.35
+        and columns >= 2
+        and text_ratio <= 0.22
+        and (body_start >= 0.43 or column_start_spread >= 0.18)
+    ):
+        return _judgement(
+            "body.flow.topology",
+            "DECIDED",
+            "visual_anchored",
+            0.72,
+            ("IMAGE1", "TEXT1", "IMG1"),
+            "固定视觉使正文栏起点明显错位或把正文压入页面下方槽位",
         )
     if columns >= 2:
         return _judgement(
@@ -264,7 +355,24 @@ def decide_composite_kind(evidence: dict[str, Any]) -> NodeJudgement:
     table_count = int(tables["count"])
     table_ratio = float(tables["area_ratio"])
     outside = int(text["outside_table_chars"])
+    inside_table_chars = max(0, int(text["native_char_count"]) - outside)
     text_ratio = float(text["text_area_ratio"])
+    if (
+        table_count
+        and _narrow_semantic_table(tables)
+        and table_ratio >= 0.02
+        and inside_table_chars >= 40
+        and outside >= 350
+        and text_ratio >= 0.30
+    ):
+        return _judgement(
+            "body.composite.kind",
+            "DECIDED",
+            "flow_text_table",
+            0.9,
+            ("TABLE1", "TEXT1", "IMG1"),
+            "实质表格与连续正文共同构成页面主体",
+        )
     if table_count and table_ratio >= 0.08 and outside >= 350 and text_ratio >= 0.45:
         return _judgement(
             "body.composite.kind",
@@ -299,10 +407,16 @@ def decide_rule(node_key: str, evidence: dict[str, Any]) -> NodeJudgement:
 def uses_direct_table_evidence(rule: NodeJudgement) -> bool:
     """判断是否满足无需模型覆盖的高置信直接表格证据。"""
 
-    return (
+    direct_route = (
         rule.node_key == "body.layout_owner"
-        and rule.status == "DECIDED"
         and rule.selected_child in {"table", "composite"}
+    ) or (
+        rule.node_key == "body.composite.kind"
+        and rule.selected_child == "flow_text_table"
+    )
+    return (
+        direct_route
+        and rule.status == "DECIDED"
         and rule.confidence >= 0.9
         and bool(set(rule.evidence_refs) & {"TABLE1", "BTABLE1"})
     )

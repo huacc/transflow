@@ -53,10 +53,18 @@
       "catalog_version": "p9b-anchored-blocks/v1",
       "comparator_version": "p9b-anchored-blocks-comparator/v1",
       "atoms": [{"atom_id": "body.anchored_blocks.legacy_repair/v1", "priority": 10}]
+    },
+    {
+      "route": "body.flow_text.single",
+      "toolbox_id": "body.flow_text.single",
+      "toolbox_version": "0.1.0-review",
+      "catalog_version": "p9b-single/v1",
+      "comparator_version": "p9b-single-comparator/v1",
+      "atoms": [{"atom_id": "body.flow_text.single.legacy_repair/v1", "priority": 10}]
     }
   ],
   "atom_defaults": {
-    "applicable_finding_codes": ["P9_TEXT_LAYOUT_OVERFLOW"],
+    "applicable_finding_codes": ["P9_TEXT_LAYOUT_OVERFLOW", "TEXT_LAYOUT_OVERFLOW"],
     "required_facts": ["route_capability_match", "translation_complete"],
     "excluded_conditions": ["route_capability_mismatch"],
     "hard_guards": ["owner_violation", "protected_region_violation", "source_text_residual"],

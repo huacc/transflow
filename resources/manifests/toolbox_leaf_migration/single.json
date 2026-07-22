@@ -1,0 +1,30 @@
+{
+  "schema_version": "transflow.toolbox-leaf-migration-input/v1",
+  "route": "body.flow_text.single",
+  "source_document": {
+    "path": "样本/测试数据/00388_2026_annual_report_en.pdf",
+    "sha256": "01f90f3b213f368e1ed66887ec6ec862f5129c74d5c89d3c11cf5b0fda8887ee",
+    "page_count": 240
+  },
+  "target_page": {
+    "page_no": 87,
+    "page_hash": "76929fb5ae05b1272b27281ea8bc66d253d16c72f09254c5e662f54699a7f11a",
+    "spike_leaf_contract_route": "body.flow_text.single"
+  },
+  "source_language": "en",
+  "target_language": "zh-CN",
+  "authorization": {
+    "approved": true,
+    "allowed_routes": [
+      "body.flow_text.single"
+    ],
+    "allowed_operations": [
+      "CLASSIFY",
+      "TRANSLATE",
+      "RENDER",
+      "COMPARE",
+      "FINALIZE"
+    ],
+    "evidence_ref": "resources/manifests/toolbox_leaf_migration/authorizations/tm2_single.json"
+  }
+}

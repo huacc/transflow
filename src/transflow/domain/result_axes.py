@@ -10,7 +10,6 @@ from typing import Any
 
 from transflow.domain.common import require_non_empty, require_unique
 from transflow.domain.completeness import (
-    CompletenessDisposition,
     CompletenessStatus,
     TranslationCompletenessDecision,
 )
@@ -132,20 +131,12 @@ def project_page_result(
         else EngineeringClosure.FAIL
     )
     reasons: list[str] = []
-    has_keep_source = bool(
-        completeness
-        and any(
-            item.disposition is CompletenessDisposition.KEEP_SOURCE
-            for item in completeness.dispositions
-        )
-    )
     hard_product_failure = (
         completeness is None
         or completeness.status is CompletenessStatus.FAIL
         or outcome.translation_coverage is not TranslationCoverage.FULL
         or outcome.quality is Quality.FAIL
         or outcome.fallback is not Fallback.NONE
-        or has_keep_source
     )
     if engineering is EngineeringClosure.FAIL:
         reasons.append("ENGINEERING_FINAL_UNAVAILABLE")
@@ -157,8 +148,6 @@ def project_page_result(
         reasons.append("QUALITY_FAIL")
     if outcome.fallback is not Fallback.NONE:
         reasons.append("FALLBACK_PRESENT")
-    if has_keep_source:
-        reasons.append("SOURCE_TEXT_PASSTHROUGH_PRESENT")
     if (
         diagnostic is not None
         and diagnostic.status is not DiagnosticStatus.TRANSLATED_DIAGNOSTIC_READY

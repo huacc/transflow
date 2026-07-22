@@ -5,11 +5,13 @@ from __future__ import annotations
 import hashlib
 import logging
 import re
-from dataclasses import dataclass
+from collections.abc import Mapping
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Protocol
 
 from transflow.domain.completeness import (
+    SEMANTIC_MAP_SCHEMA_V2,
     CompletenessCheckpoint,
     CompletenessDisposition,
     CompletenessError,
@@ -32,7 +34,7 @@ from transflow.domain.translation import (
     TranslationBundle,
     TranslationUnit,
 )
-from transflow.pdf_kernel.facts import ExtractedPageFacts, RectTuple
+from transflow.pdf_kernel.facts import ExtractedPageFacts, KernelTextFact, RectTuple
 from transflow.pdf_kernel.text_inventory import freeze_page_text_inventory
 from transflow.ports.translation import TranslationPort
 from transflow.toolboxes.contracts import PageTemplate
@@ -42,6 +44,7 @@ APPLICATION_ROOT = Path(__file__).resolve().parent.parent
 PAGE_NUMBER_PATTERN = re.compile(r"^\s*(?:[ivxlcdm]+|\d+)(?:\s*/\s*\d+)?\s*$", re.IGNORECASE)
 URL_EMAIL_PATTERN = re.compile(r"(?:https?://\S+|www\.\S+|[\w.+-]+@[\w.-]+\.\w+)", re.IGNORECASE)
 NUMERIC_PATTERN = re.compile(r"^[\s\d,.:;()%+\-/$€£¥]+$")
+CURRENCY_SCALE_PATTERN = re.compile(r"^[$€£¥]\s*(?:k|m|mn|b|bn|t)$", re.IGNORECASE)
 CODE_PATTERN = re.compile(r"^(?=.*[A-Z0-9])[A-Z0-9][A-Z0-9._/\-]{1,31}$")
 REQUIRED_LITERAL_PATTERN = re.compile(
     r"(?:https?://\S+|www\.\S+|[\w.+-]+@[\w.-]+\.\w+|"
@@ -108,12 +111,20 @@ def extract_required_literals(source_text: str) -> tuple[str, ...]:
     """按出现顺序提取数字、单位、代码、邮箱和网址等必保留字面量。"""
 
     literals: list[str] = []
+    words = LATIN_WORD_PATTERN.findall(source_text)
+    all_caps_heading = (
+        bool(words)
+        and not re.search(r"[a-z]", source_text)
+        and all(word.isupper() for word in words)
+    )
     prefix = re.match(r"^\s*((?:\d+|[A-Za-z])[.)])\s+", source_text)
     if prefix is not None:
         literals.append(prefix.group(1))
-    literals.extend(
-        match.group(0).strip() for match in REQUIRED_LITERAL_PATTERN.finditer(source_text)
-    )
+    for match in REQUIRED_LITERAL_PATTERN.finditer(source_text):
+        literal = match.group(0).strip()
+        if all_caps_heading and literal.isalpha() and literal.isupper():
+            continue
+        literals.append(literal)
     return tuple(dict.fromkeys(literals))
 
 
@@ -125,7 +136,7 @@ def _keep_source_reason(text: str) -> KeepSourceReason | None:
         return KeepSourceReason.PAGE_NUMBER
     if URL_EMAIL_PATTERN.fullmatch(stripped):
         return KeepSourceReason.URL_OR_EMAIL
-    if NUMERIC_PATTERN.fullmatch(stripped) or (
+    if CURRENCY_SCALE_PATTERN.fullmatch(stripped) or NUMERIC_PATTERN.fullmatch(stripped) or (
         stripped and not any(character.isalpha() for character in stripped)
     ):
         return KeepSourceReason.NUMERIC_OR_SYMBOLIC_LITERAL
@@ -137,17 +148,9 @@ def _keep_source_reason(text: str) -> KeepSourceReason | None:
 
 
 def _requested_unit_keep_source_reason(text: str) -> KeepSourceReason | None:
-    """只保留无需语义翻译的机械内容；叶明确请求的代码和缩写仍进入翻译门禁。"""
+    """复用 Kernel 的机械预授权，禁止叶把已冻结处置改回 TRANSLATE。"""
 
-    reason = _keep_source_reason(text)
-    if reason in {
-        KeepSourceReason.ALREADY_TARGET_LANGUAGE,
-        KeepSourceReason.NUMERIC_OR_SYMBOLIC_LITERAL,
-        KeepSourceReason.PAGE_NUMBER,
-        KeepSourceReason.URL_OR_EMAIL,
-    }:
-        return reason
-    return None
+    return _keep_source_reason(text)
 
 
 def _canonical_records(
@@ -185,6 +188,68 @@ def _canonical_records(
                 item.object_id,
             ),
         )
+    )
+
+
+def _projected_inventory_ids(
+    record: _NativeTextRecord,
+    facts: ExtractedPageFacts,
+    inventory_by_id: Mapping[str, object],
+) -> tuple[str, ...]:
+    """把 span 或 block 机械投影到独立 Inventory 的不重叠文字对象。"""
+
+    if record.object_id in inventory_by_id:
+        return (record.object_id,)
+    block = next(
+        (
+            item
+            for item in facts.objects
+            if item.object_id == record.object_id
+            and item.kind == "text"
+            and not item.protected
+        ),
+        None,
+    )
+    if block is None:
+        return ()
+    spans_by_block: dict[int, list[KernelTextFact]] = {}
+    for item in facts.text_spans:
+        if item.object_id in inventory_by_id:
+            spans_by_block.setdefault(item.block_index, []).append(item)
+    exact_groups: list[tuple[float, int, tuple[str, ...]]] = []
+    normalized_block_text = " ".join(block.text.split())
+    for block_index, items in spans_by_block.items():
+        ordered = tuple(sorted(items, key=lambda item: (item.line_index, item.span_index)))
+        lines: dict[int, list[KernelTextFact]] = {}
+        for item in ordered:
+            lines.setdefault(item.line_index, []).append(item)
+        projected_text = " ".join(
+            "".join(item.text for item in line_items).strip()
+            for _, line_items in sorted(lines.items())
+        )
+        if " ".join(projected_text.split()) != normalized_block_text:
+            continue
+        projected_bbox = (
+            min(item.bbox[0] for item in ordered),
+            min(item.bbox[1] for item in ordered),
+            max(item.bbox[2] for item in ordered),
+            max(item.bbox[3] for item in ordered),
+        )
+        distance = sum(
+            abs(left - right)
+            for left, right in zip(block.bbox, projected_bbox, strict=True)
+        )
+        exact_groups.append(
+            (distance, block_index, tuple(item.object_id for item in ordered))
+        )
+    if exact_groups:
+        return min(exact_groups, key=lambda item: (item[0], item[1]))[2]
+    return tuple(
+        item.object_id
+        for item in facts.text_spans
+        if item.object_id in inventory_by_id
+        and block.bbox[0] <= (item.bbox[0] + item.bbox[2]) / 2 <= block.bbox[2]
+        and block.bbox[1] <= (item.bbox[1] + item.bbox[3]) / 2 <= block.bbox[3]
     )
 
 
@@ -259,88 +324,140 @@ def build_semantic_unit_map(
         owned_object_id = object_by_unit.get(batch_unit.unit_id)
         if owned_object_id is not None:
             unit_by_object[owned_object_id] = batch_unit
+    inventory_by_id = {item.object_id: item for item in frozen_inventory.items}
     entries: list[SemanticUnit] = []
+    claimed_inventory_ids: set[str] = set()
     included_batch_ids: set[str] = set()
-    top_margin = facts.page.height_points * 0.08
-    bottom_margin = facts.page.height_points * 0.92
     for record in records:
         owned_unit = unit_by_object.get(record.object_id)
-        if owned_unit is not None:
-            included_batch_ids.add(owned_unit.unit_id)
-            reason = _requested_unit_keep_source_reason(owned_unit.source_text)
-            disposition = (
-                SemanticUnitDisposition.KEEP_SOURCE
-                if reason is not None
-                else SemanticUnitDisposition.TRANSLATE
-            )
-            entries.append(
-                SemanticUnit(
-                    unit_id=owned_unit.unit_id,
-                    object_id=record.object_id,
-                    container_id=owned_unit.region_id,
-                    owner=template.owner,
-                    ordinal=len(entries),
-                    source_text=owned_unit.source_text,
-                    source_hash=hashlib.sha256(owned_unit.source_text.encode("utf-8")).hexdigest(),
-                    required_literals=extract_required_literals(owned_unit.source_text),
-                    disposition=disposition,
-                    keep_source_reason=reason,
-                )
-            )
+        if owned_unit is None:
             continue
-        reason = _keep_source_reason(record.text)
-        owner = template.owner
-        if reason is None and (record.bbox[3] <= top_margin or record.bbox[1] >= bottom_margin):
-            reason = KeepSourceReason.SHARED_MARGIN_OWNER
-            owner = "shared.margin"
+        projected_ids = _projected_inventory_ids(record, facts, inventory_by_id)
+        if not projected_ids:
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "翻译单元无法投影到 PageTextInventory",
+            )
+        included_batch_ids.add(owned_unit.unit_id)
+        if record.bbox[3] <= facts.page.height_points * 0.08:
+            owner = "shared.margin.header"
+        elif record.bbox[1] >= facts.page.height_points * 0.92:
+            owner = "shared.margin.footer"
+        else:
+            owner = template.owner
+        reason = _requested_unit_keep_source_reason(owned_unit.source_text)
+        if reason is not None and any(
+            inventory_by_id[object_id].disposition is not InventoryDisposition.KEEP_SOURCE
+            for object_id in projected_ids
+        ):
+            reason = None
         disposition = (
             SemanticUnitDisposition.KEEP_SOURCE
             if reason is not None
-            else SemanticUnitDisposition.UNRESOLVED
+            else SemanticUnitDisposition.TRANSLATE
         )
+        if disposition is SemanticUnitDisposition.KEEP_SOURCE:
+            source_object_ids = projected_ids
+        else:
+            source_object_ids = tuple(
+                object_id
+                for object_id in projected_ids
+                if inventory_by_id[object_id].disposition is InventoryDisposition.TRANSLATE
+            )
+            if not source_object_ids:
+                raise DomainContractError(
+                    ErrorCode.INVALID_CONTRACT,
+                    "要求翻译的单元没有 Kernel 预授权的 TRANSLATE 对象",
+                )
+        claimed_inventory_ids.update(source_object_ids)
         entries.append(
             SemanticUnit(
-                unit_id=hashlib.sha256(
-                    f"{facts.page_identity}\0{record.object_id}\0semantic".encode("ascii")
-                ).hexdigest(),
+                unit_id=owned_unit.unit_id,
                 object_id=record.object_id,
-                container_id=f"{owner}-p{template.context.page_no:04d}",
+                container_id=owned_unit.region_id,
                 owner=owner,
                 ordinal=len(entries),
-                source_text=record.text,
-                source_hash=hashlib.sha256(record.text.encode("utf-8")).hexdigest(),
-                required_literals=extract_required_literals(record.text),
+                source_text=owned_unit.source_text,
+                source_hash=hashlib.sha256(
+                    owned_unit.source_text.encode("utf-8")
+                ).hexdigest(),
+                required_literals=extract_required_literals(owned_unit.source_text),
                 disposition=disposition,
                 keep_source_reason=reason,
+                source_object_ids=source_object_ids,
             )
         )
     for unit in batch_units:
-        if unit.unit_id in included_batch_ids:
+        if unit.unit_id not in included_batch_ids:
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                f"翻译请求包含 Inventory 无法追溯的单元 unit_id={unit.unit_id}",
+            )
+    top_margin = facts.page.height_points * 0.08
+    bottom_margin = facts.page.height_points * 0.92
+    for item in frozen_inventory.items:
+        if item.object_id in claimed_inventory_ids:
             continue
-        reason = _requested_unit_keep_source_reason(unit.source_text)
+        native_record = native_records.get(item.object_id)
+        if native_record is None:
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "PageTextInventory 对象无法回溯到 Kernel 文字事实",
+            )
+        if native_record.bbox[3] <= top_margin:
+            owner = "shared.margin.header"
+        elif native_record.bbox[1] >= bottom_margin:
+            owner = "shared.margin.footer"
+        else:
+            owner = template.owner
+        reason = (
+            KeepSourceReason(item.keep_source_reason)
+            if item.keep_source_reason is not None
+            else None
+        )
+        if item.disposition is InventoryDisposition.KEEP_SOURCE:
+            disposition = SemanticUnitDisposition.KEEP_SOURCE
+        elif item.disposition is InventoryDisposition.PROTECTED:
+            disposition = SemanticUnitDisposition.PROTECTED
+        elif item.disposition is InventoryDisposition.UNSUPPORTED:
+            disposition = SemanticUnitDisposition.UNSUPPORTED
+        else:
+            disposition = SemanticUnitDisposition.UNRESOLVED
         entries.append(
             SemanticUnit(
-                unit_id=unit.unit_id,
-                object_id=object_by_unit.get(unit.unit_id, f"unit-object-{unit.unit_id}"),
-                container_id=unit.region_id,
-                owner=template.owner,
+                unit_id=hashlib.sha256(
+                    f"{facts.page_identity}\0{item.object_id}\0semantic".encode("ascii")
+                ).hexdigest(),
+                object_id=item.object_id,
+                container_id=f"{owner}-p{template.context.page_no:04d}",
+                owner=owner,
                 ordinal=len(entries),
-                source_text=unit.source_text,
-                source_hash=hashlib.sha256(unit.source_text.encode("utf-8")).hexdigest(),
-                required_literals=extract_required_literals(unit.source_text),
-                disposition=(
-                    SemanticUnitDisposition.KEEP_SOURCE
-                    if reason is not None
-                    else SemanticUnitDisposition.TRANSLATE
-                ),
+                source_text=native_record.text,
+                source_hash=item.source_hash,
+                required_literals=extract_required_literals(native_record.text),
+                disposition=disposition,
                 keep_source_reason=reason,
+                source_object_ids=(item.object_id,),
+                disposition_reason=item.disposition_reason,
             )
         )
+    bbox_by_id = {item.object_id: item.bbox for item in native_records.values()}
+    entries.sort(
+        key=lambda entry: (
+            min(bbox_by_id[object_id][1] for object_id in entry.source_object_ids),
+            min(bbox_by_id[object_id][0] for object_id in entry.source_object_ids),
+            entry.unit_id,
+        )
+    )
+    ordered_entries = tuple(
+        replace(entry, ordinal=ordinal) for ordinal, entry in enumerate(entries)
+    )
     semantic_map = SemanticUnitMap(
         map_id=f"semantic-{template.template_id}",
         page_no=template.context.page_no,
         source_hash=template.context.source_hash,
-        entries=tuple(entries),
+        entries=ordered_entries,
+        schema_version=SEMANTIC_MAP_SCHEMA_V2,
     )
     validate_inventory_coverage(frozen_inventory, semantic_map, facts)
     return semantic_map
@@ -358,6 +475,53 @@ def validate_inventory_coverage(
         inventory.page_no,
     )
     inventory_by_id = {item.object_id: item for item in inventory.items}
+    if semantic_map.schema_version == SEMANTIC_MAP_SCHEMA_V2:
+        covered_ids = tuple(
+            object_id
+            for mapped in semantic_map.entries
+            for object_id in mapped.source_object_ids
+        )
+        if set(covered_ids) != set(inventory_by_id):
+            missing = sorted(set(inventory_by_id) - set(covered_ids))
+            added = sorted(set(covered_ids) - set(inventory_by_id))
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "PageTextInventory/SemanticUnitMap v2 双向覆盖失败 "
+                f"missing={missing} added={added}",
+            )
+        for mapped in semantic_map.entries:
+            for object_id in mapped.source_object_ids:
+                inventory_item = inventory_by_id[object_id]
+                allowed = {
+                    InventoryDisposition.TRANSLATE: {
+                        SemanticUnitDisposition.TRANSLATE,
+                        SemanticUnitDisposition.UNRESOLVED,
+                    },
+                    InventoryDisposition.KEEP_SOURCE: {
+                        SemanticUnitDisposition.KEEP_SOURCE,
+                    },
+                    InventoryDisposition.PROTECTED: {
+                        SemanticUnitDisposition.PROTECTED,
+                    },
+                    InventoryDisposition.UNSUPPORTED: {
+                        SemanticUnitDisposition.UNSUPPORTED,
+                    },
+                }[inventory_item.disposition]
+                if mapped.disposition not in allowed:
+                    raise DomainContractError(
+                        ErrorCode.INVALID_CONTRACT,
+                        f"文字对象处置与 Kernel 预授权不一致 object_id={object_id}",
+                    )
+                if (
+                    mapped.object_id == object_id
+                    and len(mapped.source_object_ids) == 1
+                    and mapped.source_hash != inventory_item.source_hash
+                ):
+                    raise DomainContractError(
+                        ErrorCode.INVALID_CONTRACT,
+                        "文字内容哈希在映射期间变化",
+                    )
+        return
     map_by_id = {item.object_id: item for item in semantic_map.entries}
     exact_identity = set(inventory_by_id) == set(map_by_id)
     if not exact_identity and facts is None:
@@ -578,6 +742,23 @@ def adjudicate_translation_candidates(
                 )
             )
             continue
+        if unit.disposition is SemanticUnitDisposition.PROTECTED:
+            dispositions.append(
+                SemanticUnitDecision(unit.unit_id, CompletenessDisposition.PROTECTED)
+            )
+            continue
+        if unit.disposition is SemanticUnitDisposition.UNSUPPORTED:
+            errors.append(
+                CompletenessError(
+                    CompletenessErrorCode.UNSUPPORTED_UNIT,
+                    unit.unit_id,
+                    f"当前能力不支持该文字对象:{unit.disposition_reason}",
+                )
+            )
+            dispositions.append(
+                SemanticUnitDecision(unit.unit_id, CompletenessDisposition.FAILED)
+            )
+            continue
         if unit.disposition is SemanticUnitDisposition.UNRESOLVED:
             errors.append(
                 CompletenessError(
@@ -639,18 +820,25 @@ def _port_failure_decision(
 
     failed_ids = (
         semantic_map.translated_unit_ids
+        or semantic_map.unsupported_unit_ids
         or semantic_map.unresolved_unit_ids
         or (f"page-{semantic_map.page_no}",)
     )
     dispositions = tuple(
         SemanticUnitDecision(
             item.unit_id,
-            (
-                CompletenessDisposition.KEEP_SOURCE
-                if item.disposition is SemanticUnitDisposition.KEEP_SOURCE
+            CompletenessDisposition.KEEP_SOURCE
+            if item.disposition is SemanticUnitDisposition.KEEP_SOURCE
+            else (
+                CompletenessDisposition.PROTECTED
+                if item.disposition is SemanticUnitDisposition.PROTECTED
                 else CompletenessDisposition.FAILED
             ),
-            item.keep_source_reason,
+            (
+                item.keep_source_reason
+                if item.disposition is SemanticUnitDisposition.KEEP_SOURCE
+                else None
+            ),
         )
         for item in semantic_map.entries
     )
@@ -705,7 +893,7 @@ class TranslationCompletenessGate:
                     (),
                     True,
                 )
-        if semantic_map.unresolved_unit_ids:
+        if semantic_map.unresolved_unit_ids or semantic_map.unsupported_unit_ids:
             decision = adjudicate_translation_candidates(semantic_map, ())
             return CompletenessGateResult(semantic_map, None, decision, ())
         if batch is None:

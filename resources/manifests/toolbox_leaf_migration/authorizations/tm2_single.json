@@ -1,0 +1,16 @@
+{
+  "schema_version": "transflow.toolbox-leaf-migration-authorization/v1",
+  "stage": "TM2",
+  "route": "body.flow_text.single",
+  "approved": true,
+  "authorized_at": "2026-07-21T12:10:13+08:00",
+  "basis": "负责人明确要求按计划执行 TM2，并授权使用提供的千问配置",
+  "allowed_operations": [
+    "CLASSIFY",
+    "TRANSLATE",
+    "RENDER",
+    "COMPARE",
+    "FINALIZE"
+  ],
+  "credential_policy": "PROCESS_ENVIRONMENT_ONLY_NO_PERSISTENCE"
+}

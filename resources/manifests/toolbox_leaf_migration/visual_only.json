@@ -1,0 +1,51 @@
+{
+  "schema_version": "transflow.toolbox-leaf-migration-input/v1",
+  "route": "visual_only",
+  "source_document": {
+    "path": "样本/测试数据/00388_2026_annual_report_en.pdf",
+    "sha256": "01f90f3b213f368e1ed66887ec6ec862f5129c74d5c89d3c11cf5b0fda8887ee",
+    "page_count": 240
+  },
+  "target_page": {
+    "page_no": 2,
+    "page_hash": "bb39e68ee2bbbdfefa7b8c94cc5afb7bbcdfccaaf20200af10da67c03b9483c6",
+    "spike_leaf_contract_route": "visual_only"
+  },
+  "calibration_pages": [
+    {
+      "kind": "pure_image",
+      "page_no": 2,
+      "page_hash": "bb39e68ee2bbbdfefa7b8c94cc5afb7bbcdfccaaf20200af10da67c03b9483c6"
+    },
+    {
+      "kind": "pure_vector",
+      "page_no": 239,
+      "page_hash": "6c076a843539f6b6693c988b2b0948fb2c4948f1a150a7e4f021994764608c18"
+    },
+    {
+      "kind": "scanned_page",
+      "page_no": 28,
+      "page_hash": "3f96c886de43c68883ebc9081dc2377abb2b8ea2dddb3ba313c66851359e69f3"
+    },
+    {
+      "kind": "mixed_no_editable_text",
+      "page_no": 5,
+      "page_hash": "e1c9989bf512352c298aeb1af98cd7996b4369796835f9626883d0fc234ee151"
+    }
+  ],
+  "source_language": "en",
+  "target_language": "zh-CN",
+  "authorization": {
+    "approved": true,
+    "allowed_routes": [
+      "visual_only"
+    ],
+    "allowed_operations": [
+      "CLASSIFY",
+      "RENDER",
+      "COMPARE",
+      "FINALIZE"
+    ],
+    "evidence_ref": "resources/manifests/toolbox_leaf_migration/authorizations/tm1_visual_only.json"
+  }
+}

@@ -78,6 +78,10 @@ class PatchOperation:
     replacement_text: str | None = None
     font_id: str | None = None
     font_size: float | None = None
+    redaction_rects: tuple[tuple[float, float, float, float], ...] = ()
+    color_srgb: int | None = None
+    line_height: float | None = None
+    preserve_drawing_overlap: bool = False
 
     def __post_init__(self) -> None:
         """校验操作身份、区域、类型和内容指纹。"""
@@ -99,6 +103,16 @@ class PatchOperation:
             require_non_empty(self.font_id, "font_id")
         if self.font_size is not None and self.font_size <= 0:
             raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 字号必须为正")
+        for redaction_rect in self.redaction_rects:
+            x0, y0, x1, y1 = redaction_rect
+            if x0 < 0 or y0 < 0 or x1 <= x0 or y1 <= y0:
+                raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 擦除矩形无效")
+        if len(set(self.redaction_rects)) != len(self.redaction_rects):
+            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 擦除矩形不得重复")
+        if self.color_srgb is not None and not 0 <= self.color_srgb <= 0xFFFFFF:
+            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 文字颜色无效")
+        if self.line_height is not None and self.line_height <= 0:
+            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 行距必须为正")
 
 
 @dataclass(frozen=True, slots=True)
@@ -163,6 +177,14 @@ class PagePatch:
                     replacement_text=item.get("replacement_text"),
                     font_id=item.get("font_id"),
                     font_size=item.get("font_size"),
+                    redaction_rects=tuple(
+                        tuple(rect) for rect in item.get("redaction_rects", ())
+                    ),
+                    color_srgb=item.get("color_srgb"),
+                    line_height=item.get("line_height"),
+                    preserve_drawing_overlap=bool(
+                        item.get("preserve_drawing_overlap", False)
+                    ),
                 )
                 for item in payload["operations"]
             ),

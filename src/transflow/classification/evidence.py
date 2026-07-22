@@ -46,6 +46,64 @@ def _inside(rect: tuple[float, float, float, float], point: tuple[float, float])
     return x0 <= point[0] <= x1 and y0 <= point[1] <= y1
 
 
+def _cluster_count(values: list[float], tolerance: float) -> int:
+    """按坐标容差计算候选表格的稳定行数或列数。"""
+
+    clusters: list[list[float]] = []
+    for value in sorted(values):
+        cluster = next(
+            (
+                items
+                for items in clusters
+                if abs(value - statistics.median(items)) <= tolerance
+            ),
+            None,
+        )
+        if cluster is None:
+            clusters.append([value])
+        else:
+            cluster.append(value)
+    return len(clusters)
+
+
+def _table_structure(
+    cell_bboxes: tuple[tuple[float, float, float, float], ...],
+    table_bbox: tuple[float, float, float, float],
+    layout_spans: list[dict[str, Any]],
+    page_width: float,
+    page_height: float,
+) -> dict[str, Any]:
+    """把候选框补充为可区分窄表、装饰框和图表网格的拓扑事实。"""
+
+    row_count = _cluster_count(
+        [float(cell[1]) for cell in cell_bboxes],
+        max(0.5, page_height * 0.001),
+    )
+    column_count = _cluster_count(
+        [float(cell[0]) for cell in cell_bboxes],
+        max(0.5, page_width * 0.001),
+    )
+    cell_count = len(cell_bboxes)
+    capacity = max(row_count * column_count, 1)
+    text_object_count = sum(
+        _inside(
+            table_bbox,
+            (
+                (float(span["bbox"][0]) + float(span["bbox"][2])) / 2,
+                (float(span["bbox"][1]) + float(span["bbox"][3])) / 2,
+            ),
+        )
+        for span in layout_spans
+    )
+    return {
+        "cell_count": cell_count,
+        "column_count": column_count,
+        "grid_coverage": round(min(cell_count / capacity, 1.0), 5),
+        "row_count": row_count,
+        "text_object_count": text_object_count,
+    }
+
+
 def _empty_borderless(text_blocks: list[dict[str, Any]]) -> dict[str, Any]:
     """构造没有可靠无边框表格时的完整证据对象。"""
 
@@ -293,6 +351,16 @@ def build_evidence(
         for span in classification.layout_spans
     ]
     table_rects = classification.table_bboxes
+    table_details = [
+        _table_structure(
+            table.cell_bboxes,
+            table.bbox,
+            layout_spans,
+            width,
+            height,
+        )
+        for table in extracted.table_objects
+    ]
     table_area_ratio = min(
         sum(max(0.0, (rect[2] - rect[0]) * (rect[3] - rect[1])) for rect in table_rects)
         / page_area,
@@ -358,6 +426,7 @@ def build_evidence(
             "area_ratio": round(table_area_ratio, 5),
             "bboxes": [[round(value, 2) for value in rect] for rect in table_rects],
             "count": len(table_rects),
+            "details": table_details,
             "evidence_id": "TABLE1",
         },
         "text": {

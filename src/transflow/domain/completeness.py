@@ -23,6 +23,7 @@ from transflow.domain.translation import TranslationBundle
 LOGGER = logging.getLogger("transflow.domain.completeness")
 PACKAGE_ROOT = Path(__file__).resolve().parent.parent
 SEMANTIC_MAP_SCHEMA = "transflow.semantic-unit-map/v1"
+SEMANTIC_MAP_SCHEMA_V2 = "transflow.semantic-unit-map/v2"
 COMPLETENESS_SCHEMA = "transflow.translation-completeness/v1"
 PLACEHOLDER_PATTERN = re.compile(
     r"(?:\[\s*(?:待翻译|占位|placeholder)\s*\]|\{\{.+?\}\}|\bTODO\b|\?{3,})",
@@ -40,6 +41,8 @@ class SemanticUnitDisposition(StrEnum):
 
     TRANSLATE = "TRANSLATE"
     KEEP_SOURCE = "KEEP_SOURCE"
+    PROTECTED = "PROTECTED"
+    UNSUPPORTED = "UNSUPPORTED"
     UNRESOLVED = "UNRESOLVED"
 
 
@@ -67,6 +70,7 @@ class CompletenessDisposition(StrEnum):
 
     TRANSLATED = "TRANSLATED"
     KEEP_SOURCE = "KEEP_SOURCE"
+    PROTECTED = "PROTECTED"
     FAILED = "FAILED"
 
 
@@ -82,6 +86,7 @@ class CompletenessErrorCode(StrEnum):
     UNJUSTIFIED_SOURCE_COPY = "UNJUSTIFIED_SOURCE_COPY"
     REQUIRED_LITERAL_BROKEN = "REQUIRED_LITERAL_BROKEN"
     SOURCE_LANGUAGE_RESIDUAL = "SOURCE_LANGUAGE_RESIDUAL"
+    UNSUPPORTED_UNIT = "UNSUPPORTED_UNIT"
     UNRESOLVED_UNIT = "UNRESOLVED_UNIT"
     PORT_FAILURE = "PORT_FAILURE"
 
@@ -100,6 +105,8 @@ class SemanticUnit:
     required_literals: tuple[str, ...]
     disposition: SemanticUnitDisposition
     keep_source_reason: KeepSourceReason | None = None
+    source_object_ids: tuple[str, ...] = ()
+    disposition_reason: str | None = None
 
     def __post_init__(self) -> None:
         """校验单元身份、源哈希、顺序及 KEEP_SOURCE 原因闭合。"""
@@ -118,6 +125,11 @@ class SemanticUnit:
         if self.ordinal < 0:
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "SemanticUnit ordinal 不得为负")
         require_unique(self.required_literals, "required_literals")
+        if not self.source_object_ids:
+            object.__setattr__(self, "source_object_ids", (self.object_id,))
+        require_unique(self.source_object_ids, "source_object_ids")
+        if any(not object_id for object_id in self.source_object_ids):
+            raise DomainContractError(ErrorCode.INVALID_IDENTITY, "源文字对象身份不得为空")
         if self.disposition is SemanticUnitDisposition.KEEP_SOURCE:
             if self.keep_source_reason is None:
                 raise DomainContractError(
@@ -128,6 +140,20 @@ class SemanticUnit:
             raise DomainContractError(
                 ErrorCode.INVALID_CONTRACT,
                 "非 KEEP_SOURCE 单元不得携带保留原因",
+            )
+        if self.disposition in {
+            SemanticUnitDisposition.PROTECTED,
+            SemanticUnitDisposition.UNSUPPORTED,
+        }:
+            if not self.disposition_reason:
+                raise DomainContractError(
+                    ErrorCode.INVALID_CONTRACT,
+                    "PROTECTED/UNSUPPORTED 单元必须携带结构化原因",
+                )
+        elif self.disposition_reason is not None:
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "其他语义处置不得携带能力原因",
             )
 
     @classmethod
@@ -146,6 +172,15 @@ class SemanticUnit:
             required_literals=tuple(str(item) for item in payload["required_literals"]),
             disposition=SemanticUnitDisposition(payload["disposition"]),
             keep_source_reason=KeepSourceReason(reason) if reason is not None else None,
+            source_object_ids=tuple(
+                str(item)
+                for item in payload.get("source_object_ids", (payload["object_id"],))
+            ),
+            disposition_reason=(
+                str(payload["disposition_reason"])
+                if payload.get("disposition_reason") is not None
+                else None
+            ),
         )
 
 
@@ -164,12 +199,29 @@ class SemanticUnitMap:
 
         require_non_empty(self.map_id, "map_id")
         require_sha256(self.source_hash, "source_hash")
-        if self.schema_version != SEMANTIC_MAP_SCHEMA:
+        if self.schema_version not in {SEMANTIC_MAP_SCHEMA, SEMANTIC_MAP_SCHEMA_V2}:
             raise DomainContractError(ErrorCode.INVALID_CONTRACT, "SemanticUnitMap Schema 无效")
+        if self.schema_version == SEMANTIC_MAP_SCHEMA and any(
+            item.disposition
+            in {SemanticUnitDisposition.PROTECTED, SemanticUnitDisposition.UNSUPPORTED}
+            for item in self.entries
+        ):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "v1 SemanticUnitMap 不支持 PROTECTED/UNSUPPORTED",
+            )
         if self.page_no < 1:
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "SemanticUnitMap page_no 无效")
         require_unique(tuple(item.unit_id for item in self.entries), "entries.unit_id")
         require_unique(tuple(item.object_id for item in self.entries), "entries.object_id")
+        require_unique(
+            tuple(
+                object_id
+                for item in self.entries
+                for object_id in item.source_object_ids
+            ),
+            "entries.source_object_ids",
+        )
         if tuple(item.ordinal for item in self.entries) != tuple(range(len(self.entries))):
             raise DomainContractError(
                 ErrorCode.INVALID_IDENTITY,
@@ -202,29 +254,43 @@ class SemanticUnitMap:
             if item.disposition is SemanticUnitDisposition.UNRESOLVED
         )
 
+    @property
+    def unsupported_unit_ids(self) -> tuple[str, ...]:
+        """返回已明确缺少当前能力、必须阻断产品 PASS 的单元。"""
+
+        return tuple(
+            item.unit_id
+            for item in self.entries
+            if item.disposition is SemanticUnitDisposition.UNSUPPORTED
+        )
+
     def _core_dict(self) -> dict[str, Any]:
         """构造用于哈希的无自引用规范对象。"""
 
+        entries: list[dict[str, Any]] = []
+        for item in self.entries:
+            payload: dict[str, Any] = {
+                "container_id": item.container_id,
+                "disposition": item.disposition.value,
+                "keep_source_reason": (
+                    item.keep_source_reason.value
+                    if item.keep_source_reason is not None
+                    else None
+                ),
+                "object_id": item.object_id,
+                "ordinal": item.ordinal,
+                "owner": item.owner,
+                "required_literals": list(item.required_literals),
+                "source_hash": item.source_hash,
+                "source_text": item.source_text,
+                "unit_id": item.unit_id,
+            }
+            if self.schema_version == SEMANTIC_MAP_SCHEMA_V2:
+                payload["disposition_reason"] = item.disposition_reason
+                payload["source_object_ids"] = list(item.source_object_ids)
+            entries.append(payload)
         return {
-            "entries": [
-                {
-                    "container_id": item.container_id,
-                    "disposition": item.disposition.value,
-                    "keep_source_reason": (
-                        item.keep_source_reason.value
-                        if item.keep_source_reason is not None
-                        else None
-                    ),
-                    "object_id": item.object_id,
-                    "ordinal": item.ordinal,
-                    "owner": item.owner,
-                    "required_literals": list(item.required_literals),
-                    "source_hash": item.source_hash,
-                    "source_text": item.source_text,
-                    "unit_id": item.unit_id,
-                }
-                for item in self.entries
-            ],
+            "entries": entries,
             "map_id": self.map_id,
             "page_no": self.page_no,
             "schema_version": self.schema_version,

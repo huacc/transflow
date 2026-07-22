@@ -33,7 +33,9 @@ FORBIDDEN_IDENTITY_KEYS = {
     "sample_id",
     "source_path",
 }
-HOST_PATH_PATTERN = re.compile(r"(?i)(?:[a-z]:\\|[a-z]:/|\.pdf(?:$|[?#\s]))")
+HOST_PATH_PATTERN = re.compile(
+    r"(?i)(?:(?<![a-z0-9])[a-z]:[\\/]|\.pdf(?:$|[?#\s]))"
+)
 
 
 def _canonical_sha256(value: object) -> str:

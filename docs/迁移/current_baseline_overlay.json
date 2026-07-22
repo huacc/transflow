@@ -1,0 +1,33 @@
+{
+  "authorization": {
+    "authorized_at": "2026-07-20T23:31:00+08:00",
+    "authorized_by": "项目负责人",
+    "basis": "当前会话明确要求执行 P9A 及全部二级子计划"
+  },
+  "correction": {
+    "current_fact": "完整翻译可形成诊断候选；无法形成完整翻译时记录 NO_TRANSLATED_CANDIDATE",
+    "effective_scope": "P9A 及后续阶段，不改判 P5-P9/P9C 历史结论",
+    "incorrect_attribution": "硬失败不产候选"
+  },
+  "documents": {
+    "design": {
+      "new_sha256": "29f16db2bc78905a8daef690724df9ef41fdea263e954211f65354e140729a81",
+      "old_sha256": "4ca31f883ebcc024a5321841318389f0d755a6ab609c35df7e3a8ef8b622a191",
+      "path": "docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md"
+    },
+    "plan": {
+      "new_sha256": "bf5a62ed7a47f8b9c1b6ff28ae0d321a1d85cdce8ce39296494d78c2ee459db5",
+      "old_sha256": "9da35eb8dd6daa48c8f1aa64bfce477dc6d456000b972a740e3571d55e6251bc",
+      "path": "docs/计划/Transflow_PDF翻译排版引擎_详细开发计划_v0.1.md"
+    }
+  },
+  "effective_point": "G9A-0 前置硬停点",
+  "historical_assets": {
+    "baseline_manifest_sha256": "c42b1783f9e0b4b64d75e49ea6e768c27c28e10978e11a0e583077073735453e",
+    "migration_ledger_sha256": "a33ac22f0b40f0c8543c9a7fe4222696089a5f63b3939384f513b3c8393b67ab",
+    "traceability_matrix_sha256": "62345896d0132d8f9f639594789cc616c2e7e8af7e19e3758d078f1685f961e6"
+  },
+  "revision_anchor_commit": "fa6bfbe3e5189e1797f30ec218e447cc2c0aa06f",
+  "schema_version": "transflow.current-baseline-overlay/v1",
+  "stage": "P9A.0"
+}

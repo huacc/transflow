@@ -22,6 +22,7 @@ from transflow.application.document_layout_memory import (
 )
 from transflow.application.page_pipeline import ROUTE_PASSTHROUGH
 from transflow.classification.engine import ClassificationEngine, ClassifiedPage
+from transflow.domain.classification import ClassificationRoute
 from transflow.domain.errors import ErrorCode, PortCallError
 from transflow.domain.jobs import DocumentResult, DocumentRunRequest
 from transflow.domain.layout_memory import DocumentLayoutMemoryIdentity, DocumentLayoutMemoryRef
@@ -35,7 +36,7 @@ from transflow.pdf_kernel.preservation import (
 
 LOGGER = logging.getLogger("transflow.application.document_coordinator")
 APPLICATION_ROOT = Path(__file__).resolve().parent.parent
-RouteResolver = Callable[[EnumeratedPage], str]
+RouteResolver = Callable[[EnumeratedPage], str | ClassificationRoute]
 
 
 class DocumentLayoutMemoryRuntimePort(Protocol):
@@ -225,10 +226,10 @@ class DocumentCoordinator:
                 classification_engine,
                 page_concurrency,
             )
-            routes = {item.page_identity: item.route.route for item in classified_pages}
+            routes = {item.page_identity: item.route for item in classified_pages}
 
-            def classified_route(page: EnumeratedPage) -> str:
-                """按分类结果的稳定页面身份返回已经校验的 Route。"""
+            def classified_route(page: EnumeratedPage) -> ClassificationRoute:
+                """按稳定页面身份返回不可变 Route 及其原始分类证据。"""
 
                 return routes[page.facts.page_identity]
 

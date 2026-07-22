@@ -14,6 +14,7 @@ from transflow.application.contracts import (
     ProcessedPage,
 )
 from transflow.domain.artifacts import ArtifactPayload, ArtifactReference, CheckpointRecord
+from transflow.domain.classification import ClassificationRoute
 from transflow.domain.common import canonical_json_bytes
 from transflow.domain.errors import DomainContractError, ErrorCode, PortCallError
 from transflow.domain.pages import PageOutcome
@@ -104,31 +105,59 @@ class MinimalPagePipeline:
         self._compatibility = compatibility
         self._font_id = font_id
 
-    def execute(self, source_path: Path, page: EnumeratedPage, route: str) -> ProcessedPage:
+    def execute(
+        self,
+        source_path: Path,
+        page: EnumeratedPage,
+        route: str | ClassificationRoute,
+    ) -> ProcessedPage:
         """优先恢复已提交页，否则执行最小页面链并原子提交 Checkpoint。"""
 
+        if isinstance(route, ClassificationRoute):
+            classification_route: ClassificationRoute | None = route
+            route_name = route.route
+        else:
+            classification_route = None
+            route_name = route
         LOGGER.info(
             "调用页面流水线，意图=让页面进入唯一终态 page_no=%s route=%s",
             page.context.page_no,
-            route,
+            route_name,
         )
         stored = self._checkpoints.load_page(page.context.page_no)
         if stored is not None:
             payload = json.loads(stored.payload.decode("utf-8"))
             resumed = ProcessedPage.from_checkpoint_payload(payload)
-            if resumed.route != route:
+            if resumed.route != route_name or resumed.classification_route != classification_route:
                 raise PortCallError(ErrorCode.CHECKPOINT_INCOMPATIBLE, False, "恢复 Route 不一致")
             return resumed
-        if route == ROUTE_SINGLE:
-            processed = self._execute_single(source_path, page)
-        elif route in {ROUTE_VISUAL_ONLY, ROUTE_PASSTHROUGH}:
-            processed = self._fallback_page(source_path, page, route, "P4_SOURCE_PASSTHROUGH")
+        if route_name == ROUTE_SINGLE:
+            processed = self._execute_single(source_path, page, classification_route)
+        elif route_name in {ROUTE_VISUAL_ONLY, ROUTE_PASSTHROUGH}:
+            processed = self._fallback_page(
+                source_path,
+                page,
+                route_name,
+                "P4_SOURCE_PASSTHROUGH",
+                classification_route=classification_route,
+            )
         else:
-            processed = self._fallback_page(source_path, page, route, "P4_ROUTE_UNSUPPORTED")
+            processed = self._fallback_page(
+                source_path,
+                page,
+                route_name,
+                "P4_ROUTE_UNSUPPORTED",
+                classification_route=classification_route,
+            )
         self._commit(page.context.run_id, processed)
         return processed
 
-    def _execute_single(self, source_path: Path, page: EnumeratedPage) -> ProcessedPage:
+    def _execute_single(
+        self,
+        source_path: Path,
+        page: EnumeratedPage,
+        classification_route: ClassificationRoute | None,
+    ) -> ProcessedPage:
         """执行文本单元、固定翻译、Patch、candidate、Judge 与预览发布。"""
 
         text_object = next(
@@ -136,7 +165,13 @@ class MinimalPagePipeline:
             None,
         )
         if text_object is None:
-            return self._fallback_page(source_path, page, ROUTE_SINGLE, "P4_TEXT_UNIT_MISSING")
+            return self._fallback_page(
+                source_path,
+                page,
+                ROUTE_SINGLE,
+                "P4_TEXT_UNIT_MISSING",
+                classification_route=classification_route,
+            )
         unit_id = build_unit_id(page, text_object.object_id)
         unit = TranslationUnit(
             unit_id=unit_id,
@@ -212,6 +247,7 @@ class MinimalPagePipeline:
                 unit_ids=(unit_id,),
                 translated_unit_ids=bundle.requested_unit_ids,
                 application=candidate.application,
+                classification_route=classification_route,
             )
         except (DomainContractError, PortCallError, ValueError, RuntimeError) as error:
             LOGGER.warning(
@@ -225,6 +261,7 @@ class MinimalPagePipeline:
                 ROUTE_SINGLE,
                 f"P4_SINGLE_FALLBACK_{type(error).__name__.upper()}",
                 unit_ids=(unit_id,),
+                classification_route=classification_route,
             )
 
     def _fallback_page(
@@ -235,6 +272,7 @@ class MinimalPagePipeline:
         finding_code: str,
         *,
         unit_ids: tuple[str, ...] = (),
+        classification_route: ClassificationRoute | None = None,
     ) -> ProcessedPage:
         """渲染原页预览并形成不会进入 Patch 回放的降级终态。"""
 
@@ -267,6 +305,7 @@ class MinimalPagePipeline:
             unit_ids=unit_ids,
             translated_unit_ids=(),
             application=None,
+            classification_route=classification_route,
         )
 
     def _commit(self, run_id: str, processed: ProcessedPage) -> None:

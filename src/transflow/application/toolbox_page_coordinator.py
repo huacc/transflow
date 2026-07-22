@@ -20,6 +20,7 @@ from transflow.application.translation_completeness import (
     adjudicate_translation_candidates,
     build_semantic_unit_map,
 )
+from transflow.domain.classification import ClassificationRoute
 from transflow.domain.completeness import (
     CompletenessStatus,
     SemanticUnitMap,
@@ -89,6 +90,7 @@ class ToolboxPageWork:
     facts: ExtractedPageFacts
     toolbox: PageToolbox
     capability_evidence: RouteCapabilityEvidence | None = None
+    classification_route: ClassificationRoute | None = None
 
 
 class ToolboxPageCoordinator:
@@ -123,6 +125,14 @@ class ToolboxPageCoordinator:
             context.page_no,
             descriptor.route,
         )
+        preflight_mismatch = self._route_guard.evaluate_facts(
+            descriptor.route,
+            work.facts,
+            work.capability_evidence,
+            work.classification_route,
+        )
+        if preflight_mismatch is not None:
+            return self._route_mismatch_fallback(context, (), None, preflight_mismatch)
         # 文字分母必须早于 Toolbox.prepare 冻结，避免叶或 Provider 决定清单边界。
         inventory = freeze_page_text_inventory(work.facts)
         template = toolbox.prepare(context, work.facts)
@@ -135,6 +145,7 @@ class ToolboxPageCoordinator:
             work.facts,
             semantic_map,
             work.capability_evidence,
+            work.classification_route,
         )
         if route_mismatch is not None:
             return self._route_mismatch_fallback(
@@ -196,6 +207,7 @@ class ToolboxPageCoordinator:
         repair_memory_hash: str | None = None
         repair_attempt_count = 0
         repair_stop_reason: str | None = None
+        repair_skipped = False
         if self._repair_handler is not None and gate_result.bundle is not None:
             repair_execution = self._repair_handler.execute(
                 context,
@@ -214,6 +226,18 @@ class ToolboxPageCoordinator:
                 if repair_execution.memory.stop_reason is not None
                 else None
             )
+        elif (
+            gate_result.bundle is None
+            and candidate.plan.passthrough_requested
+            and candidate.plan.patch is None
+            and not candidate.plan.fallback_requested
+            and judgement.decision.disposition is DecisionDisposition.ACCEPT
+        ):
+            # visual_only 等已接受的零写入透传没有可修内容；跳过 Repair，避免把
+            # 六阶段接口的存在误记成一次真实修复调用。
+            repaired = candidate
+            final_judgement = judgement
+            repair_skipped = True
         else:
             repaired = toolbox.repair(candidate, judgement)
             # Repair 产生新候选后必须重新裁决，不能沿用修复前 verdict。
@@ -243,6 +267,15 @@ class ToolboxPageCoordinator:
             outcome=outcome,
             trace=ToolboxExecutionTrace(
                 (
+                    "prepare",
+                    "build_translation_request",
+                    "consume_translation_bundle",
+                    "render",
+                    "judge",
+                    "outcome",
+                )
+                if repair_skipped
+                else (
                     "prepare",
                     "build_translation_request",
                     "consume_translation_bundle",
@@ -323,19 +356,33 @@ class ToolboxPageCoordinator:
     def _route_mismatch_fallback(
         context: PageExecutionContext,
         ordered_unit_ids: tuple[str, ...],
-        semantic_map: SemanticUnitMap,
+        semantic_map: SemanticUnitMap | None,
         mismatch: RouteCapabilityMismatchFinding,
     ) -> ToolboxExecutionResult:
         """在 Route 能力错配时禁止翻译/布局，并保留离线纠偏证据。"""
 
-        decision = adjudicate_translation_candidates(semantic_map, ())
+        decision = (
+            adjudicate_translation_candidates(semantic_map, ())
+            if semantic_map is not None
+            else None
+        )
+        evidence_ids = tuple(
+            dict.fromkeys(
+                item
+                for item in (
+                    mismatch.facts_hash,
+                    mismatch.map_hash,
+                    mismatch.evidence_id,
+                    *mismatch.route_evidence_ids,
+                )
+                if item is not None
+            )
+        )
         finding = Finding(
             finding_id=f"route-capability-mismatch-p{context.page_no:04d}",
             code=mismatch.code,
             severity="HARD",
-            evidence_ids=tuple(
-                dict.fromkeys((mismatch.facts_hash, mismatch.map_hash, mismatch.evidence_id))
-            ),
+            evidence_ids=evidence_ids,
         )
         verdict = Decision(
             decision_id=f"route-capability-fallback-p{context.page_no:04d}",
@@ -350,17 +397,15 @@ class ToolboxPageCoordinator:
             verdict=verdict,
             outcome=RouteCapabilityGuard.fallback_outcome(mismatch),
             trace=ToolboxExecutionTrace(
-                (
-                    "prepare",
-                    "build_translation_request",
-                    "translation_completeness",
-                    "outcome",
-                )
+                ("route_capability", "outcome")
+                if semantic_map is None
+                else ("prepare", "build_translation_request", "route_capability", "outcome")
             ),
             ordered_unit_ids=ordered_unit_ids,
             semantic_unit_map=semantic_map,
             translation_bundle=None,
             completeness_decision=decision,
+            route_capability_mismatch=mismatch.to_dict(),
         )
 
     def execute_many(

@@ -31,6 +31,11 @@ allowed_choices = flow_text_table | anchored_blocks_chart | chart_table | flow_t
 - `TABLE1` 或 `BTABLE1` 的表格检测框只是候选几何证据；对齐的卡片网格也可能被检测为表格。只有截图中存在语义行列、表头、项目行和单元格数据时，才能确认 `table`。
 - 多个独立信息块与主体数据图表共同占据显著区域时，优先识别为 `anchored_blocks_chart`；页面中的标题、引言或区域说明不能覆盖这两个需要独立工具处理的主体。
 - 只有卡片不存在或只是附属元素，且卡片外的连续正文与图表共同主导页面时，才选择 `flow_text_chart`。三种结构确实同等主导时返回 `INCONCLUSIVE`。
+- 多个图表面板仍属于 chart，不因为每个面板有标题、注释或边界就变成 anchored_blocks_chart。
+- 如果上一级所谓 composite 实际只识别出 `flow_text + anchored_blocks`，或只存在一个 owner，返回
+  `INCONCLUSIVE`；不能为凑允许类别虚构 chart、table 或 diagram。
+- 散点图、矩阵图旁或下方的分类议题清单，若包含许多可独立翻译的议题项并占据显著区域，不只是
+  颜色图例或短索引；这些议题项属于 anchored_blocks，与主体图表组合为 `anchored_blocks_chart`。
 
 ## 五个允许类别
 
@@ -41,6 +46,10 @@ allowed_choices = flow_text_table | anchored_blocks_chart | chart_table | flow_t
 ### anchored_blocks_chart
 
 多个独立信息块与主体数据图表并存。卡片工具处理独立块，图表区域保持固定。
+大数字、百分比、状态圆点、装饰图标和卡片边界本身都不是数据图表；必须另外看到柱、线、点、扇区、
+环形、坐标轴、图例或数据标签关系。
+分类议题清单中的编号可与散点对应，但编号对应关系不自动把整份长清单降为图例；各议题项需要
+独立翻译和局部 fit 时，清单仍是 anchored_blocks owner。
 
 ### chart_table
 

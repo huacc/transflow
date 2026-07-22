@@ -20,6 +20,7 @@ from transflow.application.document_finalizer import DocumentFinalizer
 from transflow.application.page_pipeline import PreviewPublisher
 from transflow.application.toolbox_page_coordinator import ToolboxPageCoordinator, ToolboxPageWork
 from transflow.application.toolbox_page_pipeline import ToolboxPagePipeline
+from transflow.application.translation_completeness import extract_required_literals
 from transflow.domain.jobs import DocumentRunRequest
 from transflow.domain.states import CheckpointCompatibility, Fallback, PagePipelineState
 from transflow.domain.toolbox import PagePatch
@@ -247,7 +248,12 @@ def direct_result(
         )
         if len(values) != len(batch.units):
             raise ValueError("测试译文数量与 unit 数不一致")
-        mapping = {unit.unit_id: value for unit, value in zip(batch.units, values, strict=True)}
+        mapping = {
+            unit.unit_id: " ".join(
+                (value, *extract_required_literals(unit.source_text))
+            )
+            for unit, value in zip(batch.units, values, strict=True)
+        }
     return ToolboxPageCoordinator(FixedTranslationAdapter(mapping)).execute(
         ToolboxPageWork(page.context, page.facts, toolbox)
     )

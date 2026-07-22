@@ -8,6 +8,8 @@ from pathlib import Path
 from typing import Any, Protocol
 
 from transflow.domain.artifacts import ArtifactPayload, ArtifactReference, CheckpointRecord
+from transflow.domain.classification import ClassificationRoute
+from transflow.domain.errors import DomainContractError, ErrorCode
 from transflow.domain.jobs import DocumentResult
 from transflow.domain.pages import PageExecutionContext, PageOutcome
 from transflow.domain.toolbox import PagePatch
@@ -88,7 +90,7 @@ class PageExecutionPipeline(Protocol):
         self,
         source_path: Path,
         page: EnumeratedPage,
-        route: str,
+        route: str | ClassificationRoute,
     ) -> ProcessedPage:
         """把一个已枚举页面收敛为唯一终态。"""
 
@@ -121,6 +123,21 @@ class ProcessedPage:
     catalog_hash: str | None = None
     evidence_attestation_hash: str | None = None
     translation_checkpoint: dict[str, Any] | None = None
+    classification_route: ClassificationRoute | None = None
+    route_capability_mismatch: dict[str, Any] | None = None
+
+    def __post_init__(self) -> None:
+        """拒绝分类证据或能力错配证据与页面终态中的 Route 串线。"""
+
+        if self.classification_route is not None and self.classification_route.route != self.route:
+            raise DomainContractError(ErrorCode.INVALID_IDENTITY, "分类证据与页面 Route 不一致")
+        if self.route_capability_mismatch is not None:
+            selected = self.route_capability_mismatch.get("selected_route")
+            if selected != self.route:
+                raise DomainContractError(
+                    ErrorCode.INVALID_IDENTITY,
+                    "能力错配证据与页面 Route 不一致",
+                )
 
     def as_checkpoint_payload(self) -> dict[str, Any]:
         """把页面终态编码为可跨进程恢复的纯 JSON 内容。"""
@@ -173,6 +190,12 @@ class ProcessedPage:
             catalog_hash=payload.get("catalog_hash"),
             evidence_attestation_hash=payload.get("evidence_attestation_hash"),
             translation_checkpoint=payload.get("translation_checkpoint"),
+            classification_route=(
+                ClassificationRoute.from_dict(payload["classification_route"])
+                if payload.get("classification_route") is not None
+                else None
+            ),
+            route_capability_mismatch=payload.get("route_capability_mismatch"),
         )
 
     def mark_resumed(self) -> ProcessedPage:

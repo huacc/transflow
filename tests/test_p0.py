@@ -399,8 +399,11 @@ def test_p0_5_t02_gate_delay_shifts_all_downstream_windows() -> None:
     shifted = verify_p0.simulate_delay(schedule, delayed_stage="P5", slots=2)
     assert shifted["P4"] == 4
     assert shifted["P5"] == 7
-    assert shifted["P14"] == 16
-    assert list(shifted) == [f"P{number}" for number in range(1, 15)]
+    assert shifted["P14"] == 19
+    assert list(shifted) == [
+        "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9",
+        "P9C", "P9A", "P9B", "P10", "P11", "P12", "P13", "P14",
+    ]
 
 
 if __name__ == "__main__":

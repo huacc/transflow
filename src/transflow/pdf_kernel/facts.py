@@ -17,7 +17,7 @@ from transflow.domain.pages import PageFacts
 
 LOGGER = logging.getLogger("transflow.pdf_kernel.facts")
 PACKAGE_ROOT = Path(__file__).resolve().parent.parent
-FACTS_SCHEMA_VERSION = "transflow.pdf-kernel.facts/v1"
+FACTS_SCHEMA_VERSION = "transflow.pdf-kernel.facts/v2"
 RectTuple = tuple[float, float, float, float]
 
 
@@ -134,10 +134,48 @@ class KernelDrawingFact:
 
 @dataclass(frozen=True, slots=True)
 class KernelTableFact:
-    """记录 PyMuPDF 直接检测到的候选表格几何，不附加页面类别语义。"""
+    """记录 PyMuPDF 直接检测到的候选表格、单元格及原生文字归属。"""
 
     object_id: str
     bbox: RectTuple
+    cell_bboxes: tuple[RectTuple, ...]
+    text_object_ids: tuple[str, ...]
+
+
+@dataclass(frozen=True, slots=True)
+class KernelAnnotationFact:
+    """记录页面注释的稳定类型、边界和机械内容哈希。"""
+
+    object_id: str
+    bbox: RectTuple
+    annotation_type: str
+    content_hash: str
+
+
+@dataclass(frozen=True, slots=True)
+class KernelLinkFact:
+    """记录页面链接的稳定类型、边界和机械内容哈希。"""
+
+    object_id: str
+    bbox: RectTuple
+    kind: int
+    content_hash: str
+
+
+@dataclass(frozen=True, slots=True)
+class KernelFontFact:
+    """记录页面引用字体、嵌入状态及 ToUnicode 映射事实。"""
+
+    object_id: str
+    xref: int
+    extension: str
+    font_type: str
+    base_font: str
+    resource_name: str
+    encoding: str
+    embedded: bool
+    has_to_unicode: bool
+    content_hash: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -187,6 +225,9 @@ class ExtractedPageFacts:
     image_objects: tuple[KernelImageFact, ...]
     drawing_objects: tuple[KernelDrawingFact, ...]
     table_objects: tuple[KernelTableFact, ...]
+    annotation_objects: tuple[KernelAnnotationFact, ...]
+    link_objects: tuple[KernelLinkFact, ...]
+    font_objects: tuple[KernelFontFact, ...]
     locked_objects_hash: str
     kernel_facts_hash: str
     classification: PageClassificationFacts | None = None
@@ -206,7 +247,7 @@ class ExtractedPageFacts:
 
     @property
     def protected_object_ids(self) -> tuple[str, ...]:
-        """返回禁止 PagePatch 修改的图片和绘图对象身份。"""
+        """返回禁止 PagePatch 修改的视觉对象、注释和链接身份。"""
 
         return tuple(
             dict.fromkeys(
@@ -215,13 +256,15 @@ class ExtractedPageFacts:
                     *(item.object_id for item in self.image_objects),
                     *(item.object_id for item in self.drawing_objects),
                     *(item.object_id for item in self.table_objects),
+                    *(item.object_id for item in self.annotation_objects),
+                    *(item.object_id for item in self.link_objects),
                 )
             )
         )
 
     @property
     def protected_regions(self) -> tuple[RectTuple, ...]:
-        """返回图片、绘图和旧保护对象区域；表格 bbox 仅作结构 anchor。"""
+        """返回不可擦除区域；表格 bbox 仅作结构 anchor，允许改写表内文字。"""
 
         return tuple(
             dict.fromkeys(
@@ -229,8 +272,31 @@ class ExtractedPageFacts:
                     *(item.bbox for item in self.objects if item.protected),
                     *(item.bbox for item in self.image_objects),
                     *(item.bbox for item in self.drawing_objects),
+                    *(item.bbox for item in self.annotation_objects),
+                    *(item.bbox for item in self.link_objects),
                 )
             )
+        )
+
+    @property
+    def table_text_object_ids(self) -> tuple[str, ...]:
+        """返回全部候选表格内部的原生 span 身份，保持首次出现顺序。"""
+
+        return tuple(
+            dict.fromkeys(
+                object_id
+                for table in self.table_objects
+                for object_id in table.text_object_ids
+            )
+        )
+
+    @property
+    def outside_table_text_object_ids(self) -> tuple[str, ...]:
+        """返回不属于候选表格的原生 span 身份。"""
+
+        table_ids = set(self.table_text_object_ids)
+        return tuple(
+            item.object_id for item in self.text_spans if item.object_id not in table_ids
         )
 
     def to_serializable_dict(self) -> dict[str, Any]:
@@ -513,28 +579,160 @@ class PageFactsExtractor:
                 )
             )
         try:
-            table_bboxes = tuple(
-                _values_rect_tuple(table.bbox) for table in page.find_tables().tables
-            )
+            detected_tables = tuple(page.find_tables().tables)
         except Exception:
-            table_bboxes = ()
-        table_objects = tuple(
-            KernelTableFact(
-                object_id=content_sha256(
-                    {
-                        "bbox": bbox,
-                        "index": index,
-                        "kind": "table",
-                        "page_no": page_no,
-                        "source_hash": source_hash,
-                    }
-                ),
-                bbox=bbox,
+            detected_tables = ()
+        table_objects_list: list[KernelTableFact] = []
+        for table_index, table in enumerate(detected_tables):
+            bbox = _values_rect_tuple(table.bbox)
+            cell_bboxes = tuple(
+                dict.fromkeys(
+                    _values_rect_tuple(cell)
+                    for cell in table.cells
+                    if cell is not None
+                )
             )
-            for index, bbox in enumerate(table_bboxes)
-        )
+            table_rect = pymupdf.Rect(bbox)
+            text_object_ids = tuple(
+                item.object_id
+                for item in text_spans
+                if table_rect.contains(
+                    pymupdf.Point(
+                        (item.bbox[0] + item.bbox[2]) / 2,
+                        (item.bbox[1] + item.bbox[3]) / 2,
+                    )
+                )
+            )
+            table_objects_list.append(
+                KernelTableFact(
+                    object_id=content_sha256(
+                        {
+                            "bbox": bbox,
+                            "cell_bboxes": cell_bboxes,
+                            "index": table_index,
+                            "kind": "table",
+                            "page_no": page_no,
+                            "source_hash": source_hash,
+                        }
+                    ),
+                    bbox=bbox,
+                    cell_bboxes=cell_bboxes,
+                    text_object_ids=text_object_ids,
+                )
+            )
+        table_objects = tuple(table_objects_list)
+        table_bboxes = tuple(item.bbox for item in table_objects)
+
+        annotation_objects: list[KernelAnnotationFact] = []
+        for annotation_index, annotation in enumerate(page.annots() or ()):
+            annotation_type = f"{int(annotation.type[0])}:{annotation.type[1]}"
+            bbox = _rect_tuple(annotation.rect)
+            annotation_content = {
+                "bbox": bbox,
+                "flags": int(annotation.flags),
+                "info": _mechanical_json_value(annotation.info),
+                "type": annotation_type,
+            }
+            annotation_content_hash = content_sha256(annotation_content)
+            annotation_objects.append(
+                KernelAnnotationFact(
+                    object_id=content_sha256(
+                        {
+                            "content_hash": annotation_content_hash,
+                            "index": annotation_index,
+                            "kind": "annotation",
+                            "page_no": page_no,
+                            "source_hash": source_hash,
+                        }
+                    ),
+                    bbox=bbox,
+                    annotation_type=annotation_type,
+                    content_hash=annotation_content_hash,
+                )
+            )
+
+        link_objects: list[KernelLinkFact] = []
+        for link_index, link in enumerate(page.get_links()):
+            bbox = _rect_tuple(link["from"])
+            link_content = {
+                str(key): _mechanical_json_value(value)
+                for key, value in sorted(link.items(), key=lambda row: str(row[0]))
+                if str(key) not in {"id", "xref"}
+            }
+            link_content_hash = content_sha256(link_content)
+            link_objects.append(
+                KernelLinkFact(
+                    object_id=content_sha256(
+                        {
+                            "content_hash": link_content_hash,
+                            "index": link_index,
+                            "kind": "link",
+                            "page_no": page_no,
+                            "source_hash": source_hash,
+                        }
+                    ),
+                    bbox=bbox,
+                    kind=int(link.get("kind") or 0),
+                    content_hash=link_content_hash,
+                )
+            )
+
+        font_objects: list[KernelFontFact] = []
+        for font_index, raw_font in enumerate(page.get_fonts(full=True)):
+            xref = int(raw_font[0])
+            extension = str(raw_font[1] or "")
+            font_type = str(raw_font[2] or "")
+            base_font = str(raw_font[3] or "")
+            resource_name = str(raw_font[4] or "")
+            encoding = str(raw_font[5] or "")
+            referencer = int(raw_font[6]) if len(raw_font) > 6 else 0
+            embedded = xref > 0 and extension.lower() not in {"", "n/a", "unknown"}
+            unicode_key = (
+                page.parent.xref_get_key(xref, "ToUnicode")
+                if page.parent is not None and xref > 0
+                else ("null", "null")
+            )
+            has_to_unicode = unicode_key[0] != "null" and unicode_key[1] != "null"
+            font_content = {
+                "base_font": base_font,
+                "embedded": embedded,
+                "encoding": encoding,
+                "extension": extension,
+                "font_type": font_type,
+                "has_to_unicode": has_to_unicode,
+                "referencer": referencer,
+                "resource_name": resource_name,
+                "xref": xref,
+            }
+            font_content_hash = content_sha256(font_content)
+            font_objects.append(
+                KernelFontFact(
+                    object_id=content_sha256(
+                        {
+                            "content_hash": font_content_hash,
+                            "index": font_index,
+                            "kind": "font",
+                            "page_no": page_no,
+                            "source_hash": source_hash,
+                        }
+                    ),
+                    xref=xref,
+                    extension=extension,
+                    font_type=font_type,
+                    base_font=base_font,
+                    resource_name=resource_name,
+                    encoding=encoding,
+                    embedded=embedded,
+                    has_to_unicode=has_to_unicode,
+                    content_hash=font_content_hash,
+                )
+            )
         locked_objects_hash = content_sha256(
             {
+                "annotations": tuple(
+                    (item.bbox, item.annotation_type, item.content_hash)
+                    for item in annotation_objects
+                ),
                 "drawings": tuple(
                     (item.bbox, item.content_hash) for item in drawing_objects
                 ),
@@ -543,14 +741,22 @@ class PageFactsExtractor:
                     (item.bbox, item.width, item.height, item.content_hash)
                     for item in image_objects
                 ),
-                "tables": tuple(item.bbox for item in table_objects),
+                "links": tuple(
+                    (item.bbox, item.kind, item.content_hash) for item in link_objects
+                ),
+                "tables": tuple(
+                    (item.bbox, item.cell_bboxes) for item in table_objects
+                ),
             }
         )
         kernel_facts_hash = content_sha256(
             {
+                "annotations": annotation_objects,
                 "drawings": drawing_objects,
+                "fonts": font_objects,
                 "geometry": geometry_payload,
                 "images": image_objects,
+                "links": link_objects,
                 "objects": objects,
                 "page_no": page_no,
                 "source_hash": source_hash,
@@ -578,7 +784,7 @@ class PageFactsExtractor:
             {
                 "classification": classification_summary,
                 "geometry": geometry_payload,
-                "objects": objects,
+                "kernel_facts_hash": kernel_facts_hash,
                 "page_no": page_no,
                 "source_hash": source_hash,
             }
@@ -602,6 +808,9 @@ class PageFactsExtractor:
             image_objects=tuple(image_objects),
             drawing_objects=tuple(drawing_objects),
             table_objects=table_objects,
+            annotation_objects=tuple(annotation_objects),
+            link_objects=tuple(link_objects),
+            font_objects=tuple(font_objects),
             locked_objects_hash=locked_objects_hash,
             kernel_facts_hash=kernel_facts_hash,
             classification=classification,

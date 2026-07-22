@@ -298,6 +298,15 @@ class ExplodingTranslationPort:
         raise AssertionError(f"visual_only 不得调用 TranslationPort: {batch.batch_id}")
 
 
+class RepairExplodingVisualOnly(VisualOnlyToolbox):
+    """若零写入透传仍进入 Repair 就立即失败。"""
+
+    def repair(self, candidate: Any, judgement: Any) -> Any:
+        """证明 TM1 要求的 visual_only Repair 调用数为零。"""
+
+        raise AssertionError("visual_only 已接受透传不得调用 Repair")
+
+
 def direct_page(path: Path) -> EnumeratedPage:
     """从完整 PDF 枚举首张真实页面。"""
 
@@ -330,9 +339,10 @@ def test_p8_1_t01_visual_only_has_zero_units_calls_and_patch(tmp_path: Path) -> 
     page = direct_page(source)
     port = ExplodingTranslationPort()
     result = ToolboxPageCoordinator(port).execute(
-        ToolboxPageWork(page.context, page.facts, VisualOnlyToolbox())
+        ToolboxPageWork(page.context, page.facts, RepairExplodingVisualOnly())
     )
     assert result.ordered_unit_ids == () and result.patch is None and port.calls == 0
+    assert "repair" not in result.trace.stages
     assert result.outcome.state is PagePipelineState.FINALIZED
     assert result.outcome.fallback is Fallback.PAGE_PASSTHROUGH
 
@@ -418,14 +428,15 @@ def test_p8_2_t01_single_fixed_bundle_matches_legacy_reading_order(tmp_path: Pat
     toolbox = SingleFlowTextToolbox(policy, font)
     batch = toolbox.build_translation_request(toolbox.prepare(page.context, page.facts))
     assert batch is not None
-    # 旧叶仍把顶部 margin 留在模板；P7 shared.margin 上移后这是批准差异。
+    # 旧叶只交付正文；当前合同还把语义页眉纳入共享翻译分母。
     legacy_text = tuple(
         item.source_text.replace("\n", " ").strip()
         for item in legacy.containers
         if item.role != "margin"
     )
     production_text = tuple(unit.source_text.replace("\n", " ").strip() for unit in batch.units)
-    assert production_text == legacy_text
+    assert production_text[0] == "ANNUAL REPORT HEADER"
+    assert production_text[1:] == legacy_text
     migration = json.loads(
         (REPO_ROOT / "docs" / "迁移" / "p8_body_flow_text_single_migration.json").read_text(
             encoding="utf-8"
@@ -445,7 +456,11 @@ def test_p8_2_t02_single_preserves_order_owner_and_required_literal(tmp_path: Pa
     result = direct_toolbox_result(page, SingleFlowTextToolbox(policy, font), "新的段落")
     assert result.patch is not None
     assert result.patch.owner == "body.flow_text.single"
-    assert result.patch.operations[0].replacement_text.startswith("1. ")
+    assert any(
+        operation.replacement_text is not None
+        and operation.replacement_text.startswith("1. ")
+        for operation in result.patch.operations
+    )
     assert len(result.ordered_unit_ids) == len(result.patch.operations)
 
 
@@ -468,7 +483,7 @@ def test_p8_2_t03_single_long_overflow_is_bounded_and_falls_back(tmp_path: Path)
 
 @pytest.mark.contract
 def test_p8_2_t04_single_does_not_claim_margin_page_number_or_visuals(tmp_path: Path) -> None:
-    """P8.2-T04：页眉、页脚、页码和绘图不进入 single owner/Patch。"""
+    """P8.2-T04：语义页眉可翻译，但页码与保护对象不被正文写入覆盖。"""
 
     source = create_pdf(tmp_path / "single-protection.pdf", ("single",))
     page = direct_page(source)
@@ -494,7 +509,7 @@ def test_p8_2_t05_single_perturbations_follow_structure(tmp_path: Path) -> None:
         toolbox = SingleFlowTextToolbox(policy, font)
         batch = toolbox.build_translation_request(toolbox.prepare(page.context, page.facts))
         counts.append(0 if batch is None else len(batch.units))
-    assert counts == [1, 1, 1]
+    assert counts == [2, 2, 2]
 
 
 @pytest.mark.workflow

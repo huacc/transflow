@@ -18,7 +18,7 @@ from transflow.pdf_kernel.models import PatchManifest
 
 LOGGER = logging.getLogger("transflow.pdf_kernel.patch")
 PACKAGE_ROOT = Path(__file__).resolve().parent.parent
-INTERPRETER_ID = "transflow.pdf-kernel.page-patch-interpreter/v1"
+INTERPRETER_ID = "transflow.pdf-kernel.page-patch-interpreter/v2"
 PATCH_MANIFEST_VERSION = "transflow.pdf-kernel.patch-manifest/v1"
 RENDER_CONFIG_HASH = content_sha256(
     {
@@ -26,10 +26,48 @@ RENDER_CONFIG_HASH = content_sha256(
         "color_space": "RGB",
         "redaction_graphics": "preserve",
         "redaction_images": "preserve",
+        "source_rect_redaction": "optional",
+        "source_text_color": "optional",
+        "source_line_height": "optional",
         "writer": "pymupdf.insert_textbox",
     }
 )
 DIAGNOSTIC_MIN_FONT_SIZE = 1.0
+IMAGE_UNDERLAY_PAGE_AREA_RATIO = 0.45
+
+
+def _rect_area(rect: tuple[float, float, float, float]) -> float:
+    return max(0.0, rect[2] - rect[0]) * max(0.0, rect[3] - rect[1])
+
+
+def _materially_underlays(
+    source: tuple[float, float, float, float],
+    image: tuple[float, float, float, float],
+) -> bool:
+    source_width = max(source[2] - source[0], 1.0)
+    source_height = max(source[3] - source[1], 1.0)
+    horizontal_overlap = max(
+        0.0,
+        min(source[2], image[2]) - max(source[0], image[0]),
+    )
+    vertical_overlap = max(
+        0.0,
+        min(source[3], image[3]) - max(source[1], image[1]),
+    )
+    return (
+        horizontal_overlap >= source_width * 0.60
+        and vertical_overlap >= source_height * 0.25
+    )
+
+
+def _image_is_obstacle(
+    image: tuple[float, float, float, float],
+    source_rects: tuple[tuple[float, float, float, float], ...],
+    page: tuple[float, float, float, float],
+) -> bool:
+    if _rect_area(image) / max(_rect_area(page), 1.0) >= IMAGE_UNDERLAY_PAGE_AREA_RATIO:
+        return False
+    return not any(_materially_underlays(source, image) for source in source_rects)
 
 
 def _probe_textbox_fit(
@@ -49,15 +87,57 @@ def _probe_textbox_fit(
         )
         font_name = f"TFP6Probe{operation.payload_hash[:8]}"
         page.insert_font(fontname=font_name, fontfile=str(font_path))
+        return _insert_operation_textbox(
+            page,
+            pymupdf.Rect(operation.rect),
+            operation.replacement_text,
+            font_name,
+            font_size,
+            operation,
+        )
+
+
+def _operation_color(operation: PatchOperation) -> tuple[float, float, float]:
+    """把可选 sRGB 整数转换为 PyMuPDF 颜色；旧操作继续使用黑色。"""
+
+    value = operation.color_srgb if operation.color_srgb is not None else 0
+    return (
+        ((value >> 16) & 0xFF) / 255.0,
+        ((value >> 8) & 0xFF) / 255.0,
+        (value & 0xFF) / 255.0,
+    )
+
+
+def _insert_operation_textbox(
+    page: pymupdf.Page,
+    rectangle: pymupdf.Rect,
+    text: str,
+    font_name: str,
+    font_size: float,
+    operation: PatchOperation,
+) -> float:
+    """按操作是否声明行距调用强类型 PyMuPDF 接口。"""
+
+    if operation.line_height is None:
         return float(
             page.insert_textbox(
-                pymupdf.Rect(operation.rect),
-                operation.replacement_text,
+                rectangle,
+                text,
                 fontname=font_name,
                 fontsize=font_size,
-                color=(0, 0, 0),
+                color=_operation_color(operation),
             )
         )
+    return float(
+        page.insert_textbox(
+            rectangle,
+            text,
+            fontname=font_name,
+            fontsize=font_size,
+            color=_operation_color(operation),
+            lineheight=operation.line_height,
+        )
+    )
 
 
 def _diagnostic_font_size(
@@ -106,19 +186,31 @@ def patch_operation_hash(
     replacement_text: str,
     font_id: str,
     font_size: float,
+    redaction_rects: tuple[tuple[float, float, float, float], ...] = (),
+    color_srgb: int | None = None,
+    line_height: float | None = None,
+    preserve_drawing_overlap: bool = False,
 ) -> str:
     """计算 replace_text 声明载荷的稳定内容哈希。"""
 
-    return content_sha256(
-        {
-            "font_id": font_id,
-            "font_size": font_size,
-            "owner": owner,
-            "rect": rect,
-            "replacement_text": replacement_text,
-            "target_object_ids": target_object_ids,
-        }
-    )
+    payload: dict[str, object] = {
+        "font_id": font_id,
+        "font_size": font_size,
+        "owner": owner,
+        "rect": rect,
+        "replacement_text": replacement_text,
+        "target_object_ids": target_object_ids,
+    }
+    # 缺省字段不进入哈希，保证既有叶生成的操作指纹保持不变。
+    if redaction_rects:
+        payload["redaction_rects"] = redaction_rects
+    if color_srgb is not None:
+        payload["color_srgb"] = color_srgb
+    if line_height is not None:
+        payload["line_height"] = line_height
+    if preserve_drawing_overlap:
+        payload["preserve_drawing_overlap"] = True
+    return content_sha256(payload)
 
 
 def build_patch_manifest(patch: PagePatch) -> PatchManifest:
@@ -234,6 +326,10 @@ class PagePatchInterpreter:
                 replacement_text=operation.replacement_text,
                 font_id=operation.font_id,
                 font_size=operation.font_size,
+                redaction_rects=operation.redaction_rects,
+                color_srgb=operation.color_srgb,
+                line_height=operation.line_height,
+                preserve_drawing_overlap=operation.preserve_drawing_overlap,
             )
             != operation.payload_hash
         ):
@@ -251,11 +347,64 @@ class PagePatchInterpreter:
         operation_rect = pymupdf.Rect(operation.rect)
         if not pymupdf.Rect(facts.crop_box).contains(operation_rect):
             raise DomainContractError(ErrorCode.PATCH_OPERATION_INVALID, "Patch 矩形越出 CropBox")
-        for protected_region in facts.protected_regions:
+        object_bboxes = {item.object_id: item.bbox for item in facts.objects}
+        object_bboxes.update({item.object_id: item.bbox for item in facts.text_spans})
+        source_rects = operation.redaction_rects or tuple(
+            object_bboxes[target_id]
+            for target_id in operation.target_object_ids
+            if target_id in object_bboxes
+        )
+        protected_regions = (
+            tuple(
+                item.bbox
+                for item in facts.image_objects
+                if _image_is_obstacle(item.bbox, source_rects, facts.crop_box)
+            )
+            if operation.preserve_drawing_overlap
+            else facts.protected_regions
+        )
+        for protected_region in protected_regions:
             if operation_rect.intersects(pymupdf.Rect(protected_region)):
                 raise DomainContractError(
                     ErrorCode.PATCH_PROTECTED_OBJECT, "Patch 矩形覆盖保护对象"
                 )
+        if operation.redaction_rects:
+            if len(operation.redaction_rects) != len(operation.target_object_ids):
+                raise DomainContractError(
+                    ErrorCode.PATCH_OPERATION_INVALID,
+                    "精确擦除矩形必须与目标文字对象一一对应",
+                )
+            for target_id, redaction_rect in zip(
+                operation.target_object_ids,
+                operation.redaction_rects,
+                strict=True,
+            ):
+                if object_bboxes.get(target_id) != redaction_rect:
+                    raise DomainContractError(
+                        ErrorCode.PATCH_OPERATION_INVALID,
+                        "精确擦除矩形未绑定目标文字事实",
+                    )
+                if not pymupdf.Rect(facts.crop_box).contains(pymupdf.Rect(redaction_rect)):
+                    raise DomainContractError(
+                        ErrorCode.PATCH_OPERATION_INVALID,
+                        "Patch 擦除矩形越出 CropBox",
+                    )
+                for image in facts.image_objects:
+                    if (
+                        pymupdf.Rect(redaction_rect).intersects(pymupdf.Rect(image.bbox))
+                        and (
+                            not operation.preserve_drawing_overlap
+                            or _image_is_obstacle(
+                                image.bbox,
+                                (redaction_rect,),
+                                facts.crop_box,
+                            )
+                        )
+                    ):
+                        raise DomainContractError(
+                            ErrorCode.PATCH_PROTECTED_OBJECT,
+                            "Patch 擦除矩形覆盖图片对象",
+                        )
         return self._fonts.resolve(operation.font_id).path
 
     def apply(
@@ -294,6 +443,15 @@ class PagePatchInterpreter:
         )
         manifest = build_patch_manifest(patch)
         page = document[context.page_no - 1]
+        for operation in patch.operations:
+            if operation.rect is None:
+                raise AssertionError("预校验后的 Patch 操作矩形不应为空")
+            redaction_rects = operation.redaction_rects or (operation.rect,)
+            redaction_fill = None if operation.redaction_rects else (1, 1, 1)
+            for redaction_rect in redaction_rects:
+                page.add_redact_annot(pymupdf.Rect(redaction_rect), fill=redaction_fill)
+        page.apply_redactions(images=0, graphics=0, text=0)
+
         remainders: list[float] = []
         for operation, font_path, font_size in zip(
             patch.operations,
@@ -318,15 +476,14 @@ class PagePatchInterpreter:
                 )
             font_name = f"TFP4{operation.payload_hash[:8]}"
             rectangle = pymupdf.Rect(operation.rect)
-            page.add_redact_annot(rectangle, fill=(1, 1, 1))
-            page.apply_redactions(images=0, graphics=0, text=0)
             page.insert_font(fontname=font_name, fontfile=str(font_path))
-            remainder = page.insert_textbox(
+            remainder = _insert_operation_textbox(
+                page,
                 rectangle,
                 operation.replacement_text,
-                fontname=font_name,
-                fontsize=font_size,
-                color=(0, 0, 0),
+                font_name,
+                font_size,
+                operation,
             )
             remainders.append(float(remainder))
         return PatchApplicationResult(

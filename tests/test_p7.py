@@ -190,11 +190,16 @@ class ProbeToolbox:
 
         self.calls.append("build_translation_request")
         unit_id = hashlib.sha256(f"{template.template_id}\0unit".encode()).hexdigest()
+        facts = self._facts[template.template_id]
+        # P9A.0 后测试叶也必须从真实 Kernel 文字清单取源文，禁止伪造 inventory 外对象。
+        source_text = next(
+            item.text for item in facts.objects if not item.protected and item.text.strip()
+        )
         unit = TranslationUnit(
             unit_id,
             template.context.page_no,
             0,
-            f"source-{template.context.page_no}",
+            source_text,
             f"region-{template.context.page_no}",
         )
         return TranslationBatch(

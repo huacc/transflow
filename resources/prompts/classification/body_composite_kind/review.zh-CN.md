@@ -20,6 +20,13 @@
 - `TABLE1` 或 `BTABLE1` 的表格检测框只是候选几何证据；对齐的卡片网格也可能被检测为表格。只有截图中存在语义行列、表头、项目行和单元格数据时，才能确认 `table`。
 - 多个独立信息块与主体数据图表共同占据显著区域时，优先识别为 `anchored_blocks_chart`；标题、引言或区域说明不能覆盖这两个需要独立工具处理的主体。
 - 只有卡片不存在或只是附属元素，且卡片外的连续正文与图表共同主导页面时，才选择 `flow_text_chart`。三种结构确实同等主导时返回 `INCONCLUSIVE`。
+- 多个图表面板仍属于 chart；面板标题、注释和边界不能把它们变成 anchored_blocks_chart。
+- 大数字、百分比、状态圆点和装饰图标不是数据图表；`anchored_blocks_chart` 必须另有真实柱、线、点、
+  扇区、环形、坐标轴、图例或数据标签关系。
+- 若只识别出 `flow_text + anchored_blocks` 或一个 owner，应返回 `INCONCLUSIVE`，不得虚构 chart、
+  table 或 diagram 来凑允许组合。
+- 散点图、矩阵图之外的分类议题清单若含许多可独立翻译的议题项并占显著区域，它不是短图例；
+  即使编号与散点一一对应，议题清单仍是 anchored_blocks，与图表组成 `anchored_blocks_chart`。
 
 ## 允许结果
 

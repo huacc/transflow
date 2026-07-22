@@ -215,6 +215,56 @@ def _inside(rect: tuple[float, float, float, float], point: tuple[float, float])
     return x0 <= point[0] <= x1 and y0 <= point[1] <= y1
 
 
+def _cluster_count(values: list[float], tolerance: float) -> int:
+    clusters: list[list[float]] = []
+    for value in sorted(values):
+        cluster = next(
+            (items for items in clusters if abs(value - statistics.median(items)) <= tolerance),
+            None,
+        )
+        if cluster is None:
+            clusters.append([value])
+        else:
+            cluster.append(value)
+    return len(clusters)
+
+
+def _table_structure(
+    cell_bboxes: tuple[tuple[float, float, float, float], ...],
+    table_bbox: tuple[float, float, float, float],
+    layout_spans: list[dict[str, Any]],
+    page_width: float,
+    page_height: float,
+) -> dict[str, Any]:
+    row_count = _cluster_count(
+        [float(cell[1]) for cell in cell_bboxes],
+        max(0.5, page_height * 0.001),
+    )
+    column_count = _cluster_count(
+        [float(cell[0]) for cell in cell_bboxes],
+        max(0.5, page_width * 0.001),
+    )
+    cell_count = len(cell_bboxes)
+    capacity = max(row_count * column_count, 1)
+    text_object_count = sum(
+        _inside(
+            table_bbox,
+            (
+                (float(span["bbox"][0]) + float(span["bbox"][2])) / 2,
+                (float(span["bbox"][1]) + float(span["bbox"][3])) / 2,
+            ),
+        )
+        for span in layout_spans
+    )
+    return {
+        "cell_count": cell_count,
+        "column_count": column_count,
+        "grid_coverage": round(min(cell_count / capacity, 1.0), 5),
+        "row_count": row_count,
+        "text_object_count": text_object_count,
+    }
+
+
 def build_evidence(pdf_path: Path, source_meta: dict[str, Any], render_path: Path) -> dict[str, Any]:
     with fitz.open(pdf_path) as document:
         if document.page_count != 1:
@@ -272,11 +322,30 @@ def build_evidence(pdf_path: Path, source_meta: dict[str, Any], render_path: Pat
                 }
             )
 
-        table_rects: list[tuple[float, float, float, float]] = []
+        detected_tables: list[Any] = []
         try:
-            table_rects = [tuple(float(value) for value in table.bbox) for table in page.find_tables().tables]
+            detected_tables = list(page.find_tables().tables)
         except Exception:
-            table_rects = []
+            detected_tables = []
+        table_rects = [
+            tuple(float(value) for value in table.bbox) for table in detected_tables
+        ]
+        table_details = [
+            _table_structure(
+                tuple(
+                    dict.fromkeys(
+                        tuple(float(value) for value in cell)
+                        for cell in table.cells
+                        if cell is not None
+                    )
+                ),
+                tuple(float(value) for value in table.bbox),
+                layout_spans,
+                width,
+                height,
+            )
+            for table in detected_tables
+        ]
         table_area_ratio = min(
             sum(max(0.0, (rect[2] - rect[0]) * (rect[3] - rect[1])) for rect in table_rects) / page_area,
             1.0,
@@ -347,6 +416,7 @@ def build_evidence(pdf_path: Path, source_meta: dict[str, Any], render_path: Pat
                 "count": len(table_rects),
                 "area_ratio": round(table_area_ratio, 5),
                 "bboxes": [[round(value, 2) for value in rect] for rect in table_rects],
+                "details": table_details,
             },
             "borderless_table": borderless_table,
             "blocks": blocks,

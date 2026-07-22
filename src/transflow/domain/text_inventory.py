@@ -20,6 +20,8 @@ class InventoryDisposition(StrEnum):
 
     TRANSLATE = "TRANSLATE"
     KEEP_SOURCE = "KEEP_SOURCE"
+    PROTECTED = "PROTECTED"
+    UNSUPPORTED = "UNSUPPORTED"
 
 
 @dataclass(frozen=True, slots=True)
@@ -31,6 +33,7 @@ class PageTextInventoryItem:
     bbox: tuple[float, float, float, float]
     disposition: InventoryDisposition
     keep_source_reason: str | None = None
+    disposition_reason: str | None = None
 
     def __post_init__(self) -> None:
         """拒绝空身份、坏哈希和未经理由批准的原文保留。"""
@@ -41,10 +44,24 @@ class PageTextInventoryItem:
         if self.disposition is InventoryDisposition.KEEP_SOURCE and not self.keep_source_reason:
             raise DomainContractError(ErrorCode.INVALID_CONTRACT, "KEEP_SOURCE 必须预先给出理由")
         if (
-            self.disposition is InventoryDisposition.TRANSLATE
+            self.disposition is not InventoryDisposition.KEEP_SOURCE
             and self.keep_source_reason is not None
         ):
-            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "TRANSLATE 不得携带保留理由")
+            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "非 KEEP_SOURCE 不得携带保留理由")
+        if self.disposition in {
+            InventoryDisposition.PROTECTED,
+            InventoryDisposition.UNSUPPORTED,
+        }:
+            if not self.disposition_reason:
+                raise DomainContractError(
+                    ErrorCode.INVALID_CONTRACT,
+                    "PROTECTED/UNSUPPORTED 必须携带结构化原因",
+                )
+        elif self.disposition_reason is not None:
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "TRANSLATE/KEEP_SOURCE 不得携带能力原因",
+            )
 
 
 @dataclass(frozen=True, slots=True)
@@ -85,6 +102,7 @@ class PageTextInventory:
                     "source_hash": item.source_hash,
                     "bbox": list(item.bbox),
                     "disposition": item.disposition.value,
+                    "disposition_reason": item.disposition_reason,
                     "keep_source_reason": item.keep_source_reason,
                 }
                 for item in self.items

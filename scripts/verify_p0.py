@@ -235,7 +235,7 @@ def check_governance() -> list[str]:
 
 
 def check_schedule() -> list[str]:
-    """核验 P1-P14 单通道依赖排期和 G14 强制停点。"""
+    """按显式冻结序列核验含字母阶段的单通道依赖和 G14 停点。"""
 
     LOGGER.info("核验 P1-P14 迭代依赖排期")
     if not SCHEDULE_PATH.is_file():
@@ -243,14 +243,33 @@ def check_schedule() -> list[str]:
     schedule = load_json(SCHEDULE_PATH)
     violations: list[str] = []
     first_part = schedule["first_part"]
-    expected_stages = [f"P{number}" for number in range(1, 15)]
+    expected_pairs = [
+        ("P1", "G0"),
+        ("P2", "G1"),
+        ("P3", "G2"),
+        ("P4", "G3"),
+        ("P5", "G4"),
+        ("P6", "G5"),
+        ("P7", "G6"),
+        ("P8", "G7"),
+        ("P9", "G8"),
+        ("P9C", "G9"),
+        ("P9A", "G9C"),
+        ("P9B", "G9A"),
+        ("P10", "G9B"),
+        ("P11", "G10"),
+        ("P12", "G11"),
+        ("P13", "G12"),
+        ("P14", "G13"),
+    ]
+    expected_stages = [stage for stage, _gate in expected_pairs]
     actual_stages = [str(item["stage"]) for item in first_part]
     if actual_stages != expected_stages:
         violations.append("P1_P14_STAGE_SEQUENCE_INVALID")
     for expected_order, item in enumerate(first_part, start=1):
         if item["order"] != expected_order:
             violations.append(f"INVALID_ORDER:{item['stage']}")
-        if item["dependency_gate"] != f"G{expected_order - 1}":
+        if item["dependency_gate"] != expected_pairs[expected_order - 1][1]:
             violations.append(f"REVERSE_OR_MISSING_DEPENDENCY:{item['stage']}")
         for field in ("execution_window", "gate_window", "owner", "approver", "commit_scope"):
             if not item[field]:

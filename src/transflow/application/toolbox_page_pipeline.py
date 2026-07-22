@@ -18,6 +18,7 @@ from transflow.application.toolbox_page_coordinator import (
     ToolboxPageWork,
 )
 from transflow.domain.artifacts import CheckpointRecord
+from transflow.domain.classification import ClassificationRoute
 from transflow.domain.common import canonical_json_bytes
 from transflow.domain.pages import PageOutcome
 from transflow.domain.states import (
@@ -58,29 +59,56 @@ class ToolboxPagePipeline:
         self._checkpoints = checkpoints
         self._compatibility = compatibility
 
-    def execute(self, source_path: Path, page: EnumeratedPage, route: str) -> ProcessedPage:
+    def execute(
+        self,
+        source_path: Path,
+        page: EnumeratedPage,
+        route: str | ClassificationRoute,
+    ) -> ProcessedPage:
         """恢复或执行单页；禁用、初始化和运行异常均形成显式透传终态。"""
 
+        if isinstance(route, ClassificationRoute):
+            classification_route: ClassificationRoute | None = route
+            route_name = route.route
+        else:
+            classification_route = None
+            route_name = route
         LOGGER.info(
             "调用 P8 页面流水线，意图=按 Catalog 执行或降级 page_no=%s route=%s",
             page.context.page_no,
-            route,
+            route_name,
         )
         stored = self._checkpoints.load_page(page.context.page_no)
         if stored is not None:
             restored = ProcessedPage.from_checkpoint_payload(
                 json.loads(stored.payload.decode("utf-8"))
             )
-            if restored.route != route or restored.catalog_hash != self._catalog.catalog_hash:
+            if (
+                restored.route != route_name
+                or restored.catalog_hash != self._catalog.catalog_hash
+                or restored.classification_route != classification_route
+            ):
                 raise ValueError("P8 恢复 Route 或 Catalog hash 不一致")
             return restored
         self._catalog.assert_source_unchanged()
-        resolution = self._catalog.resolve_enabled(route, page.context.page_no)
+        resolution = self._catalog.resolve_enabled(route_name, page.context.page_no)
         if resolution.toolbox is None:
             code = resolution.finding.code if resolution.finding is not None else "TOOLBOX_DISABLED"
-            processed = self._fallback_page(source_path, page, route, code, resolution)
+            processed = self._fallback_page(
+                source_path,
+                page,
+                route_name,
+                code,
+                resolution,
+                classification_route,
+            )
         else:
-            processed = self._execute_enabled(source_path, page, resolution)
+            processed = self._execute_enabled(
+                source_path,
+                page,
+                resolution,
+                classification_route,
+            )
         self._commit(page.context.run_id, processed)
         return processed
 
@@ -89,6 +117,7 @@ class ToolboxPagePipeline:
         source_path: Path,
         page: EnumeratedPage,
         resolution: CatalogResolution,
+        classification_route: ClassificationRoute | None,
     ) -> ProcessedPage:
         """执行已启用 Toolbox，再用唯一解释器生成真实候选预览。"""
 
@@ -97,7 +126,12 @@ class ToolboxPagePipeline:
         route = resolution.route
         try:
             execution = self._coordinator.execute(
-                ToolboxPageWork(page.context, page.facts, resolution.toolbox)
+                ToolboxPageWork(
+                    page.context,
+                    page.facts,
+                    resolution.toolbox,
+                    classification_route=classification_route,
+                )
             )
             if execution.patch is not None:
                 candidate = self._renderer.render_candidate(
@@ -164,6 +198,8 @@ class ToolboxPagePipeline:
                     entry.evidence_attestation_hash if entry is not None else None
                 ),
                 translation_checkpoint=translation_checkpoint,
+                classification_route=classification_route,
+                route_capability_mismatch=execution.route_capability_mismatch,
             )
         except Exception as error:
             LOGGER.exception(
@@ -177,6 +213,7 @@ class ToolboxPagePipeline:
                 route,
                 f"TOOLBOX_EXECUTION_FAILED_{type(error).__name__.upper()}",
                 resolution,
+                classification_route,
             )
 
     def _fallback_page(
@@ -186,6 +223,7 @@ class ToolboxPagePipeline:
         route: str,
         finding_code: str,
         resolution: CatalogResolution,
+        classification_route: ClassificationRoute | None,
     ) -> ProcessedPage:
         """真实渲染原页预览并保留 Catalog 版本和证据身份。"""
 
@@ -226,6 +264,7 @@ class ToolboxPagePipeline:
             evidence_attestation_hash=(
                 entry.evidence_attestation_hash if entry is not None else None
             ),
+            classification_route=classification_route,
         )
 
     def _commit(self, run_id: str, processed: ProcessedPage) -> None:

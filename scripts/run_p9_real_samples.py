@@ -248,7 +248,7 @@ def _write_diagnostic_candidate(
         patch.validate_binding(sample.page.context, sample.route)
         with pymupdf.open(candidate_pdf) as document:
             page = document[sample.page.context.page_no - 1]
-            render_operations = []
+            render_operations: list[tuple[Any, pymupdf.Rect, Path, str, float]] = []
             clipped_operation_count = 0
             for operation in patch.operations:
                 if (
@@ -269,7 +269,15 @@ def _write_diagnostic_candidate(
                 if rectangle.is_empty or rectangle.is_infinite:
                     raise ValueError("P9_DIAGNOSTIC_RECT_OUTSIDE_CROPBOX")
                 font_path = fonts.resolve(operation.font_id).path
-                render_operations.append((operation, rectangle, font_path))
+                render_operations.append(
+                    (
+                        operation,
+                        rectangle,
+                        font_path,
+                        operation.replacement_text,
+                        operation.font_size,
+                    )
+                )
                 page.add_redact_annot(rectangle, fill=(1, 1, 1))
 
             # 先统一清除原文，再写入译文，防止相邻区域的后续红action删除已写文本。
@@ -279,15 +287,21 @@ def _write_diagnostic_candidate(
             rendered_font_sizes: list[float] = []
             shrink_to_fit_count = 0
             forced_text_count = 0
-            for operation, rectangle, font_path in render_operations:
+            for (
+                operation,
+                rectangle,
+                font_path,
+                replacement_text,
+                requested_size,
+            ) in render_operations:
                 font_name = f"TFP9Diag{operation.payload_hash[:8]}"
                 page.insert_font(fontname=font_name, fontfile=str(font_path))
                 original_remainder, fitted_size = _choose_diagnostic_font_size(
                     page_rect=page.rect,
                     rectangle=rectangle,
-                    text=operation.replacement_text,
+                    text=replacement_text,
                     font_path=font_path,
-                    requested_size=operation.font_size,
+                    requested_size=requested_size,
                 )
                 remainders.append(original_remainder)
                 if fitted_size is None:
@@ -296,7 +310,7 @@ def _write_diagnostic_candidate(
                     forced_text_count += 1
                     page.insert_text(
                         pymupdf.Point(rectangle.x0, rectangle.y0 + fitted_size),
-                        operation.replacement_text,
+                        replacement_text,
                         fontname=font_name,
                         fontsize=fitted_size,
                         color=(0, 0, 0),
@@ -304,12 +318,12 @@ def _write_diagnostic_candidate(
                 else:
                     page.insert_textbox(
                         rectangle,
-                        operation.replacement_text,
+                        replacement_text,
                         fontname=font_name,
                         fontsize=fitted_size,
                         color=(0, 0, 0),
                     )
-                if fitted_size < operation.font_size:
+                if fitted_size < requested_size:
                     shrink_to_fit_count += 1
                 rendered_font_sizes.append(fitted_size)
             metadata = dict(document.metadata)

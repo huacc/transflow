@@ -7,6 +7,7 @@ import logging
 import re
 from dataclasses import dataclass
 from pathlib import Path
+from statistics import median
 
 from transflow.domain.text_inventory import (
     InventoryDisposition,
@@ -22,6 +23,7 @@ URL_OR_EMAIL = re.compile(
     re.I,
 )
 NUMERIC_LITERAL = re.compile(r"[\d\s.,%$€£¥()\-+/=:]+")
+CURRENCY_SCALE_LITERAL = re.compile(r"[$€£¥]\s*(?:k|m|mn|b|bn|t)", re.I)
 PAGE_NUMBER = re.compile(r"(?:page\s*)?(?:[ivxlcdm]+|\d+)(?:\s*/\s*\d+)?", re.I)
 CODE_OR_ACRONYM = re.compile(r"(?=.*[A-Z0-9])[A-Z0-9][A-Z0-9._/\-]{1,31}")
 
@@ -37,8 +39,8 @@ class CanonicalTextRecord:
 
 def _mechanical_keep_source_reason(
     text: str,
-    bbox: tuple[float, float, float, float],
-    page_height: float,
+    *,
+    natural_language_style: bool = False,
 ) -> str | None:
     """只批准无需语义判断的稳定机械原文保留原因。"""
 
@@ -47,16 +49,16 @@ def _mechanical_keep_source_reason(
         return "URL_OR_EMAIL"
     if PAGE_NUMBER.fullmatch(stripped):
         return "PAGE_NUMBER"
-    if NUMERIC_LITERAL.fullmatch(stripped) or (
+    if CURRENCY_SCALE_LITERAL.fullmatch(stripped) or NUMERIC_LITERAL.fullmatch(stripped) or (
         stripped and not any(character.isalpha() for character in stripped)
     ):
         return "NUMERIC_OR_SYMBOLIC_LITERAL"
-    if CODE_OR_ACRONYM.fullmatch(stripped):
+    if CODE_OR_ACRONYM.fullmatch(stripped) and not (
+        natural_language_style and stripped.isalpha()
+    ):
         return "CODE_OR_ACRONYM"
     if re.search(r"[\u4e00-\u9fff]", stripped) and not re.search(r"[A-Za-z]{3,}", stripped):
         return "ALREADY_TARGET_LANGUAGE"
-    if bbox[3] <= page_height * 0.08 or bbox[1] >= page_height * 0.92:
-        return "SHARED_MARGIN_OWNER"
     return None
 
 
@@ -84,16 +86,24 @@ def freeze_page_text_inventory(facts: ExtractedPageFacts) -> PageTextInventory:
         facts.page.page_no,
     )
     records = canonical_text_records(facts)
+    spans_by_id = {item.object_id: item for item in facts.text_spans}
+    page_font_median = (
+        median(item.font_size for item in facts.text_spans) if facts.text_spans else 0
+    )
     ordered = sorted(
         records,
         key=lambda item: (round(item.bbox[1], 4), round(item.bbox[0], 4), item.object_id),
     )
     items: list[PageTextInventoryItem] = []
     for record in ordered:
+        span = spans_by_id.get(record.object_id)
+        natural_language_style = span is not None and (
+            span.font_size >= page_font_median * 1.25
+            or "bold" in span.font_name.casefold()
+        )
         reason = _mechanical_keep_source_reason(
             record.text,
-            record.bbox,
-            facts.page.height_points,
+            natural_language_style=natural_language_style,
         )
         items.append(
             PageTextInventoryItem(

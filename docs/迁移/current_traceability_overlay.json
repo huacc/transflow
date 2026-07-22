@@ -1,0 +1,8566 @@
+{
+  "gate_rows": [
+    {
+      "evidence": "P0.1-T01~T03",
+      "gate_item": "G0-1",
+      "test_refs": [
+        "P0.1-T01",
+        "P0.1-T02",
+        "P0.1-T03"
+      ],
+      "trace": "§2.2–§2.3、§20；P0.1"
+    },
+    {
+      "evidence": "P0.2-T01~T03",
+      "gate_item": "G0-2",
+      "test_refs": [
+        "P0.2-T01",
+        "P0.2-T02",
+        "P0.2-T03"
+      ],
+      "trace": "§19；P0.2"
+    },
+    {
+      "evidence": "P0.3-T01~T04",
+      "gate_item": "G0-3",
+      "test_refs": [
+        "P0.3-T01",
+        "P0.3-T02",
+        "P0.3-T03",
+        "P0.3-T04"
+      ],
+      "trace": "§21.1、§24；P0.3"
+    },
+    {
+      "evidence": "P0.4-T01~T03",
+      "gate_item": "G0-4",
+      "test_refs": [
+        "P0.4-T01",
+        "P0.4-T02",
+        "P0.4-T03"
+      ],
+      "trace": "§20.1、§26–§27；P0.4"
+    },
+    {
+      "evidence": "P0.5-T01~T02",
+      "gate_item": "G0-5",
+      "test_refs": [
+        "P0.5-T01",
+        "P0.5-T02"
+      ],
+      "trace": "§22–§23；P0.5"
+    },
+    {
+      "evidence": "决策台账",
+      "gate_item": "G0-6",
+      "test_refs": [],
+      "trace": "本计划 §2.3"
+    },
+    {
+      "evidence": "P1.1-T01~T03",
+      "gate_item": "G1-1",
+      "test_refs": [
+        "P1.1-T01",
+        "P1.1-T02",
+        "P1.1-T03"
+      ],
+      "trace": "§9.3、§21.1、§27；P1.1"
+    },
+    {
+      "evidence": "P1.2-T01~T04",
+      "gate_item": "G1-2",
+      "test_refs": [
+        "P1.2-T01",
+        "P1.2-T02",
+        "P1.2-T03",
+        "P1.2-T04"
+      ],
+      "trace": "§16.5；P1.2"
+    },
+    {
+      "evidence": "P1.2-T03~T04",
+      "gate_item": "G1-3",
+      "test_refs": [
+        "P1.2-T03",
+        "P1.2-T04"
+      ],
+      "trace": "§19.3、§21；P1.2"
+    },
+    {
+      "evidence": "P1.3-T01~T04",
+      "gate_item": "G1-4",
+      "test_refs": [
+        "P1.3-T01",
+        "P1.3-T02",
+        "P1.3-T03",
+        "P1.3-T04"
+      ],
+      "trace": "§5.3、§19.1；P1.3"
+    },
+    {
+      "evidence": "P1.4-T01~T04",
+      "gate_item": "G1-5",
+      "test_refs": [
+        "P1.4-T01",
+        "P1.4-T02",
+        "P1.4-T03",
+        "P1.4-T04"
+      ],
+      "trace": "§14.2、§18；P1.4"
+    },
+    {
+      "evidence": "环境验收记录",
+      "gate_item": "G1-6",
+      "test_refs": [],
+      "trace": "§16.5、§21.1"
+    },
+    {
+      "evidence": "P2.1-T01~T04",
+      "gate_item": "G2-1",
+      "test_refs": [
+        "P2.1-T01",
+        "P2.1-T02",
+        "P2.1-T03",
+        "P2.1-T04"
+      ],
+      "trace": "§4、§7、§9、§11–§12；P2.1"
+    },
+    {
+      "evidence": "P2.2-T01~T04",
+      "gate_item": "G2-2",
+      "test_refs": [
+        "P2.2-T01",
+        "P2.2-T02",
+        "P2.2-T03",
+        "P2.2-T04"
+      ],
+      "trace": "§13、§18.3；P2.2"
+    },
+    {
+      "evidence": "P2.3-T01~T04",
+      "gate_item": "G2-3",
+      "test_refs": [
+        "P2.3-T01",
+        "P2.3-T02",
+        "P2.3-T03",
+        "P2.3-T04"
+      ],
+      "trace": "§5.6、§9.1、§16.1；P2.3"
+    },
+    {
+      "evidence": "P2.4-T01、P2.4-T04",
+      "gate_item": "G2-4",
+      "test_refs": [
+        "P2.4-T01",
+        "P2.4-T04"
+      ],
+      "trace": "§8.3；P2.4"
+    },
+    {
+      "evidence": "P2.4-T02~T03",
+      "gate_item": "G2-5",
+      "test_refs": [
+        "P2.4-T02",
+        "P2.4-T03"
+      ],
+      "trace": "§16.4、§22 T0；P2.4"
+    },
+    {
+      "evidence": "P2.5-T01~T04",
+      "gate_item": "G2-6",
+      "test_refs": [
+        "P2.5-T01",
+        "P2.5-T02",
+        "P2.5-T03",
+        "P2.5-T04"
+      ],
+      "trace": "§19.2–§19.3、§24.8；P2.5"
+    },
+    {
+      "evidence": "评审记录",
+      "gate_item": "G2-7",
+      "test_refs": [],
+      "trace": "§26–§27"
+    },
+    {
+      "evidence": "P3.1-T01～T02、P3.1-T09",
+      "gate_item": "G3-1",
+      "test_refs": [
+        "P3.1-T01",
+        "P3.1-T02",
+        "P3.1-T09"
+      ],
+      "trace": "§3.2、§7.1、§24.1；P3.1"
+    },
+    {
+      "evidence": "P3.1-T03~T08",
+      "gate_item": "G3-2",
+      "test_refs": [
+        "P3.1-T03",
+        "P3.1-T04",
+        "P3.1-T05",
+        "P3.1-T06",
+        "P3.1-T07",
+        "P3.1-T08"
+      ],
+      "trace": "§7.1、§18.1；P3.1"
+    },
+    {
+      "evidence": "P3.2-T01~T08",
+      "gate_item": "G3-3",
+      "test_refs": [
+        "P3.2-T01",
+        "P3.2-T02",
+        "P3.2-T03",
+        "P3.2-T04",
+        "P3.2-T05",
+        "P3.2-T06",
+        "P3.2-T07",
+        "P3.2-T08"
+      ],
+      "trace": "§13.4、§18.3；P3.2"
+    },
+    {
+      "evidence": "P3.3-T01~T05",
+      "gate_item": "G3-4",
+      "test_refs": [
+        "P3.3-T01",
+        "P3.3-T02",
+        "P3.3-T03",
+        "P3.3-T04",
+        "P3.3-T05"
+      ],
+      "trace": "§17–§18；P3.3"
+    },
+    {
+      "evidence": "P3.4-T01、P3.4-T06",
+      "gate_item": "G3-5",
+      "test_refs": [
+        "P3.4-T01",
+        "P3.4-T06"
+      ],
+      "trace": "§16.2；P3.4"
+    },
+    {
+      "evidence": "P3.4-T02~T05、P3.4-T07",
+      "gate_item": "G3-6",
+      "test_refs": [
+        "P3.4-T02",
+        "P3.4-T03",
+        "P3.4-T04",
+        "P3.4-T05",
+        "P3.4-T07"
+      ],
+      "trace": "§16.1、§24.1/§24.4；P3.4"
+    },
+    {
+      "evidence": "P3.5-T01~T05",
+      "gate_item": "G3-7",
+      "test_refs": [
+        "P3.5-T01",
+        "P3.5-T02",
+        "P3.5-T03",
+        "P3.5-T04",
+        "P3.5-T05"
+      ],
+      "trace": "§18.3、§24.4；P3.5"
+    },
+    {
+      "evidence": "P4.1-T01~T03",
+      "gate_item": "G4-1",
+      "test_refs": [
+        "P4.1-T01",
+        "P4.1-T02",
+        "P4.1-T03"
+      ],
+      "trace": "§7.1；P4.1"
+    },
+    {
+      "evidence": "P4.2-T01~T04",
+      "gate_item": "G4-2",
+      "test_refs": [
+        "P4.2-T01",
+        "P4.2-T02",
+        "P4.2-T03",
+        "P4.2-T04"
+      ],
+      "trace": "§22 T1；P4.2"
+    },
+    {
+      "evidence": "P4.3-T01~T04",
+      "gate_item": "G4-3",
+      "test_refs": [
+        "P4.3-T01",
+        "P4.3-T02",
+        "P4.3-T03",
+        "P4.3-T04"
+      ],
+      "trace": "§7.2–§7.4、§12；P4.3"
+    },
+    {
+      "evidence": "P4.4-T01~T04",
+      "gate_item": "G4-4",
+      "test_refs": [
+        "P4.4-T01",
+        "P4.4-T02",
+        "P4.4-T03",
+        "P4.4-T04"
+      ],
+      "trace": "§12.3、§18.2；P4.4"
+    },
+    {
+      "evidence": "P4.5-T01、TF-E2E-13",
+      "gate_item": "G4-5",
+      "test_refs": [
+        "P4.5-T01"
+      ],
+      "trace": "§22 T1；P4.5"
+    },
+    {
+      "evidence": "P4.5-T02~T05、TF-E2E-06",
+      "gate_item": "G4-6",
+      "test_refs": [
+        "P4.5-T02",
+        "P4.5-T03",
+        "P4.5-T04",
+        "P4.5-T05"
+      ],
+      "trace": "§13.4、§24.4；P4.5"
+    },
+    {
+      "evidence": "P4.0-T01~T05",
+      "gate_item": "G4-7",
+      "test_refs": [
+        "P4.0-T01",
+        "P4.0-T02",
+        "P4.0-T03",
+        "P4.0-T04",
+        "P4.0-T05"
+      ],
+      "trace": "§9.1、§18.2、§22 T1/T3；P4.0"
+    },
+    {
+      "evidence": "P3.4-T02~T04",
+      "gate_item": "G4-8",
+      "test_refs": [
+        "P3.4-T02",
+        "P3.4-T03",
+        "P3.4-T04"
+      ],
+      "trace": "§16.2"
+    },
+    {
+      "evidence": "P5.1-T01~T03",
+      "gate_item": "G5-1",
+      "test_refs": [
+        "P5.1-T01",
+        "P5.1-T02",
+        "P5.1-T03"
+      ],
+      "trace": "§8.1、§24.5；P5.1"
+    },
+    {
+      "evidence": "P5.2-T01~T03",
+      "gate_item": "G5-2",
+      "test_refs": [
+        "P5.2-T01",
+        "P5.2-T02",
+        "P5.2-T03"
+      ],
+      "trace": "§20.5；P5.2"
+    },
+    {
+      "evidence": "P5.3-T01~T04",
+      "gate_item": "G5-3",
+      "test_refs": [
+        "P5.3-T01",
+        "P5.3-T02",
+        "P5.3-T03",
+        "P5.3-T04"
+      ],
+      "trace": "§21.3；P5.3"
+    },
+    {
+      "evidence": "P5.4-T01~T03",
+      "gate_item": "G5-4",
+      "test_refs": [
+        "P5.4-T01",
+        "P5.4-T02",
+        "P5.4-T03"
+      ],
+      "trace": "§7、§8.2；P5.4"
+    },
+    {
+      "evidence": "分类指标报告、P5.5-T03",
+      "gate_item": "G5-5",
+      "test_refs": [
+        "P5.5-T03"
+      ],
+      "trace": "§22 T2；P5.1/P5.5"
+    },
+    {
+      "evidence": "P5.5-T01~T04",
+      "gate_item": "G5-6",
+      "test_refs": [
+        "P5.5-T01",
+        "P5.5-T02",
+        "P5.5-T03",
+        "P5.5-T04"
+      ],
+      "trace": "§24.4–§24.5；P5.5"
+    },
+    {
+      "evidence": "P4.5-T01~T05",
+      "gate_item": "G5-7",
+      "test_refs": [
+        "P4.5-T01",
+        "P4.5-T02",
+        "P4.5-T03",
+        "P4.5-T04",
+        "P4.5-T05"
+      ],
+      "trace": "§22 T2"
+    },
+    {
+      "evidence": "P6.1-T01～T06",
+      "gate_item": "G6-1",
+      "test_refs": [
+        "P6.1-T01",
+        "P6.1-T02",
+        "P6.1-T03",
+        "P6.1-T04",
+        "P6.1-T05",
+        "P6.1-T06"
+      ],
+      "trace": "§7.3、§14.2；P6.1"
+    },
+    {
+      "evidence": "P6.2-T01～T06",
+      "gate_item": "G6-2",
+      "test_refs": [
+        "P6.2-T01",
+        "P6.2-T02",
+        "P6.2-T03",
+        "P6.2-T04",
+        "P6.2-T05",
+        "P6.2-T06"
+      ],
+      "trace": "§9、§12.3；P6.2"
+    },
+    {
+      "evidence": "P6.3-T01～T06",
+      "gate_item": "G6-3",
+      "test_refs": [
+        "P6.3-T01",
+        "P6.3-T02",
+        "P6.3-T03",
+        "P6.3-T04",
+        "P6.3-T05",
+        "P6.3-T06"
+      ],
+      "trace": "§9.3、§15；P6.3"
+    },
+    {
+      "evidence": "P6.4-T01～T06、TF-E2E-11",
+      "gate_item": "G6-4",
+      "test_refs": [
+        "P6.4-T01",
+        "P6.4-T02",
+        "P6.4-T03",
+        "P6.4-T04",
+        "P6.4-T05",
+        "P6.4-T06"
+      ],
+      "trace": "§12.3；P6.4"
+    },
+    {
+      "evidence": "P6.5-T01～T03",
+      "gate_item": "G6-5",
+      "test_refs": [
+        "P6.5-T01",
+        "P6.5-T02",
+        "P6.5-T03"
+      ],
+      "trace": "§14；P6.5"
+    },
+    {
+      "evidence": "P6.5-T04～T06",
+      "gate_item": "G6-6",
+      "test_refs": [
+        "P6.5-T04",
+        "P6.5-T05",
+        "P6.5-T06"
+      ],
+      "trace": "§22 T3；P6.5"
+    },
+    {
+      "evidence": "P7.1-T01～T04、P7.1-T06",
+      "gate_item": "G7-1",
+      "test_refs": [
+        "P7.1-T01",
+        "P7.1-T02",
+        "P7.1-T03",
+        "P7.1-T04",
+        "P7.1-T06"
+      ],
+      "trace": "§9、§20.6；P7.1"
+    },
+    {
+      "evidence": "P7.2-T01～T06",
+      "gate_item": "G7-2",
+      "test_refs": [
+        "P7.2-T01",
+        "P7.2-T02",
+        "P7.2-T03",
+        "P7.2-T04",
+        "P7.2-T05",
+        "P7.2-T06"
+      ],
+      "trace": "§16、§20.6；P7.2"
+    },
+    {
+      "evidence": "P7.3-T01～T06",
+      "gate_item": "G7-3",
+      "test_refs": [
+        "P7.3-T01",
+        "P7.3-T02",
+        "P7.3-T03",
+        "P7.3-T04",
+        "P7.3-T05",
+        "P7.3-T06"
+      ],
+      "trace": "§8.3；P7.3"
+    },
+    {
+      "evidence": "P7.4-T01～T06",
+      "gate_item": "G7-4",
+      "test_refs": [
+        "P7.4-T01",
+        "P7.4-T02",
+        "P7.4-T03",
+        "P7.4-T04",
+        "P7.4-T05",
+        "P7.4-T06"
+      ],
+      "trace": "§10；P7.4"
+    },
+    {
+      "evidence": "P7.5-T01～T06",
+      "gate_item": "G7-5",
+      "test_refs": [
+        "P7.5-T01",
+        "P7.5-T02",
+        "P7.5-T03",
+        "P7.5-T04",
+        "P7.5-T05",
+        "P7.5-T06"
+      ],
+      "trace": "§20.1、§22 T4；P7.5"
+    },
+    {
+      "evidence": "P7.1-T05、P7.2-T04、P7.3-T05、P2.5-T01～T04",
+      "gate_item": "G7-6",
+      "test_refs": [
+        "P2.5-T01",
+        "P2.5-T02",
+        "P2.5-T03",
+        "P2.5-T04",
+        "P7.1-T05",
+        "P7.2-T04",
+        "P7.3-T05"
+      ],
+      "trace": "§9.1、§24.8"
+    },
+    {
+      "evidence": "评审记录",
+      "gate_item": "G7-7",
+      "test_refs": [],
+      "trace": "§9–§10"
+    },
+    {
+      "evidence": "P8.1-T01～T05",
+      "gate_item": "G8-1",
+      "test_refs": [
+        "P8.1-T01",
+        "P8.1-T02",
+        "P8.1-T03",
+        "P8.1-T04",
+        "P8.1-T05"
+      ],
+      "trace": "§8.2；P8.1"
+    },
+    {
+      "evidence": "P8.2-T01～T06",
+      "gate_item": "G8-2",
+      "test_refs": [
+        "P8.2-T01",
+        "P8.2-T02",
+        "P8.2-T03",
+        "P8.2-T04",
+        "P8.2-T05",
+        "P8.2-T06"
+      ],
+      "trace": "§20.6；P8.2"
+    },
+    {
+      "evidence": "P8.3-T01～T06",
+      "gate_item": "G8-3",
+      "test_refs": [
+        "P8.3-T01",
+        "P8.3-T02",
+        "P8.3-T03",
+        "P8.3-T04",
+        "P8.3-T05",
+        "P8.3-T06"
+      ],
+      "trace": "§2.3、§24.5；P8.3"
+    },
+    {
+      "evidence": "P8.4-T01～T06",
+      "gate_item": "G8-4",
+      "test_refs": [
+        "P8.4-T01",
+        "P8.4-T02",
+        "P8.4-T03",
+        "P8.4-T04",
+        "P8.4-T05",
+        "P8.4-T06"
+      ],
+      "trace": "§2.3、§24.5；P8.4"
+    },
+    {
+      "evidence": "P8.5-T01～T05",
+      "gate_item": "G8-5",
+      "test_refs": [
+        "P8.5-T01",
+        "P8.5-T02",
+        "P8.5-T03",
+        "P8.5-T04",
+        "P8.5-T05"
+      ],
+      "trace": "§7、§24.3；P8.5"
+    },
+    {
+      "evidence": "P8.5-T06、G5/G6 回归集",
+      "gate_item": "G8-6",
+      "test_refs": [
+        "P8.5-T06"
+      ],
+      "trace": "§22 T4；P8.5"
+    },
+    {
+      "evidence": "P9.1-T01～T06",
+      "gate_item": "G9-1",
+      "test_refs": [
+        "P9.1-T01",
+        "P9.1-T02",
+        "P9.1-T03",
+        "P9.1-T04",
+        "P9.1-T05",
+        "P9.1-T06"
+      ],
+      "trace": "§8.2；P9.1"
+    },
+    {
+      "evidence": "P9.2-T01～T06",
+      "gate_item": "G9-2",
+      "test_refs": [
+        "P9.2-T01",
+        "P9.2-T02",
+        "P9.2-T03",
+        "P9.2-T04",
+        "P9.2-T05",
+        "P9.2-T06"
+      ],
+      "trace": "§9–§10；P9.2"
+    },
+    {
+      "evidence": "P9.3-T01～T06",
+      "gate_item": "G9-3",
+      "test_refs": [
+        "P9.3-T01",
+        "P9.3-T02",
+        "P9.3-T03",
+        "P9.3-T04",
+        "P9.3-T05",
+        "P9.3-T06"
+      ],
+      "trace": "§8.2；P9.3"
+    },
+    {
+      "evidence": "P9.4-T01～T06",
+      "gate_item": "G9-4",
+      "test_refs": [
+        "P9.4-T01",
+        "P9.4-T02",
+        "P9.4-T03",
+        "P9.4-T04",
+        "P9.4-T05",
+        "P9.4-T06"
+      ],
+      "trace": "§24.5；P9.4"
+    },
+    {
+      "evidence": "P9.5-T01～T06",
+      "gate_item": "G9-5",
+      "test_refs": [
+        "P9.5-T01",
+        "P9.5-T02",
+        "P9.5-T03",
+        "P9.5-T04",
+        "P9.5-T05",
+        "P9.5-T06"
+      ],
+      "trace": "§9、§11.3；P9.5"
+    },
+    {
+      "evidence": "P9.6-T01～T06",
+      "gate_item": "G9-6",
+      "test_refs": [
+        "P9.6-T01",
+        "P9.6-T02",
+        "P9.6-T03",
+        "P9.6-T04",
+        "P9.6-T05",
+        "P9.6-T06"
+      ],
+      "trace": "§11.7；P9.6"
+    },
+    {
+      "evidence": "六叶 Gate 记录",
+      "gate_item": "G9-7",
+      "test_refs": [],
+      "trace": "§8.3、§22 T4"
+    },
+    {
+      "evidence": "P9.7-T01～T06、G8 回归",
+      "gate_item": "G9-8",
+      "test_refs": [
+        "P9.7-T01",
+        "P9.7-T02",
+        "P9.7-T03",
+        "P9.7-T04",
+        "P9.7-T05",
+        "P9.7-T06"
+      ],
+      "trace": "§24.3；P9.7"
+    },
+    {
+      "evidence": "P9C.1-T01～T06",
+      "gate_item": "G9C-1",
+      "test_refs": [
+        "P9C.1-T01",
+        "P9C.1-T02",
+        "P9C.1-T03",
+        "P9C.1-T04",
+        "P9C.1-T05",
+        "P9C.1-T06"
+      ],
+      "trace": "§9.6、§20.4；P9C.1"
+    },
+    {
+      "evidence": "P9C.1-T04～T05",
+      "gate_item": "G9C-2",
+      "test_refs": [
+        "P9C.1-T04",
+        "P9C.1-T05"
+      ],
+      "trace": "§20、§25；P9C.1"
+    },
+    {
+      "evidence": "P9C.2-T01～T02",
+      "gate_item": "G9C-3",
+      "test_refs": [
+        "P9C.2-T01",
+        "P9C.2-T02"
+      ],
+      "trace": "§9.6.1、§24.1；P9C.2"
+    },
+    {
+      "evidence": "P9C.2-T03～T06",
+      "gate_item": "G9C-4",
+      "test_refs": [
+        "P9C.2-T03",
+        "P9C.2-T04",
+        "P9C.2-T05",
+        "P9C.2-T06"
+      ],
+      "trace": "§16.1.1；P9C.2"
+    },
+    {
+      "evidence": "P9C.3-T01～T04、T06～T07",
+      "gate_item": "G9C-5",
+      "test_refs": [
+        "P9C.3-T01",
+        "P9C.3-T02",
+        "P9C.3-T03",
+        "P9C.3-T04"
+      ],
+      "trace": "§9.6.2、§18；P9C.3"
+    },
+    {
+      "evidence": "P9C.3-T05",
+      "gate_item": "G9C-6",
+      "test_refs": [
+        "P9C.3-T05"
+      ],
+      "trace": "§12、§18；P9C.3"
+    },
+    {
+      "evidence": "P9C.4-T01～T02",
+      "gate_item": "G9C-7",
+      "test_refs": [
+        "P9C.4-T01",
+        "P9C.4-T02"
+      ],
+      "trace": "§9.6.3；P9C.4"
+    },
+    {
+      "evidence": "P9C.4-T03～T05",
+      "gate_item": "G9C-8",
+      "test_refs": [
+        "P9C.4-T03",
+        "P9C.4-T04",
+        "P9C.4-T05"
+      ],
+      "trace": "§24.2–§24.5；P9C.4"
+    },
+    {
+      "evidence": "P9C.4-T03、T06",
+      "gate_item": "G9C-9",
+      "test_refs": [
+        "P9C.4-T03"
+      ],
+      "trace": "§12、§24.6；P9C.4"
+    },
+    {
+      "evidence": "P9A.0-T01",
+      "gate_item": "G9A-0-1",
+      "test_refs": [
+        "P9A.0-T01"
+      ],
+      "trace": "P9A.0-T01"
+    },
+    {
+      "evidence": "P9A.0-T02～T03",
+      "gate_item": "G9A-0-2",
+      "test_refs": [
+        "P9A.0-T02",
+        "P9A.0-T03"
+      ],
+      "trace": "P9A.0-T02 P9A.0-T03"
+    },
+    {
+      "evidence": "P9A.0-T04～T05",
+      "gate_item": "G9A-0-3",
+      "test_refs": [
+        "P9A.0-T04",
+        "P9A.0-T05"
+      ],
+      "trace": "P9A.0-T04 P9A.0-T05"
+    },
+    {
+      "evidence": "P9A.1-T01～T06",
+      "gate_item": "G9A-1",
+      "test_refs": [
+        "P9A.1-T01",
+        "P9A.1-T02",
+        "P9A.1-T03",
+        "P9A.1-T04",
+        "P9A.1-T05",
+        "P9A.1-T06"
+      ],
+      "trace": "§9.5.1/§9.5.5；P9A.1"
+    },
+    {
+      "evidence": "P9A.2-T01～T04",
+      "gate_item": "G9A-2",
+      "test_refs": [
+        "P9A.2-T01",
+        "P9A.2-T02",
+        "P9A.2-T03",
+        "P9A.2-T04"
+      ],
+      "trace": "§9.5.1；P9A.2"
+    },
+    {
+      "evidence": "P9A.2-T05～T06、P9A.4-T03～T04",
+      "gate_item": "G9A-3",
+      "test_refs": [
+        "P9A.2-T05",
+        "P9A.2-T06",
+        "P9A.4-T03",
+        "P9A.4-T04"
+      ],
+      "trace": "§24.5；P9A.2/P9A.4"
+    },
+    {
+      "evidence": "P9A.3-T01～T02、T06",
+      "gate_item": "G9A-4",
+      "test_refs": [
+        "P9A.3-T01",
+        "P9A.3-T02"
+      ],
+      "trace": "§7、§9.5.5；P9A.3"
+    },
+    {
+      "evidence": "P9A.3-T03～T05",
+      "gate_item": "G9A-5",
+      "test_refs": [
+        "P9A.3-T03",
+        "P9A.3-T04",
+        "P9A.3-T05"
+      ],
+      "trace": "§13.4、§18.3；P9A.3"
+    },
+    {
+      "evidence": "P9A.4-T01～T06",
+      "gate_item": "G9A-6",
+      "test_refs": [
+        "P9A.4-T01",
+        "P9A.4-T02",
+        "P9A.4-T03",
+        "P9A.4-T04",
+        "P9A.4-T05",
+        "P9A.4-T06"
+      ],
+      "trace": "§24.3–§24.5；P9A.4"
+    },
+    {
+      "evidence": "P9B.1-T01～T03、T06",
+      "gate_item": "G9B-1",
+      "test_refs": [
+        "P9B.1-T01",
+        "P9B.1-T02",
+        "P9B.1-T03"
+      ],
+      "trace": "§9.5.2；P9B.1"
+    },
+    {
+      "evidence": "P9B.1-T04～T05、T07",
+      "gate_item": "G9B-2",
+      "test_refs": [
+        "P9B.1-T04",
+        "P9B.1-T05"
+      ],
+      "trace": "§9.5.3；P9B.1"
+    },
+    {
+      "evidence": "P9B.2-T01～T05、T10，P9B.3-T05",
+      "gate_item": "G9B-3",
+      "test_refs": [
+        "P9B.2-T01",
+        "P9B.2-T02",
+        "P9B.2-T03",
+        "P9B.2-T04",
+        "P9B.2-T05",
+        "P9B.3-T05"
+      ],
+      "trace": "§9.5.4、§15；P9B.2/P9B.3"
+    },
+    {
+      "evidence": "P9B.2-T01、T06",
+      "gate_item": "G9B-4",
+      "test_refs": [
+        "P9B.2-T01"
+      ],
+      "trace": "§9.5.4；P9B.2"
+    },
+    {
+      "evidence": "P9B.2-T07～T08",
+      "gate_item": "G9B-5",
+      "test_refs": [
+        "P9B.2-T07",
+        "P9B.2-T08"
+      ],
+      "trace": "§9.5.4、§16；P9B.2"
+    },
+    {
+      "evidence": "P9B.3-T01～T07",
+      "gate_item": "G9B-6",
+      "test_refs": [
+        "P9B.3-T01",
+        "P9B.3-T02",
+        "P9B.3-T03",
+        "P9B.3-T04",
+        "P9B.3-T05",
+        "P9B.3-T06",
+        "P9B.3-T07"
+      ],
+      "trace": "§13、§18.3；P9B.3"
+    },
+    {
+      "evidence": "P9B.4-T01～T04",
+      "gate_item": "G9B-7",
+      "test_refs": [
+        "P9B.4-T01",
+        "P9B.4-T02",
+        "P9B.4-T03",
+        "P9B.4-T04"
+      ],
+      "trace": "§24.3–§24.4；P9B.4"
+    },
+    {
+      "evidence": "P9B.4-T05～T07",
+      "gate_item": "G9B-8",
+      "test_refs": [
+        "P9B.4-T05",
+        "P9B.4-T06",
+        "P9B.4-T07"
+      ],
+      "trace": "§24.5；P9B.4"
+    },
+    {
+      "evidence": "P9B.2-T09、T11",
+      "gate_item": "G9B-9",
+      "test_refs": [
+        "P9B.2-T09"
+      ],
+      "trace": "§9.5.1/§9.5.4、§12.2–§12.3；P9B.2"
+    },
+    {
+      "evidence": "P9B.1-T08、P9B.3-T07、P9B.4-T08",
+      "gate_item": "G9B-10",
+      "test_refs": [
+        "P9B.1-T08",
+        "P9B.3-T07",
+        "P9B.4-T08"
+      ],
+      "trace": "§9.5.5、§13.4；P9B.1/P9B.3/P9B.4"
+    },
+    {
+      "evidence": "P9B.4-T07",
+      "gate_item": "G9B-11",
+      "test_refs": [
+        "P9B.4-T07"
+      ],
+      "trace": "§9.6、§12、§18；P9B.4"
+    },
+    {
+      "evidence": "P10.1-T01～T06",
+      "gate_item": "G10-1",
+      "test_refs": [
+        "P10.1-T01",
+        "P10.1-T02",
+        "P10.1-T03",
+        "P10.1-T04",
+        "P10.1-T05",
+        "P10.1-T06"
+      ],
+      "trace": "§2.3；P10.1"
+    },
+    {
+      "evidence": "P10.2-T01～T06",
+      "gate_item": "G10-2",
+      "test_refs": [
+        "P10.2-T01",
+        "P10.2-T02",
+        "P10.2-T03",
+        "P10.2-T04",
+        "P10.2-T05",
+        "P10.2-T06"
+      ],
+      "trace": "§8.2；P10.2"
+    },
+    {
+      "evidence": "P10.3-T01～T06",
+      "gate_item": "G10-3",
+      "test_refs": [
+        "P10.3-T01",
+        "P10.3-T02",
+        "P10.3-T03",
+        "P10.3-T04",
+        "P10.3-T05",
+        "P10.3-T06"
+      ],
+      "trace": "§2.3；P10.3"
+    },
+    {
+      "evidence": "P10.4-T01～T06",
+      "gate_item": "G10-4",
+      "test_refs": [
+        "P10.4-T01",
+        "P10.4-T02",
+        "P10.4-T03",
+        "P10.4-T04",
+        "P10.4-T05",
+        "P10.4-T06"
+      ],
+      "trace": "§9；P10.4"
+    },
+    {
+      "evidence": "P10.5-T01～T06",
+      "gate_item": "G10-5",
+      "test_refs": [
+        "P10.5-T01",
+        "P10.5-T02",
+        "P10.5-T03",
+        "P10.5-T04",
+        "P10.5-T05",
+        "P10.5-T06"
+      ],
+      "trace": "§9；P10.5"
+    },
+    {
+      "evidence": "P10.6-T01～T06",
+      "gate_item": "G10-6",
+      "test_refs": [
+        "P10.6-T01",
+        "P10.6-T02",
+        "P10.6-T03",
+        "P10.6-T04",
+        "P10.6-T05",
+        "P10.6-T06"
+      ],
+      "trace": "§9；P10.6"
+    },
+    {
+      "evidence": "P10.7-T01～T06",
+      "gate_item": "G10-7",
+      "test_refs": [
+        "P10.7-T01",
+        "P10.7-T02",
+        "P10.7-T03",
+        "P10.7-T04",
+        "P10.7-T05",
+        "P10.7-T06"
+      ],
+      "trace": "§8.3；P10.7"
+    },
+    {
+      "evidence": "P10.7-T05、P10.7-T07、G8/G9/G9C/G9A-0/G9A/G9B 回归",
+      "gate_item": "G10-8",
+      "test_refs": [
+        "P10.7-T05",
+        "P10.7-T07"
+      ],
+      "trace": "§24.3；P10.7"
+    },
+    {
+      "evidence": "P11.1-T01～T04",
+      "gate_item": "G11-1",
+      "test_refs": [
+        "P11.1-T01",
+        "P11.1-T02",
+        "P11.1-T03",
+        "P11.1-T04"
+      ],
+      "trace": "§8.1–§8.3；P11.1"
+    },
+    {
+      "evidence": "P11.1-T05、P11.5-T01～T04",
+      "gate_item": "G11-2",
+      "test_refs": [
+        "P11.1-T05",
+        "P11.5-T01",
+        "P11.5-T02",
+        "P11.5-T03",
+        "P11.5-T04"
+      ],
+      "trace": "§11.1–§11.4；P11.1/P11.5"
+    },
+    {
+      "evidence": "P11.2-T01～T04",
+      "gate_item": "G11-3",
+      "test_refs": [
+        "P11.2-T01",
+        "P11.2-T02",
+        "P11.2-T03",
+        "P11.2-T04"
+      ],
+      "trace": "§11.2/§11.5；P11.2"
+    },
+    {
+      "evidence": "P11.2-T05、P11.3-T04",
+      "gate_item": "G11-4",
+      "test_refs": [
+        "P11.2-T05",
+        "P11.3-T04"
+      ],
+      "trace": "§11.6、§21.3；P11.2/P11.3"
+    },
+    {
+      "evidence": "P11.3-T01～T06",
+      "gate_item": "G11-5",
+      "test_refs": [
+        "P11.3-T01",
+        "P11.3-T02",
+        "P11.3-T03",
+        "P11.3-T04",
+        "P11.3-T05",
+        "P11.3-T06"
+      ],
+      "trace": "§9、§11.3/§11.6；P11.3"
+    },
+    {
+      "evidence": "P11.4-T01～T05",
+      "gate_item": "G11-6",
+      "test_refs": [
+        "P11.4-T01",
+        "P11.4-T02",
+        "P11.4-T03",
+        "P11.4-T04",
+        "P11.4-T05"
+      ],
+      "trace": "§11.4、§16.1；P11.4"
+    },
+    {
+      "evidence": "P11.5-T01～T05",
+      "gate_item": "G11-7",
+      "test_refs": [
+        "P11.5-T01",
+        "P11.5-T02",
+        "P11.5-T03",
+        "P11.5-T04",
+        "P11.5-T05"
+      ],
+      "trace": "§11.4/§11.5/§11.7；P11.5"
+    },
+    {
+      "evidence": "P11.6-T01、P11.6-T03",
+      "gate_item": "G11-8",
+      "test_refs": [
+        "P11.6-T01",
+        "P11.6-T03"
+      ],
+      "trace": "§20.3/§20.4、§24.2；P11.6"
+    },
+    {
+      "evidence": "P11.6-T02",
+      "gate_item": "G11-9",
+      "test_refs": [
+        "P11.6-T02"
+      ],
+      "trace": "§11.8；P11.6"
+    },
+    {
+      "evidence": "P11.6-T04",
+      "gate_item": "G11-10",
+      "test_refs": [
+        "P11.6-T04"
+      ],
+      "trace": "§2.3、§24.5；P11.6"
+    },
+    {
+      "evidence": "P12.1-T01～T05",
+      "gate_item": "G12-1",
+      "test_refs": [
+        "P12.1-T01",
+        "P12.1-T02",
+        "P12.1-T03",
+        "P12.1-T04",
+        "P12.1-T05"
+      ],
+      "trace": "§13.1/§13.2；P12.1"
+    },
+    {
+      "evidence": "P12.2-T01～T05",
+      "gate_item": "G12-2",
+      "test_refs": [
+        "P12.2-T01",
+        "P12.2-T02",
+        "P12.2-T03",
+        "P12.2-T04",
+        "P12.2-T05"
+      ],
+      "trace": "§18.3；P12.2"
+    },
+    {
+      "evidence": "P12.3-T01、P12.3-T05",
+      "gate_item": "G12-3",
+      "test_refs": [
+        "P12.3-T01",
+        "P12.3-T05"
+      ],
+      "trace": "§13.3；P12.3"
+    },
+    {
+      "evidence": "P12.3-T02、P12.4-T01",
+      "gate_item": "G12-4",
+      "test_refs": [
+        "P12.3-T02",
+        "P12.4-T01"
+      ],
+      "trace": "§13.4/§13.5；P12.3/P12.4"
+    },
+    {
+      "evidence": "P12.3-T03～T07",
+      "gate_item": "G12-5",
+      "test_refs": [
+        "P12.3-T03",
+        "P12.3-T04",
+        "P12.3-T05",
+        "P12.3-T06",
+        "P12.3-T07"
+      ],
+      "trace": "§13.1、§18.1–§18.2；P12.3"
+    },
+    {
+      "evidence": "P12.4-T02～T03",
+      "gate_item": "G12-6",
+      "test_refs": [
+        "P12.4-T02",
+        "P12.4-T03"
+      ],
+      "trace": "§15、§18.2；P12.4"
+    },
+    {
+      "evidence": "P12.4-T04～T05",
+      "gate_item": "G12-7",
+      "test_refs": [
+        "P12.4-T04",
+        "P12.4-T05"
+      ],
+      "trace": "§12、§15；P12.4"
+    },
+    {
+      "evidence": "P12.5-T01～T05",
+      "gate_item": "G12-8",
+      "test_refs": [
+        "P12.5-T01",
+        "P12.5-T02",
+        "P12.5-T03",
+        "P12.5-T04",
+        "P12.5-T05"
+      ],
+      "trace": "§13.5、§24.4；P12.5"
+    },
+    {
+      "evidence": "P12.2-T04、P12.5-T03～T04",
+      "gate_item": "G12-9",
+      "test_refs": [
+        "P12.2-T04",
+        "P12.5-T03",
+        "P12.5-T04"
+      ],
+      "trace": "§18.3；P12.2/P12.5"
+    },
+    {
+      "evidence": "P13.1-T01～T05",
+      "gate_item": "G13-1",
+      "test_refs": [
+        "P13.1-T01",
+        "P13.1-T02",
+        "P13.1-T03",
+        "P13.1-T04",
+        "P13.1-T05"
+      ],
+      "trace": "§7.1、§14.3；P13.1"
+    },
+    {
+      "evidence": "P13.1-T02～T03",
+      "gate_item": "G13-2",
+      "test_refs": [
+        "P13.1-T02",
+        "P13.1-T03"
+      ],
+      "trace": "§14.3；P13.1"
+    },
+    {
+      "evidence": "P13.2-T01～T04",
+      "gate_item": "G13-3",
+      "test_refs": [
+        "P13.2-T01",
+        "P13.2-T02",
+        "P13.2-T03",
+        "P13.2-T04"
+      ],
+      "trace": "§14.1/§14.2；P13.2"
+    },
+    {
+      "evidence": "P13.2-T05、P13.6-T03",
+      "gate_item": "G13-4",
+      "test_refs": [
+        "P13.2-T05",
+        "P13.6-T03"
+      ],
+      "trace": "§13.5、§18.3；P13.2/P13.6"
+    },
+    {
+      "evidence": "P13.3-T01～T03",
+      "gate_item": "G13-5",
+      "test_refs": [
+        "P13.3-T01",
+        "P13.3-T02",
+        "P13.3-T03"
+      ],
+      "trace": "§15；P13.3"
+    },
+    {
+      "evidence": "P13.3-T04～T05",
+      "gate_item": "G13-6",
+      "test_refs": [
+        "P13.3-T04",
+        "P13.3-T05"
+      ],
+      "trace": "§15、§16；P13.3"
+    },
+    {
+      "evidence": "P13.4-T01～T06",
+      "gate_item": "G13-7",
+      "test_refs": [
+        "P13.4-T01",
+        "P13.4-T02",
+        "P13.4-T03",
+        "P13.4-T04",
+        "P13.4-T05",
+        "P13.4-T06"
+      ],
+      "trace": "§17；P13.4"
+    },
+    {
+      "evidence": "P13.5-T01～T05",
+      "gate_item": "G13-8",
+      "test_refs": [
+        "P13.5-T01",
+        "P13.5-T02",
+        "P13.5-T03",
+        "P13.5-T04",
+        "P13.5-T05"
+      ],
+      "trace": "§14、§18、§27；P13.5"
+    },
+    {
+      "evidence": "P13.6-T01～T03",
+      "gate_item": "G13-9",
+      "test_refs": [
+        "P13.6-T01",
+        "P13.6-T02",
+        "P13.6-T03"
+      ],
+      "trace": "§5.3、§21.1；P13.6"
+    },
+    {
+      "evidence": "P13.6-T04～T05",
+      "gate_item": "G13-10",
+      "test_refs": [
+        "P13.6-T04",
+        "P13.6-T05"
+      ],
+      "trace": "§19、§24.8；P13.6"
+    },
+    {
+      "evidence": "P13.3-T05、P13.5-T04",
+      "gate_item": "G13-11",
+      "test_refs": [
+        "P13.3-T05",
+        "P13.5-T04"
+      ],
+      "trace": "§27；P13.3/P13.5"
+    },
+    {
+      "evidence": "P13.5-T01、P13.5-T06",
+      "gate_item": "G13-12",
+      "test_refs": [
+        "P13.5-T01",
+        "P13.5-T06"
+      ],
+      "trace": "§9.3；P13.5"
+    },
+    {
+      "evidence": "P13.6-T06",
+      "gate_item": "G13-13",
+      "test_refs": [
+        "P13.6-T06"
+      ],
+      "trace": "§3.2、§13.3；P13.6"
+    },
+    {
+      "evidence": "P14.1-T01",
+      "gate_item": "G14-1",
+      "test_refs": [
+        "P14.1-T01"
+      ],
+      "trace": "§24.6；P14.1"
+    },
+    {
+      "evidence": "P14.1-T02～T03",
+      "gate_item": "G14-2",
+      "test_refs": [
+        "P14.1-T02",
+        "P14.1-T03"
+      ],
+      "trace": "§22 T7；P14.1"
+    },
+    {
+      "evidence": "P14.1-T04、P14.2-T01～T03",
+      "gate_item": "G14-3",
+      "test_refs": [
+        "P14.1-T04",
+        "P14.2-T01",
+        "P14.2-T02",
+        "P14.2-T03"
+      ],
+      "trace": "§20.4、§24.5；P14.1/P14.2"
+    },
+    {
+      "evidence": "P14.2-T04～T05",
+      "gate_item": "G14-4",
+      "test_refs": [
+        "P14.2-T04",
+        "P14.2-T05"
+      ],
+      "trace": "§12；P14.2"
+    },
+    {
+      "evidence": "P14.3-T01～T03",
+      "gate_item": "G14-5",
+      "test_refs": [
+        "P14.3-T01",
+        "P14.3-T02",
+        "P14.3-T03"
+      ],
+      "trace": "§7、§24.3；P14.3"
+    },
+    {
+      "evidence": "P14.3-T04",
+      "gate_item": "G14-6",
+      "test_refs": [
+        "P14.3-T04"
+      ],
+      "trace": "§12.3；P14.3"
+    },
+    {
+      "evidence": "P14.3-T05～T07",
+      "gate_item": "G14-7",
+      "test_refs": [
+        "P14.3-T05",
+        "P14.3-T06",
+        "P14.3-T07"
+      ],
+      "trace": "§13–§15、§24.4；P14.3"
+    },
+    {
+      "evidence": "P14.3-T08",
+      "gate_item": "G14-8",
+      "test_refs": [
+        "P14.3-T08"
+      ],
+      "trace": "§20.4、§24.2；P14.3"
+    },
+    {
+      "evidence": "P14.4-T01～T03、T06",
+      "gate_item": "G14-9",
+      "test_refs": [
+        "P14.4-T01",
+        "P14.4-T02",
+        "P14.4-T03"
+      ],
+      "trace": "§19、§21、§24.8；P14.4"
+    },
+    {
+      "evidence": "P14.4-T04～T05",
+      "gate_item": "G14-10",
+      "test_refs": [
+        "P14.4-T04",
+        "P14.4-T05"
+      ],
+      "trace": "§17、§21.1；P14.4"
+    },
+    {
+      "evidence": "P14.5-T01～T02",
+      "gate_item": "G14-11",
+      "test_refs": [
+        "P14.5-T01",
+        "P14.5-T02"
+      ],
+      "trace": "§25–§27；P14.5"
+    },
+    {
+      "evidence": "P14.5-T03～T04",
+      "gate_item": "G14-12",
+      "test_refs": [
+        "P14.5-T03",
+        "P14.5-T04"
+      ],
+      "trace": "§23 M0；P14.5"
+    },
+    {
+      "evidence": "P14.3-T09～T10、G9B 回归",
+      "gate_item": "G14-13",
+      "test_refs": [
+        "P14.3-T09",
+        "P14.3-T10"
+      ],
+      "trace": "§9.5、§15、§18；P14.3"
+    },
+    {
+      "evidence": "P14.1-T05、P14.3-T11",
+      "gate_item": "G14-14",
+      "test_refs": [
+        "P14.1-T05",
+        "P14.3-T11"
+      ],
+      "trace": "§9.6、§12、§16.1.1、§24.6；P14.3"
+    },
+    {
+      "evidence": "P14.2-T06、P14.3-T12～T13、P14.4-T07",
+      "gate_item": "G14-15",
+      "test_refs": [
+        "P14.2-T06",
+        "P14.3-T12",
+        "P14.3-T13",
+        "P14.4-T07"
+      ],
+      "trace": "§9.6、§12、§18；P14.2/P14.3/P14.4"
+    },
+    {
+      "evidence": "P15.1-T01～T05",
+      "gate_item": "G15-1",
+      "test_refs": [
+        "P15.1-T01",
+        "P15.1-T02",
+        "P15.1-T03",
+        "P15.1-T04",
+        "P15.1-T05"
+      ],
+      "trace": "§5、§23 M0；P15.1"
+    },
+    {
+      "evidence": "P15.2-T01～T05",
+      "gate_item": "G15-2",
+      "test_refs": [
+        "P15.2-T01",
+        "P15.2-T02",
+        "P15.2-T03",
+        "P15.2-T04",
+        "P15.2-T05"
+      ],
+      "trace": "§6；P15.2"
+    },
+    {
+      "evidence": "P15.3-T01～T05",
+      "gate_item": "G15-3",
+      "test_refs": [
+        "P15.3-T01",
+        "P15.3-T02",
+        "P15.3-T03",
+        "P15.3-T04",
+        "P15.3-T05"
+      ],
+      "trace": "§6.5–§6.7、§24.7；P15.3"
+    },
+    {
+      "evidence": "P15.3-T05～T06",
+      "gate_item": "G15-4",
+      "test_refs": [
+        "P15.3-T05",
+        "P15.3-T06"
+      ],
+      "trace": "§6.6/§6.7；P15.3"
+    },
+    {
+      "evidence": "P15.4-T01～T02",
+      "gate_item": "G15-5",
+      "test_refs": [
+        "P15.4-T01",
+        "P15.4-T02"
+      ],
+      "trace": "§23.1–§23.3；P15.4"
+    },
+    {
+      "evidence": "P15.4-T03～T05",
+      "gate_item": "G15-6",
+      "test_refs": [
+        "P15.4-T03",
+        "P15.4-T04",
+        "P15.4-T05"
+      ],
+      "trace": "§16.3–§16.5；P15.4"
+    },
+    {
+      "evidence": "P15.5-T01～T05",
+      "gate_item": "G15-7",
+      "test_refs": [
+        "P15.5-T01",
+        "P15.5-T02",
+        "P15.5-T03",
+        "P15.5-T04",
+        "P15.5-T05"
+      ],
+      "trace": "§23.3–§23.5、§24.6；P15.5"
+    },
+    {
+      "evidence": "P15.6-T01～T03",
+      "gate_item": "G15-8",
+      "test_refs": [
+        "P15.6-T01",
+        "P15.6-T02",
+        "P15.6-T03"
+      ],
+      "trace": "§26–§27；P15.6"
+    },
+    {
+      "evidence": "P15.6-T04、P15.1-T05",
+      "gate_item": "G15-9",
+      "test_refs": [
+        "P15.1-T05",
+        "P15.6-T04"
+      ],
+      "trace": "§23 M0；P15.6"
+    },
+    {
+      "evidence": "P16.1-T01～T06",
+      "gate_item": "G16-1",
+      "test_refs": [
+        "P16.1-T01",
+        "P16.1-T02",
+        "P16.1-T03",
+        "P16.1-T04",
+        "P16.1-T05",
+        "P16.1-T06"
+      ],
+      "trace": "§5.3/§5.6；P16.1"
+    },
+    {
+      "evidence": "P16.2-T01～T05",
+      "gate_item": "G16-2",
+      "test_refs": [
+        "P16.2-T01",
+        "P16.2-T02",
+        "P16.2-T03",
+        "P16.2-T04",
+        "P16.2-T05"
+      ],
+      "trace": "§6.2–§6.4；P16.2"
+    },
+    {
+      "evidence": "P16.3-T01、P16.3-T05～T06",
+      "gate_item": "G16-3",
+      "test_refs": [
+        "P16.3-T01",
+        "P16.3-T05",
+        "P16.3-T06"
+      ],
+      "trace": "§19.3、§23 M1；P16.3"
+    },
+    {
+      "evidence": "P16.3-T02～T03",
+      "gate_item": "G16-4",
+      "test_refs": [
+        "P16.3-T02",
+        "P16.3-T03"
+      ],
+      "trace": "§6.1、§24.7；P16.3"
+    },
+    {
+      "evidence": "P16.3-T01、P16.3-T04",
+      "gate_item": "G16-5",
+      "test_refs": [
+        "P16.3-T01",
+        "P16.3-T04"
+      ],
+      "trace": "§25；P16.3"
+    },
+    {
+      "evidence": "P16.4-T01～T03、P16.4-T06",
+      "gate_item": "G16-6",
+      "test_refs": [
+        "P16.4-T01",
+        "P16.4-T02",
+        "P16.4-T03",
+        "P16.4-T06"
+      ],
+      "trace": "§6.4、§23.3；P16.4"
+    },
+    {
+      "evidence": "P16.4-T04～T05",
+      "gate_item": "G16-7",
+      "test_refs": [
+        "P16.4-T04",
+        "P16.4-T05"
+      ],
+      "trace": "§6.3/§6.4；P16.4"
+    },
+    {
+      "evidence": "P16.5-T01～T03",
+      "gate_item": "G16-8",
+      "test_refs": [
+        "P16.5-T01",
+        "P16.5-T02",
+        "P16.5-T03"
+      ],
+      "trace": "§14.3、§24.7；P16.5"
+    },
+    {
+      "evidence": "P16.5-T04～T05",
+      "gate_item": "G16-9",
+      "test_refs": [
+        "P16.5-T04",
+        "P16.5-T05"
+      ],
+      "trace": "§23.2/§23.3；P16.5"
+    },
+    {
+      "evidence": "P16.1-T03、P16.5-T06",
+      "gate_item": "G16-10",
+      "test_refs": [
+        "P16.1-T03",
+        "P16.5-T06"
+      ],
+      "trace": "§21.1；P16.1/P16.5"
+    },
+    {
+      "evidence": "P17.1-T01～T03、P17.1-T06",
+      "gate_item": "G17-1",
+      "test_refs": [
+        "P17.1-T01",
+        "P17.1-T02",
+        "P17.1-T03",
+        "P17.1-T06"
+      ],
+      "trace": "§5.4、§6.3；P17.1"
+    },
+    {
+      "evidence": "P17.1-T04～T05",
+      "gate_item": "G17-2",
+      "test_refs": [
+        "P17.1-T04",
+        "P17.1-T05"
+      ],
+      "trace": "§6.4、§13；P17.1"
+    },
+    {
+      "evidence": "P17.2-T01～T06",
+      "gate_item": "G17-3",
+      "test_refs": [
+        "P17.2-T01",
+        "P17.2-T02",
+        "P17.2-T03",
+        "P17.2-T04",
+        "P17.2-T05",
+        "P17.2-T06"
+      ],
+      "trace": "§18.3、§23 M2；P17.2"
+    },
+    {
+      "evidence": "P17.3-T01～T02、P17.3-T06",
+      "gate_item": "G17-4",
+      "test_refs": [
+        "P17.3-T01",
+        "P17.3-T02",
+        "P17.3-T06"
+      ],
+      "trace": "§6.6；P17.3"
+    },
+    {
+      "evidence": "P17.3-T03～T05",
+      "gate_item": "G17-5",
+      "test_refs": [
+        "P17.3-T03",
+        "P17.3-T04",
+        "P17.3-T05"
+      ],
+      "trace": "§6.3/§6.6；P17.3"
+    },
+    {
+      "evidence": "P17.4-T01～T02、P17.4-T04～T05",
+      "gate_item": "G17-6",
+      "test_refs": [
+        "P17.4-T01",
+        "P17.4-T02",
+        "P17.4-T04",
+        "P17.4-T05"
+      ],
+      "trace": "§6.7；P17.4"
+    },
+    {
+      "evidence": "P17.4-T03～T06",
+      "gate_item": "G17-7",
+      "test_refs": [
+        "P17.4-T03",
+        "P17.4-T04",
+        "P17.4-T05",
+        "P17.4-T06"
+      ],
+      "trace": "§18.2；P17.4"
+    },
+    {
+      "evidence": "P17.5-T01～T07",
+      "gate_item": "G17-8",
+      "test_refs": [
+        "P17.5-T01",
+        "P17.5-T02",
+        "P17.5-T03",
+        "P17.5-T04",
+        "P17.5-T05",
+        "P17.5-T06",
+        "P17.5-T07"
+      ],
+      "trace": "§6.5、§24.7；P17.5"
+    },
+    {
+      "evidence": "P17.7-T01～T04",
+      "gate_item": "G17-9",
+      "test_refs": [
+        "P17.7-T01",
+        "P17.7-T02",
+        "P17.7-T03",
+        "P17.7-T04"
+      ],
+      "trace": "§23 M2；P17.7"
+    },
+    {
+      "evidence": "P17.7-T05～T06",
+      "gate_item": "G17-10",
+      "test_refs": [
+        "P17.7-T05",
+        "P17.7-T06"
+      ],
+      "trace": "§19.2、§24.8；P17.7"
+    },
+    {
+      "evidence": "P17.6-T01～T03",
+      "gate_item": "G17-11",
+      "test_refs": [
+        "P17.6-T01",
+        "P17.6-T02",
+        "P17.6-T03"
+      ],
+      "trace": "§6.3/§23.2；P17.6"
+    },
+    {
+      "evidence": "P17.6-T04～T08",
+      "gate_item": "G17-12",
+      "test_refs": [
+        "P17.6-T04",
+        "P17.6-T05",
+        "P17.6-T06",
+        "P17.6-T07",
+        "P17.6-T08"
+      ],
+      "trace": "§6.3、§13.3–§13.5；P17.6"
+    },
+    {
+      "evidence": "P18.1-T01～T02、P18.1-T06",
+      "gate_item": "G18-1",
+      "test_refs": [
+        "P18.1-T01",
+        "P18.1-T02",
+        "P18.1-T06"
+      ],
+      "trace": "§5.3/§5.4、§16.5；P18.1"
+    },
+    {
+      "evidence": "P18.1-T03～T05、P18.6-T05",
+      "gate_item": "G18-2",
+      "test_refs": [
+        "P18.1-T03",
+        "P18.1-T04",
+        "P18.1-T05",
+        "P18.6-T05"
+      ],
+      "trace": "§5.4、§16.3；P18.1/P18.6"
+    },
+    {
+      "evidence": "P18.2-T01～T06",
+      "gate_item": "G18-3",
+      "test_refs": [
+        "P18.2-T01",
+        "P18.2-T02",
+        "P18.2-T03",
+        "P18.2-T04",
+        "P18.2-T05",
+        "P18.2-T06"
+      ],
+      "trace": "§16.1/§16.3；P18.2"
+    },
+    {
+      "evidence": "P18.3-T01～T04",
+      "gate_item": "G18-4",
+      "test_refs": [
+        "P18.3-T01",
+        "P18.3-T02",
+        "P18.3-T03",
+        "P18.3-T04"
+      ],
+      "trace": "§16.1/§16.4；P18.3"
+    },
+    {
+      "evidence": "P18.3-T05～T06",
+      "gate_item": "G18-5",
+      "test_refs": [
+        "P18.3-T05",
+        "P18.3-T06"
+      ],
+      "trace": "§16.1；P18.3"
+    },
+    {
+      "evidence": "P18.4-T01～T06",
+      "gate_item": "G18-6",
+      "test_refs": [
+        "P18.4-T01",
+        "P18.4-T02",
+        "P18.4-T03",
+        "P18.4-T04",
+        "P18.4-T05",
+        "P18.4-T06"
+      ],
+      "trace": "§16.4；P18.4"
+    },
+    {
+      "evidence": "P18.5-T01～T04",
+      "gate_item": "G18-7",
+      "test_refs": [
+        "P18.5-T01",
+        "P18.5-T02",
+        "P18.5-T03",
+        "P18.5-T04"
+      ],
+      "trace": "§16.5；P18.5"
+    },
+    {
+      "evidence": "P18.5-T05",
+      "gate_item": "G18-8",
+      "test_refs": [
+        "P18.5-T05"
+      ],
+      "trace": "§16.5、§19.3；P18.5"
+    },
+    {
+      "evidence": "P18.5-T06、P18.6-T01～T04、P18.6-T07",
+      "gate_item": "G18-9",
+      "test_refs": [
+        "P18.5-T06",
+        "P18.6-T01",
+        "P18.6-T02",
+        "P18.6-T03",
+        "P18.6-T04",
+        "P18.6-T07"
+      ],
+      "trace": "§15、§17；P18.5/P18.6"
+    },
+    {
+      "evidence": "P18.6-T06",
+      "gate_item": "G18-10",
+      "test_refs": [
+        "P18.6-T06"
+      ],
+      "trace": "§12、§15；P18.6"
+    },
+    {
+      "evidence": "P18.3-T07、P18.5-T07",
+      "gate_item": "G18-11",
+      "test_refs": [
+        "P18.3-T07",
+        "P18.5-T07"
+      ],
+      "trace": "§16.1/§16.5；P18.3/P18.5"
+    },
+    {
+      "evidence": "P19.1-T01～T06",
+      "gate_item": "G19-1",
+      "test_refs": [
+        "P19.1-T01",
+        "P19.1-T02",
+        "P19.1-T03",
+        "P19.1-T04",
+        "P19.1-T05",
+        "P19.1-T06"
+      ],
+      "trace": "§5.3/§5.5、§23.3；P19.1"
+    },
+    {
+      "evidence": "P19.2-T01～T02、P19.2-T06",
+      "gate_item": "G19-2",
+      "test_refs": [
+        "P19.2-T01",
+        "P19.2-T02",
+        "P19.2-T06"
+      ],
+      "trace": "§5.2、§7；P19.2"
+    },
+    {
+      "evidence": "P19.2-T03～T05",
+      "gate_item": "G19-3",
+      "test_refs": [
+        "P19.2-T03",
+        "P19.2-T04",
+        "P19.2-T05"
+      ],
+      "trace": "§6.5–§6.7；P19.2"
+    },
+    {
+      "evidence": "P19.3-T01～T08",
+      "gate_item": "G19-4",
+      "test_refs": [
+        "P19.3-T01",
+        "P19.3-T02",
+        "P19.3-T03",
+        "P19.3-T04",
+        "P19.3-T05",
+        "P19.3-T06",
+        "P19.3-T07",
+        "P19.3-T08"
+      ],
+      "trace": "§13.3–§13.5；P19.3"
+    },
+    {
+      "evidence": "P19.3-T07、P19.1-T05",
+      "gate_item": "G19-5",
+      "test_refs": [
+        "P19.1-T05",
+        "P19.3-T07"
+      ],
+      "trace": "§6.4、§23.3；P19.3"
+    },
+    {
+      "evidence": "P19.4-T01～T03、P19.4-T06",
+      "gate_item": "G19-6",
+      "test_refs": [
+        "P19.4-T01",
+        "P19.4-T02",
+        "P19.4-T03",
+        "P19.4-T06"
+      ],
+      "trace": "§6.7、§24.7；P19.4"
+    },
+    {
+      "evidence": "P19.4-T04～T05",
+      "gate_item": "G19-7",
+      "test_refs": [
+        "P19.4-T04",
+        "P19.4-T05"
+      ],
+      "trace": "§6.6；P19.4"
+    },
+    {
+      "evidence": "P19.5-T01～T06",
+      "gate_item": "G19-8",
+      "test_refs": [
+        "P19.5-T01",
+        "P19.5-T02",
+        "P19.5-T03",
+        "P19.5-T04",
+        "P19.5-T05",
+        "P19.5-T06"
+      ],
+      "trace": "§12、§15–§16；P19.5"
+    },
+    {
+      "evidence": "P19.1-T04、P19.2-T03～T04、P19.4-T01～T06",
+      "gate_item": "G19-9",
+      "test_refs": [
+        "P19.1-T04",
+        "P19.2-T03",
+        "P19.2-T04",
+        "P19.4-T01",
+        "P19.4-T02",
+        "P19.4-T03",
+        "P19.4-T04",
+        "P19.4-T05",
+        "P19.4-T06"
+      ],
+      "trace": "§23.1/§23.2、§24.7；P19.1/P19.2/P19.4"
+    },
+    {
+      "evidence": "P19.6-T01～T05",
+      "gate_item": "G19-10",
+      "test_refs": [
+        "P19.6-T01",
+        "P19.6-T02",
+        "P19.6-T03",
+        "P19.6-T04",
+        "P19.6-T05"
+      ],
+      "trace": "§16.3、§20.5、§24.5；P19.6"
+    },
+    {
+      "evidence": "P20.1-T01～T05",
+      "gate_item": "G20-1",
+      "test_refs": [
+        "P20.1-T01",
+        "P20.1-T02",
+        "P20.1-T03",
+        "P20.1-T04",
+        "P20.1-T05"
+      ],
+      "trace": "§6.3、§23.3；P20.1"
+    },
+    {
+      "evidence": "P20.2-T01～T05",
+      "gate_item": "G20-2",
+      "test_refs": [
+        "P20.2-T01",
+        "P20.2-T02",
+        "P20.2-T03",
+        "P20.2-T04",
+        "P20.2-T05"
+      ],
+      "trace": "§23 M4、§24.5；P20.2"
+    },
+    {
+      "evidence": "P20.2-T02～T04",
+      "gate_item": "G20-3",
+      "test_refs": [
+        "P20.2-T02",
+        "P20.2-T03",
+        "P20.2-T04"
+      ],
+      "trace": "§23.4；P20.2"
+    },
+    {
+      "evidence": "P20.3-T01、P20.4-T01～T02",
+      "gate_item": "G20-4",
+      "test_refs": [
+        "P20.3-T01",
+        "P20.4-T01",
+        "P20.4-T02"
+      ],
+      "trace": "§24.2–§24.6；P20.3/P20.4"
+    },
+    {
+      "evidence": "P20.3-T02～T05",
+      "gate_item": "G20-5",
+      "test_refs": [
+        "P20.3-T02",
+        "P20.3-T03",
+        "P20.3-T04",
+        "P20.3-T05"
+      ],
+      "trace": "§24.5；P20.3"
+    },
+    {
+      "evidence": "P20.2-T05、P20.3-T05、P20.4-T03",
+      "gate_item": "G20-6",
+      "test_refs": [
+        "P20.2-T05",
+        "P20.3-T05",
+        "P20.4-T03"
+      ],
+      "trace": "§24.6；P20.2–P20.4"
+    },
+    {
+      "evidence": "P20.4-T04",
+      "gate_item": "G20-7",
+      "test_refs": [
+        "P20.4-T04"
+      ],
+      "trace": "§23.3–§23.5；P20.4"
+    },
+    {
+      "evidence": "P20.4-T05",
+      "gate_item": "G20-8",
+      "test_refs": [
+        "P20.4-T05"
+      ],
+      "trace": "§23 M5；P20.4"
+    },
+    {
+      "evidence": "P20.1-T02～T05、P20.2-T02",
+      "gate_item": "G20-9",
+      "test_refs": [
+        "P20.1-T02",
+        "P20.1-T03",
+        "P20.1-T04",
+        "P20.1-T05",
+        "P20.2-T02"
+      ],
+      "trace": "§23.3；P20.1/P20.2"
+    },
+    {
+      "evidence": "P20.0-T01～T06",
+      "gate_item": "G20-10",
+      "test_refs": [
+        "P20.0-T01",
+        "P20.0-T02",
+        "P20.0-T03",
+        "P20.0-T04",
+        "P20.0-T05",
+        "P20.0-T06"
+      ],
+      "trace": "§23.4；P20.0"
+    },
+    {
+      "evidence": "P21.1-T01～T06",
+      "gate_item": "G21-1",
+      "test_refs": [
+        "P21.1-T01",
+        "P21.1-T02",
+        "P21.1-T03",
+        "P21.1-T04",
+        "P21.1-T05",
+        "P21.1-T06"
+      ],
+      "trace": "§6.3/§6.4、§23.3；P21.1"
+    },
+    {
+      "evidence": "P21.2-T01、P21.2-T04",
+      "gate_item": "G21-2",
+      "test_refs": [
+        "P21.2-T01",
+        "P21.2-T04"
+      ],
+      "trace": "§23 M5、§24.6；P21.2"
+    },
+    {
+      "evidence": "P21.2-T01～T04",
+      "gate_item": "G21-3",
+      "test_refs": [
+        "P21.2-T01",
+        "P21.2-T02",
+        "P21.2-T03",
+        "P21.2-T04"
+      ],
+      "trace": "§12、§24.3/§24.6；P21.2"
+    },
+    {
+      "evidence": "P21.2-T03",
+      "gate_item": "G21-4",
+      "test_refs": [
+        "P21.2-T03"
+      ],
+      "trace": "§6.5–§6.7、§24.7；P21.2"
+    },
+    {
+      "evidence": "P21.2-T02、P21.2-T06",
+      "gate_item": "G21-5",
+      "test_refs": [
+        "P21.2-T02",
+        "P21.2-T06"
+      ],
+      "trace": "§12.1；P21.2"
+    },
+    {
+      "evidence": "P21.2-T05",
+      "gate_item": "G21-6",
+      "test_refs": [
+        "P21.2-T05"
+      ],
+      "trace": "§23.3；P21.2"
+    },
+    {
+      "evidence": "P21.3-T01～T03",
+      "gate_item": "G21-7",
+      "test_refs": [
+        "P21.3-T01",
+        "P21.3-T02",
+        "P21.3-T03"
+      ],
+      "trace": "§23.5；P21.3"
+    },
+    {
+      "evidence": "P21.3-T04～T05",
+      "gate_item": "G21-8",
+      "test_refs": [
+        "P21.3-T04",
+        "P21.3-T05"
+      ],
+      "trace": "§13.5、§25；P21.3"
+    },
+    {
+      "evidence": "P21.3-T05 + G21 签认记录",
+      "gate_item": "G21-9",
+      "test_refs": [
+        "P21.3-T05"
+      ],
+      "trace": "§23 M5；P21.3"
+    },
+    {
+      "evidence": "P22.1-T01～T05",
+      "gate_item": "G22-1",
+      "test_refs": [
+        "P22.1-T01",
+        "P22.1-T02",
+        "P22.1-T03",
+        "P22.1-T04",
+        "P22.1-T05"
+      ],
+      "trace": "§23.3–§23.5；P22.1"
+    },
+    {
+      "evidence": "P22.2-T01～T03",
+      "gate_item": "G22-2",
+      "test_refs": [
+        "P22.2-T01",
+        "P22.2-T02",
+        "P22.2-T03"
+      ],
+      "trace": "§14–§18、§24.6；P22.2"
+    },
+    {
+      "evidence": "P22.2-T04～T06",
+      "gate_item": "G22-3",
+      "test_refs": [
+        "P22.2-T04",
+        "P22.2-T05",
+        "P22.2-T06"
+      ],
+      "trace": "§13.5、§25；P22.2"
+    },
+    {
+      "evidence": "P22.3-T01～T02",
+      "gate_item": "G22-4",
+      "test_refs": [
+        "P22.3-T01",
+        "P22.3-T02"
+      ],
+      "trace": "§23.5；P22.3"
+    },
+    {
+      "evidence": "P22.3-T02～T03",
+      "gate_item": "G22-5",
+      "test_refs": [
+        "P22.3-T02",
+        "P22.3-T03"
+      ],
+      "trace": "§23.5；P22.3"
+    },
+    {
+      "evidence": "P22.3-T04～T06",
+      "gate_item": "G22-6",
+      "test_refs": [
+        "P22.3-T04",
+        "P22.3-T05",
+        "P22.3-T06"
+      ],
+      "trace": "§25；P22.3"
+    },
+    {
+      "evidence": "P22.4-T01、P22.4-T06",
+      "gate_item": "G22-7",
+      "test_refs": [
+        "P22.4-T01",
+        "P22.4-T06"
+      ],
+      "trace": "§23 M6；P22.4"
+    },
+    {
+      "evidence": "P22.4-T02～T03",
+      "gate_item": "G22-8",
+      "test_refs": [
+        "P22.4-T02",
+        "P22.4-T03"
+      ],
+      "trace": "§23.1/§23.2；P22.4"
+    },
+    {
+      "evidence": "P22.4-T04～T05",
+      "gate_item": "G22-9",
+      "test_refs": [
+        "P22.4-T04",
+        "P22.4-T05"
+      ],
+      "trace": "§23.4/§23.5、§25；P22.4"
+    },
+    {
+      "evidence": "P22.4-T04 + G22 签认记录",
+      "gate_item": "G22-10",
+      "test_refs": [
+        "P22.4-T04"
+      ],
+      "trace": "§23 M6；P22.4"
+    },
+    {
+      "evidence": "P23.1-T01～T04",
+      "gate_item": "G23-1",
+      "test_refs": [
+        "P23.1-T01",
+        "P23.1-T02",
+        "P23.1-T03",
+        "P23.1-T04"
+      ],
+      "trace": "§6.4、§23 M6；P23.1"
+    },
+    {
+      "evidence": "P23.1-T05～T06",
+      "gate_item": "G23-2",
+      "test_refs": [
+        "P23.1-T05",
+        "P23.1-T06"
+      ],
+      "trace": "§23.4/§23.5；P23.1"
+    },
+    {
+      "evidence": "P23.2-T01～T02",
+      "gate_item": "G23-3",
+      "test_refs": [
+        "P23.2-T01",
+        "P23.2-T02"
+      ],
+      "trace": "§24.3、§24.6；P23.2"
+    },
+    {
+      "evidence": "P23.2-T03～T04",
+      "gate_item": "G23-4",
+      "test_refs": [
+        "P23.2-T03",
+        "P23.2-T04"
+      ],
+      "trace": "§12、§17；P23.2"
+    },
+    {
+      "evidence": "P23.2-T05",
+      "gate_item": "G23-5",
+      "test_refs": [
+        "P23.2-T05"
+      ],
+      "trace": "§23.1；P23.2"
+    },
+    {
+      "evidence": "P23.2-T06～T07、P23.3-T01、P23.3-T06",
+      "gate_item": "G23-6",
+      "test_refs": [
+        "P23.2-T06",
+        "P23.2-T07",
+        "P23.3-T01",
+        "P23.3-T06"
+      ],
+      "trace": "§23.3/§23.4；P23.2/P23.3"
+    },
+    {
+      "evidence": "P23.3-T01～T06",
+      "gate_item": "G23-7",
+      "test_refs": [
+        "P23.3-T01",
+        "P23.3-T02",
+        "P23.3-T03",
+        "P23.3-T04",
+        "P23.3-T05",
+        "P23.3-T06"
+      ],
+      "trace": "§23.4/§23.5、§25；P23.3"
+    },
+    {
+      "evidence": "P23.3-T05、P23.4-T06",
+      "gate_item": "G23-8",
+      "test_refs": [
+        "P23.3-T05",
+        "P23.4-T06"
+      ],
+      "trace": "§27；P23.3/P23.4"
+    },
+    {
+      "evidence": "P23.4-T03～T04",
+      "gate_item": "G23-9",
+      "test_refs": [
+        "P23.4-T03",
+        "P23.4-T04"
+      ],
+      "trace": "§5.4、§16.5、§24.8；P23.4"
+    },
+    {
+      "evidence": "P23.4-T01～T02、P23.4-T05",
+      "gate_item": "G23-10",
+      "test_refs": [
+        "P23.4-T01",
+        "P23.4-T02",
+        "P23.4-T05"
+      ],
+      "trace": "§26–§28；P23.4"
+    },
+    {
+      "evidence": "P23.4-T01 + 最终签认记录",
+      "gate_item": "G23-11",
+      "test_refs": [
+        "P23.4-T01"
+      ],
+      "trace": "§23 M6；P23.4"
+    }
+  ],
+  "indexes": {
+    "by_design_section": {
+      "1": [
+        "P23.1",
+        "P23.4",
+        "P6.2"
+      ],
+      "10": [
+        "P8.2",
+        "P9.2",
+        "P9A.2"
+      ],
+      "10.1": [
+        "P7.4"
+      ],
+      "10.2": [
+        "P7.4"
+      ],
+      "11": [
+        "P14.2"
+      ],
+      "11.1": [
+        "P10.7",
+        "P11.1",
+        "P11.6"
+      ],
+      "11.2": [
+        "P11.2",
+        "P2.1"
+      ],
+      "11.3": [
+        "P11.2",
+        "P11.3",
+        "P7.3",
+        "P9.4",
+        "P9.5",
+        "P9.6"
+      ],
+      "11.4": [
+        "P11.3",
+        "P11.4",
+        "P11.5"
+      ],
+      "11.5": [
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P11.2",
+        "P11.5",
+        "P6.3",
+        "P7.4",
+        "P9.5",
+        "P9.6"
+      ],
+      "11.6": [
+        "P11.1",
+        "P11.2",
+        "P11.3"
+      ],
+      "11.7": [
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P11.5",
+        "P6.3",
+        "P9.5",
+        "P9.6"
+      ],
+      "11.8": [
+        "P11.2",
+        "P11.6"
+      ],
+      "12": [
+        "P10.1",
+        "P10.5",
+        "P10.6",
+        "P13.3",
+        "P14.2",
+        "P19.2",
+        "P19.5",
+        "P2.1",
+        "P21.2",
+        "P22.2",
+        "P23.2",
+        "P4.3",
+        "P8.2",
+        "P8.3",
+        "P8.4",
+        "P8.5",
+        "P9.1",
+        "P9.3",
+        "P9.4",
+        "P9.5",
+        "P9.6",
+        "P9.7",
+        "P9A.2",
+        "P9B.2",
+        "P9C.3",
+        "P9C.4"
+      ],
+      "12.1": [
+        "P11.5",
+        "P12.1",
+        "P12.4",
+        "P13.4",
+        "P17.3",
+        "P17.5",
+        "P19.4",
+        "P3.3",
+        "P6.3",
+        "P8.1",
+        "P9C.2"
+      ],
+      "12.2": [
+        "P12.1",
+        "P14.3",
+        "P17.3",
+        "P17.4",
+        "P17.5",
+        "P2.2",
+        "P4.4",
+        "P6.4",
+        "P9C.2"
+      ],
+      "12.3": [
+        "P11.5",
+        "P12.2",
+        "P12.4",
+        "P14.3",
+        "P17.4",
+        "P20.3",
+        "P4.0",
+        "P4.4",
+        "P6.2",
+        "P6.3",
+        "P6.4",
+        "P6.5",
+        "P8.1",
+        "P9.2"
+      ],
+      "13": [
+        "P16.2",
+        "P17.1"
+      ],
+      "13.1": [
+        "P12.1",
+        "P12.3",
+        "P17.5",
+        "P2.2"
+      ],
+      "13.2": [
+        "P12.1",
+        "P12.2",
+        "P12.5",
+        "P9B.1",
+        "P9B.2"
+      ],
+      "13.3": [
+        "P12.3",
+        "P15.3",
+        "P17.5",
+        "P17.6",
+        "P19.3"
+      ],
+      "13.4": [
+        "P17.2",
+        "P2.2",
+        "P3.2",
+        "P4.5",
+        "P9A.1",
+        "P9A.3",
+        "P9B.1",
+        "P9B.3"
+      ],
+      "13.5": [
+        "P12.2",
+        "P12.3",
+        "P12.5",
+        "P13.2",
+        "P14.3",
+        "P17.2",
+        "P17.5",
+        "P17.6",
+        "P19.3",
+        "P21.3",
+        "P22.3",
+        "P9A.3",
+        "P9B.3"
+      ],
+      "14": [
+        "P13.5",
+        "P22.1",
+        "P23.2",
+        "P9A.3"
+      ],
+      "14.1": [
+        "P12.5",
+        "P13.1",
+        "P13.2",
+        "P6.5"
+      ],
+      "14.2": [
+        "P1.4",
+        "P6.1"
+      ],
+      "14.3": [
+        "P12.5",
+        "P13.1",
+        "P13.2",
+        "P13.3",
+        "P13.4",
+        "P16.5",
+        "P6.5"
+      ],
+      "15": [
+        "P12.4",
+        "P13.3",
+        "P13.4",
+        "P18.6",
+        "P19.3",
+        "P19.5",
+        "P21.3",
+        "P6.3",
+        "P8.2",
+        "P9.2",
+        "P9.4",
+        "P9.5",
+        "P9B.1"
+      ],
+      "15.1": [
+        "P9B.2"
+      ],
+      "15.2": [
+        "P9B.2"
+      ],
+      "16.1": [
+        "P11.4",
+        "P12.4",
+        "P13.3",
+        "P18.2",
+        "P18.3",
+        "P19.5",
+        "P19.6",
+        "P2.1",
+        "P2.3",
+        "P3.4",
+        "P7.2",
+        "P9C.2"
+      ],
+      "16.1.1": [
+        "P9C.2"
+      ],
+      "16.2": [
+        "P12.4",
+        "P13.6",
+        "P14.4",
+        "P3.4",
+        "P7.2"
+      ],
+      "16.3": [
+        "P1.3",
+        "P13.3",
+        "P15.4",
+        "P18.1",
+        "P18.2",
+        "P18.3",
+        "P18.5",
+        "P18.6",
+        "P19.1",
+        "P19.2",
+        "P19.6",
+        "P20.0"
+      ],
+      "16.4": [
+        "P18.2",
+        "P18.3",
+        "P18.4",
+        "P19.5",
+        "P2.4",
+        "P3.4"
+      ],
+      "16.5": [
+        "P1.2",
+        "P15.4",
+        "P18.1",
+        "P18.4",
+        "P18.5",
+        "P18.6",
+        "P19.1",
+        "P2.4",
+        "P23.4",
+        "P3.4"
+      ],
+      "17": [
+        "P13.4",
+        "P13.5",
+        "P18.6",
+        "P19.5",
+        "P2.1",
+        "P21.2",
+        "P3.3",
+        "P9A.1",
+        "P9A.4",
+        "P9B.1",
+        "P9B.3",
+        "P9B.4",
+        "P9C.2",
+        "P9C.3",
+        "P9C.4"
+      ],
+      "18": [
+        "P13.4",
+        "P2.1",
+        "P21.2",
+        "P21.3",
+        "P22.1",
+        "P22.2",
+        "P23.2",
+        "P9A.4",
+        "P9B.1",
+        "P9B.4",
+        "P9C.3"
+      ],
+      "18.1": [
+        "P1.4",
+        "P12.2",
+        "P12.3",
+        "P13.5",
+        "P17.2",
+        "P17.4",
+        "P3.2",
+        "P3.3",
+        "P6.1",
+        "P9A.3",
+        "P9B.3"
+      ],
+      "18.2": [
+        "P11.5",
+        "P12.4",
+        "P12.5",
+        "P13.1",
+        "P13.5",
+        "P14.3",
+        "P19.2",
+        "P19.4",
+        "P3.5",
+        "P4.0",
+        "P4.4",
+        "P6.2",
+        "P6.4",
+        "P8.5",
+        "P9.7",
+        "P9B.2"
+      ],
+      "18.3": [
+        "P1.4",
+        "P12.2",
+        "P12.3",
+        "P12.4",
+        "P12.5",
+        "P13.2",
+        "P16.2",
+        "P17.2",
+        "P17.4",
+        "P19.3",
+        "P2.2",
+        "P22.3",
+        "P3.2",
+        "P3.3",
+        "P3.5",
+        "P4.3",
+        "P4.5",
+        "P9A.1",
+        "P9A.3",
+        "P9B.3"
+      ],
+      "19": [
+        "P13.6",
+        "P14.4",
+        "P23.4",
+        "P9A.3"
+      ],
+      "19.1": [
+        "P0.2",
+        "P0.3",
+        "P1.3",
+        "P2.4",
+        "P3.1",
+        "P7.1"
+      ],
+      "19.2": [
+        "P0.2",
+        "P17.7",
+        "P2.3",
+        "P2.5",
+        "P7.1"
+      ],
+      "19.3": [
+        "P0.2",
+        "P1.2",
+        "P16.1",
+        "P16.3",
+        "P18.1",
+        "P18.5",
+        "P2.5"
+      ],
+      "2.2": [
+        "P0.1",
+        "P10.2",
+        "P5.2",
+        "P8.2"
+      ],
+      "2.3": [
+        "P0.1",
+        "P10.1",
+        "P10.2",
+        "P10.3",
+        "P7.5",
+        "P8.2",
+        "P8.3",
+        "P8.4",
+        "P9.1",
+        "P9.4"
+      ],
+      "20.1": [
+        "P0.1",
+        "P0.4",
+        "P10.2",
+        "P7.1",
+        "P7.5",
+        "P9C.1"
+      ],
+      "20.2": [
+        "P11.3",
+        "P5.2",
+        "P6.1",
+        "P6.3",
+        "P7.1",
+        "P7.2",
+        "P7.4"
+      ],
+      "20.3": [
+        "P10.1",
+        "P10.3",
+        "P11.1",
+        "P11.6",
+        "P5.1",
+        "P7.5",
+        "P8.3",
+        "P8.4",
+        "P9.1",
+        "P9.3",
+        "P9.4",
+        "P9.6"
+      ],
+      "20.4": [
+        "P10.1",
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P10.7",
+        "P11.6",
+        "P14.1",
+        "P14.2",
+        "P20.2",
+        "P20.3",
+        "P6.4",
+        "P6.5",
+        "P7.3",
+        "P7.5",
+        "P8.1",
+        "P8.2",
+        "P8.3",
+        "P8.4",
+        "P8.5",
+        "P9.1",
+        "P9.2",
+        "P9.3",
+        "P9.4",
+        "P9.5",
+        "P9.6",
+        "P9.7",
+        "P9A.0",
+        "P9B.4",
+        "P9C.4"
+      ],
+      "20.5": [
+        "P0.1",
+        "P19.6",
+        "P5.1",
+        "P5.2",
+        "P5.3"
+      ],
+      "20.6": [
+        "P10.1",
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P11.3",
+        "P11.4",
+        "P4.0",
+        "P6.1",
+        "P6.3",
+        "P7.1",
+        "P7.2",
+        "P8.2",
+        "P9.1",
+        "P9.2",
+        "P9.3",
+        "P9.5",
+        "P9.6",
+        "P9A.2",
+        "P9B.4",
+        "P9C.1",
+        "P9C.4"
+      ],
+      "20.7": [
+        "P0.1",
+        "P15.4",
+        "P17.1",
+        "P17.6",
+        "P17.7",
+        "P18.1",
+        "P18.2",
+        "P18.4"
+      ],
+      "21": [
+        "P14.4",
+        "P2.5"
+      ],
+      "21.1": [
+        "P0.3",
+        "P1.1",
+        "P1.2",
+        "P1.3",
+        "P13.2",
+        "P13.5",
+        "P13.6",
+        "P16.1",
+        "P6.2"
+      ],
+      "21.2": [
+        "P13.6",
+        "P18.2",
+        "P5.3"
+      ],
+      "21.3": [
+        "P11.2",
+        "P5.3",
+        "P5.5"
+      ],
+      "22": [
+        "P0.5",
+        "P10.1",
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P10.7",
+        "P11.1",
+        "P11.4",
+        "P13.1",
+        "P13.6",
+        "P14.1",
+        "P14.3",
+        "P14.5",
+        "P19.6",
+        "P2.4",
+        "P3.1",
+        "P3.2",
+        "P3.4",
+        "P4.0",
+        "P4.1",
+        "P4.2",
+        "P4.3",
+        "P4.4",
+        "P4.5",
+        "P5.1",
+        "P5.3",
+        "P5.4",
+        "P6.1",
+        "P6.4",
+        "P6.5",
+        "P7.1",
+        "P7.2",
+        "P7.5",
+        "P8.1",
+        "P8.2",
+        "P8.3",
+        "P8.4",
+        "P8.5",
+        "P9.1",
+        "P9.2",
+        "P9.3",
+        "P9.4",
+        "P9.5",
+        "P9.6",
+        "P9.7",
+        "P9A.0",
+        "P9B.4"
+      ],
+      "23": [
+        "P0.5",
+        "P14.5",
+        "P15.1",
+        "P15.2",
+        "P15.6",
+        "P16.1",
+        "P16.3",
+        "P16.4",
+        "P17.1",
+        "P17.2",
+        "P17.6",
+        "P17.7",
+        "P18.1",
+        "P18.2",
+        "P18.3",
+        "P18.4",
+        "P18.5",
+        "P20.0",
+        "P20.1",
+        "P20.2",
+        "P20.3",
+        "P20.4",
+        "P21.1",
+        "P21.2",
+        "P22.1",
+        "P22.4",
+        "P23.1",
+        "P23.3"
+      ],
+      "23.1": [
+        "P15.3",
+        "P15.4",
+        "P19.1",
+        "P19.2",
+        "P19.4",
+        "P22.4",
+        "P23.1",
+        "P23.4"
+      ],
+      "23.2": [
+        "P15.2",
+        "P15.3",
+        "P16.2",
+        "P16.3",
+        "P16.5",
+        "P17.1",
+        "P17.2",
+        "P17.3",
+        "P17.4",
+        "P17.5",
+        "P17.6",
+        "P18.1",
+        "P18.5",
+        "P19.4",
+        "P19.5",
+        "P20.0"
+      ],
+      "23.3": [
+        "P15.4",
+        "P15.5",
+        "P16.2",
+        "P16.4",
+        "P16.5",
+        "P19.1",
+        "P19.3",
+        "P20.1",
+        "P20.2",
+        "P20.4",
+        "P21.1",
+        "P21.2",
+        "P22.1"
+      ],
+      "23.4": [
+        "P20.0",
+        "P20.2",
+        "P21.3",
+        "P22.3",
+        "P23.3"
+      ],
+      "23.5": [
+        "P15.5",
+        "P16.4",
+        "P17.6",
+        "P19.3",
+        "P20.1",
+        "P20.4",
+        "P21.1",
+        "P21.3",
+        "P22.1",
+        "P22.2",
+        "P22.3",
+        "P22.4",
+        "P23.1",
+        "P23.2",
+        "P23.3",
+        "P23.4"
+      ],
+      "24": [
+        "P0.3",
+        "P0.4"
+      ],
+      "24.1": [
+        "P10.1",
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P10.7",
+        "P11.2",
+        "P11.3",
+        "P11.4",
+        "P11.5",
+        "P12.1",
+        "P12.2",
+        "P12.4",
+        "P13.3",
+        "P14.2",
+        "P16.2",
+        "P17.1",
+        "P17.3",
+        "P17.7",
+        "P18.2",
+        "P18.3",
+        "P18.4",
+        "P18.5",
+        "P19.6",
+        "P3.1",
+        "P3.4",
+        "P4.0",
+        "P4.1",
+        "P5.3",
+        "P6.1",
+        "P6.2",
+        "P6.3",
+        "P7.1",
+        "P7.2",
+        "P7.3",
+        "P7.4",
+        "P7.5",
+        "P8.1",
+        "P8.2",
+        "P8.3",
+        "P8.4",
+        "P9.1",
+        "P9.2",
+        "P9.3",
+        "P9.4",
+        "P9.5",
+        "P9.6",
+        "P9A.0",
+        "P9A.1",
+        "P9A.4",
+        "P9B.1",
+        "P9C.2",
+        "P9C.3"
+      ],
+      "24.2": [
+        "P11.6",
+        "P14.1",
+        "P15.5",
+        "P18.4",
+        "P19.6",
+        "P20.1",
+        "P20.2",
+        "P20.3",
+        "P5.1",
+        "P6.5",
+        "P8.5",
+        "P9.7",
+        "P9B.4",
+        "P9C.1",
+        "P9C.4"
+      ],
+      "24.3": [
+        "P11.5",
+        "P13.1",
+        "P13.4",
+        "P13.5",
+        "P14.3",
+        "P17.4",
+        "P19.2",
+        "P20.2",
+        "P21.2",
+        "P22.2",
+        "P23.2",
+        "P4.0",
+        "P4.1",
+        "P4.4",
+        "P4.5",
+        "P6.4",
+        "P8.1",
+        "P9A.2",
+        "P9A.4",
+        "P9C.2",
+        "P9C.3"
+      ],
+      "24.4": [
+        "P11.4",
+        "P11.5",
+        "P12.1",
+        "P12.2",
+        "P12.3",
+        "P12.4",
+        "P12.5",
+        "P13.1",
+        "P13.2",
+        "P13.3",
+        "P13.4",
+        "P13.5",
+        "P16.1",
+        "P16.4",
+        "P16.5",
+        "P17.2",
+        "P17.4",
+        "P17.6",
+        "P17.7",
+        "P18.3",
+        "P18.5",
+        "P18.6",
+        "P19.3",
+        "P19.5",
+        "P20.0",
+        "P21.3",
+        "P22.2",
+        "P22.3",
+        "P23.3",
+        "P3.4",
+        "P3.5",
+        "P4.5",
+        "P5.5",
+        "P6.1",
+        "P6.3",
+        "P6.4",
+        "P6.5",
+        "P7.3",
+        "P8.5",
+        "P9.7",
+        "P9B.3"
+      ],
+      "24.5": [
+        "P10.1",
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P10.7",
+        "P11.1",
+        "P11.2",
+        "P11.6",
+        "P14.1",
+        "P14.2",
+        "P18.4",
+        "P19.6",
+        "P20.2",
+        "P4.2",
+        "P5.1",
+        "P5.5",
+        "P7.4",
+        "P7.5",
+        "P8.2",
+        "P8.3",
+        "P8.4",
+        "P9.1",
+        "P9.2",
+        "P9.3",
+        "P9.4",
+        "P9.5",
+        "P9.6",
+        "P9A.2",
+        "P9A.4",
+        "P9B.1",
+        "P9C.1"
+      ],
+      "24.6": [
+        "P13.4",
+        "P13.6",
+        "P14.1",
+        "P14.2",
+        "P14.3",
+        "P14.4",
+        "P15.5",
+        "P20.2",
+        "P20.3",
+        "P20.4",
+        "P21.2",
+        "P21.3",
+        "P22.1",
+        "P22.2",
+        "P22.3",
+        "P22.4",
+        "P23.1",
+        "P23.2",
+        "P23.3",
+        "P7.5",
+        "P9B.4",
+        "P9C.3",
+        "P9C.4"
+      ],
+      "24.7": [
+        "P15.2",
+        "P15.3",
+        "P15.4",
+        "P15.5",
+        "P16.2",
+        "P16.3",
+        "P16.4",
+        "P16.5",
+        "P17.1",
+        "P17.3",
+        "P17.4",
+        "P17.5",
+        "P17.6",
+        "P17.7",
+        "P19.1",
+        "P19.2",
+        "P19.3",
+        "P19.4",
+        "P19.5",
+        "P20.0",
+        "P20.1",
+        "P21.1",
+        "P21.2",
+        "P22.1",
+        "P23.2"
+      ],
+      "24.8": [
+        "P10.2",
+        "P10.4",
+        "P10.7",
+        "P11.1",
+        "P11.3",
+        "P13.6",
+        "P14.4",
+        "P17.1",
+        "P17.7",
+        "P18.1",
+        "P18.2",
+        "P18.3",
+        "P18.5",
+        "P18.6",
+        "P2.5",
+        "P22.4",
+        "P23.1",
+        "P23.4",
+        "P4.0",
+        "P4.2",
+        "P4.4",
+        "P6.2",
+        "P7.1",
+        "P7.2",
+        "P7.3",
+        "P9A.0",
+        "P9C.3"
+      ],
+      "25": [
+        "P12.5",
+        "P13.3",
+        "P14.5",
+        "P15.5",
+        "P16.3",
+        "P16.5",
+        "P18.6",
+        "P20.0",
+        "P20.1",
+        "P20.3",
+        "P20.4",
+        "P21.1",
+        "P21.3",
+        "P22.1",
+        "P22.2",
+        "P22.3",
+        "P22.4",
+        "P23.1",
+        "P23.2",
+        "P23.3",
+        "P23.4",
+        "P3.5",
+        "P6.4",
+        "P9A.1",
+        "P9A.4",
+        "P9B.4",
+        "P9C.1",
+        "P9C.2",
+        "P9C.3",
+        "P9C.4"
+      ],
+      "26": [
+        "P0.4",
+        "P11.6",
+        "P13.6",
+        "P14.1",
+        "P14.4",
+        "P15.3",
+        "P15.4",
+        "P15.6",
+        "P18.1",
+        "P18.5",
+        "P19.4",
+        "P6.2",
+        "P6.4",
+        "P9A.0"
+      ],
+      "27": [
+        "P0.4",
+        "P1.1",
+        "P13.5",
+        "P14.5",
+        "P15.1",
+        "P15.2",
+        "P15.5",
+        "P15.6",
+        "P16.1",
+        "P22.4",
+        "P23.3",
+        "P9A.1",
+        "P9C.2",
+        "P9C.3",
+        "P9C.4"
+      ],
+      "28": [
+        "P0.1",
+        "P15.1",
+        "P15.6",
+        "P23.4",
+        "P9C.1"
+      ],
+      "3.2": [
+        "P3.1",
+        "P3.2"
+      ],
+      "3.4": [
+        "P2.5",
+        "P4.2"
+      ],
+      "4": [
+        "P2.1",
+        "P9A.0",
+        "P9A.1",
+        "P9B.1",
+        "P9C.2",
+        "P9C.3"
+      ],
+      "5.1": [
+        "P15.1"
+      ],
+      "5.2": [
+        "P19.2"
+      ],
+      "5.3": [
+        "P1.3",
+        "P13.6",
+        "P15.1",
+        "P16.1",
+        "P18.1",
+        "P19.1"
+      ],
+      "5.4": [
+        "P14.4",
+        "P15.3",
+        "P15.4",
+        "P17.1",
+        "P17.7",
+        "P18.1",
+        "P18.2",
+        "P18.6",
+        "P23.4"
+      ],
+      "5.5": [
+        "P1.3",
+        "P14.3",
+        "P15.1",
+        "P19.1"
+      ],
+      "5.6": [
+        "P15.1",
+        "P16.1",
+        "P19.1",
+        "P2.3"
+      ],
+      "6.1": [
+        "P15.2",
+        "P16.3",
+        "P20.0"
+      ],
+      "6.2": [
+        "P16.2",
+        "P17.2"
+      ],
+      "6.3": [
+        "P16.1",
+        "P16.2",
+        "P16.4",
+        "P17.1",
+        "P17.3",
+        "P17.4",
+        "P17.6",
+        "P20.1",
+        "P21.1"
+      ],
+      "6.4": [
+        "P16.1",
+        "P16.3",
+        "P16.4",
+        "P16.5",
+        "P17.2",
+        "P19.3",
+        "P20.0",
+        "P20.1",
+        "P21.2",
+        "P21.3",
+        "P22.1",
+        "P22.3",
+        "P23.1"
+      ],
+      "6.5": [
+        "P12.1",
+        "P15.3",
+        "P16.2",
+        "P16.4",
+        "P17.1",
+        "P17.3",
+        "P17.5",
+        "P17.6",
+        "P19.2",
+        "P19.3",
+        "P21.1",
+        "P23.2"
+      ],
+      "6.6": [
+        "P17.3",
+        "P19.4"
+      ],
+      "6.7": [
+        "P15.2",
+        "P15.3",
+        "P17.4",
+        "P19.2",
+        "P19.4",
+        "P21.2",
+        "P23.2"
+      ],
+      "7": [
+        "P21.2"
+      ],
+      "7.1": [
+        "P13.1",
+        "P13.2",
+        "P13.6",
+        "P14.4",
+        "P17.7",
+        "P19.1",
+        "P2.1",
+        "P3.1",
+        "P4.1",
+        "P4.4",
+        "P5.4",
+        "P8.5",
+        "P9.7",
+        "P9A.2",
+        "P9A.3"
+      ],
+      "7.2": [
+        "P11.4",
+        "P14.3",
+        "P19.2",
+        "P2.2",
+        "P4.3",
+        "P9B.2"
+      ],
+      "7.3": [
+        "P13.1",
+        "P17.1",
+        "P17.4",
+        "P4.1",
+        "P6.1",
+        "P6.4",
+        "P7.2",
+        "P9A.2"
+      ],
+      "7.4": [
+        "P19.2",
+        "P4.3",
+        "P4.4",
+        "P5.4",
+        "P8.5",
+        "P9.7",
+        "P9A.3",
+        "P9B.2"
+      ],
+      "7.5": [
+        "P14.3",
+        "P17.3",
+        "P17.5"
+      ],
+      "8": [
+        "P19.6",
+        "P5.5",
+        "P9C.4"
+      ],
+      "8.1": [
+        "P10.7",
+        "P11.1",
+        "P11.6",
+        "P5.1",
+        "P5.2"
+      ],
+      "8.2": [
+        "P10.1",
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P14.2",
+        "P5.4",
+        "P7.3",
+        "P8.1",
+        "P8.2",
+        "P8.3",
+        "P8.4",
+        "P8.5",
+        "P9.1",
+        "P9.2",
+        "P9.3",
+        "P9.4",
+        "P9.5",
+        "P9.6",
+        "P9.7"
+      ],
+      "8.3": [
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P10.7",
+        "P11.1",
+        "P11.6",
+        "P14.2",
+        "P2.4",
+        "P7.3",
+        "P7.5",
+        "P8.5",
+        "P9.7"
+      ],
+      "9": [
+        "P10.1",
+        "P10.2",
+        "P10.3",
+        "P10.4",
+        "P10.5",
+        "P10.6",
+        "P2.1",
+        "P4.3",
+        "P7.1",
+        "P8.2",
+        "P8.3",
+        "P8.4",
+        "P9.1",
+        "P9.2",
+        "P9.3",
+        "P9.4",
+        "P9.5",
+        "P9.6"
+      ],
+      "9.1": [
+        "P10.7",
+        "P11.3",
+        "P17.1",
+        "P17.7",
+        "P2.3",
+        "P3.1",
+        "P4.0",
+        "P4.1",
+        "P6.2",
+        "P7.1",
+        "P7.2",
+        "P7.3",
+        "P8.1",
+        "P9A.3",
+        "P9C.2"
+      ],
+      "9.3": [
+        "P1.1",
+        "P1.4",
+        "P13.5",
+        "P4.0",
+        "P6.1",
+        "P6.2",
+        "P6.3",
+        "P6.5",
+        "P7.4",
+        "P8.1",
+        "P9A.2"
+      ],
+      "9.4": [
+        "P11.3",
+        "P7.1",
+        "P7.4"
+      ],
+      "9.5": [
+        "P9A.0"
+      ],
+      "9.5.1": [
+        "P9A.1",
+        "P9A.2",
+        "P9A.4"
+      ],
+      "9.5.2": [
+        "P9B.1",
+        "P9B.2",
+        "P9B.3"
+      ],
+      "9.5.3": [
+        "P9B.4"
+      ],
+      "9.5.5": [
+        "P9A.1",
+        "P9A.3",
+        "P9A.4",
+        "P9B.1",
+        "P9B.3"
+      ],
+      "9.6": [
+        "P9B.1",
+        "P9C.1"
+      ],
+      "9.6.1": [
+        "P9A.0",
+        "P9C.2"
+      ],
+      "9.6.2": [
+        "P9B.3",
+        "P9C.3"
+      ],
+      "9.6.3": [
+        "P9A.1",
+        "P9B.2",
+        "P9B.4",
+        "P9C.4"
+      ]
+    },
+    "by_test_id": {
+      "P0.1-T01": "P0.1",
+      "P0.1-T02": "P0.1",
+      "P0.1-T03": "P0.1",
+      "P0.2-T01": "P0.2",
+      "P0.2-T02": "P0.2",
+      "P0.2-T03": "P0.2",
+      "P0.3-T01": "P0.3",
+      "P0.3-T02": "P0.3",
+      "P0.3-T03": "P0.3",
+      "P0.3-T04": "P0.3",
+      "P0.4-T01": "P0.4",
+      "P0.4-T02": "P0.4",
+      "P0.4-T03": "P0.4",
+      "P0.5-T01": "P0.5",
+      "P0.5-T02": "P0.5",
+      "P1.1-T01": "P1.1",
+      "P1.1-T02": "P1.1",
+      "P1.1-T03": "P1.1",
+      "P1.2-T01": "P1.2",
+      "P1.2-T02": "P1.2",
+      "P1.2-T03": "P1.2",
+      "P1.2-T04": "P1.2",
+      "P1.3-T01": "P1.3",
+      "P1.3-T02": "P1.3",
+      "P1.3-T03": "P1.3",
+      "P1.3-T04": "P1.3",
+      "P1.4-T01": "P1.4",
+      "P1.4-T02": "P1.4",
+      "P1.4-T03": "P1.4",
+      "P1.4-T04": "P1.4",
+      "P10.1-T01": "P10.1",
+      "P10.1-T02": "P10.1",
+      "P10.1-T03": "P10.1",
+      "P10.1-T04": "P10.1",
+      "P10.1-T05": "P10.1",
+      "P10.1-T06": "P10.1",
+      "P10.2-T01": "P10.2",
+      "P10.2-T02": "P10.2",
+      "P10.2-T03": "P10.2",
+      "P10.2-T04": "P10.2",
+      "P10.2-T05": "P10.2",
+      "P10.2-T06": "P10.2",
+      "P10.3-T01": "P10.3",
+      "P10.3-T02": "P10.3",
+      "P10.3-T03": "P10.3",
+      "P10.3-T04": "P10.3",
+      "P10.3-T05": "P10.3",
+      "P10.3-T06": "P10.3",
+      "P10.4-T01": "P10.4",
+      "P10.4-T02": "P10.4",
+      "P10.4-T03": "P10.4",
+      "P10.4-T04": "P10.4",
+      "P10.4-T05": "P10.4",
+      "P10.4-T06": "P10.4",
+      "P10.5-T01": "P10.5",
+      "P10.5-T02": "P10.5",
+      "P10.5-T03": "P10.5",
+      "P10.5-T04": "P10.5",
+      "P10.5-T05": "P10.5",
+      "P10.5-T06": "P10.5",
+      "P10.6-T01": "P10.6",
+      "P10.6-T02": "P10.6",
+      "P10.6-T03": "P10.6",
+      "P10.6-T04": "P10.6",
+      "P10.6-T05": "P10.6",
+      "P10.6-T06": "P10.6",
+      "P10.7-T01": "P10.7",
+      "P10.7-T02": "P10.7",
+      "P10.7-T03": "P10.7",
+      "P10.7-T04": "P10.7",
+      "P10.7-T05": "P10.7",
+      "P10.7-T06": "P10.7",
+      "P10.7-T07": "P10.7",
+      "P11.1-T01": "P11.1",
+      "P11.1-T02": "P11.1",
+      "P11.1-T03": "P11.1",
+      "P11.1-T04": "P11.1",
+      "P11.1-T05": "P11.1",
+      "P11.2-T01": "P11.2",
+      "P11.2-T02": "P11.2",
+      "P11.2-T03": "P11.2",
+      "P11.2-T04": "P11.2",
+      "P11.2-T05": "P11.2",
+      "P11.3-T01": "P11.3",
+      "P11.3-T02": "P11.3",
+      "P11.3-T03": "P11.3",
+      "P11.3-T04": "P11.3",
+      "P11.3-T05": "P11.3",
+      "P11.3-T06": "P11.3",
+      "P11.4-T01": "P11.4",
+      "P11.4-T02": "P11.4",
+      "P11.4-T03": "P11.4",
+      "P11.4-T04": "P11.4",
+      "P11.4-T05": "P11.4",
+      "P11.5-T01": "P11.5",
+      "P11.5-T02": "P11.5",
+      "P11.5-T03": "P11.5",
+      "P11.5-T04": "P11.5",
+      "P11.5-T05": "P11.5",
+      "P11.6-T01": "P11.6",
+      "P11.6-T02": "P11.6",
+      "P11.6-T03": "P11.6",
+      "P11.6-T04": "P11.6",
+      "P12.1-T01": "P12.1",
+      "P12.1-T02": "P12.1",
+      "P12.1-T03": "P12.1",
+      "P12.1-T04": "P12.1",
+      "P12.1-T05": "P12.1",
+      "P12.2-T01": "P12.2",
+      "P12.2-T02": "P12.2",
+      "P12.2-T03": "P12.2",
+      "P12.2-T04": "P12.2",
+      "P12.2-T05": "P12.2",
+      "P12.3-T01": "P12.3",
+      "P12.3-T02": "P12.3",
+      "P12.3-T03": "P12.3",
+      "P12.3-T04": "P12.3",
+      "P12.3-T05": "P12.3",
+      "P12.3-T06": "P12.3",
+      "P12.3-T07": "P12.3",
+      "P12.4-T01": "P12.4",
+      "P12.4-T02": "P12.4",
+      "P12.4-T03": "P12.4",
+      "P12.4-T04": "P12.4",
+      "P12.4-T05": "P12.4",
+      "P12.5-T01": "P12.5",
+      "P12.5-T02": "P12.5",
+      "P12.5-T03": "P12.5",
+      "P12.5-T04": "P12.5",
+      "P12.5-T05": "P12.5",
+      "P13.1-T01": "P13.1",
+      "P13.1-T02": "P13.1",
+      "P13.1-T03": "P13.1",
+      "P13.1-T04": "P13.1",
+      "P13.1-T05": "P13.1",
+      "P13.2-T01": "P13.2",
+      "P13.2-T02": "P13.2",
+      "P13.2-T03": "P13.2",
+      "P13.2-T04": "P13.2",
+      "P13.2-T05": "P13.2",
+      "P13.3-T01": "P13.3",
+      "P13.3-T02": "P13.3",
+      "P13.3-T03": "P13.3",
+      "P13.3-T04": "P13.3",
+      "P13.3-T05": "P13.3",
+      "P13.4-T01": "P13.4",
+      "P13.4-T02": "P13.4",
+      "P13.4-T03": "P13.4",
+      "P13.4-T04": "P13.4",
+      "P13.4-T05": "P13.4",
+      "P13.4-T06": "P13.4",
+      "P13.5-T01": "P13.5",
+      "P13.5-T02": "P13.5",
+      "P13.5-T03": "P13.5",
+      "P13.5-T04": "P13.5",
+      "P13.5-T05": "P13.5",
+      "P13.5-T06": "P13.5",
+      "P13.6-T01": "P13.6",
+      "P13.6-T02": "P13.6",
+      "P13.6-T03": "P13.6",
+      "P13.6-T04": "P13.6",
+      "P13.6-T05": "P13.6",
+      "P13.6-T06": "P13.6",
+      "P14.1-T01": "P14.1",
+      "P14.1-T02": "P14.1",
+      "P14.1-T03": "P14.1",
+      "P14.1-T04": "P14.1",
+      "P14.1-T05": "P14.1",
+      "P14.2-T01": "P14.2",
+      "P14.2-T02": "P14.2",
+      "P14.2-T03": "P14.2",
+      "P14.2-T04": "P14.2",
+      "P14.2-T05": "P14.2",
+      "P14.2-T06": "P14.2",
+      "P14.3-T01": "P14.3",
+      "P14.3-T02": "P14.3",
+      "P14.3-T03": "P14.3",
+      "P14.3-T04": "P14.3",
+      "P14.3-T05": "P14.3",
+      "P14.3-T06": "P14.3",
+      "P14.3-T07": "P14.3",
+      "P14.3-T08": "P14.3",
+      "P14.3-T09": "P14.3",
+      "P14.3-T10": "P14.3",
+      "P14.3-T11": "P14.3",
+      "P14.3-T12": "P14.3",
+      "P14.3-T13": "P14.3",
+      "P14.4-T01": "P14.4",
+      "P14.4-T02": "P14.4",
+      "P14.4-T03": "P14.4",
+      "P14.4-T04": "P14.4",
+      "P14.4-T05": "P14.4",
+      "P14.4-T06": "P14.4",
+      "P14.4-T07": "P14.4",
+      "P14.5-T01": "P14.5",
+      "P14.5-T02": "P14.5",
+      "P14.5-T03": "P14.5",
+      "P14.5-T04": "P14.5",
+      "P15.1-T01": "P15.1",
+      "P15.1-T02": "P15.1",
+      "P15.1-T03": "P15.1",
+      "P15.1-T04": "P15.1",
+      "P15.1-T05": "P15.1",
+      "P15.2-T01": "P15.2",
+      "P15.2-T02": "P15.2",
+      "P15.2-T03": "P15.2",
+      "P15.2-T04": "P15.2",
+      "P15.2-T05": "P15.2",
+      "P15.3-T01": "P15.3",
+      "P15.3-T02": "P15.3",
+      "P15.3-T03": "P15.3",
+      "P15.3-T04": "P15.3",
+      "P15.3-T05": "P15.3",
+      "P15.3-T06": "P15.3",
+      "P15.4-T01": "P15.4",
+      "P15.4-T02": "P15.4",
+      "P15.4-T03": "P15.4",
+      "P15.4-T04": "P15.4",
+      "P15.4-T05": "P15.4",
+      "P15.5-T01": "P15.5",
+      "P15.5-T02": "P15.5",
+      "P15.5-T03": "P15.5",
+      "P15.5-T04": "P15.5",
+      "P15.5-T05": "P15.5",
+      "P15.6-T01": "P15.6",
+      "P15.6-T02": "P15.6",
+      "P15.6-T03": "P15.6",
+      "P15.6-T04": "P15.6",
+      "P16.1-T01": "P16.1",
+      "P16.1-T02": "P16.1",
+      "P16.1-T03": "P16.1",
+      "P16.1-T04": "P16.1",
+      "P16.1-T05": "P16.1",
+      "P16.1-T06": "P16.1",
+      "P16.2-T01": "P16.2",
+      "P16.2-T02": "P16.2",
+      "P16.2-T03": "P16.2",
+      "P16.2-T04": "P16.2",
+      "P16.2-T05": "P16.2",
+      "P16.3-T01": "P16.3",
+      "P16.3-T02": "P16.3",
+      "P16.3-T03": "P16.3",
+      "P16.3-T04": "P16.3",
+      "P16.3-T05": "P16.3",
+      "P16.3-T06": "P16.3",
+      "P16.4-T01": "P16.4",
+      "P16.4-T02": "P16.4",
+      "P16.4-T03": "P16.4",
+      "P16.4-T04": "P16.4",
+      "P16.4-T05": "P16.4",
+      "P16.4-T06": "P16.4",
+      "P16.5-T01": "P16.5",
+      "P16.5-T02": "P16.5",
+      "P16.5-T03": "P16.5",
+      "P16.5-T04": "P16.5",
+      "P16.5-T05": "P16.5",
+      "P16.5-T06": "P16.5",
+      "P17.1-T01": "P17.1",
+      "P17.1-T02": "P17.1",
+      "P17.1-T03": "P17.1",
+      "P17.1-T04": "P17.1",
+      "P17.1-T05": "P17.1",
+      "P17.1-T06": "P17.1",
+      "P17.2-T01": "P17.2",
+      "P17.2-T02": "P17.2",
+      "P17.2-T03": "P17.2",
+      "P17.2-T04": "P17.2",
+      "P17.2-T05": "P17.2",
+      "P17.2-T06": "P17.2",
+      "P17.3-T01": "P17.3",
+      "P17.3-T02": "P17.3",
+      "P17.3-T03": "P17.3",
+      "P17.3-T04": "P17.3",
+      "P17.3-T05": "P17.3",
+      "P17.3-T06": "P17.3",
+      "P17.4-T01": "P17.4",
+      "P17.4-T02": "P17.4",
+      "P17.4-T03": "P17.4",
+      "P17.4-T04": "P17.4",
+      "P17.4-T05": "P17.4",
+      "P17.4-T06": "P17.4",
+      "P17.5-T01": "P17.5",
+      "P17.5-T02": "P17.5",
+      "P17.5-T03": "P17.5",
+      "P17.5-T04": "P17.5",
+      "P17.5-T05": "P17.5",
+      "P17.5-T06": "P17.5",
+      "P17.5-T07": "P17.5",
+      "P17.6-T01": "P17.6",
+      "P17.6-T02": "P17.6",
+      "P17.6-T03": "P17.6",
+      "P17.6-T04": "P17.6",
+      "P17.6-T05": "P17.6",
+      "P17.6-T06": "P17.6",
+      "P17.6-T07": "P17.6",
+      "P17.6-T08": "P17.6",
+      "P17.7-T01": "P17.7",
+      "P17.7-T02": "P17.7",
+      "P17.7-T03": "P17.7",
+      "P17.7-T04": "P17.7",
+      "P17.7-T05": "P17.7",
+      "P17.7-T06": "P17.7",
+      "P18.1-T01": "P18.1",
+      "P18.1-T02": "P18.1",
+      "P18.1-T03": "P18.1",
+      "P18.1-T04": "P18.1",
+      "P18.1-T05": "P18.1",
+      "P18.1-T06": "P18.1",
+      "P18.2-T01": "P18.2",
+      "P18.2-T02": "P18.2",
+      "P18.2-T03": "P18.2",
+      "P18.2-T04": "P18.2",
+      "P18.2-T05": "P18.2",
+      "P18.2-T06": "P18.2",
+      "P18.3-T01": "P18.3",
+      "P18.3-T02": "P18.3",
+      "P18.3-T03": "P18.3",
+      "P18.3-T04": "P18.3",
+      "P18.3-T05": "P18.3",
+      "P18.3-T06": "P18.3",
+      "P18.3-T07": "P18.3",
+      "P18.4-T01": "P18.4",
+      "P18.4-T02": "P18.4",
+      "P18.4-T03": "P18.4",
+      "P18.4-T04": "P18.4",
+      "P18.4-T05": "P18.4",
+      "P18.4-T06": "P18.4",
+      "P18.5-T01": "P18.5",
+      "P18.5-T02": "P18.5",
+      "P18.5-T03": "P18.5",
+      "P18.5-T04": "P18.5",
+      "P18.5-T05": "P18.5",
+      "P18.5-T06": "P18.5",
+      "P18.5-T07": "P18.5",
+      "P18.6-T01": "P18.6",
+      "P18.6-T02": "P18.6",
+      "P18.6-T03": "P18.6",
+      "P18.6-T04": "P18.6",
+      "P18.6-T05": "P18.6",
+      "P18.6-T06": "P18.6",
+      "P18.6-T07": "P18.6",
+      "P19.1-T01": "P19.1",
+      "P19.1-T02": "P19.1",
+      "P19.1-T03": "P19.1",
+      "P19.1-T04": "P19.1",
+      "P19.1-T05": "P19.1",
+      "P19.1-T06": "P19.1",
+      "P19.2-T01": "P19.2",
+      "P19.2-T02": "P19.2",
+      "P19.2-T03": "P19.2",
+      "P19.2-T04": "P19.2",
+      "P19.2-T05": "P19.2",
+      "P19.2-T06": "P19.2",
+      "P19.3-T01": "P19.3",
+      "P19.3-T02": "P19.3",
+      "P19.3-T03": "P19.3",
+      "P19.3-T04": "P19.3",
+      "P19.3-T05": "P19.3",
+      "P19.3-T06": "P19.3",
+      "P19.3-T07": "P19.3",
+      "P19.3-T08": "P19.3",
+      "P19.4-T01": "P19.4",
+      "P19.4-T02": "P19.4",
+      "P19.4-T03": "P19.4",
+      "P19.4-T04": "P19.4",
+      "P19.4-T05": "P19.4",
+      "P19.4-T06": "P19.4",
+      "P19.5-T01": "P19.5",
+      "P19.5-T02": "P19.5",
+      "P19.5-T03": "P19.5",
+      "P19.5-T04": "P19.5",
+      "P19.5-T05": "P19.5",
+      "P19.5-T06": "P19.5",
+      "P19.6-T01": "P19.6",
+      "P19.6-T02": "P19.6",
+      "P19.6-T03": "P19.6",
+      "P19.6-T04": "P19.6",
+      "P19.6-T05": "P19.6",
+      "P2.1-T01": "P2.1",
+      "P2.1-T02": "P2.1",
+      "P2.1-T03": "P2.1",
+      "P2.1-T04": "P2.1",
+      "P2.2-T01": "P2.2",
+      "P2.2-T02": "P2.2",
+      "P2.2-T03": "P2.2",
+      "P2.2-T04": "P2.2",
+      "P2.3-T01": "P2.3",
+      "P2.3-T02": "P2.3",
+      "P2.3-T03": "P2.3",
+      "P2.3-T04": "P2.3",
+      "P2.4-T01": "P2.4",
+      "P2.4-T02": "P2.4",
+      "P2.4-T03": "P2.4",
+      "P2.4-T04": "P2.4",
+      "P2.5-T01": "P2.5",
+      "P2.5-T02": "P2.5",
+      "P2.5-T03": "P2.5",
+      "P2.5-T04": "P2.5",
+      "P20.0-T01": "P20.0",
+      "P20.0-T02": "P20.0",
+      "P20.0-T03": "P20.0",
+      "P20.0-T04": "P20.0",
+      "P20.0-T05": "P20.0",
+      "P20.0-T06": "P20.0",
+      "P20.1-T01": "P20.1",
+      "P20.1-T02": "P20.1",
+      "P20.1-T03": "P20.1",
+      "P20.1-T04": "P20.1",
+      "P20.1-T05": "P20.1",
+      "P20.2-T01": "P20.2",
+      "P20.2-T02": "P20.2",
+      "P20.2-T03": "P20.2",
+      "P20.2-T04": "P20.2",
+      "P20.2-T05": "P20.2",
+      "P20.3-T01": "P20.3",
+      "P20.3-T02": "P20.3",
+      "P20.3-T03": "P20.3",
+      "P20.3-T04": "P20.3",
+      "P20.3-T05": "P20.3",
+      "P20.4-T01": "P20.4",
+      "P20.4-T02": "P20.4",
+      "P20.4-T03": "P20.4",
+      "P20.4-T04": "P20.4",
+      "P20.4-T05": "P20.4",
+      "P21.1-T01": "P21.1",
+      "P21.1-T02": "P21.1",
+      "P21.1-T03": "P21.1",
+      "P21.1-T04": "P21.1",
+      "P21.1-T05": "P21.1",
+      "P21.1-T06": "P21.1",
+      "P21.2-T01": "P21.2",
+      "P21.2-T02": "P21.2",
+      "P21.2-T03": "P21.2",
+      "P21.2-T04": "P21.2",
+      "P21.2-T05": "P21.2",
+      "P21.2-T06": "P21.2",
+      "P21.3-T01": "P21.3",
+      "P21.3-T02": "P21.3",
+      "P21.3-T03": "P21.3",
+      "P21.3-T04": "P21.3",
+      "P21.3-T05": "P21.3",
+      "P22.1-T01": "P22.1",
+      "P22.1-T02": "P22.1",
+      "P22.1-T03": "P22.1",
+      "P22.1-T04": "P22.1",
+      "P22.1-T05": "P22.1",
+      "P22.2-T01": "P22.2",
+      "P22.2-T02": "P22.2",
+      "P22.2-T03": "P22.2",
+      "P22.2-T04": "P22.2",
+      "P22.2-T05": "P22.2",
+      "P22.2-T06": "P22.2",
+      "P22.3-T01": "P22.3",
+      "P22.3-T02": "P22.3",
+      "P22.3-T03": "P22.3",
+      "P22.3-T04": "P22.3",
+      "P22.3-T05": "P22.3",
+      "P22.3-T06": "P22.3",
+      "P22.4-T01": "P22.4",
+      "P22.4-T02": "P22.4",
+      "P22.4-T03": "P22.4",
+      "P22.4-T04": "P22.4",
+      "P22.4-T05": "P22.4",
+      "P22.4-T06": "P22.4",
+      "P23.1-T01": "P23.1",
+      "P23.1-T02": "P23.1",
+      "P23.1-T03": "P23.1",
+      "P23.1-T04": "P23.1",
+      "P23.1-T05": "P23.1",
+      "P23.1-T06": "P23.1",
+      "P23.2-T01": "P23.2",
+      "P23.2-T02": "P23.2",
+      "P23.2-T03": "P23.2",
+      "P23.2-T04": "P23.2",
+      "P23.2-T05": "P23.2",
+      "P23.2-T06": "P23.2",
+      "P23.2-T07": "P23.2",
+      "P23.3-T01": "P23.3",
+      "P23.3-T02": "P23.3",
+      "P23.3-T03": "P23.3",
+      "P23.3-T04": "P23.3",
+      "P23.3-T05": "P23.3",
+      "P23.3-T06": "P23.3",
+      "P23.4-T01": "P23.4",
+      "P23.4-T02": "P23.4",
+      "P23.4-T03": "P23.4",
+      "P23.4-T04": "P23.4",
+      "P23.4-T05": "P23.4",
+      "P23.4-T06": "P23.4",
+      "P3.1-T01": "P3.1",
+      "P3.1-T02": "P3.1",
+      "P3.1-T03": "P3.1",
+      "P3.1-T04": "P3.1",
+      "P3.1-T05": "P3.1",
+      "P3.1-T06": "P3.1",
+      "P3.1-T07": "P3.1",
+      "P3.1-T08": "P3.1",
+      "P3.1-T09": "P3.1",
+      "P3.2-T01": "P3.2",
+      "P3.2-T02": "P3.2",
+      "P3.2-T03": "P3.2",
+      "P3.2-T04": "P3.2",
+      "P3.2-T05": "P3.2",
+      "P3.2-T06": "P3.2",
+      "P3.2-T07": "P3.2",
+      "P3.2-T08": "P3.2",
+      "P3.3-T01": "P3.3",
+      "P3.3-T02": "P3.3",
+      "P3.3-T03": "P3.3",
+      "P3.3-T04": "P3.3",
+      "P3.3-T05": "P3.3",
+      "P3.4-T01": "P3.4",
+      "P3.4-T02": "P3.4",
+      "P3.4-T03": "P3.4",
+      "P3.4-T04": "P3.4",
+      "P3.4-T05": "P3.4",
+      "P3.4-T06": "P3.4",
+      "P3.4-T07": "P3.4",
+      "P3.5-T01": "P3.5",
+      "P3.5-T02": "P3.5",
+      "P3.5-T03": "P3.5",
+      "P3.5-T04": "P3.5",
+      "P3.5-T05": "P3.5",
+      "P4.0-T01": "P4.0",
+      "P4.0-T02": "P4.0",
+      "P4.0-T03": "P4.0",
+      "P4.0-T04": "P4.0",
+      "P4.0-T05": "P4.0",
+      "P4.1-T01": "P4.1",
+      "P4.1-T02": "P4.1",
+      "P4.1-T03": "P4.1",
+      "P4.2-T01": "P4.2",
+      "P4.2-T02": "P4.2",
+      "P4.2-T03": "P4.2",
+      "P4.2-T04": "P4.2",
+      "P4.3-T01": "P4.3",
+      "P4.3-T02": "P4.3",
+      "P4.3-T03": "P4.3",
+      "P4.3-T04": "P4.3",
+      "P4.4-T01": "P4.4",
+      "P4.4-T02": "P4.4",
+      "P4.4-T03": "P4.4",
+      "P4.4-T04": "P4.4",
+      "P4.5-T01": "P4.5",
+      "P4.5-T02": "P4.5",
+      "P4.5-T03": "P4.5",
+      "P4.5-T04": "P4.5",
+      "P4.5-T05": "P4.5",
+      "P5.1-T01": "P5.1",
+      "P5.1-T02": "P5.1",
+      "P5.1-T03": "P5.1",
+      "P5.2-T01": "P5.2",
+      "P5.2-T02": "P5.2",
+      "P5.2-T03": "P5.2",
+      "P5.3-T01": "P5.3",
+      "P5.3-T02": "P5.3",
+      "P5.3-T03": "P5.3",
+      "P5.3-T04": "P5.3",
+      "P5.4-T01": "P5.4",
+      "P5.4-T02": "P5.4",
+      "P5.4-T03": "P5.4",
+      "P5.5-T01": "P5.5",
+      "P5.5-T02": "P5.5",
+      "P5.5-T03": "P5.5",
+      "P5.5-T04": "P5.5",
+      "P6.1-T01": "P6.1",
+      "P6.1-T02": "P6.1",
+      "P6.1-T03": "P6.1",
+      "P6.1-T04": "P6.1",
+      "P6.1-T05": "P6.1",
+      "P6.1-T06": "P6.1",
+      "P6.2-T01": "P6.2",
+      "P6.2-T02": "P6.2",
+      "P6.2-T03": "P6.2",
+      "P6.2-T04": "P6.2",
+      "P6.2-T05": "P6.2",
+      "P6.2-T06": "P6.2",
+      "P6.3-T01": "P6.3",
+      "P6.3-T02": "P6.3",
+      "P6.3-T03": "P6.3",
+      "P6.3-T04": "P6.3",
+      "P6.3-T05": "P6.3",
+      "P6.3-T06": "P6.3",
+      "P6.4-T01": "P6.4",
+      "P6.4-T02": "P6.4",
+      "P6.4-T03": "P6.4",
+      "P6.4-T04": "P6.4",
+      "P6.4-T05": "P6.4",
+      "P6.4-T06": "P6.4",
+      "P6.5-T01": "P6.5",
+      "P6.5-T02": "P6.5",
+      "P6.5-T03": "P6.5",
+      "P6.5-T04": "P6.5",
+      "P6.5-T05": "P6.5",
+      "P6.5-T06": "P6.5",
+      "P7.1-T01": "P7.1",
+      "P7.1-T02": "P7.1",
+      "P7.1-T03": "P7.1",
+      "P7.1-T04": "P7.1",
+      "P7.1-T05": "P7.1",
+      "P7.1-T06": "P7.1",
+      "P7.2-T01": "P7.2",
+      "P7.2-T02": "P7.2",
+      "P7.2-T03": "P7.2",
+      "P7.2-T04": "P7.2",
+      "P7.2-T05": "P7.2",
+      "P7.2-T06": "P7.2",
+      "P7.3-T01": "P7.3",
+      "P7.3-T02": "P7.3",
+      "P7.3-T03": "P7.3",
+      "P7.3-T04": "P7.3",
+      "P7.3-T05": "P7.3",
+      "P7.3-T06": "P7.3",
+      "P7.4-T01": "P7.4",
+      "P7.4-T02": "P7.4",
+      "P7.4-T03": "P7.4",
+      "P7.4-T04": "P7.4",
+      "P7.4-T05": "P7.4",
+      "P7.4-T06": "P7.4",
+      "P7.5-T01": "P7.5",
+      "P7.5-T02": "P7.5",
+      "P7.5-T03": "P7.5",
+      "P7.5-T04": "P7.5",
+      "P7.5-T05": "P7.5",
+      "P7.5-T06": "P7.5",
+      "P8.1-T01": "P8.1",
+      "P8.1-T02": "P8.1",
+      "P8.1-T03": "P8.1",
+      "P8.1-T04": "P8.1",
+      "P8.1-T05": "P8.1",
+      "P8.2-T01": "P8.2",
+      "P8.2-T02": "P8.2",
+      "P8.2-T03": "P8.2",
+      "P8.2-T04": "P8.2",
+      "P8.2-T05": "P8.2",
+      "P8.2-T06": "P8.2",
+      "P8.3-T01": "P8.3",
+      "P8.3-T02": "P8.3",
+      "P8.3-T03": "P8.3",
+      "P8.3-T04": "P8.3",
+      "P8.3-T05": "P8.3",
+      "P8.3-T06": "P8.3",
+      "P8.4-T01": "P8.4",
+      "P8.4-T02": "P8.4",
+      "P8.4-T03": "P8.4",
+      "P8.4-T04": "P8.4",
+      "P8.4-T05": "P8.4",
+      "P8.4-T06": "P8.4",
+      "P8.5-T01": "P8.5",
+      "P8.5-T02": "P8.5",
+      "P8.5-T03": "P8.5",
+      "P8.5-T04": "P8.5",
+      "P8.5-T05": "P8.5",
+      "P8.5-T06": "P8.5",
+      "P9.1-T01": "P9.1",
+      "P9.1-T02": "P9.1",
+      "P9.1-T03": "P9.1",
+      "P9.1-T04": "P9.1",
+      "P9.1-T05": "P9.1",
+      "P9.1-T06": "P9.1",
+      "P9.2-T01": "P9.2",
+      "P9.2-T02": "P9.2",
+      "P9.2-T03": "P9.2",
+      "P9.2-T04": "P9.2",
+      "P9.2-T05": "P9.2",
+      "P9.2-T06": "P9.2",
+      "P9.3-T01": "P9.3",
+      "P9.3-T02": "P9.3",
+      "P9.3-T03": "P9.3",
+      "P9.3-T04": "P9.3",
+      "P9.3-T05": "P9.3",
+      "P9.3-T06": "P9.3",
+      "P9.4-T01": "P9.4",
+      "P9.4-T02": "P9.4",
+      "P9.4-T03": "P9.4",
+      "P9.4-T04": "P9.4",
+      "P9.4-T05": "P9.4",
+      "P9.4-T06": "P9.4",
+      "P9.5-T01": "P9.5",
+      "P9.5-T02": "P9.5",
+      "P9.5-T03": "P9.5",
+      "P9.5-T04": "P9.5",
+      "P9.5-T05": "P9.5",
+      "P9.5-T06": "P9.5",
+      "P9.6-T01": "P9.6",
+      "P9.6-T02": "P9.6",
+      "P9.6-T03": "P9.6",
+      "P9.6-T04": "P9.6",
+      "P9.6-T05": "P9.6",
+      "P9.6-T06": "P9.6",
+      "P9.7-T01": "P9.7",
+      "P9.7-T02": "P9.7",
+      "P9.7-T03": "P9.7",
+      "P9.7-T04": "P9.7",
+      "P9.7-T05": "P9.7",
+      "P9.7-T06": "P9.7",
+      "P9A.0-T01": "P9A.0",
+      "P9A.0-T02": "P9A.0",
+      "P9A.0-T03": "P9A.0",
+      "P9A.0-T04": "P9A.0",
+      "P9A.0-T05": "P9A.0",
+      "P9A.1-T01": "P9A.1",
+      "P9A.1-T02": "P9A.1",
+      "P9A.1-T03": "P9A.1",
+      "P9A.1-T04": "P9A.1",
+      "P9A.1-T05": "P9A.1",
+      "P9A.1-T06": "P9A.1",
+      "P9A.2-T01": "P9A.2",
+      "P9A.2-T02": "P9A.2",
+      "P9A.2-T03": "P9A.2",
+      "P9A.2-T04": "P9A.2",
+      "P9A.2-T05": "P9A.2",
+      "P9A.2-T06": "P9A.2",
+      "P9A.3-T01": "P9A.3",
+      "P9A.3-T02": "P9A.3",
+      "P9A.3-T03": "P9A.3",
+      "P9A.3-T04": "P9A.3",
+      "P9A.3-T05": "P9A.3",
+      "P9A.3-T06": "P9A.3",
+      "P9A.4-T01": "P9A.4",
+      "P9A.4-T02": "P9A.4",
+      "P9A.4-T03": "P9A.4",
+      "P9A.4-T04": "P9A.4",
+      "P9A.4-T05": "P9A.4",
+      "P9A.4-T06": "P9A.4",
+      "P9B.1-T01": "P9B.1",
+      "P9B.1-T02": "P9B.1",
+      "P9B.1-T03": "P9B.1",
+      "P9B.1-T04": "P9B.1",
+      "P9B.1-T05": "P9B.1",
+      "P9B.1-T06": "P9B.1",
+      "P9B.1-T07": "P9B.1",
+      "P9B.1-T08": "P9B.1",
+      "P9B.2-T01": "P9B.2",
+      "P9B.2-T02": "P9B.2",
+      "P9B.2-T03": "P9B.2",
+      "P9B.2-T04": "P9B.2",
+      "P9B.2-T05": "P9B.2",
+      "P9B.2-T06": "P9B.2",
+      "P9B.2-T07": "P9B.2",
+      "P9B.2-T08": "P9B.2",
+      "P9B.2-T09": "P9B.2",
+      "P9B.2-T10": "P9B.2",
+      "P9B.2-T11": "P9B.2",
+      "P9B.3-T01": "P9B.3",
+      "P9B.3-T02": "P9B.3",
+      "P9B.3-T03": "P9B.3",
+      "P9B.3-T04": "P9B.3",
+      "P9B.3-T05": "P9B.3",
+      "P9B.3-T06": "P9B.3",
+      "P9B.3-T07": "P9B.3",
+      "P9B.4-T01": "P9B.4",
+      "P9B.4-T02": "P9B.4",
+      "P9B.4-T03": "P9B.4",
+      "P9B.4-T04": "P9B.4",
+      "P9B.4-T05": "P9B.4",
+      "P9B.4-T06": "P9B.4",
+      "P9B.4-T07": "P9B.4",
+      "P9B.4-T08": "P9B.4",
+      "P9C.1-T01": "P9C.1",
+      "P9C.1-T02": "P9C.1",
+      "P9C.1-T03": "P9C.1",
+      "P9C.1-T04": "P9C.1",
+      "P9C.1-T05": "P9C.1",
+      "P9C.1-T06": "P9C.1",
+      "P9C.2-T01": "P9C.2",
+      "P9C.2-T02": "P9C.2",
+      "P9C.2-T03": "P9C.2",
+      "P9C.2-T04": "P9C.2",
+      "P9C.2-T05": "P9C.2",
+      "P9C.2-T06": "P9C.2",
+      "P9C.3-T01": "P9C.3",
+      "P9C.3-T02": "P9C.3",
+      "P9C.3-T03": "P9C.3",
+      "P9C.3-T04": "P9C.3",
+      "P9C.3-T05": "P9C.3",
+      "P9C.3-T06": "P9C.3",
+      "P9C.3-T07": "P9C.3",
+      "P9C.4-T01": "P9C.4",
+      "P9C.4-T02": "P9C.4",
+      "P9C.4-T03": "P9C.4",
+      "P9C.4-T04": "P9C.4",
+      "P9C.4-T05": "P9C.4",
+      "P9C.4-T06": "P9C.4"
+    }
+  },
+  "schema_version": "transflow.traceability/v1",
+  "source_plan": {
+    "path": "docs/计划/Transflow_PDF翻译排版引擎_详细开发计划_v0.1.md",
+    "sha256": "bf5a62ed7a47f8b9c1b6ff28ae0d321a1d85cdce8ce39296494d78c2ee459db5"
+  },
+  "tasks": [
+    {
+      "delivery_contract": "输入为已确认的设计与两个 spike；输出为 P0.2/P2/P5–P10 使用的只读迁移台账和哈希，不产生运行时依赖。",
+      "design_sections": [
+        "2.2",
+        "2.3",
+        "20.1",
+        "20.5",
+        "20.7",
+        "28"
+      ],
+      "gate_items": [
+        "G0-1"
+      ],
+      "stage": "P0",
+      "task_id": "P0.1",
+      "task_title": "冻结施工输入",
+      "test_ids": [
+        "P0.1-T01",
+        "P0.1-T02",
+        "P0.1-T03"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P0.1 的来源边界；向 P0.3/P1 交付可导入 production 包和确定目录，不允许从下游模块反向 import spikes。",
+      "design_sections": [
+        "19.1",
+        "19.2",
+        "19.3"
+      ],
+      "gate_items": [
+        "G0-2"
+      ],
+      "stage": "P0",
+      "task_id": "P0.2",
+      "task_title": "创建生产目录",
+      "test_ids": [
+        "P0.2-T01",
+        "P0.2-T02",
+        "P0.2-T03"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P0.2 的包/目录；向所有后续阶段提供 pytest 标记、Gate 入口、覆盖率和包审计接口。",
+      "design_sections": [
+        "19.1",
+        "21.1",
+        "24"
+      ],
+      "gate_items": [
+        "G0-3"
+      ],
+      "stage": "P0",
+      "task_id": "P0.3",
+      "task_title": "建立测试和 Gate 骨架 `[补述]`",
+      "test_ids": [
+        "P0.3-T01",
+        "P0.3-T02",
+        "P0.3-T03",
+        "P0.3-T04"
+      ]
+    },
+    {
+      "delivery_contract": "输入为本计划和 P0.1 台账；向所有阶段交付追溯矩阵、决策登记和阶段状态规则，不进入 production runtime。",
+      "design_sections": [
+        "20.1",
+        "24",
+        "26",
+        "27"
+      ],
+      "gate_items": [
+        "G0-4"
+      ],
+      "stage": "P0",
+      "task_id": "P0.4",
+      "task_title": "建立计划追溯与决策台账",
+      "test_ids": [
+        "P0.4-T01",
+        "P0.4-T02",
+        "P0.4-T03"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P0.1–P0.4 已知工作量和 Gate；向执行者交付 P1–P14 日历，不能成为跳过 Gate 的授权。",
+      "design_sections": [
+        "22",
+        "23"
+      ],
+      "gate_items": [
+        "G0-5"
+      ],
+      "stage": "P0",
+      "task_id": "P0.5",
+      "task_title": "形成实际排期 `[补述]`",
+      "test_ids": [
+        "P0.5-T01",
+        "P0.5-T02"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 G0 环境施工面；向 P1.2–P1.4、P6、P13 交付精确版本/许可/字体 manifest。",
+      "design_sections": [
+        "21.1",
+        "27",
+        "9.3"
+      ],
+      "gate_items": [
+        "G1-1"
+      ],
+      "stage": "P1",
+      "task_id": "P1.1",
+      "task_title": "冻结运行基线",
+      "test_ids": [
+        "P1.1-T01",
+        "P1.1-T02",
+        "P1.1-T03"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P1.1 版本基线；向所有 Transflow 阶段交付 production/test 安装集合和锁文件。",
+      "design_sections": [
+        "16.5",
+        "19.3",
+        "21.1"
+      ],
+      "gate_items": [
+        "G1-2",
+        "G1-3"
+      ],
+      "stage": "P1",
+      "task_id": "P1.2",
+      "task_title": "建立独立 venv 与锁文件",
+      "test_ids": [
+        "P1.2-T01",
+        "P1.2-T02",
+        "P1.2-T03",
+        "P1.2-T04"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P1.1/P1.2 的版本与环境；向 P3 fake AI、P13 runtime 和 P19 集成部署交付配置/health 合同。",
+      "design_sections": [
+        "16.3",
+        "19.1",
+        "21.1",
+        "5.3",
+        "5.5"
+      ],
+      "gate_items": [
+        "G1-4"
+      ],
+      "stage": "P1",
+      "task_id": "P1.3",
+      "task_title": "建立配置和健康探针",
+      "test_ids": [
+        "P1.3-T01",
+        "P1.3-T02",
+        "P1.3-T03",
+        "P1.3-T04"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P1.1 字体/版本与 P1.3 workspace 配置；向 P3 Artifact、P6 Kernel、P13 ProcessPool 交付主机能力结论。",
+      "design_sections": [
+        "14.2",
+        "18.1",
+        "18.3",
+        "9.3"
+      ],
+      "gate_items": [
+        "G1-5"
+      ],
+      "stage": "P1",
+      "task_id": "P1.4",
+      "task_title": "验证主机能力 `[补述]`",
+      "test_ids": [
+        "P1.4-T01",
+        "P1.4-T02",
+        "P1.4-T03",
+        "P1.4-T04"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 G1 的稳定 Python 环境；向 P2.2–P14 交付纯领域类型，禁止 import 外层实现。",
+      "design_sections": [
+        "11.2",
+        "12",
+        "16.1",
+        "17",
+        "18",
+        "4",
+        "7.1",
+        "9"
+      ],
+      "gate_items": [
+        "G2-1"
+      ],
+      "stage": "P2",
+      "task_id": "P2.1",
+      "task_title": "建立核心领域合同",
+      "test_ids": [
+        "P2.1-T01",
+        "P2.1-T02",
+        "P2.1-T03",
+        "P2.1-T04"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P2.1 的 Job/PageOutcome；向 P3 Checkpoint、P4 Coordinator、P12 控制面和 P17 Postgres Adapter 交付转换规则。",
+      "design_sections": [
+        "12.2",
+        "13.1",
+        "13.4",
+        "18.3",
+        "7.2"
+      ],
+      "gate_items": [
+        "G2-2"
+      ],
+      "stage": "P2",
+      "task_id": "P2.2",
+      "task_title": "建立状态与不变量",
+      "test_ids": [
+        "P2.2-T01",
+        "P2.2-T02",
+        "P2.2-T03",
+        "P2.2-T04"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P2.1/P2.2 类型；向 P3/P17/P18 Adapter 交付最小接口，Application 只依赖 Port。",
+      "design_sections": [
+        "16.1",
+        "19.2",
+        "5.6",
+        "9.1"
+      ],
+      "gate_items": [
+        "G2-3"
+      ],
+      "stage": "P2",
+      "task_id": "P2.3",
+      "task_title": "建立 Port",
+      "test_ids": [
+        "P2.3-T01",
+        "P2.3-T02",
+        "P2.3-T03",
+        "P2.3-T04"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P0.1 迁移台账和 P2.1 合同；向 P3 fake AI、P5 Classification、P7 Catalog、P18 AI Service 交付资源合同。",
+      "design_sections": [
+        "16.4",
+        "16.5",
+        "19.1",
+        "22",
+        "8.3"
+      ],
+      "gate_items": [
+        "G2-4",
+        "G2-5"
+      ],
+      "stage": "P2",
+      "task_id": "P2.4",
+      "task_title": "建立资源合同",
+      "test_ids": [
+        "P2.4-T01",
+        "P2.4-T02",
+        "P2.4-T03",
+        "P2.4-T04"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P0.3 Gate 框架和 P2.1–P2.4 包结构；向所有后续 Gate 交付 architecture test 集合。",
+      "design_sections": [
+        "19.2",
+        "19.3",
+        "21",
+        "24.8",
+        "3.4"
+      ],
+      "gate_items": [
+        "G2-6",
+        "G7-6"
+      ],
+      "stage": "P2",
+      "task_id": "P2.5",
+      "task_title": "建立架构边界测试",
+      "test_ids": [
+        "P2.5-T01",
+        "P2.5-T02",
+        "P2.5-T03",
+        "P2.5-T04"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 G2 的 DocumentRunRequest/错误合同和 G1 的允许根配置；向 P3.2 交付 `run_id + validated source path/hash + languages + config snapshot`，向 P4 DocumentCoordinator 交付单一完整 PDF 请求。",
+      "design_sections": [
+        "19.1",
+        "22",
+        "24.1",
+        "3.2",
+        "7.1",
+        "9.1"
+      ],
+      "gate_items": [
+        "G3-1",
+        "G3-2"
+      ],
+      "stage": "P3",
+      "task_id": "P3.1",
+      "task_title": "Standalone 运行来源",
+      "test_ids": [
+        "P3.1-T01",
+        "P3.1-T02",
+        "P3.1-T03",
+        "P3.1-T04",
+        "P3.1-T05",
+        "P3.1-T06",
+        "P3.1-T07",
+        "P3.1-T08",
+        "P3.1-T09"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P3.1 已验证 run/source 和 P2.2 checkpoint 合同；向 P4/P12 提供 `load_run/commit_page/complete_run`，向 P3.3 提供已解析的 run/page 允许路径。",
+      "design_sections": [
+        "13.4",
+        "18.1",
+        "18.3",
+        "22",
+        "3.2"
+      ],
+      "gate_items": [
+        "G3-3"
+      ],
+      "stage": "P3",
+      "task_id": "P3.2",
+      "task_title": "文件 Checkpoint 与工作区",
+      "test_ids": [
+        "P3.2-T01",
+        "P3.2-T02",
+        "P3.2-T03",
+        "P3.2-T04",
+        "P3.2-T05",
+        "P3.2-T06",
+        "P3.2-T07",
+        "P3.2-T08"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P3.2 安全路径和 P2.1 Artifact/错误合同；向 P4/P12/P13 提供 `put_atomic/verify/artifact_ref` 和结构化 logger。",
+      "design_sections": [
+        "12.1",
+        "17",
+        "18.1",
+        "18.3"
+      ],
+      "gate_items": [
+        "G3-4"
+      ],
+      "stage": "P3",
+      "task_id": "P3.3",
+      "task_title": "Artifact 与日志",
+      "test_ids": [
+        "P3.3-T01",
+        "P3.3-T02",
+        "P3.3-T03",
+        "P3.3-T04",
+        "P3.3-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P2.3 Ports、P2.4 Schemas 和 P1.3 HTTP 配置；向 P4/P5/P13 交付 Fixed/Deterministic/HttpAiCapabilityAdapter 和可编程 fake server。",
+      "design_sections": [
+        "16.1",
+        "16.2",
+        "16.4",
+        "16.5",
+        "22",
+        "24.1",
+        "24.4"
+      ],
+      "gate_items": [
+        "G3-5",
+        "G3-6",
+        "G4-8"
+      ],
+      "stage": "P3",
+      "task_id": "P3.4",
+      "task_title": "测试翻译与 fake AI",
+      "test_ids": [
+        "P3.4-T01",
+        "P3.4-T02",
+        "P3.4-T03",
+        "P3.4-T04",
+        "P3.4-T05",
+        "P3.4-T06",
+        "P3.4-T07"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P3.2/P3.3 的故障注入点；向 P4/P12 提供恢复矩阵和已验证的文件副作用语义。",
+      "design_sections": [
+        "18.2",
+        "18.3",
+        "24.4",
+        "25"
+      ],
+      "gate_items": [
+        "G3-7"
+      ],
+      "stage": "P3",
+      "task_id": "P3.5",
+      "task_title": "崩溃窗口测试",
+      "test_ids": [
+        "P3.5-T01",
+        "P3.5-T02",
+        "P3.5-T03",
+        "P3.5-T04",
+        "P3.5-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G3 的领域合同、Artifact/Checkpoint、P1 字体 manifest 与主机能力、P0 迁移台账；输出为最终模块路径中的 `PageFactsExtractor` 最小子集、`PagePatchInterpreter`、PyMuPDF renderer、passthrough/final replay 和最小 Preservation validator，供 P4.1–P4.5 使用并由 P6 原位补全。",
+      "design_sections": [
+        "12.3",
+        "18.2",
+        "20.6",
+        "22",
+        "24.1",
+        "24.3",
+        "24.8",
+        "9.1",
+        "9.3"
+      ],
+      "gate_items": [
+        "G4-7"
+      ],
+      "stage": "P4",
+      "task_id": "P4.0",
+      "task_title": "最小 SharedPdfKernel 先行实现",
+      "test_ids": [
+        "P4.0-T01",
+        "P4.0-T02",
+        "P4.0-T03",
+        "P4.0-T04",
+        "P4.0-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P3.1 DocumentRunRequest 和 P4.0 最小正式 PageFacts 实现；向 P4.2/P4.3 交付有序 page plan 列表。",
+      "design_sections": [
+        "22",
+        "24.1",
+        "24.3",
+        "7.1",
+        "7.3",
+        "9.1"
+      ],
+      "gate_items": [
+        "G4-1"
+      ],
+      "stage": "P4",
+      "task_id": "P4.1",
+      "task_title": "文档预检与稳定页枚举",
+      "test_ids": [
+        "P4.1-T01",
+        "P4.1-T02",
+        "P4.1-T03"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P4.1 page plan 与测试 fixture；向 P4.3 交付 Route；P5 必须替换该 wiring。",
+      "design_sections": [
+        "22",
+        "24.5",
+        "24.8",
+        "3.4"
+      ],
+      "gate_items": [
+        "G4-2"
+      ],
+      "stage": "P4",
+      "task_id": "P4.2",
+      "task_title": "测试固定路由",
+      "test_ids": [
+        "P4.2-T01",
+        "P4.2-T02",
+        "P4.2-T03",
+        "P4.2-T04"
+      ]
+    },
+    {
+      "delivery_contract": "消费 P4.0–P4.2、P3 Fixed Provider/Artifact；向 P4.4 交付 PageOutcome+approved patch，向未来 P17 证明 PNG 合同。",
+      "design_sections": [
+        "12",
+        "18.3",
+        "22",
+        "7.2",
+        "7.4",
+        "9"
+      ],
+      "gate_items": [
+        "G4-3"
+      ],
+      "stage": "P4",
+      "task_id": "P4.3",
+      "task_title": "页面流水线",
+      "test_ids": [
+        "P4.3-T01",
+        "P4.3-T02",
+        "P4.3-T03",
+        "P4.3-T04"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P4.0 唯一解释器、P4.3 全部 PageOutcome 和 P3 Artifact；向 P4.5/P14 交付 immutable final PDF 与最小 preservation 摘要。",
+      "design_sections": [
+        "12.2",
+        "12.3",
+        "18.2",
+        "22",
+        "24.3",
+        "24.8",
+        "7.1",
+        "7.4"
+      ],
+      "gate_items": [
+        "G4-4"
+      ],
+      "stage": "P4",
+      "task_id": "P4.4",
+      "task_title": "文档最终化",
+      "test_ids": [
+        "P4.4-T01",
+        "P4.4-T02",
+        "P4.4-T03",
+        "P4.4-T04"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P4.1–P4.4；向 P5 提供稳定纵向基线，向附录 C 定义 TF-E2E-01/06/13 证据。",
+      "design_sections": [
+        "13.4",
+        "18.3",
+        "22",
+        "24.3",
+        "24.4"
+      ],
+      "gate_items": [
+        "G4-5",
+        "G4-6",
+        "G5-7"
+      ],
+      "stage": "P4",
+      "task_id": "P4.5",
+      "task_title": "恢复与 E2E",
+      "test_ids": [
+        "P4.5-T01",
+        "P4.5-T02",
+        "P4.5-T03",
+        "P4.5-T04",
+        "P4.5-T05"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P0.1 来源台账、P4 PageFacts；向 P5.2–P5.5/G5 交付匿名 fixture、样本分层和阈值注册表。",
+      "design_sections": [
+        "20.3",
+        "20.5",
+        "22",
+        "24.2",
+        "24.5",
+        "8.1"
+      ],
+      "gate_items": [
+        "G5-1",
+        "G5-5"
+      ],
+      "stage": "P5",
+      "task_id": "P5.1",
+      "task_title": "建立匿名分类基线",
+      "test_ids": [
+        "P5.1-T01",
+        "P5.1-T02",
+        "P5.1-T03"
+      ]
+    },
+    {
+      "delivery_contract": "消费 P4 PageFacts、P5.1 匿名集；向 P5.3 Resolver 提供 rule result/evidence。",
+      "design_sections": [
+        "2.2",
+        "20.2",
+        "20.5",
+        "8.1"
+      ],
+      "gate_items": [
+        "G5-2"
+      ],
+      "stage": "P5",
+      "task_id": "P5.2",
+      "task_title": "迁移规则与证据",
+      "test_ids": [
+        "P5.2-T01",
+        "P5.2-T02",
+        "P5.2-T03"
+      ]
+    },
+    {
+      "delivery_contract": "输入 P5.2 evidence、P3 Http Adapter、P2 Schema；向 P5.4 输出 ClassificationRoute/failed_node。",
+      "design_sections": [
+        "20.5",
+        "21.2",
+        "21.3",
+        "22",
+        "24.1"
+      ],
+      "gate_items": [
+        "G5-3"
+      ],
+      "stage": "P5",
+      "task_id": "P5.3",
+      "task_title": "迁移模型判断与 Resolver",
+      "test_ids": [
+        "P5.3-T01",
+        "P5.3-T02",
+        "P5.3-T03",
+        "P5.3-T04"
+      ]
+    },
+    {
+      "delivery_contract": "依赖 P5.3 Route、P4 Coordinator；向 PageRouter 交付全页 Route 清单。",
+      "design_sections": [
+        "22",
+        "7.1",
+        "7.4",
+        "8.2"
+      ],
+      "gate_items": [
+        "G5-4"
+      ],
+      "stage": "P5",
+      "task_id": "P5.4",
+      "task_title": "接入文档协调器",
+      "test_ids": [
+        "P5.4-T01",
+        "P5.4-T02",
+        "P5.4-T03"
+      ]
+    },
+    {
+      "delivery_contract": "消费 P5.1–P5.4；向 G5/P14 提供分类质量与失败证据。",
+      "design_sections": [
+        "21.3",
+        "24.4",
+        "24.5",
+        "8"
+      ],
+      "gate_items": [
+        "G5-5",
+        "G5-6"
+      ],
+      "stage": "P5",
+      "task_id": "P5.5",
+      "task_title": "反过拟合与失败测试",
+      "test_ids": [
+        "P5.5-T01",
+        "P5.5-T02",
+        "P5.5-T03",
+        "P5.5-T04"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G5 的完整 PDF/PageContext、P2 `PageFacts` schema、P1 主机/PyMuPDF 能力和 P0 迁移台账；输出为 `PageFactsExtractor`、stable object IDs、`protected_object_ids`、workspace allocator 和来源/差异记录，供 Classification、P6.2–P6.4、P7 Toolbox 与 P11 Freeform。",
+      "design_sections": [
+        "14.2",
+        "18.1",
+        "20.2",
+        "20.6",
+        "22",
+        "24.1",
+        "24.4",
+        "7.3",
+        "9.3"
+      ],
+      "gate_items": [
+        "G6-1"
+      ],
+      "stage": "P6",
+      "task_id": "P6.1",
+      "task_title": "迁移 PDF 事实与工作区原语",
+      "test_ids": [
+        "P6.1-T01",
+        "P6.1-T02",
+        "P6.1-T03",
+        "P6.1-T04",
+        "P6.1-T05",
+        "P6.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P1 font manifest/capability、P2 `PagePatch` contract、P6.1 facts/protected IDs；输出为 FontRegistry、glyph probe、PagePatchInterpreter、candidate renderer 和禁止调用规则，供 P6.3、P7–P11、PageFinalizer/DocumentFinalizer。",
+      "design_sections": [
+        "1",
+        "12.3",
+        "18.2",
+        "21.1",
+        "24.1",
+        "24.8",
+        "26",
+        "9.1",
+        "9.3"
+      ],
+      "gate_items": [
+        "G6-2"
+      ],
+      "stage": "P6",
+      "task_id": "P6.2",
+      "task_title": "迁移字体、Patch 与渲染",
+      "test_ids": [
+        "P6.2-T01",
+        "P6.2-T02",
+        "P6.2-T03",
+        "P6.2-T04",
+        "P6.2-T05",
+        "P6.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P6.1 facts/owner/protected IDs 和 P6.2 candidate/Patch；输出为 ConstraintChecker、Finding schema、RepairPrimitive/RepairBudget 和 verdict，供各 Toolbox、Freeform merge 与 Finalizer。",
+      "design_sections": [
+        "11.5",
+        "11.7",
+        "12.1",
+        "12.3",
+        "15",
+        "20.2",
+        "20.6",
+        "24.1",
+        "24.4",
+        "9.3"
+      ],
+      "gate_items": [
+        "G6-3"
+      ],
+      "stage": "P6",
+      "task_id": "P6.3",
+      "task_title": "迁移硬约束与 Repair 原语",
+      "test_ids": [
+        "P6.3-T01",
+        "P6.3-T02",
+        "P6.3-T03",
+        "P6.3-T04",
+        "P6.3-T05",
+        "P6.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为完整 source PDF、P6.1 facts、P6.2/P6.3 Kernel 和 P0/P1 fixture/能力基线；输出为 `PreservationFeatureManifest`、support matrix/version、preflight decision、final validation report，供 DocumentCoordinator、Page/Document Finalizer 与 G14。",
+      "design_sections": [
+        "12.2",
+        "12.3",
+        "18.2",
+        "20.4",
+        "22",
+        "24.3",
+        "24.4",
+        "25",
+        "26",
+        "7.3"
+      ],
+      "gate_items": [
+        "G6-4"
+      ],
+      "stage": "P6",
+      "task_id": "P6.4",
+      "task_title": "完成 Preservation 预检与校验",
+      "test_ids": [
+        "P6.4-T01",
+        "P6.4-T02",
+        "P6.4-T03",
+        "P6.4-T04",
+        "P6.4-T05",
+        "P6.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P6.1–P6.4 完整 Kernel、P1 环境/字体 manifest、G4/G5 baseline；输出为 process-isolation report、cross-environment diff、G4/G5 regression evidence 和冻结 Kernel version，供 P7–P14。",
+      "design_sections": [
+        "12.3",
+        "14.1",
+        "14.3",
+        "20.4",
+        "22",
+        "24.2",
+        "24.4",
+        "9.3"
+      ],
+      "gate_items": [
+        "G6-5",
+        "G6-6"
+      ],
+      "stage": "P6",
+      "task_id": "P6.5",
+      "task_title": "并发与跨平台回归",
+      "test_ids": [
+        "P6.5-T01",
+        "P6.5-T02",
+        "P6.5-T03",
+        "P6.5-T04",
+        "P6.5-T05",
+        "P6.5-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G6 PdfKernel、P2 Domain/Port/Schema 和 P0 Toolbox 迁移台账；输出为 PageToolbox protocol、LegacyToolboxAdapter、standard execution trace/result mapper 和临时文件政策，供 P7.2–P7.5、P8–P11。",
+      "design_sections": [
+        "19.1",
+        "19.2",
+        "20.1",
+        "20.2",
+        "20.6",
+        "22",
+        "24.1",
+        "24.8",
+        "9",
+        "9.1",
+        "9.4"
+      ],
+      "gate_items": [
+        "G7-1",
+        "G7-6"
+      ],
+      "stage": "P7",
+      "task_id": "P7.1",
+      "task_title": "冻结统一 PageToolbox 外形",
+      "test_ids": [
+        "P7.1-T01",
+        "P7.1-T02",
+        "P7.1-T03",
+        "P7.1-T04",
+        "P7.1-T05",
+        "P7.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P7.1 Adapter、P3 TranslationPort/fake Provider 和旧叶调用 trace；输出为 request/bundle split contract、compatibility recorder 和 PageCoordinator 接缝，供 P8–P10 逐叶迁移。",
+      "design_sections": [
+        "16.1",
+        "16.2",
+        "20.2",
+        "20.6",
+        "22",
+        "24.1",
+        "24.8",
+        "7.3",
+        "9.1"
+      ],
+      "gate_items": [
+        "G7-2",
+        "G7-6"
+      ],
+      "stage": "P7",
+      "task_id": "P7.2",
+      "task_title": "建立 Translation 兼容拆分",
+      "test_ids": [
+        "P7.2-T01",
+        "P7.2-T02",
+        "P7.2-T03",
+        "P7.2-T04",
+        "P7.2-T05",
+        "P7.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P2.4 Catalog schema、P7.1 PageToolbox 和 §8.2 route table；输出为 immutable Catalog resource、`resolve_enabled(route)`、startup report 和 fallback matrix，供 PageRouter、P8–P11、P14。",
+      "design_sections": [
+        "11.3",
+        "20.4",
+        "24.1",
+        "24.4",
+        "24.8",
+        "8.2",
+        "8.3",
+        "9.1"
+      ],
+      "gate_items": [
+        "G7-3",
+        "G7-6"
+      ],
+      "stage": "P7",
+      "task_id": "P7.3",
+      "task_title": "建立显式 Catalog",
+      "test_ids": [
+        "P7.3-T01",
+        "P7.3-T02",
+        "P7.3-T03",
+        "P7.3-T04",
+        "P7.3-T05",
+        "P7.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P6 PageFacts/protected IDs、完整文档跨页重复事实和 P7.1 owner 合同；输出为 SharedRegions、margin owner/protected IDs、uncertain handback 和 evidence，供 P8–P11 各 Toolbox。",
+      "design_sections": [
+        "10.1",
+        "10.2",
+        "11.5",
+        "20.2",
+        "24.1",
+        "24.5",
+        "9.3",
+        "9.4"
+      ],
+      "gate_items": [
+        "G7-4"
+      ],
+      "stage": "P7",
+      "task_id": "P7.4",
+      "task_title": "公共边缘处理",
+      "test_ids": [
+        "P7.4-T01",
+        "P7.4-T02",
+        "P7.4-T03",
+        "P7.4-T04",
+        "P7.4-T05",
+        "P7.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P0.1 原状态/来源、P7.1–P7.4 合同骨架和 G5 盲测纪律；输出为 leaf migration template、evidence schema、three-state evaluator 和 Catalog publication rule，供 P8–P10 每个叶。",
+      "design_sections": [
+        "2.3",
+        "20.1",
+        "20.3",
+        "20.4",
+        "22",
+        "24.1",
+        "24.5",
+        "24.6",
+        "8.3"
+      ],
+      "gate_items": [
+        "G7-5"
+      ],
+      "stage": "P7",
+      "task_id": "P7.5",
+      "task_title": "建立叶级迁移模板",
+      "test_ids": [
+        "P7.5-T01",
+        "P7.5-T02",
+        "P7.5-T03",
+        "P7.5-T04",
+        "P7.5-T05",
+        "P7.5-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G7 PageToolbox/Catalog、G6 passthrough/Preservation 和 G5 visual_only Route；输出为 visual_only leaf record、Toolbox implementation、PageOutcome/Finding 和 signed `PASS_ENABLE` evidence，供 Catalog/P8.5。",
+      "design_sections": [
+        "12.1",
+        "12.3",
+        "20.4",
+        "22",
+        "24.1",
+        "24.3",
+        "8.2",
+        "9.1",
+        "9.3"
+      ],
+      "gate_items": [
+        "G8-1"
+      ],
+      "stage": "P8",
+      "task_id": "P8.1",
+      "task_title": "`visual_only`",
+      "test_ids": [
+        "P8.1-T01",
+        "P8.1-T02",
+        "P8.1-T03",
+        "P8.1-T04",
+        "P8.1-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G7 contracts/Translation split、G6 facts/font/constraints、G5 single Route 和 P4 E2E baseline；输出为 single Toolbox、leaf migration/equality/blind evidence、Catalog `PASS_ENABLE` entry，供 DocumentCoordinator/P8.5/P9/P11。",
+      "design_sections": [
+        "10",
+        "12",
+        "15",
+        "2.2",
+        "2.3",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G8-2"
+      ],
+      "stage": "P8",
+      "task_id": "P8.2",
+      "task_title": "`body.flow_text.single`",
+      "test_ids": [
+        "P8.2-T01",
+        "P8.2-T02",
+        "P8.2-T03",
+        "P8.2-T04",
+        "P8.2-T05",
+        "P8.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G7 leaf template/Catalog、G6 text/image/drawing/protected facts 和 G5 chart Route；输出为 chart Toolbox、blind report、three-state conclusion 和 fallback evidence，供 Catalog/P8.5/P10/P11。",
+      "design_sections": [
+        "12",
+        "2.3",
+        "20.3",
+        "20.4",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G8-3"
+      ],
+      "stage": "P8",
+      "task_id": "P8.3",
+      "task_title": "`body.chart`",
+      "test_ids": [
+        "P8.3-T01",
+        "P8.3-T02",
+        "P8.3-T03",
+        "P8.3-T04",
+        "P8.3-T05",
+        "P8.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G7 leaf template/Catalog、G6 drawing/text/protected facts 和 G5 diagram Route；输出为 diagram Toolbox、blind/anti-overfit evidence、three-state conclusion，供 Catalog/P8.5/P10/P11。",
+      "design_sections": [
+        "12",
+        "2.3",
+        "20.3",
+        "20.4",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G8-4"
+      ],
+      "stage": "P8",
+      "task_id": "P8.4",
+      "task_title": "`body.diagram`",
+      "test_ids": [
+        "P8.4-T01",
+        "P8.4-T02",
+        "P8.4-T03",
+        "P8.4-T04",
+        "P8.4-T05",
+        "P8.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P8.1–P8.4 signed leaf evidence/Catalog、G6/G7 production wiring；输出为 first-batch mixed-PDF baseline、per-page route/toolbox/outcome matrix、final Artifact 和 regression evidence，供 P9/G8。",
+      "design_sections": [
+        "12",
+        "18.2",
+        "20.4",
+        "22",
+        "24.2",
+        "24.4",
+        "7.1",
+        "7.4",
+        "8.2",
+        "8.3"
+      ],
+      "gate_items": [
+        "G8-5",
+        "G8-6"
+      ],
+      "stage": "P8",
+      "task_id": "P8.5",
+      "task_title": "第一批混合文档测试",
+      "test_ids": [
+        "P8.5-T01",
+        "P8.5-T02",
+        "P8.5-T03",
+        "P8.5-T04",
+        "P8.5-T05",
+        "P8.5-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G8 稳定骨架、G6 visual/protected facts、G7 leaf template 和 G5 cover Route；输出为 cover Toolbox、leaf evidence、three-state conclusion 和 Catalog entry，供 P9.7/G9。",
+      "design_sections": [
+        "12",
+        "2.3",
+        "20.3",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G9-1"
+      ],
+      "stage": "P9",
+      "task_id": "P9.1",
+      "task_title": "`cover`",
+      "test_ids": [
+        "P9.1-T01",
+        "P9.1-T02",
+        "P9.1-T03",
+        "P9.1-T04",
+        "P9.1-T05",
+        "P9.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G8/G7 Toolbox、P7 Margin、G6 text/link/protected facts 和 G5 contents Route；输出为 contents Toolbox、entry/page-link mapping evidence、leaf conclusion，供 Catalog/P9.7/G9。",
+      "design_sections": [
+        "10",
+        "12.3",
+        "15",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G9-2"
+      ],
+      "stage": "P9",
+      "task_id": "P9.2",
+      "task_title": "`contents`",
+      "test_ids": [
+        "P9.2-T01",
+        "P9.2-T02",
+        "P9.2-T03",
+        "P9.2-T04",
+        "P9.2-T05",
+        "P9.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G8/G7 Toolbox、G6 visual/text/protected facts 和 G5 end Route；输出为 end Toolbox、combination fixtures、leaf conclusion 和 Catalog entry，供 P9.7/G9。",
+      "design_sections": [
+        "12",
+        "20.3",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G9-3"
+      ],
+      "stage": "P9",
+      "task_id": "P9.3",
+      "task_title": "`end`",
+      "test_ids": [
+        "P9.3-T01",
+        "P9.3-T02",
+        "P9.3-T03",
+        "P9.3-T04",
+        "P9.3-T05",
+        "P9.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G8 single baseline、G6 geometry/text/protected facts、G7 Toolbox/leaf template 和 G5 multi Route；输出为 multi Toolbox、column/owner manifest、anti-overfit evidence、leaf conclusion，供 Catalog/P9.7/P11。",
+      "design_sections": [
+        "11.3",
+        "12",
+        "15",
+        "2.3",
+        "20.3",
+        "20.4",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G9-4"
+      ],
+      "stage": "P9",
+      "task_id": "P9.4",
+      "task_title": "`body.flow_text.multi`",
+      "test_ids": [
+        "P9.4-T01",
+        "P9.4-T02",
+        "P9.4-T03",
+        "P9.4-T04",
+        "P9.4-T05",
+        "P9.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G8/G7 Toolbox、G6 table/text/drawing facts 和 G5 table Route；输出为 table Toolbox、cell ownership manifest、atomic fallback evidence、leaf conclusion，供 Catalog/P9.7/P10/P11。",
+      "design_sections": [
+        "11.3",
+        "11.5",
+        "11.7",
+        "12",
+        "15",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G9-5"
+      ],
+      "stage": "P9",
+      "task_id": "P9.5",
+      "task_title": "`body.table`",
+      "test_ids": [
+        "P9.5-T01",
+        "P9.5-T02",
+        "P9.5-T03",
+        "P9.5-T04",
+        "P9.5-T05",
+        "P9.5-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G8/G7 Toolbox、G6 spatial/text/visual facts 和 G5 anchored_blocks Route；输出为 anchored_blocks Toolbox、owner/anchor manifest、atomic rollback evidence、leaf conclusion，供 Catalog/P9.7/P10/P11。",
+      "design_sections": [
+        "11.3",
+        "11.5",
+        "11.7",
+        "12",
+        "20.3",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G9-6"
+      ],
+      "stage": "P9",
+      "task_id": "P9.6",
+      "task_title": "`body.anchored_blocks`",
+      "test_ids": [
+        "P9.6-T01",
+        "P9.6-T02",
+        "P9.6-T03",
+        "P9.6-T04",
+        "P9.6-T05",
+        "P9.6-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9.1–P9.6 signed leaf records、G8 mixed baseline 和当前 Catalog；输出为 second-batch mixed E2E、Catalog/outcome matrix、G8 regression diff 和 stable baseline，供 G9/P9C。",
+      "design_sections": [
+        "12",
+        "18.2",
+        "20.4",
+        "22",
+        "24.2",
+        "24.4",
+        "7.1",
+        "7.4",
+        "8.2",
+        "8.3"
+      ],
+      "gate_items": [
+        "G9-8"
+      ],
+      "stage": "P9",
+      "task_id": "P9.7",
+      "task_title": "第二批集成",
+      "test_ids": [
+        "P9.7-T01",
+        "P9.7-T02",
+        "P9.7-T03",
+        "P9.7-T04",
+        "P9.7-T05",
+        "P9.7-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G5–G9 GateEvidence、`docs/reports/P5阶段_*` 至 `P9阶段_*`、classification 深度审计、toolbox 十份经验文档及 stage gate/manifest、`scripts/run_p9_real_samples.py`、`scripts/verify_p9_real_samples.py`、`tests/migration/test_p9_real_samples.py` 和 `output/pdf/P9_real_samples/P9_real_samples_summary.json`；输出为 content-addressed `p9c_corrective_ledger.v1`、source inventory、contradiction register 和 impact matrix，供 P9C.2–P9C.4、P9A/P9B/P10/P14。",
+      "design_sections": [
+        "20.1",
+        "20.6",
+        "24.2",
+        "24.5",
+        "25",
+        "28",
+        "9.6"
+      ],
+      "gate_items": [
+        "G9C-1",
+        "G9C-2"
+      ],
+      "stage": "P9C",
+      "task_id": "P9C.1",
+      "task_title": "历史问题与合同优先级账本",
+      "test_ids": [
+        "P9C.1-T01",
+        "P9C.1-T02",
+        "P9C.1-T03",
+        "P9C.1-T04",
+        "P9C.1-T05",
+        "P9C.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G2 TranslationUnit/Bundle、G3 TranslationPort/Checkpoint/Artifact、G7 PageToolbox 合同、G9 六叶实现和 P9C.1 corrective ledger；输出为 `semantic_unit_map.v1`、`translation_completeness.v1` Schema/Domain/validator/error catalog 和 gated TranslationBundle，供 P9C.3/P9A/P9B/P10–P14。",
+      "design_sections": [
+        "12.1",
+        "12.2",
+        "16.1",
+        "16.1.1",
+        "17",
+        "24.1",
+        "24.3",
+        "25",
+        "27",
+        "4",
+        "9.1",
+        "9.6.1"
+      ],
+      "gate_items": [
+        "G9C-3",
+        "G9C-4"
+      ],
+      "stage": "P9C",
+      "task_id": "P9C.2",
+      "task_title": "SemanticUnitMap 与翻译完整性门禁",
+      "test_ids": [
+        "P9C.2-T01",
+        "P9C.2-T02",
+        "P9C.2-T03",
+        "P9C.2-T04",
+        "P9C.2-T05",
+        "P9C.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9C.2 完整 map/bundle/decision、G6 SharedPdfKernel/Preservation、G3 Artifact/Checkpoint 和 G4 Finalizer；输出为 `translated_diagnostic.v1` Schema、page/document diagnostic materializer、artifact manifest/status 和 final/diagnostic isolation guard，供 P9C.4/P9B/P10/P14。",
+      "design_sections": [
+        "12",
+        "17",
+        "18",
+        "24.1",
+        "24.3",
+        "24.6",
+        "24.8",
+        "25",
+        "27",
+        "4",
+        "9.6.2"
+      ],
+      "gate_items": [
+        "G9C-5",
+        "G9C-6"
+      ],
+      "stage": "P9C",
+      "task_id": "P9C.3",
+      "task_title": "FinalDeliveryArtifact 与 TranslatedDiagnosticCandidate 双轨",
+      "test_ids": [
+        "P9C.3-T01",
+        "P9C.3-T02",
+        "P9C.3-T03",
+        "P9C.3-T04",
+        "P9C.3-T05",
+        "P9C.3-T06",
+        "P9C.3-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9C.1 ledger、P9C.2/P9C.3 合同、G5 ClassificationRoute、G6 Kernel/font probes、G9 六叶和真实 Qwen migration Adapter；输出为 route mismatch finding/error、three-axis result schema/projector、real regression manifest 和 G9C evidence，供 P9A/P9B/P10/P14。",
+      "design_sections": [
+        "12",
+        "17",
+        "20.4",
+        "20.6",
+        "24.2",
+        "24.6",
+        "25",
+        "27",
+        "8",
+        "9.6.3"
+      ],
+      "gate_items": [
+        "G9C-7",
+        "G9C-8",
+        "G9C-9"
+      ],
+      "stage": "P9C",
+      "task_id": "P9C.4",
+      "task_title": "路由错配、三类结论与真实回归",
+      "test_ids": [
+        "P9C.4-T01",
+        "P9C.4-T02",
+        "P9C.4-T03",
+        "P9C.4-T04",
+        "P9C.4-T05",
+        "P9C.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为历史 G0/G9/G9C baseline/traceability/Gate manifest、本次负责人授权、修订前后两份文档 hash、G6 PageFacts/SharedPdfKernel 和 P9C SemanticUnitMap/Completeness 实现；输出为支持字母阶段的 P0 asset builder/verifier、historical + current baseline overlay、更新后的 traceability/schedule/Gate index、`PageTextInventory`/预授权处置门禁及 G9A-0 证据，供 P9A.1–P9A.4/P9B/P10/P14。",
+      "design_sections": [
+        "20.4",
+        "22",
+        "24.1",
+        "24.8",
+        "26",
+        "4",
+        "9.5",
+        "9.6.1"
+      ],
+      "gate_items": [
+        "G9A-0-1",
+        "G9A-0-2",
+        "G9A-0-3"
+      ],
+      "stage": "P9A",
+      "task_id": "P9A.0",
+      "task_title": "当前基线、字母阶段治理与 V1 前置合同冻结 `[补述·硬停点]`",
+      "test_ids": [
+        "P9A.0-T01",
+        "P9A.0-T02",
+        "P9A.0-T03",
+        "P9A.0-T04",
+        "P9A.0-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9A-0 current baseline/PageTextInventory、G2 Domain/Schema 规范、G5 ClassificationRoute、G6 PageFacts/Preservation、G7 Catalog 和 G9C Route/owner/corrective contract；输出为窄化的 `document_layout_memory.v1` Schema、领域对象、canonical serializer/hash 和失效判定，供 P9A.2–P9A.4/P9B/P10。",
+      "design_sections": [
+        "13.4",
+        "17",
+        "18.3",
+        "24.1",
+        "25",
+        "27",
+        "4",
+        "9.5.1",
+        "9.5.5",
+        "9.6.3"
+      ],
+      "gate_items": [
+        "G9A-1"
+      ],
+      "stage": "P9A",
+      "task_id": "P9A.1",
+      "task_title": "文档记忆合同、身份与失效",
+      "test_ids": [
+        "P9A.1-T01",
+        "P9A.1-T02",
+        "P9A.1-T03",
+        "P9A.1-T04",
+        "P9A.1-T05",
+        "P9A.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9A.1 合同、G6 PageFacts/Kernel、G5 全页 Route、P7 Margin 和 G9C 路由错配/owner 规则；输出为 `DocumentLayoutMemoryBuilder`、PageFacts/Route ref 清单、跨页 role profile/shared region map 与 target layout policy，供 P9A.3/P9B Repair 和所有后续 Toolbox。",
+      "design_sections": [
+        "10",
+        "12",
+        "20.6",
+        "24.3",
+        "24.5",
+        "7.1",
+        "7.3",
+        "9.3",
+        "9.5.1"
+      ],
+      "gate_items": [
+        "G9A-2",
+        "G9A-3"
+      ],
+      "stage": "P9A",
+      "task_id": "P9A.2",
+      "task_title": "完整源 PDF 布局事实构建",
+      "test_ids": [
+        "P9A.2-T01",
+        "P9A.2-T02",
+        "P9A.2-T03",
+        "P9A.2-T04",
+        "P9A.2-T05",
+        "P9A.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9A.2 Builder、G3 FilesystemCheckpoint/Artifact、G4 DocumentCoordinator 和 ready queue；输出为 immutable memory Artifact/ref、Context wiring、恢复/失效实现和并发审计，供 P9A.4/P9B/P10/P12。",
+      "design_sections": [
+        "13.4",
+        "13.5",
+        "14",
+        "18.1",
+        "18.3",
+        "19",
+        "7.1",
+        "7.4",
+        "9.1",
+        "9.5.5"
+      ],
+      "gate_items": [
+        "G9A-4",
+        "G9A-5"
+      ],
+      "stage": "P9A",
+      "task_id": "P9A.3",
+      "task_title": "冻结、Checkpoint 与并发接线",
+      "test_ids": [
+        "P9A.3-T01",
+        "P9A.3-T02",
+        "P9A.3-T03",
+        "P9A.3-T04",
+        "P9A.3-T05",
+        "P9A.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9A.1–P9A.3、G8/G9/G9C/G9A-0 真实叶/纠偏样本和现有 regression harness；输出为 real-document memory manifests、覆盖矩阵、determinism/anti-overfit diff 和 G9A evidence，供 P9B/P10/P14。",
+      "design_sections": [
+        "17",
+        "18",
+        "24.1",
+        "24.3",
+        "24.5",
+        "25",
+        "9.5.1",
+        "9.5.5"
+      ],
+      "gate_items": [
+        "G9A-3",
+        "G9A-6"
+      ],
+      "stage": "P9A",
+      "task_id": "P9A.4",
+      "task_title": "真实文档回归与基线",
+      "test_ids": [
+        "P9A.4-T01",
+        "P9A.4-T02",
+        "P9A.4-T03",
+        "P9A.4-T04",
+        "P9A.4-T05",
+        "P9A.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9A immutable document memory、G9A-0/G9C completeness/diagnostic/route contract、G2 Domain/Schema、G7 Toolbox Repair 合同和 G3 Checkpoint；输出为 effective-layout/page-memory/attempt/proposal/budget/atom-catalog/comparison/prior-ref/static-registry Schema、canonical effective-layout/action/state hash 和状态转换校验，供 P9B.2–P9B.4/P10/P12。",
+      "design_sections": [
+        "13.2",
+        "13.4",
+        "15",
+        "17",
+        "18",
+        "24.1",
+        "24.5",
+        "4",
+        "9.5.2",
+        "9.5.5",
+        "9.6"
+      ],
+      "gate_items": [
+        "G9B-1",
+        "G9B-10",
+        "G9B-2"
+      ],
+      "stage": "P9B",
+      "task_id": "P9B.1",
+      "task_title": "页级记忆、RepairAtomCatalog 与静态扩展边界",
+      "test_ids": [
+        "P9B.1-T01",
+        "P9B.1-T02",
+        "P9B.1-T03",
+        "P9B.1-T04",
+        "P9B.1-T05",
+        "P9B.1-T06",
+        "P9B.1-T07",
+        "P9B.1-T08"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9B.1 合同、G9A 文档记忆、G9A-0/G9C 完整性/诊断/路由错配合同、G7 Toolbox/Judge/Repair、G6 Kernel render/constraints 和 G3 Translation/Artifact；输出为 `RepairCoordinator`、候选比较/接受/回滚、终止/fallback 和结构化日志，供 P9B.3/P9B.4/P10。",
+      "design_sections": [
+        "12",
+        "13.2",
+        "15.1",
+        "15.2",
+        "18.2",
+        "7.2",
+        "7.4",
+        "9.5.2",
+        "9.6.3"
+      ],
+      "gate_items": [
+        "G9B-3",
+        "G9B-4",
+        "G9B-5",
+        "G9B-9"
+      ],
+      "stage": "P9B",
+      "task_id": "P9B.2",
+      "task_title": "RepairCoordinator 多轮重排",
+      "test_ids": [
+        "P9B.2-T01",
+        "P9B.2-T02",
+        "P9B.2-T03",
+        "P9B.2-T04",
+        "P9B.2-T05",
+        "P9B.2-T06",
+        "P9B.2-T07",
+        "P9B.2-T08",
+        "P9B.2-T09",
+        "P9B.2-T10",
+        "P9B.2-T11"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9B.2 RepairCoordinator、G3 Checkpoint/Artifact、G4 PageOutcome/finalization 和 G9A memory ref；输出为 per-attempt workspace、atomic checkpoint/resume、CAS fencing 和 accepted-only finalization，供 P9B.4/P10/P12/P14。",
+      "design_sections": [
+        "13.4",
+        "13.5",
+        "17",
+        "18.1",
+        "18.3",
+        "24.4",
+        "9.5.2",
+        "9.5.5",
+        "9.6.2"
+      ],
+      "gate_items": [
+        "G9B-10",
+        "G9B-3",
+        "G9B-6"
+      ],
+      "stage": "P9B",
+      "task_id": "P9B.3",
+      "task_title": "Repair Checkpoint、崩溃恢复与 Artifact",
+      "test_ids": [
+        "P9B.3-T01",
+        "P9B.3-T02",
+        "P9B.3-T03",
+        "P9B.3-T04",
+        "P9B.3-T05",
+        "P9B.3-T06",
+        "P9B.3-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P9B.1–P9B.3、G8/G9 实际叶实现和真实样本、G9A-0/G9C semantic/diagnostic/route baseline、G9A 两份完整文档基线；输出为 real repair runs、成功轮次 PDF/PNG/JSON、物化失败证据、静态 Registry/PriorRef 边界审计、G8/G9/G9C regression diff 和 G9B conclusion，供 P10/P12/P14。",
+      "design_sections": [
+        "17",
+        "18",
+        "20.4",
+        "20.6",
+        "22",
+        "24.2",
+        "24.6",
+        "25",
+        "9.5.3",
+        "9.6.3"
+      ],
+      "gate_items": [
+        "G9B-10",
+        "G9B-11",
+        "G9B-7",
+        "G9B-8"
+      ],
+      "stage": "P9B",
+      "task_id": "P9B.4",
+      "task_title": "真实样本修复、静态边界与上游回归",
+      "test_ids": [
+        "P9B.4-T01",
+        "P9B.4-T02",
+        "P9B.4-T03",
+        "P9B.4-T04",
+        "P9B.4-T05",
+        "P9B.4-T06",
+        "P9B.4-T07",
+        "P9B.4-T08"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9B Repair Memory/多轮重排闭环、G9 single/multi/anchored 稳定基线、G6 visual/protected facts、G7 leaf template 和 G5 Route；输出为 visual_anchored Toolbox、FAIL→修复/未修复 ledger、blind/anti-overfit evidence 和 Catalog conclusion，供 P10.7/P11。",
+      "design_sections": [
+        "12",
+        "2.3",
+        "20.3",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "9"
+      ],
+      "gate_items": [
+        "G10-1"
+      ],
+      "stage": "P10",
+      "task_id": "P10.1",
+      "task_title": "`body.flow_text.visual_anchored`",
+      "test_ids": [
+        "P10.1-T01",
+        "P10.1-T02",
+        "P10.1-T03",
+        "P10.1-T04",
+        "P10.1-T05",
+        "P10.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9B Repair Memory/多轮重排闭环、G8 single、G9 table、G7 composite contract/Catalog 和原 spike 组合资产；输出为 `NO_ROOT_GATE` 资产迁移记录、flow_text_table Toolbox、ownership/execution manifest 和首次正式 leaf conclusion，供 P10.7/P11。",
+      "design_sections": [
+        "11.5",
+        "2.2",
+        "2.3",
+        "20.1",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "24.8",
+        "8.2",
+        "8.3",
+        "9"
+      ],
+      "gate_items": [
+        "G10-2"
+      ],
+      "stage": "P10",
+      "task_id": "P10.2",
+      "task_title": "`body.composite.flow_text_table`",
+      "test_ids": [
+        "P10.2-T01",
+        "P10.2-T02",
+        "P10.2-T03",
+        "P10.2-T04",
+        "P10.2-T05",
+        "P10.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9B Repair Memory/多轮重排闭环、G9 anchored_blocks、G8 chart、G7 composite/leaf template 和原 FAIL evidence；输出为 anchored_blocks_chart Toolbox、ownership/conflict rules、FAIL ledger、three-state Catalog conclusion，供 P10.7/P11。",
+      "design_sections": [
+        "11.5",
+        "11.7",
+        "2.3",
+        "20.3",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "8.3",
+        "9"
+      ],
+      "gate_items": [
+        "G10-3"
+      ],
+      "stage": "P10",
+      "task_id": "P10.3",
+      "task_title": "`body.composite.anchored_blocks_chart`",
+      "test_ids": [
+        "P10.3-T01",
+        "P10.3-T02",
+        "P10.3-T03",
+        "P10.3-T04",
+        "P10.3-T05",
+        "P10.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9B Repair Memory/多轮重排闭环、G8 chart、G9 table、G7 composite contract/Catalog；输出为 chart_table Toolbox、ownership/rollback manifest、leaf evidence/conclusion，供 P10.7/P11。",
+      "design_sections": [
+        "11.5",
+        "11.7",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "24.8",
+        "8.2",
+        "8.3",
+        "9"
+      ],
+      "gate_items": [
+        "G10-4"
+      ],
+      "stage": "P10",
+      "task_id": "P10.4",
+      "task_title": "`body.composite.chart_table`",
+      "test_ids": [
+        "P10.4-T01",
+        "P10.4-T02",
+        "P10.4-T03",
+        "P10.4-T04",
+        "P10.4-T05",
+        "P10.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9B Repair Memory/多轮重排闭环、G8 single/chart、G7 composite contract 和 G6 visual protection；输出为 flow_text_chart Toolbox、reading/owner manifest、leaf evidence/conclusion，供 P10.7/P11。",
+      "design_sections": [
+        "11.5",
+        "11.7",
+        "12",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "8.3",
+        "9"
+      ],
+      "gate_items": [
+        "G10-5"
+      ],
+      "stage": "P10",
+      "task_id": "P10.5",
+      "task_title": "`body.composite.flow_text_chart`",
+      "test_ids": [
+        "P10.5-T01",
+        "P10.5-T02",
+        "P10.5-T03",
+        "P10.5-T04",
+        "P10.5-T05",
+        "P10.5-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9B Repair Memory/多轮重排闭环、G8 single/diagram、G7 composite contract 和 G6 drawing/protected facts；输出为 flow_text_diagram Toolbox、owner/reading/protected manifest、leaf conclusion，供 P10.7/P11。",
+      "design_sections": [
+        "11.5",
+        "11.7",
+        "12",
+        "20.4",
+        "20.6",
+        "22",
+        "24.1",
+        "24.5",
+        "8.2",
+        "8.3",
+        "9"
+      ],
+      "gate_items": [
+        "G10-6"
+      ],
+      "stage": "P10",
+      "task_id": "P10.6",
+      "task_title": "`body.composite.flow_text_diagram`",
+      "test_ids": [
+        "P10.6-T01",
+        "P10.6-T02",
+        "P10.6-T03",
+        "P10.6-T04",
+        "P10.6-T05",
+        "P10.6-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9B Repair Memory/多轮重排闭环、G9C semantic/diagnostic/route contract、P8–P10 每个叶的签名 Gate/evidence、G7 Catalog schema；输出为 frozen V1 Catalog/resource hash、route-capability matrix、startup report、mixed-route E2E baseline，供 P11/P14。",
+      "design_sections": [
+        "11.1",
+        "20.4",
+        "22",
+        "24.1",
+        "24.5",
+        "24.8",
+        "8.1",
+        "8.3",
+        "9.1"
+      ],
+      "gate_items": [
+        "G10-7",
+        "G10-8"
+      ],
+      "stage": "P10",
+      "task_id": "P10.7",
+      "task_title": "全叶 Catalog 收口",
+      "test_ids": [
+        "P10.7-T01",
+        "P10.7-T02",
+        "P10.7-T03",
+        "P10.7-T04",
+        "P10.7-T05",
+        "P10.7-T06",
+        "P10.7-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G10 冻结的 `ClassificationRoute`、Catalog 和完整已知叶回归基线；输出为 `FreeformRecovery` 核心入口、test-only Route injector、fixture manifest 和 production-wiring 禁入规则，供 P11.2–P11.6 使用；本任务不新增外部能力 Port。",
+      "design_sections": [
+        "11.1",
+        "11.6",
+        "20.3",
+        "22",
+        "24.5",
+        "24.8",
+        "8.1",
+        "8.3"
+      ],
+      "gate_items": [
+        "G11-1",
+        "G11-2"
+      ],
+      "stage": "P11",
+      "task_id": "P11.1",
+      "task_title": "建立 Freeform 测试边界",
+      "test_ids": [
+        "P11.1-T01",
+        "P11.1-T02",
+        "P11.1-T03",
+        "P11.1-T04",
+        "P11.1-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P11.1 的 freeform fixture、P6 的 `PageFacts`/保护对象、P7 的 Catalog 能力描述；输出为单次 `RegionComposedPlan`、`OwnershipManifest` 和未覆盖原因，供 P11.3 Adapter、P11.4 翻译分派和 P11.5 合并器消费。",
+      "design_sections": [
+        "11.2",
+        "11.3",
+        "11.5",
+        "11.6",
+        "11.8",
+        "21.3",
+        "24.1",
+        "24.5"
+      ],
+      "gate_items": [
+        "G11-3",
+        "G11-4"
+      ],
+      "stage": "P11",
+      "task_id": "P11.2",
+      "task_title": "确定性区域分解",
+      "test_ids": [
+        "P11.2-T01",
+        "P11.2-T02",
+        "P11.2-T03",
+        "P11.2-T04",
+        "P11.2-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P11.2 的 RegionPlan 与 G8–G10 已验证的 Toolbox 能力；先输出带 `region_id/container_id/unit_id` 的 `RegionTranslationPlan` 或明确的 `MISSING_TOOL`，供 P11.4 统一翻译；消费 P11.4 分派的译文后再输出带 `region_id/page_id/source_hash/owner/clip` 的 `RegionPatchCandidate`，供 P11.5 裁决。",
+      "design_sections": [
+        "11.3",
+        "11.4",
+        "11.6",
+        "20.2",
+        "20.6",
+        "24.1",
+        "24.8",
+        "9.1",
+        "9.4"
+      ],
+      "gate_items": [
+        "G11-4",
+        "G11-5"
+      ],
+      "stage": "P11",
+      "task_id": "P11.3",
+      "task_title": "Freeform 私有 Adapter",
+      "test_ids": [
+        "P11.3-T01",
+        "P11.3-T02",
+        "P11.3-T03",
+        "P11.3-T04",
+        "P11.3-T05",
+        "P11.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P11.2 `RegionComposedPlan`、P11.3 `RegionTranslationPlan` 和 P2/P3 TranslationPort；输出为单页 `TranslationBatch`/Bundle 审计、按 region 对齐的译文和 `RegionPatchCandidate` 集，供 P11.5 合并器使用。",
+      "design_sections": [
+        "11.4",
+        "16.1",
+        "20.6",
+        "22",
+        "24.1",
+        "24.4",
+        "7.2"
+      ],
+      "gate_items": [
+        "G11-6"
+      ],
+      "stage": "P11",
+      "task_id": "P11.4",
+      "task_title": "单页 TranslationBatch 与 Region 分派",
+      "test_ids": [
+        "P11.4-T01",
+        "P11.4-T02",
+        "P11.4-T03",
+        "P11.4-T04",
+        "P11.4-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P11.2 OwnershipManifest、P11.4 已完成翻译分派的 RegionPatchCandidate 和 P6 Preservation validator；输出为 `RegionMergeReport`、最终 Patch manifest、Finding/DegradationSummary 与 `PageOutcome`，供 P11.6 和 P14 文档 E2E。",
+      "design_sections": [
+        "11.4",
+        "11.5",
+        "11.7",
+        "12.1",
+        "12.3",
+        "18.2",
+        "24.1",
+        "24.3",
+        "24.4"
+      ],
+      "gate_items": [
+        "G11-2",
+        "G11-7"
+      ],
+      "stage": "P11",
+      "task_id": "P11.5",
+      "task_title": "RegionPatch 合并与裁决",
+      "test_ids": [
+        "P11.5-T01",
+        "P11.5-T02",
+        "P11.5-T03",
+        "P11.5-T04",
+        "P11.5-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G8–G10 的 gold/manifest 与 P11.1–P11.5 全部产物；输出为隔离差异报告、production wiring 扫描和 Freeform capability statement，供 G11 与 G14 冻结。",
+      "design_sections": [
+        "11.1",
+        "11.8",
+        "20.3",
+        "20.4",
+        "24.2",
+        "24.5",
+        "26",
+        "8.1",
+        "8.3"
+      ],
+      "gate_items": [
+        "G11-10",
+        "G11-8",
+        "G11-9"
+      ],
+      "stage": "P11",
+      "task_id": "P11.6",
+      "task_title": "回归隔离",
+      "test_ids": [
+        "P11.6-T01",
+        "P11.6-T02",
+        "P11.6-T03",
+        "P11.6-T04"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G11 的 DocumentCoordinator/PageOutcome、P2 的状态枚举和错误合同；输出为纯状态转换函数、CommandResult、transition event 和 Checkpoint/JobQueue 控制合同，供 P12.2–P12.5 编排。",
+      "design_sections": [
+        "12.1",
+        "12.2",
+        "13.1",
+        "13.2",
+        "24.1",
+        "24.4",
+        "6.5"
+      ],
+      "gate_items": [
+        "G12-1"
+      ],
+      "stage": "P12",
+      "task_id": "P12.1",
+      "task_title": "落地控制状态机",
+      "test_ids": [
+        "P12.1-T01",
+        "P12.1-T02",
+        "P12.1-T03",
+        "P12.1-T04",
+        "P12.1-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P3 文件 Checkpoint/ArtifactStore、P4–P11 各步骤合同；输出为 `AtomicStepSpec`、Checkpoint schema、fingerprint policy 和 commit protocol，供 P12.3–P12.5 与 P13 Runtime 使用。",
+      "design_sections": [
+        "12.3",
+        "13.2",
+        "13.5",
+        "18.1",
+        "18.3",
+        "24.1",
+        "24.4"
+      ],
+      "gate_items": [
+        "G12-2",
+        "G12-9"
+      ],
+      "stage": "P12",
+      "task_id": "P12.2",
+      "task_title": "定义原子步骤和安全点",
+      "test_ids": [
+        "P12.2-T01",
+        "P12.2-T02",
+        "P12.2-T03",
+        "P12.2-T04",
+        "P12.2-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P12.1 状态机、P12.2 安全点/manifest、P3 文件账本；输出为 ControlCoordinator、pause barrier、resume plan、cancel cleanup report，供 P12.4/P12.5 和 P14 故障 E2E。",
+      "design_sections": [
+        "13.1",
+        "13.3",
+        "13.5",
+        "18.1",
+        "18.3",
+        "24.4"
+      ],
+      "gate_items": [
+        "G12-3",
+        "G12-4",
+        "G12-5"
+      ],
+      "stage": "P12",
+      "task_id": "P12.3",
+      "task_title": "暂停、恢复与取消",
+      "test_ids": [
+        "P12.3-T01",
+        "P12.3-T02",
+        "P12.3-T03",
+        "P12.3-T04",
+        "P12.3-T05",
+        "P12.3-T06",
+        "P12.3-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P12.2 原子步骤、P3 Fixed/Deterministic Provider 和 ArtifactStore；输出为 idempotency registry、attempt budget、幂等 Finalizer 和 emergency passthrough outcome，供 P12.5/P13/P14。",
+      "design_sections": [
+        "12.1",
+        "12.3",
+        "15",
+        "16.1",
+        "16.2",
+        "18.2",
+        "18.3",
+        "24.1",
+        "24.4"
+      ],
+      "gate_items": [
+        "G12-4",
+        "G12-6",
+        "G12-7"
+      ],
+      "stage": "P12",
+      "task_id": "P12.4",
+      "task_title": "幂等与 attempt 上限",
+      "test_ids": [
+        "P12.4-T01",
+        "P12.4-T02",
+        "P12.4-T03",
+        "P12.4-T04",
+        "P12.4-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P12.1–P12.4 状态/安全点/幂等实现和 P3 crash harness；输出为 fault matrix、每点恢复证据、悬挂检测与 attempt lineage，供 G12、P13 和 G14。",
+      "design_sections": [
+        "13.2",
+        "13.5",
+        "14.1",
+        "14.3",
+        "18.2",
+        "18.3",
+        "24.4",
+        "25"
+      ],
+      "gate_items": [
+        "G12-8",
+        "G12-9"
+      ],
+      "stage": "P12",
+      "task_id": "P12.5",
+      "task_title": "故障窗口",
+      "test_ids": [
+        "P12.5-T01",
+        "P12.5-T02",
+        "P12.5-T03",
+        "P12.5-T04",
+        "P12.5-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G12 的可暂停 DocumentCoordinator、安全点和 PageOutcome barrier；输出为 `ConcurrencyBudget`、bounded ready queue、permit metrics 和 finalization barrier，供 P13.2/P13.3/P13.6。",
+      "design_sections": [
+        "14.1",
+        "14.3",
+        "18.2",
+        "22",
+        "24.3",
+        "24.4",
+        "7.1",
+        "7.3"
+      ],
+      "gate_items": [
+        "G13-1",
+        "G13-2"
+      ],
+      "stage": "P13",
+      "task_id": "P13.1",
+      "task_title": "有界调度与背压",
+      "test_ids": [
+        "P13.1-T01",
+        "P13.1-T02",
+        "P13.1-T03",
+        "P13.1-T04",
+        "P13.1-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P13.1 预算/queue、G12 checkpoint；输出为 RuntimeExecutor、PDF worker request/response schema、shutdown coordinator 和进程池恢复策略，供 P13.3/P13.6。",
+      "design_sections": [
+        "13.5",
+        "14.1",
+        "14.3",
+        "18.3",
+        "21.1",
+        "24.4",
+        "7.1"
+      ],
+      "gate_items": [
+        "G13-3",
+        "G13-4"
+      ],
+      "stage": "P13",
+      "task_id": "P13.2",
+      "task_title": "混合并发",
+      "test_ids": [
+        "P13.2-T01",
+        "P13.2-T02",
+        "P13.2-T03",
+        "P13.2-T04",
+        "P13.2-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G9B Repair 轮次/无改善预算、P12 attempt registry、P13.1 独立 HTTP permit 和 P13.2 executor；输出为 RetryPolicy、ProviderCircuitState、分类/翻译/PDF/Repair/attempt 预算注册表和 degradation events，供 P13.4/P14。",
+      "design_sections": [
+        "12",
+        "14.3",
+        "15",
+        "16.1",
+        "16.3",
+        "24.1",
+        "24.4",
+        "25"
+      ],
+      "gate_items": [
+        "G13-11",
+        "G13-5",
+        "G13-6"
+      ],
+      "stage": "P13",
+      "task_id": "P13.3",
+      "task_title": "三层重试与快速降级",
+      "test_ids": [
+        "P13.3-T01",
+        "P13.3-T02",
+        "P13.3-T03",
+        "P13.3-T04",
+        "P13.3-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P3 日志/Artifact 契约、P11 degradation、P12 状态事件和 P13.1–P13.3 资源/重试事件；输出为 JSON event schema、redaction policy、run report schema、Gate evidence exporter，供 G13/G14 和第二部分观测复用。",
+      "design_sections": [
+        "12.1",
+        "14.3",
+        "15",
+        "17",
+        "18",
+        "24.3",
+        "24.4",
+        "24.6"
+      ],
+      "gate_items": [
+        "G13-7"
+      ],
+      "stage": "P13",
+      "task_id": "P13.4",
+      "task_title": "结构化日志与运行报告",
+      "test_ids": [
+        "P13.4-T01",
+        "P13.4-T02",
+        "P13.4-T03",
+        "P13.4-T04",
+        "P13.4-T05",
+        "P13.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P13.1–P13.4 可观测 Runtime、G1 目标环境/字体清单和代表性完整 PDF；输出为 capacity report、最终 PDF/font-size Gate registry、冻结并发默认值、disk guard、retention policy 与 cleanup report，供 P13.6/G13/P14。若体积阈值或保留期限涉及无法从目标环境/现有产品合同确定的业务取舍，必须标记 `[待决策]`、暂停本阶段并向负责人提问。",
+      "design_sections": [
+        "14",
+        "17",
+        "18.1",
+        "18.2",
+        "21.1",
+        "24.3",
+        "24.4",
+        "27",
+        "9.3"
+      ],
+      "gate_items": [
+        "G13-11",
+        "G13-12",
+        "G13-8"
+      ],
+      "stage": "P13",
+      "task_id": "P13.5",
+      "task_title": "保留与容量 `[补述]`",
+      "test_ids": [
+        "P13.5-T01",
+        "P13.5-T02",
+        "P13.5-T03",
+        "P13.5-T04",
+        "P13.5-T05",
+        "P13.5-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G0–G12 全部生产模块及 P13.1–P13.5 运行政策；输出为 service entrypoint、production wiring manifest、settings schema、health/readiness/internal-control contract、install/start/stop/pause/resume runbook 和 wheel，供 G13/P14。",
+      "design_sections": [
+        "16.2",
+        "19",
+        "21.1",
+        "21.2",
+        "22",
+        "24.6",
+        "24.8",
+        "26",
+        "5.3",
+        "7.1"
+      ],
+      "gate_items": [
+        "G13-10",
+        "G13-13",
+        "G13-4",
+        "G13-9"
+      ],
+      "stage": "P13",
+      "task_id": "P13.6",
+      "task_title": "Runtime 服务",
+      "test_ids": [
+        "P13.6-T01",
+        "P13.6-T02",
+        "P13.6-T03",
+        "P13.6-T04",
+        "P13.6-T05",
+        "P13.6-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G0–G9、G9C、G9A-0、G9A、G9B、G10–G13 的 GateEvidence、P13 production wheel 和阈值注册表；输出为 `g14_baseline_manifest`、capability/semantic/memory/three-axis matrix、ProductAcceptance 阈值、冻结命令/环境和变更阻断规则，供 P14.2–P14.5。",
+      "design_sections": [
+        "20.4",
+        "22",
+        "24.2",
+        "24.5",
+        "24.6",
+        "26"
+      ],
+      "gate_items": [
+        "G14-1",
+        "G14-14",
+        "G14-2",
+        "G14-3"
+      ],
+      "stage": "P14",
+      "task_id": "P14.1",
+      "task_title": "冻结验收基线",
+      "test_ids": [
+        "P14.1-T01",
+        "P14.1-T02",
+        "P14.1-T03",
+        "P14.1-T04",
+        "P14.1-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P14.1 冻结 capability/semantic/memory matrix、G8/G9/G9C/G9A-0/G9A/G9B/G10/G11 gold/fixture、G12/G13 production Runtime；输出为 route-degradation execution matrix、逐项 PageOutcome/diagnostic/three-axis result 和完整 PDF 证据，供 P14.3/G14。",
+      "design_sections": [
+        "11",
+        "12",
+        "20.4",
+        "24.1",
+        "24.5",
+        "24.6",
+        "8.2",
+        "8.3"
+      ],
+      "gate_items": [
+        "G14-15",
+        "G14-3",
+        "G14-4"
+      ],
+      "stage": "P14",
+      "task_id": "P14.2",
+      "task_title": "全分类与降级矩阵",
+      "test_ids": [
+        "P14.2-T01",
+        "P14.2-T02",
+        "P14.2-T03",
+        "P14.2-T04",
+        "P14.2-T05",
+        "P14.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P14.1 冻结 baseline/ProductAcceptance 阈值、P14.2 全矩阵、production wheel 和 migration-only Qwen TranslationPort；输出为 final E2E run manifests、完整 source/target/diagnostic PDF、逐 unit/page 三类结论、reproducibility diff 和容量/恢复报告，供 G14 人工抽查。",
+      "design_sections": [
+        "12.2",
+        "12.3",
+        "13.5",
+        "18.2",
+        "22",
+        "24.3",
+        "24.6",
+        "5.5",
+        "7.2",
+        "7.5"
+      ],
+      "gate_items": [
+        "G14-13",
+        "G14-14",
+        "G14-15",
+        "G14-5",
+        "G14-6",
+        "G14-7",
+        "G14-8"
+      ],
+      "stage": "P14",
+      "task_id": "P14.3",
+      "task_title": "文档级最终 E2E",
+      "test_ids": [
+        "P14.3-T01",
+        "P14.3-T02",
+        "P14.3-T03",
+        "P14.3-T04",
+        "P14.3-T05",
+        "P14.3-T06",
+        "P14.3-T07",
+        "P14.3-T08",
+        "P14.3-T09",
+        "P14.3-T10",
+        "P14.3-T11",
+        "P14.3-T12",
+        "P14.3-T13"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P13 production wheel/runbook、P14.3 E2E trace 和全部 GateEvidence；输出为 architecture audit report、SBOM/dependency scan、PDF provenance report、独立运维 Runbook，供 P14.5/G14。",
+      "design_sections": [
+        "16.2",
+        "19",
+        "21",
+        "24.6",
+        "24.8",
+        "26",
+        "5.4",
+        "7.1"
+      ],
+      "gate_items": [
+        "G14-10",
+        "G14-15",
+        "G14-9"
+      ],
+      "stage": "P14",
+      "task_id": "P14.4",
+      "task_title": "架构和交付审计",
+      "test_ids": [
+        "P14.4-T01",
+        "P14.4-T02",
+        "P14.4-T03",
+        "P14.4-T04",
+        "P14.4-T05",
+        "P14.4-T06",
+        "P14.4-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P14.1–P14.4 全部报告和 G0–G9、G9C、G9A-0、G9A、G9B、G10–G13 证据；输出为 review record、three-axis decision log、变更影响矩阵和负责人结论（进入 P15/修订后重验/暂停），是 P15 的强制输入。",
+      "design_sections": [
+        "22",
+        "23",
+        "25",
+        "27"
+      ],
+      "gate_items": [
+        "G14-11",
+        "G14-12"
+      ],
+      "stage": "P14",
+      "task_id": "P14.5",
+      "task_title": "阶段间强制复盘",
+      "test_ids": [
+        "P14.5-T01",
+        "P14.5-T02",
+        "P14.5-T03",
+        "P14.5-T04"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G14 baseline 和负责人“进入 P15”授权；输出为 `merqfin_baseline_manifest`、process/deployment inventory、environment fingerprint 与 shared-path proof，供 P15.2–P15.6。若两服务规范路径不一致，标记 `[待决策]` 并暂停，不静默新增路径换算层。",
+      "design_sections": [
+        "23",
+        "27",
+        "28",
+        "5.1",
+        "5.3",
+        "5.5",
+        "5.6"
+      ],
+      "gate_items": [
+        "G15-1",
+        "G15-9"
+      ],
+      "stage": "P15",
+      "task_id": "P15.1",
+      "task_title": "冻结代码与部署事实",
+      "test_ids": [
+        "P15.1-T01",
+        "P15.1-T02",
+        "P15.1-T03",
+        "P15.1-T04",
+        "P15.1-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P15.1 当前代码/DB 快照和只读数据库权限；输出为 schema snapshot、data-quality report、reader/writer matrix、constraint decision inputs，供 P15.3、P16.2/P16.3。唯一约束是否可加若证据不足，标记 `[待决策]` 并阻断 P16。",
+      "design_sections": [
+        "23",
+        "23.2",
+        "24.7",
+        "27",
+        "6.1",
+        "6.7"
+      ],
+      "gate_items": [
+        "G15-2"
+      ],
+      "stage": "P15",
+      "task_id": "P15.2",
+      "task_title": "冻结数据库事实",
+      "test_ids": [
+        "P15.2-T01",
+        "P15.2-T02",
+        "P15.2-T03",
+        "P15.2-T04",
+        "P15.2-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P15.1 当前 API/前端与 P15.2 数据消费者矩阵；输出为 versioned product contract fixtures、preview/review/download baseline、page-table decision 和 degradation-display decision，供 P17/P19。无法用现有 DTO 展示降级时标记 `[待决策]`，只讨论最小兼容扩展。",
+      "design_sections": [
+        "13.3",
+        "23.1",
+        "23.2",
+        "24.7",
+        "26",
+        "5.4",
+        "6.5",
+        "6.7"
+      ],
+      "gate_items": [
+        "G15-3",
+        "G15-4"
+      ],
+      "stage": "P15",
+      "task_id": "P15.3",
+      "task_title": "冻结产品合同",
+      "test_ids": [
+        "P15.3-T01",
+        "P15.3-T02",
+        "P15.3-T03",
+        "P15.3-T04",
+        "P15.3-T05",
+        "P15.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P15.1 当前源码/进程和 P15.2 DB writer matrix；输出为 Worker claim map、legacy PDF call graph、semantic asset inventory、reuse/prohibit matrix，供 P16.4、P18 和回滚设计。",
+      "design_sections": [
+        "16.3",
+        "16.5",
+        "20.7",
+        "23.1",
+        "23.3",
+        "24.7",
+        "26",
+        "5.4"
+      ],
+      "gate_items": [
+        "G15-5",
+        "G15-6"
+      ],
+      "stage": "P15",
+      "task_id": "P15.4",
+      "task_title": "冻结 Worker 与语义能力",
+      "test_ids": [
+        "P15.4-T01",
+        "P15.4-T02",
+        "P15.4-T03",
+        "P15.4-T04",
+        "P15.4-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P15.1–P15.4 当前事实和 G14 指标；输出为 versioned `integration_gate_registry`、sample strata、metric formulas、stop/rollback triggers，供 P16、P19–P23。任何业务风险取舍若无依据，标记 `[待决策]`、暂停并向负责人确认。",
+      "design_sections": [
+        "23.3",
+        "23.5",
+        "24.2",
+        "24.6",
+        "24.7",
+        "25",
+        "27"
+      ],
+      "gate_items": [
+        "G15-7"
+      ],
+      "stage": "P15",
+      "task_id": "P15.5",
+      "task_title": "冻结集成 Gate 数值",
+      "test_ids": [
+        "P15.5-T01",
+        "P15.5-T02",
+        "P15.5-T03",
+        "P15.5-T04",
+        "P15.5-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P15.1–P15.5 全部事实/决策与负责人回复；输出为设计符合性报告，以及在确有批准变更时形成的新设计版本、修订计划、decision log、traceability diff、old/new baseline hash 和 P16 execution authorization。没有负责人批准或有未决策项时不得输出授权。",
+      "design_sections": [
+        "23",
+        "26",
+        "27",
+        "28"
+      ],
+      "gate_items": [
+        "G15-8",
+        "G15-9"
+      ],
+      "stage": "P15",
+      "task_id": "P15.6",
+      "task_title": "版本化复核与修订文档",
+      "test_ids": [
+        "P15.6-T01",
+        "P15.6-T02",
+        "P15.6-T03",
+        "P15.6-T04"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G15 签认的 DB 版本/schema/权限事实和脱敏备份；输出为隔离 DB manifest、migration/app/runtime 三角色、连接设置 schema、readiness probe 和恢复脚本验证记录，供 P16.2–P16.5。若无法取得代表性备份或版本不一致，标记 `[待决策]` 并暂停 P16。",
+      "design_sections": [
+        "19.3",
+        "21.1",
+        "23",
+        "24.4",
+        "27",
+        "5.3",
+        "5.6",
+        "6.3",
+        "6.4"
+      ],
+      "gate_items": [
+        "G16-1",
+        "G16-10"
+      ],
+      "stage": "P16",
+      "task_id": "P16.1",
+      "task_title": "建立隔离数据库环境与连接 `[补述]`",
+      "test_ids": [
+        "P16.1-T01",
+        "P16.1-T02",
+        "P16.1-T03",
+        "P16.1-T04",
+        "P16.1-T05",
+        "P16.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P16.1 隔离环境、G15 schema/data/threshold 决策；输出为 DB detailed design（DDL 草案、状态/字段字典、约束/索引、事务与写入 owner）、migration acceptance fixtures，供 P16.3–P17。任何与 G15 事实冲突的新选择必须标记 `[待决策]` 并暂停。",
+      "design_sections": [
+        "13",
+        "18.3",
+        "23.2",
+        "23.3",
+        "24.1",
+        "24.7",
+        "6.2",
+        "6.3",
+        "6.5"
+      ],
+      "gate_items": [
+        "G16-2"
+      ],
+      "stage": "P16",
+      "task_id": "P16.2",
+      "task_title": "完成 DB 详细设计",
+      "test_ids": [
+        "P16.2-T01",
+        "P16.2-T02",
+        "P16.2-T03",
+        "P16.2-T04",
+        "P16.2-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P16.2 评审通过的 DDL、P16.1 隔离备份和 P15 migration 窗口/恢复阈值；输出为 MerqFin Alembic revision、upgrade/data validation/compatibility/recovery report，供 P16.4/P16.5/P17。",
+      "design_sections": [
+        "19.3",
+        "23",
+        "23.2",
+        "24.7",
+        "25",
+        "6.1",
+        "6.4"
+      ],
+      "gate_items": [
+        "G16-3",
+        "G16-4",
+        "G16-5"
+      ],
+      "stage": "P16",
+      "task_id": "P16.3",
+      "task_title": "实施 Alembic migration",
+      "test_ids": [
+        "P16.3-T01",
+        "P16.3-T02",
+        "P16.3-T03",
+        "P16.3-T04",
+        "P16.3-T05",
+        "P16.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P15.4 全 claim 入口、P16.2 SQL 事务规范和 P16.3 升级 schema；输出为两侧互补 claim SQL、lease/heartbeat/CAS/fencing primitives 和 claim audit events，供 P16.5/P17/P19。",
+      "design_sections": [
+        "23",
+        "23.3",
+        "23.5",
+        "24.4",
+        "24.7",
+        "6.3",
+        "6.4",
+        "6.5"
+      ],
+      "gate_items": [
+        "G16-6",
+        "G16-7"
+      ],
+      "stage": "P16",
+      "task_id": "P16.4",
+      "task_title": "实施互补 claim",
+      "test_ids": [
+        "P16.4-T01",
+        "P16.4-T02",
+        "P16.4-T03",
+        "P16.4-T04",
+        "P16.4-T05",
+        "P16.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P16.4 最终 SQL、P15 代表性数据和冻结 claim 阈值；输出为 index DDL、EXPLAIN/latency/lock report、claim concurrency report、entrypoint closure report，供 G16/P17。",
+      "design_sections": [
+        "14.3",
+        "23.2",
+        "23.3",
+        "24.4",
+        "24.7",
+        "25",
+        "6.4"
+      ],
+      "gate_items": [
+        "G16-10",
+        "G16-8",
+        "G16-9"
+      ],
+      "stage": "P16",
+      "task_id": "P16.5",
+      "task_title": "索引、并发与旁路检查",
+      "test_ids": [
+        "P16.5-T01",
+        "P16.5-T02",
+        "P16.5-T03",
+        "P16.5-T04",
+        "P16.5-T05",
+        "P16.5-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G16 schema/claim/fencing primitives、G15 产品字段事实和 G14 不变核心合同；输出为 `MerqFinJobQueueAdapter`、`RunStore`、`DocumentRunRequestMapper`、`ControlSignal` 值对象和 run lineage，供 P17.2–P17.7。",
+      "design_sections": [
+        "13",
+        "20.7",
+        "23",
+        "23.2",
+        "24.1",
+        "24.7",
+        "24.8",
+        "5.4",
+        "6.3",
+        "6.5",
+        "7.3",
+        "9.1"
+      ],
+      "gate_items": [
+        "G17-1",
+        "G17-2"
+      ],
+      "stage": "P17",
+      "task_id": "P17.1",
+      "task_title": "JobQueue 与 RunStore",
+      "test_ids": [
+        "P17.1-T01",
+        "P17.1-T02",
+        "P17.1-T03",
+        "P17.1-T04",
+        "P17.1-T05",
+        "P17.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P17.1 RunStore/token、G16 checkpoint DDL、G12 `AtomicStepSpec` 和 ArtifactStore；输出为 PostgresCheckpointAdapter、versioned checkpoint rows、recovery plan 和 production wiring replacement，供 P17.3–P17.7。",
+      "design_sections": [
+        "13.4",
+        "13.5",
+        "18.1",
+        "18.3",
+        "23",
+        "23.2",
+        "24.4",
+        "6.2",
+        "6.4"
+      ],
+      "gate_items": [
+        "G17-3"
+      ],
+      "stage": "P17",
+      "task_id": "P17.2",
+      "task_title": "Postgres Checkpoint",
+      "test_ids": [
+        "P17.2-T01",
+        "P17.2-T02",
+        "P17.2-T03",
+        "P17.2-T04",
+        "P17.2-T05",
+        "P17.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P17.1 job/page identity、P17.2 valid checkpoint、P10/P11 PageOutcome/TranslationUnit 和 G15 page-table 决策；输出为 ProductProjectionAdapter、page/segment upsert contract、degradation/review guards，供 P17.4/P17.5/P19。",
+      "design_sections": [
+        "12.1",
+        "12.2",
+        "23.2",
+        "24.1",
+        "24.7",
+        "6.3",
+        "6.5",
+        "6.6",
+        "7.5"
+      ],
+      "gate_items": [
+        "G17-4",
+        "G17-5"
+      ],
+      "stage": "P17",
+      "task_id": "P17.3",
+      "task_title": "ProductProjection",
+      "test_ids": [
+        "P17.3-T01",
+        "P17.3-T02",
+        "P17.3-T03",
+        "P17.3-T04",
+        "P17.3-T05",
+        "P17.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P17.2 checkpoint/token、P17.3 page identity 和 G14 PdfKernel/ArtifactStore；输出为 PreviewPublisher、FinalArtifactPublisher、DB artifact pointers、cache version 和 publish audit，供 P17.5/P19。",
+      "design_sections": [
+        "12.2",
+        "12.3",
+        "18.1",
+        "18.3",
+        "23.2",
+        "24.3",
+        "24.4",
+        "24.7",
+        "6.3",
+        "6.7",
+        "7.3"
+      ],
+      "gate_items": [
+        "G17-6",
+        "G17-7"
+      ],
+      "stage": "P17",
+      "task_id": "P17.4",
+      "task_title": "Preview、Artifact 与最终发布",
+      "test_ids": [
+        "P17.4-T01",
+        "P17.4-T02",
+        "P17.4-T03",
+        "P17.4-T04",
+        "P17.4-T05",
+        "P17.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P12 状态机、P17.1 ControlSignal、P17.3/P17.4 projection/artifacts 和 P15 产品合同/降级展示决策；输出为 ProductStatusMapper、control response mapper、经批准的零代码证据或最小 degradation summary projection，供 P17.6/P17.7/P19。",
+      "design_sections": [
+        "12.1",
+        "12.2",
+        "13.1",
+        "13.3",
+        "13.5",
+        "23.2",
+        "24.7",
+        "6.5",
+        "7.5"
+      ],
+      "gate_items": [
+        "G17-8"
+      ],
+      "stage": "P17",
+      "task_id": "P17.5",
+      "task_title": "控制和状态映射",
+      "test_ids": [
+        "P17.5-T01",
+        "P17.5-T02",
+        "P17.5-T03",
+        "P17.5-T04",
+        "P17.5-T05",
+        "P17.5-T06",
+        "P17.5-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G16 execution_engine/run schema、claim/fencing primitives，P15 创建/控制合同，P17.1 RunStore/ControlSignal 和 P17.5 response mapper；输出为 owner assignment seam、默认 legacy policy、审计型 integration policy、transflow control command writer、窄字段 CAS SQL 和产品合同回归，供 P17.7/P19/P21。",
+      "design_sections": [
+        "13.3",
+        "13.5",
+        "20.7",
+        "23",
+        "23.2",
+        "23.5",
+        "24.4",
+        "24.7",
+        "6.3",
+        "6.5"
+      ],
+      "gate_items": [
+        "G17-11",
+        "G17-12"
+      ],
+      "stage": "P17",
+      "task_id": "P17.6",
+      "task_title": "MerqFin 任务创建与控制写入接缝",
+      "test_ids": [
+        "P17.6-T01",
+        "P17.6-T02",
+        "P17.6-T03",
+        "P17.6-T04",
+        "P17.6-T05",
+        "P17.6-T06",
+        "P17.6-T07",
+        "P17.6-T08"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P17.1–P17.6 全部 Adapter/产品写入接缝、G16 隔离 DB、共享测试文件根和 G14 E2E baseline；输出为 adapter integration suite、Standalone-vs-MerqFin diff、architecture scan 和 G17 evidence，供 P18/P19。",
+      "design_sections": [
+        "19.2",
+        "20.7",
+        "23",
+        "24.1",
+        "24.4",
+        "24.7",
+        "24.8",
+        "5.4",
+        "7.1",
+        "9.1"
+      ],
+      "gate_items": [
+        "G17-10",
+        "G17-9"
+      ],
+      "stage": "P17",
+      "task_id": "P17.7",
+      "task_title": "Adapter 集成测试",
+      "test_ids": [
+        "P17.7-T01",
+        "P17.7-T02",
+        "P17.7-T03",
+        "P17.7-T04",
+        "P17.7-T05",
+        "P17.7-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G17 Adapter/集成边界、G15 现有 AI 资产和部署事实；输出为 AI Service package、独立 lock/venv、service settings、security role、health/readiness/start-stop runbook，供 P18.2–P18.6。",
+      "design_sections": [
+        "16.3",
+        "16.5",
+        "19.3",
+        "20.7",
+        "23",
+        "23.2",
+        "24.8",
+        "26",
+        "5.3",
+        "5.4"
+      ],
+      "gate_items": [
+        "G18-1",
+        "G18-2"
+      ],
+      "stage": "P18",
+      "task_id": "P18.1",
+      "task_title": "服务环境与职责边界",
+      "test_ids": [
+        "P18.1-T01",
+        "P18.1-T02",
+        "P18.1-T03",
+        "P18.1-T04",
+        "P18.1-T05",
+        "P18.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P18.1 service shell、G15 ModelGateway/Provider 资产和 Transflow `ModelDecisionPort` schema；输出为 ModelGatewayFacade、`/v1/model-decisions` OpenAPI/JSON Schema、usage/audit/error mapping，供 P18.5/P18.6 和 Transflow HttpAiCapabilityAdapter。",
+      "design_sections": [
+        "16.1",
+        "16.3",
+        "16.4",
+        "20.7",
+        "21.2",
+        "23",
+        "24.1",
+        "24.8",
+        "5.4"
+      ],
+      "gate_items": [
+        "G18-3"
+      ],
+      "stage": "P18",
+      "task_id": "P18.2",
+      "task_title": "收敛 ModelGateway",
+      "test_ids": [
+        "P18.2-T01",
+        "P18.2-T02",
+        "P18.2-T03",
+        "P18.2-T04",
+        "P18.2-T05",
+        "P18.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P18.1/P18.2 service/Gateway、G15 语义资产和 Transflow `TranslationPort` schema；输出为 `/v1/page-translations` API、unit alignment validator、dedupe-semantics declaration、usage/error audit，供 P18.4–P18.6。",
+      "design_sections": [
+        "16.1",
+        "16.3",
+        "16.4",
+        "23",
+        "24.1",
+        "24.4",
+        "24.8"
+      ],
+      "gate_items": [
+        "G18-11",
+        "G18-4",
+        "G18-5"
+      ],
+      "stage": "P18",
+      "task_id": "P18.3",
+      "task_title": "建立 Translation Capability",
+      "test_ids": [
+        "P18.3-T01",
+        "P18.3-T02",
+        "P18.3-T03",
+        "P18.3-T04",
+        "P18.3-T05",
+        "P18.3-T06",
+        "P18.3-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P18.3 Translation schema、G15 semantic asset inventory 和 legacy profile 回归基线；输出为 versioned prompt profile、context selection policy、golden prompts/responses、profile/config hash，供 P18.5/P18.6/P19。",
+      "design_sections": [
+        "16.4",
+        "16.5",
+        "20.7",
+        "23",
+        "24.1",
+        "24.2",
+        "24.5"
+      ],
+      "gate_items": [
+        "G18-6"
+      ],
+      "stage": "P18",
+      "task_id": "P18.4",
+      "task_title": "`transflow.page_units.v1`",
+      "test_ids": [
+        "P18.4-T01",
+        "P18.4-T02",
+        "P18.4-T03",
+        "P18.4-T04",
+        "P18.4-T05",
+        "P18.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P18.2/P18.3 两 API、P18.4 profile 与 Transflow Port contracts；输出为 published schema bundle、Transflow contract snapshot、compatibility matrix、HttpAiCapabilityAdapter 和 release evidence，供 P18.6/P19。",
+      "design_sections": [
+        "16.3",
+        "16.5",
+        "19.3",
+        "23",
+        "23.2",
+        "24.1",
+        "24.4",
+        "24.8",
+        "26"
+      ],
+      "gate_items": [
+        "G18-11",
+        "G18-7",
+        "G18-8",
+        "G18-9"
+      ],
+      "stage": "P18",
+      "task_id": "P18.5",
+      "task_title": "跨仓库合同发布",
+      "test_ids": [
+        "P18.5-T01",
+        "P18.5-T02",
+        "P18.5-T03",
+        "P18.5-T04",
+        "P18.5-T05",
+        "P18.5-T06",
+        "P18.5-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P18.1–P18.5 可部署服务/合同、G13 retry/fallback 和 G17 integration Adapter；输出为 security/fault matrix、permission evidence、fallback E2E、G18 report，供 P19。",
+      "design_sections": [
+        "15",
+        "16.3",
+        "16.5",
+        "17",
+        "24.4",
+        "24.8",
+        "25",
+        "5.4"
+      ],
+      "gate_items": [
+        "G18-10",
+        "G18-2",
+        "G18-9"
+      ],
+      "stage": "P18",
+      "task_id": "P18.6",
+      "task_title": "服务故障与安全测试",
+      "test_ids": [
+        "P18.6-T01",
+        "P18.6-T02",
+        "P18.6-T03",
+        "P18.6-T04",
+        "P18.6-T05",
+        "P18.6-T06",
+        "P18.6-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G16 DB/claim、G17 Adapter、G18 AI Service 和 G15 同机部署事实；输出为 integration topology manifest、service configs、end-to-end readiness、claim allow-list 和启动/停止记录，供 P19.2–P19.5。",
+      "design_sections": [
+        "16.3",
+        "16.5",
+        "23.1",
+        "23.3",
+        "24.7",
+        "5.3",
+        "5.5",
+        "5.6",
+        "7.1"
+      ],
+      "gate_items": [
+        "G19-1",
+        "G19-5",
+        "G19-9"
+      ],
+      "stage": "P19",
+      "task_id": "P19.1",
+      "task_title": "部署与连通性",
+      "test_ids": [
+        "P19.1-T01",
+        "P19.1-T02",
+        "P19.1-T03",
+        "P19.1-T04",
+        "P19.1-T05",
+        "P19.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P19.1 可用拓扑、G15 产品合同和至少一份批准完整 PDF；输出为 product-job E2E manifest、API/UI contract evidence、DB/FS evidence chain 和完整 target PDF，供 P19.3–P19.5/G19。",
+      "design_sections": [
+        "12",
+        "16.3",
+        "18.2",
+        "23.1",
+        "24.3",
+        "24.7",
+        "5.2",
+        "6.5",
+        "6.7",
+        "7.2",
+        "7.4"
+      ],
+      "gate_items": [
+        "G19-2",
+        "G19-3",
+        "G19-9"
+      ],
+      "stage": "P19",
+      "task_id": "P19.2",
+      "task_title": "受控产品 Job E2E",
+      "test_ids": [
+        "P19.2-T01",
+        "P19.2-T02",
+        "P19.2-T03",
+        "P19.2-T04",
+        "P19.2-T05",
+        "P19.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P19.2 产品 Job、G12 控制/恢复和 G16/G17 fencing；输出为 control/restart matrix、checkpoint/lease evidence、duplicate-work report 和 recovery runbook validation，供 G19。",
+      "design_sections": [
+        "13.3",
+        "13.5",
+        "15",
+        "18.3",
+        "23.3",
+        "23.5",
+        "24.4",
+        "24.7",
+        "6.4",
+        "6.5"
+      ],
+      "gate_items": [
+        "G19-4",
+        "G19-5"
+      ],
+      "stage": "P19",
+      "task_id": "P19.3",
+      "task_title": "控制与恢复联调",
+      "test_ids": [
+        "P19.3-T01",
+        "P19.3-T02",
+        "P19.3-T03",
+        "P19.3-T04",
+        "P19.3-T05",
+        "P19.3-T06",
+        "P19.3-T07",
+        "P19.3-T08"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P19.2 完整产品链、P15 preview/review/download baseline 和 P17 projection/publish；输出为 API/UI compatibility report、cache proof、review conflict evidence 和 download hash evidence，供 G19/P20。",
+      "design_sections": [
+        "12.1",
+        "18.2",
+        "23.1",
+        "23.2",
+        "24.7",
+        "26",
+        "6.6",
+        "6.7"
+      ],
+      "gate_items": [
+        "G19-6",
+        "G19-7",
+        "G19-9"
+      ],
+      "stage": "P19",
+      "task_id": "P19.4",
+      "task_title": "Preview、审校与下载",
+      "test_ids": [
+        "P19.4-T01",
+        "P19.4-T02",
+        "P19.4-T03",
+        "P19.4-T04",
+        "P19.4-T05",
+        "P19.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P19.1–P19.4 完整拓扑、G18 fault controls 和 P15 冻结阈值；输出为 real-AI failure matrix、latency/retry/circuit evidence、product degradation proof，供 G19/P20。",
+      "design_sections": [
+        "12",
+        "15",
+        "16.1",
+        "16.4",
+        "17",
+        "23.2",
+        "24.4",
+        "24.7"
+      ],
+      "gate_items": [
+        "G19-8"
+      ],
+      "stage": "P19",
+      "task_id": "P19.5",
+      "task_title": "真实 AI 失败路径",
+      "test_ids": [
+        "P19.5-T01",
+        "P19.5-T02",
+        "P19.5-T03",
+        "P19.5-T04",
+        "P19.5-T05",
+        "P19.5-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P5.1/G5 匿名分类 baseline/threshold、G18 真实 ModelGateway 合同和 P19.1 完整集成拓扑；输出为 production-path classification report、request semantic diff、per-leaf conclusion 和 P20 enable/disable 输入。",
+      "design_sections": [
+        "16.1",
+        "16.3",
+        "20.5",
+        "22",
+        "24.1",
+        "24.2",
+        "24.5",
+        "8"
+      ],
+      "gate_items": [
+        "G19-10"
+      ],
+      "stage": "P19",
+      "task_id": "P19.6",
+      "task_title": "生产 ModelGateway 分类质量复验",
+      "test_ids": [
+        "P19.6-T01",
+        "P19.6-T02",
+        "P19.6-T03",
+        "P19.6-T04",
+        "P19.6-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G19、P15 migration 窗口/备份恢复阈值、G16 Alembic revision/Runbook、G17/G18 签名 release 和生产变更授权；输出为 production schema/version evidence、legacy backfill report、旧合同回归、claim-off service deployment、readiness/rollback evidence，供 P20.1–P20.4。缺少变更授权、备份或恢复责任人时标记 `[待决策]` 并停止 P20。",
+      "design_sections": [
+        "16.3",
+        "23",
+        "23.2",
+        "23.4",
+        "24.4",
+        "24.7",
+        "25",
+        "6.1",
+        "6.4"
+      ],
+      "gate_items": [
+        "G20-10"
+      ],
+      "stage": "P20",
+      "task_id": "P20.0",
+      "task_title": "生产兼容底座部署",
+      "test_ids": [
+        "P20.0-T01",
+        "P20.0-T02",
+        "P20.0-T03",
+        "P20.0-T04",
+        "P20.0-T05",
+        "P20.0-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为通过验收的 P20.0 生产兼容底座、G19 集成链、P15 shadow 样本/阈值和经授权的真实任务快照；输出为 ShadowRunRequest、shadow-only composition root、workspace/DB role、zero-write audit，供 P20.2–P20.4。",
+      "design_sections": [
+        "23",
+        "23.3",
+        "23.5",
+        "24.2",
+        "24.7",
+        "25",
+        "6.3",
+        "6.4"
+      ],
+      "gate_items": [
+        "G20-1",
+        "G20-9"
+      ],
+      "stage": "P20",
+      "task_id": "P20.1",
+      "task_title": "Shadow 任务构造",
+      "test_ids": [
+        "P20.1-T01",
+        "P20.1-T02",
+        "P20.1-T03",
+        "P20.1-T04",
+        "P20.1-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P20.1 shadow runner、P15 sample strata/threshold registry 和授权样本池；输出为 immutable sample manifest、legacy/shadow paired runs、metric raw data 和 coverage report，供 P20.3/P20.4。",
+      "design_sections": [
+        "20.4",
+        "23",
+        "23.3",
+        "23.4",
+        "24.2",
+        "24.3",
+        "24.5",
+        "24.6"
+      ],
+      "gate_items": [
+        "G20-2",
+        "G20-3",
+        "G20-6",
+        "G20-9"
+      ],
+      "stage": "P20",
+      "task_id": "P20.2",
+      "task_title": "分层样本执行",
+      "test_ids": [
+        "P20.2-T01",
+        "P20.2-T02",
+        "P20.2-T03",
+        "P20.2-T04",
+        "P20.2-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P20.2 immutable paired runs 和 P15 metric/A-B rubric；输出为 structured diff、blind A/B records、severe-regression ledger、upstream Gate impact map，供 P20.4/G20。",
+      "design_sections": [
+        "12.3",
+        "20.4",
+        "23",
+        "24.2",
+        "24.6",
+        "25"
+      ],
+      "gate_items": [
+        "G20-4",
+        "G20-5",
+        "G20-6"
+      ],
+      "stage": "P20",
+      "task_id": "P20.3",
+      "task_title": "差异与人工 A/B",
+      "test_ids": [
+        "P20.3-T01",
+        "P20.3-T02",
+        "P20.3-T03",
+        "P20.3-T04",
+        "P20.3-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P20.1–P20.3 evidence、P15 frozen registry；输出为 signed Gate evaluation、first-canary policy proposal、monitor/rollback rules 和负责人 decision，供 P21。",
+      "design_sections": [
+        "23",
+        "23.3",
+        "23.5",
+        "24.6",
+        "25"
+      ],
+      "gate_items": [
+        "G20-4",
+        "G20-6",
+        "G20-7",
+        "G20-8"
+      ],
+      "stage": "P20",
+      "task_id": "P20.4",
+      "task_title": "灰度建议",
+      "test_ids": [
+        "P20.4-T01",
+        "P20.4-T02",
+        "P20.4-T03",
+        "P20.4-T04",
+        "P20.4-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G20 批准的 canary policy、P17.6 owner assignment seam、G16 execution_engine/claim 和现有任务创建 API；输出为 canary policy implementation、decision audit、immutable guard 和 kill switch，供 P21.2/P21.3。",
+      "design_sections": [
+        "23",
+        "23.3",
+        "23.5",
+        "24.7",
+        "25",
+        "6.3",
+        "6.5"
+      ],
+      "gate_items": [
+        "G21-1"
+      ],
+      "stage": "P21",
+      "task_id": "P21.1",
+      "task_title": "灰度 owner 分配",
+      "test_ids": [
+        "P21.1-T01",
+        "P21.1-T02",
+        "P21.1-T03",
+        "P21.1-T04",
+        "P21.1-T05",
+        "P21.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P21.1 owner、G19 产品 E2E、G20 监控/阈值；输出为 canary run evidence、live metrics、product contract samples、legacy/non-PDF regression 和 incident ledger，供 P21.3/G21。",
+      "design_sections": [
+        "12",
+        "17",
+        "18",
+        "23",
+        "23.3",
+        "24.3",
+        "24.6",
+        "24.7",
+        "6.4",
+        "6.7",
+        "7"
+      ],
+      "gate_items": [
+        "G21-2",
+        "G21-3",
+        "G21-4",
+        "G21-5",
+        "G21-6"
+      ],
+      "stage": "P21",
+      "task_id": "P21.2",
+      "task_title": "小流量产品执行",
+      "test_ids": [
+        "P21.2-T01",
+        "P21.2-T02",
+        "P21.2-T03",
+        "P21.2-T04",
+        "P21.2-T05",
+        "P21.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P21.1 kill switch、P21.2 live metrics 和 P15 rollback triggers；输出为 canary rollback runbook、trigger evidence、pending/in-flight disposition report 和 G21 recommendation。",
+      "design_sections": [
+        "13.5",
+        "15",
+        "18",
+        "23.4",
+        "23.5",
+        "24.4",
+        "24.6",
+        "25",
+        "6.4"
+      ],
+      "gate_items": [
+        "G21-7",
+        "G21-8",
+        "G21-9"
+      ],
+      "stage": "P21",
+      "task_id": "P21.3",
+      "task_title": "在线故障与回滚",
+      "test_ids": [
+        "P21.3-T01",
+        "P21.3-T02",
+        "P21.3-T03",
+        "P21.3-T04",
+        "P21.3-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G21 负责人扩大授权、P15 full-scale thresholds 和 P21 owner/kill switch；输出为 versioned expansion ladder、per-step owner policy、observation/evidence 和 legacy exception registry，供 P22.2–P22.4。",
+      "design_sections": [
+        "14",
+        "18",
+        "23",
+        "23.3",
+        "23.5",
+        "24.6",
+        "24.7",
+        "25",
+        "6.4"
+      ],
+      "gate_items": [
+        "G22-1"
+      ],
+      "stage": "P22",
+      "task_id": "P22.1",
+      "task_title": "扩大 owner 范围",
+      "test_ids": [
+        "P22.1-T01",
+        "P22.1-T02",
+        "P22.1-T03",
+        "P22.1-T04",
+        "P22.1-T05"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P22.1 接近全量流量、P15 full-scale thresholds、G13 capacity/retry 和 G19 fault matrix；输出为 full-load report、resource headroom、fault/recovery matrix、poison-job/cleanup evidence，供 P22.3/G22。",
+      "design_sections": [
+        "12",
+        "18",
+        "23.5",
+        "24.3",
+        "24.4",
+        "24.6",
+        "25"
+      ],
+      "gate_items": [
+        "G22-2",
+        "G22-3"
+      ],
+      "stage": "P22",
+      "task_id": "P22.2",
+      "task_title": "全量容量与韧性",
+      "test_ids": [
+        "P22.2-T01",
+        "P22.2-T02",
+        "P22.2-T03",
+        "P22.2-T04",
+        "P22.2-T05",
+        "P22.2-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P22.1 owner ladder、P22.2 load topology、P21.3 rollback runbook 和保留的 legacy PDF 链；输出为 timed full rollback evidence、business/binary rollback runbooks、task disposition/reopen ledger，供 P22.4/G22/P23.3。",
+      "design_sections": [
+        "13.5",
+        "18.3",
+        "23.4",
+        "23.5",
+        "24.4",
+        "24.6",
+        "25",
+        "6.4"
+      ],
+      "gate_items": [
+        "G22-4",
+        "G22-5",
+        "G22-6"
+      ],
+      "stage": "P22",
+      "task_id": "P22.3",
+      "task_title": "完整回滚演练",
+      "test_ids": [
+        "P22.3-T01",
+        "P22.3-T02",
+        "P22.3-T03",
+        "P22.3-T04",
+        "P22.3-T05",
+        "P22.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P22.1–P22.3 全量/回滚证据、P15.4 Worker entry map 和当前 legacy Job snapshot；输出为 drain manifest、old-worker PDF exclusion patch/test evidence、cutover/rollback Runbook、RACI，供 G22/P23。",
+      "design_sections": [
+        "23",
+        "23.1",
+        "23.5",
+        "24.6",
+        "24.8",
+        "25",
+        "27"
+      ],
+      "gate_items": [
+        "G22-10",
+        "G22-7",
+        "G22-8",
+        "G22-9"
+      ],
+      "stage": "P22",
+      "task_id": "P22.4",
+      "task_title": "Legacy 排空准备",
+      "test_ids": [
+        "P22.4-T01",
+        "P22.4-T02",
+        "P22.4-T03",
+        "P22.4-T04",
+        "P22.4-T05",
+        "P22.4-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 G22 负责人授权、cutover Runbook、drain manifest、P16 `PDF+legacy` 互补谓词、已测试但未生产部署的旧 Worker exclusion 和回滚配置；输出为 production owner policy/version、全量 owner cutover evidence、remaining legacy ledger，供 P23.2/P23.3。",
+      "design_sections": [
+        "1",
+        "23",
+        "23.1",
+        "23.5",
+        "24.6",
+        "24.8",
+        "25",
+        "6.4"
+      ],
+      "gate_items": [
+        "G23-1",
+        "G23-2"
+      ],
+      "stage": "P23",
+      "task_id": "P23.1",
+      "task_title": "正式切换",
+      "test_ids": [
+        "P23.1-T01",
+        "P23.1-T02",
+        "P23.1-T03",
+        "P23.1-T04",
+        "P23.1-T05",
+        "P23.1-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P23.1 全量 owner/cutover evidence、P15 full-scale registry 和 G22 capacity baseline；输出为 full-production observation report、alerts/incidents、sample evidence audit 和 stability decision，供 P23.3/P23.4/G23。",
+      "design_sections": [
+        "12",
+        "14",
+        "18",
+        "23.5",
+        "24.3",
+        "24.6",
+        "24.7",
+        "25",
+        "6.5",
+        "6.7"
+      ],
+      "gate_items": [
+        "G23-3",
+        "G23-4",
+        "G23-5",
+        "G23-6"
+      ],
+      "stage": "P23",
+      "task_id": "P23.2",
+      "task_title": "全量观察",
+      "test_ids": [
+        "P23.2-T01",
+        "P23.2-T02",
+        "P23.2-T03",
+        "P23.2-T04",
+        "P23.2-T05",
+        "P23.2-T06",
+        "P23.2-T07"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P22.3 已验证回滚、P22.4 排除补丁/恢复包、P23.1 production config、P23.2 live triggers 与 executable legacy 归零证明；输出为 deployed non-PDF-only filters、rollback readiness checks、cold-legacy proof、periodic drill/credential evidence 和 incident disposition，供 G23/后续旧链删除项目。",
+      "design_sections": [
+        "23",
+        "23.4",
+        "23.5",
+        "24.4",
+        "24.6",
+        "25",
+        "27"
+      ],
+      "gate_items": [
+        "G23-6",
+        "G23-7",
+        "G23-8"
+      ],
+      "stage": "P23",
+      "task_id": "P23.3",
+      "task_title": "回滚待命",
+      "test_ids": [
+        "P23.3-T01",
+        "P23.3-T02",
+        "P23.3-T03",
+        "P23.3-T04",
+        "P23.3-T05",
+        "P23.3-T06"
+      ]
+    },
+    {
+      "delivery_contract": "输入为 P23.1–P23.3 全量证据和 G0–G22 archives；输出为 final release manifest、traceability matrix、architecture/product contract audit、operations handoff、legacy-removal candidate spec 和负责人 final acceptance。",
+      "design_sections": [
+        "1",
+        "16.5",
+        "19",
+        "23.1",
+        "23.5",
+        "24.8",
+        "25",
+        "28",
+        "5.4"
+      ],
+      "gate_items": [
+        "G23-10",
+        "G23-11",
+        "G23-8",
+        "G23-9"
+      ],
+      "stage": "P23",
+      "task_id": "P23.4",
+      "task_title": "最终交付与边界审计",
+      "test_ids": [
+        "P23.4-T01",
+        "P23.4-T02",
+        "P23.4-T03",
+        "P23.4-T04",
+        "P23.4-T05",
+        "P23.4-T06"
+      ]
+    }
+  ],
+  "validation": {
+    "dangling_gate_test_references": [],
+    "invalid_design_references": [],
+    "unowned_test_definitions": []
+  }
+}
