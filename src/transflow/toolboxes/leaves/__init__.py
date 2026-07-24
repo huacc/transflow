@@ -1,5 +1,6 @@
 """导出 P8/P9 显式叶工具，不提供目录扫描或动态发现。"""
 
+from transflow.toolboxes.leaves.body_anchored_blocks import AnchoredBlocksToolbox
 from transflow.toolboxes.leaves.body_chart import ChartToolbox
 from transflow.toolboxes.leaves.body_diagram import DiagramToolbox
 from transflow.toolboxes.leaves.body_flow_text_multi import MultiFlowTextToolbox
@@ -9,12 +10,7 @@ from transflow.toolboxes.leaves.factory import (
     build_p9_toolbox_factories,
 )
 from transflow.toolboxes.leaves.native_labels import ChartTextToolbox, DiagramTextToolbox
-from transflow.toolboxes.leaves.ordinary import (
-    AnchoredBlocksToolbox,
-    ContentsToolbox,
-    CoverToolbox,
-    EndToolbox,
-)
+from transflow.toolboxes.leaves.ordinary import ContentsToolbox, CoverToolbox, EndToolbox
 from transflow.toolboxes.leaves.single import SingleFlowTextToolbox
 from transflow.toolboxes.leaves.visual_only import VisualOnlyToolbox
 

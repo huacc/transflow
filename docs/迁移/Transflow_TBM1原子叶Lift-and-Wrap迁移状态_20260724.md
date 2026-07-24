@@ -27,7 +27,7 @@ TBM1 采用以下固定边界：
 | 3 | `end` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 4 | `body.flow_text.multi` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 5 | `body.table` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
-| 6 | `body.anchored_blocks` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
+| 6 | `body.anchored_blocks` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 7 | `body.flow_text.visual_anchored` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 
 默认 Catalog SHA-256 仍为：
@@ -261,3 +261,65 @@ Judge/Repair，不形成 Spike 运行时依赖。
 `EngineeringConformance=READY`、`ContractReadiness=BLOCKED`，默认 Catalog 继续
 `KEEP_DISABLED`。候选、诊断、PNG 和机器报告仅保存在被 Git 忽略的 `runs/`。下一叶为
 `body.anchored_blocks`。
+
+## 9. `body.anchored_blocks` 核心迁移完成、合同阻塞
+
+生产模块：
+
+- `src/transflow/toolboxes/leaves/body_anchored_blocks/models.py`
+- `src/transflow/toolboxes/leaves/body_anchored_blocks/template.py`
+- `src/transflow/toolboxes/leaves/body_anchored_blocks/layout.py`
+- `src/transflow/toolboxes/leaves/body_anchored_blocks/toolbox.py`
+
+来源冻结清单共 16 项，当前映射达到 `16/16`。生产叶保留并工程化适配了 Spike 的独立
+block owner、视觉背景边界、安全 slot、源对齐、保护对象、有限字号/行距 ladder 和同源
+样式一致性；结构事实只来自当前 Kernel 的 `text_spans`、`image_objects`、
+`drawing_objects` 和事前冻结 `PageTextInventory`。Prompt、Provider、必备字面量重试、
+整页 runner、线程池、直接 PDF 写入和 artifact 编排没有迁入叶，候选仍由共享
+`PagePatchInterpreter` 物化。
+
+页眉页脚没有写入 anchored 正文私有分类规则：模板显式标为
+`shared.margin.header/footer`，语义映射也继续归属共享 margin owner。由于当前生产合同
+仍是一页一个 `PagePatch.owner`，实际操作暂由 `body.anchored_blocks` 承载；这被保留为
+合同 blocker，而不是在叶内静默 `KEEP_SOURCE` 或复制一套全局翻译逻辑。
+
+第一次物化 run 发现同构卡片会交替形成视觉 owner 和派生 owner：生产 Kernel 的卡片
+drawing bbox 从标题条中部开始，顶部标题与卡片垂直覆盖约 44%，刚好低于 Spike 的
+45% 门槛，造成部分标题 owner 与卡片 owner 重叠。该候选被视觉复核否决并保留。随后
+做了通用前向校准：只对“文字中心仍在视觉区内”的候选把覆盖门槛调整为 35%，不含样本
+ID、文件名、页码、标题、业务数字或绝对坐标分支。
+
+最终真实代表页 `AB_EN_12_01978_p068.pdf` 当前证明：
+
+1. 18 个可译容器归入 10 个互不重叠 owner，其中 7 个卡片 owner 有 Kernel 视觉背景
+   直接证据，另有 1 个派生正文 owner 和 2 个共享 margin owner；
+2. 18 个声明式 Patch 操作均绑定原生 source object，写入框不越过各自安全边界；
+3. 固定短 bundle 候选可打开，卡片标题/正文保持槽位，图标、边框和背景保留，同源样式
+   采用同一缩放级别；
+4. 纯数字和卡片标签按事前 Inventory 保护；混合数字、日期和缩写通过
+   `inline_keep_source_object_ids` 进入必备字面量合同；
+5. 超长 bundle 产生 `ANCHORED_BLOCK_TEXT_OVERFLOW`，诊断模式在原 owner 内缩小物化
+   译文，并保留红框与明确“非产品候选”标记；
+6. run-private Catalog、默认停用 fallback、共享并发 1/2 等价、Ruff、Mypy 和默认
+   Catalog 指纹均通过。
+
+固定短 bundle 只证明 owner、slot、样式、Patch 和物化接线，不是语义翻译或盲测产品
+证据。本轮没有调用真实模型；Spike 原始盲测仅 `4/6`，失败引导后的修复证据属于非盲
+回归，本轮没有把它升级为当前产品通过。
+
+当前 blocker：
+
+- `ANCHORED-SHARED-MARGIN-OWNER-GAP`：页眉页脚已被模板和 `SemanticUnitMap` 识别为
+  共享 owner，但单 owner Patch 执行边界尚未接通。正文叶不得承担全局 margin 决策；
+- `ANCHORED-KERNEL-SEPARATOR-SEGMENT-GAP`：Spike 可通过重新打开源 PDF 读取线段级
+  separator 并收窄 cell slot；生产 Kernel 当前只暴露 drawing bbox/content hash。
+  叶没有私自重开 PDF 或建立第二套抽取器，依赖内部线段的页面需由 Kernel/FAMILY 层
+  补充通用直接事实；
+- `ANCHORED-MATERIALIZED-GLYPH-COLLISION-JUDGE-GAP`：2× 栅格复核已确认当前固定
+  bundle 的 owner、对齐和保护背景，但最终 painted glyph 碰撞、不可读窄行和跨 owner
+  机器复裁尚未通过共享 Judge 在分层页池统一接通。
+
+因此当前状态为 `CoreMigration=LIFTED_AND_WRAPPED`、
+`EngineeringConformance=READY`、`ContractReadiness=BLOCKED`，默认 Catalog 继续
+`KEEP_DISABLED`。候选、诊断、PNG 和机器报告仅保存在被 Git 忽略的 `runs/`。下一叶为
+`body.flow_text.visual_anchored`。
