@@ -24,7 +24,7 @@ TBM1 采用以下固定边界：
 |---:|---|---|---|---|---|---|
 | 1 | `cover` | `LIFTED_AND_WRAPPED` | `READY` | `CONTRACT_READY` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 2 | `contents` | `LIFTED_AND_WRAPPED` | `READY` | `CONTRACT_READY` | `NOT_EVALUATED` | `KEEP_DISABLED` |
-| 3 | `end` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
+| 3 | `end` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 4 | `body.flow_text.multi` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 5 | `body.table` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 6 | `body.anchored_blocks` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
@@ -120,5 +120,42 @@ body.anchored_blocks → body.flow_text.visual_anchored` 执行。
 - `SHARED-ENGINEERING-CONCURRENCY`：端到端接线仍按计划留到 TBM3。
 
 这些限制阻止产品质量结论和默认 Catalog 晋级，但不阻止 `contents` 的当前
-`CONTRACT_READY`。后续顺序为 `end → body.flow_text.multi → body.table →
+`CONTRACT_READY`。后续顺序为 `body.flow_text.multi → body.table →
 body.anchored_blocks → body.flow_text.visual_anchored`。
+
+## 6. `end` 核心迁移完成、合同阻塞
+
+生产模块：
+
+- `src/transflow/toolboxes/leaves/end/models.py`
+- `src/transflow/toolboxes/leaves/end/template.py`
+- `src/transflow/toolboxes/leaves/end/layout.py`
+- `src/transflow/toolboxes/leaves/end/toolbox.py`
+
+来源映射共 14 项，已达到 `14/14`。类别私有的联系块、免责声明、公司/品牌、链接、
+对齐和局部安全区主体已经迁入；Provider、Prompt、叶内重试、整本 runner、线程池、
+直接 PDF 写入和 artifact 编排均由共享生产链替换。
+
+已通过的薄门禁事实：
+
+1. 真实英文联系页 `S2P0120` 生成一个绑定两段源文字的声明式 Patch；
+2. 候选可打开且译文可读，Logo 和 URL 保持不变；
+3. 超长译文生成 `END_TEXT_OVERFLOW` 和明确标记的失败诊断；
+4. 无原生文字页 `S2P0580` 不调用 Provider，显式透传收敛；
+5. run-private Catalog、默认停用 fallback、共享并发等价和默认 Catalog 指纹通过。
+
+当前 blocker 为 `END-PROTECTED-PREAUTHORIZATION-GAP`：真实双语联系页 `S2P0040`
+中的 `Tel 電話` / `Fax 傳真` 按 Spike 语义应保护，但 Kernel 在 Toolbox 之前冻结的
+PageTextInventory 会把其中拉丁 span 预授权为 `TRANSLATE`。叶不能在事后新增
+`KEEP_SOURCE/PROTECTED`，因此主链正确返回 `ROUTE_CAPABILITY_MISMATCH`，不调用
+Provider，也不生成伪翻译候选。
+
+该问题不能用样本、公司名、文件名、页码或叶内特判处理。按计划 §9.1，
+owner/protected 合同失败只阻塞当前叶：`CoreMigration=LIFTED_AND_WRAPPED`、
+`EngineeringConformance=READY`，但 `ContractReadiness=BLOCKED`，继续
+`KEEP_DISABLED`。后续在 TBM3 双语分层页池确认作用域，再在 TBM4 决定共享事前授权
+合同；当前不把 `end` 纳入 ready 集。
+
+本轮没有调用真实模型。候选、失败诊断、PNG、blocker 样本副本和机器报告只保存在
+被 Git 忽略的 `runs/toolbox_leaf_migration/TBM1/`。下一叶为
+`body.flow_text.multi`。
