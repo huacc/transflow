@@ -433,3 +433,81 @@ Template 只读取当前 Kernel 的 `text_spans`、`image_objects`、`drawing_ob
 这里的“TBM1 完成”只表示所有计划内原子叶分别达到工程符合且合同就绪或明确阻塞，
 不表示跨类别集成、整本产品质量、Owner 接受或默认启用。按阶段边界，本轮不自动开始
 TBM2。
+
+## 12. 当前阶段真实模型直连接线复验
+
+### 12.1 阶段决策
+
+当前阶段以“真实翻译与 PDF 排版主链可用”为验收目标，采用已经可用的
+`tests.migration.p9_qwen_translation_adapter.MigrationQwenTranslationAdapter`
+直连 OpenAI-compatible 模型接口。该 Adapter 仍由共享 `TranslationPort` 注入
+`ToolboxPageCoordinator`，不进入叶实现，不改变 Toolbox 生命周期、默认 Catalog
+或最终 Patch 回放规则。
+
+阶段状态固定为：
+
+- `CurrentStageTranslationWiring=PASS`；
+- `CurrentStageAdapter=MigrationQwenTranslationAdapter`；
+- `ProductionAiCapabilityServiceWiring=DEFERRED_NON_BLOCKING`；
+- `LiteLLMProviderEncapsulation=DEFERRED`。
+
+这里的 `DEFERRED_NON_BLOCKING` 只表示生产 `HttpAiCapabilityAdapter` 与未来
+LiteLLM/AI Capability Service 的最终接线不再阻断 TBM1；不表示删除或降级生产
+Port 合同，也不把迁移 Adapter 晋级为最终生产实现。
+
+### 12.2 前向真实链证据
+
+本轮唯一结论权威为被 Git 忽略的前向运行：
+
+`runs/toolbox_leaf_migration/TBM1/17-stage-direct-qwen-20260724-160426/`
+
+该运行没有复用上一轮 Checkpoint，完整执行：
+
+```text
+source PDF
+→ Preservation preflight
+→ PageFacts
+→ 真实模型分类主判/复核
+→ run-private Catalog
+→ ToolboxPageCoordinator
+→ PageTextInventory / SemanticUnitMap
+→ 真实模型 TranslationPort
+→ TranslationCompleteness
+→ Cover Layout / Judge / Repair
+→ PagePatchInterpreter
+→ page Checkpoint
+→ DocumentFinalizer 串行回放
+→ Preservation
+→ immutable final PDF
+```
+
+机器结果为：
+
+- 总结论 `PASS`；
+- 真实 HTTP 共 4 次：分类 2 次、翻译 2 次；
+- 严格分类链 Route 为 `cover`，已知 Route 对照链独立执行；
+- 两条链均为 5 个翻译单元 `FULL`、5 个批准 Patch、`fallback=NONE`；
+- 两条链均生成不同于源文件的最终 PDF，Preservation 均通过；
+- 默认 Catalog 前后 SHA-256 均为
+  `a43dccd10447943a8b3701265c9e85638a65a874d6876b8d1493d6f6886a2f8a`；
+- 两份最终 PDF 独立重渲染结果逐像素一致，声明操作矩形之外像素变化率为 `0.0`；
+- 人工栅格复核未见裁切、文字互压或不可读字形；
+- 凭据仅经进程环境注入，运行证据中的密钥匹配数为 `0`。
+
+准备阶段的 `14-*`、`15-*` 目录均在真实 HTTP 前因一次性验证脚本目录前置条件停止；
+`16-*` 已完成严格业务链及 3 次真实 HTTP，但在链后汇总复制阶段停止。三者均不作为
+最终结论证据，也未被删除或改写。
+
+### 12.3 验收边界
+
+本轮证明的是当前阶段真实翻译、Toolbox 排版、Patch 回放和最终化链路已经打通，
+不升级为整本产品质量或最终生产接线完成。仍保留以下问题：
+
+- 必保留字面量恢复会把缺失的 `RMB/HKD` 机械追加到译文，合同完整但措辞可能重复；
+- 最终 PDF 文本抽取仍可能把 `年` 映射为兼容字形 `U+F98E`；
+- 受控 CJK 字体重复嵌入使该单页最终 PDF 约为 16.7 MB；
+- 当前环境没有 Poppler，本轮最终 PDF 独立重渲染使用 PyMuPDF，未形成跨渲染器证据。
+
+这些问题继续进入后续共享翻译质量、字体与产品验收阶段，不阻断
+`CurrentStageTranslationWiring=PASS`。PDF、PNG、JSON、日志和模型结果仍只保存在
+被 Git 忽略的 `runs/`，不得上传 GitHub。
