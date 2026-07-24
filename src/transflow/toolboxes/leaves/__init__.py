@@ -4,6 +4,9 @@ from transflow.toolboxes.leaves.body_anchored_blocks import AnchoredBlocksToolbo
 from transflow.toolboxes.leaves.body_chart import ChartToolbox
 from transflow.toolboxes.leaves.body_diagram import DiagramToolbox
 from transflow.toolboxes.leaves.body_flow_text_multi import MultiFlowTextToolbox
+from transflow.toolboxes.leaves.body_flow_text_visual_anchored import (
+    VisualAnchoredToolbox as VisualAnchoredToolbox,
+)
 from transflow.toolboxes.leaves.body_table import TableToolbox
 from transflow.toolboxes.leaves.factory import (
     build_p8_toolbox_factories,

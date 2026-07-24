@@ -28,7 +28,7 @@ TBM1 采用以下固定边界：
 | 4 | `body.flow_text.multi` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 5 | `body.table` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 6 | `body.anchored_blocks` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
-| 7 | `body.flow_text.visual_anchored` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
+| 7 | `body.flow_text.visual_anchored` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 
 默认 Catalog SHA-256 仍为：
 `a43dccd10447943a8b3701265c9e85638a65a874d6876b8d1493d6f6886a2f8a`。
@@ -323,3 +323,74 @@ ID、文件名、页码、标题、业务数字或绝对坐标分支。
 `EngineeringConformance=READY`、`ContractReadiness=BLOCKED`，默认 Catalog 继续
 `KEEP_DISABLED`。候选、诊断、PNG 和机器报告仅保存在被 Git 忽略的 `runs/`。下一叶为
 `body.flow_text.visual_anchored`。
+
+## 10. `body.flow_text.visual_anchored` 核心迁移完成、合同阻塞
+
+生产模块：
+
+- `src/transflow/toolboxes/leaves/body_flow_text_visual_anchored/models.py`
+- `src/transflow/toolboxes/leaves/body_flow_text_visual_anchored/template.py`
+- `src/transflow/toolboxes/leaves/body_flow_text_visual_anchored/layout.py`
+- `src/transflow/toolboxes/leaves/body_flow_text_visual_anchored/toolbox.py`
+
+来源冻结清单共 17 项，最终映射达到 `17/17`。生产叶保留并工程化适配了 Spike 的
+`VisualTextSlot`、视觉背景/锚点对象绑定、源 `LEFT/RIGHT/CENTER` 对齐、安全
+layout search region、hard boundary、有限字号/行距 ladder 和真实目标字形测量。
+Template 只读取当前 Kernel 的 `text_spans`、`image_objects`、`drawing_objects` 与事前
+冻结的 `PageTextInventory`；Prompt、Provider、Provider 重试、样本准备、整页 runner、
+线程池和直接 PDF 写入均未进入叶运行时。候选仍只由共享 `PagePatchInterpreter` 物化。
+
+本轮没有照搬两项已被 P12 冻结 holdout 否定的策略：
+
+1. Spike 曾按脚本、字号和几何距离自动把疑似目标语言伴随容器设为
+   `render_text=False`。历史 holdout 暴露了跨区双语正文、姓名/职务和普通大写词误判。
+   生产迁移只建立结构候选，并输出
+   `VISUAL_BILINGUAL_SEMANTIC_DECISION_REQUIRED`；在共享语义身份合同完成前，不按几何
+   静默删除任何源文字，也不把疑似伴随关系当成已确认同义关系。
+2. Spike Template 通过重新打开源 PDF 栅格采样背景色。生产 Kernel 当前只暴露视觉对象
+   bbox 与内容哈希，分类 PNG 又明确是分类专用事实。生产叶既没有重开 PDF，也没有越权
+   消费分类 PNG；视觉背景槽位记录 `KERNEL_GEOMETRY_ONLY`，并输出
+   `VISUAL_BACKGROUND_EVIDENCE_MISSING`，而不是假定白底或伪造对比度 PASS。
+
+页眉页脚继续按全局语义处理。代表页中的自然语言页脚在 Template 和
+`SemanticUnitMap` 中归属 `shared.margin.footer`，页码仍由事前 Inventory 机械保护。
+由于当前 `PagePatch` 只允许一个根 owner，页脚提议操作暂时仍由
+`body.flow_text.visual_anchored` Patch 承载；该差异保留为共享 owner blocker，不在叶内
+再造一套页眉页脚翻译流程。
+
+真实代表页 `EN_00468_p0010.pdf` 当前证明：
+
+1. 16 个原生文字 span 被 5 个容器和事前保护对象完整覆盖，容器间无重复归属；
+2. 5 个容器保持源对齐，其中标题为左锚、签名姓名为右锚、职务和正文为左锚；
+3. 3 个槽位绑定 Kernel 视觉几何证据，2 个槽位明确位于默认页面画布，固定照片和绘图
+   对象全部保持锁定；
+4. 5 个声明式提议 Patch 操作均绑定真实 source object、源擦除矩形、字号、行距、颜色
+   与对齐方式，并由共享解释器完整物化；
+5. 2× 源/提议候选复核确认照片未变、标题锚点保持、签名与正文仍在各自槽位，未见新增
+   painted text overlap；该 PDF 元数据明确标记为合同阻塞的结构提议，不是产品候选；
+6. 超长固定 bundle 形成 `VISUAL_SLOT_OVERFLOW`，诊断模式仍在原 hard boundary 内完整
+   物化译文、红色槽位框和“非产品候选”元数据；
+7. run-private Catalog、默认停用 fallback、共享并发 1/2 等价、Ruff、Mypy、8 项专用
+   测试和默认 Catalog 指纹均通过。
+
+固定 bundle 只证明槽位、锚点、Patch 和物化接线，不证明语义翻译质量或盲测产品效果。
+本轮没有调用真实模型。P12 历史结论仍为 `FAIL`：冻结 holdout 自动结果 `7/8`，人工只
+接受 `3/8`；低对比度页和四个双语重复页仍是历史失败证据，本轮没有将其升级。
+
+当前 blocker：
+
+- `VISUAL-BACKGROUND-DIRECT-FACT-GAP`：Kernel 缺少槽位级背景颜色/对比度的类型化直接
+  事实。只有在 Kernel/FAMILY 层补齐后，叶才能区分“忠实保持低可见性”和“经授权增强
+  可读性”，不得静默替产品负责人选择；
+- `VISUAL-BILINGUAL-SEMANTIC-IDENTITY-GAP`：`PageTextInventory` 能事前识别
+  `ALREADY_TARGET_LANGUAGE`，但还不能证明分区、姓名/职务或跨距离段落是否表达同一个
+  语义单元。结构候选因此只触发 fallback，不执行几何去重；
+- `VISUAL-SHARED-MARGIN-OWNER-GAP`：页脚已归属共享 margin owner，但单 owner Patch
+  的执行边界尚未接通；
+- `VISUAL-MATERIALIZED-GLYPH-JUDGE-GAP`：叶内目标字体 probe 与本轮 2× 人工复核已
+  通过代表页结构，但共享的最终 painted-glyph 对比度、碰撞和锚点漂移复裁尚未接通。
+
+因此当前状态为 `CoreMigration=LIFTED_AND_WRAPPED`、
+`EngineeringConformance=READY`、`ContractReadiness=BLOCKED`，默认 Catalog 继续
+`KEEP_DISABLED`。候选、失败 PDF、PNG 和机器报告只保存在被 Git 忽略的
+`runs/toolbox_leaf_migration/TBM1/11-visual-anchored-thin-gate-20260724-150600/`。
