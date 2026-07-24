@@ -25,7 +25,7 @@ TBM1 采用以下固定边界：
 | 1 | `cover` | `LIFTED_AND_WRAPPED` | `READY` | `CONTRACT_READY` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 2 | `contents` | `LIFTED_AND_WRAPPED` | `READY` | `CONTRACT_READY` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 3 | `end` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
-| 4 | `body.flow_text.multi` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
+| 4 | `body.flow_text.multi` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 5 | `body.table` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 6 | `body.anchored_blocks` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 7 | `body.flow_text.visual_anchored` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
@@ -158,4 +158,55 @@ owner/protected 合同失败只阻塞当前叶：`CoreMigration=LIFTED_AND_WRAPP
 
 本轮没有调用真实模型。候选、失败诊断、PNG、blocker 样本副本和机器报告只保存在
 被 Git 忽略的 `runs/toolbox_leaf_migration/TBM1/`。下一叶为
-`body.flow_text.multi`。
+`body.table`。
+
+## 7. `body.flow_text.multi` 核心迁移完成、合同阻塞
+
+生产模块：
+
+- `src/transflow/toolboxes/leaves/body_flow_text_multi/models.py`
+- `src/transflow/toolboxes/leaves/body_flow_text_multi/template.py`
+- `src/transflow/toolboxes/leaves/body_flow_text_multi/layout.py`
+- `src/transflow/toolboxes/leaves/body_flow_text_multi/toolbox.py`
+
+纠正后的来源冻结清单共 55 项，当前映射达到 `55/55`。此前一次工具输出截断把
+`layout_planner.py`、`models.py` 以及 `orchestrator/`、`probes/`、`repairs/` 下
+21 个文件折叠为一个坏路径；本轮只前向修正 TBM1 当前清单，重新核对文件、字节和 SHA-256，
+没有修改 TBM0 历史证据。
+
+本轮保留并工程化适配了两至三栏聚类、`ColumnBand`、`ColumnAssignment`、跨栏
+`span`、栏优先阅读顺序、同栏段落碎片合并和有界字号 ladder。Provider、Prompt、叶内
+重试、Qwen/httpx 裁决、整本枚举、线程池、直接 PDF 产物写入和 artifact 编排没有进入
+生产叶；依赖物化候选的 spacing、anchor、density 和 typography 规则明确交给共享
+Judge/Repair，不形成 Spike 运行时依赖。
+
+真实分类页 `S2P0986` 当前证明：
+
+1. 从源几何建立两个栏带，生成 14 个生产翻译单元和 14 个源对象绑定操作；
+2. 短固定 bundle 的候选可打开、两栏分离且无相互覆盖；
+3. 超长 bundle 产生 `MULTI_TEXT_OVERFLOW` 和明确标记的红框失败诊断；
+4. 段落中的正文 span 进入翻译，已预授权的数字/缩写通过
+   `inline_keep_source_object_ids` 保留，Patch 仍绑定完整段落；
+5. run-private Catalog、默认停用 fallback、共享并发 1/2 等价、protected target、
+   Patch binding、Ruff、Mypy 和默认 Catalog 指纹均通过。
+
+短固定 bundle 只用于证明结构与合同接线，不是语义翻译或产品质量证据。本轮没有调用真实
+模型。
+
+当前有两个合同 blocker：
+
+- `MULTI-SHARED-MARGIN-OWNER-GAP`：运行页眉在 `SemanticUnitMap` 中已归属
+  `shared.margin.header`，但当前单 owner `PagePatch` 仍由 multi 叶生成这些操作。
+  不能用叶内 owner 回退或静默 `KEEP_SOURCE` 掩盖，需在 TBM3 接通共享 margin 执行边界；
+- `MULTI-INVENTORY-HASH-PROJECTION-GAP`：扩展真实分类池探测时，`S2P0987` 在 Provider
+  前因合并容器投影中的原生文字内容哈希变化而被完整性合同拒绝。后续必须按结构最小化并修复
+  通用 block/span 投影，禁止页号、文件名、原文或固定坐标特判。
+
+另有 `MULTI-MATERIALIZED-DENSITY-JUDGE-GAP`：比例较密的固定 bundle 曾证明预物化
+`fit` 不能替代真实候选 Judge；混合 CJK/Latin 回放仍可能产生基线拥挤。该项阻止密集排版
+和产品质量结论，TBM3 必须使用记录的真实 bundle 接通物化 Judge/Repair 后再验收。
+
+因此当前状态为 `CoreMigration=LIFTED_AND_WRAPPED`、
+`EngineeringConformance=READY`、`ContractReadiness=BLOCKED`，默认 Catalog 继续
+`KEEP_DISABLED`。候选、诊断、PNG 和机器报告仅保存在被 Git 忽略的 `runs/`。下一叶为
+`body.table`。

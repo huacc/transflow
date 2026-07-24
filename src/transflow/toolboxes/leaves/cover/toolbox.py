@@ -16,7 +16,6 @@ from transflow.toolboxes.leaves.lifted_contracts import (
 )
 from transflow.toolboxes.leaves.lifted_text_leaf import (
     LiftedAtomicTextToolbox,
-    LiftedCoreFinding,
     LiftedPlacementSpec,
 )
 from transflow.toolboxes.leaves.policy import P8ToolboxPolicy
@@ -25,6 +24,7 @@ from .constants import TOOLBOX_KEY
 from .layout import plan_cover_layout
 from .models import (
     CoverContainer,
+    CoverFinding,
     CoverLayoutPlan,
     CoverPlacement,
     CoverTemplate,
@@ -92,7 +92,8 @@ class CoverToolbox(
         self,
         template: CoverTemplate,
         bundle: PageTranslationBundle,
-    ) -> tuple[CoverLayoutPlan, tuple[LiftedCoreFinding, ...]]:
+        facts: ExtractedPageFacts,
+    ) -> tuple[CoverLayoutPlan, tuple[CoverFinding, ...]]:
         return plan_cover_layout(
             template,
             bundle,

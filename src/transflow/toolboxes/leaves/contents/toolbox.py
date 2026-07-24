@@ -11,7 +11,6 @@ from transflow.toolboxes.leaves.lifted_contracts import (
 )
 from transflow.toolboxes.leaves.lifted_text_leaf import (
     LiftedAtomicTextToolbox,
-    LiftedCoreFinding,
     LiftedPlacementSpec,
 )
 from transflow.toolboxes.leaves.policy import P8ToolboxPolicy
@@ -20,6 +19,7 @@ from .constants import TOOLBOX_KEY
 from .layout import plan_contents_layout
 from .models import (
     ContentsContainer,
+    ContentsFinding,
     ContentsLayoutPlan,
     ContentsPlacement,
     ContentsTemplate,
@@ -63,7 +63,8 @@ class ContentsToolbox(
         self,
         template: ContentsTemplate,
         bundle: PageTranslationBundle,
-    ) -> tuple[ContentsLayoutPlan, tuple[LiftedCoreFinding, ...]]:
+        facts: ExtractedPageFacts,
+    ) -> tuple[ContentsLayoutPlan, tuple[ContentsFinding, ...]]:
         return plan_contents_layout(
             template,
             bundle,

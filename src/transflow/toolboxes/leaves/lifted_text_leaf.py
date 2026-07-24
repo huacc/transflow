@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 from abc import ABC, abstractmethod
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Protocol
@@ -40,23 +41,44 @@ from transflow.toolboxes.leaves.policy import P8ToolboxPolicy
 class LiftedCoreContainer(Protocol):
     """Minimum immutable container fields needed by the production wrapper."""
 
-    container_id: str
-    source_object_ids: tuple[str, ...]
-    source_text: str
+    @property
+    def container_id(self) -> str: ...
+
+    @property
+    def source_object_ids(self) -> tuple[str, ...]: ...
+
+    @property
+    def source_text(self) -> str: ...
+
+
+def _translation_object_ids(container: LiftedCoreContainer) -> tuple[str, ...]:
+    return getattr(container, "translation_object_ids", container.source_object_ids)
+
+
+def _inline_keep_source_object_ids(
+    container: LiftedCoreContainer,
+) -> tuple[str, ...]:
+    return getattr(container, "inline_keep_source_object_ids", ())
 
 
 class LiftedCoreTemplate(Protocol):
     """Minimum immutable template identity needed by the production wrapper."""
 
-    page_id: str
+    @property
+    def page_id(self) -> str: ...
 
 
 class LiftedCoreFinding(Protocol):
     """Minimum leaf-private finding fields projected into the shared contract."""
 
-    code: str
-    severity: str
-    container_id: str | None
+    @property
+    def code(self) -> str: ...
+
+    @property
+    def severity(self) -> str: ...
+
+    @property
+    def container_id(self) -> str | None: ...
 
 
 @dataclass(frozen=True, slots=True)
@@ -163,7 +185,10 @@ class LiftedAtomicTextToolbox[
                 ordinal=ordinal,
                 source_text=container.source_text,
                 region_id=container.container_id,
-                source_object_ids=container.source_object_ids,
+                source_object_ids=_translation_object_ids(container),
+                inline_keep_source_object_ids=_inline_keep_source_object_ids(
+                    container
+                ),
             )
             for ordinal, container in enumerate(snapshot.requested_containers)
         )
@@ -245,6 +270,7 @@ class LiftedAtomicTextToolbox[
         layout, core_findings = self._plan_core_layout(
             snapshot.template,
             lifted_bundle,
+            snapshot.facts,
         )
         findings = [
             Finding(
@@ -447,7 +473,8 @@ class LiftedAtomicTextToolbox[
         self,
         template: TemplateT,
         bundle: PageTranslationBundle,
-    ) -> tuple[LayoutT, tuple[LiftedCoreFinding, ...]]:
+        facts: ExtractedPageFacts,
+    ) -> tuple[LayoutT, Sequence[LiftedCoreFinding]]:
         """Run the unchanged leaf-private layout planner."""
 
     @abstractmethod
