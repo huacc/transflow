@@ -26,7 +26,7 @@ TBM1 采用以下固定边界：
 | 2 | `contents` | `LIFTED_AND_WRAPPED` | `READY` | `CONTRACT_READY` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 3 | `end` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 4 | `body.flow_text.multi` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
-| 5 | `body.table` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
+| 5 | `body.table` | `LIFTED_AND_WRAPPED` | `READY` | `BLOCKED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 6 | `body.anchored_blocks` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 7 | `body.flow_text.visual_anchored` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 
@@ -210,3 +210,54 @@ Judge/Repair，不形成 Spike 运行时依赖。
 `EngineeringConformance=READY`、`ContractReadiness=BLOCKED`，默认 Catalog 继续
 `KEEP_DISABLED`。候选、诊断、PNG 和机器报告仅保存在被 Git 忽略的 `runs/`。下一叶为
 `body.table`。
+
+## 8. `body.table` 核心迁移完成、合同阻塞
+
+生产模块：
+
+- `src/transflow/toolboxes/leaves/body_table/models.py`
+- `src/transflow/toolboxes/leaves/body_table/template.py`
+- `src/transflow/toolboxes/leaves/body_table/layout.py`
+- `src/transflow/toolboxes/leaves/body_table/toolbox.py`
+
+来源冻结清单共 14 项，当前映射达到 `14/14`。生产叶保留并适配了 Spike 的逻辑格
+所有权、横向守列、纵向 fit、源对齐、保护数字/代码和有限字号/行距 ladder；事实只来自
+当前 Kernel 的 `table_objects`、`cell_bboxes`、`text_spans` 和事前冻结
+`PageTextInventory`。Provider、Prompt、叶内重试、整本 runner、线程池、直接产物编排
+没有迁入叶，候选仍由共享 `PagePatchInterpreter` 物化。
+
+首次候选虽然未越过 Kernel 原始大格，但把左侧标签、注号和多个业务行聚合在一起。视觉复核
+据此否决该实现，并按 Spike“PDF 绘制格不等于逻辑单元格”的经验前向修正：用跨列重复行界
+和窄数值/注号锚点恢复逻辑行列，再按逻辑格建立 unit。修正完全依赖当前页结构事实，不含
+样本 ID、文件名、页码、标题、业务数字或绝对坐标分支；被否决的历史 run 保留，不覆盖。
+
+最终真实代表页 `00356_DT CAPITAL_英文_2025_p095_body_table.pdf` 当前证明：
+
+1. 一个 Kernel 表恢复为 61 个逻辑单元，其中 22 个可译单元生成 22 个声明式操作；
+2. 标签、注号和两期数值列保持各自逻辑格，纯数字格不进入 TranslationBatch；
+3. 短固定 bundle 候选可打开，22 个操作均完整物化，表格线和保护数值保留；
+4. 超长 bundle 产生 `CELL_TEXT_OVERFLOW`，并以诊断模式在原 owner 内缩小物化，保留
+   红框、译后文字和明确“非产品候选”标记；
+5. run-private Catalog、默认停用 fallback、共享并发 1/2 等价、Patch binding、Ruff、
+   Mypy 和默认 Catalog 指纹均通过。
+
+短固定 bundle 只证明行列、owner、Patch 和物化接线，不是语义翻译或完整视觉产品证据。
+本轮没有调用真实模型。
+
+当前 blocker：
+
+- `TABLE-KERNEL-DIRECT-EVIDENCE-GAP`：已分类无边框代表页
+  `00235_CSC HOLDINGS_英文_2025_p080_body_table.pdf` 的生产 Kernel
+  `table_objects` 为空。叶不读取文件身份重建第二套抽取器；应在 TBM3 分层页池定界后，
+  由 Kernel/FAMILY 层补充线条、填色和重复数值锚点的通用直接证据；
+- `TABLE-SHARED-MARGIN-OWNER-GAP`：文字页脚已被 `SemanticUnitMap` 归属
+  `shared.margin.footer`，但当前单 owner Patch 仍由 `body.table` 承载。页眉页脚语义没有
+  写入表格私有规则，但共享执行边界尚未接通；
+- `TABLE-MATERIALIZED-GLYPH-LINE-JUDGE-GAP`：当前薄门禁验证了格内 bbox、实际物化和
+  人工栅格复核，但 Spike 的“最终 glyph 与表格线相交”机器复裁尚未通过共享 Judge 在
+  分层页池统一接通，不能据此宣称密集表格产品通过。
+
+因此当前状态为 `CoreMigration=LIFTED_AND_WRAPPED`、
+`EngineeringConformance=READY`、`ContractReadiness=BLOCKED`，默认 Catalog 继续
+`KEEP_DISABLED`。候选、诊断、PNG 和机器报告仅保存在被 Git 忽略的 `runs/`。下一叶为
+`body.anchored_blocks`。

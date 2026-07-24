@@ -3,6 +3,7 @@
 from transflow.toolboxes.leaves.body_chart import ChartToolbox
 from transflow.toolboxes.leaves.body_diagram import DiagramToolbox
 from transflow.toolboxes.leaves.body_flow_text_multi import MultiFlowTextToolbox
+from transflow.toolboxes.leaves.body_table import TableToolbox
 from transflow.toolboxes.leaves.factory import (
     build_p8_toolbox_factories,
     build_p9_toolbox_factories,
@@ -13,7 +14,6 @@ from transflow.toolboxes.leaves.ordinary import (
     ContentsToolbox,
     CoverToolbox,
     EndToolbox,
-    TableToolbox,
 )
 from transflow.toolboxes.leaves.single import SingleFlowTextToolbox
 from transflow.toolboxes.leaves.visual_only import VisualOnlyToolbox
