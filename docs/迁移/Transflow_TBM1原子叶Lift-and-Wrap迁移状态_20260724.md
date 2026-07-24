@@ -23,7 +23,7 @@ TBM1 采用以下固定边界：
 | 顺序 | Route | 核心迁移 | 工程符合性 | 合同就绪 | 产品质量 | 默认 Catalog |
 |---:|---|---|---|---|---|---|
 | 1 | `cover` | `LIFTED_AND_WRAPPED` | `READY` | `CONTRACT_READY` | `NOT_EVALUATED` | `KEEP_DISABLED` |
-| 2 | `contents` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
+| 2 | `contents` | `LIFTED_AND_WRAPPED` | `READY` | `CONTRACT_READY` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 3 | `end` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 4 | `body.flow_text.multi` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
 | 5 | `body.table` | `NOT_STARTED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `NOT_EVALUATED` | `KEEP_DISABLED` |
@@ -73,5 +73,52 @@ TBM1 采用以下固定边界：
 - `COVER_DEDUPLICATION_PATCH_UNSUPPORTED`：现有 `replace_text` Patch 不能诚实表达“只删除重复双语伴随文字”，当前返回硬 Finding 和整页 fallback。
 
 这些限制不妨碍 `cover` 达到薄门禁的 `CONTRACT_READY`，但足以阻止默认 Catalog 晋级和产品质量
-结论。后续继续按 `contents → end → body.flow_text.multi → body.table →
+结论。后续继续按 `end → body.flow_text.multi → body.table →
 body.anchored_blocks → body.flow_text.visual_anchored` 执行。
+
+## 5. `contents` 已完成范围
+
+生产模块：
+
+- `src/transflow/toolboxes/leaves/contents/models.py`
+- `src/transflow/toolboxes/leaves/contents/template.py`
+- `src/transflow/toolboxes/leaves/contents/layout.py`
+- `src/transflow/toolboxes/leaves/contents/toolbox.py`
+- `src/transflow/toolboxes/leaves/lifted_text_leaf.py`
+
+来源映射共 14 项，已达到 `14/14`。其中：
+
+- `models.py`、`template_builder.py`、`layout_planner.py` 的目录类别主体迁入生产包；
+- 目录标题、重复页码锚点、列、层级、辅助文字和相邻行边界仍属于叶私有语义；
+- Spike `engine.py` 中的 Provider、重试、runner、线程池和 artifact 编排由生产共享链替换；
+- Spike `renderer.py` 的直接 PDF 写入由 `PagePatch + PagePatchInterpreter` 替换；
+- Prompt、历史 manifest 和 Gate 只作为来源证据，不形成生产运行时依赖。
+
+`cover` 与 `contents` 已实际共同使用的生命周期机械步骤收敛到
+`LiftedAtomicTextToolbox`；类别 Template、Container、Layout、Placement 和 Finding
+仍由各叶私有，未抽象单叶推测能力。
+
+薄门禁使用真实分类页 `S2P0303.pdf`，当前证明：
+
+1. 18 个可翻译容器生成 18 个带 owner 和源对象绑定的声明式操作；
+2. 13 个页码锚点不进入 TranslationBatch、不成为 Patch target，候选中原位保留；
+3. 目录标题、条目、层级和辅助说明可回放为可打开的单页候选；
+4. 超长译文保留 `CONTENTS_TEXT_OVERFLOW`、proposed Patch 和明确失败诊断；
+5. run-private Catalog、默认停用 fallback、共享并发等价性和默认 Catalog 指纹均通过。
+
+首次栅格检查发现 `CONTENTS` 被共享 `PageTextInventory` 误判为
+`CODE_OR_ACRONYM`。修复只调整共享机械判定：较长纯字母全大写标题进入翻译，
+`EBITDA` 等短缩写继续 `KEEP_SOURCE`；没有添加目录样本特判。
+
+本轮仍使用固定可复现译文，没有调用真实模型。候选、失败诊断、PNG 和机器报告只保存在
+被 Git 忽略的 `runs/toolbox_leaf_migration/TBM1/`，不会上传 GitHub。
+
+新增开放问题：
+
+- `SHARED-FONT-TOUNICODE-COMPATIBILITY`：少数字形的文本抽取为兼容字符，但栅格视觉正常；
+- `SHARED-FONT-EMBEDDING-SIZE`：18 个操作生成约 16.7 MB 单页候选，继续只记录；
+- `SHARED-ENGINEERING-CONCURRENCY`：端到端接线仍按计划留到 TBM3。
+
+这些限制阻止产品质量结论和默认 Catalog 晋级，但不阻止 `contents` 的当前
+`CONTRACT_READY`。后续顺序为 `end → body.flow_text.multi → body.table →
+body.anchored_blocks → body.flow_text.visual_anchored`。

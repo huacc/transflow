@@ -307,6 +307,7 @@ def test_p9a_0_t04_real_inventory_missing_object_fails_before_calls(
         ("https://example.test", "URL_OR_EMAIL"),
         ("12/99", "PAGE_NUMBER"),
         ("$ 1,234.50", "NUMERIC_OR_SYMBOLIC_LITERAL"),
+        ("EBITDA", "CODE_OR_ACRONYM"),
         ("已经是中文", "ALREADY_TARGET_LANGUAGE"),
     )
     for index, (text, reason) in enumerate(mechanical_texts):

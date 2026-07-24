@@ -23,8 +23,11 @@ from transflow.pdf_kernel import (
     PagePatchInterpreter,
 )
 from transflow.toolboxes.catalog import load_toolbox_catalog
+from transflow.toolboxes.leaves.contents import ContentsToolbox
+from transflow.toolboxes.leaves.contents.template import build_contents_template
 from transflow.toolboxes.leaves.cover import CoverToolbox
 from transflow.toolboxes.leaves.factory import build_p8_toolbox_factories
+from transflow.toolboxes.leaves.lifted_contracts import lift_page_facts
 from transflow.toolboxes.leaves.policy import load_p8_toolbox_policy
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -32,6 +35,8 @@ CLASSIFICATION_ROOT = REPO_ROOT / "spikes/page_classification_engine_puncture_v1
 COVER_SAMPLE_ROOT = next(CLASSIFICATION_ROOT.glob("*/cover"))
 COVER_SOURCE = COVER_SAMPLE_ROOT / "S2P0302.pdf"
 OFFSET_CROPBOX_SOURCE = COVER_SAMPLE_ROOT / "S2P0041.pdf"
+CONTENTS_SAMPLE_ROOT = next(CLASSIFICATION_ROOT.glob("*/contents"))
+CONTENTS_SOURCE = CONTENTS_SAMPLE_ROOT / "S2P0303.pdf"
 DEFAULT_CATALOG = REPO_ROOT / "resources/catalogs/page_toolbox_catalog_v4.json"
 FONT_MANIFEST = REPO_ROOT / "resources/manifests/font_manifest.json"
 POLICY_PATH = REPO_ROOT / "resources/manifests/p8_toolbox_policy.json"
@@ -76,6 +81,44 @@ def _cover_translation(source_text: str) -> str:
     return recorded_equivalent[source_text]
 
 
+def _contents_translation(source_text: str) -> str:
+    recorded_equivalent = {
+        "ChinaAMC RMB Money Market ETF\n(a Sub-Fund of ChinaAMC Global ETF Series)": (
+            "华夏基金RMB货币市场ETF（华夏全球ETF系列之子基金）"
+        ),
+        "CONTENTS": "目录",
+        (
+            "IMPORTANT:\nAny opinion expressed herein reflects the Manager's view only "
+            "and are subject to change. For more information\nabout the Sub-Fund, "
+            "please refer to the explanatory memorandum of the Sub-Fund which is "
+            "available at our\nwebsite:"
+        ): (
+            "IMPORTANT：重要提示：本文件所载意见仅代表管理人的观点，且可能随时变更。"
+            "有关子基金的更多信息，请参阅网站所载的子基金说明备忘录。"
+        ),
+        "Pages": "页码",
+        "MANAGEMENT AND ADMINISTRATION": "管理与行政",
+        "REPORT OF THE MANAGER TO THE UNITHOLDERS": "致单位持有人的管理人报告",
+        "REPORT OF THE TRUSTEE TO THE UNITHOLDERS": "致单位持有人的受托人报告",
+        "STATEMENT OF RESPONSIBILITIES OF THE MANAGER AND THE TRUSTEE": (
+            "管理人与受托人的责任声明"
+        ),
+        "INDEPENDENT AUDITOR'S REPORT": "独立核数师报告",
+        "AUDITED FINANCIAL STATEMENTS": "经审计财务报表",
+        "Statement of financial position": "财务状况表",
+        "Statement of profit or loss and other comprehensive income": "综合收益表",
+        "Statement of changes in net assets attributable to unitholders": (
+            "单位持有人应占净资产变动表"
+        ),
+        "Statement of cash flows": "现金流量表",
+        "Notes to the financial statements": "财务报表附注",
+        "INVESTMENT PORTFOLIO (UNAUDITED)": "投资组合（未经审计）",
+        "MOVEMENTS IN PORTFOLIO HOLDINGS (UNAUDITED)": "投资组合持仓变动（未经审计）",
+        "PERFORMANCE TABLE (UNAUDITED)": "业绩表现表（未经审计）",
+    }
+    return recorded_equivalent[source_text]
+
+
 def _fixed_translations(work_items: tuple[ToolboxPageWork, ...]) -> dict[str, str]:
     translations: dict[str, str] = {}
     for work in work_items:
@@ -88,6 +131,20 @@ def _fixed_translations(work_items: tuple[ToolboxPageWork, ...]) -> dict[str, st
     return translations
 
 
+def _contents_fixed_translations(
+    work_items: tuple[ToolboxPageWork, ...],
+) -> dict[str, str]:
+    translations: dict[str, str] = {}
+    for work in work_items:
+        template = work.toolbox.prepare(work.context, work.facts)
+        batch = work.toolbox.build_translation_request(template)
+        assert batch is not None
+        translations.update(
+            {unit.unit_id: _contents_translation(unit.source_text) for unit in batch.units}
+        )
+    return translations
+
+
 def _work_items(source: Path, run_id: str) -> tuple[ToolboxPageWork, ...]:
     pages = DocumentCoordinator(PageFactsExtractor()).enumerate_pages(_request(source, run_id))
     return tuple(
@@ -95,6 +152,23 @@ def _work_items(source: Path, run_id: str) -> tuple[ToolboxPageWork, ...]:
             page.context,
             page.facts,
             _cover_toolbox(source),
+        )
+        for page in pages
+    )
+
+
+def _contents_work_items(
+    source: Path,
+    run_id: str,
+) -> tuple[ToolboxPageWork, ...]:
+    policy = load_p8_toolbox_policy(POLICY_PATH)
+    font_path = _fonts().resolve(policy.font_id).path
+    pages = DocumentCoordinator(PageFactsExtractor()).enumerate_pages(_request(source, run_id))
+    return tuple(
+        ToolboxPageWork(
+            page.context,
+            page.facts,
+            ContentsToolbox(policy, font_path),
         )
         for page in pages
     )
@@ -307,3 +381,213 @@ def test_tbm1_cover_offset_cropbox_is_an_explicit_shared_kernel_regression() -> 
     assert facts.crop_box[0] > 0
     assert facts.text_spans
     assert all(item.bbox[0] < facts.crop_box[0] for item in facts.text_spans)
+
+
+def test_tbm1_contents_lifted_core_preserves_page_anchors_in_real_candidate(
+    tmp_path: Path,
+) -> None:
+    """The contents core must translate labels without owning page-number anchors."""
+
+    default_hash_before = _sha256_file(DEFAULT_CATALOG)
+    work = _contents_work_items(CONTENTS_SOURCE, "tbm1-contents-real")[0]
+    core_template = build_contents_template(lift_page_facts(work.facts))
+    protected_ids = set(core_template.protected_object_ids)
+    translations = _contents_fixed_translations((work,))
+
+    result = ToolboxPageCoordinator(FixedTranslationAdapter(translations)).execute(work)
+
+    assert result.patch is not None
+    assert result.patch.owner == "contents"
+    assert len(core_template.entries) == 13
+    assert len(result.patch.operations) == 18
+    assert not result.findings
+    assert all(
+        not protected_ids.intersection(operation.target_object_ids)
+        for operation in result.patch.operations
+    )
+    title_operation = next(
+        operation
+        for operation in result.patch.operations
+        if operation.region_id == "contents-container-001"
+    )
+    assert title_operation.replacement_text == "目录"
+
+    candidate = tmp_path / "contents-candidate.pdf"
+    with pymupdf.open(CONTENTS_SOURCE) as source_document:
+        source_anchors = tuple(
+            word[4]
+            for word in source_document[0].get_text("words")
+            if word[0] > 500 and 150 < word[1] < 480
+        )
+        application = PagePatchInterpreter(_fonts()).apply(
+            source_document,
+            work.context,
+            work.facts,
+            result.patch,
+            "contents",
+        )
+        assert application.fits
+        assert application.applied_count == len(result.patch.operations)
+        source_document.save(candidate)
+    with pymupdf.open(candidate) as candidate_document:
+        assert candidate_document.page_count == 1
+        assert "综合收益表" in candidate_document[0].get_text()
+        candidate_anchors = tuple(
+            word[4]
+            for word in candidate_document[0].get_text("words")
+            if word[0] > 500 and 150 < word[1] < 480
+        )
+        assert candidate_anchors == source_anchors
+    assert _sha256_file(DEFAULT_CATALOG) == default_hash_before
+
+
+def test_tbm1_contents_failure_keeps_machine_finding_and_viewable_diagnostic(
+    tmp_path: Path,
+) -> None:
+    """An unfit contents translation must not be presented as a candidate."""
+
+    work = _contents_work_items(CONTENTS_SOURCE, "tbm1-contents-diagnostic")[0]
+    template = work.toolbox.prepare(work.context, work.facts)
+    batch = work.toolbox.build_translation_request(template)
+    assert batch is not None
+    translations = {
+        unit.unit_id: (
+            "用于验证目录布局失败的超长译文" * 80
+            + " "
+            + " ".join(extract_required_literals(unit.source_text))
+        ).strip()
+        for unit in batch.units
+    }
+
+    result = ToolboxPageCoordinator(FixedTranslationAdapter(translations)).execute(work)
+
+    assert result.patch is None
+    assert result.proposed_patch is not None
+    assert result.outcome.fallback is Fallback.PAGE_PASSTHROUGH
+    assert "CONTENTS_TEXT_OVERFLOW" in {finding.code for finding in result.findings}
+
+    with pymupdf.open(CONTENTS_SOURCE) as materialization_probe:
+        application = PagePatchInterpreter(_fonts()).apply(
+            materialization_probe,
+            work.context,
+            work.facts,
+            result.proposed_patch,
+            "contents",
+        )
+        assert not application.fits
+
+    diagnostic = tmp_path / "contents-layout-failure-diagnostic.pdf"
+    with pymupdf.open(CONTENTS_SOURCE) as document:
+        page = document[0]
+        for operation in result.proposed_patch.operations:
+            assert operation.rect is not None
+            page.draw_rect(
+                pymupdf.Rect(operation.rect),
+                color=(1, 0, 0),
+                width=1.5,
+                overlay=True,
+            )
+        page.insert_text(
+            (18, 24),
+            "TBM1 FAILURE DIAGNOSTIC: CONTENTS_TEXT_OVERFLOW",
+            fontname="helv",
+            fontsize=8,
+            color=(1, 0, 0),
+            overlay=True,
+        )
+        metadata = document.metadata
+        metadata["subject"] = "FAILURE DIAGNOSTIC - NOT A TRANSLATED CANDIDATE"
+        document.set_metadata(metadata)
+        document.save(diagnostic)
+    with pymupdf.open(diagnostic) as document:
+        assert document.page_count == 1
+        assert document.metadata.get("subject") == (
+            "FAILURE DIAGNOSTIC - NOT A TRANSLATED CANDIDATE"
+        )
+
+
+def test_tbm1_contents_run_private_catalog_enable_and_disable_are_deterministic(
+    tmp_path: Path,
+) -> None:
+    """The new contents implementation remains a run-private overlay only."""
+
+    default_bytes = DEFAULT_CATALOG.read_bytes()
+    payload = json.loads(default_bytes.decode("utf-8"))
+    entry = next(item for item in payload["entries"] if item["route"] == "contents")
+    entry.update(
+        {
+            "enabled": True,
+            "evidence_state": "PASS_ENABLE",
+            "evidence_attestation_hash": "c" * 64,
+            "disabled_reason": None,
+        }
+    )
+    overlay = tmp_path / "page_toolbox_catalog_tbm1_contents.json"
+    overlay.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    factories = build_p8_toolbox_factories(
+        POLICY_PATH,
+        FONT_MANIFEST,
+        REPO_ROOT,
+    )
+    policy = load_p8_toolbox_policy(POLICY_PATH)
+    font_path = _fonts().resolve(policy.font_id).path
+    factories["contents"] = lambda: ContentsToolbox(policy, font_path)
+
+    enabled_catalog = load_toolbox_catalog(overlay, factories)
+    assert enabled_catalog.validate_startup().ready
+    enabled = enabled_catalog.resolve_enabled("contents", 1)
+    assert enabled.toolbox is not None
+    assert enabled.toolbox.descriptor.route == "contents"
+    assert enabled.toolbox.descriptor.toolbox_id == "contents"
+    assert enabled.finding is None
+
+    disabled_catalog = load_toolbox_catalog(
+        DEFAULT_CATALOG,
+        build_p8_toolbox_factories(
+            POLICY_PATH,
+            FONT_MANIFEST,
+            REPO_ROOT,
+        ),
+    )
+    disabled = disabled_catalog.resolve_enabled("contents", 1)
+    assert disabled.toolbox is None
+    assert disabled.finding is not None
+    assert disabled.finding.code == "TOOLBOX_DISABLED"
+    assert disabled.outcome is not None
+    assert _sha256_file(DEFAULT_CATALOG) == hashlib.sha256(default_bytes).hexdigest()
+
+
+def test_tbm1_contents_shared_page_concurrency_is_equivalent(
+    tmp_path: Path,
+) -> None:
+    """Contents results must be stable under the shared page executor."""
+
+    two_page_source = tmp_path / "two-contents-pages.pdf"
+    with pymupdf.open() as target, pymupdf.open(CONTENTS_SOURCE) as source:
+        target.insert_pdf(source)
+        target.insert_pdf(source)
+        target.save(two_page_source)
+
+    sequential_work = _contents_work_items(
+        two_page_source,
+        "tbm1-contents-concurrency",
+    )
+    parallel_work = _contents_work_items(
+        two_page_source,
+        "tbm1-contents-concurrency",
+    )
+    translations = _contents_fixed_translations(sequential_work)
+    translations.update(_contents_fixed_translations(parallel_work))
+    coordinator = ToolboxPageCoordinator(FixedTranslationAdapter(translations))
+
+    sequential = coordinator.execute_many(sequential_work, 1)
+    parallel = coordinator.execute_many(parallel_work, 2)
+
+    assert tuple(item.page_no for item in sequential) == (1, 2)
+    assert tuple(item.page_no for item in parallel) == (1, 2)
+    assert tuple(map(_execution_identity, sequential)) == tuple(map(_execution_identity, parallel))
+    assert all(item.patch is not None for item in parallel)
+    assert all(item.patch.owner == "contents" for item in parallel if item.patch)

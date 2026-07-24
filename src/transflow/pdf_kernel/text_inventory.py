@@ -63,8 +63,9 @@ def _mechanical_keep_source_reason(
         or bool(re.search(r"[0-9+./'’$%-]", notation))
     ):
         return "CODE_OR_ACRONYM"
+    long_alpha_heading = stripped.isalpha() and stripped.isupper() and len(stripped) > 6
     if CODE_OR_ACRONYM.fullmatch(stripped) and not (
-        natural_language_style and stripped.isalpha()
+        (natural_language_style or long_alpha_heading) and stripped.isalpha()
     ):
         return "CODE_OR_ACRONYM"
     if _already_target_language(stripped, target_language):
