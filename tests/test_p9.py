@@ -135,7 +135,7 @@ def _draw_page(page: pymupdf.Page, kind: str, scale: float = 1.0) -> None:
         )
         _draw_page(page, "multi2", scale)
         page.insert_image(pymupdf.Rect(175, 300, 245, 365), stream=_scan_image_png("ANCHOR"))
-    elif kind == "table":
+    elif kind in {"table", "table_text"}:
         x_values, y_values = (45, 160, 275, 375), (120, 190, 260, 330)
         for x in x_values:
             page.draw_line((x, y_values[0]), (x, y_values[-1]), color=(0, 0, 0))
@@ -145,7 +145,11 @@ def _draw_page(page: pymupdf.Page, kind: str, scale: float = 1.0) -> None:
             for column in range(3):
                 page.insert_text(
                     (x_values[column] + 10, y_values[row] + 35),
-                    f"R{row + 1}C{column + 1}",
+                    (
+                        f"Revenue {row * 3 + column + 1}"
+                        if kind == "table_text"
+                        else f"R{row + 1}C{column + 1}"
+                    ),
                     fontsize=9 * scale,
                 )
     elif kind == "borderless_table":
@@ -732,7 +736,7 @@ def test_p9_5_t04_table_duplicate_or_cross_cell_patch_rejected(tmp_path: Path) -
 def test_p9_5_t05_table_single_cell_failure_rolls_back_whole_table(tmp_path: Path) -> None:
     """P9.5-T05：任一 cell 无法修复时整表回退，不保留半表。"""
 
-    page = direct_page(create_pdf(tmp_path / "table-long.pdf", ("table",)))
+    page = direct_page(create_pdf(tmp_path / "table-long.pdf", ("table_text",)))
     toolbox = toolbox_for("body.table")
     template = toolbox.prepare(page.context, page.facts)
     batch = toolbox.build_translation_request(template)

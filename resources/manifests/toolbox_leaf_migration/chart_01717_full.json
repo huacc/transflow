@@ -1,0 +1,30 @@
+{
+  "schema_version": "transflow.toolbox-leaf-migration-input/v1",
+  "route": "body.chart",
+  "source_document": {
+    "path": "样本/年报/01717_AUSNUTRIA_英文_2025.pdf",
+    "sha256": "7165d756152b05f33ae3d167d6f883f1bcf76e17f5ad5b8c8f9d9abe8c717275",
+    "page_count": 167
+  },
+  "target_page": {
+    "page_no": 7,
+    "page_hash": "8392f2287e01917c44ba38c31b64308742b18ad27621c7dc1fa0475a474dcd78",
+    "spike_leaf_contract_route": "body.chart"
+  },
+  "source_language": "en",
+  "target_language": "zh-CN",
+  "authorization": {
+    "approved": true,
+    "allowed_routes": [
+      "body.chart"
+    ],
+    "allowed_operations": [
+      "CLASSIFY",
+      "TRANSLATE",
+      "RENDER",
+      "COMPARE",
+      "FINALIZE"
+    ],
+    "evidence_ref": "resources/manifests/toolbox_leaf_migration/authorizations/tm3_accepted_leaves_round06.json"
+  }
+}

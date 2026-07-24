@@ -91,6 +91,7 @@ class ToolboxPageWork:
     toolbox: PageToolbox
     capability_evidence: RouteCapabilityEvidence | None = None
     classification_route: ClassificationRoute | None = None
+    target_language: str = "zh-CN"
 
 
 class ToolboxPageCoordinator:
@@ -134,7 +135,10 @@ class ToolboxPageCoordinator:
         if preflight_mismatch is not None:
             return self._route_mismatch_fallback(context, (), None, preflight_mismatch)
         # 文字分母必须早于 Toolbox.prepare 冻结，避免叶或 Provider 决定清单边界。
-        inventory = freeze_page_text_inventory(work.facts)
+        inventory = freeze_page_text_inventory(
+            work.facts,
+            target_language=work.target_language,
+        )
         template = toolbox.prepare(context, work.facts)
         if template.context != context or template.owner != descriptor.owner:
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "Toolbox 模板上下文或 owner 漂移")

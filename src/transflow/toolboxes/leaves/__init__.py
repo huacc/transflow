@@ -1,5 +1,7 @@
 """导出 P8/P9 显式叶工具，不提供目录扫描或动态发现。"""
 
+from transflow.toolboxes.leaves.body_chart import ChartToolbox
+from transflow.toolboxes.leaves.body_diagram import DiagramToolbox
 from transflow.toolboxes.leaves.factory import (
     build_p8_toolbox_factories,
     build_p9_toolbox_factories,
@@ -19,9 +21,11 @@ from transflow.toolboxes.leaves.visual_only import VisualOnlyToolbox
 __all__ = [
     "AnchoredBlocksToolbox",
     "ChartTextToolbox",
+    "ChartToolbox",
     "ContentsToolbox",
     "CoverToolbox",
     "DiagramTextToolbox",
+    "DiagramToolbox",
     "EndToolbox",
     "MultiFlowTextToolbox",
     "SingleFlowTextToolbox",

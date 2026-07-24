@@ -489,6 +489,37 @@ def test_p5_4_t01_mixed_pdf_has_one_route_per_page_and_stable_identity(tmp_path:
 
 
 @pytest.mark.integration
+def test_p5_4_t01_classified_scan_releases_page_images_after_each_page(
+    tmp_path: Path,
+) -> None:
+    """流式扫描不得整本保留分类 PNG，后续阶段只接收轻量页面事实。"""
+
+    class StreamingOnlyExtractor(PageFactsExtractor):
+        def extract_all(self, *args: Any, **kwargs: Any) -> tuple[ExtractedPageFacts, ...]:
+            raise AssertionError("流式分类不得调用 extract_all")
+
+    source = create_pdf(
+        tmp_path / "streaming-classification.pdf",
+        tuple(f"PAGE{i} " + "正文 " * 300 for i in range(1, 13)),
+    )
+    request = make_request(source, "run-p5-streaming")
+    port = ScriptedDecisionPort()
+    pages, classified = DocumentCoordinator(StreamingOnlyExtractor()).scan_classified_pages(
+        request,
+        ClassificationEngine(BoundedDecisionRunner(port)),
+    )
+
+    assert [item.context.page_no for item in pages] == list(range(1, 13))
+    assert [item.page_no for item in classified] == list(range(1, 13))
+    assert all(item.facts.classification is None for item in pages)
+    assert port.calls
+    assert all(
+        str(call.typed_evidence["page_image"]["data_url"]).startswith("data:image/png;base64,")
+        for call in port.calls
+    )
+
+
+@pytest.mark.integration
 def test_p5_4_t01_run_classified_finalizes_one_complete_pdf(tmp_path: Path) -> None:
     """P5.4-T01：真实分类接线驱动 P4 页面流水线并最终化一份完整 PDF。"""
 

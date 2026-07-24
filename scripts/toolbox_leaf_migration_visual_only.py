@@ -459,13 +459,11 @@ class VisualOnlyMigrationDriver:
             raise MigrationContractError("TM1_PREFLIGHT_NOT_PROCESS", preflight.decision.value)
 
         coordinator = DocumentCoordinator(PageFactsExtractor())
-        pages = coordinator.enumerate_pages(request, include_classification=True)
         adapter = MigrationQwenDecisionAdapter(timeout_seconds=180.0)
         decision_runner = BoundedDecisionRunner(adapter)
-        classified = coordinator.classify_pages(
-            pages,
+        pages, classified = coordinator.scan_classified_pages(
+            request,
             ClassificationEngine(decision_runner),
-            page_concurrency=8,
         )
         classified_by_page = {item.page_no: item for item in classified}
         calibration_pages = tuple(context.input_manifest["calibration_pages"])

@@ -1,0 +1,22 @@
+{
+  "allowed_operations": [
+    "CLASSIFY",
+    "TRANSLATE",
+    "RENDER",
+    "COMPARE",
+    "FINALIZE"
+  ],
+  "allowed_routes": [
+    "body.flow_text.single",
+    "body.chart",
+    "body.diagram"
+  ],
+  "approved": true,
+  "artifact_root": "runs/toolbox_leaf_migration/TM4",
+  "authorization_basis": "Owner requested two complete 01528 annual-report regressions covering the accepted TM2, TM3, and TM4 leaves.",
+  "authorized_at": "2026-07-24",
+  "credential_policy": "PROCESS_ENVIRONMENT_ONLY_NO_PERSISTENCE",
+  "schema_version": "transflow.toolbox-leaf-migration-authorization/v1",
+  "scope": "TM4_ACCEPTED_LEAVES_FULL_DOCUMENT_REGRESSION",
+  "stage": "TM4"
+}

@@ -56,6 +56,12 @@ def shrink_font_patch(patch: PagePatch, scale: float, minimum_font_size: float) 
             replacement_text=operation.replacement_text,
             font_id=operation.font_id,
             font_size=font_size,
+            redaction_rects=operation.redaction_rects,
+            color_srgb=operation.color_srgb,
+            line_height=operation.line_height,
+            preserve_drawing_overlap=operation.preserve_drawing_overlap,
+            text_align=operation.text_align,
+            rotation=operation.rotation,
         )
         operations.append(replace(operation, font_size=font_size, payload_hash=payload_hash))
     LOGGER.info("调用字号 Repair，意图=机械收缩文本 patch_id=%s", patch.patch_id)

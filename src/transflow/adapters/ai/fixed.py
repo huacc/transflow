@@ -6,6 +6,7 @@ import hashlib
 import logging
 from pathlib import Path
 
+from transflow.application.translation_completeness import extract_required_literals
 from transflow.domain.errors import ErrorCode, PortCallError
 from transflow.domain.translation import (
     TranslatedUnit,
@@ -56,10 +57,14 @@ class DeterministicTranslationAdapter:
                 (batch.source_language, batch.target_language, unit.unit_id, unit.source_text)
             ).encode("utf-8")
             digest = hashlib.sha256(seed).hexdigest()[:16]
+            required_literals = " ".join(extract_required_literals(unit.source_text))
+            translated_text = f"[{batch.target_language}:{digest}] 确定性译文"
+            if required_literals:
+                translated_text = f"{translated_text} {required_literals}"
             units.append(
                 TranslatedUnit(
                     unit.unit_id,
-                    f"[{batch.target_language}:{digest}] {unit.source_text}",
+                    translated_text,
                 )
             )
         return TranslationBundle.from_batch(batch, tuple(units))

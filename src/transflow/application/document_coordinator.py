@@ -6,6 +6,7 @@ import hashlib
 import logging
 from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import replace
 from pathlib import Path
 from typing import Protocol
 
@@ -171,6 +172,49 @@ class DocumentCoordinator:
             )
         return ordered
 
+    def scan_classified_pages(
+        self,
+        request: DocumentRunRequest,
+        classification_engine: ClassificationEngine,
+    ) -> tuple[tuple[EnumeratedPage, ...], tuple[ClassifiedPage, ...]]:
+        """逐页提取并立即分类，只把移除页面 PNG 的轻量事实带入后续阶段。"""
+
+        source_path = Path(request.source_pdf_path)
+        page_count = self._facts_extractor.page_count(source_path, request.source_hash)
+        pages: list[EnumeratedPage] = []
+        classified_pages: list[ClassifiedPage] = []
+        for rich_facts in self._facts_extractor.iter_pages(
+            source_path,
+            request.source_hash,
+            include_classification=True,
+        ):
+            classified = classification_engine.classify_page(rich_facts, page_count)
+            pages.append(
+                EnumeratedPage(
+                    context=PageExecutionContext(
+                        job_id=request.job_id,
+                        run_id=request.run_id,
+                        source_hash=request.source_hash,
+                        page_no=rich_facts.page.page_no,
+                        geometry_hash=rich_facts.page.geometry_hash,
+                        config_snapshot_hash=request.config_snapshot_hash,
+                    ),
+                    facts=replace(rich_facts, classification=None),
+                )
+            )
+            classified_pages.append(classified)
+        expected = tuple(range(1, page_count + 1))
+        if (
+            tuple(item.context.page_no for item in pages) != expected
+            or tuple(item.page_no for item in classified_pages) != expected
+        ):
+            raise PortCallError(
+                ErrorCode.PORT_CONTRACT_VIOLATION,
+                False,
+                "流式分类结果遗漏、重复或乱序",
+            )
+        return tuple(pages), tuple(classified_pages)
+
     def freeze_document_layout_memory(
         self,
         pages: tuple[EnumeratedPage, ...],
@@ -216,15 +260,16 @@ class DocumentCoordinator:
 
         LOGGER.info("调用分类文档编排，意图=分类后执行全部原始页面 run_id=%s", request.run_id)
         preflight = finalizer.preflight(request)
-        pages = self.enumerate_pages(request, include_classification=True)
         selected_route_resolver: RouteResolver
         if preflight.decision is PreflightDecision.PASSTHROUGH:
+            pages = self.enumerate_pages(request)
             selected_route_resolver = _passthrough_route
         else:
-            classified_pages = self.classify_pages(
-                pages,
+            if page_concurrency < 1:
+                raise ValueError("page_concurrency 必须为正整数")
+            pages, classified_pages = self.scan_classified_pages(
+                request,
                 classification_engine,
-                page_concurrency,
             )
             routes = {item.page_identity: item.route for item in classified_pages}
 

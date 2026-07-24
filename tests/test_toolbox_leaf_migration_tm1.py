@@ -131,12 +131,19 @@ def test_tm1_t02_visual_manifest_rejects_duplicate_kind(tmp_path: Path) -> None:
         )
 
 
-def test_tm1_t03_only_visual_driver_is_statically_registered() -> None:
-    """TM1-T03：注册表只新增当前叶，仍不做目录发现。"""
+def test_tm1_t03_migrated_drivers_are_statically_registered() -> None:
+    """TM1-T03：已启动迁移的叶均显式登记，仍不做目录发现。"""
 
-    assert set(DRIVER_FACTORIES) == {"body.flow_text.single", "visual_only"}
+    assert set(DRIVER_FACTORIES) == {
+        "body.chart",
+        "body.diagram",
+        "body.flow_text.single",
+        "visual_only",
+    }
     assert resolve_route_driver("visual_only") is not None
     assert resolve_route_driver("body.flow_text.single") is not None
+    assert resolve_route_driver("body.chart") is not None
+    assert resolve_route_driver("body.diagram") is not None
 
 
 def test_tm1_t04_authoritative_output_root_is_runs() -> None:

@@ -36,7 +36,7 @@ from transflow.domain.translation import (
 )
 from transflow.pdf_kernel.facts import ExtractedPageFacts, KernelTextFact, RectTuple
 from transflow.pdf_kernel.text_inventory import freeze_page_text_inventory
-from transflow.ports.translation import TranslationPort
+from transflow.ports.translation import TranslationPort, TranslationRepairPort
 from transflow.toolboxes.contracts import PageTemplate
 
 LOGGER = logging.getLogger("transflow.application.translation_completeness")
@@ -44,11 +44,15 @@ APPLICATION_ROOT = Path(__file__).resolve().parent.parent
 PAGE_NUMBER_PATTERN = re.compile(r"^\s*(?:[ivxlcdm]+|\d+)(?:\s*/\s*\d+)?\s*$", re.IGNORECASE)
 URL_EMAIL_PATTERN = re.compile(r"(?:https?://\S+|www\.\S+|[\w.+-]+@[\w.-]+\.\w+)", re.IGNORECASE)
 NUMERIC_PATTERN = re.compile(r"^[\s\d,.:;()%+\-/$€£¥]+$")
-CURRENCY_SCALE_PATTERN = re.compile(r"^[$€£¥]\s*(?:k|m|mn|b|bn|t)$", re.IGNORECASE)
+CURRENCY_SCALE_PATTERN = re.compile(
+    r"^(?:[A-Z]{1,3}\s*)?[$€£¥]\s*(?:mn|bn|k|m|b|t)?$",
+    re.IGNORECASE,
+)
 CODE_PATTERN = re.compile(r"^(?=.*[A-Z0-9])[A-Z0-9][A-Z0-9._/\-]{1,31}$")
 REQUIRED_LITERAL_PATTERN = re.compile(
     r"(?:https?://\S+|www\.\S+|[\w.+-]+@[\w.-]+\.\w+|"
-    r"(?:[$€£¥]\s*)?\d[\d,]*(?:\.\d+)?%?|\b[A-Z]{2,}(?:[-_/][A-Z0-9]+)*\b)"
+    r"(?:[$€£¥]\s*)?\d+(?:,\d{3})*(?:\.\d+)?%?|"
+    r"\b[A-Z]{2,}(?:[-_/][A-Z0-9]+)*\b)"
 )
 PLACEHOLDER_PATTERN = re.compile(
     r"(?:\[\s*(?:待翻译|占位|placeholder)\s*\]|\{\{.+?\}\}|\bTODO\b|\?{3,})",
@@ -59,6 +63,12 @@ ERROR_ECHO_PATTERN = re.compile(
     re.IGNORECASE,
 )
 LATIN_WORD_PATTERN = re.compile(r"\b[A-Za-z]{2,}\b")
+MECHANICAL_LIST_PREFIX_PATTERN = re.compile(
+    r"^\s*(\((?:\d+|[A-Za-z]+)\)|(?:\d+|[A-Za-z])[.)])\s+"
+)
+CANDIDATE_LIST_PREFIX_PATTERN = re.compile(
+    r"^\s*(\((?:\d+|[A-Za-z]+)\)|（(?:\d+|[A-Za-z]+)）|(?:\d+|[A-Za-z])[.)])\s*"
+)
 
 
 class CompletenessCheckpointPort(Protocol):
@@ -117,7 +127,7 @@ def extract_required_literals(source_text: str) -> tuple[str, ...]:
         and not re.search(r"[a-z]", source_text)
         and all(word.isupper() for word in words)
     )
-    prefix = re.match(r"^\s*((?:\d+|[A-Za-z])[.)])\s+", source_text)
+    prefix = MECHANICAL_LIST_PREFIX_PATTERN.match(source_text)
     if prefix is not None:
         literals.append(prefix.group(1))
     for match in REQUIRED_LITERAL_PATTERN.finditer(source_text):
@@ -292,13 +302,16 @@ def build_semantic_unit_map(
     records = _canonical_records(template, facts)
     record_by_id = {item.object_id: item for item in records}
     batch_units = batch.units if batch is not None else ()
+    explicit_units = {
+        item.unit_id: item for item in batch_units if item.source_object_ids
+    }
     object_by_unit: dict[str, str] = {}
     canonical_ids = set(record_by_id)
     if len(template.object_ids) == len(batch_units):
         object_by_unit = {
             unit.unit_id: object_id
             for unit, object_id in zip(batch_units, template.object_ids, strict=True)
-            if object_id in canonical_ids
+            if not unit.source_object_ids and object_id in canonical_ids
         }
     # 旧叶可能声明 block 身份而 Kernel 清单采用 span 身份；只允许按真实原文精确对齐，
     # 不允许为批次凭空生成 inventory 外对象。
@@ -306,7 +319,7 @@ def build_semantic_unit_map(
         item.object_id for item in records if item.object_id not in object_by_unit.values()
     ]
     for unit in batch_units:
-        if unit.unit_id in object_by_unit:
+        if unit.unit_id in object_by_unit or unit.unit_id in explicit_units:
             continue
         matched = next(
             (
@@ -321,13 +334,117 @@ def build_semantic_unit_map(
             unused.remove(matched)
     unit_by_object: dict[str, TranslationUnit] = {}
     for batch_unit in batch_units:
+        if batch_unit.source_object_ids:
+            continue
         owned_object_id = object_by_unit.get(batch_unit.unit_id)
         if owned_object_id is not None:
             unit_by_object[owned_object_id] = batch_unit
     inventory_by_id = {item.object_id: item for item in frozen_inventory.items}
     entries: list[SemanticUnit] = []
     claimed_inventory_ids: set[str] = set()
+    attached_inventory_ids: set[str] = set()
     included_batch_ids: set[str] = set()
+    for owned_unit in batch_units:
+        if not owned_unit.source_object_ids:
+            continue
+        source_object_ids = owned_unit.source_object_ids
+        inline_keep_source_object_ids = owned_unit.inline_keep_source_object_ids
+        if (
+            any(object_id not in inventory_by_id for object_id in source_object_ids)
+            or any(object_id not in native_records for object_id in source_object_ids)
+            or claimed_inventory_ids.intersection(source_object_ids)
+        ):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "翻译单元显式源对象无法唯一回溯到 PageTextInventory",
+            )
+        if (
+            any(
+                object_id not in inventory_by_id
+                or object_id not in native_records
+                or inventory_by_id[object_id].disposition
+                is not InventoryDisposition.KEEP_SOURCE
+                for object_id in inline_keep_source_object_ids
+            )
+            or attached_inventory_ids.intersection(inline_keep_source_object_ids)
+        ):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "inline KEEP_SOURCE objects must be preauthorized and uniquely attached",
+            )
+        normalized_source = _normalized(owned_unit.source_text)
+        if any(
+            _normalized(native_records[object_id].text) not in normalized_source
+            for object_id in (*source_object_ids, *inline_keep_source_object_ids)
+        ):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "translation unit text must retain every attached native fragment",
+            )
+        native_items = tuple(native_records[object_id] for object_id in source_object_ids)
+        top = min(item.bbox[1] for item in native_items)
+        bottom = max(item.bbox[3] for item in native_items)
+        if bottom <= facts.page.height_points * 0.08:
+            owner = "shared.margin.header"
+        elif top >= facts.page.height_points * 0.92:
+            owner = "shared.margin.footer"
+        else:
+            owner = template.owner
+        reason = _requested_unit_keep_source_reason(owned_unit.source_text)
+        if reason is not None and any(
+            inventory_by_id[object_id].disposition
+            is not InventoryDisposition.KEEP_SOURCE
+            for object_id in source_object_ids
+        ):
+            reason = None
+        disposition = (
+            SemanticUnitDisposition.KEEP_SOURCE
+            if reason is not None
+            else SemanticUnitDisposition.TRANSLATE
+        )
+        if disposition is SemanticUnitDisposition.TRANSLATE and any(
+            inventory_by_id[object_id].disposition
+            is not InventoryDisposition.TRANSLATE
+            for object_id in source_object_ids
+        ):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "显式多对象翻译单元包含未获 Kernel 预授权的文字对象",
+            )
+        included_batch_ids.add(owned_unit.unit_id)
+        claimed_inventory_ids.update(source_object_ids)
+        attached_inventory_ids.update(inline_keep_source_object_ids)
+        entries.append(
+            SemanticUnit(
+                unit_id=owned_unit.unit_id,
+                object_id=source_object_ids[0],
+                container_id=owned_unit.region_id,
+                owner=owner,
+                ordinal=len(entries),
+                source_text=owned_unit.source_text,
+                source_hash=hashlib.sha256(
+                    owned_unit.source_text.encode("utf-8")
+                ).hexdigest(),
+                required_literals=tuple(
+                    dict.fromkeys(
+                        (
+                            *extract_required_literals(owned_unit.source_text),
+                            *(
+                                word
+                                for object_id in inline_keep_source_object_ids
+                                for word in LATIN_WORD_PATTERN.findall(
+                                    native_records[object_id].text
+                                )
+                            ),
+                        )
+                    )
+                ),
+                disposition=disposition,
+                keep_source_reason=reason,
+                source_object_ids=source_object_ids,
+                inline_keep_source_object_ids=inline_keep_source_object_ids,
+            )
+        )
     for record in records:
         owned_unit = unit_by_object.get(record.object_id)
         if owned_unit is None:
@@ -490,6 +607,32 @@ def validate_inventory_coverage(
                 f"missing={missing} added={added}",
             )
         for mapped in semantic_map.entries:
+            for object_id in mapped.inline_keep_source_object_ids:
+                inventory_item = inventory_by_id.get(object_id)
+                if (
+                    inventory_item is None
+                    or inventory_item.disposition is not InventoryDisposition.KEEP_SOURCE
+                ):
+                    raise DomainContractError(
+                        ErrorCode.INVALID_CONTRACT,
+                        "inline KEEP_SOURCE object lacks Kernel preauthorization",
+                    )
+                if facts is not None:
+                    native_text = next(
+                        (
+                            item.text
+                            for item in facts.text_spans
+                            if item.object_id == object_id
+                        ),
+                        "",
+                    )
+                    if not native_text or _normalized(native_text) not in _normalized(
+                        mapped.source_text
+                    ):
+                        raise DomainContractError(
+                            ErrorCode.INVALID_CONTRACT,
+                            "inline KEEP_SOURCE literal is missing from unit source text",
+                        )
             for object_id in mapped.source_object_ids:
                 inventory_item = inventory_by_id[object_id]
                 allowed = {
@@ -515,6 +658,7 @@ def validate_inventory_coverage(
                 if (
                     mapped.object_id == object_id
                     and len(mapped.source_object_ids) == 1
+                    and not mapped.inline_keep_source_object_ids
                     and mapped.source_hash != inventory_item.source_hash
                 ):
                     raise DomainContractError(
@@ -614,14 +758,23 @@ def _restore_mechanical_list_prefix(unit: SemanticUnit, translated_text: str) ->
 
     source = unit.source_text.lstrip()
     candidate = translated_text.lstrip()
-    for literal in unit.required_literals:
-        if (
-            re.fullmatch(r"(?:\d+|[A-Za-z])[.)]", literal)
-            and source.startswith(literal)
-            and not candidate.startswith(literal)
-        ):
-            return f"{literal} {candidate}"
-    return translated_text
+    source_prefix = MECHANICAL_LIST_PREFIX_PATTERN.match(source)
+    if source_prefix is None:
+        return translated_text
+    literal = source_prefix.group(1)
+    normalized_literal = literal.replace("（", "(").replace("）", ")").casefold()
+    consumed = False
+    while candidate_prefix := CANDIDATE_LIST_PREFIX_PATTERN.match(candidate):
+        normalized_candidate = (
+            candidate_prefix.group(1).replace("（", "(").replace("）", ")").casefold()
+        )
+        if normalized_candidate != normalized_literal:
+            break
+        candidate = candidate[candidate_prefix.end() :].lstrip()
+        consumed = True
+    if consumed:
+        return literal if not candidate else f"{literal} {candidate}"
+    return f"{literal} {candidate}"
 
 
 def _candidate_content_errors(
@@ -678,7 +831,8 @@ def _candidate_content_errors(
                 "必保留字面量缺失",
             )
         )
-    source_words = set(LATIN_WORD_PATTERN.findall(unit.source_text.casefold()))
+    source_word_tokens = LATIN_WORD_PATTERN.findall(unit.source_text)
+    source_words = {word.casefold() for word in source_word_tokens}
     candidate_words = set(LATIN_WORD_PATTERN.findall(stripped.casefold()))
     required_words = {
         word
@@ -686,16 +840,50 @@ def _candidate_content_errors(
         for word in LATIN_WORD_PATTERN.findall(literal.casefold())
     }
     residual = (source_words & candidate_words) - required_words
+    ordinary_residual = set(
+        ordinary_source_residuals(
+            unit.source_text,
+            stripped,
+            unit.required_literals,
+        )
+    )
     has_target_text = bool(re.search(r"[\u4e00-\u9fff]", stripped))
-    if len(source_words) >= 3 and residual == source_words and not has_target_text:
+    if ordinary_residual or (
+        len(source_words) >= 3 and residual == source_words and not has_target_text
+    ):
         errors.append(
             CompletenessError(
                 CompletenessErrorCode.SOURCE_LANGUAGE_RESIDUAL,
                 unit.unit_id,
-                "译文仍由源语言主体构成",
+                "译文仍含未授权的普通源语言词",
             )
         )
     return tuple(errors)
+
+
+def ordinary_source_residuals(
+    source_text: str,
+    translated_text: str,
+    required_literals: tuple[str, ...] = (),
+) -> tuple[str, ...]:
+    """返回译文中仍原样出现、且未获准保留的普通源语言词。"""
+
+    candidate_words = set(LATIN_WORD_PATTERN.findall(translated_text.casefold()))
+    required_words = {
+        word
+        for literal in required_literals
+        for word in LATIN_WORD_PATTERN.findall(literal.casefold())
+    }
+    return tuple(
+        dict.fromkeys(
+            word.casefold()
+            for word in LATIN_WORD_PATTERN.findall(source_text)
+            if len(word) >= 4
+            and word.islower()
+            and word.casefold() in candidate_words
+            and word.casefold() not in required_words
+        )
+    )
 
 
 def adjudicate_translation_candidates(
@@ -992,7 +1180,18 @@ class TranslationCompletenessGate:
                 len(retry_units),
             )
             try:
-                retry_bundle = translation.translate(retry_batch)
+                previous_bundle = TranslationBundle.from_batch(
+                    retry_batch,
+                    tuple(
+                        TranslatedUnit(unit.unit_id, merged[unit.unit_id])
+                        for unit in retry_units
+                    ),
+                )
+                retry_bundle = (
+                    translation.repair(retry_batch, previous_bundle)
+                    if isinstance(translation, TranslationRepairPort)
+                    else translation.translate(retry_batch)
+                )
             except (DomainContractError, PortCallError, TimeoutError) as error:
                 error_code = getattr(
                     getattr(error, "code", None),

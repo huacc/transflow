@@ -107,6 +107,7 @@ class SemanticUnit:
     keep_source_reason: KeepSourceReason | None = None
     source_object_ids: tuple[str, ...] = ()
     disposition_reason: str | None = None
+    inline_keep_source_object_ids: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
         """校验单元身份、源哈希、顺序及 KEEP_SOURCE 原因闭合。"""
@@ -128,8 +129,30 @@ class SemanticUnit:
         if not self.source_object_ids:
             object.__setattr__(self, "source_object_ids", (self.object_id,))
         require_unique(self.source_object_ids, "source_object_ids")
+        require_unique(
+            self.inline_keep_source_object_ids,
+            "inline_keep_source_object_ids",
+        )
         if any(not object_id for object_id in self.source_object_ids):
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "源文字对象身份不得为空")
+        if any(not object_id for object_id in self.inline_keep_source_object_ids):
+            raise DomainContractError(
+                ErrorCode.INVALID_IDENTITY,
+                "inline KEEP_SOURCE object identity must not be empty",
+            )
+        if set(self.source_object_ids) & set(self.inline_keep_source_object_ids):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "semantic source and inline KEEP_SOURCE objects must be disjoint",
+            )
+        if (
+            self.inline_keep_source_object_ids
+            and self.disposition is not SemanticUnitDisposition.TRANSLATE
+        ):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "only TRANSLATE units may carry inline KEEP_SOURCE objects",
+            )
         if self.disposition is SemanticUnitDisposition.KEEP_SOURCE:
             if self.keep_source_reason is None:
                 raise DomainContractError(
@@ -181,6 +204,10 @@ class SemanticUnit:
                 if payload.get("disposition_reason") is not None
                 else None
             ),
+            inline_keep_source_object_ids=tuple(
+                str(item)
+                for item in payload.get("inline_keep_source_object_ids", ())
+            ),
         )
 
 
@@ -221,6 +248,14 @@ class SemanticUnitMap:
                 for object_id in item.source_object_ids
             ),
             "entries.source_object_ids",
+        )
+        require_unique(
+            tuple(
+                object_id
+                for item in self.entries
+                for object_id in item.inline_keep_source_object_ids
+            ),
+            "entries.inline_keep_source_object_ids",
         )
         if tuple(item.ordinal for item in self.entries) != tuple(range(len(self.entries))):
             raise DomainContractError(
@@ -288,6 +323,10 @@ class SemanticUnitMap:
             if self.schema_version == SEMANTIC_MAP_SCHEMA_V2:
                 payload["disposition_reason"] = item.disposition_reason
                 payload["source_object_ids"] = list(item.source_object_ids)
+                if item.inline_keep_source_object_ids:
+                    payload["inline_keep_source_object_ids"] = list(
+                        item.inline_keep_source_object_ids
+                    )
             entries.append(payload)
         return {
             "entries": entries,

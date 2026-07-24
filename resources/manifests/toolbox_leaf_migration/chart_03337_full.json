@@ -1,0 +1,30 @@
+{
+  "schema_version": "transflow.toolbox-leaf-migration-input/v1",
+  "route": "body.chart",
+  "source_document": {
+    "path": "样本/年报/03337_ANTON OILFIELD_英文_2025.pdf",
+    "sha256": "af0ce9caedac34cd7d2b6effcb677d72fc4fccdc437ad27e56137131f4f40b05",
+    "page_count": 167
+  },
+  "target_page": {
+    "page_no": 8,
+    "page_hash": "f2fb8bedd151d1c04ecdc551ecd3ced5f5a8aa9721fac9349f19dec4fde3c902",
+    "spike_leaf_contract_route": "body.chart"
+  },
+  "source_language": "en",
+  "target_language": "zh-CN",
+  "authorization": {
+    "approved": true,
+    "allowed_routes": [
+      "body.chart"
+    ],
+    "allowed_operations": [
+      "CLASSIFY",
+      "TRANSLATE",
+      "RENDER",
+      "COMPARE",
+      "FINALIZE"
+    ],
+    "evidence_ref": "resources/manifests/toolbox_leaf_migration/authorizations/tm3_accepted_leaves_round06.json"
+  }
+}

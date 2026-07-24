@@ -12,7 +12,10 @@ from typing import Any
 
 import httpx
 
-from transflow.application.translation_completeness import extract_required_literals
+from transflow.application.translation_completeness import (
+    extract_required_literals,
+    ordinary_source_residuals,
+)
 from transflow.domain.errors import ErrorCode, PortCallError
 from transflow.domain.translation import (
     TranslatedUnit,
@@ -34,6 +37,11 @@ DEFAULT_SYSTEM_PROMPT = (
     "每个 unit 的 required_literals 必须在 translated_text 中逐字保留，"
     "不得翻译、改写、增删或改变大小写。"
     "必须只返回满足响应 Schema 的 JSON。"
+)
+REPAIR_SYSTEM_SUFFIX = (
+    "这是完整性修复重译。根据 source_text 改写 current_translation；"
+    "forbidden_residuals 中每个普通英文词都必须替换为准确中文，不得删减其他语义；"
+    "required_literals 仍须原样保留。"
 )
 
 
@@ -138,6 +146,33 @@ class MigrationQwenTranslationAdapter:
     def translate(self, batch: TranslationBatch) -> TranslationBundle:
         """按稳定分片调用真实模型，并恢复为原始 unit 顺序。"""
 
+        return self._translate(batch, None)
+
+    def repair(
+        self,
+        batch: TranslationBatch,
+        previous: TranslationBundle,
+    ) -> TranslationBundle:
+        """携带上一版候选及普通英文残留词，只修复失败单元。"""
+
+        if previous.requested_unit_ids != batch.ordered_unit_ids:
+            raise PortCallError(
+                ErrorCode.PORT_CONTRACT_VIOLATION,
+                False,
+                "定向修复候选身份不一致",
+            )
+        return self._translate(
+            batch,
+            {item.unit_id: item.translated_text for item in previous.units},
+        )
+
+    def _translate(
+        self,
+        batch: TranslationBatch,
+        previous_by_id: dict[str, str] | None,
+    ) -> TranslationBundle:
+        """执行普通翻译或带上一版候选的定向修复。"""
+
         LOGGER.info(
             "调用 P9 真实迁移翻译，意图=翻译分类样本 batch_id=%s unit_count=%s",
             batch.batch_id,
@@ -146,7 +181,9 @@ class MigrationQwenTranslationAdapter:
         translated: dict[str, str] = {}
         for start in range(0, len(batch.units), self._chunk_size):
             chunk = batch.units[start : start + self._chunk_size]
-            translated.update(self._translate_chunk_resilient(batch, chunk))
+            translated.update(
+                self._translate_chunk_resilient(batch, chunk, previous_by_id)
+            )
         units = tuple(
             TranslatedUnit(unit.unit_id, translated[unit.unit_id]) for unit in batch.units
         )
@@ -156,11 +193,12 @@ class MigrationQwenTranslationAdapter:
         self,
         batch: TranslationBatch,
         units: tuple[TranslationUnit, ...],
+        previous_by_id: dict[str, str] | None = None,
     ) -> dict[str, str]:
         """结构响应无效时二分当前分片；单 unit 仍无效则诚实失败。"""
 
         try:
-            return self._translate_chunk(batch, units)
+            return self._translate_chunk(batch, units, previous_by_id)
         except PortCallError as error:
             if error.code is not ErrorCode.AI_RESPONSE_INVALID or len(units) == 1:
                 raise
@@ -170,14 +208,15 @@ class MigrationQwenTranslationAdapter:
                 len(units),
             )
             return {
-                **self._translate_chunk_resilient(batch, units[:middle]),
-                **self._translate_chunk_resilient(batch, units[middle:]),
+                **self._translate_chunk_resilient(batch, units[:middle], previous_by_id),
+                **self._translate_chunk_resilient(batch, units[middle:], previous_by_id),
             }
 
     def _translate_chunk(
         self,
         batch: TranslationBatch,
         units: tuple[TranslationUnit, ...],
+        previous_by_id: dict[str, str] | None = None,
     ) -> dict[str, str]:
         """执行一次真实 HTTP 请求并严格校验本分片身份集合。"""
 
@@ -187,7 +226,8 @@ class MigrationQwenTranslationAdapter:
             "messages": [
                 {
                     "role": "system",
-                    "content": self._system_prompt,
+                    "content": self._system_prompt
+                    + (REPAIR_SYSTEM_SUFFIX if previous_by_id is not None else ""),
                 },
                 {
                     "role": "user",
@@ -202,6 +242,20 @@ class MigrationQwenTranslationAdapter:
                                     ),
                                     "source_text": unit.source_text,
                                     "unit_id": unit.unit_id,
+                                    **(
+                                        {
+                                            "current_translation": previous_by_id[unit.unit_id],
+                                            "forbidden_residuals": list(
+                                                ordinary_source_residuals(
+                                                    unit.source_text,
+                                                    previous_by_id[unit.unit_id],
+                                                    extract_required_literals(unit.source_text),
+                                                )
+                                            ),
+                                        }
+                                        if previous_by_id is not None
+                                        else {}
+                                    ),
                                 }
                                 for unit in units
                             ],
@@ -247,7 +301,13 @@ class MigrationQwenTranslationAdapter:
             raise PortCallError(
                 code, error.response.status_code >= 500, "P9 真实迁移翻译 HTTP 失败"
             ) from error
-        except (httpx.HTTPError, KeyError, TypeError, ValueError) as error:
+        except httpx.RequestError as error:
+            raise PortCallError(
+                ErrorCode.AI_SERVER_ERROR,
+                True,
+                type(error).__name__,
+            ) from error
+        except (KeyError, TypeError, ValueError) as error:
             raise PortCallError(
                 ErrorCode.AI_RESPONSE_INVALID, False, type(error).__name__
             ) from error

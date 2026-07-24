@@ -82,6 +82,8 @@ class PatchOperation:
     color_srgb: int | None = None
     line_height: float | None = None
     preserve_drawing_overlap: bool = False
+    text_align: str | None = None
+    rotation: int = 0
 
     def __post_init__(self) -> None:
         """校验操作身份、区域、类型和内容指纹。"""
@@ -113,6 +115,10 @@ class PatchOperation:
             raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 文字颜色无效")
         if self.line_height is not None and self.line_height <= 0:
             raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 行距必须为正")
+        if self.text_align not in {None, "LEFT", "CENTER", "RIGHT"}:
+            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 文字对齐方式无效")
+        if self.rotation not in {0, 90, 180, 270}:
+            raise DomainContractError(ErrorCode.INVALID_CONTRACT, "Patch 文字旋转角度无效")
 
 
 @dataclass(frozen=True, slots=True)
@@ -185,6 +191,8 @@ class PagePatch:
                     preserve_drawing_overlap=bool(
                         item.get("preserve_drawing_overlap", False)
                     ),
+                    text_align=item.get("text_align"),
+                    rotation=int(item.get("rotation", 0)),
                 )
                 for item in payload["operations"]
             ),

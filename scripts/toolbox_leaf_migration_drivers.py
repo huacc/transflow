@@ -56,10 +56,28 @@ def _single_factory() -> LeafMigrationDriver:
     return SingleMigrationDriver()
 
 
+def _chart_factory() -> LeafMigrationDriver:
+    """延迟导入 TM3 驱动，保持公共 runner 与 chart 私有实现解耦。"""
+
+    from scripts.toolbox_leaf_migration_chart import ChartMigrationDriver
+
+    return ChartMigrationDriver()
+
+
+def _diagram_factory() -> LeafMigrationDriver:
+    """延迟导入 TM4 驱动，保持公共 runner 与 diagram 私有实现解耦。"""
+
+    from scripts.toolbox_leaf_migration_diagram import DiagramMigrationDriver
+
+    return DiagramMigrationDriver()
+
+
 # 每个 TM 阶段只在这里增加当前叶的显式 factory；公共 runner 不扫描目录，
 # 也不允许运行时注册。当前只登记已经进入 TM1/TM2 的两个 Route。
 DRIVER_FACTORIES: Mapping[str, LeafMigrationDriverFactory] = MappingProxyType(
     {
+        "body.chart": _chart_factory,
+        "body.diagram": _diagram_factory,
         "body.flow_text.single": _single_factory,
         "visual_only": _visual_only_factory,
     }

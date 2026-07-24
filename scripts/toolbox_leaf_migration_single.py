@@ -649,13 +649,11 @@ class SingleMigrationDriver:
             raise MigrationContractError("TM2_PREFLIGHT_NOT_PROCESS", preflight.decision.value)
 
         document_coordinator = DocumentCoordinator(PageFactsExtractor())
-        pages = document_coordinator.enumerate_pages(request, include_classification=True)
         classification_adapter = MigrationQwenDecisionAdapter(timeout_seconds=180.0)
         decision_runner = BoundedDecisionRunner(classification_adapter)
-        classified = document_coordinator.classify_pages(
-            pages,
+        pages, classified = document_coordinator.scan_classified_pages(
+            request,
             ClassificationEngine(decision_runner),
-            page_concurrency=8,
         )
         classified_by_page = {item.page_no: item for item in classified}
         target_page_no = int(context.input_manifest["target_page"]["page_no"])

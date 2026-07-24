@@ -5,6 +5,7 @@ from __future__ import annotations
 import base64
 import hashlib
 import logging
+from collections.abc import Iterator
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, cast
@@ -341,28 +342,47 @@ def extract_page_contract_bytes(
 class PageFactsExtractor:
     """只读打开完整 PDF，并按原始顺序提取 1-based 页面事实。"""
 
-    def extract_all(
+    def page_count(self, source_path: Path, expected_hash: str) -> int:
+        """只读取文档页数，不把任何页面对象带出打开边界。"""
+
+        if _sha256_file(source_path) != expected_hash:
+            raise PortCallError(ErrorCode.SOURCE_CHANGED_DURING_RUN, False, "页数预检源哈希不一致")
+        try:
+            with pymupdf.open(source_path) as document:
+                return document.page_count
+        except Exception as error:
+            raise PortCallError(
+                ErrorCode.SOURCE_NOT_READABLE,
+                False,
+                f"页数读取失败:{type(error).__name__}",
+            ) from error
+
+    def iter_pages(
         self,
         source_path: Path,
         expected_hash: str,
         *,
         include_classification: bool = False,
-    ) -> tuple[ExtractedPageFacts, ...]:
-        """核对源哈希后一次打开整本 PDF，返回稳定且有序的全部页面事实。"""
+    ) -> Iterator[ExtractedPageFacts]:
+        """一次打开文档但逐页产出事实，调用方消费后即可释放当前页重对象。"""
 
-        LOGGER.info("调用整本页面事实提取，意图=建立稳定原始页序 path=%s", source_path.name)
+        LOGGER.info("调用流式页面事实提取，意图=逐页建立事实 path=%s", source_path.name)
         if _sha256_file(source_path) != expected_hash:
             raise PortCallError(ErrorCode.SOURCE_CHANGED_DURING_RUN, False, "预检前源哈希不一致")
         try:
             with pymupdf.open(source_path) as document:
-                return tuple(
-                    self._extract_page(
+                for index in range(document.page_count):
+                    yield self._extract_page(
                         document[index],
                         expected_hash,
                         index + 1,
                         include_classification=include_classification,
                     )
-                    for index in range(document.page_count)
+            if _sha256_file(source_path) != expected_hash:
+                raise PortCallError(
+                    ErrorCode.SOURCE_CHANGED_DURING_RUN,
+                    False,
+                    "流式枚举期间源哈希变化",
                 )
         except PortCallError:
             raise
@@ -372,6 +392,24 @@ class PageFactsExtractor:
                 False,
                 f"页面事实提取失败:{type(error).__name__}",
             ) from error
+
+    def extract_all(
+        self,
+        source_path: Path,
+        expected_hash: str,
+        *,
+        include_classification: bool = False,
+    ) -> tuple[ExtractedPageFacts, ...]:
+        """核对源哈希后一次打开整本 PDF，返回稳定且有序的全部页面事实。"""
+
+        LOGGER.info("调用整本页面事实提取，意图=兼容旧调用并保持稳定原始页序")
+        return tuple(
+            self.iter_pages(
+                source_path,
+                expected_hash,
+                include_classification=include_classification,
+            )
+        )
 
     def extract_page(
         self,

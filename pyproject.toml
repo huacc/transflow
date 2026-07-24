@@ -13,6 +13,7 @@ authors = [{ name = "Transflow contributors" }]
 dependencies = [
   "fastapi==0.139.2",
   "httpx==0.28.1",
+  "pdfminer.six==20260107",
   "pymupdf==1.28.0",
   "uvicorn==0.51.0",
 ]

@@ -29,6 +29,8 @@ RENDER_CONFIG_HASH = content_sha256(
         "source_rect_redaction": "optional",
         "source_text_color": "optional",
         "source_line_height": "optional",
+        "text_alignment": "optional",
+        "text_rotation": "optional",
         "writer": "pymupdf.insert_textbox",
     }
 )
@@ -68,6 +70,70 @@ def _image_is_obstacle(
     if _rect_area(image) / max(_rect_area(page), 1.0) >= IMAGE_UNDERLAY_PAGE_AREA_RATIO:
         return False
     return not any(_materially_underlays(source, image) for source in source_rects)
+
+
+def _preserves_source_image_overlap(
+    target: tuple[float, float, float, float],
+    source_rects: tuple[tuple[float, float, float, float], ...],
+    image: tuple[float, float, float, float],
+) -> bool:
+    """Allow an existing text/image relation without permitting deeper overlap."""
+
+    if not source_rects:
+        return False
+    source = (
+        min(rect[0] for rect in source_rects),
+        min(rect[1] for rect in source_rects),
+        max(rect[2] for rect in source_rects),
+        max(rect[3] for rect in source_rects),
+    )
+    source_overlap = _rect_intersection_area(source, image)
+    if source_overlap <= 0:
+        return False
+    if _rect_intersection_area(target, image) <= 0:
+        return True
+    tolerance = 0.5
+    boundary_checks: list[bool] = []
+    if source[0] < image[2] < source[2]:
+        boundary_checks.append(target[0] >= source[0] - tolerance)
+    if source[0] < image[0] < source[2]:
+        boundary_checks.append(target[2] <= source[2] + tolerance)
+    if source[1] < image[3] < source[3]:
+        boundary_checks.append(target[1] >= source[1] - tolerance)
+    if source[1] < image[1] < source[3]:
+        boundary_checks.append(target[3] <= source[3] + tolerance)
+    if boundary_checks:
+        return all(boundary_checks)
+    return _rect_intersection_area(target, image) <= (
+        source_overlap + max(0.5, source_overlap * 0.02)
+    )
+
+
+def _preserves_source_image_owner(
+    target: tuple[float, float, float, float],
+    source_rects: tuple[tuple[float, float, float, float], ...],
+    images: tuple[tuple[float, float, float, float], ...],
+    page: tuple[float, float, float, float],
+) -> bool:
+    """Allow text to reflow inside a source-associated foreground image frame."""
+
+    page_area = max(_rect_area(page), 1.0)
+    return any(
+        _rect_area(image) / page_area < IMAGE_UNDERLAY_PAGE_AREA_RATIO
+        and any(_materially_underlays(source, image) for source in source_rects)
+        and pymupdf.Rect(image).contains(pymupdf.Rect(target))
+        for image in images
+    )
+
+
+def _rect_intersection_area(
+    left: tuple[float, float, float, float],
+    right: tuple[float, float, float, float],
+) -> float:
+    return max(0.0, min(left[2], right[2]) - max(left[0], right[0])) * max(
+        0.0,
+        min(left[3], right[3]) - max(left[1], right[1]),
+    )
 
 
 def _probe_textbox_fit(
@@ -118,6 +184,12 @@ def _insert_operation_textbox(
 ) -> float:
     """按操作是否声明行距调用强类型 PyMuPDF 接口。"""
 
+    alignment = {
+        None: pymupdf.TEXT_ALIGN_LEFT,
+        "LEFT": pymupdf.TEXT_ALIGN_LEFT,
+        "CENTER": pymupdf.TEXT_ALIGN_CENTER,
+        "RIGHT": pymupdf.TEXT_ALIGN_RIGHT,
+    }[operation.text_align]
     if operation.line_height is None:
         return float(
             page.insert_textbox(
@@ -126,6 +198,8 @@ def _insert_operation_textbox(
                 fontname=font_name,
                 fontsize=font_size,
                 color=_operation_color(operation),
+                align=alignment,
+                rotate=operation.rotation,
             )
         )
     return float(
@@ -136,6 +210,8 @@ def _insert_operation_textbox(
             fontsize=font_size,
             color=_operation_color(operation),
             lineheight=operation.line_height,
+            align=alignment,
+            rotate=operation.rotation,
         )
     )
 
@@ -190,6 +266,8 @@ def patch_operation_hash(
     color_srgb: int | None = None,
     line_height: float | None = None,
     preserve_drawing_overlap: bool = False,
+    text_align: str | None = None,
+    rotation: int = 0,
 ) -> str:
     """计算 replace_text 声明载荷的稳定内容哈希。"""
 
@@ -210,6 +288,10 @@ def patch_operation_hash(
         payload["line_height"] = line_height
     if preserve_drawing_overlap:
         payload["preserve_drawing_overlap"] = True
+    if text_align is not None:
+        payload["text_align"] = text_align
+    if rotation:
+        payload["rotation"] = rotation
     return content_sha256(payload)
 
 
@@ -330,6 +412,8 @@ class PagePatchInterpreter:
                 color_srgb=operation.color_srgb,
                 line_height=operation.line_height,
                 preserve_drawing_overlap=operation.preserve_drawing_overlap,
+                text_align=operation.text_align,
+                rotation=operation.rotation,
             )
             != operation.payload_hash
         ):
@@ -354,14 +438,32 @@ class PagePatchInterpreter:
             for target_id in operation.target_object_ids
             if target_id in object_bboxes
         )
-        protected_regions = (
-            tuple(
-                item.bbox
-                for item in facts.image_objects
-                if _image_is_obstacle(item.bbox, source_rects, facts.crop_box)
+        source_image_owner_preserved = (
+            operation.preserve_drawing_overlap
+            and _preserves_source_image_owner(
+                operation.rect,
+                source_rects,
+                tuple(item.bbox for item in facts.image_objects),
+                facts.crop_box,
             )
-            if operation.preserve_drawing_overlap
-            else facts.protected_regions
+        )
+        protected_regions = (
+            ()
+            if source_image_owner_preserved
+            else (
+                tuple(
+                    item.bbox
+                    for item in facts.image_objects
+                    if _image_is_obstacle(item.bbox, source_rects, facts.crop_box)
+                    and not _preserves_source_image_overlap(
+                        operation.rect,
+                        source_rects,
+                        item.bbox,
+                    )
+                )
+                if operation.preserve_drawing_overlap
+                else facts.protected_regions
+            )
         )
         for protected_region in protected_regions:
             if operation_rect.intersects(pymupdf.Rect(protected_region)):
@@ -394,10 +496,17 @@ class PagePatchInterpreter:
                         pymupdf.Rect(redaction_rect).intersects(pymupdf.Rect(image.bbox))
                         and (
                             not operation.preserve_drawing_overlap
-                            or _image_is_obstacle(
-                                image.bbox,
-                                (redaction_rect,),
-                                facts.crop_box,
+                            or (
+                                _image_is_obstacle(
+                                    image.bbox,
+                                    (redaction_rect,),
+                                    facts.crop_box,
+                                )
+                                and not _preserves_source_image_overlap(
+                                    redaction_rect,
+                                    (redaction_rect,),
+                                    image.bbox,
+                                )
                             )
                         )
                     ):

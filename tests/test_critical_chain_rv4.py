@@ -23,6 +23,7 @@ from transflow.application.translation_completeness import (
     adjudicate_translation_candidates,
     build_semantic_unit_map,
     extract_required_literals,
+    ordinary_source_residuals,
     validate_inventory_coverage,
 )
 from transflow.domain.completeness import (
@@ -62,6 +63,9 @@ from transflow.pdf_kernel.patch import PagePatchInterpreter
 from transflow.pdf_kernel.text_inventory import freeze_page_text_inventory
 from transflow.toolboxes.contracts import PageTemplate, TranslationDispatch
 from transflow.toolboxes.leaves import SingleFlowTextToolbox
+from transflow.toolboxes.leaves.body_flow_text_single.prompt import (
+    single_translation_system_prompt,
+)
 from transflow.toolboxes.leaves.policy import load_p8_toolbox_policy
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -401,6 +405,127 @@ def test_rv4_t04_invalid_translation_content_is_rejected(
     assert expected_code in {item.code for item in decision.errors}
 
 
+@pytest.mark.parametrize(
+    ("source_text", "translated_text"),
+    (
+        (
+            "The Group owns a commodity trading platform.",
+            "本集团拥有 commodity trading platform（商品交易平台）。",
+        ),
+        (
+            "HKEX is incorporated and domiciled in Hong Kong.",
+            "香港交易所于香港注册及 domiciled。 HKEX",
+        ),
+    ),
+)
+def test_rv4_t04_partial_lowercase_source_residual_is_rejected(
+    source_text: str,
+    translated_text: str,
+) -> None:
+    """中文主体中夹带的普通源语言词仍是不完整翻译。"""
+
+    semantic_map = _map(_entry("unit-1", 0, source_text))
+    decision = adjudicate_translation_candidates(
+        semantic_map,
+        (TranslationCandidate("unit-1", translated_text),),
+    )
+
+    assert decision.status is CompletenessStatus.FAIL
+    assert CompletenessErrorCode.SOURCE_LANGUAGE_RESIDUAL in {
+        item.code for item in decision.errors
+    }
+
+
+def test_rv4_t04_single_prompt_forbids_unlisted_ordinary_english_residuals() -> None:
+    """single 提示合同须与普通英文残留门禁保持一致。"""
+
+    prompt = single_translation_system_prompt()
+    assert "公司全称应翻译" in prompt
+    assert "不得保留普通英文词或短语" in prompt
+    assert "不得给出中英并列或英文括注" in prompt
+
+
+def test_rv4_t04_targeted_retry_can_use_previous_candidate_diagnostics() -> None:
+    """支持修复能力的 Port 应收到上一版候选，而不是盲目重复同一请求。"""
+
+    class RepairAwarePort:
+        def __init__(self) -> None:
+            self.repair_calls = 0
+
+        def translate(self, batch: TranslationBatch) -> TranslationBundle:
+            return TranslationBundle.from_batch(
+                batch,
+                (TranslatedUnit(batch.units[0].unit_id, "公司于香港 domiciled。 HKEX"),),
+            )
+
+        def repair(
+            self,
+            batch: TranslationBatch,
+            previous: TranslationBundle,
+        ) -> TranslationBundle:
+            self.repair_calls += 1
+            assert previous.units[0].translated_text == "公司于香港 domiciled。 HKEX"
+            return TranslationBundle.from_batch(
+                batch,
+                (TranslatedUnit(batch.units[0].unit_id, "公司注册地设于香港。 HKEX"),),
+            )
+
+    source = "HKEX is incorporated and domiciled in Hong Kong."
+    semantic_map = _map(_entry("unit-1", 0, source))
+    batch = TranslationBatch(
+        "rv4-repair-aware",
+        "en",
+        "zh-CN",
+        (TranslationUnit("unit-1", 1, 0, source, "region-1"),),
+    )
+    port = RepairAwarePort()
+
+    result = TranslationCompletenessGate(maximum_targeted_retries=1).execute(
+        semantic_map,
+        batch,
+        port,
+    )
+
+    assert result.decision.status is CompletenessStatus.PASS
+    assert port.repair_calls == 1
+    assert ordinary_source_residuals(source, "公司于香港 domiciled。 HKEX", ("HKEX",)) == (
+        "domiciled",
+    )
+
+
+def test_rv4_t04_required_code_and_mixed_case_proper_name_may_remain() -> None:
+    """必保留代码与混合大小写专名不能被部分残留规则误杀。"""
+
+    semantic_map = _map(_entry("unit-1", 0, "HKEX settles trades through ChinaClear."))
+    decision = adjudicate_translation_candidates(
+        semantic_map,
+        (TranslationCandidate("unit-1", "香港交易所通过 ChinaClear 结算交易。 HKEX"),),
+    )
+
+    assert decision.status is CompletenessStatus.PASS
+
+
+def test_rv4_t04_parenthesized_list_prefix_is_preserved_once() -> None:
+    """模型重复返回半角与全角列表前缀时，完整性门禁只保留源前缀一次。"""
+
+    semantic_map = _map(_entry("unit-1", 0, "(b) Liquidity risk"))
+    batch = TranslationBatch(
+        "rv4-parenthesized-prefix",
+        "en",
+        "zh-CN",
+        (TranslationUnit("unit-1", 1, 0, "(b) Liquidity risk", "region-1"),),
+    )
+    result = TranslationCompletenessGate(maximum_targeted_retries=0).execute(
+        semantic_map,
+        batch,
+        FixedTranslationAdapter({"unit-1": "(b) （b）流动性风险"}),
+    )
+
+    assert result.decision.status is CompletenessStatus.PASS
+    assert result.bundle is not None
+    assert result.bundle.units[0].translated_text == "(b) 流动性风险"
+
+
 @pytest.mark.integration
 def test_rv4_t05_complete_translation_can_be_saved_only_as_diagnostic(
     tmp_path: Path,
@@ -583,8 +708,9 @@ def test_rv4_qwen_invalid_multi_unit_response_is_bisected_without_id_drift() -> 
             self,
             batch: TranslationBatch,
             units: tuple[TranslationUnit, ...],
+            previous_by_id: dict[str, str] | None = None,
         ) -> dict[str, str]:
-            del batch
+            del batch, previous_by_id
             ids = tuple(item.unit_id for item in units)
             self.seen.append(ids)
             if len(units) > 1:

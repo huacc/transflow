@@ -1,0 +1,83 @@
+{
+  "schema_version": "body.chart.failure-dispatch/v1",
+  "toolbox_key": "body.chart",
+  "bindings": [
+    {
+      "failure_class": "source_bbox_too_narrow_with_safe_horizontal_space",
+      "applicability_scope": "body.chart translated text container",
+      "repair_family": "chart_text_safe_space_reflow",
+      "repair_atom": "safe_horizontal_expansion",
+      "bound_tool": "src/transflow/toolboxes/leaves/body_chart/layout.py",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "single_line_or_source_bbox_insufficient_with_safe_vertical_space",
+      "applicability_scope": "body.chart translated text container",
+      "repair_family": "chart_text_safe_space_reflow",
+      "repair_atom": "safe_multiline_reflow",
+      "bound_tool": "src/transflow/toolboxes/leaves/body_chart/layout.py",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "safe_region_requires_source_relative_typography_reduction",
+      "applicability_scope": "same-role body.chart typography group",
+      "repair_family": "chart_typography_rebalance",
+      "repair_atom": "group_typography_scale_reduction",
+      "bound_tool": "src/transflow/toolboxes/leaves/body_chart/layout.py",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "translated_text_exceeds_safe_page_region",
+      "applicability_scope": "body.chart translated text container after finite fit profiles",
+      "repair_family": "translated_failure_evidence",
+      "repair_atom": "translated_diagnostic_render",
+      "bound_tool": "src/transflow/toolboxes/leaves/body_chart/layout.py",
+      "capability_status": "implemented_not_wired_to_product_acceptance"
+    },
+    {
+      "failure_class": "same_visual_line_fragmented_by_script_or_font_variant",
+      "applicability_scope": "body.chart same-baseline native text fragments",
+      "repair_family": "semantic_chart_text_ownership",
+      "repair_atom": "merge_style_compatible_same_baseline_fragments",
+      "bound_tool": "src/transflow/toolboxes/leaves/body_chart/template.py",
+      "deterministic_rule": "same baseline, compatible color and style, source-relative font-size ratio, and bounded inline gap",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "top_edge_overlay_label_expands_toward_adjacent_visual",
+      "applicability_scope": "body.chart top or bottom overlay label",
+      "repair_family": "chart_overlay_anchor_preservation",
+      "repair_atom": "preserve_top_edge_source_anchor",
+      "bound_tool": "src/transflow/toolboxes/leaves/body_chart/template.py",
+      "deterministic_rule": "outward side-label inference applies only inside the visual middle band; top and bottom overlay labels preserve their source anchor",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "long_chart_label_group_requires_readable_source_relative_reduction",
+      "applicability_scope": "body.chart axis, category, or legend typography group",
+      "repair_family": "chart_typography_rebalance",
+      "repair_atom": "grouped_chart_label_65_percent_floor",
+      "bound_tool": "src/transflow/toolboxes/leaves/body_chart/layout.py",
+      "deterministic_rule": "eligible chart-label groups may use the finite 65 percent source-relative profile while retaining one group scale and the absolute readability floor",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "required_literal_missing_after_provider_response",
+      "applicability_scope": "failed body.chart semantic unit IDs only",
+      "repair_family": "translation_contract_retry",
+      "repair_atom": "bounded_failed_id_literal_retry_and_revalidation",
+      "bound_tool": "src/transflow/application/translation_completeness.py",
+      "deterministic_rule": "retry only failed IDs, restore required literals, revalidate after every response, and stop at the configured retry limit",
+      "capability_status": "implemented"
+    },
+    {
+      "failure_class": "outward_chart_label_expands_into_associated_visual",
+      "applicability_scope": "body.chart outward label associated with a protected visual",
+      "repair_family": "visual_aware_chart_label_reflow",
+      "repair_atom": "expand_away_from_nearest_protected_visual",
+      "bound_tool": "src/transflow/toolboxes/leaves/body_chart/template.py + src/transflow/toolboxes/leaves/body_chart/judge.py",
+      "deterministic_rule": "CHART_TEXT_GRAPHIC_COLLISION remains a hard product gate",
+      "capability_status": "detected_not_repaired"
+    }
+  ]
+}

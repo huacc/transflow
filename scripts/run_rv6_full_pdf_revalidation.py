@@ -423,13 +423,11 @@ def _execute_document(
         )
 
     coordinator = DocumentCoordinator(PageFactsExtractor())
-    pages = coordinator.enumerate_pages(request, include_classification=True)
     model_before = decision_adapter.call_count
     audit_before = len(decision_runner.audits)
-    classified = coordinator.classify_pages(
-        pages,
+    pages, classified = coordinator.scan_classified_pages(
+        request,
         ClassificationEngine(decision_runner),
-        page_concurrency=8,
     )
     model_calls = decision_adapter.call_count - model_before
     _write_json(

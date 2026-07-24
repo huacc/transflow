@@ -1,0 +1,21 @@
+{
+  "schema_version": "transflow.toolbox-leaf-migration-authorization/v1",
+  "stage": "TM3",
+  "scope": "ROUND06_ACCEPTED_LEAVES_FULL_DOCUMENT_REGRESSION",
+  "approved": true,
+  "authorized_at": "2026-07-23T16:29:00+08:00",
+  "basis": "负责人确认开始执行 30 页 body.chart 回归与两份完整 PDF 的 body.chart/body.flow_text.single 混合全链路回归",
+  "allowed_routes": [
+    "body.chart",
+    "body.flow_text.single"
+  ],
+  "allowed_operations": [
+    "CLASSIFY",
+    "TRANSLATE",
+    "RENDER",
+    "COMPARE",
+    "FINALIZE"
+  ],
+  "artifact_root": "runs/toolbox_leaf_migration/TM3",
+  "credential_policy": "PROCESS_ENVIRONMENT_ONLY_NO_PERSISTENCE"
+}

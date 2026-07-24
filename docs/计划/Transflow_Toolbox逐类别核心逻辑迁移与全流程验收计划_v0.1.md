@@ -2,10 +2,10 @@
 
 | 项 | 内容 |
 |---|---|
-| 文档状态 | 待执行（逐叶人工确认） |
+| 文档状态 | 执行中：TM2 已由负责人 `ACCEPTED`；TM3 `body.chart` 已完成 `FULL_E2E_PASS`，`G-TM-14=REVIEW_PENDING`；TM4 未启动 |
 | 编制时间 | 2026-07-21 08:12:25（Asia/Shanghai） |
-| 最近修订 | 2026-07-21 09:01:29（Asia/Shanghai） |
-| 修订说明 | 补齐计划产生背景、初始设计符合性、完备测试与全链路追踪定义，并恢复总体设计 T4 的逐叶顺序 |
+| 最近修订 | 2026-07-23 16:06:14（Asia/Shanghai） |
+| 修订说明 | 记录 TM3 第 04 轮真实失败、第 05 轮全链路通过及负责人视觉复核硬停；历史轮次保持只读 |
 | 执行位置 | P9B 完成后，按本计划逐叶推进 |
 | 上位设计 | `docs/设计/Transflow_PDF翻译排版引擎_总体设计_v0.1.md` |
 | 原详细计划 | `docs/计划/Transflow_PDF翻译排版引擎_详细开发计划_v0.1.md` |
@@ -13,6 +13,34 @@
 | 生产目标 | `src/transflow/toolboxes`、显式 Toolbox Catalog 与 DocumentCoordinator 主链 |
 
 ---
+
+## 0. 2026-07-23 TM3 当前有效性覆盖
+
+- TM2 的负责人处置已记录在
+  `runs/toolbox_leaf_migration/TM2/20-owner-disposition-20260723-141316/`；
+  TM2 的 `G-RV-12=ACCEPTED`、`G-TM-14=ACCEPTED`，TM3 前置依赖已解除。
+- TM3 授权记录为
+  `resources/manifests/toolbox_leaf_migration/authorizations/tm3_chart.json`。
+- TM3 首轮源资产冻结为
+  `runs/toolbox_leaf_migration/TM3/01-source-freeze-20260723-142215/`；
+  当前计划权威冻结为
+  `runs/toolbox_leaf_migration/TM3/02-source-freeze-current-plan-20260723-142644/`；
+  其后只允许按 `RED_TESTS → CORE_MIGRATED → FULL_E2E_PASS → REVIEW_PENDING`
+  前向推进。
+- 第 04 轮
+  `runs/toolbox_leaf_migration/TM3/04-body-chart-full-e2e-20260723-151725/`
+  保留为真实失败证据：当前分类自然命中第 12、48 页；第 48 页因正文与
+  `KEEP_SOURCE` 星号共处一个容器而留下两个 unresolved 文字对象，安全终态为
+  `PAGE_PASSTHROUGH`，其中的 `transflow.pdf` 不是译文。该轮不得改写为成功。
+- 第 05 轮
+  `runs/toolbox_leaf_migration/TM3/05-body-chart-full-e2e-20260723-154527/`
+  已重新执行 240 页真实分类、自然 Route、真实翻译、P9B、完整 PDF 最终化与回归：
+  自然 `body.chart` 页仍为第 12、48 页；两页均 `translation_coverage=FULL`、
+  `fallback=NONE`，第 48 页 26 个请求单元全部物化为 26 个 Patch，保留星号不在
+  写入目标中；`G-TM-01`～`G-TM-13` 均 `PASS`。
+- 默认 Catalog 当前不修改。TM3 技术运行只使用 run-private overlay；在负责人查看
+  第 12 页三联对比和第 48 页 Source/Transflow 对比并明确接受前，
+  `G-TM-14=REVIEW_PENDING`，不得启动 TM4。
 
 ## 1. 计划产生背景与目的
 

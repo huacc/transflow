@@ -21,6 +21,8 @@ class TranslationUnit:
     ordinal: int
     source_text: str
     region_id: str
+    source_object_ids: tuple[str, ...] = ()
+    inline_keep_source_object_ids: tuple[str, ...] = ()
 
     def __post_init__(self) -> None:
         """校验身份、页面、顺序和真实源文本。"""
@@ -28,6 +30,26 @@ class TranslationUnit:
         require_non_empty(self.unit_id, "unit_id")
         require_non_empty(self.source_text, "source_text")
         require_non_empty(self.region_id, "region_id")
+        require_unique(self.source_object_ids, "source_object_ids")
+        require_unique(
+            self.inline_keep_source_object_ids,
+            "inline_keep_source_object_ids",
+        )
+        if any(not object_id for object_id in self.source_object_ids):
+            raise DomainContractError(
+                ErrorCode.INVALID_IDENTITY,
+                "翻译单元源对象身份不得为空",
+            )
+        if any(not object_id for object_id in self.inline_keep_source_object_ids):
+            raise DomainContractError(
+                ErrorCode.INVALID_IDENTITY,
+                "inline KEEP_SOURCE object identity must not be empty",
+            )
+        if set(self.source_object_ids) & set(self.inline_keep_source_object_ids):
+            raise DomainContractError(
+                ErrorCode.INVALID_CONTRACT,
+                "translation and inline KEEP_SOURCE objects must be disjoint",
+            )
         if self.page_no < 0 or self.ordinal < 0:
             raise DomainContractError(ErrorCode.INVALID_IDENTITY, "翻译单元页面或顺序无效")
 
