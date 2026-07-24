@@ -1,0 +1,165 @@
+{
+  "schema_version": "transflow.toolbox-batch-migration.tbm2-gate/v1",
+  "stage": "TBM2",
+  "recorded_on": "2026-07-24",
+  "architecture_changed": false,
+  "default_catalog": {
+    "path": "resources/catalogs/page_toolbox_catalog_v4.json",
+    "sha256": "a43dccd10447943a8b3701265c9e85638a65a874d6876b8d1493d6f6886a2f8a",
+    "changed": false
+  },
+  "freeform": {
+    "activation_reason": "CLASSIFICATION_FAILED",
+    "component_allowlist": [
+      "diagram",
+      "chart",
+      "flow"
+    ],
+    "recursive_classification": false,
+    "model_tool_selection": false,
+    "natural_sample_available": false
+  },
+  "known_shared_contract_boundary": {
+    "retained_units_still_enter_root_translation_batch": true,
+    "retained_units_written_to_patch": false,
+    "deferred_owner": "shared.margin"
+  },
+  "routes": [
+    {
+      "route": "body.composite.flow_text_chart",
+      "core_migration": "COMPLETE",
+      "engineering_conformance": "READY",
+      "contract_readiness": "READY",
+      "integrated_product_quality": "NOT_EVALUATED",
+      "promotion_eligibility": "KEEP_DISABLED",
+      "region_fallback": [
+        "shared_margin"
+      ]
+    },
+    {
+      "route": "body.composite.flow_text_diagram",
+      "core_migration": "COMPLETE",
+      "engineering_conformance": "READY",
+      "contract_readiness": "READY",
+      "integrated_product_quality": "NOT_EVALUATED",
+      "promotion_eligibility": "KEEP_DISABLED",
+      "region_fallback": [
+        "shared_margin",
+        "disjoint_local_label"
+      ]
+    },
+    {
+      "route": "body.freeform",
+      "core_migration": "COMPLETE",
+      "engineering_conformance": "READY",
+      "contract_readiness": "READY",
+      "integrated_product_quality": "NOT_EVALUATED",
+      "promotion_eligibility": "KEEP_DISABLED",
+      "evidence_scope": "SYNTHETIC_INJECTED_ONLY",
+      "region_fallback": [
+        "disjoint_inline_text"
+      ]
+    },
+    {
+      "route": "body.composite.flow_text_table",
+      "core_migration": "BLOCKED",
+      "engineering_conformance": "FAIL",
+      "contract_readiness": "FAIL",
+      "integrated_product_quality": "NOT_EVALUATED",
+      "promotion_eligibility": "BLOCKED",
+      "blocker": "DEPENDENCY_BODY_TABLE_NOT_READY"
+    },
+    {
+      "route": "body.composite.chart_table",
+      "core_migration": "BLOCKED",
+      "engineering_conformance": "FAIL",
+      "contract_readiness": "FAIL",
+      "integrated_product_quality": "NOT_EVALUATED",
+      "promotion_eligibility": "BLOCKED",
+      "blocker": "DEPENDENCY_BODY_TABLE_NOT_READY"
+    },
+    {
+      "route": "body.composite.anchored_blocks_chart",
+      "core_migration": "BLOCKED",
+      "engineering_conformance": "FAIL",
+      "contract_readiness": "FAIL",
+      "integrated_product_quality": "NOT_EVALUATED",
+      "promotion_eligibility": "BLOCKED",
+      "blocker": "DEPENDENCY_BODY_ANCHORED_BLOCKS_NOT_READY"
+    }
+  ],
+  "automated_gate": {
+    "command": "python -m pytest -q tests/test_toolbox_batch_migration_tbm2.py",
+    "passed": 10,
+    "failed": 0,
+    "duration_seconds": 132.76
+  },
+  "affected_regression": {
+    "passed": 95,
+    "failed": 1,
+    "duration_seconds": 194.79,
+    "known_failure": {
+      "test": "test_tm3_round06_freezes_two_distinct_complete_pdf_inputs",
+      "code": "TARGET_PAGE_HASH_MISMATCH",
+      "introduced_by_tbm2": false,
+      "historical_evidence_modified": false
+    }
+  },
+  "architecture_scan": {
+    "command": "python scripts/verify_architecture.py",
+    "global_status": "FAIL",
+    "existing_violation_count": 9,
+    "tbm2_composite_violation_count": 0,
+    "unrelated_paths_modified": false
+  },
+  "real_chain_evidence": [
+    {
+      "route": "body.composite.flow_text_chart",
+      "local_only_path": "runs/toolbox_batch_migration/TBM2/05-flow-chart-qwen-full-judge-20260724",
+      "translation_unit_count": 11,
+      "model_http_call_count": 1,
+      "root_verdict": "ACCEPT",
+      "fallback": "REGION_FALLBACK",
+      "patch_fits": true,
+      "protected_visual_counts": {
+        "source_images": 228,
+        "candidate_images": 228,
+        "source_drawings": 39,
+        "candidate_drawings": 39
+      },
+      "product_acceptance": "NOT_EVALUATED"
+    },
+    {
+      "route": "body.composite.flow_text_diagram",
+      "local_only_path": "runs/toolbox_batch_migration/TBM2/09-flow-diagram-qwen-parallel-final-20260724",
+      "translation_unit_count": 33,
+      "model_http_call_count": 2,
+      "root_verdict": "ACCEPT",
+      "fallback": "REGION_FALLBACK",
+      "patch_fits": true,
+      "protected_visual_counts": {
+        "source_images": 0,
+        "candidate_images": 0,
+        "source_drawings": 50,
+        "candidate_drawings": 50
+      },
+      "product_acceptance": "NOT_EVALUATED"
+    },
+    {
+      "route": "body.freeform",
+      "local_only_path": "runs/toolbox_batch_migration/TBM2/11-freeform-qwen-bounded-final-20260724",
+      "sample_scope": "SYNTHETIC_CLASSIFICATION_FAILURE_INJECTION",
+      "translation_unit_count": 2,
+      "model_http_call_count": 1,
+      "root_verdict": "ACCEPT",
+      "fallback": "REGION_FALLBACK",
+      "patch_fits": true,
+      "product_acceptance": "NOT_EVALUATED"
+    }
+  ],
+  "git_scope": {
+    "core_code_and_docs_only": true,
+    "runtime_results_included": false,
+    "runtime_results_ignore_rule": "runs/"
+  }
+}

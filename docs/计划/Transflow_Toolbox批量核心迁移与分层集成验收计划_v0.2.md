@@ -348,6 +348,17 @@ Composite 仍必须遵循与原子叶完全相同的工程范式：
 - 没有自然真实样本时保持 `IntegratedProductQuality=NOT_EVALUATED`；
 - 不得阻塞其他已知叶进入 TBM3。
 
+执行记录（2026-07-24）：
+
+- `body.composite.flow_text_chart`、`body.composite.flow_text_diagram` 和
+  `body.freeform` 已完成保守迁移并达到 `EngineeringConformance=READY`、
+  `ContractReadiness=READY`；
+- 依赖 `body.table` 或 `body.anchored_blocks` 的三个 composite 保持明确阻塞，
+  没有提前建立 factory；
+- 默认 Catalog 未修改，产品质量均未升级，详见
+  `docs/迁移/Transflow_TBM2组合叶与Freeform受控穿刺状态_20260724.md` 和
+  `resources/manifests/toolbox_batch_migration/tbm2_gate.json`。
+
 ### 4.4 TBM3：全叶集成
 
 建立一个 run-private Catalog：
