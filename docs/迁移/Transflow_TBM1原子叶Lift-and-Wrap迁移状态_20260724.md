@@ -394,3 +394,42 @@ Template 只读取当前 Kernel 的 `text_spans`、`image_objects`、`drawing_ob
 `EngineeringConformance=READY`、`ContractReadiness=BLOCKED`，默认 Catalog 继续
 `KEEP_DISABLED`。候选、失败 PDF、PNG 和机器报告只保存在被 Git 忽略的
 `runs/toolbox_leaf_migration/TBM1/11-visual-anchored-thin-gate-20260724-150600/`。
+
+## 11. TBM1 批量原子叶闭环
+
+计划 §4.2 的完成条件已经满足，闭环状态为
+`COMPLETE_WITH_CONTRACT_BLOCKERS`：
+
+- 7 个原子叶均完成 `Lift-and-Wrap`，来源映射合计 `144/144`；
+- 7 个原子叶均为 `EngineeringConformance=READY`；
+- `cover`、`contents` 为 `CONTRACT_READY`；
+- `end`、`body.flow_text.multi`、`body.table`、`body.anchored_blocks`、
+  `body.flow_text.visual_anchored` 均有逐 Route 明确 blocker，状态为
+  `ContractReadiness=BLOCKED`；
+- 格式化后的 7 叶联合回归为 `43 passed in 363.54s (0:06:03)`，Ruff、Mypy 通过；
+- 默认 Catalog 仍为 17 条 Route，仅 `visual_only` 与 `body.flow_text.single`
+  启用；文件 SHA-256 仍为
+  `a43dccd10447943a8b3701265c9e85638a65a874d6876b8d1493d6f6886a2f8a`；
+- 本阶段未调用真实模型，未运行双语整本 PDF，7 个原子叶的产品质量均为
+  `NOT_EVALUATED`，晋级状态均为 `KEEP_DISABLED`。
+
+提交追踪：
+
+| 范围 | commit |
+|---|---|
+| TBM0 基线 | `c1ca25d2` |
+| `cover` | `d46b82a2` |
+| `contents` | `90a7662a` |
+| `end` | `6a23180f` |
+| `body.flow_text.multi` | `8ddc482f` |
+| `body.table` | `5dc80a15` |
+| `body.anchored_blocks` | `5b17a00c` |
+| `body.flow_text.visual_anchored` | `c9323cea` |
+
+批次机器闭环证据保存在被 Git 忽略的
+`runs/toolbox_leaf_migration/TBM1/12-atomic-batch-closure-20260724-152406/`。
+各叶候选/失败 PDF、PNG、JSON 和测试日志均未进入 Git。
+
+这里的“TBM1 完成”只表示所有计划内原子叶分别达到工程符合且合同就绪或明确阻塞，
+不表示跨类别集成、整本产品质量、Owner 接受或默认启用。按阶段边界，本轮不自动开始
+TBM2。
